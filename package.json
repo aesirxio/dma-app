@@ -1,6 +1,6 @@
 {
-  "name": "aesirx-dma",
-  "version": "0.1.1",
+  "name": "aesirx-dma-app",
+  "version": "1.0.0",
   "license": "GPL-2.0-only",
   "author": "AesirX",
   "repository": "https://github.com/aesirxio/dma",
