@@ -1,0 +1,66 @@
+@import '../../scss/utils/bootstrap.scss';
+
+.item_menu {
+  .link_menu {
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 1.1rem;
+
+    &.active,
+    &:hover {
+      background-color: $blue;
+      color: $white !important;
+
+      i,
+      span {
+        color: $white !important;
+      }
+
+      .img_menu {
+        display: none;
+      }
+
+      .img_menu_color {
+        display: inline-block;
+      }
+    }
+
+    i,
+    span {
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.wr_list_menu {
+  .item_menu {
+    &:first-child {
+      .link_menu {
+        background-color: transparent !important;
+        box-shadow: none;
+
+        i,
+        span {
+          color: $color-blue !important;
+        }
+
+        .img_menu {
+          display: inline-block;
+        }
+
+        .img_menu_color {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.section_menu_title,
+.header_logo {
+  transition: all 0.3s ease;
+}
+
+.img_menu_color {
+  display: none;
+}

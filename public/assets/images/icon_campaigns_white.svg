@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19.15" height="19.168" viewBox="0 0 19.15 19.168">
+  <g id="megaphone-outline" transform="translate(0.575 0.593)">
+    <path id="Path_287" data-name="Path 287" d="M20.882,4.683s-3.749,4.663-7.266,4.663H6.692A.692.692,0,0,0,6,10.039v4.154a.692.692,0,0,0,.692.692h6.923c3.518,0,7.266,4.683,7.266,4.683a.632.632,0,0,0,1.041-.426V5.106A.616.616,0,0,0,20.882,4.683Z" transform="translate(-5.308 -4.501)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.15"/>
+    <path id="Path_288" data-name="Path 288" d="M5.192,20.769s-.692-.26-.692-1.385S5.192,18,5.192,18" transform="translate(-4.5 -11.769)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.15"/>
+    <path id="Path_289" data-name="Path 289" d="M42,20.841a1,1,0,0,0,0-1.9" transform="translate(-24.692 -12.274)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.15"/>
+    <path id="Path_290" data-name="Path 290" d="M24,15v5.538" transform="translate(-15 -10.154)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.15"/>
+    <path id="Path_291" data-name="Path 291" d="M10.5,15v5.538" transform="translate(-7.731 -10.154)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.15"/>
+    <path id="Path_292" data-name="Path 292" d="M13.5,27v7.269a.346.346,0,0,0,.346.346H16.14a.692.692,0,0,0,.661-.9c-.362-1.163-1.224-2.475-1.224-4.642h.692a.692.692,0,0,0,.692-.692v-.692A.692.692,0,0,0,16.269,27h-.692" transform="translate(-9.346 -16.616)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.15"/>
+  </g>
+</svg>

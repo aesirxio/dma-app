@@ -1,0 +1,107 @@
+import React, { Component, lazy } from 'react';
+import { observer } from 'mobx-react';
+import { Button } from 'react-bootstrap';
+import SimpleReactValidator from 'simple-react-validator';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
+
+import { withChannelsViewModel } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
+
+import { CHANNEL_CMS_MEDIUM } from '../../../constants/ChannelModule';
+import LoginChannelCMSForm from './LoginChannelCMSForm';
+import LoginChannelCMSMedium from './LoginChannelCMSMedium';
+
+const ModalComponent = lazy(() => import('../../../components/Modal'));
+
+const LoginChannelCMSFormModal = observer(
+  class LoginChannelCMSFormModal extends Component {
+    loginCMSChannelFormModalViewModel = null;
+
+    constructor(props) {
+      super(props);
+      this.validator = new SimpleReactValidator({ autoForceUpdate: this });
+
+      const { viewModel } = props;
+
+      this.loginCMSChannelFormModalViewModel = viewModel
+        ? viewModel.loginCMSChannelFormModalViewModel
+        : null;
+    }
+
+    saveCMSHandler = (channelUniqueName) => {
+      if (this.isFormValid()) {
+        this.loginCMSChannelFormModalViewModel.saveCMSHandler(channelUniqueName);
+      }
+    };
+
+    handleCloseModal = () => {
+      this.loginCMSChannelFormModalViewModel.closeModal();
+      this.validator.hideMessages();
+    };
+
+    isFormValid = () => {
+      console.log('isFormValid');
+      if (this.validator.allValid()) {
+        console.log('[is Form Valid]');
+        return true;
+      } else {
+        this.validator.showMessages();
+        // rerender to show messages for the first time
+        this.forceUpdate();
+        return false;
+      }
+    };
+
+    render() {
+      const { show, closeModal, channelType } = this.loginCMSChannelFormModalViewModel;
+
+      if (!show) {
+        return null;
+      }
+
+      let header = `Add your ${channelType.name} details`;
+      let buttonTitle = 'Save';
+      let eventName = channelType.id;
+
+      console.log('eventName12313123', eventName);
+
+      console.log('LoginChannelCMSFormModal  render', this.loginCMSChannelFormModalViewModel);
+
+      return (
+        <ModalComponent
+          show={show}
+          onHide={this.handleCloseModal}
+          header={header}
+          body={
+            eventName === CHANNEL_CMS_MEDIUM ? (
+              <LoginChannelCMSMedium
+                viewModel={this.loginCMSChannelFormModalViewModel}
+                validator={this.validator}
+              />
+            ) : (
+              <LoginChannelCMSForm
+                viewModel={this.loginCMSChannelFormModalViewModel}
+                validator={this.validator}
+              />
+            )
+          }
+          footer={
+            <Button
+              onClick={(e) => this.saveCMSHandler(eventName)}
+              className="btn btn-success w-100"
+            >
+              <span>{buttonTitle}</span>
+              <i className="ms-1">
+                <FontAwesomeIcon icon={faChevronRight} />
+              </i>
+            </Button>
+          }
+          key={Math.random(40, 200)}
+        />
+      );
+    }
+  }
+);
+
+export default withChannelsViewModel(LoginChannelCMSFormModal);

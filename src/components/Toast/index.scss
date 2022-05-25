@@ -1,0 +1,27 @@
+@import "../../scss/utils/bootstrap.scss";
+
+$rt-color-info: $blue !default;
+$rt-color-success: $green !default;
+
+@import "~react-toastify/scss/variables";
+@import "~react-toastify/scss/toastContainer";
+@import "~react-toastify/scss/toast";
+@import "~react-toastify/scss/closeButton";
+@import "~react-toastify/scss/progressBar";
+
+// entrance and exit animations
+@import "~react-toastify/scss/animations/bounce.scss";
+@import "~react-toastify/scss/animations/zoom.scss";
+@import "~react-toastify/scss/animations/flip.scss";
+@import "~react-toastify/scss/animations/slide.scss";
+
+#wr_custom_notify { 
+  background-color: $color-blue-7;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+
+  a {
+    text-decoration: underline !important;
+    color: $white !important;
+  }
+}

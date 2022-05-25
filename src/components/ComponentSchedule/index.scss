@@ -1,0 +1,95 @@
+@import 'react-datepicker/dist/react-datepicker.css';
+@import '../../scss/utils/bootstrap.scss';
+
+.wr_item_schedule {
+  background-color: $color-blue-4;
+
+  &:first-child {
+    .react-datepicker__input-container {
+      input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+  &:last-child {
+    .react-datepicker__input-container {
+      input {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  .react-datepicker-wrapper {
+    width: 100%;
+  }
+
+  .react-datepicker__input-container {
+    input {
+      height: 50px;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      padding-left: 15px;
+      padding-right: 15px;
+      color: $color-blue;
+      width: 100%;
+    }
+  }
+
+  .item {
+    &:first-child {
+      .react-datepicker__input-container {
+        input {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+    }
+
+    &:last-child {
+      .react-datepicker__input-container {
+        input {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+  }
+
+  &.wr_item_schedule_transparent {
+    background-color: transparent;
+  }
+}
+
+.tabs_content {
+  .nav-pills {
+    .nav-link {
+      color: rgba($color: $color-blue, $alpha: 0.5);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+      &.active {
+        background-color: $color-blue-3;
+        color: $white;
+      }
+    }
+  }
+}
+
+.wr_form_gr_date {
+  margin-left: -10px;
+  margin-right: -10px;
+
+  .form-group {
+    margin-bottom: 0 !important;
+    padding: 0 10px;
+  }
+}
+
+.item_tab_sm_publish {
+  &:last-child {
+    border-bottom: 0 !important;
+  }
+}

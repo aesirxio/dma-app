@@ -1,0 +1,29 @@
+@import "../../scss/utils/bootstrap.scss";
+
+.btn_gender {
+  height: 50px;
+  color: rgba($color: $color-blue, $alpha: 0.8);
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: 0 !important;
+  }
+
+  &:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 0 !important;
+  }
+
+  &.active {
+    background-color: $color-blue-3 !important;
+    color: $white;
+    border-color: $color-blue-3 !important;
+  }
+}

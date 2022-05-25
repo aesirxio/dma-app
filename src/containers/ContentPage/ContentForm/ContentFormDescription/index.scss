@@ -1,0 +1,38 @@
+@import "../../../../scss/utils/bootstrap.scss";
+@import "~bootstrap/scss/accordion";
+
+.emoji-mart {
+  z-index: 10;
+}
+
+.wr_header_toogle_social {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.card-header-tabs {
+  border-bottom: 1px solid $gray-400 !important;
+}
+
+.wrapper_tabs_3 {
+  .nav-item {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: rgba($color: $color-blue, $alpha: 0.5);
+    margin-bottom: 0;
+    border: 0;
+
+    &.active {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+}
+
+.canva_items {
+  flex-basis: 250px;
+}
+
+.canva_no_item {
+  flex-basis: 180px;
+}

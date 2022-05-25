@@ -1,0 +1,19 @@
+.btn_loading {
+  display: none;
+}
+
+.body_login_page {
+  .btn_loading {
+    display: block;
+  }
+
+  .btn_icon_login {
+    display: none;
+  }
+
+  .wr_btn_login {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+  }
+}

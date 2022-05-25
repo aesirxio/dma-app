@@ -1,0 +1,39 @@
+import _ from 'lodash';
+import { AesirxFacebookDataApiService } from 'aesirx-dma-lib';
+
+const fetchSearchTargetingFromFacebookData = async (inputValue, name) => {
+  console.log('inputValue, name facebook targeting', inputValue, name);
+  const facebookDataAPIService = new AesirxFacebookDataApiService();
+  let response = null;
+  if (inputValue.length > 3) {
+    switch (name) {
+      case 'interests':
+        response = await facebookDataAPIService.getInterestsFromFacebookData(inputValue);
+        return filterData(inputValue, response?.facebook_data_interests);
+      case 'behaviors':
+        response = await facebookDataAPIService.getBehaviorsFromFacebookData(inputValue);
+        return filterData(inputValue, response?.facebook_data_behaviors);
+      default:
+    }
+  }
+
+  return [];
+};
+
+const filterData = (value, data) => {
+  return Array.isArray(data)
+    ? data
+        .filter((i) => i.name.toLowerCase().includes(value.toLowerCase()))
+        .map((item) => ({
+          label: item.name,
+          value: item.id,
+        }))
+    : [];
+};
+
+const debouncedChangeHandlerTargeting = _.throttle(
+  (value, name) => fetchSearchTargetingFromFacebookData(value, name),
+  500
+);
+
+export { debouncedChangeHandlerTargeting };

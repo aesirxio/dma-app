@@ -1,0 +1,34 @@
+@import '../../scss/utils/bootstrap.scss';
+
+@include media-breakpoint-down(xxl) {
+  .sdbar_right {
+    width: 340px;
+  }
+
+  .pe-400 {
+    padding-right: 340px !important;
+  }
+}
+
+@include media-breakpoint-down(xl) {
+  .pe-400 {
+    padding-right: 15px !important;
+  }
+
+  .show_menu_right {
+    .sdbar_right {
+      right: 0 !important;
+    }
+  }
+
+  .item_hambuger_icon {
+    display: flex !important;
+    width: 24px;
+    height: 24px;
+    right: 10px;
+  }
+
+  .item_collap_fixed {
+    display: none !important;
+  }
+}

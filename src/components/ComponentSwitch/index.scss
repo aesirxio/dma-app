@@ -1,0 +1,17 @@
+.wr_advance {
+  .form-label {
+    width: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .form-switch {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    .form-check-input {
+      margin-left: 0;
+      width: 40px;
+    }
+  }
+}

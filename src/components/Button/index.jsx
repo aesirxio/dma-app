@@ -1,0 +1,38 @@
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ComponentImage from '../ComponentImage';
+import styles from './index.module.scss';
+
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    let { icon, text, className, onClick, image, disabled } = this.props;
+
+    if (className !== undefined && styles[className] !== undefined) {
+      className = styles[className];
+    }
+    return (
+      <button
+        type="button"
+        className={`d-flex justify-content-center btn ${className}`}
+        onClick={onClick}
+        disabled={disabled}
+      >
+        {icon && (
+          <i className="pe-1">
+            <FontAwesomeIcon icon={icon} />
+          </i>
+        )}
+        {image && <ComponentImage alt={text} src={image} className="pe-1" />}
+
+        <span className="text_btn text-nowrap">{text}</span>
+      </button>
+    );
+  }
+}
+
+export default Button;

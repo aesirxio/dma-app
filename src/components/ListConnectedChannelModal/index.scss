@@ -1,0 +1,35 @@
+.wr_checked_channels {
+  margin-right: -15px;
+  &.active {
+    .icon_check {
+      display: block;
+    }
+  }
+}
+
+.icon_check {
+  display: none;
+}
+
+.item_social_modal {
+  background-color: transparent;
+  border: 0;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.true {
+    opacity: 0.5;
+
+    .icon_check {
+      display: block;
+    }
+  }
+}
+
+.item_social {
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0 !important;
+  }
+}

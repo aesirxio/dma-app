@@ -1,0 +1,356 @@
+@import '~react-big-calendar/lib/css/react-big-calendar.css';
+@import '../../scss/utils/bootstrap.scss';
+
+.rbc-header {
+  border-bottom: 0;
+  padding: 12px 3px;
+  text-transform: uppercase;
+
+  + .rbc-header {
+    border-left: 0;
+  }
+
+  span {
+    &::first-letter {
+      font-size: 200%;
+      color: #8a2be2;
+    }
+  }
+}
+
+.wrapper_calendar_full {
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  .back-next-buttons {
+    .btn-today {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .rbc-btn-group {
+    button {
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .rbc-month-view,
+  .rbc-time-view {
+    background-color: $white;
+  }
+
+  .rbc-month-view {
+    border: 0;
+  }
+
+  .rbc-allday-cell {
+    .rbc-day-bg {
+      border-left: 0;
+    }
+  }
+
+  .rbc-month-header,
+  .rbc-time-header {
+    background-color: $color-blue-6;
+  }
+
+  .rbc-day-bg {
+    border-left: 1px solid $border-color;
+
+    &:last-child {
+      border-right: 1px solid $border-color;
+    }
+  }
+
+  .rbc-month-row {
+    &:last-child {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  .rbc-row-segment {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0;
+    margin-bottom: 3px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .rbc-event-content {
+    font-size: $h8-font-size;
+  }
+
+  .rbc-day-slot {
+    .rbc-event {
+      border: 0;
+    }
+  }
+}
+
+.rbc-today {
+  background-color: transparent;
+}
+
+.rbc-event,
+.rbc-event-content {
+  &:focus {
+    outline: none;
+  }
+}
+
+.event-blue {
+  background-color: rgba($color: $color-blue-7, $alpha: 0.25);
+
+  &.rbc-selected {
+    background-color: rgba($color: $color-blue-7, $alpha: 0.25);
+  }
+
+  .rbc-event-content,
+  .wrapper_des_event span {
+    color: $color-blue-7;
+  }
+}
+
+.event-red {
+  background-color: rgba($color: $color-red-3, $alpha: 0.25);
+
+  &.rbc-selected {
+    background-color: rgba($color: $color-red-3, $alpha: 0.25);
+  }
+
+  .rbc-event-content,
+  .wrapper_des_event span {
+    color: $color-red-3;
+  }
+}
+
+.event-pink {
+  background-color: rgba($color: $color-pink, $alpha: 0.25);
+
+  &.rbc-selected {
+    background-color: rgba($color: $color-pink, $alpha: 0.25);
+  }
+
+  .rbc-event-content,
+  .wrapper_des_event span {
+    color: $color-pink;
+  }
+}
+
+.event-green {
+  background-color: rgba($color: $color-green-3, $alpha: 0.25);
+
+  &.rbc-selected {
+    background-color: rgba($color: $color-green-3, $alpha: 0.25);
+  }
+
+  .rbc-event-content,
+  .wrapper_des_event span {
+    color: $color-green-3;
+  }
+}
+
+.event-orange {
+  background-color: rgba($color: $color-orange, $alpha: 0.25);
+
+  &.rbc-selected {
+    background-color: rgba($color: $color-orange, $alpha: 0.25);
+  }
+
+  .rbc-event-content,
+  .wrapper_des_event span {
+    color: $color-orange;
+  }
+}
+
+.event-gray {
+  background-color: rgba($color: $color-gray, $alpha: 0.25);
+
+  &.rbc-selected {
+    background-color: rgba($color: $color-gray, $alpha: 0.25);
+  }
+
+  .rbc-event-content,
+  .wrapper_des_event span {
+    color: $color-gray;
+  }
+}
+
+.event-purple {
+  background-color: rgba($color: $color-purple, $alpha: 0.25);
+
+  &.rbc-selected {
+    background-color: rgba($color: $color-purple, $alpha: 0.25);
+  }
+
+  .rbc-event-content,
+  .wrapper_des_event span {
+    color: $color-purple;
+  }
+}
+
+.rbc-overlay {
+  z-index: 101;
+  .rbc-event {
+    background: none;
+  }
+}
+
+.wr_calendar {
+  display: flex;
+  align-items: self-start;
+  .wr_calendar--left {
+    width: 100%;
+  }
+  .rbc-calendar {
+    width: 100%;
+    min-height: 800px;
+  }
+  .rbc-month-row {
+    overflow: visible;
+    .rbc-row-content {
+      min-height: 120px;
+    }
+  }
+}
+
+.label-rounded {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.rbc-row {
+  .rbc-event {
+    background: transparent;
+  }
+}
+
+.joomla_calendar_background {
+  background: rgba(22, 185, 121, 0.2);
+  color: #16b979;
+}
+
+.youtube_calendar_background {
+  background: rgba(211, 0, 17, 0.2);
+}
+.facebook_calendar_background {
+  background: rgba(13, 110, 253, 0.2);
+}
+
+.twitter_calendar_background {
+  background: rgba(0, 172, 238, 0.2);
+}
+
+.linkedin_calendar_background {
+  background: rgba(0, 95, 137, 0.2);
+}
+
+.tumblr_calendar_background {
+  background: rgba(52, 58, 64, 0.2);
+}
+
+.medium_calendar_background {
+  background: rgba(14, 19, 24, 0.2);
+}
+
+.facebook_ads_calendar_background {
+  background: rgba(139, 186, 254, 0.2);
+}
+
+.google_adwords_calendar_background {
+  background: rgba(218, 165, 32, 0.2);
+}
+
+.wordpress_calendar_background {
+  background: rgba(214, 51, 132, 0.2);
+}
+
+.drupal_calendar_background {
+  background: rgba(70, 130, 180, 0.2);
+}
+
+.mailchimp_calendar_background {
+  background: rgba(139, 0, 139, 0.2);
+}
+
+.joomla_calendar_text {
+  color: #16b979;
+}
+
+.youtube_calendar_text {
+  color: #d30011;
+}
+
+.facebook_calendar_text {
+  color: #0d6efd;
+}
+
+.twitter_calendar_text {
+  color: #00acee;
+}
+
+.linkedin_calendar_text {
+  color: #005f89;
+}
+
+.tumblr_calendar_text {
+  color: #343a40;
+}
+
+.medium_calendar_text {
+  color: #0e1318;
+}
+
+.facebook_ads_calendar_text {
+  color: #8bbafe;
+}
+
+.google_adwords_calendar_text {
+  color: goldenrod;
+}
+
+.wordpress_calendar_text {
+  color: #d63384;
+}
+
+.drupal_calendar_text {
+  color: steelblue;
+}
+
+.mailchimp_calendar_text {
+  color: darkmagenta;
+}
+
+.rbc-event.rbc-selected {
+  .rbc-event-content {
+    background-color: rgba(38, 89, 133, 0.25) !important;
+    border-radius: 5px;
+  }
+}
+
+.filter_calendar-enter {
+  opacity: 0;
+  // transform: scale(0.9);
+  transform: translateX(400px);
+}
+.filter_calendar-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.filter_calendar-exit {
+  transform: translateX(0);
+}
+.filter_calendar-exit-active {
+  opacity: 0;
+  transform: translateX(400px);
+  transition: opacity 300ms, transform 300ms;
+}
+.planing {
+  pointer-events: none;
+}

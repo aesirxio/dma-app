@@ -1,0 +1,13 @@
+@import "../../scss/utils/bootstrap.scss";
+
+.btn-facebook {
+  @include button-variant($color-blue-1, $color-blue-1);
+}
+
+.btn-twitter {
+  @include button-variant($color-blue-2, $color-blue-2, $white, $hover-color: $white);
+}
+
+.btn-google {
+  @include button-variant($white, $border-color);
+}

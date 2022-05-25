@@ -1,0 +1,54 @@
+@import "../../scss/utils/bootstrap.scss";
+
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/close";
+
+.close {
+  @extend .btn-close;
+
+  span {
+    display: none;
+  }
+}
+
+.modal {
+  .close {
+    background: none;
+    position: relative;
+    opacity: 1;
+
+    &:before,
+    &:after {
+      position: absolute;
+      left: 0;
+      content: ' ';
+      height: 20px;
+      width: 2px;
+      background-color: $red;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .modal-content {
+    border-radius: 0.8rem;
+  }
+
+  .modal-footer {
+    border-top: 0;
+
+    >* {
+      margin: 0;
+    }
+  }
+}

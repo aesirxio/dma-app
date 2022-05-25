@@ -1,0 +1,27 @@
+@import "../../scss/utils/bootstrap.scss";
+
+.wr_extensions {
+  border: 1px solid $border-color;
+  border-radius: 4px;
+}
+
+.item_extensions {
+  border-bottom: 1px solid $border-color;
+  &:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .active_extensions {
+    background-color: $color-blue-6;
+  }
+}
+
+.item_body_extensions {
+  flex: 0 0 40%;
+  max-width: 40%;
+  &:first-child {
+    flex: 0 0 60%;
+    max-width: 60%;
+    border-right: 1px solid $border-color;
+  }
+}

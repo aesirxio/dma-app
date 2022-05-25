@@ -1,0 +1,21 @@
+@import '../../scss/utils/bootstrap.scss';
+@import '../../scss/utils/variables.scss';
+
+.alert {
+  background-color: $orange;
+  position: relative;
+  button {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    color: #fff;
+    opacity: 0.9;
+    transition: 0.3s opacity ease-in-out;
+    &:hover {
+      color: #fff;
+      opacity: 1;
+      transition: 0.3s opacity ease-in-out;
+    }
+  }
+}

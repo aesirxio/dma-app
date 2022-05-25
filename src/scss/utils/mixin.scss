@@ -1,0 +1,35 @@
+@mixin bg_section {
+  position: relative;
+  text-align: center;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100%;
+  }
+
+  &:before {
+    left: -100vw;
+  }
+
+  &:after {
+    right: -100vw;
+  }
+}
+
+@mixin row_text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+@mixin bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

@@ -1,0 +1,36 @@
+@import '../../scss/utils/bootstrap.scss';
+
+.wrapper_banner_left {
+  @include bg;
+}
+
+.content_banner_left {
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  .swiper-wrapper {
+    margin-bottom: 50px;
+  }
+
+  .swiper-pagination-bullet {
+    background: $white;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $green;
+  }
+}
+
+.wrapper_text_slider {
+  color: $white;
+
+  .text_slider {
+    margin-bottom: 20px;
+    font-size: 1.25em;
+  }
+}
+
+.wrapper_icon_slider {
+  margin-bottom: 15px;
+}

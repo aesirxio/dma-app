@@ -1,0 +1,20 @@
+// Import Swiper styles
+@import "swiper/swiper.scss";
+@import "swiper/components/pagination/pagination.scss";
+@import "swiper/components/navigation/navigation.scss";
+
+@import "../../scss/utils/bootstrap.scss";
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px !important;
+  height: 40px !important;
+  background: $white;
+  border-radius: 2px !important;
+  box-shadow: $box-shadow;
+
+  &:after {
+    font-size: 18px !important;
+    color: $green !important
+  }
+}

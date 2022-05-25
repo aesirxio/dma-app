@@ -1,0 +1,47 @@
+/**
+ * @package     Joomla.Site
+ * @subpackage  Templates.redWEB
+ *
+ * @copyright   Copyright (C) 2020 redWEB. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+*/
+
+ @font-face {
+    font-family: 'SVN-Sofia Pro';
+    src: url('./sofiaPro.woff2') format('woff2'), /* Super Modern Browsers */
+        url('./sofiaPro.woff') format('woff'), /* Modern Browsers */
+        url('./sofiaPro.ttf') format('truetype'); /* Safari, Android, iOS */;
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Sofia Pro';
+    src: url('./SofiaProMedium.woff2') format('woff2'), /* Super Modern Browsers */
+        url('./SofiaProMedium.woff') format('woff'), /* Modern Browsers */
+        url('./SofiaProMedium.ttf') format('truetype'); /* Safari, Android, iOS */;
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Sofia Pro';
+    src: url('./sofiaProSemiBold.woff2') format('woff2'), /* Super Modern Browsers */
+        url('./sofiaProSemiBold.woff') format('woff'), /* Modern Browsers */
+        url('./sofiaProSemiBold.ttf') format('truetype'); /* Safari, Android, iOS */;
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Sofia Pro';
+    src: url('./sofiaProBold.woff2') format('woff2'), /* Super Modern Browsers */
+        url('./sofiaProBold.woff') format('woff'), /* Modern Browsers */
+        url('./sofiaProBold.ttf') format('truetype'); /* Safari, Android, iOS */;
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
