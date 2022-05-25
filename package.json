@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "GPL-2.0-only",
   "author": "AesirX",
-  "repository": "https://github.com/aesirxio/dma",
+  "repository": "https://github.com/aesirxio/dma-app",
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^27.1.0",
     "@ckeditor/ckeditor5-react": "^3.0.2",
