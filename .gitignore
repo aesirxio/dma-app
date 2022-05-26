@@ -14,9 +14,6 @@
 #vscode
 .vscode
 
-#package-lock
-package-lock.json
-
 /.idea
 
 # misc
