@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import React, { useEffect, useState } from 'react';
 import { Dropdown, Pagination } from 'react-bootstrap';
 import {

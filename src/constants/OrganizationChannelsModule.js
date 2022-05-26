@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 const ESI_ORGANIZATION_CHANNEL_FIELD_KEY = {
   ID: "id",
   TITLE: "title",

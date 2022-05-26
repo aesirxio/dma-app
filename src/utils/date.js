@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import { FORMAT_DATE, FORMAT_TIME } from '../constants/FormFieldType';
 import { addMilliseconds, format, fromUnixTime } from 'date-fns';
 import { getTimezoneOffset } from 'date-fns-tz';

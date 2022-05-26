@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import {
   ESI_CONTENT_THEME_FIELD_KEY,
   ESI_CONTENT_THEME_API_RESPONSE_FIELD_KEY,

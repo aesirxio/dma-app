@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import { io } from 'socket.io-client';
 import { GENERAL_CONFIG, AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
 import { WEBSOCKET_EVENT_SIGNATURES } from '../constants/WebSocketClient';

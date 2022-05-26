@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import React from 'react';
 import { makeAutoObservable, runInAction } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';

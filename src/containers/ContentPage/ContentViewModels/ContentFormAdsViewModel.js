@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import { makeAutoObservable } from 'mobx';
 import { CONTENT_FIELD_KEY } from '../../../constants/ContentModule';
 import { notify } from '../../../components/Toast';

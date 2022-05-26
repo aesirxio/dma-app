@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import React, { Component, lazy } from 'react';
 import { Button } from 'react-bootstrap';
 import styles from './index.module.scss';

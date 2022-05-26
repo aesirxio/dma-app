@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import { CONTENT_FIELD_KEY, CONTENT_DESCRIPTION_MODE } from '../../../constants/ContentModule';
 import ContentModel from '../ContentModel/ContentModel';
 

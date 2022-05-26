@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import { CHANNEL_ADS_FACEBOOK, CHANNEL_ADS_GOOGLE } from '../../../constants/ChannelModule';
 
 import ContentGoogleAdsModel from './ContentGoogleAdsModel';
