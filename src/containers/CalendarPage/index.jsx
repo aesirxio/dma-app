@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import React, { lazy, Component } from 'react';
 import ContentStore from '../ContentPage/ContentStore/ContentStore';
 import ContentViewModel from '../ContentPage/ContentViewModels/ContentViewModel';

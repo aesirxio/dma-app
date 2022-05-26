@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import { useState, useEffect } from 'react';
 import loadScript from '../../utils/loadScript';
 import removeScript from '../../utils/removeScript';

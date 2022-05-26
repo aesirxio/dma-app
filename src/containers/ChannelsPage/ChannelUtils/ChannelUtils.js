@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 
 import { CHANNEL_CMS_FIELD_KEY, CHANNEL_FIELD_KEY } from '../../../constants/ChannelModule';
 import { ChannelCategoryModel } from '../ChannelModel/ChannelModel';

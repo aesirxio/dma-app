@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import { AesirxMemberApiService, AesirxProjectApiService } from 'aesirx-dma-lib';
 import { runInAction } from 'mobx';
 import ProfileModel from '../ProfileModel/ProfileModel';

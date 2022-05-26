@@ -1,3 +1,8 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+*/
+
 import history from '../routes/history';
 import { notify } from '../components/Toast';
 import { AesirxAuthenticationApiService, AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
