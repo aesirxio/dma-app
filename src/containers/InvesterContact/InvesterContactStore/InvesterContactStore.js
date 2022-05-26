@@ -1,12 +1,11 @@
-import React from 'react';
-import { makeAutoObservable, runInAction } from 'mobx';
-import PAGE_STATUS from '../../../constants/PageStatus';
-import { AesirxInvesterContactApiServ } from 'aesirx-dma-lib';
+import { runInAction } from 'mobx';
+
+import { AesirxInvesterContactApiService } from 'aesirx-dma-lib';
 import { notify } from '../../../components/Toast';
 
 export default class InvesterContactStore {
   async investerContactSave(callbackOnSuccess, callbackOnError, dataPost) {
-    const investerContactService = new AesirxInvesterContactApiServ();
+    const investerContactService = new AesirxInvesterContactApiService();
     let response = null;
     console.log('dataPost dataPost', dataPost);
     runInAction(() => {

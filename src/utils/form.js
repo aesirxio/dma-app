@@ -18,7 +18,7 @@ const FormSelectDropdown = lazy(() => import('../components/Form/FormSelectDropd
 const ComponentDamAssets = lazy(() => import('../components/ComponentDamAssets'));
 const FormPriceField = lazy(() => import('../components/Form/FormPriceField'));
 const FormRadio = lazy(() => import('../components/Form/FormRadio'));
-const TimezoneField = lazy(() => import('../components/Form/TimezoneField'));
+
 const Input = lazy(() => import('../components/Form/Input'));
 
 const ContentFormDescription = lazy(() =>
@@ -234,13 +234,6 @@ const renderingGroupFieldHandler = (group, validator) => {
                 <Form.Group key={Math.random(40, 200)} className={`mb-3 ${className}`}>
                   <Label text={field.label} required={field.required ?? false} />
                   <FormLocationField field={field} validator={validator} />
-                </Form.Group>
-              );
-            case FORM_FIELD_TYPE.TIMEZONE:
-              return (
-                <Form.Group key={Math.random(40, 200)} className={`mb-3 ${className}`}>
-                  <Label text={field.label} required={field.required ?? false} />
-                  <TimezoneField field={field} validator={validator} />
                 </Form.Group>
               );
 
