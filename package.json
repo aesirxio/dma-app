@@ -12,7 +12,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.12",
-    "aesirx-dma-lib": "^1.0",
+    "aesirx-dma-lib": "1.0.2",
     "bootstrap": "~5.0.0-beta1",
     "date-fns": "^2.16.1",
     "date-fns-tz": "^1.1.6",

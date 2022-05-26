@@ -1,6 +1,5 @@
-import React from 'react';
-import { makeAutoObservable, runInAction } from 'mobx';
-import PAGE_STATUS from '../../../constants/PageStatus';
+import { runInAction } from 'mobx';
+
 import { AesirxInvesterContactApiService } from 'aesirx-dma-lib';
 import { notify } from '../../../components/Toast';
 
