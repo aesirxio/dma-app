@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import React, { Component } from 'react';
 import { format } from 'date-fns';
@@ -27,7 +27,6 @@ import ComponentNoData from '../../../components/ComponentNoData';
 import ComponentViewList from '../../../components/ComponentViewList';
 import ComponentImage from '../../../components/ComponentImage';
 import ContentUtils from '../ContentUtils/ContentUtils';
-import ComponentTooltip from '../../../components/ComponentTooltip';
 
 const ContentsList = observer(
   class ContentsList extends ComponentViewList {

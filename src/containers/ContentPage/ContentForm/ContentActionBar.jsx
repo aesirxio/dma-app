@@ -1,10 +1,10 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import React, { Component, lazy } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react';
 
 import { withContentViewModel } from '../ContentViewModels/ContentViewModelContextProvider';
@@ -12,7 +12,6 @@ import { Dropdown } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
-import { CHANNEL_ADS_GOOGLE } from '../../../constants/ChannelModule';
 
 const ContentActionBar = observer(
   class ContentActionBar extends Component {

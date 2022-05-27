@@ -1,13 +1,13 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import React, { lazy, Component } from 'react';
 import { Route } from 'react-router-dom';
 import ContentActionBar from './ContentForm/ContentActionBar';
 import ContentStore from './ContentStore/ContentStore';
-import ChannelsStore from '../ChannelsPage/ChannelsStore/ChannelsStore';
+
 import ContentViewModel from './ContentViewModels/ContentViewModel';
 import GlobalStore from '../../store/Store';
 

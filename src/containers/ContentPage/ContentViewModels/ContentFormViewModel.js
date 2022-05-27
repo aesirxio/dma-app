@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import { makeAutoObservable, runInAction } from 'mobx';
 import { notify } from '../../../components/Toast';
@@ -13,6 +13,8 @@ import ChannelsStore from '../../ChannelsPage/ChannelsStore/ChannelsStore';
 import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
 import ContentUtils from '../ContentUtils/ContentUtils';
 import history from '../../../routes/history';
+import ProfileStore from '../../ProfilePage/ProfileStore/ProfileStore';
+import { AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
 
 class ContentFormViewModel {
   formStatus = PAGE_STATUS.LOADING;
@@ -34,16 +36,27 @@ class ContentFormViewModel {
     makeAutoObservable(this);
     this.contentStore = contentStore;
     this.channelStore = new ChannelsStore();
+    this.profileStore = new ProfileStore();
   }
 
   init = async (form, match) => {
     this.formStatus = PAGE_STATUS.LOADING;
     this.form = form;
     this.contentData = null;
+
+    const memberProfile = await this.profileStore.getMemberProfile(
+      Storage.getItem(AUTHORIZATION_KEY.MEMBER_ID) ?? 0
+    );
+
+    if (!memberProfile.allow_create_item) {
+      notify('Please upgrade account at https://dma.aesirx.io');
+      history.push('/content');
+    }
+
     const masterData = await this.contentStore.getMasterData();
     const channelsData = await this.channelStore.getChannelsData();
 
-    console.log('ContentFormViewModel masterData', masterData);
+    console.log('ContentFormViewModel masterData', masterData, memberProfile);
 
     const campaignMasterData = CampaignsUtils.toDropdownOptions(
       masterData?.campaignMasterData?.result
