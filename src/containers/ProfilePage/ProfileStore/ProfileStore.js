@@ -1,12 +1,11 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import { AesirxMemberApiService, AesirxProjectApiService } from 'aesirx-dma-lib';
+import { AesirxMemberApiService } from 'aesirx-dma-lib';
 import { runInAction } from 'mobx';
 import ProfileModel from '../ProfileModel/ProfileModel';
-import ProjectUtils from '../../ProjectsPage/ProjectUtils/ProjectUtils';
 
 export default class ProfileStore {
   async updatePassword(updatePasswordData, callbackOnSuccess, callbackOnError) {
@@ -92,5 +91,22 @@ export default class ProfileStore {
         callbackOnError(error);
       });
     }
+  }
+
+  async getMemberProfile(id) {
+    if (!id) return false;
+
+    try {
+      const getMemberInfoAPIService = new AesirxMemberApiService();
+      const respondedData = await getMemberInfoAPIService.getMemberInfo(id);
+      console.log('------------response-----------------------------------');
+      console.log(respondedData);
+
+      return respondedData;
+    } catch (error) {
+      console.log(error);
+    }
+
+    return false;
   }
 }
