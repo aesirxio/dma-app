@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import React, { useContext, useState } from 'react';
 
@@ -11,19 +11,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
 
+import { notify } from '../../../components/Toast';
+
 const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => {
   const context = useContext(ChannelsViewModelContext);
+  const channelsListViewModel = context.getChannelsListViewModel();
 
   const [connecting, setConnecting] = useState(false);
 
-  console.log('ChannelTypeConnectButton render', channelCategory, channelType, context);
+  console.log(
+    'ChannelTypeConnectButton render',
+    channelCategory,
+    channelType,
+    context,
+    channelsListViewModel.memberProfile
+  );
 
   const handleOnClick = async () => {
-    if (channelCategory.id === 'cms' || channelType.id === 'medium') {
-      context.getChannelsListLoginViewModel().openModal(channelType);
+    if (channelsListViewModel.memberProfile?.allow_create_item) {
+      if (channelCategory.id === 'cms' || channelType.id === 'medium') {
+        context.getChannelsListLoginViewModel().openModal(channelType);
+      } else {
+        setConnecting(true);
+        await channelsListViewModel.connectChannel(channelType.id);
+      }
     } else {
-      setConnecting(true);
-      await context.getChannelsListViewModel().connectChannel(channelType.id);
+      notify('Please upgrade account at https://dma.aesirx.io');
     }
   };
 
