@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
@@ -149,11 +149,14 @@ class Menu2 extends React.Component {
     return (
       <nav>
         <div className="py-1 px-3 item_menu item_menu_home">
-          <a href="/" className="d-block text-blue-0 p-3 link_menu rounded-2 text-decoration-none">
-            <i>
+          <a
+            href="/"
+            className="d-block text-blue-0 p-3 link_menu rounded-2 text-decoration-none bg-blue-2 "
+          >
+            <i class="text-white">
               <FontAwesomeIcon icon={faArrowLeft} />
             </i>
-            <span className="ms-3 text">Back to Dashboard</span>
+            <span className="ms-3 text text-white">Back to Dashboard</span>
           </a>
         </div>
         {dataMenu.map((item, index) => {

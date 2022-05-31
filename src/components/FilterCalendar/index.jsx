@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import React from 'react';
 import { withTranslation } from 'react-i18next';
@@ -75,12 +75,12 @@ class FilterCalendar extends React.Component {
   render() {
     const { t, i18n } = this.props;
     this.data = [
-      {
-        id: 1,
-        title: 'Persona',
-        name: 'personas[]',
-        listCheck: this.props.filterFormViewModel.personaMasterData,
-      },
+      // {
+      //   id: 1,
+      //   title: 'Persona',
+      //   name: 'personas[]',
+      //   listCheck: this.props.filterFormViewModel.personaMasterData,
+      // },
       {
         id: 2,
         title: 'Projects',
