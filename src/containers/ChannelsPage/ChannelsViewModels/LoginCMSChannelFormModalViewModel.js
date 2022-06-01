@@ -18,7 +18,6 @@ class LoginCMSChannelFormModalViewModel {
   }
 
   setForm = (form) => {
-    console.log('324234324324324234', form);
     this.form = form;
   };
 
@@ -56,7 +55,6 @@ class LoginCMSChannelFormModalViewModel {
 
   catchError = (error) => {
     notify('Something went wrong from Server response. Please try again.');
-    console.log(error);
   };
 }
 

@@ -26,8 +26,6 @@ class GlobalStore {
   async getMemberFeaturesMasterData() {
     const service = new AesirxBillingPlanApiService();
     const respondedData = await service.getFeaturesMember(this.memberId);
-    console.log('GlobalStore - getMemberFeaturesMasterData');
-    console.log(respondedData);
     this.memberFeaturesMasterData = respondedData;
     return this.memberFeaturesMasterData;
   }
@@ -35,8 +33,6 @@ class GlobalStore {
   async getProjectMasterData() {
     const projectApiService = new AesirxProjectApiService();
     const respondedData = await projectApiService.getProjectMasterData();
-    console.log('GlobalStore - getProjectMasterData');
-    console.log(respondedData);
     this.projectMasterData = respondedData;
     return this.projectMasterData;
   }
@@ -44,8 +40,6 @@ class GlobalStore {
   async getConnectedChannelsMasterData() {
     const PersonaApiService = new AesirxPersonaApiService();
     const respondedData = await PersonaApiService.getConnectedChannelByOrganisationId();
-    console.log('GlobalStore - getConnectedChannelsMasterData');
-    console.log(respondedData);
     this.connectedChannelsMasterData = respondedData;
     return respondedData;
   }
@@ -53,8 +47,6 @@ class GlobalStore {
   async getCampaignMasterData() {
     const campaignApiService = new AesirxCampaignApiService();
     const respondedData = await campaignApiService.getCampaignMasterData();
-    console.log('GlobalStore - getCampaignMasterData');
-    console.log(respondedData);
     this.campaignMasterData = respondedData;
     return respondedData;
   }
@@ -62,7 +54,6 @@ class GlobalStore {
   async getPersonaMasterData() {
     const PersonaApiService = new AesirxPersonaApiService();
     const respondedData = await PersonaApiService.searchPersonas();
-    console.log('GlobalStore - getPersonaMasterData', respondedData);
     this.personaMasterData = respondedData?.list;
     return this.personaMasterData;
   }
@@ -88,8 +79,6 @@ class GlobalStore {
 
         if (isForceProjectMasterData) {
           projectMasterData = await this.getProjectMasterData();
-          console.log('isForceProjectMasterData');
-          console.log(projectMasterData);
         } else {
           projectMasterData = this.projectMasterData
             ? this.projectMasterData
@@ -199,7 +188,6 @@ class GlobalStore {
 
       return result;
     } catch (error) {
-      console.log(error);
       return null;
     }
   }

@@ -21,8 +21,6 @@ class PersonaTemplateUtils {
   transformPersonaTemplateModelIntoTableDataRow = (personaModels) => {
     return personaModels
       .map((item) => {
-        console.log("Debug An Item");
-        console.log(item);
         return item.toTableRowData();
       })
       .reduce((arr, el) => {

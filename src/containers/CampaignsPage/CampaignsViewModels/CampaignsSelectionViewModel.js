@@ -36,19 +36,14 @@ class CampaignsSelectionViewModel {
   }
 
   openModal = () => {
-    console.log("openModal");
     this.show = true;
   };
 
   closeModal = () => {
-    console.log("closeModal");
     this.show = false;
   };
 
   setSelectionData = (data) => {
-    console.log("setSelectionData");
-    console.log(data);
-
     if (!this.multi) {
       this.campaignSelectionData = [];
     }
@@ -116,19 +111,14 @@ class CampaignsSelectionViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    console.log("callbackOnErrorHander");
-    console.log(error);
     notify(error.message);
   };
 
   callbackOnSuccessHandler = (campaignModelData) => {
-    console.log("callbackOnSuccessHandler - campaign selection");
-    console.log(campaignModelData);
     if (campaignModelData) {
       this.tableStatus = PAGE_STATUS.READY;
      
       this.campaigns = campaignModelData.toDropdownFullListValues();
-      console.log(this.campaigns);
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;
     }

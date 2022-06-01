@@ -32,33 +32,7 @@ class ComponentFormFieldTarget extends Component {
 
     this.formPropsData = this.props.formPropsData;
 
-    // this.fetchSearchTargetingFromFacebookData = _.throttle(
-    //   this.fetchSearchTargetingFromFacebookData.bind(this),
-    //   500
-    // );
   }
-
-  // fetchSearchTargetingFromFacebookData = async (inputValue, name) => {
-  //   const facebookDataAPIService = new AesirxFacebookDataApiService();
-  //   let response = null;
-  //   if (inputValue.length > 3) {
-  //     switch (name) {
-  //       case 'demographics':
-  //         response = await facebookDataAPIService.getDemographicsFromFacebookData(inputValue);
-  //         return this.filterLocation(inputValue, response?.facebook_data_demographics);
-  //       case 'interests':
-  //         response = await facebookDataAPIService.getInterestsFromFacebookData(inputValue);
-  //         console.log('responseinterests', response);
-  //         return this.filterLocation(inputValue, response?.facebook_data_interests);
-  //       case 'behaviors':
-  //         response = await facebookDataAPIService.getBehaviorsFromFacebookData(inputValue);
-  //         return this.filterLocation(inputValue, response?.facebook_data_behaviors);
-  //       default:
-  //     }
-  //   }
-
-  //   return [];
-  // };
 
   componentDidMount = async () => {
     const facebookDataAPIService = new AesirxFacebookDataApiService();
@@ -105,7 +79,6 @@ class ComponentFormFieldTarget extends Component {
             className: 'col-12',
             isMulti: true,
             changed: (data) => {
-              console.log('Demographicsdata', data);
               this.formPropsData[PERSONA_FIELD_KEY.DEMOGRAPHICS_SELECT] = data;
             },
             blurred: () => {
@@ -163,7 +136,6 @@ class ComponentFormFieldTarget extends Component {
   };
 
   render() {
-    console.log('ComponentFormFieldTarget render', this.dataSetupAds);
 
     const formSetting = this.generateFormSetting();
 

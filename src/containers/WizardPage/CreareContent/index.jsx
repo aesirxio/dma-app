@@ -20,14 +20,11 @@ class CreareContent extends Component {
   };
 
   render() {
-    console.log("[CreareContent] - re-render .........");
     let { match } = this.props;
     let selectedProjectIdFromWizardStep1 = null;
     if (match && match.params) {
       selectedProjectIdFromWizardStep1 = match.params.id;
     }
-    console.log("getIdProject", selectedProjectIdFromWizardStep1);
-
     return (
       <StepWizard isLazyMount={true} transitions={this.custom} className="px-3">
         <ContentFormGeneralWizard

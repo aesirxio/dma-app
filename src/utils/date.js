@@ -11,8 +11,6 @@ import Helper from './helper';
 const timezone = Helper.getTimezoneDefault();
 
 const formatDate = (date, withTime = false, convert = true) => {
-  console.log('formatDate', date);
-
   date = new Date(date);
 
   if (convert) {

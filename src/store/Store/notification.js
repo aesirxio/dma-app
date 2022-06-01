@@ -22,11 +22,7 @@ export default class NotificationStore {
 
   async getNotificationsService(memberID, callbackOnSuccess, callbackOnError) {
     try {
-      console.log('Notification Store - Fetch Notification');
       const repondedDataFromLibrary = await this.notificationService.getNotifications(memberID);
-
-      console.log('repondedDataFromLibrary repondedDataFromLibrary 32423432');
-      console.log(repondedDataFromLibrary);
 
       if (repondedDataFromLibrary) {
         runInAction(() => {
@@ -38,7 +34,6 @@ export default class NotificationStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -47,14 +42,12 @@ export default class NotificationStore {
 
   async markRead(notificationId, memberId, callbackOnSuccess, callbackOnError) {
     try {
-      console.log('Notification Store - Fetch Notification');
       await this.notificationService.markRead(notificationId, memberId);
 
       runInAction(() => {
         callbackOnSuccess();
       });
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -63,14 +56,12 @@ export default class NotificationStore {
 
   async markReadAll(memberId, callbackOnSuccess, callbackOnError) {
     try {
-      console.log('Notification Store - Fetch Notification');
       await this.notificationService.markReadAll(memberId);
 
       runInAction(() => {
         callbackOnSuccess();
       });
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });

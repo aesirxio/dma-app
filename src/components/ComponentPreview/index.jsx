@@ -46,8 +46,6 @@ class ComponentPreview extends Component {
   };
 
   handlePreview = (name) => {
-    console.log('name 12345678');
-    console.log(name);
     this.setState({
       getImagePreview: name,
     });

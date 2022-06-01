@@ -75,9 +75,6 @@ class ComponentFilter extends React.Component {
   }
 
   handleSelect = (events, name, isMulti) => {
-    console.log('handleSelect');
-    console.log(events);
-
     name = name + '[]';
     let values = null;
     let filter_values = null;
@@ -95,8 +92,6 @@ class ComponentFilter extends React.Component {
       }
     }
 
-    console.log(values);
-    // console.log(JSON.stringify(values));
     this.props.setFilter({...this.props.titleFilter ,[name] : values}, 3);
     this.setState({
       valueOption: values,

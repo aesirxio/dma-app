@@ -27,8 +27,6 @@ const ContentFormPage = observer(
 
       this.viewModel = this.props.viewModel.getFormViewModel();
 
-      console.log('ContentFormPage', this.viewModel);
-
       this.viewModel.init(this, this.props.match);
     }
 
@@ -86,8 +84,6 @@ const ContentFormPage = observer(
         'removed',
         'not'
       );
-
-      console.log('[ContentFormPage] - re-render .........', this.formPropsData, channelMasterData);
 
       return (
         <>

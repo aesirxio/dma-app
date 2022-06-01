@@ -30,32 +30,10 @@ const personaStore = new PersonaStore({
 const personaViewModel = new PersonaViewModel(personaStore);
 
 function Personas({ match }) {
-  console.log('Debugging Route Personas');
-  console.log(personaViewModel);
   return (
     <PersonaViewModelContextProvider viewModel={personaViewModel}>
       <div className="p-3">
         <h3>Only Agency Mode</h3>
-        {/* <Route exact path="/personas">
-          <div className="d-flex align-items-center justify-content-between mb-4">
-            <h2 className="text-blue-0">List Personas</h2>
-            <PersonaActionBar />
-          </div>
-          <PersonasList />
-        </Route>
-
-        <Route
-          exact
-          path={[
-            '/personas/create',
-            '/personas/create/bypersonatemplate/:id',
-            '/personas/edit/:id',
-          ]}
-        >
-          <div className="py-4 px-3">
-            <PersonaFormPage match={match} />
-          </div>
-        </Route> */}
       </div>
     </PersonaViewModelContextProvider>
   );

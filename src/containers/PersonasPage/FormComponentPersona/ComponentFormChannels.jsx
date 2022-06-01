@@ -33,8 +33,6 @@ class ComponentFormChannels extends Component {
     this.connectedChannelMasterData = this.props.connectedChannelMasterData;
 
     this.formPropsData = this.props.formPropsData;
-
-    console.log('thisconnectedChannelMasterData2121323', this.connectedChannelMasterData);
   }
 
   generateFormSetting = () => {
@@ -63,12 +61,6 @@ class ComponentFormChannels extends Component {
   };
 
   render() {
-    console.log(
-      'ComponentFormChannels render',
-      this.formPropsData,
-      this.connectedChannelMasterData
-    );
-
     const formSetting = this.generateFormSetting();
 
     return (

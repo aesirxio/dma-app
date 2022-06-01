@@ -50,8 +50,6 @@ class UpdateGeneralViewModel {
 
   callbackOnErrorHandler = (error) => {
     notify('Update unsuccessfully', 'error');
-    console.log('error');
-    console.log(error);
     this.successResponse.state = false;
     this.successResponse.content_id = error.result.content_id;
   };
@@ -81,10 +79,6 @@ class UpdateGeneralViewModel {
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.TIMEZONE] =
         result.timezone;
     } else {
-      console.log(
-        'this.updateGeneralViewModel.formPropsData',
-        this.updateGeneralViewModel.formPropsData
-      );
       if (this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] != null) {
         Storage.setItem(
           AUTHORIZATION_KEY.AVATAR,

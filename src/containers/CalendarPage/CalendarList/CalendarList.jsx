@@ -25,8 +25,6 @@ const CalendarList = observer(
     render() {
       const { tableStatus, contents, showView, showDate, searchContents } = this.listViewModel;
 
-      console.log('[CalendarList] render', contents);
-
       return tableStatus === PAGE_STATUS.LOADING ? (
         <Spinner />
       ) : (

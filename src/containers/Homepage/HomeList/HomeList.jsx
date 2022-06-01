@@ -54,9 +54,6 @@ const HomeList = observer(
       const { viewModel } = props;
 
       this.viewModel = viewModel ? viewModel : null;
-      console.log('HomeList - Debug View Model');
-      console.log(this.viewModel);
-
       this.projectListViewModel = this.viewModel ? this.viewModel.getProjectListViewModel() : null;
 
       this.campaignsListViewModel = this.viewModel

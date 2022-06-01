@@ -580,7 +580,6 @@ class ContentConnectedChannelsByOrganisationViewModel {
 
   renderChannelByOrganizationID = () => {
     this.formStatus = PAGE_STATUS.LOADING;
-    console.log('renderChannelByOrganizationID');
     this.contentsStore.getConnectedChannelsByOrganizationID(
       this.callbackOnSuccessHandler,
       this.callbackOnErrorHander
@@ -588,7 +587,6 @@ class ContentConnectedChannelsByOrganisationViewModel {
   };
 
   renderConnectedChannelByPersonaIds = (personaIds) => {
-    console.log('personaIds idsidsids viewModel', personaIds);
     this.contentsStore.getConnectedChannelByPersonaIds(
       this.callbackOnSuccessHandlerPersonaIds,
       this.callbackOnErrorHander,
@@ -661,41 +659,26 @@ class ContentConnectedChannelsByOrganisationViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    console.log('callbackOnErrorHander - content');
-    console.log(error);
     this.formStatus = PAGE_STATUS.READY;
-    //notify(error.message);
   };
 
   callbackOnSuccessHandler = (contentConnectedChannelsModel) => {
-    console.log('callbackOnSuccessHandler - contentConnectedChannelsModel ------');
     const resultInModel = contentConnectedChannelsModel ? contentConnectedChannelsModel : null;
-    console.log('resultInModel - resultInModel ------');
-    console.log(resultInModel);
     this.connectedChannels = resultInModel
       ? resultInModel.toListConnectedChannelsOnContentForm()
       : null;
 
     this.formStatus = PAGE_STATUS.READY;
-    console.log('this.connectedChannels - this.connectedChannels ------');
-    console.log(this.connectedChannels);
-
     this.getArrayConnectedChannelsFinal();
   };
 
   callbackOnSuccessHandlerPersonaIds = (contentConnectedChannelsModel) => {
-    console.log('callbackOnSuccessHandler - contentConnectedChannelsModel ------');
     const resultInModel = contentConnectedChannelsModel ? contentConnectedChannelsModel : null;
-    console.log('resultInModel - resultInModel ------');
-    console.log(resultInModel);
 
     this.getValueSelectedChannels = resultInModel
       ? resultInModel.toListConnectedChannelsOnContentForm()
       : null;
     this.formStatus = PAGE_STATUS.READY;
-    console.log('this.getValueSelectedChannels - this.getValueSelectedChannels ------');
-    console.log(this.getValueSelectedChannels);
-
     this.getArrayConnectedChannelsFinal();
   };
 

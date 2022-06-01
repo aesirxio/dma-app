@@ -27,8 +27,6 @@ class ContentFormAdsViewModel {
   setFromAdsData = (key, value, channeltype) => {
     this.previewData[key] = value;
     this.formPropsData[channeltype].setupAds[key] = value;
-
-    console.log('setFromAdsData', this.formPropsData);
   };
 
   setFromCampaignData = (key, value, channeltype) => {

@@ -31,8 +31,6 @@ class ContentUtils {
   transformContentModelIntoTableDataRow = (contentModels) => {
     return contentModels
       .map((item) => {
-        console.log('Debug An Item');
-        console.log(item);
         return item.toTableRowData();
       })
       .reduce((arr, el) => {
@@ -48,11 +46,8 @@ class ContentUtils {
     );
 
   setDataForChannels = (key, value, mode, formPropsData, channelTypeIds = []) => {
-    console.log('setDataForChannels', key, value, mode, formPropsData, channelTypeIds);
     const channelsData = formPropsData[CONTENT_FIELD_KEY.CHANNELS];
     if (mode === CONTENT_DESCRIPTION_MODE.BASIC) {
-      console.log(channelsData);
-
       let data = {};
 
       channelsData.forEach(({ list }) => {
@@ -68,19 +63,15 @@ class ContentUtils {
       }
     }
 
-    console.log(formPropsData);
   };
 
   getListSelectChannel = (contentData, channelMasterData, personaKey = false) => {
-    console.log('getListSelectChannel');
     const channelsData = !personaKey && contentData.getChannels();
     const selectedPage = !personaKey
       ? Object.keys(channelsData)
           .map((key) => channelsData[key].selectedPage.map(({ pageId }) => pageId))
           .reduce((arr, el) => [...arr, ...el], [])
       : contentData;
-
-    console.log('getListSelectChannel', contentData, channelsData, selectedPage);
 
     return channelMasterData
       .map((category) => ({

@@ -37,8 +37,6 @@ class CalendarListViewModel {
   };
 
   onFilter = (date, view) => {
-    console.log('onFilter', date, view);
-
     this.showDate = date;
     this.showView = view;
 
@@ -57,9 +55,6 @@ class CalendarListViewModel {
   });
 
   callbackOnErrorHander = (error) => {
-    console.log('callbackOnErrorHander');
-    console.log(error);
-
     this.tableStatus = PAGE_STATUS.READY;
   };
 
@@ -107,15 +102,9 @@ class CalendarListViewModel {
   };
 
   callbackOnSuccessHandler = (calendarModelData) => {
-    console.log('callbackOnSuccessHandler', calendarModelData);
-
     if (calendarModelData) {
       this.tableStatus = PAGE_STATUS.READY;
-      console.log('============1');
       const rowDataTransformed = this.toModelEvents(calendarModelData.event);
-      console.log('============2');
-      console.log('Row Data is Formatted');
-      console.log(rowDataTransformed);
       this.list = rowDataTransformed;
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;

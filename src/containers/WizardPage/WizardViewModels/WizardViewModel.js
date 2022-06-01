@@ -20,14 +20,8 @@ class WizardViewModel {
 
   constructor(channelsStore, contentStore) {
     if (channelsStore) {
-      console.log('WizardViewModel - Abstract');
-      console.log(channelsStore);
-      console.log(contentStore);
-
       this.channelsListViewModel = new ChannelsListViewModel(channelsStore);
       this.loginCMSChannelFormModalViewModel = new LoginCMSChannelFormModalViewModel(channelsStore);
-
-      console.log('this.channelsListViewModel - Abstract', this.channelsListViewModel);
 
       this.contentFormViewModel = new ContentFormViewModel(contentStore);
 
@@ -44,9 +38,6 @@ class WizardViewModel {
       this.contentFormViewModel.setContentDisplayProjectNameInWizardStep3ViewModel(
         this.contentDisplayProjectNameInWizardStep3ViewModel
       );
-
-      console.log('this.contentConnectedChannelsByOrganisationViewModel 11111');
-      console.log(this.contentConnectedChannelsByOrganisationViewModel);
     }
   }
 

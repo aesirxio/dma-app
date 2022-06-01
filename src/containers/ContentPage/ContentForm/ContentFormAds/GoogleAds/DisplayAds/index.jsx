@@ -17,8 +17,6 @@ const DisplayAds = observer((props) => {
 
   const setupAds = viewModel.formPropsData[CHANNEL_ADS_GOOGLE].setupAds ?? {};
 
-  console.log('setupAds1111', viewModel);
-
   const generateFormSetting = () => ({
     fields: [
       {
@@ -104,8 +102,6 @@ const DisplayAds = observer((props) => {
       },
     ],
   });
-
-  console.log('DisplayAds render', props);
 
   return <>{renderingGroupFieldHandler(generateFormSetting(), props.validator)}</>;
 });

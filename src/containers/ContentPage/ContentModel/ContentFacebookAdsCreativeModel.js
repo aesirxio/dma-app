@@ -5,7 +5,6 @@
 
 class ContentFacebookAdsCreativeModel {
   static convertSubmittedDataToAPIService(data) {
-    console.log('convertdatafacebookadscreative', data);
     const result = {
       object_story_spec: {
         link_data: {

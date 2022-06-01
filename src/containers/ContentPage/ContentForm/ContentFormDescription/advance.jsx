@@ -17,7 +17,6 @@ const ContentFormDescriptionAdvance = observer(({ formPropsData, onBlurDescripti
   const channelMasterData = context.getFormViewModel().channelMasterData;
   const channelData = ChannelUtils.getChannelByFilter(channelMasterData, 'removed', 'not');
 
-  console.log('ContentFormDescriptionAdvance render', channelData);
   return (
     <div className="accordion" id="accordionContentFormDescriptionAdvance">
       {channelData.map((channelType, index) => (

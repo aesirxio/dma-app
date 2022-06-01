@@ -19,12 +19,10 @@ const ButtonConnectGoogle = (props) => {
   const [error, setError] = useState(false);
 
   const onSuccess = (res) => {
-    console.log('onSuccess', res);
     socialLogin('google', res.accessToken);
   };
 
   const onFailure = (res) => {
-    console.log('onFailure', res);
     setError(true);
     notify('Login Google Failed: ' + res.details, 'error');
   };

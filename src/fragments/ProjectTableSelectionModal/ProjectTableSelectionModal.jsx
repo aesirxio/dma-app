@@ -24,8 +24,6 @@ const ProjectTableSelectionModal = observer(
       super(props);
 
       const { viewModel } = props;
-      console.log("projectTableSelectionModalViewModel - Debug View Model");
-      console.log(viewModel);
       this.projectTableSelectionModalViewModel = viewModel ? viewModel : null;
     }
 
@@ -46,10 +44,6 @@ const ProjectTableSelectionModal = observer(
       } = this.projectTableSelectionModalViewModel;
 
       if (!show) return null;
-
-      console.log("[ProjectTableSelectionModal] - re-render .........");
-
-      console.log(projectsMasterData);
 
       const tableRowHeader = [
         {

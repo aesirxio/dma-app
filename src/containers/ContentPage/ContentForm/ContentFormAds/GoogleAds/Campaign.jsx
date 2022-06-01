@@ -34,10 +34,7 @@ const Campaign = observer((props) => {
   const channelMasterData = viewFromModel.channelMasterData;
   const channelData = ChannelUtils.getChannelByFilter(channelMasterData, 'removed', 'not');
 
-  console.log('campaignData12313', campaignData);
-
   const generateFormSetting = () => {
-    console.log('Campaign generateFormSetting', viewModel.formPropsData);
     return {
       fields: [
         {

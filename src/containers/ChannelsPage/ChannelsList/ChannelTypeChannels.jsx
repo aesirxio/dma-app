@@ -21,8 +21,6 @@ const ChannelTypeChannels = observer(({ channelType }) => {
 
   const pages = channelType.getPages();
 
-  console.log('ChannelTypeChannels render', channelType);
-
   if (pages.length === 0) {
     return null;
   }

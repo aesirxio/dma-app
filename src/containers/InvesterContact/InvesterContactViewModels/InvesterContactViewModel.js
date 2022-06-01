@@ -12,7 +12,6 @@ class InvesterContactViewModel {
 
   constructor(investerContactStore) {
     if (investerContactStore) {
-      console.log("InvesterContactViewModel - Abstract");
       this.InvesterContactListViewModel = new InvesterContactListViewModel(
         investerContactStore
       );

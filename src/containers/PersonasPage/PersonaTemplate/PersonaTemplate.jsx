@@ -52,8 +52,6 @@ const PersonaTemplate = observer(
     };
 
     render() {
-      console.log("PersonaTemplate - render");
-      console.log(this.personaTemplateViewModel.personaTemplatesData);
       const personaTemplatesData = this.personaTemplateViewModel
         .personaTemplatesData;
 
@@ -67,8 +65,6 @@ const PersonaTemplate = observer(
                   <Swiper
                     spaceBetween={30}
                     slidesPerView={5}
-                    onSlideChange={() => console.log("slide change")}
-                    onSwiper={(swiper) => console.log()}
                     navigation
                   >
                     {personaTemplatesData.map((personaTemplate, key) => {

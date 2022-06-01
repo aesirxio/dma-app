@@ -22,14 +22,10 @@ const ContentActionBar = observer(
     constructor(props) {
       super(props);
       const { viewModel } = props;
-      console.log('ContentActionBar - Debug View Model');
-      console.log(viewModel);
       this.contentFormViewModel = viewModel ? viewModel.getFormViewModel() : null;
 
       this.contentsListViewModel = viewModel ? viewModel.getListViewModel() : null;
 
-      console.log('ContentActionBar - After binding class');
-      console.log(this.contentFormViewModel);
     }
 
     createContentHandler = (event) => {
@@ -41,7 +37,6 @@ const ContentActionBar = observer(
     };
 
     render() {
-      console.log('[ContentActionBar] - re-render .........');
 
       return (
         <div className="d-flex justify-content-end">

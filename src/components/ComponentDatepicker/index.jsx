@@ -80,8 +80,6 @@ class ComponentDatepicker extends React.Component {
     let endDateToFilter = new Date(endDate);
     endDateToFilter.setDate(endDate.getDate() + 1);
 
-    console.log('handleApply - debug');
-
     let { setGlobalFilter } = this.props;
 
     setGlobalFilter &&

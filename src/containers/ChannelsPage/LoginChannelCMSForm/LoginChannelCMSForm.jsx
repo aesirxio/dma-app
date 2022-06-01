@@ -77,8 +77,6 @@ class LoginChannelCMSForm extends Component {
   };
 
   render() {
-    console.log('LoginChannelCMSForm render', this.formPropsData);
-
     const formSetting = this.generateFormSetting();
     return (
       <Suspense fallback={<div>Loading...</div>}>

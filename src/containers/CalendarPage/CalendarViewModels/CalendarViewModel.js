@@ -10,7 +10,6 @@ class CalendarViewModel {
 
   constructor(calendarStore) {
     if (calendarStore) {
-      console.log("class CalendarViewModel- Abstract");
       this.calendarListViewModel = new CalendarListViewModel(calendarStore);
     }
   }

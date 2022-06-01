@@ -31,14 +31,10 @@ class MediaDamButton extends React.Component {
 
   componentDidMount() {
     this.modalSelectionDAMSession = Math.floor(Date.now() / 1000);
-    console.log('modalSelectionDAMSession', this.modalSelectionDAMSession);
-
     const type = this.props.video ? 'VIDEO_' : 'IMAGE_';
     this.modalSelectionDAMSession = type + this.modalSelectionDAMSession;
 
     this.roomID = 'DAM_BTN_WS_CLIENT_'.concat(this.modalSelectionDAMSession);
-    console.log('RoomID', this.roomID);
-
     this.socket = io(GENERAL_CONFIG.WEBSOCKET_ENDPOINT, {
       autoConnect: false,
     });
@@ -48,8 +44,6 @@ class MediaDamButton extends React.Component {
     }
 
     this.socket.on('connect', () => {
-      console.log('MediaDamButton socket his.roomID', this.roomID);
-
       this.socket.emit('join room', this.roomID);
       this.socket.on('response assets', this.onWebSocketCallbackSuccess);
     });
@@ -61,11 +55,6 @@ class MediaDamButton extends React.Component {
   }
 
   onWebSocketCallbackSuccess = (roomId, data) => {
-    console.log('WS - Event - response assets');
-    console.log('room id', roomId);
-    console.log('Data');
-    console.log(data);
-
     if (roomId === this.roomID && data) {
       this.closeModal();
       this.props.changed(data);
@@ -97,7 +86,6 @@ class MediaDamButton extends React.Component {
   };
 
   render() {
-    console.log('urlDam', this.urlDam);
     return (
       <>
         <button

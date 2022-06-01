@@ -35,8 +35,6 @@ class ComponentPlanPayment extends React.Component {
 
   render() {
     let { handleChangePlan, handleCancelPlan, subscriptionDetail } = this.props;
-    console.log('before render - ComponentPlanPayment');
-    console.log(subscriptionDetail);
     return (
       <div>
         <div className="d-flex">

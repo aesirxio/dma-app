@@ -34,14 +34,10 @@ class ProjectForm extends Component {
 
     this.viewModel = this.props.viewModel;
 
-    console.log('[ProjectForm] viewModel');
-    console.log(this.props.viewModel);
-
     this.viewModel.setForm(this);
   }
 
   generateFormSetting = () => {
-    console.log('re generate Form Setting', this.formPropsData);
     return [
       {
         fields: [
@@ -116,11 +112,6 @@ class ProjectForm extends Component {
   };
 
   populatingFormDataHandler = (data) => {
-    console.log('populatingFormDataHandler');
-    console.log(data);
-    console.log(data.getStartDate().original);
-    console.log(data.getEndDate().original);
-
     if (!data) return false;
 
     this.formPropsData[PROJECT_COLUMN_INDICATOR.NAME] = data.getName().value;
@@ -131,8 +122,6 @@ class ProjectForm extends Component {
       PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION
     ] = data.getShortDescriptionValue();
 
-    console.log('-- is DATA POPu ---');
-    console.log(this.formPropsData);
   };
 
   onDrop = (files) => {
@@ -140,8 +129,6 @@ class ProjectForm extends Component {
   };
 
   render() {
-    console.log('[Project - Form] - re-render .........');
-    console.log(this.formPropsData);
 
     const { formStatus, projectEditdata, editMode } = this.viewModel;
 

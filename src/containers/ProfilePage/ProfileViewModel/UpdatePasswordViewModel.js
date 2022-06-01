@@ -36,9 +36,6 @@ class UpdatePasswordViewModel {
   };
 
   callbackOnErrorHandler = (error) => {
-    console.log('error')
-    console.log(this.successResponse)
-    console.log(error)
     this.successResponse.state = false;
     this.successResponse.content_id = error.result.content_id;
   };

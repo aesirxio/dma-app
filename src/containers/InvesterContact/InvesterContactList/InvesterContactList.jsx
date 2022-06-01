@@ -18,8 +18,6 @@ const InvesterContactList = observer(
     constructor(props) {
       super(props);
       const { viewModel } = props;
-      console.log('InvesterContactList - Debug View Model');
-      console.log(viewModel);
 
       this.investerContactListViewModel = viewModel
         ? viewModel.getInvesterContactListViewModel()

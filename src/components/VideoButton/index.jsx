@@ -33,10 +33,7 @@ class VideoButton extends Component {
 
   componentDidMount() {
     this.modalSelectionDAMSession = Math.floor(Date.now() / 1000);
-    console.log('modalSelectionDAMSession', this.modalSelectionDAMSession);
-
     this.roomID = 'DAM_BTN_WS_CLIENT_'.concat(this.modalSelectionDAMSession);
-    console.log('RoomID', this.roomID);
     // WS Client gets started a CONNETION
     this.socket.connect();
 
@@ -57,11 +54,6 @@ class VideoButton extends Component {
   }
 
   onWebSocketCallbackSuccess = (roomId, data) => {
-    console.log('WS - Event - response assets');
-    console.log('room id', roomId);
-    console.log('Data');
-    console.log(data);
-
     if (roomId === this.roomID && data) {
       this.closeModal();
       this.socket.disconnect();

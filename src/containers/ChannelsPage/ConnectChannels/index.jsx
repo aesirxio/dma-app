@@ -25,17 +25,9 @@ const ConnectChannels = observer(
     constructor(props) {
       super(props);
       const { viewModel } = props;
-      console.log('ChannelsList - Debug View Model');
-      console.log(viewModel);
-
       this.viewModel = viewModel;
 
       this.channelsListViewModel = viewModel ? viewModel.getChannelsListViewModel() : null;
-
-      console.log('this.channelsListViewModel - Debug View Model');
-      console.log(this.channelsListViewModel);
-      console.log('this.channelsListViewModel.mustUpgrade 1111');
-      console.log(this.channelsListViewModel ? this.channelsListViewModel.mustUpgrade : false);
 
       this.loginCMSChannelFormModalViewModel = viewModel
         ? viewModel.getLoginCMSChannelFormModalViewModel()
@@ -54,7 +46,6 @@ const ConnectChannels = observer(
     }
 
     componentDidMount() {
-      console.log('componentDidMount');
       this.channelsListViewModel.resetObservableProperties();
       this.channelsListViewModel.initMemberFeaturesMasterData();
 
@@ -222,7 +213,6 @@ const ConnectChannels = observer(
     };
 
     onFailureConnectChannels = (err) => {
-      console.log('hung test');
     };
 
     onSuccessGoogleMyBusinessConnect = (res) => {
@@ -282,11 +272,6 @@ const ConnectChannels = observer(
         listGoogleAdsAccountConnected,
         tableStatus,
       } = this.channelsListViewModel;
-
-      console.log('listLinkedinFanpageConnectedobsevable');
-      console.log(listLinkedinFanpageConnected);
-
-      console.log('youtubeConnected2', youtubeConnected);
 
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;

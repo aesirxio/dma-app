@@ -24,20 +24,11 @@ const ProjectFormWizard = observer(
       super(props);
 
       const { viewModel } = props;
-      console.log('ProjectFormWizard - Debug View Model');
-      console.log(viewModel);
       this.projectFormModalViewModel = viewModel ? viewModel.getFormModalViewModel() : null;
-
-      console.log('After binding class');
-      console.log(this.projectFormModalViewModel);
     }
 
     isFormValid = () => {
-      console.log('isFormValid');
-      console.log(this.formPropsData);
       if (this.validator.allValid()) {
-        console.log('[is Form Valid]');
-
         return true;
       } else {
         this.validator.showMessages();
@@ -54,8 +45,6 @@ const ProjectFormWizard = observer(
     };
 
     render() {
-      console.log('[ProjectFormWizard] - re-render .........');
-
       const { tableStatus } = this.projectFormModalViewModel;
 
       return tableStatus === PAGE_STATUS.LOADING ? (

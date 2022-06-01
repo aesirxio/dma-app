@@ -13,7 +13,6 @@ export default class HomeStore {
 
       return await billingPlanService.getMemberSubscriptionDetail();
     } catch (error) {
-      console.log(error);
       return null;
     }
   };
@@ -22,7 +21,6 @@ export default class HomeStore {
     try {
       const newsService = new AesirxNewsApiService();
       const responsedDataFromLibary = await newsService.getNews();
-      console.log('News - getNews from API', responsedDataFromLibary);
       if (responsedDataFromLibary) {
         runInAction(() => {
           callbackOnSuccess(responsedDataFromLibary);
@@ -33,7 +31,6 @@ export default class HomeStore {
         });
       }
     } catch (error) {
-      console.log(error);
       return null;
     }
   };

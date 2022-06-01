@@ -39,8 +39,6 @@ const ContentFormPublish = observer(
     render() {
       const mode = this.formPropsData[CONTENT_FIELD_KEY.MODE];
 
-      console.log('ContentFormPublish render', this.formPropsData);
-
       return (
         <>
           <h3 className="mb-4">Publish</h3>

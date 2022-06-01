@@ -35,14 +35,9 @@ const ConnectChannel = observer(
       super(props);
 
       const { viewModel } = props;
-      console.log('viewModel - Debug View Model');
-      console.log(viewModel);
-
       this.viewModel = viewModel ? viewModel : null;
 
       this.channelsListViewModel = viewModel ? viewModel.getChannelsListViewModel() : null;
-
-      console.log('this.channelsListViewModel - Debug View Model');
 
       this.loginCMSChannelFormModalViewModel = viewModel
         ? viewModel.getLoginCMSChannelFormModalViewModel()
@@ -185,8 +180,6 @@ const ConnectChannel = observer(
     onRequestGoogleConnect = (req, res) => {};
 
     onSuccessFacebookConnect = (response) => {
-      console.log('onSuccessFacebookConnect');
-
       window.FB.api('me/accounts', (response) => {
         if (response) {
           const connected = response.data.map((item) => item.id);
@@ -222,7 +215,6 @@ const ConnectChannel = observer(
     };
 
     onFailureConnectChannels = (err) => {
-      console.log('hung test');
     };
 
     onSuccessGoogleMyBusinessConnect = (res) => {

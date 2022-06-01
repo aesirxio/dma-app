@@ -103,7 +103,6 @@ const useGoogleLogin = ({
         }
 
         window.gapi.load('auth2', () => {
-          console.log('window.gapi.load');
           const GoogleAuth = window.gapi.auth2.getAuthInstance();
           if (!GoogleAuth) {
             window.gapi.auth2.init(params).then(

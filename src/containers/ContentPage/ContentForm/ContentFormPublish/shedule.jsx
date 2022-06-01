@@ -96,8 +96,6 @@ const ContentFormPublishShedule = observer(({ formPropsData, channelCategory = n
     );
   }, [formPropsData, mode, startTime, channelTypesIds]);
 
-  console.log('ContentFormPublishShedule render', formPropsData, channelTypesIds());
-
   return (
     <>
       <div className="d-flex mb-3">

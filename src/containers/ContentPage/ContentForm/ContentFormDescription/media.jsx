@@ -106,22 +106,12 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
 
   const mediaChannel = ContentUtils.hasMediaChannel(channelData);
 
-  console.log('ContentFormDescriptionMedia render', mediaChannel);
 
   return (
     <div className="px-3 py-2 bg-blue-3 wr_description_image_asset">
       <div className="d-flex flex-wrap justify-content-start">
         {mediaChannel.dam && (
           <>
-            {/* <div className="me-2 mt-1 mb-1">
-              <CanvaButton
-                data={canvaAssets}
-                changed={handleCanva}
-                canvaIndexToEdit={canvaIndexToEdit}
-                canvaEditItem={canvaEditItem}
-              />
-            </div> */}
-
             <div className="me-2 mt-1 mb-1">
               <MediaDamButton changed={handleDam} />
             </div>

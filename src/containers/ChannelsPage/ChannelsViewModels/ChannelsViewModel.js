@@ -12,7 +12,6 @@ class ChannelsViewModel {
 
   constructor(channelsStore) {
     if (channelsStore) {
-      console.log('ChannelsViewModel - Abstract');
       this.channelsListViewModel = new ChannelsListViewModel(channelsStore);
       this.loginCMSChannelFormModalViewModel = new LoginCMSChannelFormModalViewModel(channelsStore);
       this.loginCMSChannelFormModalViewModel.setChannelsListViewModelInstance(

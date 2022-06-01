@@ -16,7 +16,6 @@ class CampaignsViewModel {
 
   constructor(campaignsStore) {
     if (campaignsStore) {
-      console.log("CampaignsViewModel - Abstract");
       this.campaignsFormModalViewModel = new CampaignsFormModalViewModel(
         campaignsStore
       );

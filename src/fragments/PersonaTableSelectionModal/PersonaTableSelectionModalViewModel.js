@@ -86,7 +86,6 @@ class PersonaTableSelectionModalViewModel {
     if (!this.personasSelectionData) return null;
     const convertedInArray = this.personasSelectionData
       .map((item) => {
-        console.log("itemitemitemitemitem", item);
         return item[PERSONA_TABLE_SELECTION_MODAL_COLUMN_INDICATOR.ID];
       })
       .reduce((arr, el) => {
@@ -107,7 +106,6 @@ class PersonaTableSelectionModalViewModel {
   };
 
   loadDataIntoUI = () => {
-    console.log("loadDataIntoUI");
     this.tableStatus = PAGE_STATUS.LOADING;
     this.fragmentStore.getPersonaMasterData(
       this.callbackOnSuccessHandler,
@@ -125,22 +123,15 @@ class PersonaTableSelectionModalViewModel {
   }
 
   callbackOnErrorHander = (error) => {
-    console.log("callbackOnErrorHander");
-    console.log(error);
     notify(error.message);
   };
 
   callbackOnSuccessHandler = (personaModelData) => {
-    console.log("callbackOnSuccessHandler - persona selection");
-    console.log(personaModelData);
     if (personaModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 
       this.personasMasterData = personaModelData.toDropdownFullListValues();
-      // NEW
       this.getDataSelectOptions = personaModelData.toDropdownListValues();
-      console.log("toTableRowsData");
-      console.log(this.personaDataOptions);
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;
     }

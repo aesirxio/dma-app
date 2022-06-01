@@ -10,7 +10,6 @@ import Ads from './Ads';
 import Campaign from './Campaign';
 
 const ContentFormAdsFacebookAds = (props) => {
-  console.log('ContentFormAdsFacebookAds', props.channelData);
 
   return (
     <div className="pt-3">

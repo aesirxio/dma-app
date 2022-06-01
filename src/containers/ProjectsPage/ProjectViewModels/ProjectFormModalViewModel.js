@@ -33,8 +33,6 @@ class ProjectFormModalViewModel {
   };
 
   setEditProject = (data) => {
-    console.log('Set edit data for project:', typeof data[0]);
-    console.log(data[0]);
     this.editMode = true;
     this.formStatus = PAGE_STATUS.READY;
 
@@ -87,14 +85,9 @@ class ProjectFormModalViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    console.log('callbackOnErrorHander');
-    console.log(error);
   };
 
   callbackOnSuccessHandler = (projectId) => {
-    console.log('callbackOnSuccessHandler');
-    console.log(projectId);
-
     this.closeModal();
 
     if (history.location.pathname === '/wizard/createproject') {

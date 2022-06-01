@@ -15,10 +15,8 @@ class ContentConnectedChannelsModel extends BaseModel {
   unTransformedItems = [];
   constructor(entities) {
     if (entities) {
-      console.log('constructor - ContentConnectedChannelsModel');
       super(entities);
       const organizationChannels = entities;
-      console.log(organizationChannels);
       this.unTransformedItems = organizationChannels;
       this.items = organizationChannels.map((element) => {
         return new ContentConnectedChannelItemModel(element);
@@ -58,8 +56,6 @@ class ContentConnectedChannelItemModel extends BaseItemModel {
 
   toConnectedChannelItemOnContentForm = () => {
     let icoImage = null;
-    console.log('this.channelName.toLowerCase()');
-    console.log(this.channelName.toLowerCase());
     switch (this.channelName.toLowerCase()) {
       case 'facebook':
         icoImage = '/assets/images/facebook.png';

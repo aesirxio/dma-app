@@ -38,8 +38,6 @@ class BannerLeft extends React.Component {
                 spaceBetween={20}
                 slidesPerView={1}
                 pagination={{ clickable: true }}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log()}
               >
                 {dataSlider.map((value, key) => {
                   return (

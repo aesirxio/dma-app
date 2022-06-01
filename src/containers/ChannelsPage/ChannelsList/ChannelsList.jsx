@@ -24,8 +24,6 @@ const ChannelsList = observer(
 
       this.channelsListViewModel = viewModel ? viewModel.getChannelsListViewModel() : null;
 
-      console.log('ChannelsList - Debug View Model', this.channelsListViewModel);
-
       ChannelCallbackNotify.__init(this.channelsListViewModel);
     }
 
@@ -43,8 +41,6 @@ const ChannelsList = observer(
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
       }
-
-      console.log('ChannelsList - render', channelsData);
 
       return (
         <div className="py-4 px-3">

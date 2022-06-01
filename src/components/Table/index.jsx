@@ -211,18 +211,12 @@ const Table = ({
   }, [state.hiddenColumns]);
 
   const setGlobalFilter = (dataFilter) => {
-    console.log('setGlobalFilter');
-    console.log(dataFilter);
-    console.log(pageSize);
     if (searchFunction !== undefined) {
-      console.log(dataFilter);
 
       const finalDataFilter = {
         ...getState.dataFilter,
         ...dataFilter,
       };
-      console.log(finalDataFilter);
-      // setDataFilter(finalDataFilter);
       setState({
         ...getState,
         dataFilter: finalDataFilter,

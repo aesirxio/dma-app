@@ -16,8 +16,6 @@ import Helper from '../../../utils/helper';
 
 class PersonaModel {
   constructor(data) {
-    console.log('PersonaModel2222', data);
-
     this.id = data[ESI_PERSONA_FIELD_KEY.ID] ?? 0;
     this.name = data[ESI_PERSONA_FIELD_KEY.NAME] ?? '';
     this.avatar_2 = data[ESI_PERSONA_FIELD_KEY.AVATAR_2]
@@ -342,14 +340,10 @@ class PersonaModel {
       [name.columnName]: name.value,
       [createdDate.columnName]: createdDate.value,
       [updatedDate.columnName]: updatedDate.value,
-      // [image.columnName]: image.value,
-      //[channels.columnName]: channels.value,
     };
   };
 
   static convertSubmittedDataToAPIService(personaData) {
-    console.log('convertSubmittedDataToAPIService', personaData);
-
     const result = personaData
       ? {
           [ESI_PERSONA_FIELD_KEY.ID]: personaData[PERSONA_FIELD_KEY.ID] ?? null,

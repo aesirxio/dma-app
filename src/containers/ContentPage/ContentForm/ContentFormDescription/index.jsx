@@ -33,13 +33,7 @@ const ContentFormDescription = observer(({ formPropsData, onBlurDescription }) =
       ? CONTENT_DESCRIPTION_MODE.ADVANCE
       : CONTENT_DESCRIPTION_MODE.BASIC;
 
-    console.log(
-      'formPropsData[CONTENT_FIELD_KEY.MODE]11111',
-      formPropsData[CONTENT_FIELD_KEY.MODE]
-    );
   }, [formPropsData, mode]);
-
-  console.log('ContentFormDescription render', mode);
 
   return (
     <>

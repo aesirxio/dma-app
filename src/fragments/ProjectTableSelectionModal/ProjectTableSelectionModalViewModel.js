@@ -79,8 +79,6 @@ class ProjectTableSelectionModalViewModel {
   };
 
   getSelectedIDs = () => {
-    console.log('this.projectsSelectionData');
-    console.log(this.projectsSelectionData);
     if (!this.projectsSelectionData) return null;
     const convertedInArray = this.projectsSelectionData
       .map((item) => {
@@ -112,21 +110,16 @@ class ProjectTableSelectionModalViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    console.log('callbackOnErrorHander');
-    console.log(error);
     notify(error.message);
   };
 
   callbackOnSuccessHandler = (projectModelData) => {
-    console.log('callbackOnSuccessHandler - campaign selection');
-    console.log(projectModelData);
     if (projectModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 
       this.projectsMasterData = projectModelData.toTableRowsData();
       // NEW
       this.getDataSelectOptions = projectModelData.toDropdownListValues();
-      console.log(this.projectsMasterData);
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;
     }
