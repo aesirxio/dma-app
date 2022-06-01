@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import React, { Component, lazy } from 'react';
 import { Dropdown } from 'react-bootstrap';
@@ -51,11 +51,13 @@ class CampaignsActionBar extends Component {
     return (
       <div className="d-flex justify-content-end">
         <Dropdown className="me-3">
-          <Dropdown.Toggle variant="info" id="actions">
+          <Dropdown.Toggle className="p-3" variant="info" id="actions">
             Choose an action
           </Dropdown.Toggle>
           <Dropdown.Menu className="w-100">
-            <Dropdown.Item onClick={this.handerDeleteCampaigns}>Delete</Dropdown.Item>
+            <Dropdown.Item className="px-3 py-2" onClick={this.handerDeleteCampaigns}>
+              Delete
+            </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <ButtonNormal

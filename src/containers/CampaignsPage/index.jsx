@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import React, { lazy } from 'react';
 
@@ -28,7 +28,7 @@ const campaignsViewModel = new CampaignsViewModel(campaignsStore);
 function Campaigns() {
   return (
     <CampaignsViewModelContextProvider viewModel={campaignsViewModel}>
-      <div className="py-4 px-3">
+      <div className="py-4 px-3 h-100">
         <>
           <div className="d-flex align-items-center justify-content-between mb-4 d-none">
             <h2 className="text-blue-0">Campaigns Statistics</h2>

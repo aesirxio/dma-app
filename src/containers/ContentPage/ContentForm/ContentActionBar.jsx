@@ -47,11 +47,13 @@ const ContentActionBar = observer(
         <div className="d-flex justify-content-end">
           {/*  TODO Move to filter block */}
           <Dropdown className="me-3">
-            <Dropdown.Toggle variant="info" id="actions">
+            <Dropdown.Toggle className="p-3" variant="info" id="actions">
               Choose an action
             </Dropdown.Toggle>
             <Dropdown.Menu className="w-100">
-              <Dropdown.Item onClick={this.handerDeleteContent}>Delete</Dropdown.Item>
+              <Dropdown.Item className="px-3 py-2" onClick={this.handerDeleteContent}>
+                Delete
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Link to="/content/create" className="btn btn-success">
