@@ -56,7 +56,10 @@ const ContentActionBar = observer(
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-          <Link to="/content/create" className="btn btn-success">
+          <Link
+            to="/content/create"
+            className="btn btn-success d-flex align-items-center justify-content-center"
+          >
             <i className="me-2">
               <FontAwesomeIcon icon={faPlus} />
             </i>
