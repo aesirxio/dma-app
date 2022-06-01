@@ -43,11 +43,6 @@ const ContentsList = observer(
 
       return [
         {
-          name: 'personas',
-          option: this.filterFormViewModel.personaMasterData,
-          isMulti: true,
-        },
-        {
           name: 'campaigns',
           option: this.filterFormViewModel.campaignMasterData,
           isMulti: true,

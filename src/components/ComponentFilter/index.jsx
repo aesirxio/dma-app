@@ -1,21 +1,13 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import React from 'react';
 
 import SelectComponent from '../Select';
 
 let data = [
-  {
-    name: 'Persona',
-    option: [
-      { value: 'persona1', label: 'Persona 1' },
-      { value: 'persona2', label: 'Persona 2' },
-      { value: 'persona3', label: 'Persona 3' },
-    ],
-  },
   {
     name: 'Organisation',
     option: [
@@ -97,7 +89,7 @@ class ComponentFilter extends React.Component {
 
     console.log(values);
     // console.log(JSON.stringify(values));
-    this.props.setFilter({...this.props.titleFilter ,[name] : values}, 3);
+    this.props.setFilter({ ...this.props.titleFilter, [name]: values }, 3);
     this.setState({
       valueOption: values,
     });
