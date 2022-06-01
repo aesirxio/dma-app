@@ -13,7 +13,6 @@ import './index.scss';
 
 const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) => {
   const handleGoToPage = (i) => {
-    console.log('handleGoToPage', isList);
     listViewModel.getPagination(i, isList);
   };
 

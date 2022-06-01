@@ -25,8 +25,6 @@ class ListConnectedChannelModal extends React.Component {
     };
 
     this.viewModel = this.props.viewModel ? this.props.viewModel : null;
-    console.log('Debuggin -------- ListConnectedChannel ----- View Model');
-    console.log(this.viewModel);
   }
 
   handleSlectChannels = (des, img) => {
@@ -96,8 +94,6 @@ class ListConnectedChannelModal extends React.Component {
       : '';
 
     if (this.props.isBackSaveData && this.props.isDeleteConnectChannel) {
-      console.log('this.viewModel.arrayConnectedChannelsFinalDelete.length');
-      console.log(this.viewModel.arrayConnectedChannelsFinalDelete.length);
       if (this.viewModel.arrayConnectedChannelsFinalDelete.length >= 1) {
         arrayConnectedChannelsFinal = this.viewModel.arrayConnectedChannelsFinalDelete;
       }

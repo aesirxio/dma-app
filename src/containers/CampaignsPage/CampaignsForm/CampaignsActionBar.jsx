@@ -20,9 +20,6 @@ class CampaignsActionBar extends Component {
     super(props);
 
     const { viewModel } = props;
-    console.log('CampaignsActionBar - Debug View Model');
-    console.log(viewModel);
-
     this.campaignsFormModalViewModal = viewModel ? viewModel.getFormModalViewModel() : null;
 
     this.campaignsListViewModel = viewModel ? viewModel.getListViewModel() : null;
@@ -47,7 +44,6 @@ class CampaignsActionBar extends Component {
   };
 
   render() {
-    console.log('[CampaignsActionBar] - re-render .........');
     return (
       <div className="d-flex justify-content-end">
         <Dropdown className="me-3">

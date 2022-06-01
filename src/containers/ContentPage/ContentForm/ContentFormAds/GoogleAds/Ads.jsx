@@ -34,7 +34,6 @@ const Ads = observer((props) => {
   const handleNext = () => {
     props.formPropsData[CONTENT_FIELD_KEY.ADS] = viewModel.formPropsData;
 
-    console.log('handleNext', validator);
     if (validator.allValid()) {
       props.nextStep();
     } else {
@@ -46,8 +45,6 @@ const Ads = observer((props) => {
     props.formPropsData[CONTENT_FIELD_KEY.ADS] = viewModel.formPropsData;
     viewModel.parentPreviousStep();
   };
-
-  console.log('Ads render', viewModel);
 
   return (
     <>

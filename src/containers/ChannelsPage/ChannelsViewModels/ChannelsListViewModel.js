@@ -52,8 +52,6 @@ class ChannelsListViewModel {
   };
 
   setChannelsDataFromWebsocket = (channelsData) => {
-    console.log('setChannelsDataFromWebsocket');
-    console.log(channelsData);
     this.channelsData = ChannelUtils.transformChannelResponseIntoModel(JSON.parse(channelsData));
   };
 
@@ -131,7 +129,6 @@ class ChannelsListViewModel {
 
   catchError = (error) => {
     notify('Something went wrong from Server response. Please try again.');
-    console.log(error);
   };
 }
 

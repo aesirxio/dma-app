@@ -23,7 +23,6 @@ const AdGroup = observer((props) => {
   const adGroupData = viewModel.formPropsData[CHANNEL_ADS_FACEBOOK].ad_group ?? {};
 
   const generateFormSetting = () => {
-    console.log('AdGroup generateFormSetting', viewModel.formPropsData);
     return {
       fields: [
         {
@@ -52,7 +51,6 @@ const AdGroup = observer((props) => {
             <components.Placeholder {...props}>Search...</components.Placeholder>
           ),
           changed: (data) => {
-            console.log('datainterests', data);
             viewModel.setFromAdsGroupData('interests', data, CHANNEL_ADS_FACEBOOK);
           },
           blurred: () => {
@@ -73,71 +71,12 @@ const AdGroup = observer((props) => {
             <components.Placeholder {...props}>Search...</components.Placeholder>
           ),
           changed: (data) => {
-            console.log('databehaviors', data);
             viewModel.setFromAdsGroupData('behaviors', data, CHANNEL_ADS_FACEBOOK);
           },
           blurred: () => {
             this.validator.showMessageFor('behaviors');
           },
         },
-        // {
-        //   label: 'Locations',
-        //   key: 'adgroup_locationn',
-        //   type: FORM_FIELD_TYPE.LOCATION,
-        //   required: true,
-        //   validation: 'required',
-        //   isMulti: true,
-        //   classNameInput: 'btn-outline-primary',
-        //   all: 'no',
-        //   isAll: false,
-        //   value: adGroupData?.location,
-        //   changedAll: (data) => {},
-        //   changed: (data) => {
-        //     viewModel.setFromAdsGroupData('location', data, CHANNEL_ADS_FACEBOOK);
-        //   },
-        // },
-
-        // {
-        //   label: 'Age',
-        //   key: 'adgroup_age',
-        //   type: FORM_FIELD_TYPE.AGE,
-        //   valueFrom: adGroupData?.ageFrom,
-        //   valueTo: adGroupData?.ageTo,
-        //   required: true,
-        //   validation: 'required',
-        //   changed: (data, event) => {
-        //     switch (event.name) {
-        //       case 'age_from':
-        //         viewModel.setFromAdsGroupData('ageFrom', data, CHANNEL_ADS_FACEBOOK);
-        //         break;
-        //       case 'age_to':
-        //         viewModel.setFromAdsGroupData('ageTo', data, CHANNEL_ADS_FACEBOOK);
-        //         break;
-        //       default:
-        //     }
-        //   },
-        //   blurred: () => {
-        //     this.validator.showMessageFor('age from');
-        //   },
-        // },
-
-        // {
-        //   label: 'Gender',
-        //   key: 'gender',
-        //   type: FORM_FIELD_TYPE.RADIO,
-        //   option: [
-        //     { label: 'All', value: 'all' },
-        //     { label: 'Male', value: 'male' },
-        //     { label: 'Female', value: 'female' },
-        //   ],
-        //   value: adGroupData?.gender ? adGroupData?.gender : 'all',
-        //   required: true,
-        //   validation: 'required',
-        //   classNameInput: 'btn-outline-primary',
-        //   changed: (event) => {
-        //     viewModel.setFromAdsGroupData('gender', event.target.value, CHANNEL_ADS_FACEBOOK);
-        //   },
-        // },
       ],
     };
   };

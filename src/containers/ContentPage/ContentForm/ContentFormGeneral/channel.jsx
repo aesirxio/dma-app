@@ -23,8 +23,6 @@ const ContentFormGeneralChannel = observer(() => {
 
   const data = ChannelUtils.getChannelByFilter(channelsData, 'removed', 'not');
 
-  console.log('ContentFormGeneralChannel render', channelsData);
-
   return (
     <div className=" d-flex flex-wrap">
       <div className="d-flex align-items-center justify-content-between mb-3 w-100">

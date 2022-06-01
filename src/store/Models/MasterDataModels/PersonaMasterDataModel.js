@@ -19,7 +19,6 @@ class PersonaMasterDataItemModel extends BaseMasterDataItemModel {
   }
 
   toDropdownFullSelectionItem = () => {
-    console.log('toDropdownFullSelectionItem - debug');
     return {
       [PERSONA_FIELD_KEY.ID]: this.id ?? 0,
       [PERSONA_FIELD_KEY.NAME]: this.name ?? '',
@@ -39,8 +38,6 @@ class PersonaMasterDataModel extends BaseMasterDataModel {
   }
 
   toDropdownFullListValues = () => {
-    console.log('toDropdownFullListValues - debug');
-
     if (!this.items) return null;
 
     return this.items.map((element) => {

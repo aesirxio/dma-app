@@ -14,8 +14,6 @@ class ModalComponent extends React.Component {
   render() {
     let { header, footer, body, show, onHide, dialogClassName } = this.props;
 
-    console.log('ModalComponent render', this.props);
-
     return (
       <Modal show={show} onHide={onHide} centered dialogClassName={dialogClassName}>
         <Modal.Header closeButton className="px-4 border-bottom-0">

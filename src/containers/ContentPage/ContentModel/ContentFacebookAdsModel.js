@@ -7,7 +7,6 @@ class ContentFacebookAdsModel {
   dataAds = {};
 
   constructor(data) {
-    console.log('dataFacebookAdsEdit', data);
     this.dataAds = {
       setupAds: {
         ad_name: data?.ad?.name,
@@ -33,7 +32,6 @@ class ContentFacebookAdsModel {
   getDataAds = () => this.dataAds;
 
   static convertSubmittedDataToAPIService(data) {
-    console.log('convertdatafacebookads', data);
 
     if (!data.campaign.name) {
       return null;

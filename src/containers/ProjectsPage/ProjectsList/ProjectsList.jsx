@@ -24,28 +24,12 @@ const ProjectsList = observer(
       this.formModalViewModal.getProject(row.id);
     };
 
-    // handle = (data) => {
-    //   this.listViewModel.projectIdsSelected = data
-    //     .map((item) => {
-    //       console.log('Debug An Item');
-    //       console.log(item);
-    //       return item[PROJECT_COLUMN_INDICATOR.ID];
-    //     })
-    //     .reduce((arr, el) => {
-    //       return arr.concat(el);
-    //     }, []);
-    // };
-
     _handleList = () => {
       this.listViewModel.isList = !this.listViewModel.isList;
     };
 
     render() {
-      console.log('[Quick Edit Product] - re-render .........');
       const { tableStatus, projects, pagination } = this.listViewModel;
-
-      console.log('projects api, projects api', projects);
-      console.log('pagination pagination', pagination);
 
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;

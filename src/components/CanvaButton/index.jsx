@@ -14,13 +14,11 @@ class CanvaButton extends React.PureComponent {
   }
 
   canvaEditHandler = ({index, id, designId}) => {
-    console.log("Editing...")
     canvaApi.editDesign({
       design: {
         id: designId,
       },
       onDesignOpen: (opts) => {
-        console.log(opts.designId);
       },
       onDesignPublish: (opts) => {
         this.props.canvaEditItem(index, id, opts);
@@ -49,16 +47,10 @@ class CanvaButton extends React.PureComponent {
   };
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log(prevProps);
-    console.log(prevState);
-    console.log(snapshot);
 
   }
 
   render() {
-    console.log('[CanvaButton] render');
-    console.log('[CanvaButton canvaApi] ', canvaApi);
-
     return (
       <>
         <button

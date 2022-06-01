@@ -41,11 +41,9 @@ const CampaignsList = observer(
     };
 
     handleExpanded = (e, row) => {
-      console.log('rowrowrowrowrowrowrowrowrow', row);
       this.listViewModel.getContentByIdCampaign(row[this.key]);
     };
     render() {
-      console.log('[Quick Edit Product] - re-render .........');
       const { tableStatus, campaigns, pagination } = this.listViewModel;
 
       const tableRowHeader = [
@@ -81,7 +79,6 @@ const CampaignsList = observer(
           accessor: CAMPAIGNS_FIELD_KEY.STATUS,
           className: 'status',
           Cell: ({ value }) => {
-            console.log('value value sub', value);
             return (
               <span className={`badge ${value.className} mw-100 h-35 d-table-cell align-middle`}>
                 {value.text}
@@ -106,26 +103,8 @@ const CampaignsList = observer(
           Header: 'End date',
           accessor: CAMPAIGNS_FIELD_KEY.END_DATE,
         },
-        // {
-        //   Header: 'Number of post that need to do',
-        //   accessor: CAMPAIGNS_FIELD_KEY.NEED_TO_DO,
-        // },
-        // {
-        //   Header: 'Number of the schedude post',
-        //   accessor: CAMPAIGNS_FIELD_KEY.SCHEDUDE_POST,
-        // },
-        // {
-        //   Header: 'Number of the published content',
-        //   accessor: CAMPAIGNS_FIELD_KEY.PUBLISHED_CONTENT,
-        // },
-        // {
-        //   Header: 'Percentage campaign complete (%)',
-        //   accessor: CAMPAIGNS_FIELD_KEY.PROGRESS,
-        // },
       ];
 
-      console.log('Row Data is tableRowHeader');
-      console.log(this.tableRowHeader);
       const dataFormFilter = this.getDataFormFilter();
 
       return (

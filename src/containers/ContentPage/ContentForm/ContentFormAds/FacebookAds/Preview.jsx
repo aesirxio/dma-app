@@ -12,15 +12,12 @@ import ChannelUtils from '../../../../ChannelsPage/ChannelUtils/ChannelUtils';
 import '../index.scss';
 
 const Preview = observer((props) => {
-  console.log('Preview render');
   const contentContext = useContext(ContentViewModelContext);
   const viewModel = contentContext.getFormViewModel();
 
   let dataAdCreative = ContentFacebookAdsCreativeModel.convertSubmittedDataToAPIService(
     props.previewData
   );
-
-  console.log('dataAdCreative123', props.previewData);
 
   const channelMasterData = viewModel.channelMasterData;
   const channelData = ChannelUtils.getChannelByFilter(channelMasterData, 'removed', 'not');

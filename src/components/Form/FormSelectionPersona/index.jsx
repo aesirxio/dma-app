@@ -20,10 +20,6 @@ class FormSelectionPersona extends Component {
   render() {
     const { multi } = this.viewModel;
 
-    console.log('this.field.getValueSelected 123');
-    console.log(this.field.getValueSelected);
-    console.log(this.field.getDataSelectOptions);
-
     return (
       <SelectComponent
         value={this.field.getValueSelected}

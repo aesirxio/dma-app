@@ -39,19 +39,14 @@ class PersonasSelectionViewModel {
   }
 
   openModal = () => {
-    console.log("openModal");
     this.show = true;
   };
 
   closeModal = () => {
-    console.log("closeModal");
     this.show = false;
   };
 
   setSelectionData = (data) => {
-    console.log("setSelectionData");
-    console.log(data);
-
     if (!this.multi) {
       this.personaSelectionData = [];
     }
@@ -103,8 +98,6 @@ class PersonasSelectionViewModel {
     if (!this.multi) {
       result = convertedInArray.length > 0 ? convertedInArray[0] : null;
     }
-    console.log("PersonaVM - getSelectedIDs");
-    console.log(result);
     return result;
   };
 
@@ -121,20 +114,15 @@ class PersonasSelectionViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    console.log("callbackOnErrorHander");
-    console.log(error);
     notify(error.message);
   };
 
   callbackOnSuccessHandler = (personaModelData) => {
-    console.log("callbackOnSuccessHandler - persona");
-    console.log(personaModelData);
     if (personaModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 
       this.personas = personaModelData.toDropdownFullListValues();
 
-      console.log(this.personas);
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;
     }

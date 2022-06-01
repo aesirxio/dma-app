@@ -11,7 +11,6 @@ import { notifyHTML } from '../components/Toast';
 
 class ContentPublishingNotificationWSClient {
   constructor() {
-    console.log('ContentPublishingNotificationWSClient.INITIALIZED !!!');
     this.isAuthenticated = Storage.getItem('auth', false);
     this.userID = Storage.getItem(AUTHORIZATION_KEY.MEMBER_ID, null);
     this.userName = Storage.getItem(AUTHORIZATION_KEY.MEMBER_EMAIL, null);
@@ -29,7 +28,6 @@ class ContentPublishingNotificationWSClient {
   }
 
   socketInitializationHandler() {
-    console.log('ContentPublishingNotificationWSClient.socketInitializationHandler !!!');
     this.socket = io(GENERAL_CONFIG.WEBSOCKET_ENDPOINT, {
       autoConnect: false,
     });
@@ -54,15 +52,9 @@ class ContentPublishingNotificationWSClient {
   }
 
   errorHandler(message) {
-    console.log('Something went wrong!');
-    console.log(message);
   }
 
   onReceivingAForwardedMessageFromServer(roomID, messageObject) {
-    console.log('ContentPublishingNotificationWSClient.onReceivingAForwardedMessageFromServer');
-    console.log('RoomID: ', roomID);
-    console.log('MessageObject: ', messageObject);
-    console.log(JSON.parse(messageObject.notificationData));
     let dataPost = messageObject.dataPost ? messageObject.dataPost : null;
     dataPost = dataPost && typeof dataPost === 'string' ? JSON.parse(dataPost) : dataPost;
     const contentID = messageObject.contentID ? messageObject.contentID : 'undefinedContentID';
@@ -113,15 +105,12 @@ class ContentPublishingNotificationWSClient {
         contentID: this.contentID,
         contentChannelID: this.contentChannelID,
       };
-      console.log('RoomID = ', this.roomID, '\n');
-      console.log('Message = ', this.messageObject, '\n');
 
       this.socket.connect();
 
       // WS Client gets started a CONNECTION
       this.socket.on('connect', () => {
         if (this.socket.connected) {
-          console.log('ContentPublishingNotificationWSClient.UP', this.socket.connected);
           // Send server a signal to join room by a predefined {roomID}
           this.socket.emit(WEBSOCKET_EVENT_SIGNATURES.CPN_JOINING_ROOM, this.roomID);
 

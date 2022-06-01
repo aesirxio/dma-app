@@ -28,8 +28,6 @@ const ContentFormAds = observer((props) => {
 
   viewAdsModel.init(props.formPropsData, props.nextStep, props.previousStep);
 
-  console.log('ContentFormAds render', props);
-
   return (
     <div className="pe-80">
       <h3 className="mb-4">Setup Ads</h3>

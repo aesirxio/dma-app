@@ -30,10 +30,7 @@ const ComponentFormFieldGCP = ({ validator, formPropsData }) => {
       key: PERSONA_FIELD_KEY.CHALLENGES,
       type: FORM_FIELD_TYPE.TEXTAREA,
       value: formPropsData[PERSONA_FIELD_KEY.CHALLENGES],
-      // required: true,
-      // validation: 'required',
       changed: (event) => {
-        console.log(event);
         formPropsData[PERSONA_FIELD_KEY.CHALLENGES] = event.target.value;
       },
       className: 'border-start-5 bg-white p-2 rounded-2 bg-green-2 border-green',
@@ -43,8 +40,6 @@ const ComponentFormFieldGCP = ({ validator, formPropsData }) => {
       key: PERSONA_FIELD_KEY.PAINT_POINT,
       type: FORM_FIELD_TYPE.TEXTAREA,
       value: formPropsData[PERSONA_FIELD_KEY.PAINT_POINT],
-      // required: true,
-      // validation: 'required',
       changed: (event) => {
         formPropsData[PERSONA_FIELD_KEY.PAINT_POINT] = event.target.value;
       },

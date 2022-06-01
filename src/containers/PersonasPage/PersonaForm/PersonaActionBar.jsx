@@ -18,14 +18,10 @@ class PersonaActionBar extends Component {
   constructor(props) {
     super(props);
     const { viewModel } = props;
-    console.log('PersonaActionBar - Debug View Model');
-    console.log(viewModel);
     this.personaFormViewModel = viewModel ? viewModel.getPersonaFormViewModel() : null;
 
     this.personasListViewModel = viewModel ? viewModel.getPersonaListViewModel() : null;
 
-    console.log('PersonaActionBar - After binding class');
-    console.log(this.personaFormViewModel);
   }
 
   handerDeletePersona = () => {
@@ -33,7 +29,6 @@ class PersonaActionBar extends Component {
   };
 
   render() {
-    console.log('[PersonaActionBar] - re-render .........');
 
     return (
       <div className="d-flex justify-content-end">

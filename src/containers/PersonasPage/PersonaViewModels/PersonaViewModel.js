@@ -19,7 +19,6 @@ class PersonaViewModel {
 
   constructor(personaStore) {
     if (personaStore) {
-      console.log('PersonaViewModel - Abstract');
       this.personaFormViewModel = new PersonaFormViewModel(personaStore);
       this.personaListViewModel = new PersonaListViewModel(personaStore);
 

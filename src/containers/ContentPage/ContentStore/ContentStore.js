@@ -33,13 +33,9 @@ export default class ContentStore {
   async deleteContents(ids, callbackOnSuccess, callbackOnError) {
     if (!ids) return false;
 
-    console.log('DELETE CONTENT IDS');
-    console.log(ids);
-
     try {
       const contentAPIService = new AesirxContentApiService();
       const deleteIds = JSON.stringify(ids);
-      console.log('Prepare ids for delete: ', deleteIds);
 
       const repondedDataFromLibrary = await contentAPIService.deleteContent(deleteIds);
 
@@ -49,72 +45,11 @@ export default class ContentStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
     }
   }
-
-  // async getContent(id, callbackOnSuccess, callbackOnError) {
-  //   if (!id) return false;
-
-  //   try {
-  //     const contentService = new AesirxContentApiService();
-  //     const repondedDataFromLibrary = await contentService.getContentItem(id);
-
-  //     console.log('Content Store - getContent');
-  //     console.log(repondedDataFromLibrary);
-
-  //     if (repondedDataFromLibrary) {
-  //       const contentDataModels = ContentUtils.transformContentResponseIntoModel([
-  //         repondedDataFromLibrary,
-  //       ]);
-
-  //       if (contentDataModels) {
-  //         runInAction(() => {
-  //           callbackOnSuccess(contentDataModels);
-  //         });
-  //       } else {
-  //         callbackOnError({
-  //           message: 'Something went wrong from Server response',
-  //         });
-  //       }
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //     runInAction(() => {
-  //       callbackOnError(error);
-  //     });
-  //   }
-  // }
-
-  // async getContentItemDetailChannel(id, callbackOnSuccess, callbackOnError) {
-  //   if (!id) return false;
-
-  //   try {
-  //     const contentService = new AesirxContentApiService();
-  //     const repondedDataFromLibrary = await contentService.getPostItem(id);
-
-  //     console.log('Content Store - getContent getContentChannelItem');
-  //     console.log(repondedDataFromLibrary);
-
-  //     if (repondedDataFromLibrary) {
-  //       runInAction(() => {
-  //         callbackOnSuccess(repondedDataFromLibrary);
-  //       });
-  //     } else {
-  //       callbackOnError({
-  //         message: 'Something went wrong from Server response',
-  //       });
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //     runInAction(() => {
-  //       callbackOnError(error);
-  //     });
-  //   }
-  // }
 
   searchContents = async (
     callbackOnSuccess,
@@ -124,7 +59,6 @@ export default class ContentStore {
     paginationSize = 25
   ) => {
     try {
-      console.log('Content Store - filter Content');
       const contentAPIService = new AesirxContentApiService();
       const respondedDataFromLibrary = await contentAPIService.searchContents(
         dataFilter,
@@ -132,8 +66,6 @@ export default class ContentStore {
         paginationSize
       );
 
-      console.log('Debugging ---- filter campaign');
-      console.log(respondedDataFromLibrary);
       let contentDataModels = null;
 
       if (respondedDataFromLibrary !== null) {
@@ -155,7 +87,6 @@ export default class ContentStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -164,8 +95,6 @@ export default class ContentStore {
 
   async getContentsByCampaignIDs(CampaignIDs, limit) {
     try {
-      console.log('Content Store - Fetch Content CampaignIDs');
-      console.log(CampaignIDs);
       const contentAPIService = new AesirxContentApiService();
 
       const repondedDataFromLibrary = await contentAPIService.getContentsByCampaignIDs(
@@ -173,15 +102,8 @@ export default class ContentStore {
         limit
       );
 
-      console.log('repondedDataFromLibrary - repondedDataFromLibrary CampaignIDs');
-
-      console.log(repondedDataFromLibrary);
-
       const contentDataModels =
         ContentUtils.transformContentResponseIntoModel(repondedDataFromLibrary);
-
-      console.log('contentDataModels contentDataModels');
-      console.log(contentDataModels);
 
       if (contentDataModels) {
         return contentDataModels;
@@ -189,7 +111,6 @@ export default class ContentStore {
         return null;
       }
     } catch (error) {
-      console.log(error);
     }
   }
 
@@ -199,14 +120,7 @@ export default class ContentStore {
 
       const repondedDataFromLibrary = await service.getConnectedChannelByOrganisationId();
 
-      console.log('repondedDataFromLibrary - getConnectedChannelsByProjectId');
-
-      console.log(repondedDataFromLibrary);
-
       const contentDataModels = new ContentConnectedChannelsModel(repondedDataFromLibrary.result);
-
-      console.log('contentDataModels contentDataModels');
-      console.log(contentDataModels);
 
       if (contentDataModels) {
         runInAction(() => {
@@ -218,7 +132,6 @@ export default class ContentStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -229,19 +142,9 @@ export default class ContentStore {
     try {
       const service = new AesirxPersonaApiService();
 
-      console.log('personaIds 3333');
-      console.log(personaIds);
-
       const repondedDataFromLibrary = await service.getConnectedChannelByPersonaIds(personaIds);
 
-      console.log('repondedDataFromLibrary - getConnectedChannelByPersonaIds idsids');
-
-      console.log(repondedDataFromLibrary);
-
       const contentDataModels = new ContentConnectedChannelsModel(repondedDataFromLibrary.result);
-
-      console.log('contentDataModels contentDataModels 3333');
-      console.log(contentDataModels);
 
       if (contentDataModels) {
         runInAction(() => {
@@ -253,7 +156,6 @@ export default class ContentStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -274,8 +176,6 @@ export default class ContentStore {
           respondedDataFromLibrary,
         ]);
 
-        console.log(projectDataModels);
-
         if (projectDataModels) {
           runInAction(() => {
             callbackOnSuccess(projectDataModels);
@@ -287,7 +187,6 @@ export default class ContentStore {
         }
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -301,9 +200,6 @@ export default class ContentStore {
       const userAccountDataFromFacebook =
         await facebookDataAPIService.getUserAccountDataFromFacebookData(organisationId);
 
-      console.log('userAccountDataFromFacebook12345');
-      console.log(userAccountDataFromFacebook);
-
       if (userAccountDataFromFacebook) {
         runInAction(() => {
           callbackOnSuccess(userAccountDataFromFacebook);
@@ -314,7 +210,6 @@ export default class ContentStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -330,19 +225,15 @@ export default class ContentStore {
         paginationSize
       );
 
-      console.log('fetchContents repondedDataFromLibrary', repondedDataFromLibrary);
-
       const contentDataModels =
         ContentUtils.transformContentResponseIntoModel(repondedDataFromLibrary);
 
-      console.log('fetchContents contentDataModels', repondedDataFromLibrary);
 
       return {
         list: contentDataModels,
         pagination: repondedDataFromLibrary.pagination,
       };
     } catch (error) {
-      console.log(error);
       return null;
     }
   };
@@ -353,8 +244,6 @@ export default class ContentStore {
     try {
       const contentService = new AesirxContentApiService();
       const repondedDataFromLibrary = await contentService.getContentChannelItem(id);
-
-      console.log('Content Store - getContent getContentChannelItem', id, repondedDataFromLibrary);
 
       if (repondedDataFromLibrary) {
         const contentDataModels = ContentUtils.transformContentResponseIntoModel(
@@ -367,31 +256,23 @@ export default class ContentStore {
       }
       return [];
     } catch (error) {
-      console.log(error);
       return [];
     }
   };
 
   saveContent = async (contentData, channelMasterData, type) => {
     try {
-      console.log('Saving Content via call web service lib function', contentData, type);
-
       const convertedContentData = ContentModel.convertSubmittedDataToAPIService(
         contentData,
         channelMasterData
       );
 
-      console.log('convertedContentData', convertedContentData);
-
       const contentService = new AesirxContentApiService();
 
       let resultContent = await contentService.createPost(convertedContentData, type);
 
-      console.log('resultOnSave', resultContent);
-
       return resultContent;
     } catch (error) {
-      console.log(error);
       return false;
     }
   };
@@ -412,7 +293,6 @@ export default class ContentStore {
       });
       return result;
     } catch (error) {
-      console.log(error);
       return null;
     }
   };
@@ -433,19 +313,12 @@ export default class ContentStore {
         return contentDataModels?.[0];
       }
     } catch (error) {
-      console.log(error);
       return null;
     }
   };
 
   getFacebookAdPreviewFromFacebookData = async (creative, pageId) => {
     try {
-      console.log(
-        'getFacebookAdPreviewFromFacebookData',
-        creative,
-        pageId,
-        Storage.getItem('organisation_id')
-      );
       const facebookDataAPIService = new AesirxFacebookDataApiService();
       const adPreviewDataFromFacebook = await facebookDataAPIService.getAdPreviewFromFacebookData(
         creative,
@@ -455,7 +328,6 @@ export default class ContentStore {
 
       return adPreviewDataFromFacebook;
     } catch (error) {
-      console.log(error);
       return false;
     }
   };
@@ -468,7 +340,6 @@ export default class ContentStore {
     paginationSize = 25
   ) {
     try {
-      console.log('Content Store - filter Content');
       const contentAPIService = new AesirxPlanningApiService();
       const respondedDataFromLibrary = await contentAPIService.searchPlanning(
         dataFilter,
@@ -476,8 +347,6 @@ export default class ContentStore {
         paginationSize
       );
 
-      console.log('Debugging ---- filter planing');
-      console.log(respondedDataFromLibrary);
       if (respondedDataFromLibrary) {
         runInAction(() => {
           callbackOnSuccess(respondedDataFromLibrary);
@@ -488,7 +357,6 @@ export default class ContentStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });

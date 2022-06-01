@@ -46,19 +46,11 @@ const ContentFormPublishWizard = observer(
       };
 
       const { viewModel } = props;
-      console.log('ContentFormPublishWizard - Debug View Model');
-      console.log(viewModel);
       this.contentFormViewModel = viewModel ? viewModel.getFormViewModel() : null;
-
-      console.log('After binding class');
-      console.log(this.contentFormViewModel);
 
       this.contentConnectedChannelsByOrganisationViewModel = viewModel
         ? viewModel.getContentConnectedChannelsViewModel()
         : null;
-
-      console.log('contentConnectedChannelsByOrganisationViewModel - After binding class');
-      console.log(this.contentConnectedChannelsByOrganisationViewModel);
 
       this.channelsListViewModel = viewModel ? viewModel.getChannelsListViewModel() : null;
 
@@ -78,9 +70,6 @@ const ContentFormPublishWizard = observer(
         CHANNEL_ADS_GOOGLE,
         'google_my_business',
       ]);
-
-      console.log('this.channelsListViewModel - After binding class123');
-      console.log(this.channelsListViewModel);
     }
 
     handleDeselectAllSocial = () => {
@@ -144,9 +133,6 @@ const ContentFormPublishWizard = observer(
     };
 
     render() {
-      console.log('[ContentFormPublishWizard] - re-render .........');
-      console.log(this.contentFormViewModel);
-
       let { getArrayPageFacebook, getArrayPageLinkedin, getArrayPageInstagram } = this.state;
 
       return (

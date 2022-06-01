@@ -25,7 +25,6 @@ const InvesterContactForm = observer(
     }
 
     generateFormSetting = () => {
-      console.log("re generate Form Setting", this.formPropsData);
       return [
         {
           fields: [

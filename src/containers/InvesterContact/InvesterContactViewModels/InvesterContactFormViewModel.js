@@ -37,13 +37,10 @@ class InvesterContactFormViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    console.log("callbackOnErrorHander");
-    console.log(error);
     notify(error.message);
   };
 
   callbackOnSuccessHandler = () => {
-    console.log("callbackOnSuccessHandler");
     this.closeModal();
   };
 }

@@ -16,8 +16,6 @@ const ChannelTypeChannelToken = observer(({ channel }) => {
 
   const status = ChannelUtils.checkTokenExpired(channel[CHANNEL_FIELD_KEY.EXPIRED_TOKEN_TIME]);
 
-  console.log('ChannelTypeChannelToken render', channel);
-
   return (
     <div className="text-md-nowrap text-end pb-1 fs-sm">
       {status

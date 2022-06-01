@@ -8,8 +8,6 @@ import { observer } from 'mobx-react';
 import ComponentImage from '../../../../../../components/ComponentImage';
 
 const DisplayAdsPreview = observer(({ previewData }) => {
-  console.log('DisplayAdsPreview render', previewData);
-
   return (
     <div className="d-flex flex-column border-1 rounded p-3">
       <div className="card">

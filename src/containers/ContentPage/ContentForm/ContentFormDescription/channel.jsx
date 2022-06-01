@@ -24,11 +24,7 @@ const ContentFormDescriptionAdvanceChannel = observer(
         formPropsData,
         [channelTypeId]
       );
-
-      console.log(formPropsData);
     };
-
-    console.log('ContentFormDescriptionAdvanceChannel render', channelType);
 
     return (
       <>

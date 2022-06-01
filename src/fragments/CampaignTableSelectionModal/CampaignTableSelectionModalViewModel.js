@@ -77,9 +77,6 @@ class CampaignTableSelectionModalViewModel {
   };
 
   getSelectedIDs = () => {
-    console.log('this.projectsSeCampaignsSelectionDatalectionData');
-    console.log(this.CampaignsSelectionData);
-
     if (!this.CampaignsSelectionData) return null;
     const convertedInArray = this.CampaignsSelectionData.map((item) => {
       return item[CAMPAIGNS_FIELD_KEY.VALUE];
@@ -116,21 +113,16 @@ class CampaignTableSelectionModalViewModel {
   }
 
   callbackOnErrorHander = (error) => {
-    console.log("callbackOnErrorHander campaign selection -");
-    console.log(error);
     notify(error.message);
   };
 
   callbackOnSuccessHandler = (campaignModelData) => {
-    console.log("callbackOnSuccessHandler - campaign selection -----");
-    console.log(campaignModelData);
     if (campaignModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 
       this.CampaignsMasterData = campaignModelData.toDropdownFullListValues();
       // NEW
       this.getDataSelectOptions = campaignModelData.toDropdownListValues();
-      console.log(this.CampaignsMasterData);
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;
     }

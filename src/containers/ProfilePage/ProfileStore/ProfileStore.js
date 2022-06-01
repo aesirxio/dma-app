@@ -45,9 +45,6 @@ export default class ProfileStore {
 
       resultOnSave = await updateGeneralApiService.updateMember(convertedUpdateGeneralData);
 
-      console.log('-----------resulrt on save -------------------');
-      console.log(resultOnSave);
-
       if (resultOnSave.result.success) {
         runInAction(() => {
           callbackOnSuccess(resultOnSave);
@@ -73,8 +70,6 @@ export default class ProfileStore {
       if (results) {
         const getMemberInfoAPIService = new AesirxMemberApiService();
         const respondedData = await getMemberInfoAPIService.getMemberInfo(id);
-        console.log('------------response-----------------------------------');
-        console.log(respondedData);
         if (respondedData) {
           runInAction(() => {
             callbackOnSuccess(respondedData);
@@ -86,7 +81,6 @@ export default class ProfileStore {
         }
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -99,12 +93,8 @@ export default class ProfileStore {
     try {
       const getMemberInfoAPIService = new AesirxMemberApiService();
       const respondedData = await getMemberInfoAPIService.getMemberInfo(id);
-      console.log('------------response-----------------------------------');
-      console.log(respondedData);
-
       return respondedData;
     } catch (error) {
-      console.log(error);
     }
 
     return false;

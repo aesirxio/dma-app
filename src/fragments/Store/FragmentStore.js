@@ -33,8 +33,6 @@ class FragmentStore {
             const resultInModel = new ProjectMasterDataModel(
               result && result.projectMasterData ? result.projectMasterData : null
             );
-            console.log('AAAAA - FragmentStore - getProjectMasterData - RESULT');
-            console.log(resultInModel);
             if (resultInModel) {
               runInAction(() => {
                 callbackOnSuccess(resultInModel);
@@ -60,7 +58,6 @@ class FragmentStore {
         );
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -84,8 +81,6 @@ class FragmentStore {
             const resultInModel = new PersonaMasterDataModel(
               result && result.personaMasterData ? result.personaMasterData : null
             );
-            console.log('AAAAA - FragmentStore - getPersonaMasterData - RESULT');
-            console.log(resultInModel);
             if (resultInModel) {
               runInAction(() => {
                 callbackOnSuccess(resultInModel);
@@ -111,7 +106,6 @@ class FragmentStore {
         );
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -132,13 +126,9 @@ class FragmentStore {
             isForCampaignMasterData: true,
           },
           (result) => {
-            console.log('------------');
-            console.log(result.campaignMasterData);
             const resultInModel = new CampaignMasterDataModel(
               result && result.campaignMasterData ? result.campaignMasterData : null
             );
-            console.log('AAAAA - FragmentStore - getCampaignMasterData - RESULT');
-            console.log(resultInModel);
             if (resultInModel) {
               runInAction(() => {
                 callbackOnSuccess(resultInModel);
@@ -161,7 +151,6 @@ class FragmentStore {
         );
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });

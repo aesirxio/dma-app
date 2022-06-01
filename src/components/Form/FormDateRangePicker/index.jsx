@@ -33,9 +33,6 @@ const FormDateRangePicker = ({ field, validator }) => {
     endField.changed(date);
     endField.value = date;
   };
-
-  console.log('fieldfieldfieldfieldfieldfield', field);
-
   return (
     <>
       <Form.Group key={Math.random(40, 200)} className="mb-3">

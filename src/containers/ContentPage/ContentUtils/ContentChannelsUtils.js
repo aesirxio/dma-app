@@ -22,8 +22,6 @@ class ContentChannelsUtils {
   transformContentModelIntoTableDataRow = (contentChannelsModels) => {
     return contentChannelsModels
       .map((item) => {
-        console.log("Debug An Item");
-        console.log(item);
         return item.toTableRowData();
       })
       .reduce((arr, el) => {

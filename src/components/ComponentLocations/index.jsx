@@ -89,17 +89,14 @@ const ComponentLocations = ({
           />
           <span className="px-2">-</span>
           <SelectComponent
-            // value={getValueSelected}
             options={getDataSelectOptionsAge}
             className="text-green w-110 mb-0"
             isBorder={true}
             plColor="rgba(8, 18, 64, 0.8)"
-            // onChange={handleChange}
           />
         </div>
       </Form.Group>
       <Form.Group key={Math.random(40, 200)} className="mb-4">
-        {/*{(console.log('viewModel.getAge 123'), console.log(getAge))}*/}
         <Label text={'Gender'} required={false} />
         <div className="d-flex">
           <span

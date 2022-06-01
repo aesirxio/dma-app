@@ -26,15 +26,9 @@ const InvesterContactFormModal = observer(
     constructor(props) {
       super(props);
       const { viewModel } = props;
-      console.log('InvesterContactForm - Debug View Model');
-      console.log(viewModel);
-
       this.investerContactFormViewModel = viewModel
         ? viewModel.getInvesterContactFormViewModel()
         : null;
-
-      console.log('this.investerContactFormViewModel - Debug View Model');
-      console.log(this.investerContactFormViewModel);
     }
 
     handleInvesterContactModal = () => {

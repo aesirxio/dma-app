@@ -26,16 +26,11 @@ import ContentUtils from '../ContentUtils/ContentUtils';
 class ContentModel {
   channels = [];
   constructor(data) {
-    console.log('ContentModel data', data);
     const dataParse = Helper.isJson(data?.data) ? JSON.parse(data?.data) : data?.data;
 
     if (dataParse) {
-      console.log('ContentModel dataParse', dataParse);
       this.id = data[ESI_CONTENT_API_RESPONSE_FIELD_KEY.ID] ?? 0;
       this.categoryId = data.categoryId;
-      // this.publishingType = data?.[ESI_CONTENT_API_RESPONSE_FIELD_KEY.PUBLISH_TYPE]
-      //   ? JSON.parse(data?.[ESI_CONTENT_API_RESPONSE_FIELD_KEY.PUBLISH_TYPE])
-      //   : '';
 
       this.name = dataParse?.general[ESI_CONTENT_API_RESPONSE_FIELD_KEY.HEADLINE] ?? '';
 
@@ -64,8 +59,6 @@ class ContentModel {
       this.channel_name = data[ESI_CONTENT_API_RESPONSE_FIELD_KEY.CHANNEL_NAME] ?? '';
       this.items = data[ESI_CONTENT_API_RESPONSE_FIELD_KEY.ITEMS] ?? [];
       this.entity = data[ESI_CONTENT_API_RESPONSE_FIELD_KEY.ENTITY] ?? 'category';
-
-      console.log('ContentModel model', this);
     }
   }
 
@@ -104,8 +97,6 @@ class ContentModel {
       (key) => (description[key] = this.channels[key].description)
     );
 
-    console.log('getDescription', description);
-
     return description;
   };
 
@@ -116,8 +107,6 @@ class ContentModel {
       (key) => (canvaAssets[key] = this.channels[key].assets.canvaAssets)
     );
 
-    console.log('getCanvaAssets', canvaAssets);
-
     return canvaAssets;
   };
 
@@ -127,8 +116,6 @@ class ContentModel {
     Object.keys(this.channels).forEach(
       (key) => (damAssets[key] = this.channels[key].assets.damAssets)
     );
-
-    console.log('getDamAssets', damAssets);
 
     return damAssets;
   };
@@ -248,8 +235,6 @@ class ContentModel {
   };
 
   static convertSubmittedDataToAPIService(contentData, channelMasterData) {
-    console.log('convertSubmittedDataToAPIService', contentData, channelMasterData);
-
     const general = contentData
       ? {
           [ESI_CONTENT_API_RESPONSE_FIELD_KEY.ID]: contentData[CONTENT_FIELD_KEY.ID] ?? 0,

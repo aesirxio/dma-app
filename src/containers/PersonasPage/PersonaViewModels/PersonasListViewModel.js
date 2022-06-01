@@ -73,7 +73,6 @@ class PersonasListViewModel {
   };
 
   getPagination = (paginationStep, isList, limit = 5) => {
-    console.log('paginationStep', paginationStep);
     this.pageSize = limit;
     this.tableStatus = PAGE_STATUS.LOADING;
 
@@ -96,14 +95,9 @@ class PersonasListViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    console.log('callbackOnErrorHander');
-    console.log(error);
-    // notify(error.message);
   };
 
   callbackOnSuccessHandler = (personaModelData) => {
-    console.log('callbackOnSuccessHandler');
-    console.log(personaModelData);
     if (personaModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 
@@ -111,13 +105,9 @@ class PersonasListViewModel {
         personaModelData.list
       );
 
-      console.log('Row Data is Formatted');
-      console.log(rowDataTransformed);
-
       this.personas = rowDataTransformed;
       this.pagination = personaModelData.pagination;
 
-      console.log('this.pagination this.pagination', this.pagination);
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;
     }

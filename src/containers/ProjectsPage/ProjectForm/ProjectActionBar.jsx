@@ -19,14 +19,10 @@ class ProjectActionBar extends Component {
   constructor(props) {
     super(props);
     const { viewModel } = props;
-    console.log('ProjectActionBar - Debug View Model');
-    console.log(viewModel);
     this.projectFormModalViewModel = viewModel ? viewModel.getFormModalViewModel() : null;
 
     this.projectsListViewModel = viewModel ? viewModel.getListViewModel() : null;
 
-    console.log('ProjectActionBar - After binding class');
-    console.log(this.projectFormModalViewModel);
     if (props.location.state) {
       this.openModal = props.location.state.openModal;
 
@@ -49,8 +45,6 @@ class ProjectActionBar extends Component {
   };
 
   render() {
-    console.log('[ProjectActionBar] - re-render .........');
-
     return (
       <div className="d-flex justify-content-end">
         <Dropdown className="me-3">

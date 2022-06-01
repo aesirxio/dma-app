@@ -26,7 +26,6 @@ const ContentFormDescriptionBasic = observer(({ formPropsData, onBlurDescription
     );
   };
 
-  console.log('ContentFormDescriptionBasic render', formPropsData[CONTENT_FIELD_KEY.DESCRIPTION]);
   return (
     <>
       <Form.Control

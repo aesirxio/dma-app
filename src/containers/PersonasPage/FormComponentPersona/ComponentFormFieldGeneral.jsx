@@ -14,9 +14,6 @@ class ComponentFormFieldGeneral extends Component {
   formPropsData = {};
 
   constructor(props) {
-    console.log('[ComponentFormFieldGeneral] re initialize');
-    super(props);
-
     this.validator = this.props.validator;
     this.formPropsData = this.props.formPropsData;
   }
@@ -94,8 +91,6 @@ class ComponentFormFieldGeneral extends Component {
   };
 
   render() {
-    console.log('ComponentFormFieldGeneral render', this.dataSetupAds);
-
     const formSetting = this.generateFormSetting();
 
     return (

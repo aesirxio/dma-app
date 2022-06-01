@@ -19,14 +19,6 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
 
   const [connecting, setConnecting] = useState(false);
 
-  console.log(
-    'ChannelTypeConnectButton render',
-    channelCategory,
-    channelType,
-    context,
-    channelsListViewModel.memberProfile
-  );
-
   const handleOnClick = async () => {
     if (channelsListViewModel.memberProfile?.allow_create_item) {
       if (channelCategory.id === 'cms' || channelType.id === 'medium') {

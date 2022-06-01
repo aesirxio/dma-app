@@ -24,12 +24,7 @@ const PersonasList = observer(
       super(props);
 
       const { viewModel } = props;
-      console.log('PersonaList - Debug View Model');
-      console.log(viewModel);
       this.personaListViewModel = viewModel ? viewModel.getPersonaListViewModel() : null;
-
-      console.log('After binding class');
-      console.log(this.personaListViewModel);
 
       this.personaFormModalViewModel = viewModel ? viewModel.getPersonaFormViewModel() : null;
     }
@@ -45,8 +40,6 @@ const PersonasList = observer(
     handerSelectPersona = (data) => {
       this.personaListViewModel.personaIdsSelected = data
         .map((item) => {
-          console.log('Debug An Item');
-          console.log(item);
           return item[PERSONA_FIELD_KEY.ID];
         })
         .reduce((arr, el) => {
@@ -55,20 +48,14 @@ const PersonasList = observer(
     };
 
     render() {
-      console.log('[Quick Edit Product] - re-render .........');
       const { tableStatus, personas, pagination } = this.personaListViewModel;
 
-      // if (tableStatus === PAGE_STATUS.LOADING) {
-      //   return <Spinner />;
-      // }
 
       const tableRowHeader = [
         {
           Header: 'Name',
           accessor: PERSONA_FIELD_KEY.NAME, // accessor is the "key" in the data
           Cell: ({ row }) => (
-            // console.log("row.original", row),
-            // (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
               <span
                 className="text-black opacity-75"
@@ -91,8 +78,6 @@ const PersonasList = observer(
         },
       ];
 
-      console.log(personas);
-      console.log('personas1213213123213');
       return (
         <>
           {personas ? (
@@ -102,7 +87,6 @@ const PersonasList = observer(
               <Table
                 rowData={personas}
                 tableRowHeader={tableRowHeader}
-                //onEdit={this.handerEditPersona}
                 onSelect={this.handerSelectPersona}
                 pagination={pagination}
                 pageSize={this.personaListViewModel.pageSize}

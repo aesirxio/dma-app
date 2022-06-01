@@ -62,8 +62,6 @@ const FormTab = observer(
     };
 
     render() {
-      console.log('[FormTab] render');
-
       let { files, desc } = this.state;
 
       const preview = files.map((file) => (
@@ -80,9 +78,6 @@ const FormTab = observer(
 
       const { field, validator } = this.props;
 
-      console.log('personaSelectionData tab');
-      console.log(personaSelectionData);
-
       return (
         personaSelectionData.length > 0 && (
           <>
@@ -90,8 +85,6 @@ const FormTab = observer(
             <div className="wrapper_tabs border-1 rounded pad">
               <Tabs defaultActiveKey="1" id="desc-tab">
                 {personaSelectionData.map((item) => {
-                  // const channels = item[PERSONA_FIELD_KEY.CHANNELS];
-
                   const channels = [
                     {
                       id: 1,

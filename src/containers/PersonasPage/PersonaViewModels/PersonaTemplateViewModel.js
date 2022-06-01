@@ -29,7 +29,6 @@ class PersonaTemplateViewModel {
   }
 
   initializeData = () => {
-    console.log("componentDidMount");
     this.personaStore.getPersonaRecommendations(
       this.callbackOnSuccessHandler,
       this.callbackOnErrorHander,
@@ -38,23 +37,14 @@ class PersonaTemplateViewModel {
   };
 
   callbackOnSuccessHandler = (personaTemplateModelData) => {
-    console.log("Component PersonaTemplate - callbackOnSuccessHandler");
-    console.log(personaTemplateModelData);
-
     const rowDataTransformed = PersonaTemplateUtils.transformPersonaTemplateModelIntoTableDataRow(
       personaTemplateModelData.list
     );
-
-    console.log("Row Data is Formatted");
-    console.log(rowDataTransformed);
 
     this.personaTemplatesData = rowDataTransformed;
   };
 
   callbackOnErrorHander = (error) => {
-    console.log("callbackOnErrorHander");
-    console.log(error);
-    // notify(error.message);
   };
 }
 

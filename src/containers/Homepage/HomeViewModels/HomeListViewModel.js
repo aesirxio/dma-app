@@ -23,17 +23,11 @@ class HomeListViewModel {
     this.homeStore.getNews(this.callbackOnSuccessHandler, this.callbackOnErrorHander);
   };
   callbackOnErrorHander = (error) => {
-    console.log('callbackOnErrorHander');
-    console.log(error);
-    // notify(error.message);
   };
 
   callbackOnSuccessHandler = (data) => {
-    console.log('callbackOnSuccessHandler');
-    console.log(data);
     if (data) {
       this.status = PAGE_STATUS.READY;
-      console.log('Inspiration data');
       this.inspiration = data.list;
     } else {
       this.status = PAGE_STATUS.ERROR;

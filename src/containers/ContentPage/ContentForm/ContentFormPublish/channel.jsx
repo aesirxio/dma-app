@@ -22,8 +22,6 @@ const ContentFormPublishChannel = observer(({ formPropsData }) => {
     return null;
   }
 
-  console.log('ContentFormPublishChannel render', formPropsData);
-
   return <ListChannelComponent channelsData={data} />;
 });
 

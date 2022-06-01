@@ -25,9 +25,6 @@ class CampaignsStore {
       if (!this.globalStore) {
         return null;
       } else {
-        console.log('Project Store - Get Global Store');
-        console.log(this.globalStore);
-
         const result = await this.globalStore.getMasterData({
           isForProjectMaster: true,
           isForceProjectMasterData: isForce,
@@ -36,10 +33,6 @@ class CampaignsStore {
         const resultInModel = new ProjectMasterDataModel(
           result && result.projectMasterData ? result.projectMasterData : null
         );
-        console.log('CampaignsStore - getProjectMasterData');
-        console.log(result);
-        console.log('CampaignsStore - resultToDropdownlistValues');
-        console.log(resultInModel);
         if (resultInModel) {
           return resultInModel;
         } else {
@@ -47,7 +40,6 @@ class CampaignsStore {
         }
       }
     } catch (error) {
-      console.log(error);
       return null;
     }
   }
@@ -59,21 +51,15 @@ class CampaignsStore {
     paginationSize = 25
   ) {
     try {
-      console.log('Persona Store - Fetch Personas');
       const campaignService = new AesirxCampaignApiService();
       const respondedDataFromLibrary = await campaignService.getCampaigns(
         paginationStep,
         paginationSize
       );
 
-      console.log('respondedDataFromLibrary respondedDataFromLibrary', respondedDataFromLibrary);
-
       const CampaignsModels = await CampaignsUtils.transformCampaignResponseIntoModel(
         respondedDataFromLibrary.list
       );
-
-      console.log('respondedDataFromLibrary respondedDataFromLibrary - after');
-      console.log(CampaignsModels);
 
       if (CampaignsModels) {
         runInAction(() => {
@@ -88,7 +74,6 @@ class CampaignsStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -97,21 +82,14 @@ class CampaignsStore {
 
   async saveCampaigns(campaignsData, callbackOnSuccess, callbackOnError) {
     try {
-      console.log('Saving Project via call web service lib function');
-      console.log(campaignsData);
-
       const convertedCampaignsData = CampaignsModel.convertSubmittedDataToAPIService(campaignsData);
-
-      console.log('convertedCampaignsData', convertedCampaignsData);
 
       const campaignService = new AesirxCampaignApiService();
       let resultOnSave = false;
 
       if (campaignsData.id === undefined) {
-        console.log('CREATE CAMPAIGN');
         resultOnSave = await campaignService.createCampaign(convertedCampaignsData);
       } else {
-        console.log('UPDATE CAMPAIGN', convertedCampaignsData);
         resultOnSave = await campaignService.updateCampaign(convertedCampaignsData);
       }
 
@@ -127,7 +105,6 @@ class CampaignsStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -137,13 +114,9 @@ class CampaignsStore {
   async deleteCampaigns(ids, callbackOnSuccess, callbackOnError) {
     if (!ids) return false;
 
-    console.log('DELETE CAMPAIGN IDS');
-    console.log(ids);
-
     try {
       const campaignService = new AesirxCampaignApiService();
       const deleteIds = ids.join();
-      console.log('Prepare ids for delete: ', deleteIds);
       const respondedFromApi = await campaignService.deleteCampaign(deleteIds);
 
       if (respondedFromApi.result === true) {
@@ -152,7 +125,6 @@ class CampaignsStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -160,27 +132,18 @@ class CampaignsStore {
   }
 
   async getCampaign(id, callbackOnSuccess, callbackOnError) {
-    console.log('ID for get Campaign', id);
     if (!id) return false;
 
-    // try {
     const results = true;
 
-    // const editCampaigns = campaigns.filter(
-    //   (campaigns) => campaigns.id !== parseInt(id)
-    // );
 
     if (results) {
       const campaignService = new AesirxCampaignApiService();
       const respondedDataFromLibrary = await campaignService.getCampaign(id);
 
-      console.log('Campaign - getCampain from API', respondedDataFromLibrary);
-
       const campaignsDataModels = CampaignsUtils.transformCampaignResponseIntoModel([
         respondedDataFromLibrary,
       ]);
-
-      console.log(campaignsDataModels);
 
       if (campaignsDataModels) {
         runInAction(() => {
@@ -192,12 +155,6 @@ class CampaignsStore {
         });
       }
     }
-    // } catch (error) {
-    //   console.log(error);
-    //   runInAction(() => {
-    //     callbackOnError(error);
-    //   });
-    // }
   }
 
   async searchCampaigns(
@@ -208,7 +165,6 @@ class CampaignsStore {
     paginationSize = 25
   ) {
     try {
-      console.log('Campaign Store - filter Campaign');
       const CampaignAPIService = new AesirxCampaignApiService();
       const respondedDataFromLibrary = await CampaignAPIService.searchCampaigns(
         dataFilter,
@@ -216,8 +172,6 @@ class CampaignsStore {
         paginationSize
       );
 
-      console.log('Debugging ---- filter campaign');
-      console.log(respondedDataFromLibrary);
       let campaignDataModels = null;
 
       if (respondedDataFromLibrary !== null) {
@@ -240,7 +194,6 @@ class CampaignsStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -256,24 +209,15 @@ class CampaignsStore {
           });
         });
       } else {
-        console.log('Campaign Store - Get Global Store');
-        console.log(this.globalStore);
         await this.globalStore.getMasterData(
           {
             isForCampaignMasterData: true,
           },
           (result) => {
             try {
-              console.log('Campaign - getMasterData');
-              console.log(result);
               const resultCampaignInModel = new CampaignMasterDataModel(
                 result && result.campaignMasterData ? result.campaignMasterData : null
               );
-              console.log('resultInModel');
-              console.log(resultCampaignInModel);
-              console.log('CampaignsStore - resultCampaignInModel');
-              console.log(result);
-              console.log('CampaignsStore - resultToDropdownlistValues');
 
               runInAction(() => {
                 callbackOnSuccess(resultCampaignInModel);
@@ -299,7 +243,6 @@ class CampaignsStore {
         );
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });

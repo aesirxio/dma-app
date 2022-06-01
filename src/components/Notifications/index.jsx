@@ -30,11 +30,6 @@ class Notifications extends React.Component {
     this.userID = Storage.getItem(AUTHORIZATION_KEY.MEMBER_ID, null);
     this.listNotificationModel = notificationStore;
 
-    console.log('this.listNotificationModel');
-    console.log(this.listNotificationModel);
-
-    console.log('this.userID');
-    console.log(this.userID);
     this.isAuthenticated = Storage.getItem('auth', false);
     this.userID = Storage.getItem(AUTHORIZATION_KEY.MEMBER_ID, null);
     this.userName = Storage.getItem(AUTHORIZATION_KEY.MEMBER_EMAIL, null);
@@ -115,9 +110,6 @@ class Notifications extends React.Component {
         .concat(this.userName)
         .trim();
 
-      console.log('upMarkRead');
-      console.log(this.roomMarkRead);
-
       // WS Client gets started a CONNECTION
       this.socket.connect();
 
@@ -149,9 +141,6 @@ class Notifications extends React.Component {
         .concat(this.userName)
         .trim();
 
-      console.log('upMarkRead');
-      console.log(this.roomMarkReadAll);
-
       // WS Client gets started a CONNECTION
       this.socket.connect();
 
@@ -174,8 +163,6 @@ class Notifications extends React.Component {
   }
 
   onReceivingAForwardedMessageFromServer(roomID, messageObject) {
-    console.log('onReceivingAForwardedMessageFromServer');
-    console.log(messageObject);
     this.setState({
       getDataNotification: JSON.parse(messageObject.notificationData),
     });
@@ -196,8 +183,6 @@ class Notifications extends React.Component {
   }
 
   handleClickNotificationItem = (notification) => {
-    console.log('handleClickNotificationItem');
-
     notificationStore.markRead(
       notification.id,
       this.userID,
@@ -208,7 +193,6 @@ class Notifications extends React.Component {
   };
 
   handleClickMarkReadAll = (notification) => {
-    console.log('handleClickMarkReadAll');
     notificationStore.markReadAll(
       this.userID,
       () => {
@@ -219,13 +203,9 @@ class Notifications extends React.Component {
   };
 
   getListNotification = (memberID) => {
-    console.log('memberIDmemberID');
-    console.log(memberID);
-    // this.formStatus = PAGE_STATUS.LOADING;
     notificationStore.getNotificationsService(
       memberID,
       (result) => {
-        console.log('getmemberIDmemberIDmemberIDmemberID', result);
         this.setState({
           getDataNotification: result,
         });
@@ -259,9 +239,7 @@ class Notifications extends React.Component {
       <ul className="ps-0 list-unstyled mb-0 wr_list_notification">
         {data &&
           data.map((value, index) => {
-            console.log('valuevaluevaluevaluevalue123', value);
             let dataParse = value.data ? JSON.parse(value.data) : null;
-            console.log('dataParsedataParse', dataParse);
 
             return (
               <li
@@ -308,9 +286,6 @@ class Notifications extends React.Component {
   render() {
     const { t, i18n } = this.props;
     let { getDataNotification } = this.state;
-
-    console.log('this.getDataNotification');
-    console.log(getDataNotification ? getDataNotification : null);
 
     return (
       <div className="wrapper_dropdown position-relative">

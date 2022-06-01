@@ -16,7 +16,6 @@ import Helper from '../../../utils/helper';
 
 class CampaignsModel {
   constructor(data) {
-    console.log('datadatadatacampain', data);
     this.id = data[CAMPAIGN_API_FIELD_KEY.ID];
     this.name = data[CAMPAIGN_API_FIELD_KEY.NAME] ?? '';
     this.status = data[CAMPAIGN_API_FIELD_KEY.STATUS] ?? '';
@@ -152,12 +151,10 @@ class CampaignsModel {
 
   toTableRowData = () => {
     try {
-      console.log('toTableRowData - before');
       const id = this.getId();
       const name = this.getName();
       const status = this.getStatus();
       const startDate = this.getStartDate();
-      console.log('---------------------');
       const endDate = this.getEndDate();
       const needToDo = this.getNeedToDo();
       const schedudePost = this.getSchedudePost();
@@ -175,18 +172,13 @@ class CampaignsModel {
         [publishedContent.columnName]: publishedContent.value,
         [progress.columnName]: progress.value,
       };
-      console.log('Campaign - toTableRowData');
-      console.log(result);
       return result;
     } catch (error) {
-      console.log('Campaign - toTableRowData = ERROR ');
-      console.log(error);
       return null;
     }
   };
 
   static convertSubmittedDataToAPIService(campaignsData) {
-    console.log('convertSubmittedDataToCampaignAPIService', campaignsData);
     const result = campaignsData
       ? {
           [CAMPAIGN_API_FIELD_KEY.ID]: campaignsData[CAMPAIGN_API_FIELD_KEY.ID] ?? '',

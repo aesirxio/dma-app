@@ -16,8 +16,6 @@ class ContentViewModel {
 
   constructor(contentStore) {
     if (contentStore) {
-      console.log('ContentViewModel - Abstract');
-
       this.contentFormViewModel = new ContentFormViewModel(contentStore);
       this.contentListViewModel = new ContentListViewModel(contentStore);
       this.contentsFilterFormViewModel = new ContentsFilterFormViewModel(contentStore);
