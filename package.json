@@ -32,7 +32,7 @@
     "react-big-calendar": "^0.33.5",
     "react-bootstrap": "^1.4.0",
     "react-datepicker": "^3.3.0",
-    "react-dev-utils": "^11.0.0",
+    "react-dev-utils": "^12",
     "react-dom": "^17.0.1",
     "react-dropzone": "^11.2.4",
     "react-google-charts": "^3.0.15",
