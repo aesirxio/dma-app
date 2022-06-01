@@ -32,7 +32,7 @@
     "react-big-calendar": "^0.33.5",
     "react-bootstrap": "^1.4.0",
     "react-datepicker": "^3.3.0",
-    "react-dev-utils": "^11.0.0",
+    "react-dev-utils": "^12",
     "react-dom": "^17.0.1",
     "react-dropzone": "^11.2.4",
     "react-google-charts": "^3.0.15",
@@ -200,7 +200,7 @@
     "webpack": "4.44.2",
     "webpack-dev-server": "3.11.0",
     "webpack-manifest-plugin": "2.2.0",
-    "workbox-webpack-plugin": "5.1.4"
+    "workbox-webpack-plugin": "^6"
   },
   "babel": {
     "presets": [
