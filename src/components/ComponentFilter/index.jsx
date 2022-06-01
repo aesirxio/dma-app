@@ -84,13 +84,7 @@ class ComponentFilter extends React.Component {
       }
     }
 
-<<<<<<< HEAD
-    console.log(values);
-    // console.log(JSON.stringify(values));
     this.props.setFilter({ ...this.props.titleFilter, [name]: values }, 3);
-=======
-    this.props.setFilter({...this.props.titleFilter ,[name] : values}, 3);
->>>>>>> 4e2c2f94de2af57570402b97f4a2ffa0a0f252fb
     this.setState({
       valueOption: values,
     });
