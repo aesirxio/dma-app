@@ -35,8 +35,6 @@ class ContentsFilterFormViewModel {
 
     const projectMasterData = ProjectUtils.toDropdownOptions(masterData?.projectMasterData);
 
-    console.log('ContentsFilterFormViewModel masterData', masterData);
-
     runInAction(() => {
       this.personaMasterData = personaMasterData;
       // this.channelMasterData = channelsData;
@@ -46,13 +44,10 @@ class ContentsFilterFormViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    console.log('callbackOnErrorHander - content');
-    console.log(error);
     notify(error.message);
   };
 
   callbackOnSuccessHandler = (masterDataInModel) => {
-    console.log('callbackOnSuccessHandler - filterForm ------', masterDataInModel);
     this.campaignsMasterData = masterDataInModel.resultCampaignInModel
       ? masterDataInModel.resultCampaignInModel.toDropdownListValues()
       : null;

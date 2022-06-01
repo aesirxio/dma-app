@@ -44,7 +44,6 @@ class Campaigns extends React.Component {
             </div>
             <div className="px-3">
               {campaigns.map((value, key) => {
-                console.log('valuevalue 456789', value);
                 return (
                   <div key={key} className="row py-3 border-bottom-1 item_project">
                     <div className="col-6">

@@ -41,12 +41,9 @@ const Ads = observer((props) => {
   };
 
   const handlePrevious = () => {
-    console.log('handlePrevious', props.formPropsData);
     props.formPropsData[CONTENT_FIELD_KEY.ADS] = viewModel.formPropsData;
     viewModel.parentPreviousStep();
   };
-
-  console.log('Ads render', viewModel);
 
   return (
     <>

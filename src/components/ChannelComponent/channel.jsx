@@ -27,8 +27,6 @@ const ChannelChannelComponent = observer(({ channelData, removeChannel, handleOn
     }
   };
 
-  console.log('ChannelChannelComponent render', channelData);
-
   return (
     <>
       {channels.map((channel, index) => (

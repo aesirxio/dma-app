@@ -24,7 +24,6 @@ class CampaignMasterDataItemModel extends BaseMasterDataItemModel {
   }
 
   toDropdownFullSelectionItem = () => {
-    console.log('toDropdownFullSelectionItem - debug - campaign');
     return {
       [CAMPAIGNS_FIELD_KEY.ID]: this.id ?? 0,
       [CAMPAIGNS_FIELD_KEY.NAME]: this.name ?? '',
@@ -39,21 +38,15 @@ class CampaignMasterDataItemModel extends BaseMasterDataItemModel {
 class CampaignMasterDataModel extends BaseMasterDataModel {
   constructor(entities) {
     if (entities) {
-      console.log('CampaignMasterDataModel - debug');
-      console.log(entities);
       super(entities);
       this.unTransformedItems = entities;
       this.items = entities.result.map((element) => {
         return new CampaignMasterDataItemModel(element);
       });
-      console.log('CampaignMasterDataModel - debug after');
-      console.log(this.items);
     }
   }
 
   toDropdownFullListValues = () => {
-    console.log('toDropdownFullListValues - debug');
-
     if (!this.items) return null;
 
     return this.items.map((element) => {

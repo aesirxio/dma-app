@@ -32,7 +32,6 @@ class Wordpress extends Component {
     this.viewModel.setForm(this);
   }
   generateFormSetting = () => {
-    console.log('re generate Form Setting', this.formPropsData);
     return [
       {
         fields: [

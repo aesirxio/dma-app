@@ -34,7 +34,6 @@ const PersonaFormPage = observer(
     viewModel = null;
 
     constructor(props) {
-      console.log('[PersonaFormPage] re initialize');
       super(props);
 
       const { viewModel } = props;
@@ -54,8 +53,6 @@ const PersonaFormPage = observer(
 
     populatingFormDataHandler = (data, connectedChannelMasterData) => {
       if (!data) return false;
-      console.log('populatingFormDataHandler', data);
-
       this.formPropsData[PERSONA_FIELD_KEY.ID] = data.id ?? 0;
       this.formPropsData[PERSONA_FIELD_KEY.NAME] = data.getName().value;
       this.formPropsData[PERSONA_FIELD_KEY.AVATAR_2] = data.getAvatar2().value;
@@ -73,10 +70,7 @@ const PersonaFormPage = observer(
     };
 
     isFormValid = () => {
-      console.log('isFormValid');
       if (this.validator.allValid()) {
-        console.log('[is Form Valid]');
-        console.log(this.formPropsData);
         return true;
       } else {
         this.validator.showMessages();
@@ -99,12 +93,6 @@ const PersonaFormPage = observer(
       if (formStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
       }
-
-      console.log(
-        '[PersonaFormPage] rerender.....',
-        this.formPropsData,
-        connectedChannelMasterData
-      );
 
       this.populatingFormDataHandler(personaData);
 

@@ -31,8 +31,6 @@ const ChannelAdd = observer(() => {
     viewModel.setShowAddChannelModel(true);
   };
 
-  console.log('ChannelAdd render', availableChannels);
-
   return (
     availableChannels.length > 0 && (
       <>

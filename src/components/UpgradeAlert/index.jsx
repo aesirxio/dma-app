@@ -65,8 +65,6 @@ class UpgradeAlert extends Component {
       return null;
     }
 
-    console.log('UpgradeAlert', this.state);
-
     return (
       <Alert className={`w-100 py-2 text-center ${this.props.className}`}>
         {this.state.loading ? (

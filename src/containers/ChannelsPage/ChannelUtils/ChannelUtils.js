@@ -45,8 +45,6 @@ class ChannelUtils {
       ].filter((option) => option.options.length > 0);
     });
 
-    console.log('connectedChannelGroupOptions', options);
-
     return options;
   };
 
@@ -72,8 +70,6 @@ class ChannelUtils {
         },
       }))
       .filter(({ list }) => list.some(({ pages }) => pages.length > 0)); // Remove Category has Pages empty list
-
-    console.log('getChannelByFilter', channels, filter);
 
     return channels;
   }

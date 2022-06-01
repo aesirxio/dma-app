@@ -18,7 +18,6 @@ class FormComponent extends Component {
   viewModel = null;
 
   constructor(props) {
-    console.log('re initialize');
     super(props);
 
     this.isEditMode = props.editMode === true;
@@ -34,10 +33,7 @@ class FormComponent extends Component {
   }
 
   isFormValid = () => {
-    console.log('isFormValid');
     if (this.validator.allValid()) {
-      console.log('[is Form Valid]');
-      console.log(this.formPropsData);
       return true;
     } else {
       this.validator.showMessages();
@@ -66,8 +62,6 @@ class FormComponent extends Component {
   };
 
   render() {
-    console.log('rerender.....');
-
     this.validator.purgeFields();
 
     let formSetting = this.props.generateFormSetting();

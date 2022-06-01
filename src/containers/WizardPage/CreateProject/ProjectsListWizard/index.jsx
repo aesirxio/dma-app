@@ -27,12 +27,7 @@ const ProjectsListWizard = observer(
       super(props);
 
       const { viewModel } = props;
-      console.log('ProjectList - Debug View Model');
-      console.log(viewModel);
       this.projectListViewModel = viewModel ? viewModel.getListViewModel() : null;
-
-      console.log('After binding class');
-      console.log(this.projectListViewModel);
     }
 
     componentDidMount() {
@@ -49,7 +44,6 @@ const ProjectsListWizard = observer(
     };
 
     render() {
-      console.log('[ProjectsList] - re-render .........');
       const { tableStatus, projects } = this.projectListViewModel;
       const createNew = {
         id: 0,
@@ -69,9 +63,6 @@ const ProjectsListWizard = observer(
           accessor: PROJECT_COLUMN_INDICATOR.NAME, // accessor is the "key" in the data
         },
       ];
-
-      console.log('Row Data is tableRowHeader');
-      console.log(tableRowHeader);
 
       return tableStatus === PAGE_STATUS.LOADING ? (
         <Spinner />

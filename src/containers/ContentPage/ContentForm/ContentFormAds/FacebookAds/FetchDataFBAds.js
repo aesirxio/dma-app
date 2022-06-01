@@ -7,7 +7,6 @@ import _ from 'lodash';
 import { AesirxFacebookDataApiService } from 'aesirx-dma-lib';
 
 const fetchSearchTargetingFromFacebookData = async (inputValue, name) => {
-  console.log('inputValue, name facebook targeting', inputValue, name);
   const facebookDataAPIService = new AesirxFacebookDataApiService();
   let response = null;
   if (inputValue.length > 3) {

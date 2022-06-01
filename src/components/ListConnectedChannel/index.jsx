@@ -41,14 +41,10 @@ const ListConnectedChannel = observer(
       super(props);
       this.state = {};
       this.viewModel = props.field.viewModel ? props.field.viewModel : null;
-      console.log('Debuggin -------- ListConnectedChannel ----- View Model');
-      console.log(this.viewModel);
     }
 
     render() {
       const value = this.viewModel ? this.viewModel.connectedChannels : '';
-      console.log('Debuggin -------- ListConnectedChannel');
-      console.log(value);
       return (
         <div className="bg-white shadow-sm rounded-2 px-3 py-2 h-100 d-flex align-items-center">
           <div className="row w-100">

@@ -13,8 +13,6 @@ const login = async ({ username, password, remember }) => {
   document.body.classList.add('body_login_page');
   const authService = new AesirxAuthenticationApiService();
   const result = await authService.login(username, password);
-  console.log('==== Debugging Login Function ====');
-  console.log(result);
   if (result) {
     Storage.setItem('auth', true);
     document.body.classList.remove('body_login_page');
@@ -38,8 +36,6 @@ const socialLogin = async (socialType, accessToken) => {
   document.body.classList.add('body_login_page');
   const authService = new AesirxAuthenticationApiService();
   const result = await authService.socialLogin(socialType, accessToken);
-  console.log('==== Debugging Login Function ====');
-  console.log(result);
   if (result) {
     Storage.setItem('auth', true);
     Storage.setItem('first_login', false);
@@ -79,7 +75,6 @@ const isLogin = () => {
     if (isAuthenticated && userID && userName) {
       // autoLogoutInitalization();
       ContentPublishingNotificationWSClient.__init();
-      console.log('test', Storage.getItem('test'));
       return true;
     }
     return false;

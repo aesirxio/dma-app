@@ -15,8 +15,6 @@ const projectStore = new ProjectStore();
 const projectViewModel = new ProjectViewModel(projectStore);
 
 function Projects(props) {
-  console.log('Debugging Route Projects');
-  console.log(projectViewModel);
   return (
     <ProjectViewModelContextProvider viewModel={projectViewModel}>
       <div className="py-4 px-3">

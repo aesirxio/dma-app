@@ -36,8 +36,6 @@ const ContentFormGeneral = observer(
     }
 
     generateFormSetting = () => {
-      console.log('ContentFormGeneral re generate Form Setting', this.formPropsData);
-
       return {
         name: {
           fields: [
@@ -102,8 +100,6 @@ const ContentFormGeneral = observer(
 
       const mediaChannel = ContentUtils.hasMediaChannel(dataChannels);
 
-      console.log('ContentFormGeneralrender1234', this.formPropsData);
-
       if (this.validator.allValid()) {
         if (dataChannels.length > 0) {
           if (
@@ -121,7 +117,6 @@ const ContentFormGeneral = observer(
         this.validator.showMessages();
       }
 
-      console.log(this.formPropsData);
     };
 
     onBlurDescription = () => {
@@ -130,8 +125,6 @@ const ContentFormGeneral = observer(
 
     render() {
       const formSetting = this.generateFormSetting();
-
-      console.log('ContentFormGeneral render', this.formPropsData);
 
       return (
         <div className="pe-md-80">

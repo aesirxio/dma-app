@@ -27,9 +27,6 @@ const CampaignsFormModal = observer(
       this.validator = new SimpleReactValidator({ autoForceUpdate: this });
 
       const { viewModel } = props;
-      console.log('CampaignsFormModal - Debug View Model');
-      console.log(viewModel);
-
       this.CampaignsFormModalViewModal = viewModel ? viewModel.getFormModalViewModel() : null;
     }
 
@@ -40,9 +37,7 @@ const CampaignsFormModal = observer(
     };
 
     isFormValid = () => {
-      console.log('isFormValid');
       if (this.validator.allValid()) {
-        console.log('[is Form Valid]');
         return true;
       } else {
         this.validator.showMessages();
@@ -62,8 +57,6 @@ const CampaignsFormModal = observer(
       if (formStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
       }
-
-      console.log('[CampaignsFormModal] - re-render .........');
 
       return (
         <ModalComponent

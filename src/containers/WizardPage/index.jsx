@@ -47,8 +47,6 @@ class WizardPage extends Component {
   };
 
   render() {
-    console.log('[WizardPage] render...');
-
     return (
       <>
         <WizardSteps match={this.props.match} />

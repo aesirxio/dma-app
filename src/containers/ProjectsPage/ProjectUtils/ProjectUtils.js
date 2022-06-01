@@ -22,8 +22,6 @@ class ProjectUtils {
   transformProjectModelIntoTableDataRow = (projectModels) => {
     return projectModels
       .map((item) => {
-        console.log('Debug An Item');
-        console.log(item);
         return item.toTableRowData();
       })
       .reduce((arr, el) => {

@@ -18,8 +18,6 @@ class ChannelCallbackNotify {
 
     this.isAuthenticated = Storage.getItem('auth', false);
     this.isValidWSClient = this.isAuthenticated && this.organisationId;
-    console.log(' this.isValidWSClient');
-    console.log(this.isValidWSClient);
     if (this.isValidWSClient) {
       this.socketInitializationHandler();
     }
@@ -28,8 +26,6 @@ class ChannelCallbackNotify {
   }
 
   socketInitializationHandler() {
-    console.log('socketInitializationHandler');
-    console.log(GENERAL_CONFIG.WEBSOCKET_ENDPOINT);
     this.socket = io(GENERAL_CONFIG.WEBSOCKET_ENDPOINT, {
       autoConnect: false,
     });
@@ -48,7 +44,6 @@ class ChannelCallbackNotify {
   };
 
   onReceivingAForwardedMessageFromServer(roomID, messageObject) {
-    console.log('onReceivingAForwardedMessageFromServer', messageObject);
     const channelConnected = JSON.parse(messageObject.channelConnected);
 
     if (channelConnected?.length > 0) {
@@ -85,8 +80,6 @@ class ChannelCallbackNotify {
         .concat('organisationId=')
         .concat(this.organisationId)
         .trim();
-      console.log('up');
-      console.log(this.roomID);
       // WS Client gets started a CONNECTION
       this.socket.connect();
 
@@ -103,7 +96,6 @@ class ChannelCallbackNotify {
         }
       });
     } catch (ex) {
-      console.log(ex);
       this.closeWebSocketClientInstance.bind(this);
     }
     return this;

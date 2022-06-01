@@ -28,23 +28,6 @@ class ComponentPublishListChannels extends Component {
       listLinkedinFanpageView,
     } = this.props;
 
-    console.log('listFacebookFanpageConnectedrender123');
-    console.log(listFacebookFanpageConnected);
-
-    console.log('listLinkedinFanpageConnectedrender123');
-    console.log(listLinkedinFanpageConnected);
-
-    console.log('listInstagramFanpageConnectedRender');
-    console.log(listInstagramFanpageConnected);
-
-    console.log('getListConnectInstagramPagePublish');
-    console.log(getListConnectInstagramPage);
-
-    console.log('getListConnectPagePublisd123');
-    console.log(getListConnectFacebookPagePublisd);
-
-    console.log('labelsConnectedChannels12345');
-    console.log(labelsConnectedChannels);
 
     let checkLabelFacebook = labelsConnectedChannels.includes('facebook');
     let checkLabelLinkedin = labelsConnectedChannels.includes('linkedin');
@@ -123,9 +106,6 @@ class ComponentPublishListChannels extends Component {
               <>
                 {getListConnectFacebookPagePublisd &&
                   getListConnectFacebookPagePublisd.map((i) => {
-                    console.log('getListConnectFacebookPagePublisd');
-                    console.log(i);
-                    console.log(listFaceBookFanpageView);
 
                     const currentFanpage = listFaceBookFanpageView.filter(function (e) {
                       return e.id === i;

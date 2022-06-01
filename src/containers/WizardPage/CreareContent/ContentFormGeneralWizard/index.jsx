@@ -58,12 +58,7 @@ const ContentFormGeneralWizard = observer(
       super(props);
 
       const { viewModel } = props;
-      console.log('ContentFormGeneralWizard - Debug View Model');
-      console.log(viewModel);
       this.contentFormViewModel = viewModel ? viewModel.getFormViewModel() : null;
-
-      console.log('After binding class');
-      console.log(this.contentFormViewModel);
 
       this.contentConnectedChannelsByOrganisationViewModel =
         this.contentFormViewModel.getContentConnectedChannelsViewModel();
@@ -76,9 +71,6 @@ const ContentFormGeneralWizard = observer(
     };
 
     render() {
-      console.log('[ContentFormGeneralWizard] - re-render .........');
-      console.log(this.contentFormViewModel);
-
       return (
         <>
           <ComponentContentFormGeneral

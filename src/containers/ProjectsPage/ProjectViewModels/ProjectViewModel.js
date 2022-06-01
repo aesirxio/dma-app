@@ -12,7 +12,6 @@ class ProjectViewModel {
 
   constructor(projectStore) {
     if (projectStore) {
-      console.log("ProjectViewModel - Abstract");
       this.projectFormModalViewModel = new ProjectFormModalViewModel(projectStore);
       this.projectListViewModel = new ProjectListViewModel(projectStore);
 

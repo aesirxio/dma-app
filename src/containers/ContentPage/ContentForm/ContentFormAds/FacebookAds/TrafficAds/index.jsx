@@ -123,8 +123,6 @@ const TrafficAds = observer((props) => {
     ],
   });
 
-  console.log('DisplayAds render', props);
-
   return (
     <>
       <h4>Setup an Traffic Ad</h4>

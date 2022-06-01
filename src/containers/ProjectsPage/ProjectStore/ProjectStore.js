@@ -14,7 +14,6 @@ import { AesirxProjectApiService } from 'aesirx-dma-lib';
 export default class ProjectStore {
   async fetchProjects(callbackOnSuccess, callbackOnError, paginationStep = 0, paginationSize = 25) {
     try {
-      console.log('Project Store - Fetch Projects');
       const projectAPIService = new AesirxProjectApiService();
       const respondedDataFromLibrary = await projectAPIService.getProjects(
         paginationStep,
@@ -38,7 +37,6 @@ export default class ProjectStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -53,7 +51,6 @@ export default class ProjectStore {
     paginationSize = 25
   ) {
     try {
-      console.log('Project Store - filter Projects');
       const projectAPIService = new AesirxProjectApiService();
       const respondedDataFromLibrary = await projectAPIService.searchProjects(
         dataFilter,
@@ -61,8 +58,6 @@ export default class ProjectStore {
         paginationSize
       );
 
-      console.log('Debugging ---- filterProjects');
-      console.log(respondedDataFromLibrary);
       let projectDataModels = null;
 
       if (respondedDataFromLibrary !== null) {
@@ -84,7 +79,6 @@ export default class ProjectStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -93,13 +87,7 @@ export default class ProjectStore {
 
   async saveProject(projectData, callbackOnSuccess, callbackOnError) {
     try {
-      console.log('Saving Project via call web service lib function');
-      console.log(projectData);
-
       const convertedProjectData = ProjectModel.convertSubmittedDataToAPIService(projectData);
-
-      console.log('Project Converted Data');
-      console.log(convertedProjectData);
 
       const projectAPIService = new AesirxProjectApiService();
 
@@ -107,19 +95,13 @@ export default class ProjectStore {
       let projectId = null;
 
       if (projectData.id === undefined) {
-        console.log('CREATE PROJECT');
         resultOnSave = await projectAPIService.createProject(convertedProjectData);
 
         projectId = resultOnSave;
-        console.log('CREATE PROJECT projectId');
-        console.log(projectId);
       } else {
-        console.log('UPDATE PROJECT', convertedProjectData);
         resultOnSave = await projectAPIService.updateProject(convertedProjectData);
         projectId = projectData.id;
       }
-
-      console.log('resultOnSave projectId resultOnSave', resultOnSave);
 
       if (resultOnSave) {
         runInAction(() => {
@@ -133,7 +115,6 @@ export default class ProjectStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -143,13 +124,9 @@ export default class ProjectStore {
   async deleteProjects(ids, callbackOnSuccess, callbackOnError) {
     if (!ids) return false;
 
-    console.log('DELETE PROJECT IDS');
-    console.log(ids);
-
     try {
       const projectAPIService = new AesirxProjectApiService();
       const deleteIds = ids.join();
-      console.log('Prepare ids for delete: ', deleteIds);
       const respondedFromApi = await projectAPIService.deleteProject(deleteIds);
 
       if (respondedFromApi.result === true) {
@@ -158,7 +135,6 @@ export default class ProjectStore {
         });
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });
@@ -178,14 +154,9 @@ export default class ProjectStore {
       if (results) {
         const projectAPIService = new AesirxProjectApiService();
         const respondedDataFromLibrary = await projectAPIService.getProjectItem(id);
-        console.log('PROJECT RESPONDED ITEM');
-        console.log(id);
-        console.log(respondedDataFromLibrary);
         const projectDataModels = ProjectUtils.transformProjectResponseIntoModel([
           respondedDataFromLibrary,
         ]);
-
-        console.log(projectDataModels);
 
         if (projectDataModels) {
           runInAction(() => {
@@ -198,7 +169,6 @@ export default class ProjectStore {
         }
       }
     } catch (error) {
-      console.log(error);
       runInAction(() => {
         callbackOnError(error);
       });

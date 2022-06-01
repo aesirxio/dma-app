@@ -7,9 +7,6 @@ import React, { Component, lazy } from 'react';
 import { Form } from 'react-bootstrap';
 
 const FormRadio = ({ field }) => {
-  console.log('[FormRadio] render', field);
-  console.log('[FormRadio] Options ', field.option);
-
   return (
     <div className="mb-3 btn-group justify-content-between w-100">
       {field.option.map((option) => (

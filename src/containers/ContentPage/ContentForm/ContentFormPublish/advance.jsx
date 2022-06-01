@@ -21,8 +21,6 @@ const ContentFormPublishAdvance = observer(({ formPropsData }) => {
     return null;
   }
 
-  console.log('ContentFormPublishAdvance render', formPropsData);
-
   return (
     <div className="">
       <div className="accordion" id="accordionContentFormDescriptionAdvance">

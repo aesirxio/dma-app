@@ -36,7 +36,6 @@ class CampaignsFormModalViewModel {
   };
 
   setEditCampaigns = (data) => {
-    console.log('Set edit data for campaign:', data[0]);
     this.editMode = true;
 
     if (data[0] !== undefined && typeof data == 'object') {
@@ -51,7 +50,6 @@ class CampaignsFormModalViewModel {
   };
 
   initForm = async (id = null) => {
-    console.log('Init Campaign Form');
 
     const projectMasterDataInModel = await this.campaignsStore.getProjectMasterData();
 
@@ -95,11 +93,8 @@ class CampaignsFormModalViewModel {
   };
 
   saveOnModal = () => {
-    console.log('Campaign saveOnModal debug', this.editMode);
-
     if (this.editMode) {
       const campaignId = this.campaignEditdata.getId();
-      console.log('CAMPAIGN ID NE', campaignId);
       this.campaignsFormComponent.formPropsData.id = campaignId.value;
 
       let startDateParse = Date.parse(
@@ -125,14 +120,10 @@ class CampaignsFormModalViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    console.log('callbackOnErrorHander');
-    console.log(error);
     notify(error.message);
   };
 
   callbackOnSuccessHandler = () => {
-    console.log('callbackOnSuccessHandler');
-
     this.closeModal();
 
     this.campaignsListViewModel.refreshTableCampaignsList();

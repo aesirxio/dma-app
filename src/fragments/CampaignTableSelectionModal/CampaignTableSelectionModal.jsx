@@ -21,13 +21,7 @@ const CampaignTableSelectionModal = observer(
       super(props);
 
       const { viewModel } = props;
-      console.log("CampaignTableSelectionModalViewModel - Debug View Model");
-      console.log(viewModel);
-
       this.CampaignTableSelectionModalViewModel = viewModel ? viewModel : null;
-
-      console.log("this.CampaignTableSelectionModalViewModel");
-      console.log(this.CampaignTableSelectionModalViewModel);
     }
 
     componentDidMount() {
@@ -47,11 +41,6 @@ const CampaignTableSelectionModal = observer(
       } = this.CampaignTableSelectionModalViewModel;
 
       if (!show) return null;
-
-      console.log("[CampaignTableSelectionModal] - re-render .........");
-
-      console.log(CampaignsMasterData);
-      console.log(this.CampaignTableSelectionModalViewModel);
 
       const tableRowHeader = [
         {

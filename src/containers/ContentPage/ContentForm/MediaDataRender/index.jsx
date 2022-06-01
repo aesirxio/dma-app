@@ -13,7 +13,6 @@ import ComponentImage from '../../../../components/ComponentImage';
 
 class MediaDataRender extends React.Component {
   canvaEditHandler = (index, id) => {
-    console.log('Editing...');
     this.props.onSetCanvaIndexToEdit(index, id);
   };
 
@@ -25,9 +24,7 @@ class MediaDataRender extends React.Component {
     const { damData, deleteDamItem, canvaData } = this.props;
     const { canvaEditHandler, canvaDeleteHandler } = this;
     const imageData = damData.filter((data) => !['mp4', 'mov'].includes(data.extension));
-    console.log(imageData);
     const videoData = damData.filter((data) => ['mp4', 'mov'].includes(data.extension));
-    console.log(videoData);
 
     return (
       <div className="d-flex">

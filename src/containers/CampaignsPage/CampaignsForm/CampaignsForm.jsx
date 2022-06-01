@@ -37,14 +37,10 @@ class CampaignsForm extends Component {
     this.isEditMode = this.viewModel.editMode;
     this.isEditMode = this.viewModel.editMode === true;
 
-    console.log('[CampaignForm] viewModel');
-    console.log(this.props.viewModel);
-
     this.viewModel.setForm(this);
   }
 
   generateFormSetting = () => {
-    console.log('re generate Form Setting', this.formPropsData);
     const dropdownlistProjectValues = this.viewModel.dropdownlistProjectValues
       ? this.viewModel.dropdownlistProjectValues
       : null;
@@ -80,7 +76,6 @@ class CampaignsForm extends Component {
             required: true,
             validation: 'required',
             changed: (event) => {
-              console.log(event.target.value);
               this.formPropsData[CAMPAIGNS_FIELD_KEY.NAME] = event.target.value;
             },
             blurred: () => {
@@ -96,7 +91,6 @@ class CampaignsForm extends Component {
               key: CAMPAIGNS_FIELD_KEY.START_DATE,
               value: this.formPropsData[CAMPAIGNS_FIELD_KEY.START_DATE],
               changed: (date) => {
-                console.log(date);
                 this.formPropsData[CAMPAIGNS_FIELD_KEY.START_DATE] = date;
               },
               required: true,
@@ -131,9 +125,6 @@ class CampaignsForm extends Component {
   };
 
   populatingFormDataHandler = (data) => {
-    console.log('populatingFormDataHandler', data);
-    console.log(data.getProjectId());
-
     if (!data) return false;
 
     this.formPropsData[CAMPAIGNS_FIELD_KEY.PROJECT] = data.getProjectId();
@@ -154,8 +145,6 @@ class CampaignsForm extends Component {
     if (formStatus === PAGE_STATUS.LOADING) {
       return <Spinner />;
     }
-
-    console.log('[Campaigns - Form] - re-render .........', this.formPropsData);
 
     const formSetting = this.generateFormSetting();
 

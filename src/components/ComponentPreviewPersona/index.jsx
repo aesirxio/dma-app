@@ -20,20 +20,10 @@ class ComponentPreviewPersona extends Component {
 
   render() {
     let { data } = this.props;
-    console.log('data data data 222', data);
     return (
       <div className="h-100">
         <div className="d-flex align-items-center justify-content-between mb-3">
           <h3>Preview Persona</h3>
-          {/* <a
-            href={void 0}
-            className="cursor-pointer text-decoration-none text-green"
-          >
-            <i className="">
-              <FontAwesomeIcon icon={faEdit} />
-            </i>
-            <span className="ms-1">Edit</span>
-          </a> */}
         </div>
         <SelectComponent
           placeholder={data ? data.name : null}

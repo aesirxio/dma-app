@@ -19,9 +19,6 @@ class FormSelectDropdown extends Component {
   }
 
   render() {
-    console.log('[FormSelectDropdown] render', this.field);
-    console.log('[FormSelectDropdown] Options ', this.field.option);
-
     return (
       <SelectComponent
         defaultValue={this.field.value}

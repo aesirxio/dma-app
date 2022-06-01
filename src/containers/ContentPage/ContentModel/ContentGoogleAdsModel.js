@@ -6,7 +6,6 @@
 class ContentGoogleAdsModel {
   dataAds = {};
   constructor(data) {
-    console.log('dataGoogleAdsEdit', data);
     this.dataAds = {
       setupAds: {
         final_url: data?.display_ad?.final_urls,
@@ -43,8 +42,6 @@ class ContentGoogleAdsModel {
   getDataAds = () => this.dataAds;
 
   static convertSubmittedDataToAPIService(data) {
-    console.log('convertdatagoogleads', data);
-
     if (!data.campaign.name) {
       return null;
     }
@@ -56,9 +53,6 @@ class ContentGoogleAdsModel {
         location_id: data?.ad_group?.location,
         start_date: data?.campaign?.startdate,
         end_date: data?.campaign?.enddate,
-        // location_id: data?.ad_group?.location
-        //   ? data?.ad_group?.location.map((item) => item.value).toString()
-        //   : '',
       },
       ad_group: {
         name: data?.ad_group?.name,

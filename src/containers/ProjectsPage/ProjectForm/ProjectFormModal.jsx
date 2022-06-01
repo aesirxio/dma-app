@@ -26,12 +26,8 @@ const ProjectFormModal = observer(
       this.validator = new SimpleReactValidator({ autoForceUpdate: this });
 
       const { viewModel } = props;
-      console.log('ProjectFormModal - Debug View Model');
-      console.log(viewModel);
       this.projectFormModalViewModel = viewModel ? viewModel.getFormModalViewModel() : null;
 
-      console.log('ProjectFormModal - After binding class');
-      console.log(this.projectFormModalViewModel);
     }
 
     saveProjectHandler = () => {
@@ -45,9 +41,7 @@ const ProjectFormModal = observer(
     };
 
     isFormValid = () => {
-      console.log('isFormValid');
       if (this.validator.allValid()) {
-        console.log('[is Form Valid]');
         return true;
       } else {
         this.validator.showMessages();
@@ -58,8 +52,6 @@ const ProjectFormModal = observer(
     };
 
     render() {
-      console.log('project form model modal');
-      console.log(this.projectFormModalViewModel);
 
       const { show, editMode } = this.projectFormModalViewModel;
 
@@ -67,7 +59,6 @@ const ProjectFormModal = observer(
         return null;
       }
 
-      console.log('[ProjectFormModal] - re-render .........');
 
       return (
         <ModalComponent

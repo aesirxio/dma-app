@@ -49,8 +49,6 @@ class ComponentConnectaChannel extends Component {
   isAllowedConnectAdvertising = (channelType) => {
     const advertisingMasterData = this.props.advertisingFeaturesMasterData;
 
-    console.log('isAllowedConnectAdvertising', advertisingMasterData);
-
     if (!advertisingMasterData) {
       return false;
     }
@@ -139,7 +137,6 @@ class ComponentConnectaChannel extends Component {
   };
 
   handleNotifyChannel = (name, isConnected = true, idFanpage) => {
-    console.log(name);
     let accepted = true;
     if (idFanpage) {
       switch (name) {
@@ -379,8 +376,6 @@ class ComponentConnectaChannel extends Component {
   };
 
   render() {
-    console.log('============ Before Render ================');
-    console.log(this.props);
     const {
       channelsListViewModel,
       listFaceBookFanpageView,
@@ -417,17 +412,6 @@ class ComponentConnectaChannel extends Component {
       listGoogleAdsAccountView,
       listGoogleAdsAccountConnected,
     } = this.props;
-
-    console.log('facebookConnected', facebookConnected);
-
-    // if(listLinkedinFanpageConnected) {
-    //   if(typeof listLinkedinFanpageConnected  == 'object') {
-    //     converListLinkedinFanpageConnected = Object.values(listLinkedinFanpageConnected)
-    //   } else {
-    //     converListLinkedinFanpageConnected = listLinkedinFanpageConnected
-    //   }
-    // }
-
     return (
       <div className="wrapper_tabs">
         <Tabs defaultActiveKey="1" id="connectContent-tab" className="bg-white border-0">

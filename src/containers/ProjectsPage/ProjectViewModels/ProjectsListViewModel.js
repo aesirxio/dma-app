@@ -82,11 +82,7 @@ class ProjectsListViewModel {
   };
 
   getPagination = (paginationStep, isList, limit = 5) => {
-    console.log('paginationStep', paginationStep);
     this.pageSize = limit;
-    console.log(this.isFilter);
-    console.log(this.dataFilter);
-    console.log(this.pageSize);
     this.tableStatus = PAGE_STATUS.LOADING;
     this.isList = isList;
 
@@ -120,8 +116,6 @@ class ProjectsListViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    console.log('callbackOnErrorHandler');
-    console.log(error);
     if (error.message === 'No result') {
       this.projects = [];
     }
@@ -130,17 +124,12 @@ class ProjectsListViewModel {
   };
 
   callbackOnSuccessHandler = (projectModelData) => {
-    console.log('callbackOnSuccessHandler');
-    console.log(projectModelData);
     if (projectModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 
       const rowDataTransformed = ProjectUtils.transformProjectModelIntoTableDataRow(
         projectModelData.list
       );
-
-      console.log('Row Data is Formatted');
-      console.log(rowDataTransformed);
 
       this.projects = rowDataTransformed;
       this.pagination = projectModelData.pagination;

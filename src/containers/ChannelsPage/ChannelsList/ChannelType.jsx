@@ -17,8 +17,6 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
     return null;
   }
 
-  console.log('ChannelType render', list);
-
   return (
     <div className="accordion mt-4" id={`accordionChannelType${channelTypeIndex}`}>
       {list.map((channelType, index) => (

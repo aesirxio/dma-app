@@ -25,8 +25,6 @@ class ConnectedChannelMasterDataModel extends BaseMasterDataModel {
   constructor(entities) {
     if (entities) {
       super(entities);
-      console.log("ConnectedChannelMasterDataModel");
-      console.log(entities.result);
       const entityResult = entities.result;
       this.unTransformedItems = entityResult;
       this.items = entityResult.map((element) => {

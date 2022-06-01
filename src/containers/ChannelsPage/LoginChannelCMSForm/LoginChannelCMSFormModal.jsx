@@ -46,9 +46,7 @@ const LoginChannelCMSFormModal = observer(
     };
 
     isFormValid = () => {
-      console.log('isFormValid');
       if (this.validator.allValid()) {
-        console.log('[is Form Valid]');
         return true;
       } else {
         this.validator.showMessages();
@@ -68,10 +66,6 @@ const LoginChannelCMSFormModal = observer(
       let header = `Add your ${channelType.name} details`;
       let buttonTitle = 'Save';
       let eventName = channelType.id;
-
-      console.log('eventName12313123', eventName);
-
-      console.log('LoginChannelCMSFormModal  render', this.loginCMSChannelFormModalViewModel);
 
       return (
         <ModalComponent

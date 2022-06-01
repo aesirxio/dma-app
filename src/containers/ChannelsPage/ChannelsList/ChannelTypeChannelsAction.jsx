@@ -25,8 +25,6 @@ const ChannelTypeChannelsAction = observer(({ channelType, channel, removeChanne
 
   const statusToken = ChannelUtils.checkTokenExpired(channel[CHANNEL_FIELD_KEY.EXPIRED_TOKEN_TIME]);
 
-  console.log('ChannelTypeChannelsAction render', channel, statusToken);
-
   return (
     <div className="d-flex flex-wrap flex-md-nowrap justify-content-end align-content-center">
       <div className="form-check form-switch">

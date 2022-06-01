@@ -11,8 +11,6 @@ class MemberFeaturesMasterDataModel extends BaseMasterDataModel {
     if (entities) {
       super(entities);
       this.unTransformedItems = entities;
-      console.log('MemberFeaturesMasterDataModel');
-      console.log(entities);
       this.items = entities;
     }
   }

@@ -11,7 +11,6 @@ const ComponentTooltip = ({ children, title, placement }) => {
   const textInput = useRef(null);
 
   useEffect(() => {
-    console.log('ComponentTooltip', textInput);
     new Tooltip(textInput.current);
   }, []);
 

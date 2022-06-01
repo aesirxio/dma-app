@@ -28,7 +28,6 @@ const FormLocationField = ({ field, validator }) => {
     required: true,
     validation: 'required',
     changed: (event) => {
-      console.log('fieldSelect', event.target.value);
       setFieldSelect({ ...fieldSelect, value: event.target.value });
 
       field.changedAll(event.target.value);
@@ -83,8 +82,6 @@ const FormLocationField = ({ field, validator }) => {
   if (!locations) {
     return null;
   }
-
-  console.log('locations234234234', locations);
 
   return (
     <div className="position-relative z-index-10">

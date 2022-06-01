@@ -38,9 +38,6 @@ const ContentsList = observer(
     };
 
     getDataFormFilter = () => {
-      console.log('content this.filterFormViewModel');
-      console.log(this.filterFormViewModel);
-
       return [
         {
           name: 'personas',
@@ -62,7 +59,6 @@ const ContentsList = observer(
         return <Spinner />;
       }
 
-      console.log('[Quick Edit Product] - re-render .........', contents);
       const dataFormFilter = this.getDataFormFilter();
 
       const tableRowHeader = [

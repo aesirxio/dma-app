@@ -53,8 +53,6 @@ const WizardSteps = (props) => {
           processW = (key - 1) * 100;
         }
 
-        console.log("processW processW", processW);
-
         return (
           <div
             key={key}

@@ -56,8 +56,6 @@ class ContentFormViewModel {
     const masterData = await this.contentStore.getMasterData();
     const channelsData = await this.channelStore.getChannelsData();
 
-    console.log('ContentFormViewModel masterData', masterData, memberProfile);
-
     const campaignMasterData = CampaignsUtils.toDropdownOptions(
       masterData?.campaignMasterData?.result
     );
@@ -164,7 +162,6 @@ class ContentFormViewModel {
       notify('Something was wrong. Please try again', 'error');
     }
 
-    console.log(this.form.formPropsData);
   };
 
   setShowAddChannelModel = (status) => {
@@ -174,7 +171,6 @@ class ContentFormViewModel {
 
   catchError = (error) => {
     notify('Something went wrong from Server response. Please try again.');
-    console.log(error);
   };
 
   setFacebookAdPreviewFromFacebookData = async (creative, pageId) => {
@@ -184,7 +180,6 @@ class ContentFormViewModel {
       pageId
     );
 
-    console.log('dataPreviewFromFacebook123', dataPreviewFromFacebook);
     this.getDataPreviewFromFacebook = dataPreviewFromFacebook;
     if (this.getDataPreviewFromFacebook) {
       this.isLoading = false;

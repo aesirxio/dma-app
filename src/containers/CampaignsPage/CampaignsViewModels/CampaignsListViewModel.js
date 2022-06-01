@@ -76,7 +76,6 @@ class CampaignsListViewModel {
   };
 
   getPagination = (paginationStep, isList, limit = 5) => {
-    console.log('paginationStep', paginationStep);
     this.pageSize = limit;
     this.tableStatus = PAGE_STATUS.LOADING;
     if (this.dataFilter !== null) {
@@ -99,8 +98,6 @@ class CampaignsListViewModel {
 
   searchCampaign = (dataFilter, page = 1) => {
     this.dataFilter = dataFilter;
-    console.log('dataFilter');
-    console.log(dataFilter);
     this.campaignsStore.searchCampaigns(
       this.callbackOnSuccessHandler,
       this.callbackOnErrorHander,
@@ -111,7 +108,6 @@ class CampaignsListViewModel {
   };
 
   getContentByIdExpanded = async (campaignId) => {
-    console.log('campaignIdcampaignId', campaignId);
     return await this.contentStore.getContentsByCampaignIDs(campaignId, 20);
   };
 
@@ -128,28 +124,20 @@ class CampaignsListViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    console.log('callbackOnErrorHander');
-    console.log(error);
     this.tableStatus = PAGE_STATUS.READY;
-    // notify(error.message);
     this.campaigns = null;
   };
 
   callbackOnSuccessHandler = (campaignsModelData) => {
-    console.log('callbackOnSuccessHandler', campaignsModelData);
-
     if (campaignsModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 
       const rowDataTransformed = CampaignsUtils.transformCampaignsModelIntoTableDataRow(
         campaignsModelData.list
       );
-      console.log('Row Data is Formatted');
-      console.log(rowDataTransformed);
       this.campaigns = rowDataTransformed;
       this.pagination = campaignsModelData.pagination;
 
-      console.log('this.pagination this.pagination', this.pagination);
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;
     }

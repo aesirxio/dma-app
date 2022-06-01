@@ -8,7 +8,6 @@ import './index.scss';
 
 class ComponentSwitch extends PureComponent {
   render() {
-    console.log('ComponentSwitch render');
     let { handleChange, checked, text, id, textLeft } = this.props;
     return (
       <div className="form-check form-switch d-none d-md-block">

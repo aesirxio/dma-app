@@ -18,8 +18,6 @@ class ComponentViewList extends Component {
     super(props);
 
     const { viewModel } = props;
-    console.log('PersonaList - Debug View Model');
-    console.log(viewModel);
     this.listViewModel = viewModel ? viewModel.getListViewModel() : null;
 
     if (typeof viewModel.getFormModalViewModel === 'function') {
@@ -33,11 +31,6 @@ class ComponentViewList extends Component {
     if (typeof viewModel.getFilterFormViewModel === 'function') {
       this.filterFormViewModel = viewModel ? viewModel.getFilterFormViewModel() : null;
     }
-
-    console.log('this.filterFormViewModel');
-    console.log(this.filterFormViewModel);
-    console.log('After binding class');
-    console.log(this.listViewModel);
   }
 
   componentDidMount() {
@@ -59,8 +52,6 @@ class ComponentViewList extends Component {
     // console.warn(this.listViewModel[`${this.view}IdsSelected`]);
     this.listViewModel[`${this.view}IdsSelected`] = data
       .map((item) => {
-        console.log('Debug An Item');
-        console.log(item);
         return item[this.key];
       })
       .reduce((arr, el) => {
@@ -68,7 +59,6 @@ class ComponentViewList extends Component {
       }, []);
   };
   handleExpanded = (e, row) => {
-    console.log('rowrowrowrowrowrowrowrowrow', row);
     this.listViewModel.getContentByIdExpanded(row[this.key]);
   };
 

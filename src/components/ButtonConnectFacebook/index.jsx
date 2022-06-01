@@ -18,9 +18,7 @@ const ButtonConnectFacebook = (props) => {
   const handleClick = () => {
     window.FB.login(
       function (response) {
-        console.log(response);
         if (response.status === 'connected') {
-          console.log(response.authResponse.accessToken);
           const accessToken = response.authResponse.accessToken;
           socialLogin('facebook', accessToken);
         } else {

@@ -100,54 +100,11 @@ const ComponentFormFieldInformation = ({ validator, formPropsData, viewModel }) 
       key: PERSONA_FIELD_KEY.VENDOR_RESEARCH,
       type: FORM_FIELD_TYPE.INPUT,
       value: formPropsData[PERSONA_FIELD_KEY.VENDOR_RESEARCH],
-      // required: true,
-      // validation: 'required',
       changed: (event) => {
         formPropsData[PERSONA_FIELD_KEY.VENDOR_RESEARCH] = event.target.value;
       },
     },
   ];
-  console.log(' formPropsData[PERSONA_FIELD_KEY.CHANNELS]');
-  console.log(formPropsData);
-
-  // let fieldChannels = {
-  //   label: "Channels",
-  //   key: PERSONA_FIELD_KEY.CHANNELS,
-  //   type: FORM_FIELD_TYPE.DROPDOWN,
-  //   value:
-  //     formPropsData[PERSONA_FIELD_KEY.CHANNELS] != ""
-  //       ? formPropsData[PERSONA_FIELD_KEY.CHANNELS]
-  //       : "",
-
-  //   defaultValue: formPropsData["connected_channels_master_data"],
-  //   required: true,
-  //   validation: "required",
-  //   option: formPropsData["connected_channels_master_data"],
-  //   changed: (data) => {
-  //     let values = data && data.map((e) => e.value);
-  //     formPropsData[PERSONA_FIELD_KEY.CHANNELS] = values;
-  //   },
-  //   isMulti: true,
-  // };
-
-  // let fieldInterest = {
-  //   label: "Interest",
-  //   key: PERSONA_FIELD_KEY.INTEREST,
-  //   type: FORM_FIELD_TYPE.DROPDOWN,
-  //   value: formPropsData[PERSONA_FIELD_KEY.INTEREST],
-  //   required: true,
-  //   validation: "required",
-  //   option: optionInterest,
-  //   changed: (value) => {
-  //     console.log("OnChange", value);
-  //     formPropsData[PERSONA_FIELD_KEY.INTEREST] = value;
-
-  //     console.log("formPropsData", formPropsData);
-  //   },
-  //   isMulti: true,
-  //   isComponents: true,
-  // };
-
   return (
     <>
       {information.map((field) => {

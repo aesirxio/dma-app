@@ -24,8 +24,6 @@ const PersonaTableSelectionModal = observer(
       super(props);
 
       const { viewModel } = props;
-      console.log('personaTableSelectionModalViewModel - Debug View Model');
-      console.log(viewModel);
       this.personaTableSelectionModalViewModel = viewModel ? viewModel : null;
     }
 
@@ -40,13 +38,7 @@ const PersonaTableSelectionModal = observer(
 
     render() {
       const { tableStatus, personasMasterData, show } = this.personaTableSelectionModalViewModel;
-      console.log('before - this.personaTableSelectionModalViewModel');
-      console.log(this.personaTableSelectionModalViewModel);
       if (!show) return null;
-
-      console.log('[PersonaTableSelectionModal] - re-render .........');
-
-      console.log(personasMasterData);
 
       const tableRowHeader = [
         {

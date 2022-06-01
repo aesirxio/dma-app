@@ -57,11 +57,7 @@ class ContentsListViewModel {
   };
 
   getPagination = (paginationStep, isList, limit = 5) => {
-    console.log('paginationStep', paginationStep);
     this.pageSize = limit;
-    console.log(this.isFilter);
-    console.log(this.dataFilter);
-    console.log(this.pageSize);
     this.tableStatus = PAGE_STATUS.LOADING;
     this.isList = isList;
 
@@ -134,13 +130,10 @@ class ContentsListViewModel {
   };
 
   getContentByIdExpanded = async (contentId) => {
-    console.log('contentIdcontentIdcontentId', contentId);
     return await this.contentStore.getListContentChannelItem(contentId);
   };
 
   callbackOnErrorHander = (error) => {
-    console.log('callbackOnErrorHandler');
-    console.log(error);
     if (error.message === 'No result') {
       this.contents = [];
     }
@@ -163,15 +156,11 @@ class ContentsListViewModel {
   };
 
   callbackOnSuccessPlaingHandler = (contentsModelData) => {
-    console.log('callbackOnSuccessHandlerPlaning');
-    console.log(contentsModelData);
     if (contentsModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 
       const rowDataTransformed = this.toModelEvents(contentsModelData.list);
 
-      console.log('Row Data is Formatted');
-      console.log(rowDataTransformed);
       this.plaining = rowDataTransformed;
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;
@@ -179,17 +168,12 @@ class ContentsListViewModel {
   };
 
   callbackOnSuccessHandler = (contentsModelData) => {
-    console.log('callbackOnSuccessHandler');
-    console.log(contentsModelData);
     if (contentsModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 
       const rowDataTransformed = ContentUtils.transformContentModelIntoTableDataRow(
         contentsModelData.list
       );
-
-      console.log('Row Data is Formatted');
-      console.log(rowDataTransformed);
 
       this.contents = rowDataTransformed;
       this.pagination = contentsModelData.pagination;

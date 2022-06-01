@@ -23,9 +23,6 @@ const FormPreviewPersona = observer(
       super(props);
 
       const { viewModel } = props;
-      console.log("ContentFormGenera - Debug View Model Preview ----");
-      console.log(viewModel);
-      console.log(this.props);
       this.personaTableSelectionModalViewModel = this.props
         .personaTableSelectionModalViewModel
         ? this.props.personaTableSelectionModalViewModel
@@ -35,8 +32,6 @@ const FormPreviewPersona = observer(
         ? viewModel.personaFormViewModel
         : null;
 
-      console.log("After binding class Preview persona");
-      console.log(this.previewPersonaViewModel);
     }
 
     componentDidMount = () => {};
@@ -56,8 +51,6 @@ const FormPreviewPersona = observer(
 
     render() {
       let data = this.previewPersonaViewModel.previewPersonaData;
-      console.log("render - this.personaTableSelectionModalViewModel");
-      console.log(this.personaTableSelectionModalViewModel);
 
       let { getValueSelected } = this.personaTableSelectionModalViewModel;
 

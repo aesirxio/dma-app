@@ -13,7 +13,6 @@ class ComponentInvoices extends React.Component {
 
   render() {
     let { data } = this.props;
-    console.log(data);
     return (
       <div className="bg-white p-3">
         <div className="py-2 px-3 bg-blue">

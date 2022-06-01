@@ -124,7 +124,6 @@ class BigCalendarFull extends React.PureComponent {
         })
       : [];
     events = events.concat(this.props.listViewModel.plaining);
-    console.log('[BigCalendarFull] render', events);
 
     return (
       <div className="wr_calendar h-100 ">

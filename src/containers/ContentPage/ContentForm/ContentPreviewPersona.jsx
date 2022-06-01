@@ -26,8 +26,6 @@ const FormPreviewPersona = lazy(() =>
 );
 
 const ContentPreviewPersona = (props) => {
-  console.log('ContentPreviewPersona');
-  console.log(props);
   return (
     <PersonaViewModelContextProvider viewModel={personaViewModel}>
       <FormPreviewPersona {...props}/>

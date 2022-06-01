@@ -81,8 +81,6 @@ class ComponentFormFieldPersonaName extends Component {
   };
 
   render() {
-    console.log('ComponentFormFieldPersonaName render', this.dataSetupAds);
-
     const formSetting = this.generateFormSetting();
 
     return renderingGroupFieldHandler(formSetting, this.props.validator);

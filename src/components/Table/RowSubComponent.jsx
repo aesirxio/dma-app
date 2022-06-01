@@ -15,8 +15,6 @@ function SubRows({ row, rowProps, visibleColumns, data, loading }) {
     );
   }
 
-  console.log('SubRows', row);
-
   return (
     <>
       {data && (
@@ -29,7 +27,6 @@ function SubRows({ row, rowProps, visibleColumns, data, loading }) {
                 className="border-bottom-1 row_sub_component"
               >
                 {row.cells.map((cell) => {
-                  console.log('SubRows cell', cell);
                   return (
                     <td {...cell.getCellProps()} className="px-2 py-3">
                       {cell.render(cell.column.SubCell ? 'SubCell' : 'Cell', {
@@ -66,8 +63,6 @@ const SubRowAsync = ({ row, rowProps, visibleColumns, listViewModel, idKey }) =>
       }
     })();
   }, [listViewModel, row, idKey]);
-
-  console.log('SubRowAsync - render', data, loading);
 
   return (
     <SubRows

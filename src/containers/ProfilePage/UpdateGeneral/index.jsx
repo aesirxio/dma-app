@@ -97,7 +97,6 @@ const UpdateGeneral = observer(
     };
 
     generateFormSetting = () => {
-      console.log('re generate Form Setting', this.formPropsData);
       return [
         {
           fields: [
@@ -223,17 +222,6 @@ const UpdateGeneral = observer(
                 this.formPropsData[UPDATE_GENERAL_FIELD_KEY.ZIPCODE] = event.target.value;
               },
             },
-            // {
-            //   label: 'Timezone',
-            //   key: UPDATE_GENERAL_FIELD_KEY.TIMEZONE,
-            //   type: FORM_FIELD_TYPE.TIMEZONE,
-            //   value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.TIMEZONE] ?? {},
-            //   className: 'col-6',
-            //   changed: (timezone) => {
-            //     console.log(timezone);
-            //     this.formPropsData[UPDATE_GENERAL_FIELD_KEY.TIMEZONE] = timezone;
-            //   },
-            // },
           ],
         },
       ];

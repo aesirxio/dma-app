@@ -24,7 +24,6 @@ const AdGroup = observer((props) => {
   const adGroupData = viewModel.formPropsData[CHANNEL_ADS_GOOGLE].ad_group ?? {};
 
   const generateFormSetting = () => {
-    console.log('AdGroup generateFormSetting', viewModel.formPropsData);
     return {
       fields: [
         {
@@ -93,7 +92,6 @@ const AdGroup = observer((props) => {
           validation: 'required',
           classNameInput: 'btn-outline-primary',
           changed: (event) => {
-            console.log('event.target.value1111', event.target.value);
             viewModel.setFromAdsGroupData('gender', event.target.value, CHANNEL_ADS_GOOGLE);
           },
         },
@@ -111,7 +109,6 @@ const AdGroup = observer((props) => {
             <components.Placeholder {...props}>Search...</components.Placeholder>
           ),
           changed: (data) => {
-            console.log('datainterests', data);
             viewModel.setFromAdsGroupData('interests', data, CHANNEL_ADS_GOOGLE);
           },
           blurred: () => {
