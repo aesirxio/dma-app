@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
- */
+*/
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
@@ -25,7 +25,6 @@ const ContentActionBar = observer(
       this.contentFormViewModel = viewModel ? viewModel.getFormViewModel() : null;
 
       this.contentsListViewModel = viewModel ? viewModel.getListViewModel() : null;
-
     }
 
     createContentHandler = (event) => {
@@ -37,19 +36,23 @@ const ContentActionBar = observer(
     };
 
     render() {
-
       return (
         <div className="d-flex justify-content-end">
           {/*  TODO Move to filter block */}
           <Dropdown className="me-3">
-            <Dropdown.Toggle variant="info" id="actions">
+            <Dropdown.Toggle className="p-3" variant="info" id="actions">
               Choose an action
             </Dropdown.Toggle>
             <Dropdown.Menu className="w-100">
-              <Dropdown.Item onClick={this.handerDeleteContent}>Delete</Dropdown.Item>
+              <Dropdown.Item className="px-3 py-2" onClick={this.handerDeleteContent}>
+                Delete
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-          <Link to="/content/create" className="btn btn-success">
+          <Link
+            to="/content/create"
+            className="btn btn-success d-flex align-items-center justify-content-center"
+          >
             <i className="me-2">
               <FontAwesomeIcon icon={faPlus} />
             </i>

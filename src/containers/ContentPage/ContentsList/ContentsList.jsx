@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
- */
+*/
 
 import React, { Component } from 'react';
 import { format } from 'date-fns';
@@ -39,11 +39,6 @@ const ContentsList = observer(
 
     getDataFormFilter = () => {
       return [
-        {
-          name: 'personas',
-          option: this.filterFormViewModel.personaMasterData,
-          isMulti: true,
-        },
         {
           name: 'campaigns',
           option: this.filterFormViewModel.campaignMasterData,

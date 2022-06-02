@@ -48,17 +48,16 @@ class ProjectActionBar extends Component {
     return (
       <div className="d-flex justify-content-end">
         <Dropdown className="me-3">
-          <Dropdown.Toggle variant="info" id="actions">
+          <Dropdown.Toggle className="p-3" variant="info" id="actions">
             Choose an action
           </Dropdown.Toggle>
           <Dropdown.Menu className="w-100">
-            <Dropdown.Item onClick={this.handerDeleteProject}>Delete</Dropdown.Item>
+            <Dropdown.Item className="px-3 py-2" onClick={this.handerDeleteProject}>
+              Delete
+            </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <ButtonNormal
-            onClick={this.createProjectHandler}
-            iconStart={true}
-            text=" Create project" />
+        <ButtonNormal onClick={this.createProjectHandler} iconStart={true} text=" Create project" />
         <ProjectFormModal />
       </div>
     );

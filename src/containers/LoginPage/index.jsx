@@ -81,7 +81,7 @@ class LoginPage extends React.Component {
     const { t, i18n } = this.props;
 
     return (
-      <div className="row">
+      <div className="row overflow-hidden">
         <BannerLeft dataSlider={dataSlider} />
         <div className="col-md-8 d-flex flex-column justify-content-center align-items-center ">
           <div className="d-block">

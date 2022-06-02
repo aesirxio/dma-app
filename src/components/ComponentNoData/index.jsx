@@ -13,20 +13,16 @@ import ComponentImage from '../ComponentImage';
 
 class ComponentNoData extends Component {
   render() {
-    let {
-      icons,
-      text,
-      title,
-      link,
-      linlText,
-      isBtn,
-      width,
-      className,
-      iconColor,
-      iconBg,
-    } = this.props;
+    let { icons, text, title, link, linlText, isBtn, width, className, iconColor, iconBg } =
+      this.props;
     return (
-      <div className={className ? className : 'text-center'}>
+      <div
+        className={
+          className
+            ? className
+            : 'text-center h-100 d-flex flex-column justify-content-center align-items-center'
+        }
+      >
         <p
           style={{ width: '48px', height: '48px' }}
           className={`mb-2 d-inline-block position-relative rounded-circle ${iconBg}`}

@@ -9,14 +9,6 @@ import SelectComponent from '../Select';
 
 let data = [
   {
-    name: 'Persona',
-    option: [
-      { value: 'persona1', label: 'Persona 1' },
-      { value: 'persona2', label: 'Persona 2' },
-      { value: 'persona3', label: 'Persona 3' },
-    ],
-  },
-  {
     name: 'Organisation',
     option: [
       { value: 'organisation1', label: 'Organisation 1' },
@@ -92,7 +84,7 @@ class ComponentFilter extends React.Component {
       }
     }
 
-    this.props.setFilter({...this.props.titleFilter ,[name] : values}, 3);
+    this.props.setFilter({ ...this.props.titleFilter, [name]: values }, 3);
     this.setState({
       valueOption: values,
     });

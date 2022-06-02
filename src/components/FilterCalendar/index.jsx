@@ -17,7 +17,6 @@ import Checkbox from '../Checkbox';
 class FilterCalendar extends React.Component {
   data = [];
   dataFilter = {
-    'personas[]': [],
     'projects[]': [],
     'campaigns[]': [],
   };
@@ -77,18 +76,12 @@ class FilterCalendar extends React.Component {
     this.data = [
       {
         id: 1,
-        title: 'Persona',
-        name: 'personas[]',
-        listCheck: this.props.filterFormViewModel.personaMasterData,
-      },
-      {
-        id: 2,
         title: 'Projects',
         name: 'projects[]',
         listCheck: this.props.filterFormViewModel.projectMasterData,
       },
       {
-        id: 3,
+        id: 2,
         title: 'Campaigns',
         name: 'campaigns[]',
         listCheck: this.props.filterFormViewModel.campaignMasterData,

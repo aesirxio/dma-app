@@ -26,7 +26,7 @@ class ProjectsListViewModel {
 
   isList = true;
 
-  pageSize = 5;
+  pageSize = 10;
 
   constructor(projectStore) {
     makeAutoObservable(this);
@@ -51,7 +51,7 @@ class ProjectsListViewModel {
     this.projectIdsSelected = null;
     this.dataFilter = null;
     this.isList = true;
-    this.pageSize = 5;
+    this.pageSize = 10;
   };
 
   refreshTableProjectList = () => {
@@ -81,7 +81,8 @@ class ProjectsListViewModel {
     }
   };
 
-  getPagination = (paginationStep, isList, limit = 5) => {
+  getPagination = (paginationStep, isList, limit = 10) => {
+    console.log('paginationStep', paginationStep);
     this.pageSize = limit;
     this.tableStatus = PAGE_STATUS.LOADING;
     this.isList = isList;
