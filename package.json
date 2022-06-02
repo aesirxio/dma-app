@@ -43,6 +43,7 @@
     "react-number-format": "^4.6.4",
     "react-refresh": "^0.13",
     "react-router-dom": "^5.2.0",
+    "react-scripts": "^5.0.1",
     "react-select": "^3.1.1",
     "react-step-wizard": "^5.3.5",
     "react-table": "^7.6.2",
@@ -56,11 +57,8 @@
     "url": "^0.11.0"
   },
   "scripts": {
-    "start": "serve -s build",
-    "build": "NODE_ENV=development node scripts/build.js",
-    "development": "NODE_ENV=development node scripts/build.js",
-    "staging": "NODE_ENV=staging node scripts/build.js",
-    "production": "NODE_ENV=production node scripts/build.js",
+    "start": "npm run build && serve -s build",
+    "build": "react-scripts build",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
