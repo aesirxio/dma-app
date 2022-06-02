@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
- */
+*/
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
@@ -25,7 +25,6 @@ const ContentActionBar = observer(
       this.contentFormViewModel = viewModel ? viewModel.getFormViewModel() : null;
 
       this.contentsListViewModel = viewModel ? viewModel.getListViewModel() : null;
-
     }
 
     createContentHandler = (event) => {
@@ -37,7 +36,6 @@ const ContentActionBar = observer(
     };
 
     render() {
-
       return (
         <div className="d-flex justify-content-end">
           {/*  TODO Move to filter block */}
