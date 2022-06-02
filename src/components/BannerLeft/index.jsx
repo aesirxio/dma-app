@@ -56,7 +56,7 @@ class BannerLeft extends React.Component {
             </div>
           </div>
           <span className="position-absolute top-0" style={{ zIndex: 0 }}>
-            <ComponentImage alt={'logo'} src={'/assets/images/background.png'} />
+            
           </span>
         </div>
       </div>
