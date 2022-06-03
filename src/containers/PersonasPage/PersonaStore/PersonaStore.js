@@ -1,16 +1,13 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import { runInAction } from 'mobx';
 
 import PersonaUtils from '../PersonaUtils/PersonaUtils';
 import PersonaModel from '../PersonaModel/PersonaModel';
-import {
-  AesirxPersonaApiService,
-  AesirxPersonaTemplateApiService
-} from 'aesirx-dma-lib';
+import { AesirxPersonaApiService, AesirxPersonaTemplateApiService } from 'aesirx-dma-lib';
 import { PersonaMasterDataModel } from '../../../store/Models/MasterDataModels/PersonaMasterDataModel';
 import { ConnectedChannelMasterDataModel } from '../../../store/Models/MasterDataModels/ConnectedChannelMasterDataModel';
 import PersonaTemplateUtils from '../PersonaUtils/PersonaTemplateUtils';
@@ -37,7 +34,6 @@ export default class PersonaStore {
           repondedDataFromLibrary.list
         );
 
-
         if (personaDataModels) {
           runInAction(() => {
             callbackOnSuccess({
@@ -60,7 +56,6 @@ export default class PersonaStore {
 
   async savePersona(personaData) {
     try {
-
       const convertedPersonaData = PersonaModel.convertSubmittedDataToAPIService(personaData);
 
       const personaService = new AesirxPersonaApiService();

@@ -1,12 +1,12 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-@import "../../scss/utils/bootstrap.scss";
+@import '../../scss/utils/bootstrap.scss';
 
-@import "~bootstrap/scss/modal";
-@import "~bootstrap/scss/close";
+@import '~bootstrap/scss/modal';
+@import '~bootstrap/scss/close';
 
 .close {
   @extend .btn-close;
@@ -52,7 +52,7 @@
   .modal-footer {
     border-top: 0;
 
-    >* {
+    > * {
       margin: 0;
     }
   }

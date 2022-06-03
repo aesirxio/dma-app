@@ -1,9 +1,9 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import ContentThemeModel from "../ContentModel/ContentThemeModel";
+import ContentThemeModel from '../ContentModel/ContentThemeModel';
 
 class ContentThemeUtils {
   transformContentThemeResponseIntoModel = (response) => {

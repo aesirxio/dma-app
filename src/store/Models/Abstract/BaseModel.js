@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 class BaseModel {
   items = [];
@@ -23,7 +23,6 @@ class BaseModel {
   };
 
   totalItems = () => this.items.length;
-  
 }
 
 export default BaseModel;

@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import { default as BaseModel } from '../../../store/Models/Abstract/BaseModel';
 import BaseItemModel from '../../../store/Models/Abstract/BaseItemModel';
@@ -98,7 +98,7 @@ class ContentConnectedChannelItemModel extends BaseItemModel {
         break;
       case 'drupal':
         icoImage = '/assets/images/drupal.png';
-          break;
+        break;
       default:
         icoImage = null;
     }

@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 // import ProjectsListViewModel from "../../ProjectsPage/ProjectViewModels/ProjectsListViewModel";
 // import ProjectFormModalViewModel from "../../ProjectsPage/ProjectViewModels/ProjectFormModalViewModel";

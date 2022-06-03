@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import React from 'react';
 import { runInAction } from 'mobx';
@@ -135,7 +135,6 @@ class CampaignsStore {
     if (!id) return false;
 
     const results = true;
-
 
     if (results) {
       const campaignService = new AesirxCampaignApiService();
