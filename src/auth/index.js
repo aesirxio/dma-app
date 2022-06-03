@@ -16,12 +16,6 @@ const login = async ({ username, password, remember }) => {
   if (result) {
     Storage.setItem('auth', true);
     document.body.classList.remove('body_login_page');
-    // if (result.first_login) {
-    //   Storage.setItem('first_login', true);
-    //   history.push('/wizard');
-    // } else {
-    //   history.push('/');
-    // }
 
     history.push('/');
     return true;
