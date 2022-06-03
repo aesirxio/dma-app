@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
-import { faUserMinus } from '@fortawesome/free-solid-svg-icons/faUserMinus';
+import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons/faFileAlt';
 import { faNetworkWired } from '@fortawesome/free-solid-svg-icons/faNetworkWired';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons/faUserFriends';
@@ -29,7 +29,7 @@ class Menu2 extends React.Component {
               name: 'profile',
               text: 'Profile',
               link: '/profile',
-              icons: faUserMinus,
+              icons: faUser,
             },
             // {
             //   name: 'billingplan',
@@ -151,7 +151,7 @@ class Menu2 extends React.Component {
         <div className="py-1 px-3 item_menu item_menu_home">
           <a
             href="/"
-            className="d-block text-blue-0 p-3 link_menu rounded-2 text-decoration-none bg-blue-2 "
+            className="d-block text-blue-0 p-3 link_menu rounded-2 text-decoration-none  "
           >
             <i class="text-white">
               <FontAwesomeIcon icon={faArrowLeft} />
@@ -162,9 +162,7 @@ class Menu2 extends React.Component {
         {dataMenu.map((item, index) => {
           return (
             <div key={index}>
-              <p className="section_menu_title fs-12 text-uppercase border-top-1 border-bottom-1 py-2 px-3 mb-0">
-                {item.title}
-              </p>
+              
               <ul className="wr_list_menu_2 list-unstyled mb-0 py-1 px-3">
                 {item.listMenu.map((value, key) => {
                   return (
