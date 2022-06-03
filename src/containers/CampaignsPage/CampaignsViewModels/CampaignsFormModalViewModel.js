@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import { makeAutoObservable, runInAction } from 'mobx';
 import { notify } from '../../../components/Toast';
@@ -50,7 +50,6 @@ class CampaignsFormModalViewModel {
   };
 
   initForm = async (id = null) => {
-
     const projectMasterDataInModel = await this.campaignsStore.getProjectMasterData();
 
     if (id && id > 0) {

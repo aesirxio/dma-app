@@ -1,11 +1,11 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import React from "react";
-import { ProgressBar } from "react-bootstrap";
-import styles from "../index.module.scss";
+import React from 'react';
+import { ProgressBar } from 'react-bootstrap';
+import styles from '../index.module.scss';
 
 class ProgressModel {
   constructor(data) {
@@ -23,7 +23,7 @@ class ProgressModel {
             <ProgressBar
               key={this.id}
               now={this.progress}
-              style={{ height: "5px" }}
+              style={{ height: '5px' }}
               className="bg-green rounded-2 fs-14"
             />
           </ProgressBar>

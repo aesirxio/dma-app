@@ -1,14 +1,14 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 // Import Swiper styles
-@import "swiper/swiper.scss";
-@import "swiper/components/pagination/pagination.scss";
-@import "swiper/components/navigation/navigation.scss";
+@import 'swiper/swiper.scss';
+@import 'swiper/components/pagination/pagination.scss';
+@import 'swiper/components/navigation/navigation.scss';
 
-@import "../../scss/utils/bootstrap.scss";
+@import '../../scss/utils/bootstrap.scss';
 
 .swiper-button-prev,
 .swiper-button-next {
@@ -20,6 +20,6 @@
 
   &:after {
     font-size: 18px !important;
-    color: $green !important
+    color: $green !important;
   }
 }

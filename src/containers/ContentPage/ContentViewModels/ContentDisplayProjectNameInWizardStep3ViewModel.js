@@ -1,11 +1,11 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import { makeAutoObservable } from "mobx";
-import { notify } from "../../../components/Toast";
-import PAGE_STATUS from "../../../constants/PageStatus";
+import { makeAutoObservable } from 'mobx';
+import { notify } from '../../../components/Toast';
+import PAGE_STATUS from '../../../constants/PageStatus';
 
 class ContentDisplayProjectNameInWizardStep3ViewModel {
   contentsStore = null;
@@ -13,7 +13,6 @@ class ContentDisplayProjectNameInWizardStep3ViewModel {
   formStatus = PAGE_STATUS.LOADING;
 
   value = null;
-
 
   constructor(contentsStore) {
     makeAutoObservable(this);
