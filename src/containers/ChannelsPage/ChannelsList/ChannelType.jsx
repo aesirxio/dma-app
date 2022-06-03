@@ -43,7 +43,7 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
                   channelType={channelType}
                 />
               ) : (
-                <div className="fs-6 text-nowrap">Comming Soon</div>
+                <div className="fs-6 text-nowrap">Coming Soon</div>
               )}
             </div>
           </h3>
