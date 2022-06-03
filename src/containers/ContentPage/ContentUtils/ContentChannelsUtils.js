@@ -1,10 +1,10 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import ContentModel from "../ContentModel/ContentModel";
-import ContentChannelsModel from "../ContentModel/ContentChannelsModel";
+import ContentModel from '../ContentModel/ContentModel';
+import ContentChannelsModel from '../ContentModel/ContentChannelsModel';
 
 class ContentChannelsUtils {
   transformContentResponseIntoModel = (response) => {

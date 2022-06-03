@@ -1,10 +1,10 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import React from "react";
-import Helper from "../../../utils/helper";
+import React from 'react';
+import Helper from '../../../utils/helper';
 
 class DescriptionsModel {
   constructor(data) {
@@ -12,7 +12,7 @@ class DescriptionsModel {
   }
 
   getChannelDescriptions = () => {
-    return <>{this.descriptions ? this.descriptions.description : ""}</>;
+    return <>{this.descriptions ? this.descriptions.description : ''}</>;
   };
 }
 

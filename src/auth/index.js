@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import history from '../routes/history';
 import { notify } from '../components/Toast';
@@ -16,12 +16,6 @@ const login = async ({ username, password, remember }) => {
   if (result) {
     Storage.setItem('auth', true);
     document.body.classList.remove('body_login_page');
-    // if (result.first_login) {
-    //   Storage.setItem('first_login', true);
-    //   history.push('/wizard');
-    // } else {
-    //   history.push('/');
-    // }
 
     history.push('/');
     return true;

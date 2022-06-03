@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 export const CHANNEL_CMS_WORDPRESS = 'wordpress';
 export const CHANNEL_CMS_DRUPAL = 'drupal';

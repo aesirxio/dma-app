@@ -1,12 +1,11 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
-
+ */
 
 import { CHANNEL_CMS_FIELD_KEY, CHANNEL_FIELD_KEY } from '../../../constants/ChannelModule';
 import { ChannelCategoryModel } from '../ChannelModel/ChannelModel';
-import { fromUnixTime } from 'date-fns'
+import { fromUnixTime } from 'date-fns';
 
 class ChannelUtils {
   transformChannelResponseIntoModel = (response) => {
@@ -39,7 +38,10 @@ class ChannelUtils {
           group: category.id,
           options: channelType
             .getPages()
-            .filter(({ connected, expired_token_time }) => connected & this.checkTokenExpired(expired_token_time))
+            .filter(
+              ({ connected, expired_token_time }) =>
+                connected & this.checkTokenExpired(expired_token_time)
+            )
             .map((channel) => channel.toDropdownSelectionItem()),
         })),
       ].filter((option) => option.options.length > 0);
@@ -61,8 +63,10 @@ class ChannelUtils {
             .map((channelType) => ({
               ...channelType,
               ...{
-                pages: channelType.pages.filter((channel) =>
-                (this.checkTokenExpired(channel[CHANNEL_FIELD_KEY.EXPIRED_TOKEN_TIME]) && (operator === 'not' ? !channel[filter] : channel[filter]))
+                pages: channelType.pages.filter(
+                  (channel) =>
+                    this.checkTokenExpired(channel[CHANNEL_FIELD_KEY.EXPIRED_TOKEN_TIME]) &&
+                    (operator === 'not' ? !channel[filter] : channel[filter])
                 ),
               },
             }))
@@ -91,21 +95,19 @@ class ChannelUtils {
   }
 
   checkTokenExpired = (timestamp) => {
-
-    if (!timestamp)
-    {
+    if (!timestamp) {
       return true;
     }
 
-    const a =  new Date();
-    const b =  fromUnixTime(timestamp);
+    const a = new Date();
+    const b = fromUnixTime(timestamp);
 
-    if (a > b){
+    if (a > b) {
       return false;
     }
 
     return true;
-  }
+  };
 }
 
 const utils = new ChannelUtils();

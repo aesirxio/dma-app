@@ -1,85 +1,84 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-@import "react-datepicker/dist/react-datepicker.css";
-@import "../../scss/utils/bootstrap.scss";
+@import 'react-datepicker/dist/react-datepicker.css';
+@import '../../scss/utils/bootstrap.scss';
 
 .wrapper_datepicker {
-    .react-datepicker__input-container {
-        height: 50px;
+  .react-datepicker__input-container {
+    height: 50px;
+  }
+
+  .react-datepicker-ignore-onclickoutside {
+    &:focus {
+      outline: none;
     }
+  }
 
-    .react-datepicker-ignore-onclickoutside {
+  .react-datepicker-popper[data-placement^='bottom'] {
+    margin-top: 5px;
+  }
 
-        &:focus {
-            outline: none;
-        }
+  .react-datepicker {
+    border: 0;
+  }
+
+  .react-datepicker__header {
+    background-color: transparent;
+    border-bottom-color: #e8e9ec;
+  }
+
+  .react-datepicker__month-container {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
     }
+  }
 
-    .react-datepicker-popper[data-placement^="bottom"] {
-        margin-top: 5px;
+  .react-datepicker__current-month {
+    font-family: $font-family-sans-serif;
+    color: $color-blue;
+  }
+
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    color: rgba($color: $color-blue, $alpha: 0.8);
+    font-family: $font-family-sans-serif;
+  }
+
+  .react-datepicker__day--selected,
+  .react-datepicker__day--in-selecting-range,
+  .react-datepicker__day--in-range,
+  .react-datepicker__month-text--selected,
+  .react-datepicker__month-text--in-selecting-range,
+  .react-datepicker__month-text--in-range,
+  .react-datepicker__quarter-text--selected,
+  .react-datepicker__quarter-text--in-selecting-range,
+  .react-datepicker__quarter-text--in-range,
+  .react-datepicker__year-text--selected,
+  .react-datepicker__year-text--in-selecting-range,
+  .react-datepicker__year-text--in-range {
+    background-color: rgba($color: $color-blue-3, $alpha: 0.08);
+  }
+
+  .react-datepicker__day--keyboard-selected,
+  .react-datepicker__month-text--keyboard-selected,
+  .react-datepicker__quarter-text--keyboard-selected,
+  .react-datepicker__year-text--keyboard-selected {
+    background-color: rgba($color: $color-blue-3, $alpha: 0.08);
+    outline: none;
+  }
+
+  .react-datepicker__day,
+  .react-datepicker__month-text,
+  .react-datepicker__quarter-text,
+  .react-datepicker__year-text {
+    &:hover {
+      background-color: rgba($color: $color-blue-3, $alpha: 0.08);
     }
-
-    .react-datepicker {
-        border: 0;
-    }
-
-    .react-datepicker__header {
-        background-color: transparent;
-        border-bottom-color: #E8E9EC;
-    }
-
-    .react-datepicker__month-container {
-        margin-right: 20px;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-
-    .react-datepicker__current-month {
-        font-family: $font-family-sans-serif;
-        color: $color-blue;
-    }
-
-    .react-datepicker__day-name,
-    .react-datepicker__day,
-    .react-datepicker__time-name {
-        color: rgba($color: $color-blue, $alpha: 0.8);
-        font-family: $font-family-sans-serif;
-    }
-
-    .react-datepicker__day--selected,
-    .react-datepicker__day--in-selecting-range,
-    .react-datepicker__day--in-range,
-    .react-datepicker__month-text--selected,
-    .react-datepicker__month-text--in-selecting-range,
-    .react-datepicker__month-text--in-range,
-    .react-datepicker__quarter-text--selected,
-    .react-datepicker__quarter-text--in-selecting-range,
-    .react-datepicker__quarter-text--in-range,
-    .react-datepicker__year-text--selected,
-    .react-datepicker__year-text--in-selecting-range,
-    .react-datepicker__year-text--in-range {
-        background-color: rgba($color: $color-blue-3, $alpha: 0.08);
-    }
-
-    .react-datepicker__day--keyboard-selected,
-    .react-datepicker__month-text--keyboard-selected,
-    .react-datepicker__quarter-text--keyboard-selected,
-    .react-datepicker__year-text--keyboard-selected {
-        background-color: rgba($color: $color-blue-3, $alpha: 0.08);
-        outline: none;
-    }
-
-    .react-datepicker__day,
-    .react-datepicker__month-text,
-    .react-datepicker__quarter-text,
-    .react-datepicker__year-text {
-        &:hover {
-            background-color: rgba($color: $color-blue-3, $alpha: 0.08);
-        }
-    }
+  }
 }

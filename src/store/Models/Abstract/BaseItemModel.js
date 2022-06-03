@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 class BaseItemModel {
   id = 0;
@@ -50,7 +50,6 @@ class BaseItemModel {
   getFeatured = () => {
     return this.featured;
   };
-
 }
 
 export default BaseItemModel;

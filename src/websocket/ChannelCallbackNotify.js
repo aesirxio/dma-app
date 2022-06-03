@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import { WEBSOCKET_EVENT_SIGNATURES } from '../constants/WebSocketClient';
 import { AUTHORIZATION_KEY, GENERAL_CONFIG, Storage } from 'aesirx-dma-lib';
