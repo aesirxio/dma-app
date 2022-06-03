@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 export const WEBSOCKET_EVENT_SIGNATURES = {
   CPN_JOINING_ROOM: 'JOINING_ROOM',

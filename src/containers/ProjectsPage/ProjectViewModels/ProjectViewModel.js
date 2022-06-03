@@ -1,10 +1,10 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import ProjectFormModalViewModel from "./ProjectFormModalViewModel";
-import ProjectListViewModel from "./ProjectsListViewModel";
+import ProjectFormModalViewModel from './ProjectFormModalViewModel';
+import ProjectListViewModel from './ProjectsListViewModel';
 //
 class ProjectViewModel {
   projectListViewModel = null;
@@ -15,7 +15,7 @@ class ProjectViewModel {
       this.projectFormModalViewModel = new ProjectFormModalViewModel(projectStore);
       this.projectListViewModel = new ProjectListViewModel(projectStore);
 
-      // Inject dependencies together among ViewModels 
+      // Inject dependencies together among ViewModels
       this.projectFormModalViewModel.setProjectListViewModel(this.projectListViewModel);
     }
   }
@@ -26,4 +26,3 @@ class ProjectViewModel {
 }
 
 export default ProjectViewModel;
-

@@ -1,14 +1,14 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import { makeAutoObservable } from "mobx";
-import PAGE_STATUS from "../../../constants/PageStatus";
-import PersonaUtils from "../PersonaUtils/PersonaUtils";
-import { PERSONA_FIELD_KEY } from "../../../constants/PersonaModule";
+import { makeAutoObservable } from 'mobx';
+import PAGE_STATUS from '../../../constants/PageStatus';
+import PersonaUtils from '../PersonaUtils/PersonaUtils';
+import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 
-import { notify } from "../../../components/Toast";
+import { notify } from '../../../components/Toast';
 
 class PersonasSelectionViewModel {
   show = false;
@@ -122,7 +122,6 @@ class PersonasSelectionViewModel {
       this.tableStatus = PAGE_STATUS.READY;
 
       this.personas = personaModelData.toDropdownFullListValues();
-
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;
     }

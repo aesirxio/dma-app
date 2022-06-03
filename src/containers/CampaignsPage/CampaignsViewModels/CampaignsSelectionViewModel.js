@@ -1,14 +1,14 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import { makeAutoObservable } from "mobx";
-import PAGE_STATUS from "../../../constants/PageStatus";
-import CampaignsUtils from "../CampaignsUtils/CampaignsUtils";
-import { CAMPAIGNS_FIELD_KEY } from "../../../constants/CampaignsModule";
+import { makeAutoObservable } from 'mobx';
+import PAGE_STATUS from '../../../constants/PageStatus';
+import CampaignsUtils from '../CampaignsUtils/CampaignsUtils';
+import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';
 
-import { notify } from "../../../components/Toast";
+import { notify } from '../../../components/Toast';
 
 class CampaignsSelectionViewModel {
   show = false;
@@ -28,7 +28,7 @@ class CampaignsSelectionViewModel {
     this.campaignStore = campaignStore;
   }
 
-  resetObservableProperties(){
+  resetObservableProperties() {
     this.multi = false;
     this.campaigns = null;
     this.tableStatus = PAGE_STATUS.LOADING;
@@ -91,9 +91,9 @@ class CampaignsSelectionViewModel {
         }
         return arr;
       }, []);
-    let result = convertedInArray;  
+    let result = convertedInArray;
     if (!this.multi) {
-       result = convertedInArray.length > 0 ? convertedInArray[0] : null;
+      result = convertedInArray.length > 0 ? convertedInArray[0] : null;
     }
     return result;
   };
@@ -117,7 +117,7 @@ class CampaignsSelectionViewModel {
   callbackOnSuccessHandler = (campaignModelData) => {
     if (campaignModelData) {
       this.tableStatus = PAGE_STATUS.READY;
-     
+
       this.campaigns = campaignModelData.toDropdownFullListValues();
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;

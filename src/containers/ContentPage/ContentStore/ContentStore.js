@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import { runInAction } from 'mobx';
 
@@ -110,8 +110,7 @@ export default class ContentStore {
       } else {
         return null;
       }
-    } catch (error) {
-    }
+    } catch (error) {}
   }
 
   async getConnectedChannelsByOrganizationID(callbackOnSuccess, callbackOnError) {
@@ -227,7 +226,6 @@ export default class ContentStore {
 
       const contentDataModels =
         ContentUtils.transformContentResponseIntoModel(repondedDataFromLibrary);
-
 
       return {
         list: contentDataModels,

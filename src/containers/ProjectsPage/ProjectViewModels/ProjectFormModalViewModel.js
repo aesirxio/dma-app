@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import { makeAutoObservable } from 'mobx';
 import { notify } from '../../../components/Toast';
@@ -84,8 +84,7 @@ class ProjectFormModalViewModel {
     // this.closeModal();
   };
 
-  callbackOnErrorHander = (error) => {
-  };
+  callbackOnErrorHander = (error) => {};
 
   callbackOnSuccessHandler = (projectId) => {
     this.closeModal();

@@ -1,12 +1,12 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import history from '../../../routes/history';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { makeAutoObservable } from 'mobx';
-import {logout} from '../../../auth';
+import { logout } from '../../../auth';
 import { notify } from '../../../components/Toast';
 
 class UpdatePasswordViewModel {
@@ -15,7 +15,7 @@ class UpdatePasswordViewModel {
   updatePasswordViewModel = null;
   successResponse = {
     state: true,
-    content_id: ''
+    content_id: '',
   };
 
   constructor(profileStore) {
@@ -31,7 +31,7 @@ class UpdatePasswordViewModel {
     this.profileStore.updatePassword(
       this.updatePasswordViewModel.formPropsData,
       this.callbackOnSuccessHandler,
-      this.callbackOnErrorHandler,
+      this.callbackOnErrorHandler
     );
   };
 

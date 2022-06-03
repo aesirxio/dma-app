@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import FIELD_TYPE from '../../../constants/FieldType';
 
@@ -16,11 +16,11 @@ import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
 class ContentChannelsModel {
   constructor(data) {
     const dataParse = JSON.parse(data.data);
-    
+
     this.id = dataParse.general[ESI_CONTENT_API_RESPONSE_FIELD_KEY.ID] ?? 0;
     this.name = dataParse.general[ESI_CONTENT_API_RESPONSE_FIELD_KEY.HEADLINE] ?? '';
     this.status = data.status ?? '';
-    this.channel = data.channel_type ?? ''
+    this.channel = data.channel_type ?? '';
   }
 
   getId = () => {
@@ -55,7 +55,7 @@ class ContentChannelsModel {
       value: this.channel,
       type: FIELD_TYPE.TEXT,
       columnName: CONTENT_FIELD_KEY.CHANNELS,
-      columnText: 'Channels'
+      columnText: 'Channels',
     };
   };
 

@@ -1,9 +1,9 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import React from "react";
+import React from 'react';
 const ProjectTableSelectionModalViewModelContext = React.createContext();
 
 export const ProjectTableSelectionModalViewModelContextProvider = ({ children, viewModel }) => {

@@ -1,16 +1,14 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import React from "react";
+import React from 'react';
 const HomeViewModelContext = React.createContext();
 
 export const HomeViewModelContextProvider = ({ children, viewModel }) => {
   return (
-    <HomeViewModelContext.Provider value={viewModel}>
-      {children}
-    </HomeViewModelContext.Provider>
+    <HomeViewModelContext.Provider value={viewModel}>{children}</HomeViewModelContext.Provider>
   );
 };
 

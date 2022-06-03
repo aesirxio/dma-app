@@ -1,16 +1,16 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-import { makeAutoObservable } from "mobx";
-import PAGE_STATUS from "../../../constants/PageStatus";
-import PersonaUtils from "../PersonaUtils/PersonaUtils";
-import { PERSONA_FIELD_KEY } from "../../../constants/PersonaModule";
-import contentsStore from "../../ContentPage/ContentStore/ContentStore";
-import PersonaTemplateUtils from "../PersonaUtils/PersonaTemplateUtils";
+import { makeAutoObservable } from 'mobx';
+import PAGE_STATUS from '../../../constants/PageStatus';
+import PersonaUtils from '../PersonaUtils/PersonaUtils';
+import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
+import contentsStore from '../../ContentPage/ContentStore/ContentStore';
+import PersonaTemplateUtils from '../PersonaUtils/PersonaTemplateUtils';
 
-import { notify } from "../../../components/Toast";
+import { notify } from '../../../components/Toast';
 
 class PersonaTemplateViewModel {
   personaStore = null;
@@ -44,8 +44,7 @@ class PersonaTemplateViewModel {
     this.personaTemplatesData = rowDataTransformed;
   };
 
-  callbackOnErrorHander = (error) => {
-  };
+  callbackOnErrorHander = (error) => {};
 }
 
 export default PersonaTemplateViewModel;
