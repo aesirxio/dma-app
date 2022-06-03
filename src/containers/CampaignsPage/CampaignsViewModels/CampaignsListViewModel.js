@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
@@ -137,7 +137,6 @@ class CampaignsListViewModel {
       );
       this.campaigns = rowDataTransformed;
       this.pagination = campaignsModelData.pagination;
-
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;
     }

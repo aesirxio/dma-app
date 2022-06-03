@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import React from 'react';
 import { withTranslation } from 'react-i18next';
@@ -81,7 +81,7 @@ class LoginPage extends React.Component {
     const { t, i18n } = this.props;
 
     return (
-      <div className="row overflow-hidden">
+      <div className="row">
         <BannerLeft dataSlider={dataSlider} />
         <div className="col-md-8 d-flex flex-column justify-content-center align-items-center ">
           <div className="d-block">

@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
@@ -94,8 +94,7 @@ class PersonasListViewModel {
     }
   };
 
-  callbackOnErrorHander = (error) => {
-  };
+  callbackOnErrorHander = (error) => {};
 
   callbackOnSuccessHandler = (personaModelData) => {
     if (personaModelData) {
@@ -107,7 +106,6 @@ class PersonasListViewModel {
 
       this.personas = rowDataTransformed;
       this.pagination = personaModelData.pagination;
-
     } else {
       this.tableStatus = PAGE_STATUS.ERROR;
     }

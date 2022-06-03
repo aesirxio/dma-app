@@ -1,59 +1,59 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-@import "../../scss/utils/bootstrap.scss";
-@import "~bootstrap/scss/progress";
+@import '../../scss/utils/bootstrap.scss';
+@import '~bootstrap/scss/progress';
 
 .progress {
-    border-radius: 0;
-    height: 0.4rem !important;
+  border-radius: 0;
+  height: 0.4rem !important;
 }
 
 .item_line_complete {
-    &:nth-last-child(-n + 3) {
-        margin-bottom: 0 !important;
-    }
+  &:nth-last-child(-n + 3) {
+    margin-bottom: 0 !important;
+  }
 }
 
 .number_progre {
-    width: 1.5rem;
-    height: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 @media (max-width: 1800px) {
-    .item_line_complete {
-        width: 50%;
+  .item_line_complete {
+    width: 50%;
 
-        &:nth-last-child(-n + 3) {
-            margin-bottom: 1.5rem !important;
-        }
-
-        &:nth-last-child(-n + 2) {
-            margin-bottom: 0 !important;
-        }
+    &:nth-last-child(-n + 3) {
+      margin-bottom: 1.5rem !important;
     }
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0 !important;
+    }
+  }
 }
 
 @media (max-width: 1600px) {
-    .main_line_complete {
-        li {
-            width: 50%;
-            margin-bottom: 0.5rem;
+  .main_line_complete {
+    li {
+      width: 50%;
+      margin-bottom: 0.5rem;
 
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
+  }
 }
 
 @include media-breakpoint-down(xl) {
-    .main_line_complete {
-        li {
-            width: 33.33%;
-            margin-bottom: 0;
-        }
+  .main_line_complete {
+    li {
+      width: 33.33%;
+      margin-bottom: 0;
     }
+  }
 }

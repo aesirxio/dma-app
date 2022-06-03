@@ -1,20 +1,20 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
-@import "../../scss/utils/bootstrap.scss";
+@import '../../scss/utils/bootstrap.scss';
 
 .wrapper_filter_calendar {
-    background-color: rgba($color: $black, $alpha: 0.7);
+  background-color: rgba($color: $black, $alpha: 0.7);
 }
 
 .main_filter_calendar {
-    height: calc(100% - 160px);
+  height: calc(100% - 160px);
 }
 
 .item_check_list {
-    &:last-child {
-        margin-bottom: 0 !important;
-    }
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
 }

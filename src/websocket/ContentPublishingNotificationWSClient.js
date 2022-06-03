@@ -1,7 +1,7 @@
 /*
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
-*/
+ */
 
 import { io } from 'socket.io-client';
 import { GENERAL_CONFIG, AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
@@ -51,8 +51,7 @@ class ContentPublishingNotificationWSClient {
     } catch (error) {}
   }
 
-  errorHandler(message) {
-  }
+  errorHandler(message) {}
 
   onReceivingAForwardedMessageFromServer(roomID, messageObject) {
     let dataPost = messageObject.dataPost ? messageObject.dataPost : null;
