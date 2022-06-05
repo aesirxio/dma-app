@@ -39,7 +39,7 @@ class Header extends React.Component {
   };
 
   render() {
-    const { t, i18n } = this.props;
+    const { t } = this.props;
     let { isMini } = this.state;
     return (
       <div
@@ -85,21 +85,6 @@ class Header extends React.Component {
           <div className="d-flex justify-content-between flex-1 align-items-center">
             <div>{/* <AllProjects /> */}</div>
             <div className="d-flex align-items-center">
-              {/* <div className="input-group mb-0 pe-2 wr_input_search">
-                <input
-                  type="text"
-                  placeholder={t("txt_search_for_something")}
-                  aria-describedby="button-search"
-                  className="form-control border-end-0 pe-2"
-                />
-                <button
-                  type="button"
-                  id="button-search"
-                  className="btn btn_search border-1 border-start-0 border-gray text-green"
-                >
-                  <FontAwesomeIcon icon={faSearch} />
-                </button>
-              </div> */}
               <div className="wr_help_center ps-3 pe-3 d-none">
                 <span className="item_help d-flex align-items-center text-blue-0 cursor-pointer">
                   <FontAwesomeIcon icon={faQuestionCircle} />

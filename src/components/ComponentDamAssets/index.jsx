@@ -6,7 +6,6 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import DamButton from '../DamButton';
-import Label from '../Form/Label';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons/faCloudUploadAlt';

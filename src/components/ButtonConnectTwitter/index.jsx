@@ -3,11 +3,10 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useState } from 'react';
+import React from 'react';
 import TwitterLogin from 'react-twitter-login';
 import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons/faTwitterSquare';
 import Button from '../Button';
-import { AESIRX_CONFIGS } from 'aesirx-dma-lib';
 import { socialLogin } from '../../auth';
 
 const ButtonConnectTwitter = (props) => {

@@ -3,11 +3,11 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useState } from 'react';
+import React  from 'react';
 import { Form } from 'react-bootstrap';
 import Label from '../../../components/Form/Label';
 
-import { FORM_FIELD_TYPE, FORMAT_DATE } from '../../../constants/FormFieldType';
+import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 
 const ComponentFormFieldGCP = ({ validator, formPropsData }) => {
@@ -17,8 +17,6 @@ const ComponentFormFieldGCP = ({ validator, formPropsData }) => {
       key: PERSONA_FIELD_KEY.GOALS,
       type: FORM_FIELD_TYPE.TEXTAREA,
       value: formPropsData[PERSONA_FIELD_KEY.GOALS],
-      // required: true,
-      // validation: 'required',
       changed: (event) => {
         formPropsData[PERSONA_FIELD_KEY.GOALS] = event.target.value;
       },

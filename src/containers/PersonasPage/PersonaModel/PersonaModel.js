@@ -7,10 +7,6 @@ import FIELD_TYPE from '../../../constants/FieldType';
 import { FORMAT_DATE } from '../../../constants/FormFieldType';
 import { PERSONA_FIELD_KEY, ESI_PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 
-import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
-
-//import {ESI_PERSONA_FIELD_KEY} from 'aesirx-dma-lib';
-
 import { format } from 'date-fns';
 import Helper from '../../../utils/helper';
 
@@ -330,10 +326,7 @@ class PersonaModel {
     const id = this.getId(),
       name = this.getName(),
       createdDate = this.getCreatedDate(),
-      updatedDate = this.getUpdatedDate(),
-      // image = this.getImage(),
-      avatar_2 = this.getAvatar2();
-    //channels = this.getChannels();
+      updatedDate = this.getUpdatedDate();
 
     return {
       [id.columnName]: id.value,

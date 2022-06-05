@@ -13,7 +13,6 @@ import Header from '../../components/Header';
 import SbarLeft from '../../components/SbarLeft';
 import Welcome from '../../components/Welcome';
 import { isLogin } from '../../auth';
-import InvesterContact from '../../containers/InvesterContact';
 
 const MainLayout = () => {
   return isLogin() ? (

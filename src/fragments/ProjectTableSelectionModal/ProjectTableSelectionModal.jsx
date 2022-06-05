@@ -8,7 +8,6 @@ import React, { Component, lazy } from "react";
 import { observer } from "mobx-react";
 import { withProjectTableSelectionModalViewModel } from "./ProjectTableSelectionModalViewModelContextProvider";
 import {
-  PROJECT_COLUMN_INDICATOR,
   PROJECT_TABLE_SELECTION_MODAL_COLUMN_INDICATOR,
 } from "../../constants/ProjectModule";
 import PAGE_STATUS from "../../constants/PageStatus";

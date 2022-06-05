@@ -6,12 +6,7 @@
 import React from "react";
 
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SelectComponent from "../Select";
-
-// import "./index.module.scss";
-
-// import styles from "./index.module.scss";
 
 const optionCampaigns = [
   { value: "project1", label: "Project 1" },
@@ -29,7 +24,7 @@ class CreateCampaign extends React.Component {
   }
 
   handleCampaign = (selectedOption) => {
-    this.setState((state) => ({ campaign: selectedOption }));
+    this.setState(() => ({ campaign: selectedOption }));
   };
 
 

@@ -5,8 +5,6 @@
 
 import { makeAutoObservable, runInAction } from 'mobx';
 import { notify } from '../../../components/Toast';
-import ProjectUtils from '../../ProjectsPage/ProjectUtils/ProjectUtils';
-import ProjectStore from '../../ProjectsPage/ProjectStore/ProjectStore';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';
 

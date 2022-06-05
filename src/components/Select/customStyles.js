@@ -5,7 +5,7 @@
 
 const customStyles = (isBorder, plColor) => {
   return {
-    control: (provided, state) => ({
+    control: (provided) => ({
       ...provided,
       minHeight: 50,
       boxShadow: 'none',
@@ -23,7 +23,7 @@ const customStyles = (isBorder, plColor) => {
       },
       backgroundColor: state.isSelected ? '#005f89' : '#FFF',
     }),
-    indicatorSeparator: (styles) => ({ display: 'none' }),
+    indicatorSeparator: () => ({ display: 'none' }),
     dropdownIndicator: (base) => ({
       ...base,
       color: 'text-green',

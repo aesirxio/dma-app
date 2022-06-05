@@ -4,14 +4,13 @@
  */
 
 import React from "react";
-import Dropzone from "react-dropzone";
 import { withTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
 import { faMinus } from "@fortawesome/free-solid-svg-icons/faMinus";
 
 import "./index.scss";
-import { Accordion, Card, Button, Image } from "react-bootstrap";
+import { Accordion, Button, Image } from "react-bootstrap";
 import ButtonNormal from "../ButtonNormal";
 
 class CreateProject extends React.Component {

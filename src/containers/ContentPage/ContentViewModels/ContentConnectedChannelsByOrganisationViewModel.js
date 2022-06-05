@@ -4,7 +4,6 @@
  */
 
 import { makeAutoObservable } from 'mobx';
-import { notify } from '../../../components/Toast';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { PERSONA_TABLE_SELECTION_MODAL_COLUMN_INDICATOR } from '../../../constants/PersonaModule';
 
@@ -510,7 +509,7 @@ class ContentConnectedChannelsByOrganisationViewModel {
     this.multi = multi;
   };
 
-  openModal = (inputRef) => {
+  openModal = () => {
     this.show = true;
   };
 
@@ -524,9 +523,13 @@ class ContentConnectedChannelsByOrganisationViewModel {
   }
 
   disableConnectSoMePage = (name, id) => {
+    let getDataContentDescriptionConnectFBPage,
+      getDataContentDescriptionConnectInstagramPage,
+      getDataContentDescriptionConnectLIPage;
+
     switch (name) {
       case 'facebook':
-        let getDataContentDescriptionConnectFBPage = this.isAdvanceMode
+        getDataContentDescriptionConnectFBPage = this.isAdvanceMode
           ? this.dataContentDescriptionSocial.list_channels.social.facebook.selectedPage
           : this.dataContentDescriptionSingle.list_channels.facebook.selectedPage;
 
@@ -542,7 +545,7 @@ class ContentConnectedChannelsByOrganisationViewModel {
         }
         break;
       case 'instagram':
-        let getDataContentDescriptionConnectInstagramPage = this.isAdvanceMode
+        getDataContentDescriptionConnectInstagramPage = this.isAdvanceMode
           ? this.dataContentDescriptionSocial.list_channels.social.instagram.selectedPage
           : this.dataContentDescriptionSingle.list_channels.instagram.selectedPage;
 
@@ -558,7 +561,7 @@ class ContentConnectedChannelsByOrganisationViewModel {
         }
         break;
       case 'linkedin':
-        let getDataContentDescriptionConnectLIPage = this.isAdvanceMode
+        getDataContentDescriptionConnectLIPage = this.isAdvanceMode
           ? this.dataContentDescriptionSocial.list_channels.social.linkedin.selectedPage
           : this.dataContentDescriptionSingle.list_channels.linkedin.selectedPage;
 
@@ -637,7 +640,6 @@ class ContentConnectedChannelsByOrganisationViewModel {
           this.arrayConnectedChannelsFinal.splice(index, 1);
           this.arrayConnectedChannelsFinal = [...this.arrayConnectedChannelsFinal];
         } else {
-          // this.arrayConnectedChannelsFinal = this.arrayConnectedChannelsFinal;
           this.arrayConnectedChannelsFinal.splice(index, 1);
           this.arrayConnectedChannelsFinal = [...this.arrayConnectedChannelsFinal];
           this.arrayConnectedChannelsFinalDelete = [...this.arrayConnectedChannelsFinal];
@@ -658,7 +660,7 @@ class ContentConnectedChannelsByOrganisationViewModel {
     }
   };
 
-  callbackOnErrorHander = (error) => {
+  callbackOnErrorHander = () => {
     this.formStatus = PAGE_STATUS.READY;
   };
 

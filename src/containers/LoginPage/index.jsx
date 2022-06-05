@@ -9,19 +9,12 @@ import SimpleReactValidator from 'simple-react-validator';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 
-import TitleAccount from '../../components/TitlePageAccount';
-
 import './index.scss';
 
-import Line from '../../components/Line';
-import Checkbox from '../../components/Checkbox';
 import BannerLeft from '../../components/BannerLeft';
-import Social from '../../components/Social';
 
-import { login, socialLogin } from '../../auth';
+import { login } from '../../auth';
 import InputPassword from '../../components/inputPassword';
-import { notify } from '../../components/Toast';
-import history from '../../routes/history';
 
 const dataSlider = [
   {
@@ -78,7 +71,7 @@ class LoginPage extends React.Component {
   };
 
   render() {
-    const { t, i18n } = this.props;
+    const { t } = this.props;
 
     return (
       <div className="row">

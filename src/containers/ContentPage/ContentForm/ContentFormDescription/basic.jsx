@@ -3,10 +3,9 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useContext, useRef, useEffect, useState } from 'react';
+import React from 'react';
 import { observer } from 'mobx-react';
 import { Form } from 'react-bootstrap';
-import SimpleReactValidator from 'simple-react-validator';
 
 import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from '../../../../constants/ContentModule';
 import ContentFormDescriptionMedia from './media';

@@ -5,7 +5,6 @@
 
 import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
-import CalendarUtils from '../CalendarUtils/CalendarUtils';
 import * as datesUtility from 'react-big-calendar/lib/utils/dates';
 import moment from 'moment';
 import { momentLocalizer } from 'react-big-calendar';
@@ -54,7 +53,7 @@ class CalendarListViewModel {
     endDate: datesUtility.lastVisibleDay(this.showDate, localizer).toISOString(),
   });
 
-  callbackOnErrorHander = (error) => {
+  callbackOnErrorHander = () => {
     this.tableStatus = PAGE_STATUS.READY;
   };
 

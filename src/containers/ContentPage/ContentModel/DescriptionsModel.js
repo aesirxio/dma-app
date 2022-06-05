@@ -4,7 +4,6 @@
  */
 
 import React from 'react';
-import Helper from '../../../utils/helper';
 
 class DescriptionsModel {
   constructor(data) {

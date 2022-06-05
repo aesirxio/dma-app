@@ -13,7 +13,7 @@ const FormRadio = lazy(() => import('../FormRadio'));
 const SelectComponent = lazy(() => import('../../Select'));
 
 const FormLocationField = ({ field, validator }) => {
-  const [locations, setLocations] = useState([]);
+  const [locations] = useState([]);
   const [fieldSelect, setFieldSelect] = useState({
     label: 'Location',
     key: 'selectlocation',

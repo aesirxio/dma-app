@@ -30,7 +30,6 @@ const TrafficAds = observer((props) => {
 
   const traffices = [
     { value: 'WEBSITE', label: 'Website' },
-    // { value: 'MESSENGER', label: 'Messenger' },
   ];
 
   const generateFormSetting = () => ({

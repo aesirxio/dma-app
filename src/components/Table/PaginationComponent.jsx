@@ -24,7 +24,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
     listViewModel.getPagination(pagination.totalPages, isList);
   };
 
-  const handlePreviousPage = (i) => {
+  const handlePreviousPage = () => {
     listViewModel.getPagination(pagination.page - 1, isList);
   };
 

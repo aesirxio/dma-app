@@ -15,15 +15,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons/faMapMarkerAlt';
 
 const ComponentLocations = ({
-  validator,
+
   formPropsData,
   getDataSelectOptions,
   getDataSelectOptionsAge,
   viewModel,
   getAge,
 }) => {
-  const handleOnchange = (event) => {
-    // formPropsData[PERSONA_FIELD_KEY.NAME] = event.target.value;
+  const handleOnchange = () => {
   };
 
   const handleOnchangeAge = (name) => {
@@ -104,7 +103,7 @@ const ComponentLocations = ({
             className={`w-80 btn_gender border-1 bg-transparent cursor-pointer d-flex align-items-center justify-content-center ${
               getAge === 'all' ? 'active' : ''
             }`}
-            onClick={(e) => handleOnchangeAge('all')}
+            onClick={() => handleOnchangeAge('all')}
           >
             All
           </span>
@@ -113,7 +112,7 @@ const ComponentLocations = ({
             className={`w-80 btn_gender border-1 bg-transparent cursor-pointer d-flex align-items-center justify-content-center ${
               getAge === 'men' ? 'active' : ''
             }`}
-            onClick={(e) => handleOnchangeAge('men')}
+            onClick={() => handleOnchangeAge('men')}
           >
             Men
           </span>
@@ -122,7 +121,7 @@ const ComponentLocations = ({
             className={`w-80 btn_gender border-1 bg-transparent cursor-pointer d-flex align-items-center justify-content-center ${
               getAge === 'women' ? 'active' : ''
             }`}
-            onClick={(e) => handleOnchangeAge('women')}
+            onClick={() => handleOnchangeAge('women')}
           >
             Women
           </span>

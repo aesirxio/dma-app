@@ -4,7 +4,7 @@
  */
 
 import React, { Component, lazy } from 'react';
-import { Tab, Tabs, Spinner } from 'react-bootstrap';
+import { Tab, Tabs } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload';
@@ -63,30 +63,28 @@ class ComponentConnectaChannel extends Component {
       return true;
     }
 
+  const { socialMediaFeaturesMasterData, countSocialMediaConnected, cmsFeaturesMasterData, countCMSConnected, advertisingFeaturesMasterData, countAdvertisingConnected, emailMarketingFeaturesMasterData, countEmailMarketingConnected } = this.props;
+
     switch (groupType) {
       case 'social_media':
-        const { socialMediaFeaturesMasterData, countSocialMediaConnected } = this.props;
         return this.isAllowedConnectByChannelType(
           channelType,
           socialMediaFeaturesMasterData,
           countSocialMediaConnected
         );
       case 'cms':
-        const { cmsFeaturesMasterData, countCMSConnected } = this.props;
         return this.isAllowedConnectByChannelType(
           channelType,
           cmsFeaturesMasterData,
           countCMSConnected
         );
       case 'advertising':
-        const { advertisingFeaturesMasterData, countAdvertisingConnected } = this.props;
         return this.isAllowedConnectByChannelType(
           channelType,
           advertisingFeaturesMasterData,
           countAdvertisingConnected
         );
       case 'email_marketing':
-        const { emailMarketingFeaturesMasterData, countEmailMarketingConnected } = this.props;
         return this.isAllowedConnectByChannelType(
           channelType,
           emailMarketingFeaturesMasterData,
@@ -377,7 +375,6 @@ class ComponentConnectaChannel extends Component {
 
   render() {
     const {
-      channelsListViewModel,
       listFaceBookFanpageView,
       facebookConnected,
       listFacebookAdsAccountView,
@@ -398,15 +395,6 @@ class ComponentConnectaChannel extends Component {
       drupalConnected,
       wordpressConnected,
       listFacebookFanpageConnected,
-      getIdActionFacebookFange,
-      ConnectStatusFanpage,
-      PAGE_STATUS,
-      onSuccessFacebookConnect,
-      onSuccessYoutubeConnect,
-      onSuccessInstagramConnect,
-      onFailureConnectChannels,
-      onSuccessGoogleMyBusinessConnect,
-      googleMyBusinessConnected,
       listLinkedinFanpageView,
       listLinkedinFanpageConnected,
       listGoogleAdsAccountView,
@@ -425,7 +413,7 @@ class ComponentConnectaChannel extends Component {
                   </div>
 
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(CHANNEL_TYPE.FACEBOOK.NAME, !facebookConnected);
                     }}
                     isConnected={facebookConnected}
@@ -464,7 +452,7 @@ class ComponentConnectaChannel extends Component {
                                       ? 'btn-danger'
                                       : 'btn-success'
                                   }`}
-                                  onClick={(e) => {
+                                  onClick={() => {
                                     this.handleNotifyChannel(
                                       CHANNEL_TYPE.FACEBOOK_PAGE.NAME,
                                       listFacebookFanpageConnected &&
@@ -497,7 +485,7 @@ class ComponentConnectaChannel extends Component {
                   </div>
 
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(CHANNEL_TYPE.INSTAGRAM.NAME, !instagramConnected);
                     }}
                     isConnected={instagramConnected}
@@ -531,7 +519,7 @@ class ComponentConnectaChannel extends Component {
                                       ? 'btn-danger'
                                       : 'btn-success'
                                   }`}
-                                  onClick={(e) => {
+                                  onClick={() => {
                                     this.handleNotifyChannel(
                                       CHANNEL_TYPE.INSTAGRAM.NAME,
                                       listInstagramFanpageConnected &&
@@ -577,7 +565,7 @@ class ComponentConnectaChannel extends Component {
                   )} */}
 
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(CHANNEL_TYPE.YOUTUBE.NAME, !youtubeConnected);
                     }}
                     isConnected={youtubeConnected}
@@ -593,7 +581,7 @@ class ComponentConnectaChannel extends Component {
                   </div>
 
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(CHANNEL_TYPE.TWITTER.NAME, !twitterConnected);
                     }}
                     isConnected={twitterConnected}
@@ -636,7 +624,7 @@ class ComponentConnectaChannel extends Component {
                   </div>
 
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(CHANNEL_TYPE.LINKEDIN.NAME, !linkedinConnected);
                     }}
                     isConnected={linkedinConnected}
@@ -675,7 +663,7 @@ class ComponentConnectaChannel extends Component {
                                       ? 'btn-danger'
                                       : 'btn-success'
                                   }`}
-                                  onClick={(e) => {
+                                  onClick={() => {
                                     this.handleNotifyChannel(
                                       CHANNEL_TYPE.LINKEDIN_PAGE.NAME,
                                       listLinkedinFanpageConnected &&
@@ -709,7 +697,7 @@ class ComponentConnectaChannel extends Component {
                   </div>
 
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(CHANNEL_TYPE.TUMBLR.NAME, !tumblrConnected);
                     }}
                     isConnected={tumblrConnected}
@@ -724,7 +712,7 @@ class ComponentConnectaChannel extends Component {
                   </div>
 
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(CHANNEL_TYPE.MEDIUM.NAME, !mediumConnected);
                     }}
                     isConnected={mediumConnected}
@@ -745,7 +733,7 @@ class ComponentConnectaChannel extends Component {
                   </div>
 
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(
                         CHANNEL_TYPE.FACEBOOK_ADS.NAME,
                         !facebookAdsConnected
@@ -791,7 +779,7 @@ class ComponentConnectaChannel extends Component {
                   </div>
 
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(CHANNEL_TYPE.GOOGLE_ADS.NAME, !googleadsConnected);
                     }}
                     isConnected={googleadsConnected}
@@ -828,7 +816,7 @@ class ComponentConnectaChannel extends Component {
                                       ? 'btn-danger'
                                       : 'btn-success'
                                   }`}
-                                  onClick={(e) => {
+                                  onClick={() => {
                                     this.handleNotifyChannel(
                                       CHANNEL_TYPE.GOOGLE_ADS.NAME,
                                       listGoogleAdsAccountConnected &&
@@ -869,28 +857,14 @@ class ComponentConnectaChannel extends Component {
                     <img className="img-avatar" src={'/assets/images/wordpress.png'} alt="" />
                     <span className="ms-2 fs-4 text-blue-0 text-capitalize">Wordpress</span>
                   </div>
-                  {/* {wordpressConnected || this.isAllowedConnectChannel(CHANNEL_CMS_WORDPRESS, 'cms') ? () : (<ButtonUpgrade/>)} */}
-
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(CHANNEL_TYPE.WORDPRESS.NAME, !wordpressConnected);
                     }}
                     isConnected={wordpressConnected}
                     className={wordpressConnected ? 'btn-danger' : 'btn-success'}
                   />
                 </div>
-                {/* <div className="text-end d-flex justify-content-end w-100 pb-3 pe-3 mt-3">
-                  <a
-                    href="https://wordpress.org/latest.zip"
-                    download
-                    className="py-1 px-3 bg-green d-flex"
-                  >
-                    <i className="text-white">
-                      <FontAwesomeIcon icon={faDownload} />
-                    </i>
-                    <span className="text-white ps-2">Download Wordpress</span>
-                  </a>
-                </div> */}
               </div>
             </div>
             <div className="mt-4">
@@ -902,25 +876,13 @@ class ComponentConnectaChannel extends Component {
                   </div>
 
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(CHANNEL_TYPE.DRUPAL.NAME, !drupalConnected);
                     }}
                     isConnected={drupalConnected}
                     className={drupalConnected ? 'btn-danger' : 'btn-success'}
                   />
                 </div>
-                {/* <div className="text-end d-flex justify-content-end w-100 pb-3 pe-3 mt-3">
-                  <a
-                    href="https://www.drupal.org/download-latest/zip"
-                    download
-                    className="py-1 px-3 bg-green d-flex"
-                  >
-                    <i className="text-white">
-                      <FontAwesomeIcon icon={faDownload} />
-                    </i>
-                    <span className="text-white ps-2">Download Drupal</span>
-                  </a>
-                </div> */}
               </div>
               <div className="bg-white rounded-3 mb-4">
                 <div className="d-flex align-items-center justify-content-between p-3">
@@ -930,7 +892,7 @@ class ComponentConnectaChannel extends Component {
                   </div>
 
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(CHANNEL_TYPE.JOOMLA.NAME, !joomlaConnected);
                     }}
                     isConnected={joomlaConnected}
@@ -962,7 +924,7 @@ class ComponentConnectaChannel extends Component {
                   </div>
 
                   <ButtonConnect
-                    onClick={(e) => {
+                    onClick={() => {
                       this.handleNotifyChannel(CHANNEL_TYPE.MAILCHIMP.NAME, !mailchimpConnected);
                     }}
                     isConnected={mailchimpConnected}

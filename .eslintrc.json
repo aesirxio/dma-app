@@ -23,7 +23,13 @@
         "react"
     ],
     "rules": {
-        "no-unused-vars": "error"
+        "no-unused-vars": "error",
+        "react/display-name": "warn",
+        "react/prop-types": "warn",
+        "react/jsx-key": "warn",
+        "no-unsafe-optional-chaining": "warn",
+        "react/no-deprecated": "warn",
+        "react/no-children-prop": "warn"
     },
     "settings": {
         "react": {
@@ -34,6 +40,12 @@
     "ignorePatterns": [
         "*.json",
         "*.scss",
-        "*.svg"
+        "*.svg",
+        "*.woff",
+        "*.woff2",
+        "*.ttf",
+        "*.otf",
+        "*.eot",
+        "*.png"
     ]
 }

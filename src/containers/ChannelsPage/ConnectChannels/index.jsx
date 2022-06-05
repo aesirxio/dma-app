@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from 'react';
+import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { withChannelsViewModel } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
@@ -175,9 +175,7 @@ const ConnectChannels = observer(
       this.channelsListViewModel.onSuccessConnect(JSON.stringify(dataAccessToken), 'google_ads');
     };
 
-    onRequestGoogleConnect = (req, res) => {};
-
-    onSuccessFacebookConnect = (response) => {
+    onSuccessFacebookConnect = () => {
       window.FB.api('me/accounts', (response) => {
         if (response) {
           const connected = response.data.map((item) => item.id);
@@ -212,9 +210,6 @@ const ConnectChannels = observer(
       this.channelsListViewModel.onSuccessConnect(JSON.stringify(dataAccessToken), 'instagram');
     };
 
-    onFailureConnectChannels = (err) => {
-    };
-
     onSuccessGoogleMyBusinessConnect = (res) => {
       let dataAccessToken = {
         profileObject: res.profileObj,
@@ -232,11 +227,9 @@ const ConnectChannels = observer(
       let { showModal } = this.state;
 
       const {
-        listFaceBookFanpage,
         listFaceBookFanpageView,
         listFacebookFanpageConnected,
         facebookConnected,
-        listInstagramFanpage,
         listInstagramFanpageView,
         listInstagramFanpageConnected,
         instagramConnected,
@@ -340,39 +333,7 @@ const ConnectChannels = observer(
               listGoogleAdsAccountConnected={listGoogleAdsAccountConnected}
             />
           </div>
-          {/* {listFaceBookFanpage && (
-            <ModalComponent
-              header={'Facebook Fanpage'}
-              body={
-                <div>
-                  <ul className="list-unstyled align-items-center">
-                    {listFaceBookFanpage &&
-                      listFaceBookFanpage.map((value, key) => {
-                        return (
-                          <ComponentItemFanpage
-                            key={key}
-                            name={value.name}
-                            handleCheckbox={(e) => {
-                              this.handleCheckbox(value.id);
-                            }}
-                          />
-                        );
-                      })}
-                  </ul>
-                </div>
-              }
-              show={showModal}
-              onHide={this.handleCloseModal}
-              footer={
-                <button onClick={this.handleSaveFanpage} className="btn btn-success w-100">
-                  <span>Save</span>
-                  <i className="ms-1">
-                    <FontAwesomeIcon icon={faChevronRight} />
-                  </i>
-                </button>
-              }
-            />
-          )} */}
+
           {listFacebookAdsAccount && (
             <ModalComponent
               header={'Facebook Ad Accounts'}
@@ -385,7 +346,7 @@ const ConnectChannels = observer(
                           <ComponentItemFanpage
                             key={key}
                             name={value.name}
-                            handleCheckbox={(e) => {
+                            handleCheckbox={() => {
                               this.handleCheckboxAdAccounts(value.id);
                             }}
                           />

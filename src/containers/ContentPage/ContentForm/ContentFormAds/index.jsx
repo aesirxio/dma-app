@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { observer } from 'mobx-react';
 import { Tab, Tabs } from 'react-bootstrap';
 
@@ -12,7 +12,6 @@ import ContentFormAdsFacebookAds from './FacebookAds';
 
 import { ContentViewModelContext } from '../../ContentViewModels/ContentViewModelContextProvider';
 
-import ContentUtils from '../../ContentUtils/ContentUtils';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 
 import { CHANNEL_ADS_GOOGLE, CHANNEL_ADS_FACEBOOK } from '../../../../constants/ChannelModule';
@@ -34,7 +33,7 @@ const ContentFormAds = observer((props) => {
       <div className="wrapper_tabs wrapper_tabs_2 bg-white p-3">
         <Tabs defaultActiveKey="0" id="uncontrolled-tab-example" className="mb-3">
           {channelData.map(
-            ({ id, list }, index) =>
+            ({ id, list }) =>
               id === 'advertising' &&
               list.map((channelData, i) => (
                 <Tab eventKey={i} title={channelData.name}>

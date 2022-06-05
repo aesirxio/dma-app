@@ -45,7 +45,7 @@ const dataSelectOptionsGGAgeTo = [
   { value: 'unknown', label: 'Unknown' },
 ];
 
-const FormAgeField = ({ field, validator }) => {
+const FormAgeField = ({ field }) => {
   const [getDataSelectOptionsAge, setDataSelectOptionsAge] = useState(dataSelectOptionsAgeTo);
 
   const handleOnChange = (data, target) => {

@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from 'react';
+import React, { Component } from 'react';
 
 import { observer } from 'mobx-react';
 import { withWizardViewModel } from '../../WizardViewModels/WizardViewModelContextProvider';
@@ -82,10 +82,11 @@ const ContentFormPublishWizard = observer(
 
     handleDeSelectConnectSomePage = (name, id) => {
       let { getArrayPageFacebook, getArrayPageLinkedin, getArrayPageInstagram } = this.state;
+      let indexFB, indexLI, indexInstagram
 
       switch (name) {
         case 'facebook':
-          const indexFB = getArrayPageFacebook.includes(id);
+          indexFB = getArrayPageFacebook.includes(id);
 
           if (indexFB) {
             const getIdFB = getArrayPageFacebook.indexOf(id);
@@ -99,7 +100,7 @@ const ContentFormPublishWizard = observer(
           });
           break;
         case 'linkedin':
-          const indexLI = getArrayPageLinkedin.includes(id);
+          indexLI = getArrayPageLinkedin.includes(id);
 
           if (indexLI) {
             const getIdLI = getArrayPageLinkedin.indexOf(id);
@@ -113,7 +114,7 @@ const ContentFormPublishWizard = observer(
           });
           break;
         case 'instagram':
-          const indexInstagram = getArrayPageInstagram.includes(id);
+          indexInstagram = getArrayPageInstagram.includes(id);
           if (indexInstagram) {
             const getIdInstagram = getArrayPageInstagram.indexOf(id);
             getArrayPageInstagram.splice(getIdInstagram, 1);

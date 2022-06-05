@@ -52,7 +52,6 @@ class ComponentPreview extends Component {
   };
 
   render() {
-    let { data } = this.props;
     let { dataPreview, getImagePreview } = this.state;
     return (
       <div>

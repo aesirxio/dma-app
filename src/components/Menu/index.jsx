@@ -5,14 +5,6 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
-import { faMagic } from '@fortawesome/free-solid-svg-icons/faMagic';
-import { faFileAlt } from '@fortawesome/free-solid-svg-icons/faFileAlt';
-import { faNetworkWired } from '@fortawesome/free-solid-svg-icons/faNetworkWired';
-import { faVolumeUp } from '@fortawesome/free-solid-svg-icons/faVolumeUp';
-
-import { authRoutes, mainRoutes } from '../../routes/routes';
 
 import './index.scss';
 import ComponentImage from '../ComponentImage';
@@ -29,13 +21,6 @@ class Menu extends React.Component {
           icons: '/assets/images/icon_calendar.svg',
           icons_color: '/assets/images/icon_calendar_white.svg',
         },
-        // {
-        //   name: 'wizard',
-        //   text: 'Wizard',
-        //   link: '/wizard',
-        //   icons: '/assets/images/icon_wizard.svg',
-        //   icons_color: '/assets/images/icon_wizard_white.svg',
-        // },
         {
           name: 'projects',
           text: 'Projects',
@@ -50,14 +35,6 @@ class Menu extends React.Component {
           icons: '/assets/images/icon_campaigns.svg',
           icons_color: '/assets/images/icon_campaigns_white.svg',
         },
-        // {
-        //   name: 'personas',
-        //   text: 'Personas',
-        //   link: '/personas',
-        //   icons: '/assets/images/icon_personas.svg',
-        //   icons_color: '/assets/images/icon_personas_white.svg',
-        //   className: 'fst-italic',
-        // },
         {
           name: 'content',
           text: 'Content',
@@ -72,21 +49,6 @@ class Menu extends React.Component {
           icons: '/assets/images/icon_channles.svg',
           icons_color: '/assets/images/icon_channles_white.svg',
         },
-        // {
-        //   name: 'calendar',
-        //   text: 'Calendar',
-        //   link: '/calendar',
-        //   icons: '/assets/images/icon_calendar.svg',
-        //   icons_color: '/assets/images/icon_calendar_white.svg',
-        // },
-        // {
-        //   name: 'analytics',
-        //   text: 'Analytics',
-        //   link: '/analytics',
-        //   icons: '/assets/images/icon_analytics.svg',
-        //   icons_color: '/assets/images/icon_analytics_white.svg',
-        //   className: 'fst-italic',
-        // },
         {
           name: 'digital',
           text: 'Digital Assets',
@@ -97,32 +59,6 @@ class Menu extends React.Component {
       ],
     };
   }
-
-  // checkActiveMenu = (name) => {
-  // if (window.location.pathname === '/') {
-  //   document.getElementById('wr_list_menu').classList.remove('wr_list_menu');
-  // } else {
-  //   document.getElementById('wr_list_menu').classList.add('wr_list_menu');
-  // }
-  // if (name === '/' || name === '/analytics' || name === '/calendar') {
-  //   document.getElementById('all_header').classList.add('all_header');
-  // } else {
-  //   document.getElementById('all_header').classList.remove('all_header');
-  // }
-  // };
-
-  // componentDidMount = () => {
-  // this.checkActiveMenu();
-  // if (window.location.pathname === '/') {
-  //   document.getElementById('all_header').classList.add('all_header');
-  // } else {
-  //   document.getElementById('all_header').classList.remove('all_header');
-  // }
-  // };
-
-  // handleCheckActive = (name) => {
-  //   this.checkActiveMenu(name);
-  // };
 
   render() {
     let { dataMenu } = this.state;

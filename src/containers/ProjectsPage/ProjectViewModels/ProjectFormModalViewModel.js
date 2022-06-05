@@ -84,8 +84,6 @@ class ProjectFormModalViewModel {
     // this.closeModal();
   };
 
-  callbackOnErrorHander = (error) => {};
-
   callbackOnSuccessHandler = (projectId) => {
     this.closeModal();
 

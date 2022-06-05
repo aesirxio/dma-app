@@ -5,25 +5,19 @@
 
 import React, { Component } from 'react';
 
-import { Image, Tab, Tabs } from 'react-bootstrap';
 import { observer } from 'mobx-react';
 
-import Button from '../../../components/Button';
 import ModalComponent from '../../../components/Modal';
 import history from '../../../routes/history';
 
-import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import ButtonNormal from '../../../components/ButtonNormal';
 import ComponentConnectaChannel from '../../../components/ComponentConnectaChannel';
 import { withWizardViewModel } from '../WizardViewModels/WizardViewModelContextProvider';
-import Checkbox from '../../../components/Checkbox';
 import ComponentItemFanpage from '../../../components/ComponentItemFanpage';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 
-import WizardSteps from '../../../components/WizardSteps';
-import styles from './index.module.scss';
 import { notify } from '../../../components/Toast';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { CHANNEL_ADS_GOOGLE } from '../../../constants/ChannelModule';
@@ -177,9 +171,7 @@ const ConnectChannel = observer(
       this.channelsListViewModel.onSuccessConnect(JSON.stringify(dataAccessToken), 'google_ads');
     };
 
-    onRequestGoogleConnect = (req, res) => {};
-
-    onSuccessFacebookConnect = (response) => {
+    onSuccessFacebookConnect = () => {
       window.FB.api('me/accounts', (response) => {
         if (response) {
           const connected = response.data.map((item) => item.id);
@@ -212,9 +204,6 @@ const ConnectChannel = observer(
       };
 
       this.channelsListViewModel.onSuccessConnect(JSON.stringify(dataAccessToken), 'instagram');
-    };
-
-    onFailureConnectChannels = (err) => {
     };
 
     onSuccessGoogleMyBusinessConnect = (res) => {
@@ -274,7 +263,6 @@ const ConnectChannel = observer(
       let { showModal } = this.state;
 
       const {
-        listFaceBookFanpage,
         listFaceBookFanpageView,
         listFacebookFanpageConnected,
         facebookConnected,
@@ -373,39 +361,7 @@ const ConnectChannel = observer(
               }
             />
           </div>
-          {/* {listFaceBookFanpage && (
-            <ModalComponent
-              header={'Facebook Fanpage'}
-              body={
-                <div>
-                  <ul className="list-unstyled align-items-center">
-                    {listFaceBookFanpage &&
-                      listFaceBookFanpage.map((value, key) => {
-                        return (
-                          <ComponentItemFanpage
-                            key={key}
-                            name={value.name}
-                            handleCheckbox={(e) => {
-                              this.handleCheckbox(value.id);
-                            }}
-                          />
-                        );
-                      })}
-                  </ul>
-                </div>
-              }
-              show={showModal}
-              onHide={this.handleCloseModal}
-              footer={
-                <button onClick={this.handleSaveFanpage} className="btn btn-success w-100">
-                  <span>Save</span>
-                  <i className="ms-1">
-                    <FontAwesomeIcon icon={faChevronRight} />
-                  </i>
-                </button>
-              }
-            />
-          )} */}
+
           {listFacebookAdsAccount && (
             <ModalComponent
               header={'Facebook Ads'}
@@ -418,7 +374,7 @@ const ConnectChannel = observer(
                           <ComponentItemFanpage
                             key={key}
                             name={value.name}
-                            handleCheckbox={(e) => {
+                            handleCheckbox={() => {
                               this.handleCheckboxAdAccounts(value.id);
                             }}
                           />
@@ -449,7 +405,7 @@ const ConnectChannel = observer(
             <ButtonNormal
               className="btn btn-success"
               text="Next"
-              onClick={(e) => this.next()}
+              onClick={() => this.next()}
               iconEnd={faChevronRight}
             />
           </div>

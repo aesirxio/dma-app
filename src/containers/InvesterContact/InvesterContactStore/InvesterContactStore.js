@@ -5,12 +5,10 @@
 
 import { runInAction } from 'mobx';
 
-import { AesirxInvesterContactApiService } from 'aesirx-dma-lib';
 import { notify } from '../../../components/Toast';
 
 export default class InvesterContactStore {
-  async investerContactSave(callbackOnSuccess, callbackOnError, dataPost) {
-    const investerContactService = new AesirxInvesterContactApiService();
+  async investerContactSave(callbackOnSuccess) {
     let response = null;
     runInAction(() => {
       callbackOnSuccess(response);

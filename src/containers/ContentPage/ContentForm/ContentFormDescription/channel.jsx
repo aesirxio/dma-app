@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useContext } from 'react';
+import React from 'react';
 import { observer } from 'mobx-react';
 import { Form, Tabs } from 'react-bootstrap';
 import { Tab } from 'bootstrap';

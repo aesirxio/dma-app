@@ -18,15 +18,13 @@ class CanvaButton extends React.PureComponent {
       design: {
         id: designId,
       },
-      onDesignOpen: (opts) => {
-      },
       onDesignPublish: (opts) => {
         this.props.canvaEditItem(index, id, opts);
       },
     });
   }
 
-  componentWillReceiveProps(nextProps, nextContext) {
+  componentWillReceiveProps(nextProps) {
     console.error(nextProps);
     if (nextProps.canvaIndexToEdit !== null) {
       this.canvaEditHandler(nextProps.canvaIndexToEdit);
@@ -45,10 +43,6 @@ class CanvaButton extends React.PureComponent {
       },
     });
   };
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-
-  }
 
   render() {
     return (

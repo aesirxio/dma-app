@@ -3,7 +3,6 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import history from '../../../routes/history';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { makeAutoObservable } from 'mobx';
 import { logout } from '../../../auth';

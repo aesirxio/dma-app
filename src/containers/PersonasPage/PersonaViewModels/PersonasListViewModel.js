@@ -6,7 +6,6 @@
 import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import PersonaUtils from '../PersonaUtils/PersonaUtils';
-import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 import Helper from '../../../utils/helper';
 import { notify } from '../../../components/Toast';
 
@@ -93,8 +92,6 @@ class PersonasListViewModel {
       );
     }
   };
-
-  callbackOnErrorHander = (error) => {};
 
   callbackOnSuccessHandler = (personaModelData) => {
     if (personaModelData) {

@@ -5,8 +5,11 @@
 
 import React from 'react';
 import postMessage from '../../utils/slack';
+import { PropTypes } from 'prop-types';
 
 class ErrorBoundary extends React.Component {
+  static propTypes = { children: PropTypes.array };
+
   constructor(props) {
     super(props);
     this.state = { hasError: false };

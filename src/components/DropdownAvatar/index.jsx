@@ -49,7 +49,7 @@ class DropdownAvatar extends React.Component {
 
   Helper;
 
-  CustomToggleAvatar = React.forwardRef(({ children, onClick }, ref) => (
+  CustomToggleAvatar = React.forwardRef(({ onClick }, ref) => (
     <div
       ref={ref}
       onClick={(e) => {
@@ -71,7 +71,6 @@ class DropdownAvatar extends React.Component {
         <p className="mb-0 text-blue-0 fs-14 fw-bold">
           {Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME)}
         </p>
-        {/* <p className="mb-0 text-blue-0 fs-14 opacity-75">Small business owner</p> */}
       </div>
       <i className="icons text-green">
         <FontAwesomeIcon icon={faChevronDown} />
@@ -80,7 +79,7 @@ class DropdownAvatar extends React.Component {
   ));
 
   render() {
-    const { t, i18n } = this.props;
+    const { t } = this.props;
     return (
       <div className="wrapper_avatar position-relative">
         <Dropdown>

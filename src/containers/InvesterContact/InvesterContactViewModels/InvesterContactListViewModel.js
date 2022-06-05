@@ -5,7 +5,6 @@
 
 import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
-import { notify } from '../../../components/Toast';
 
 class InvesterContactListViewModel {
   investerContactStore = null;

@@ -5,7 +5,6 @@
 
 import React, { useContext } from 'react';
 import { observer } from 'mobx-react';
-import { Accordion } from 'bootstrap';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 import { ContentViewModelContext } from '../../ContentViewModels/ContentViewModelContextProvider';
 

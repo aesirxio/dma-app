@@ -10,18 +10,11 @@ import history from "../../../routes/history";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import PAGE_STATUS from "../../../constants/PageStatus";
-import { PERSONA_FIELD_KEY } from "../../../constants/PersonaModule";
-
-import Table from "../../../components/Table";
-import Spinner from "../../../components/Spinner";
-
 import { observer } from "mobx-react";
 import { withPersonaViewModel } from "../PersonaViewModels/PersonaViewModelContextProvider";
 import ComponentPersonaTemplate from "../../../components/ComponentPersonaTemplate";
 import {
   PERSONA_TEMPLATE_FIELD_KEY,
-  ESI_PERSONA_TEMPLATE_FIELD_KEY,
 } from "../../../constants/PersonaTemplateModule";
 
 SwiperCore.use([Navigation, Pagination]);
@@ -71,7 +64,7 @@ const PersonaTemplate = observer(
                       return (
                         <SwiperSlide key={key}>
                           <ComponentPersonaTemplate
-                            handlerClick={(e) =>
+                            handlerClick={() =>
                               this.handlerClick(
                                 personaTemplate[PERSONA_TEMPLATE_FIELD_KEY.ID]
                               )

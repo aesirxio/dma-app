@@ -18,7 +18,7 @@ export default class Inspiration extends Component {
           <a href={this.props?.inspiration[0][NEWS_FIELD_KEY.CATEGORY_LINK] ?? '/'}>More</a>
         </div>
         <div className="block__news row g-4">
-          {this.props.inspiration.map((item, index) => (
+          {this.props.inspiration.map((item) => (
             <a
               key={item[NEWS_FIELD_KEY.ID]}
               href={item[NEWS_FIELD_KEY.LINK]}

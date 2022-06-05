@@ -3,7 +3,6 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import ContentModel from '../ContentModel/ContentModel';
 import ContentChannelsModel from '../ContentModel/ContentChannelsModel';
 
 class ContentChannelsUtils {

@@ -12,7 +12,6 @@ import { observer } from 'mobx-react';
 import useValidator from '../../../../../utils/simpleValidator';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { CONTENT_FIELD_KEY } from '../../../../../constants/ContentModule';
-import { CHANNEL_ADS_GOOGLE } from '../../../../../constants/ChannelModule';
 
 const DisplayAds = lazy(() => import('./DisplayAds'));
 

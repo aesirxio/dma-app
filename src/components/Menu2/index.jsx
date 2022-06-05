@@ -6,15 +6,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
-import { faFileAlt } from '@fortawesome/free-solid-svg-icons/faFileAlt';
-import { faNetworkWired } from '@fortawesome/free-solid-svg-icons/faNetworkWired';
-import { faUserFriends } from '@fortawesome/free-solid-svg-icons/faUserFriends';
-import { faUserTag } from '@fortawesome/free-solid-svg-icons/faUserTag';
-import { faHeart } from '@fortawesome/free-regular-svg-icons/faHeart';
-import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons/faEnvelopeOpenText';
 
 class Menu2 extends React.Component {
   constructor(props) {
@@ -31,110 +24,11 @@ class Menu2 extends React.Component {
               link: '/profile',
               icons: faUser,
             },
-            // {
-            //   name: 'billingplan',
-            //   text: 'Billing & Plan',
-            //   link: '/billing-plan',
-            //   icons: faFileAlt,
-            // },
-            // {
-            //   name: "quotas",
-            //   text: "Quotas",
-            //   link: "/billing-plan-quotas",
-            //   icons: faFileAlt,
-            // },
-            // {
-            //   name: 'invoices',
-            //   text: 'Invoices',
-            //   link: '/billing-plan-invoices',
-            //   icons: faFileAlt,
-            // },
           ],
         },
-        // {
-        //   title: 'Members',
-        //   listMenu: [
-        //     {
-        //       name: 'organisations',
-        //       text: 'Organisations',
-        //       link: '/organisations',
-        //       icons: faNetworkWired,
-        //       className: 'fst-italic',
-        //     },
-        //     {
-        //       name: 'teammembers',
-        //       text: 'Team Members',
-        //       link: '/team-members',
-        //       icons: faUserFriends,
-        //       className: 'fst-italic',
-        //     },
-        //     {
-        //       name: 'roles',
-        //       text: 'Roles',
-        //       link: '/roles',
-        //       icons: faUserTag,
-        //       className: 'fst-italic',
-        //     },
-        //   ],
-        // },
-        // {
-        //   title: 'WORKFLOW',
-        //   listMenu: [
-        //     {
-        //       name: 'workflowschemes',
-        //       text: 'Workflow Schemes',
-        //       link: '/workflow-schemes',
-        //       icons: faHome,
-        //       className: 'fst-italic',
-        //     },
-        //   ],
-        // },
-        // {
-        //   title: 'Connect a Channel',
-        //   listMenu: [
-        //     {
-        //       name: 'socialmedia',
-        //       text: 'Social Media',
-        //       link: '/social-media',
-        //       icons: faHome,
-        //     },
-        //     {
-        //       name: 'advertising',
-        //       text: 'Advertising',
-        //       link: '/advertising',
-        //       icons: faHome,
-        //     },
-        //     {
-        //       name: 'cms',
-        //       text: 'CMS',
-        //       link: '/cms',
-        //       icons: faHome,
-        //     },
-        //     {
-        //       name: 'emailmarketing',
-        //       text: 'Email Marketing',
-        //       link: '/emailmarketing',
-        //       icons: faEnvelopeOpenText,
-        //     },
-        //   ],
-        // },
-        // {
-        //   title: 'miscellaneous',
-        //   listMenu: [
-        //     {
-        //       name: 'mycollections',
-        //       text: 'My collections',
-        //       link: '/my-collections',
-        //       icons: faHeart,
-        //       className: 'fst-italic',
-        //     },
-        //   ],
-        // },
       ],
     };
   }
-
-  checkActiveMenu = (name) => {};
 
   componentDidMount = () => {
     this.checkActiveMenu();
@@ -145,7 +39,7 @@ class Menu2 extends React.Component {
   };
 
   render() {
-    let { dataMenu, activeMenu } = this.state;
+    let { dataMenu } = this.state;
     return (
       <nav>
         <div className="py-1 px-3 item_menu item_menu_home">
@@ -153,7 +47,7 @@ class Menu2 extends React.Component {
             href="/"
             className="d-block text-blue-0 p-3 link_menu rounded-2 text-decoration-none  "
           >
-            <i class="text-white">
+            <i className="text-white">
               <FontAwesomeIcon icon={faArrowLeft} />
             </i>
             <span className="ms-3 text text-white">Back to Dashboard</span>
@@ -168,7 +62,7 @@ class Menu2 extends React.Component {
                   return (
                     <li
                       key={key}
-                      onClick={(e) => this.handleCheckActive(value.link)}
+                      onClick={() => this.handleCheckActive(value.link)}
                       className={`item_menu ${value.className ? value.className : ''}`}
                     >
                       <NavLink

@@ -162,7 +162,7 @@ class Complete extends React.Component {
   }
 
   render() {
-    const { t, i18n } = this.props;
+    const { t } = this.props;
     return (
       <div className="bg-white p-3">
         <div className="d-flex justify-content-between mb-2">

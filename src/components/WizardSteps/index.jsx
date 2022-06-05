@@ -10,12 +10,8 @@ import history from "../../routes/history";
 import "./index.scss";
 import styles from "./index.module.scss";
 
-const WizardSteps = (props) => {
+const WizardSteps = () => {
   const steps = [
-    // {
-    //   key: 1,
-    //   text: "Create project",
-    // },
     {
       key: 1,
       text: "Connect channel",
@@ -30,19 +26,12 @@ const WizardSteps = (props) => {
   let currentStep = 1;
 
   if (
-    // history.location.pathname === `/wizard/project/${props.match.params.id}`
     history.location.pathname === `/wizard/content`
   ) {
     currentStep = currentStep + 1;
   } else if (
-    // history.location.pathname ===
-    // `/wizard/project/${props.match.params.id}/content`
     history.location.pathname === `/wizard/1/content`
-  ) {
-    // currentStep = currentStep + 2;
-  } else {
-    // currentStep = currentStep;
-  }
+  )
 
   return (
     <div className="wr_wizard_step position-relative my-5 w-50 top-0 start-50 translate-middle-x">

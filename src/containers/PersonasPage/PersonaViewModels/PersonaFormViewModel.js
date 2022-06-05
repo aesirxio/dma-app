@@ -109,8 +109,6 @@ class PersonaFormViewModel {
     }
   };
 
-  callbackOnErrorHander = (error) => {};
-
   callbackOnSuccessHandler = () => {
     this.formStatus = PAGE_STATUS.READY;
     history.push('/personas');

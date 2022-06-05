@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 
 const ButtonConnect = ({ onClick, isConnected, disabled = false }) => {
 
