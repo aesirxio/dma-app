@@ -13,9 +13,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import styles from '../index.module.scss';
 import '../index.scss';
 
-import Complete from '../../../components/Complete';
 import Projects from '../../../components/Projects';
-import AssignedToMe from '../../../components/AssignedToMe';
 import Campaigns from '../../../components/Campaigns';
 import BigCalendar from '../../../components/BigCalendar';
 import UpcomingPosts from '../../../components/UpcomingPosts';
@@ -29,7 +27,6 @@ import ComponentNoData from '../../../components/ComponentNoData';
 import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';
 import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
 import { CONTENT_FIELD_KEY } from '../../../constants/ContentModule';
-import moment from 'moment';
 import { observer } from 'mobx-react';
 import { withHomeViewModel } from '../HomeViewModels/HomeViewModelContextProvider';
 import PAGE_STATUS from '../../../constants/PageStatus';
@@ -123,11 +120,11 @@ const HomeList = observer(
     };
 
     render() {
-      let { isFull, isFullcalendar, isSbarRight, getTime } = this.state;
+      let { isFull, isSbarRight, getTime } = this.state;
       const { projects } = this.projectListViewModel;
       const { campaigns } = this.campaignsListViewModel;
       // const { contents } = this.contentsListViewModel;
-      const { tableStatus, contents, onFilter, showView, showDate, searchContents } =
+      const { tableStatus, contents, showView, showDate, searchContents } =
         this.contentsListViewModel;
       const { status, inspiration } = this.homeListViewModel;
       let getHello = 'evening';

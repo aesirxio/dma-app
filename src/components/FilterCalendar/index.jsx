@@ -72,7 +72,6 @@ class FilterCalendar extends React.Component {
   };
 
   render() {
-    const { t, i18n } = this.props;
     this.data = [
       {
         id: 1,

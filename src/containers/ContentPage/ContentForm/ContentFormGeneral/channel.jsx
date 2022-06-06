@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useContext, lazy, useState } from 'react';
+import React, { useContext } from 'react';
 import { observer } from 'mobx-react';
 
 import { ContentViewModelContext } from '../../ContentViewModels/ContentViewModelContextProvider';

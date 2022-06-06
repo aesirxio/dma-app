@@ -8,8 +8,6 @@ import { withTranslation } from 'react-i18next';
 import { Tab, Nav } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCog } from '@fortawesome/free-solid-svg-icons/faUserCog';
-import { faUserCheck } from '@fortawesome/free-solid-svg-icons/faUserCheck';
-import { faHistory } from '@fortawesome/free-solid-svg-icons/faHistory';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import './index.scss';
 

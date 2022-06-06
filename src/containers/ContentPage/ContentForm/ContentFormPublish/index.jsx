@@ -11,7 +11,6 @@ import { withContentViewModel } from '../../ContentViewModels/ContentViewModelCo
 import { CONTENT_FIELD_KEY, CONTENT_POST_TYPE } from '../../../../constants/ContentModule';
 
 import SimpleReactValidator from 'simple-react-validator';
-import ContentUtils from '../../ContentUtils/ContentUtils';
 import ContentFormPublishChannel from './channel';
 import ContentFormPublishAdvance from './advance';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';

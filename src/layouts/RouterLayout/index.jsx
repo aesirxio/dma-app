@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-import { BrowserRouter, Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Router, Route, Switch } from 'react-router-dom';
 import { authRoutes, mainRoutes, settingRoutes } from '../../routes/routes';
 
 import AuthLayout from '../AuthLayout';

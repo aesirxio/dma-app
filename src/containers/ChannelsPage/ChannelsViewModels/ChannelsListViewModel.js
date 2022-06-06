@@ -127,7 +127,7 @@ class ChannelsListViewModel {
     }
   };
 
-  catchError = (error) => {
+  catchError = () => {
     notify('Something went wrong from Server response. Please try again.');
   };
 }

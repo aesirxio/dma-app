@@ -3,8 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component } from 'react';
-import history from '../../../routes/history';
+import React from 'react';
 
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';

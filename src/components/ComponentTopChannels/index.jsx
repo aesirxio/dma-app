@@ -4,41 +4,9 @@
  */
 
 import React, { Component } from 'react';
-import { Dropdown, Tabs, Tab } from 'react-bootstrap';
 import ComponentImage from '../ComponentImage';
 
-const dataTabs = [
-  {
-    name: 'overall',
-    text: 'Overall',
-  },
-  {
-    name: 'facebook',
-    text: 'Facebook',
-  },
-  {
-    name: 'youtube',
-    text: 'Youtube',
-  },
-  {
-    name: 'twitter',
-    text: 'Twitter',
-  },
-  {
-    name: 'linkedin',
-    text: 'Linkedin',
-  },
-  {
-    name: 'instagram',
-    text: 'Instagram',
-  },
-];
-
 class ComponentTopChannels extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   componentDidMount = () => {};
 
   render() {

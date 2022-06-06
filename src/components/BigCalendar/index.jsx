@@ -11,8 +11,6 @@ import ContentUtils from '../../containers/ContentPage/ContentUtils/ContentUtils
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
-import Helper from '../../utils/helper';
 import './index.scss';
 
 const localizer = momentLocalizer(moment);
@@ -72,38 +70,12 @@ class BigCalendar extends React.Component {
 
   Event = ({ event }) => {
     let divClass = 'wrapper_des_event d-inline-block shadow rounded-circle ';
-    let spanClass = 'fw-bold text-wrap opacity-75 ';
     const channelName = event?.channel[0]?.alias ?? 'facebook';
 
     divClass += channelName + '_calendar_background';
-    spanClass += channelName + '_calendar_text';
-
-    const popover = (
-      <Popover id="popover-basic" className="bg-white z-index-100 rounded-2">
-        <Popover.Title className="bg-blue-3 py-2 px-3 rounded-top d-flex justify-content-between align-items-center">
-          <span className={spanClass}>{event.title}</span>
-        </Popover.Title>
-        {/*<Popover.Content className="py-2 px-3">*/}
-        {/*  <p className="mb-0 mb-3">{event.text}</p>*/}
-        {/*  /!* <div>*/}
-        {/*    <a href={void 0} className="btn btn-success w-100">*/}
-        {/*      <i>*/}
-        {/*        <FontAwesomeIcon icon={faPlus} />*/}
-        {/*      </i>*/}
-        {/*      <span className="ms-2">Make a plan</span>*/}
-        {/*    </a>*/}
-        {/*  </div> *!/*/}
-        {/*</Popover.Content>*/}
-      </Popover>
-    );
 
     return (
-      //trigger="click" placement="right" rootClose={true} overlay={popover}
       <div className={divClass}>
-        {/* <span
-            style={{ cursor: 'pointer' }}
-            className="text-decoration-none d-inline-block"
-          ></span> */}
       </div>
     );
   };
@@ -114,17 +86,9 @@ class BigCalendar extends React.Component {
     const day = ('0' + date.getDate()).slice(-2);
     return [date.getFullYear(), mnth, day].join('-');
   }
-  handleSelect(slotInfo) {
-    const date = this.convert(slotInfo.start);
-    const events = [
-      ...this.props.events.filter((_event) => {
-        return this.convert(_event.start) === date;
-      }),
-    ];
-  }
   render() {
     let events = this.props?.events
-      ? this.props?.events.map((content, index) => {
+      ? this.props?.events.map((content) => {
           return {
             id: content[CONTENT_FIELD_KEY.ID],
             headline: content[CONTENT_FIELD_KEY.NAME],

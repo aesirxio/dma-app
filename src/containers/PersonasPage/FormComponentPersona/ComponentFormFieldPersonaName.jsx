@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';

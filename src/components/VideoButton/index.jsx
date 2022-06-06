@@ -69,7 +69,7 @@ class VideoButton extends Component {
     });
   };
 
-  closeModal = (s) => {
+  closeModal = () => {
     this.setState({
       showModal: false,
     });

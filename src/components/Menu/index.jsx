@@ -5,14 +5,6 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
-import { faMagic } from '@fortawesome/free-solid-svg-icons/faMagic';
-import { faFileAlt } from '@fortawesome/free-solid-svg-icons/faFileAlt';
-import { faNetworkWired } from '@fortawesome/free-solid-svg-icons/faNetworkWired';
-import { faVolumeUp } from '@fortawesome/free-solid-svg-icons/faVolumeUp';
-
-import { authRoutes, mainRoutes } from '../../routes/routes';
 
 import './index.scss';
 import ComponentImage from '../ComponentImage';

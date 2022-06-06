@@ -3,8 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component } from 'react';
-import { format } from 'date-fns';
+import React from 'react';
 
 import history from '../../../routes/history';
 

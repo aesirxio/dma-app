@@ -14,8 +14,8 @@ class CampaignMasterDataItemModel extends BaseMasterDataItemModel {
   status = 0;
 
   constructor(entity) {
+    super(entity);
     if (entity) {
-      super(entity);
       this.startDate = entity[CAMPAIGN_API_FIELD_KEY.START_DATE] ?? '';
       this.endDate = entity[CAMPAIGN_API_FIELD_KEY.END_DATE] ?? '';
       this.status = entity[CAMPAIGN_API_FIELD_KEY.STATUS] ?? '';
@@ -37,8 +37,8 @@ class CampaignMasterDataItemModel extends BaseMasterDataItemModel {
 
 class CampaignMasterDataModel extends BaseMasterDataModel {
   constructor(entities) {
+    super(entities);
     if (entities) {
-      super(entities);
       this.unTransformedItems = entities;
       this.items = entities.result.map((element) => {
         return new CampaignMasterDataItemModel(element);

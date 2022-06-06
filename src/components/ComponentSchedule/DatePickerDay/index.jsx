@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useState, lazy } from 'react';
+import React from 'react';
 import '../index.scss';
 
 import DatePicker from 'react-datepicker';

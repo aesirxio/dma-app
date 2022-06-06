@@ -6,15 +6,9 @@
 import BaseMasterDataItemModel from '../Abstract/BaseMasterDataItemModel';
 import BaseMasterDataModel from '../Abstract/BaseMasterDataModel';
 
-import { PERSONA_FIELD_KEY, ESI_PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
+import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 
 class PersonaMasterDataItemModel extends BaseMasterDataItemModel {
-  constructor(entity) {
-    if (entity) {
-      super(entity);
-    }
-  }
-
   toDropdownFullSelectionItem = () => {
     return {
       [PERSONA_FIELD_KEY.ID]: this.id ?? 0,
@@ -25,8 +19,8 @@ class PersonaMasterDataItemModel extends BaseMasterDataItemModel {
 
 class PersonaMasterDataModel extends BaseMasterDataModel {
   constructor(entities) {
+    super(entities);
     if (entities) {
-      super(entities);
       this.unTransformedItems = entities;
       this.items = entities.result.map((element) => {
         return new PersonaMasterDataItemModel(element);

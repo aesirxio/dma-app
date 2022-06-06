@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy, createRef } from 'react';
+import React, { lazy } from 'react';
 
 import Iframe from 'react-iframe';
 import { AUTHORIZATION_KEY, AXIOS_CONFIGS, GENERAL_CONFIG, Storage } from 'aesirx-dma-lib';
@@ -68,7 +68,7 @@ class DamButton extends React.Component {
     });
   };
 
-  closeModal = (s) => {
+  closeModal = () => {
     this.setState({
       showModal: false,
     });

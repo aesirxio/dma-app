@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
-import { Dropdown, Pagination } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 import {
   useTable,
   useRowSelect,
@@ -61,7 +61,6 @@ let setFilter = (data, key) => {
 const Table = ({
   rowData,
   tableRowHeader,
-  onEdit,
   onSelect,
   isThumb,
   dataList,
@@ -111,12 +110,6 @@ const Table = ({
     []
   );
 
-  const handerEdit = (e, row) => {
-    if (e.target.type !== 'checkbox') {
-      onEdit(row);
-    }
-  };
-
   const IndeterminateCheckbox = React.forwardRef(({ indeterminate, ...rest }, ref) => {
     const defaultRef = React.useRef();
     const resolvedRef = ref || defaultRef;
@@ -148,7 +141,6 @@ const Table = ({
     allColumns,
 
     state,
-    setHiddenColumns,
     state: { selectedRowIds },
   } = useTable(
     {
@@ -403,7 +395,7 @@ const Table = ({
             </thead>
             <tbody {...getTableBodyProps()}>
               {page.length > 0 &&
-                page.map((row, i) => {
+                page.map((row) => {
                   prepareRow(row);
                   const rowProps = row.getRowProps();
                   let newRowCells = '';
@@ -466,7 +458,7 @@ const Table = ({
         </div>
       ) : (
         <div {...getTableBodyProps()} className="row">
-          {page.map((row, i) => {
+          {page.map((row) => {
             prepareRow(row);
             let newRowCells = row.cells;
             if (dataThumb && dataThumb.length > 0) {

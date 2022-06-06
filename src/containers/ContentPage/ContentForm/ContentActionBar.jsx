@@ -27,7 +27,7 @@ const ContentActionBar = observer(
       this.contentsListViewModel = viewModel ? viewModel.getListViewModel() : null;
     }
 
-    createContentHandler = (event) => {
+    createContentHandler = () => {
       this.contentFormViewModel.openModal();
     };
 

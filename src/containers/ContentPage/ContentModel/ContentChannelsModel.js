@@ -11,7 +11,6 @@ import {
 } from '../../../constants/ContentModule';
 
 import getStatus from '../../../utils/status';
-import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
 
 class ContentChannelsModel {
   constructor(data) {

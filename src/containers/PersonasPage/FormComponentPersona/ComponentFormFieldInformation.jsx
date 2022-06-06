@@ -3,75 +3,14 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Form } from 'react-bootstrap';
 import Label from '../../../components/Form/Label';
 
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
-import ComponentLinkChannels from '../../../components/ComponentLinkChannels';
-import FormSelectDropdown from '../../../components/Form/FormSelectDropdown';
 
-const optionInterest = [
-  {
-    value: 'design',
-    label: 'Design',
-    text: 'Design',
-    type: 'Interests',
-    size: '496,890,422',
-    interest: 'Fitness and wellness > Physical fitness',
-    description:
-      'Aliquam quis lorem facilisis, molestie lectus sed, gravida felis. Morbi fringilla viverra magna. Cras laoreet metus sed posuere eleifend. Sed facilisis dictum',
-  },
-  {
-    value: 'interior',
-    label: 'Interior design',
-    text: 'Interior design',
-    type: 'Employers',
-    size: '196,890,422',
-    interest: 'Fitness and wellness > Physical fitness',
-    description: 'Aliquam quis lorem facilisis, molestie lectus sed, gravida felis',
-  },
-  {
-    value: 'fashion',
-    label: 'Fashion design',
-    text: 'Fashion design',
-    type: 'Job Titles',
-    // type: 'Employers',
-    size: '342,890,422',
-    interest: 'Fitness and wellness > Physical fitness',
-    description: 'Aliquam quis lorem facilisis, molestie lectus sed, gravida felis',
-  },
-  {
-    value: 'graphic',
-    label: 'Graphic design',
-    text: 'Graphic design',
-    type: 'Interests',
-    size: '888,890,453',
-    interest: 'Fitness and wellness > Physical fitness',
-    description: 'Aliquam quis lorem facilisis, molestie lectus sed, gravida felis',
-  },
-  {
-    value: 'industrial',
-    label: 'Industrial design',
-    text: 'Industrial design',
-    type: 'Titles Titles',
-    size: '888,111,555',
-    interest: 'Fitness and wellness > Physical fitness',
-    description: 'Aliquam quis lorem facilisis, molestie lectus sed, gravida felis',
-  },
-  {
-    value: 'architecture',
-    label: 'Architecture design',
-    text: 'Architecture design',
-    type: 'Interests',
-    size: '565,322,777',
-    interest: 'Fitness and wellness > Physical fitness',
-    description: 'Aliquam quis lorem facilisis, molestie lectus sed, gravida felis',
-  },
-];
-
-const ComponentFormFieldInformation = ({ validator, formPropsData, viewModel }) => {
+const ComponentFormFieldInformation = ({ validator, formPropsData }) => {
   let information = [
     {
       label: 'Tools',

@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from 'react';
+import React, { lazy } from 'react';
 import { Button } from 'react-bootstrap';
 import styles from './index.module.scss';
 import './index.scss';
@@ -124,7 +124,7 @@ class ListConnectedChannelModal extends React.Component {
                           >
                             <span
                               className="cursor-pointer position-absolute end-0 top-0 text-red-1"
-                              onClick={(e) => this.handleDeleteConnectChannel(key)}
+                              onClick={() => this.handleDeleteConnectChannel(key)}
                             >
                               <i className={``}>
                                 <FontAwesomeIcon icon={faTimes} />
@@ -159,7 +159,7 @@ class ListConnectedChannelModal extends React.Component {
               <div className="bg-white rounded-2 px-3 py-2 h-100 ">
                 <div className="row w-100 d-flex align-items-center mb-3">
                   {arrayConnectedChannels
-                    ? arrayConnectedChannels.map((item, key) => {
+                    ? arrayConnectedChannels.map((item) => {
                         let isDisabled = arrayConnectedChannelsFinal.some(
                           (value) => item.des === value.des
                         );
@@ -168,7 +168,7 @@ class ListConnectedChannelModal extends React.Component {
                           <button
                             key={Math.random(10000, 20000)}
                             className={`item_social_modal item_social ${styles.item_social} col-3 mb-2 cursor-pointer ${isDisabled}`}
-                            onClick={(e) => this.handleSlectChannels(item.des, item.images)}
+                            onClick={() => this.handleSlectChannels(item.des, item.images)}
                             disabled={isDisabled}
                           >
                             <div className={`main_social ${styles.main_social} text-center`}>

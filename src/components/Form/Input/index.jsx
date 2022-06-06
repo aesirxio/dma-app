@@ -8,7 +8,7 @@ import { Form } from 'react-bootstrap';
 
 const Input = ({ field }) => {
   const handleChange = (e) => {
-    if (field.hasOwnProperty('changed')) {
+    if (Object.prototype.hasOwnProperty.call(field, 'changed')) {
       e.target.value = e.target.value.normalize('NFKC');
       field.changed(e);
     }

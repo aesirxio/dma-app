@@ -4,15 +4,12 @@
  */
 
 import React, { Component, lazy } from 'react';
-import axios from 'axios';
-import _ from 'lodash';
 import { AesirxFacebookDataApiService } from 'aesirx-dma-lib';
 
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 
 import Label from '../../../components/Form/Label';
-import { components } from 'react-select';
 
 const FormSelectDropdown = lazy(() => import('../../../components/Form/FormSelectDropdown'));
 
@@ -58,7 +55,7 @@ class ComponentFormFieldTarget extends Component {
 
   componentWillUnmount() {
     // fix Warning: Can't perform a React state update on an unmounted component
-    this.setState = (state, callback) => {
+    this.setState = () => {
       return;
     };
   }

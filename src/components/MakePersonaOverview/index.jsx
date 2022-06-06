@@ -171,10 +171,9 @@ class MakePersonaOverview extends React.Component {
   };
 
   render() {
-    const { t, i18n } = this.props;
     let { files, gender, status, channels, interest } = this.state;
 
-    const renderAvatar = files.map((file, index) => (
+    const renderAvatar = files.map((file) => (
       <div
         key={file.name}
         className={`position-absolute position-absolute start-0 top-0 bottom-0 end-0 bg-white text-center`}

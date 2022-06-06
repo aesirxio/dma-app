@@ -3,7 +3,6 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React from 'react';
 import { runInAction } from 'mobx';
 
 import CampaignsUtils from '../CampaignsUtils/CampaignsUtils';

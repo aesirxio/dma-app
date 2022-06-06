@@ -5,7 +5,6 @@
 
 import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
-import CampaignsUtils from '../CampaignsUtils/CampaignsUtils';
 import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';
 
 import { notify } from '../../../components/Toast';

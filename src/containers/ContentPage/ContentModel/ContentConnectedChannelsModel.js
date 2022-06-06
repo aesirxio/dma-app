@@ -14,8 +14,8 @@ class ContentConnectedChannelsModel extends BaseModel {
   items = [];
   unTransformedItems = [];
   constructor(entities) {
+    super(entities);
     if (entities) {
-      super(entities);
       const organizationChannels = entities;
       this.unTransformedItems = organizationChannels;
       this.items = organizationChannels.map((element) => {
@@ -37,18 +37,12 @@ class ContentConnectedChannelItemModel extends BaseItemModel {
   channelName = '';
 
   constructor(entity) {
+    super(entity);
     if (entity) {
-      super(entity);
       this.channelId = entity[ESI_ORGANIZATION_CHANNEL_API_FIELD_KEY.ID] ?? [0];
       this.channelName = entity[ESI_ORGANIZATION_CHANNEL_API_FIELD_KEY.CHANNEL_NAME] ?? '';
     }
   }
-
-  extractCustomFieldValues = () => {
-    const customFieldValues = this.getCustomfieldValues();
-    if (customFieldValues) {
-    }
-  };
 
   getChannelId = () => {
     return this.channelId;

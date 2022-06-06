@@ -57,7 +57,7 @@ const LoginChannelCMSFormModal = observer(
     };
 
     render() {
-      const { show, closeModal, channelType } = this.loginCMSChannelFormModalViewModel;
+      const { show, channelType } = this.loginCMSChannelFormModalViewModel;
 
       if (!show) {
         return null;
@@ -87,7 +87,7 @@ const LoginChannelCMSFormModal = observer(
           }
           footer={
             <Button
-              onClick={(e) => this.saveCMSHandler(eventName)}
+              onClick={() => this.saveCMSHandler(eventName)}
               className="btn btn-success w-100"
             >
               <span>{buttonTitle}</span>

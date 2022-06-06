@@ -7,8 +7,6 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
-import { faList } from "@fortawesome/free-solid-svg-icons/faList";
-import { faTh } from "@fortawesome/free-solid-svg-icons/faTh";
 import { faColumns } from "@fortawesome/free-solid-svg-icons/faColumns";
 
 import SelectComponent from "../Select";

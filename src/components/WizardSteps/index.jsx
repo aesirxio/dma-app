@@ -10,12 +10,8 @@ import history from "../../routes/history";
 import "./index.scss";
 import styles from "./index.module.scss";
 
-const WizardSteps = (props) => {
+const WizardSteps = () => {
   const steps = [
-    // {
-    //   key: 1,
-    //   text: "Create project",
-    // },
     {
       key: 1,
       text: "Connect channel",

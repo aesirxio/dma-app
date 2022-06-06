@@ -4,8 +4,6 @@
  */
 
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 
 import './index.scss';
 import ComponentNoData from '../ComponentNoData';
@@ -21,13 +19,7 @@ class UpcomingPosts extends React.Component {
   componentDidMount = () => {};
 
   render() {
-    const images = [
-      '/assets/images/icon-nikon.png',
-      '/assets/images/icon-nikon.png',
-      '/assets/images/icon-nikon.png',
-    ];
-
-    const { contents, CONTENT_FIELD_KEY } = this.props;
+    const { contents } = this.props;
 
     let today = new Date();
 

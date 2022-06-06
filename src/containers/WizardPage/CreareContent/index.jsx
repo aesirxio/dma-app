@@ -3,13 +3,12 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from "react";
+import React, { Component } from "react";
 
 import StepWizard from "react-step-wizard";
 
 import ContentFormGeneralWizard from "./ContentFormGeneralWizard";
 import ContentFormPublishWizard from "./ContentFormPublishWizard";
-import WizardSteps from "../../../components/WizardSteps";
 
 class CreareContent extends Component {
   custom = {

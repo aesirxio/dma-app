@@ -60,7 +60,7 @@ class ComponentDatepicker extends React.Component {
     });
   };
 
-  handleOnBlur = ({ target: { value } }) => {
+  handleOnBlur = () => {
     this.setState({
       isOpen: false,
     });

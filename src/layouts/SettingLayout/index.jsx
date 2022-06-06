@@ -6,7 +6,7 @@
 import React, { Suspense } from "react";
 
 import { Route, Redirect, useLocation } from "react-router-dom";
-import { authRoutes, settingRoutes } from '../../routes/routes';
+import { settingRoutes } from '../../routes/routes';
 
 import Spinner from "../../components/Spinner";
 import Header from "../../components/Header";

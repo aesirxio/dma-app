@@ -10,7 +10,7 @@ import { ContentViewModelContext } from '../../ContentViewModels/ContentViewMode
 import ListChannelComponent from '../../../../components/ChannelComponent/list';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 
-const ContentFormPublishChannel = observer(({ formPropsData }) => {
+const ContentFormPublishChannel = observer(() => {
   const context = useContext(ContentViewModelContext);
   const viewModel = context.getFormViewModel();
 

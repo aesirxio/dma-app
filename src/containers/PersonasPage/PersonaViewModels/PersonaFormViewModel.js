@@ -109,7 +109,7 @@ class PersonaFormViewModel {
     }
   };
 
-  callbackOnErrorHander = (error) => {};
+  callbackOnErrorHander = () => {};
 
   callbackOnSuccessHandler = () => {
     this.formStatus = PAGE_STATUS.READY;

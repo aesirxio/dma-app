@@ -4,7 +4,7 @@
  */
 
 import React, { Component } from 'react';
-import { Tab, Row, Nav, Col } from 'react-bootstrap';
+import { Tab, Nav } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';

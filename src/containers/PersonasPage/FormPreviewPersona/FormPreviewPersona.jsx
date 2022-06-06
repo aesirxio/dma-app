@@ -3,14 +3,12 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from "react";
+import React, { Component } from "react";
 
 import { observer } from "mobx-react";
 
 import { withPersonaViewModel } from "../PersonaViewModels/PersonaViewModelContextProvider";
 import ContentSbarRight from "../../../components/ContentSbarRight";
-
-import { PERSONA_TABLE_SELECTION_MODAL_COLUMN_INDICATOR } from "../../../constants/PersonaModule";
 
 const FormPreviewPersona = observer(
   class FormPreviewPersona extends Component {

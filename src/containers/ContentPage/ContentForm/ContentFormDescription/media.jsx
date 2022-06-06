@@ -3,22 +3,16 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { lazy, useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { observer } from 'mobx-react';
 
 import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from '../../../../constants/ContentModule';
-import CanvaButton from '../../../../components/CanvaButton';
 import ContentUtils from '../../ContentUtils/ContentUtils';
 import MediaDataRender from '../MediaDataRender';
 import MediaDamButton from '../MediaDamButton';
-import Iframe from 'react-iframe';
-
-import { GENERAL_CONFIG } from 'aesirx-dma-lib';
 
 import { ContentViewModelContext } from '../../ContentViewModels/ContentViewModelContextProvider';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
-
-const ModalComponent = lazy(() => import('../../../../components/Modal'));
 
 const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null }) => {
   const context = useContext(ContentViewModelContext);
@@ -44,19 +38,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
 
   const [damAssets, setDamAssets] = useState(dam);
 
-  const [canvaIndexToEdit, setCanvaIndexToEdit] = useState(null);
-
-  const handleCanva = (exportUrl, designId) => {
-    setCanvaAssets([
-      ...canvaAssets,
-      ...[
-        {
-          exportUrl: exportUrl,
-          designId: designId,
-        },
-      ],
-    ]);
-  };
+  const [setCanvaIndexToEdit] = useState(null);
 
   const handleDam = (data) => {
     setDamAssets([...damAssets, ...data]);
@@ -81,12 +63,6 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
       ]);
     }
   }, [damAssets, channel, formPropsData, mode, channelData]);
-
-  const canvaEditItem = (index, id, data) => {
-    canvaAssets.splice(index, 1, { id: id, exportUrl: data.exportUrl, designId: data.designId });
-    setCanvaIndexToEdit(null);
-    setCanvaAssets([...canvaAssets]);
-  };
 
   const onSetCanvaIndexToEdit = (index, id, designId) => {
     if (index === null) {

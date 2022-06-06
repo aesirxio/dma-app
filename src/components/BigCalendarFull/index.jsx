@@ -5,17 +5,14 @@
 
 import React from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
 import moment from 'moment';
 import {
   CONTENT_FIELD_KEY,
-  ESI_CONTENT_API_RESPONSE_FIELD_KEY,
 } from '../../constants/ContentModule';
 import ContentUtils from '../../containers/ContentPage/ContentUtils/ContentUtils';
 import './index.scss';
 import FilterCalendar from '../FilterCalendar';
 import CustomToolbar from './CustomToolbar';
-import UpcomingPosts from '../UpcomingPosts';
 import { CSSTransition } from 'react-transition-group';
 import history from '../../routes/history';
 
@@ -37,7 +34,7 @@ class BigCalendarFull extends React.PureComponent {
     };
   };
 
-  handleNavigate = (date, time) => {
+  handleNavigate = (date) => {
     const frist_day = moment(new Date(date.getFullYear(), date.getMonth(), 1)).format('YYYY-MM-DD');
     const last_day = moment(new Date(date.getFullYear(), date.getMonth() + 1, 0)).format(
       'YYYY-MM-DD'
@@ -59,29 +56,10 @@ class BigCalendarFull extends React.PureComponent {
     divClass += channelName + '_calendar_background ';
     spanClass += channelName + '_calendar_text';
 
-    // const popover = (
-    //   <Popover id="popover-basic" className="bg-white z-index-100 rounded-2">
-    //     <Popover.Title className="bg-blue-3 py-2 px-3 rounded-top d-flex justify-content-between align-items-center">
-    //       <span className={spanClass}>{event.title}</span>
-    //     </Popover.Title>
-    //     {/*<Popover.Content className="py-2 px-3">*/}
-    //     {/*  <p className="mb-0 mb-3">{event.text}</p>*/}
-    //     {/*  /!* <div>*/}
-    //     {/*    <a href={void 0} className="btn btn-success w-100">*/}
-    //     {/*      <i>*/}
-    //     {/*        <FontAwesomeIcon icon={faPlus} />*/}
-    //     {/*      </i>*/}
-    //     {/*      <span className="ms-2">Make a plan</span>*/}
-    //     {/*    </a>*/}
-    //     {/*  </div> *!/*/}
-    //     {/*</Popover.Content>*/}
-    //   </Popover>
-    // );
     const navigateEditPost = () => {
       history.push(`content-edit/${event.id}`);
     };
     return (
-      //trigger="click" placement="right" rootClose={true} overlay={popover}
       <div onClick={event.type === 'planing' ? '' : navigateEditPost}>
         <div className={divClass}>
           <span style={{ cursor: 'pointer' }} className="w-100 text-decoration-none d-inline-block">
@@ -106,7 +84,7 @@ class BigCalendarFull extends React.PureComponent {
 
   render() {
     let events = this.props?.events
-      ? this.props?.events.map((content, index) => {
+      ? this.props?.events.map((content) => {
           const date = moment(content[CONTENT_FIELD_KEY.DATE], 'DD/MM/YYYY HH:mm');
           const ampm = date.toDate().getHours() >= 12 ? 'PM' : 'AM';
           return {

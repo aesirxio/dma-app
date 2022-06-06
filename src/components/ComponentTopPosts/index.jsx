@@ -4,7 +4,7 @@
  */
 
 import React, { Component } from "react";
-import { Dropdown, Tabs, Tab } from "react-bootstrap";
+import { Tabs, Tab } from "react-bootstrap";
 
 const dataTabs = [
   {
@@ -34,14 +34,10 @@ const dataTabs = [
 ];
 
 class ComponentTopPosts extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   componentDidMount = () => {};
 
   render() {
-    let { title, number, data } = this.props;
+    let { data } = this.props;
     return (
       <div className="bg-white rounded-2">
         <div className="wrapper_tabs">

@@ -18,7 +18,6 @@ import Spinner from '../../../../components/Spinner';
 
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import WizardSteps from '../../../../components/WizardSteps';
 
 const ProjectsListWizard = observer(
   class ProjectsListWizard extends Component {

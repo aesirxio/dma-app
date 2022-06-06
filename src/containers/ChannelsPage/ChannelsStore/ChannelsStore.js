@@ -4,7 +4,6 @@
  */
 
 import { AesirxOrganisationChannelApiService } from 'aesirx-dma-lib';
-import Helper from '../../../utils/helper';
 import ChannelUtils from '../ChannelUtils/ChannelUtils';
 
 export default class ChannelsStore {
@@ -24,7 +23,9 @@ export default class ChannelsStore {
       const response = await this.channelService.getLoginUrl(channel);
 
       return response;
-    } catch (error) {}
+    } catch (error) {
+      // no error throw
+    }
     return null;
   };
 
@@ -35,7 +36,9 @@ export default class ChannelsStore {
       const data = ChannelUtils.transformChannelResponseIntoModel(channelsData);
 
       return data;
-    } catch (error) {}
+    } catch (error) {
+      // no error throw
+    }
     return [];
   };
 

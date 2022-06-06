@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import initFacebookSdk from './initFacebookSdk';
 import Button from '../Button';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
