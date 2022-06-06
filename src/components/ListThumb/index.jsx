@@ -48,8 +48,6 @@ class ListThumb extends React.Component {
   }
 
   render() {
-    const { t, i18n } = this.props;
-
     let { anAction, columns } = this.state;
     let { _handleList, isList } = this.props;
 

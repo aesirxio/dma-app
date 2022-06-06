@@ -179,7 +179,9 @@ class Notifications extends React.Component {
     try {
       this.errorHandler(error);
       this.closeWebSocketClientInstance();
-    } catch (error) {}
+    } catch (error) {
+      // no error throw
+    }
   }
 
   handleClickNotificationItem = (notification) => {
@@ -187,18 +189,16 @@ class Notifications extends React.Component {
       notification.id,
       this.userID,
       () => {},
-      (error) => {}
+      () => {}
     );
     history.push(`/content/${notification.content_id}/${notification.channel_item_id}`);
   };
 
-  handleClickMarkReadAll = (notification) => {
+  handleClickMarkReadAll = () => {
     notificationStore.markReadAll(
       this.userID,
-      () => {
-        // history.push(`/content/${notification.content_id}/${notification.channel_item_id}`);
-      },
-      (error) => {}
+      () => {},
+      () => {}
     );
   };
 
@@ -210,18 +210,17 @@ class Notifications extends React.Component {
           getDataNotification: result,
         });
       },
-      (error) => {}
+      () => {}
     );
   };
 
-  CustomToggleBell = React.forwardRef(({ children, onClick }, ref) => (
+  CustomToggleBell = React.forwardRef(({ onClick }, ref) => (
     <span
       style={{ cursor: 'pointer' }}
       ref={ref}
       onClick={(e) => {
         e.preventDefault();
         onClick(e);
-        //this.getListNotification(this.userID);
       }}
       className="text-blue-0"
     >
@@ -284,7 +283,7 @@ class Notifications extends React.Component {
   };
 
   render() {
-    const { t, i18n } = this.props;
+    const { t } = this.props;
     let { getDataNotification } = this.state;
 
     return (

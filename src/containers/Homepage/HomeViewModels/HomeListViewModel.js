@@ -22,7 +22,7 @@ class HomeListViewModel {
     this.status = PAGE_STATUS.LOADING;
     this.homeStore.getNews(this.callbackOnSuccessHandler, this.callbackOnErrorHander);
   };
-  callbackOnErrorHander = (error) => {};
+  callbackOnErrorHander = () => {};
 
   callbackOnSuccessHandler = (data) => {
     if (data) {

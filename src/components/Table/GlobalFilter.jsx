@@ -10,15 +10,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
 
 const GlobalFilter = ({
-  preGlobalFilteredRows,
   globalFilter,
   setGlobalFilter,
   searchText,
-  listViewModel,
   filter,
   setFilter,
 }) => {
-  const [value, setValue] = React.useState(globalFilter);
+  const [setValue] = React.useState(globalFilter);
   const onChange = useAsyncDebounce((value) => {
     setGlobalFilter({ keyword: value });
   }, 200);

@@ -7,8 +7,8 @@ import BaseMasterDataItemModel from '../Abstract/BaseMasterDataItemModel';
 import BaseMasterDataModel from '../Abstract/BaseMasterDataModel';
 class ConnectedChannelMasterDataItemModel extends BaseMasterDataItemModel {
   constructor(entity) {
+    super(entity);
     if (entity) {
-      super(entity);
       this.name = entity.name ?? '';
     }
   }
@@ -23,8 +23,8 @@ class ConnectedChannelMasterDataItemModel extends BaseMasterDataItemModel {
 
 class ConnectedChannelMasterDataModel extends BaseMasterDataModel {
   constructor(entities) {
+    super(entities);
     if (entities) {
-      super(entities);
       const entityResult = entities.result;
       this.unTransformedItems = entityResult;
       this.items = entityResult.map((element) => {

@@ -32,7 +32,13 @@ jobs:
       uses: github/codeql-action/init@v2
       with:
         languages: ${{ matrix.language }}
-        
+
+    - name: Install modules
+      run: npm i
+
+    - name: Lint
+      run: npm run lint:check
+
     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
     - name: Autobuild

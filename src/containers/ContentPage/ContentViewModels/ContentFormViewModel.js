@@ -161,7 +161,6 @@ class ContentFormViewModel {
     } else {
       notify('Something was wrong. Please try again', 'error');
     }
-
   };
 
   setShowAddChannelModel = (status) => {
@@ -169,7 +168,7 @@ class ContentFormViewModel {
     this.showAddChannelModel = status;
   };
 
-  catchError = (error) => {
+  catchError = () => {
     notify('Something went wrong from Server response. Please try again.');
   };
 

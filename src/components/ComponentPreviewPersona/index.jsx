@@ -5,16 +5,10 @@
 
 import React, { Component } from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-regular-svg-icons/faEdit';
-
 import SelectComponent from '../Select';
 import ComponentImage from '../ComponentImage';
 
 class ComponentPreviewPersona extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
 
   componentDidMount = () => {};
 

@@ -3,10 +3,9 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from 'react';
+import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import { Button } from 'react-bootstrap';
-import PAGE_STATUS from '../../../constants/PageStatus';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentAlt } from '@fortawesome/free-solid-svg-icons/faCommentAlt';

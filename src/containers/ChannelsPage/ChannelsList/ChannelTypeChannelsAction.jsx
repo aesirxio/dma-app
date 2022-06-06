@@ -3,11 +3,9 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 
 import { observer } from 'mobx-react';
-import { CHANNEL_FIELD_KEY } from '../../../constants/ChannelModule';
-import ChannelUtils from '../ChannelUtils/ChannelUtils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
 import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
@@ -22,8 +20,6 @@ const ChannelTypeChannelsAction = observer(({ channelType, channel, removeChanne
       await context.getChannelsListViewModel().actions('disconnectChannel', channelType, channel);
     }
   };
-
-  const statusToken = ChannelUtils.checkTokenExpired(channel[CHANNEL_FIELD_KEY.EXPIRED_TOKEN_TIME]);
 
   return (
     <div className="d-flex flex-wrap flex-md-nowrap justify-content-end align-content-center">

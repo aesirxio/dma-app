@@ -7,7 +7,7 @@ import React from 'react';
 import NumberFormat from 'react-number-format';
 import SETTINGS from '../../../constants/Settings';
 
-const FormPriceField = ({ field, validator }) => {
+const FormPriceField = ({ field }) => {
   let prefix = `${SETTINGS.CURRENCY_SYMBOL} `;
   let suffix = '';
 

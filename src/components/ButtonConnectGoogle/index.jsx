@@ -5,8 +5,6 @@
 
 import React, { useState } from 'react';
 import './index.scss';
-import useGoogleLogin from './useGoogleLogin';
-import { faGoogle } from '@fortawesome/free-brands-svg-icons/faGoogle';
 import Button from '../Button';
 import { notify } from '../../components/Toast';
 import { socialLogin } from '../../auth';

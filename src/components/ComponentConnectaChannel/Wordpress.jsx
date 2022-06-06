@@ -6,7 +6,7 @@
 import React, { Component, lazy } from 'react';
 import SimpleReactValidator from 'simple-react-validator';
 
-import { FORM_FIELD_TYPE, FORMAT_DATE } from '../../constants/FormFieldType';
+import { FORM_FIELD_TYPE } from '../../constants/FormFieldType';
 import { renderingGroupFieldHandler } from '../../utils/form';
 import { Form } from 'react-bootstrap';
 const FormComponent = lazy(() => import('../../components/Form'));

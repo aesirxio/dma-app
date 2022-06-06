@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy, Suspense } from 'react';
+import React, { Component, lazy } from 'react';
 import ChannelsStore from './ChannelsStore/ChannelsStore';
 import ChannelsViewModel from './ChannelsViewModels/ChannelsViewModel';
 import { ChannelsViewModelContextProvider } from './ChannelsViewModels/ChannelsViewModelContextProvider';

@@ -6,15 +6,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
-import { faFileAlt } from '@fortawesome/free-solid-svg-icons/faFileAlt';
-import { faNetworkWired } from '@fortawesome/free-solid-svg-icons/faNetworkWired';
-import { faUserFriends } from '@fortawesome/free-solid-svg-icons/faUserFriends';
-import { faUserTag } from '@fortawesome/free-solid-svg-icons/faUserTag';
-import { faHeart } from '@fortawesome/free-regular-svg-icons/faHeart';
-import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons/faEnvelopeOpenText';
 
 class Menu2 extends React.Component {
   constructor(props) {
@@ -134,7 +127,7 @@ class Menu2 extends React.Component {
     };
   }
 
-  checkActiveMenu = (name) => {};
+  checkActiveMenu = () => {};
 
   componentDidMount = () => {
     this.checkActiveMenu();
@@ -145,7 +138,7 @@ class Menu2 extends React.Component {
   };
 
   render() {
-    let { dataMenu, activeMenu } = this.state;
+    let { dataMenu } = this.state;
     return (
       <nav>
         <div className="py-1 px-3 item_menu item_menu_home">
@@ -153,7 +146,7 @@ class Menu2 extends React.Component {
             href="/"
             className="d-block text-blue-0 p-3 link_menu rounded-2 text-decoration-none  "
           >
-            <i class="text-white">
+            <i className="text-white">
               <FontAwesomeIcon icon={faArrowLeft} />
             </i>
             <span className="ms-3 text text-white">Back to Dashboard</span>
@@ -168,7 +161,7 @@ class Menu2 extends React.Component {
                   return (
                     <li
                       key={key}
-                      onClick={(e) => this.handleCheckActive(value.link)}
+                      onClick={() => this.handleCheckActive(value.link)}
                       className={`item_menu ${value.className ? value.className : ''}`}
                     >
                       <NavLink

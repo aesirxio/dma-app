@@ -6,7 +6,6 @@
 import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import CampaignsUtils from '../CampaignsUtils/CampaignsUtils';
-import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';
 import { notify } from '../../../components/Toast';
 import ContentStore from '../../ContentPage/ContentStore/ContentStore';
 import Helper from '../../../utils/helper';
@@ -123,7 +122,7 @@ class CampaignsListViewModel {
     this.pageSize = 5;
   };
 
-  callbackOnErrorHander = (error) => {
+  callbackOnErrorHander = () => {
     this.tableStatus = PAGE_STATUS.READY;
     this.campaigns = null;
   };

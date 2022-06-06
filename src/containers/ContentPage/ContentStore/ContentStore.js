@@ -6,9 +6,7 @@
 import { runInAction } from 'mobx';
 
 import ContentUtils from '../ContentUtils/ContentUtils';
-import ContentChannelsUtils from '../ContentUtils/ContentChannelsUtils';
 import ContentModel from '../ContentModel/ContentModel';
-import { AUTHORIZATION_KEY } from 'aesirx-dma-lib';
 import {
   AesirxContentApiService,
   AesirxPersonaApiService,
@@ -110,7 +108,9 @@ export default class ContentStore {
       } else {
         return null;
       }
-    } catch (error) {}
+    } catch (error) {
+      // no error throw
+    }
   }
 
   async getConnectedChannelsByOrganizationID(callbackOnSuccess, callbackOnError) {

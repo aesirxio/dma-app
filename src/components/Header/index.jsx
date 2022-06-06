@@ -39,7 +39,7 @@ class Header extends React.Component {
   };
 
   render() {
-    const { t, i18n } = this.props;
+    const { t } = this.props;
     let { isMini } = this.state;
     return (
       <div

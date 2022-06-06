@@ -7,10 +7,6 @@ import FIELD_TYPE from '../../../constants/FieldType';
 import { FORMAT_DATE } from '../../../constants/FormFieldType';
 import { PERSONA_FIELD_KEY, ESI_PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 
-import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
-
-//import {ESI_PERSONA_FIELD_KEY} from 'aesirx-dma-lib';
-
 import { format } from 'date-fns';
 import Helper from '../../../utils/helper';
 
@@ -191,149 +187,11 @@ class PersonaModel {
     };
   };
 
-  // getDgName = () => {
-  //   return {
-  //     value: this.dgname ?? '',
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.DG_NAME,
-  //     columnText: 'Name',
-  //   };
-  // };
-
-  // getImage = () => {
-  //   return {
-  //     value: this.image ?? '',
-  //     type: FIELD_TYPE.IMAGE,
-  //     columnName: PERSONA_FIELD_KEY.IMAGE,
-  //     columnText: 'Name',
-  //   };
-  // };
-
-  // getAvatar = () => {
-  //   return {
-  //     value: this.avatar ?? '',
-  //     type: FIELD_TYPE.AVATAR,
-  //     columnName: PERSONA_FIELD_KEY.AVATAR,
-  //     columnText: 'Name',
-  //   };
-  // };
-
-  // getTools = () => {
-  //   return {
-  //     value: this.tools ?? '',
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.TOOLS,
-  //     columnText: 'Tools',
-  //   };
-  // };
-
-  // getBio = () => {
-  //   return {
-  //     value: this.bio ?? '',
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.BIO,
-  //     columnText: 'Tools',
-  //   };
-  // };
-
-  // getGoals = () => {
-  //   return {
-  //     value: this.goals ?? '',
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.GOALS,
-  //     columnText: 'Goals',
-  //   };
-  // };
-
-  // getAge = () => {
-  //   return {
-  //     value: this.age ?? 0,
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.AGE,
-  //     columnText: 'Goals',
-  //   };
-  // };
-
-  // getLocation = () => {
-  //   return {
-  //     value: this.location ?? '',
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.LOCATION,
-  //     columnText: 'Location',
-  //   };
-  // };
-
-  // getJobTitle = () => {
-  //   return {
-  //     value: this.job_title ?? '',
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.JOB_TITLE,
-  //     columnText: 'Job title',
-  //   };
-  // };
-
-  // getSector = () => {
-  //   return {
-  //     value: this.sector ?? '',
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.SECTOR,
-  //     columnText: 'SECTOR',
-  //   };
-  // };
-
-  // getWebsite = () => {
-  //   return {
-  //     value: this.website ?? '',
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.WEBSITE,
-  //     columnText: 'WEBSITE',
-  //   };
-  // };
-
-  // getVendorResearch = () => {
-  //   return {
-  //     value: this.vendor_research ?? '',
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.VENDOR_RESEARCH,
-  //     columnText: 'Vendor research',
-  //   };
-  // };
-
-  // getInterest = () => {
-  //   return {
-  //     value: this.interest ?? '',
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.INTEREST,
-  //     columnText: 'Interest',
-  //   };
-  // };
-
-  // getChallenges = () => {
-  //   return {
-  //     value: this.challenges ?? '',
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.CHALLENGES,
-  //     columnText: 'Challenges',
-  //   };
-  // };
-
-  // getPaintpoint = () => {
-  //   return {
-  //     value: this.paint_point ?? '',
-  //     type: FIELD_TYPE.TEXT,
-  //     columnName: PERSONA_FIELD_KEY.PAINT_POINT,
-  //     columnText: 'Paint point',
-  //   };
-  // };
-
   toTableRowData = () => {
     const id = this.getId(),
       name = this.getName(),
       createdDate = this.getCreatedDate(),
-      updatedDate = this.getUpdatedDate(),
-      // image = this.getImage(),
-      avatar_2 = this.getAvatar2();
-    //channels = this.getChannels();
+      updatedDate = this.getUpdatedDate();
 
     return {
       [id.columnName]: id.value,

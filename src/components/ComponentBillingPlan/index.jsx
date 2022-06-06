@@ -469,7 +469,7 @@ class ComponentBillingPlan extends React.Component {
   }
 
   render() {
-    let { value, isDisable } = this.props;
+    let { isDisable } = this.props;
     return (
       <div className="pb-3">
         <div className="row" role="rowgroup">
@@ -532,7 +532,7 @@ class ComponentBillingPlan extends React.Component {
                             ? 'hidden'
                             : ''
                         }`}
-                        onClick={(e) => {
+                        onClick={() => {
                           if (this.props.planName === plan.plan_slug) {
                             notify('Please Choose A Different Plan', 'warning');
                             return;

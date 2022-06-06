@@ -11,8 +11,6 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight
 // import "./index.module.scss";
 
 import BannerLeft from '../../components/BannerLeft';
-import TitleAccount from '../../components/TitlePageAccount';
-import ButtonNormal from '../../components/ButtonNormal';
 
 const dataSlider = [
   {
@@ -24,7 +22,7 @@ const dataSlider = [
 
 class WelcomePage extends React.Component {
   render() {
-    const { t, i18n } = this.props;
+    const { t } = this.props;
 
     return (
       <div className="row">

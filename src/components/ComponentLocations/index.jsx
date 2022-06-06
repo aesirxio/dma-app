@@ -15,15 +15,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons/faMapMarkerAlt';
 
 const ComponentLocations = ({
-  validator,
   formPropsData,
   getDataSelectOptions,
   getDataSelectOptionsAge,
   viewModel,
   getAge,
 }) => {
-  const handleOnchange = (event) => {
-    // formPropsData[PERSONA_FIELD_KEY.NAME] = event.target.value;
+  const handleOnchange = () => {
   };
 
   const handleOnchangeAge = (name) => {
@@ -36,12 +34,10 @@ const ComponentLocations = ({
       <Form.Group key={Math.random(40, 200)} className="mb-4">
         <Label text={'Locations'} required={false} />
         <SelectComponent
-          // value={getValueSelected}
           options={getDataSelectOptions}
           className="mb-3 text-danger"
           isBorder={true}
           plColor="rgba(8, 18, 64, 0.8)"
-          // onChange={handleChange}
         />
         <div className="bg-gray-2 p-3 rounded-2 border-1">
           <p>Viet nam</p>
@@ -52,10 +48,8 @@ const ComponentLocations = ({
             <Form.Control
               as="input"
               defaultValue={formPropsData[PERSONA_FIELD_KEY.LOCATION]}
-              // required={field.required ?? false}
               id={PERSONA_FIELD_KEY.LOCATION}
               onChange={handleOnchange}
-              // onBlur={field.blurred ?? undefined}
               className="border-0 ps-4"
             />
           </div>
@@ -63,29 +57,21 @@ const ComponentLocations = ({
             <Form.Control
               as="input"
               defaultValue={formPropsData[PERSONA_FIELD_KEY.LOCATION]}
-              // required={field.required ?? false}
               id={PERSONA_FIELD_KEY.LOCATION}
               onChange={handleOnchange}
-              // onBlur={field.blurred ?? undefined}
               className="border-0"
             />
           </div>
         </div>
-        {/* {field.validation &&
-          validator.message(field.label, field.value, field.validation, {
-            className: 'text-danger',
-          })} */}
       </Form.Group>
       <Form.Group key={Math.random(40, 200)} className="mb-4">
         <Label text={'Age'} required={false} />
         <div className="d-flex align-items-center">
           <SelectComponent
-            // value={getValueSelected}
             options={getDataSelectOptionsAge}
             className="text-green w-110 mb-0"
             isBorder={true}
             plColor="rgba(8, 18, 64, 0.8)"
-            // onChange={handleChange}
           />
           <span className="px-2">-</span>
           <SelectComponent
@@ -104,7 +90,7 @@ const ComponentLocations = ({
             className={`w-80 btn_gender border-1 bg-transparent cursor-pointer d-flex align-items-center justify-content-center ${
               getAge === 'all' ? 'active' : ''
             }`}
-            onClick={(e) => handleOnchangeAge('all')}
+            onClick={() => handleOnchangeAge('all')}
           >
             All
           </span>
@@ -113,7 +99,7 @@ const ComponentLocations = ({
             className={`w-80 btn_gender border-1 bg-transparent cursor-pointer d-flex align-items-center justify-content-center ${
               getAge === 'men' ? 'active' : ''
             }`}
-            onClick={(e) => handleOnchangeAge('men')}
+            onClick={() => handleOnchangeAge('men')}
           >
             Men
           </span>
@@ -122,7 +108,7 @@ const ComponentLocations = ({
             className={`w-80 btn_gender border-1 bg-transparent cursor-pointer d-flex align-items-center justify-content-center ${
               getAge === 'women' ? 'active' : ''
             }`}
-            onClick={(e) => handleOnchangeAge('women')}
+            onClick={() => handleOnchangeAge('women')}
           >
             Women
           </span>
