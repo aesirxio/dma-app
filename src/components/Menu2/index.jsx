@@ -6,6 +6,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 
@@ -24,105 +25,8 @@ class Menu2 extends React.Component {
               link: '/profile',
               icons: faUser,
             },
-            // {
-            //   name: 'billingplan',
-            //   text: 'Billing & Plan',
-            //   link: '/billing-plan',
-            //   icons: faFileAlt,
-            // },
-            // {
-            //   name: "quotas",
-            //   text: "Quotas",
-            //   link: "/billing-plan-quotas",
-            //   icons: faFileAlt,
-            // },
-            // {
-            //   name: 'invoices',
-            //   text: 'Invoices',
-            //   link: '/billing-plan-invoices',
-            //   icons: faFileAlt,
-            // },
           ],
         },
-        // {
-        //   title: 'Members',
-        //   listMenu: [
-        //     {
-        //       name: 'organisations',
-        //       text: 'Organisations',
-        //       link: '/organisations',
-        //       icons: faNetworkWired,
-        //       className: 'fst-italic',
-        //     },
-        //     {
-        //       name: 'teammembers',
-        //       text: 'Team Members',
-        //       link: '/team-members',
-        //       icons: faUserFriends,
-        //       className: 'fst-italic',
-        //     },
-        //     {
-        //       name: 'roles',
-        //       text: 'Roles',
-        //       link: '/roles',
-        //       icons: faUserTag,
-        //       className: 'fst-italic',
-        //     },
-        //   ],
-        // },
-        // {
-        //   title: 'WORKFLOW',
-        //   listMenu: [
-        //     {
-        //       name: 'workflowschemes',
-        //       text: 'Workflow Schemes',
-        //       link: '/workflow-schemes',
-        //       icons: faHome,
-        //       className: 'fst-italic',
-        //     },
-        //   ],
-        // },
-        // {
-        //   title: 'Connect a Channel',
-        //   listMenu: [
-        //     {
-        //       name: 'socialmedia',
-        //       text: 'Social Media',
-        //       link: '/social-media',
-        //       icons: faHome,
-        //     },
-        //     {
-        //       name: 'advertising',
-        //       text: 'Advertising',
-        //       link: '/advertising',
-        //       icons: faHome,
-        //     },
-        //     {
-        //       name: 'cms',
-        //       text: 'CMS',
-        //       link: '/cms',
-        //       icons: faHome,
-        //     },
-        //     {
-        //       name: 'emailmarketing',
-        //       text: 'Email Marketing',
-        //       link: '/emailmarketing',
-        //       icons: faEnvelopeOpenText,
-        //     },
-        //   ],
-        // },
-        // {
-        //   title: 'miscellaneous',
-        //   listMenu: [
-        //     {
-        //       name: 'mycollections',
-        //       text: 'My collections',
-        //       link: '/my-collections',
-        //       icons: faHeart,
-        //       className: 'fst-italic',
-        //     },
-        //   ],
-        // },
       ],
     };
   }
@@ -155,7 +59,6 @@ class Menu2 extends React.Component {
         {dataMenu.map((item, index) => {
           return (
             <div key={index}>
-              
               <ul className="wr_list_menu_2 list-unstyled mb-0 py-1 px-3">
                 {item.listMenu.map((value, key) => {
                   return (

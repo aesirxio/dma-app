@@ -1,6 +1,6 @@
 {
   "name": "aesirx-dma-app",
-  "version": "1.2.10",
+  "version": "1.2.11",
   "license": "GPL-3.0-only",
   "author": "AesirX",
   "repository": "https://github.com/aesirxio/dma-app",
@@ -34,7 +34,6 @@
     "react-dom": "^17.0.1",
     "react-dropzone": "^11.2.4",
     "react-google-charts": "^3.0.15",
-    "react-google-login": "^5.2.2",
     "react-i18next": "^11.7.3",
     "react-iframe": "^1.8.0",
     "react-lazy-load-image-component": "^1.5.1",
@@ -46,7 +45,6 @@
     "react-timezone-select": "^1.0.7",
     "react-toastify": "^6.2.0",
     "react-transition-group": "^4.4.2",
-    "react-twitter-login": "^1.4.0",
     "simple-react-validator": "^1.6.0",
     "socket.io-client": "^4.0.1",
     "swiper": "^6.3.5",
