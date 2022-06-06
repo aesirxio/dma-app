@@ -71,7 +71,7 @@ class LoginPage extends React.Component {
   };
 
   render() {
-    const { t, i18n } = this.props;
+    const { t } = this.props;
 
     return (
       <div className="row">

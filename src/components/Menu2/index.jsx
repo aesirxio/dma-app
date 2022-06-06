@@ -64,7 +64,7 @@ class Menu2 extends React.Component {
                   return (
                     <li
                       key={key}
-                      onClick={(e) => this.handleCheckActive(value.link)}
+                      onClick={() => this.handleCheckActive(value.link)}
                       className={`item_menu ${value.className ? value.className : ''}`}
                     >
                       <NavLink
