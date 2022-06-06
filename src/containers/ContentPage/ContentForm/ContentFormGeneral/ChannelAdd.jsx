@@ -3,10 +3,9 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { lazy, useContext, useEffect } from 'react';
+import React, { lazy, useContext } from 'react';
 import { observer } from 'mobx-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
 import { ContentViewModelContext } from '../../ContentViewModels/ContentViewModelContextProvider';
 import ListChannelComponent from '../../../../components/ChannelComponent/list';
 import { Button } from 'react-bootstrap';

@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from 'react';
+import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 
 import SimpleReactValidator from 'simple-react-validator';
@@ -88,7 +88,7 @@ const PersonaFormPage = observer(
     };
 
     render() {
-      const { formStatus, personaData, connectedChannelMasterData } = this.personaFormViewModel;
+      const { formStatus, personaData } = this.personaFormViewModel;
 
       if (formStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;

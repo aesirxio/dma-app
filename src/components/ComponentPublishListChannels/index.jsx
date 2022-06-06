@@ -8,8 +8,6 @@ import React, { Component } from 'react';
 class ComponentPublishListChannels extends Component {
   render() {
     let {
-      handleDeselectAllSocial,
-      handleSelectAllSocial,
       listFacebookFanpageConnected,
       listInstagramFanpageConnected,
       isAdvanceMode,

@@ -8,7 +8,6 @@ import { notify } from '../../../components/Toast';
 
 import CampaignsUtils from '../../CampaignsPage/CampaignsUtils/CampaignsUtils';
 import PersonaUtils from '../../PersonasPage/PersonaUtils/PersonaUtils';
-import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
 import ChannelsStore from '../../ChannelsPage/ChannelsStore/ChannelsStore';
 import ProjectUtils from '../../ProjectsPage/ProjectUtils/ProjectUtils';
 class ContentsFilterFormViewModel {

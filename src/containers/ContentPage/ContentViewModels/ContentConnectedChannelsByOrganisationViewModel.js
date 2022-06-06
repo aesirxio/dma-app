@@ -4,7 +4,6 @@
  */
 
 import { makeAutoObservable } from 'mobx';
-import { notify } from '../../../components/Toast';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { PERSONA_TABLE_SELECTION_MODAL_COLUMN_INDICATOR } from '../../../constants/PersonaModule';
 
@@ -510,7 +509,7 @@ class ContentConnectedChannelsByOrganisationViewModel {
     this.multi = multi;
   };
 
-  openModal = (inputRef) => {
+  openModal = () => {
     this.show = true;
   };
 
@@ -658,7 +657,7 @@ class ContentConnectedChannelsByOrganisationViewModel {
     }
   };
 
-  callbackOnErrorHander = (error) => {
+  callbackOnErrorHander = () => {
     this.formStatus = PAGE_STATUS.READY;
   };
 

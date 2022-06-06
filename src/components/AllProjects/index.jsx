@@ -72,7 +72,7 @@ class AllProjects extends React.Component {
 
   CustomMenu = React.forwardRef(
     ({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
-      const { t, i18n } = this.props;
+      const { t } = this.props;
       let { value } = this.state;
 
       return (
@@ -120,7 +120,7 @@ class AllProjects extends React.Component {
   );
 
   render() {
-    const { t, i18n } = this.props;
+    const { t } = this.props;
     return (
       <div className="wrapper_dropdown all_project">
         <Dropdown>

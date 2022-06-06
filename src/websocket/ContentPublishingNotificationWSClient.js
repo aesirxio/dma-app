@@ -48,10 +48,12 @@ class ContentPublishingNotificationWSClient {
     try {
       this.errorHandler(error);
       this.closeWebSocketClientInstance();
-    } catch (error) {}
+    } catch (error) {
+      // no error throw
+    }
   }
 
-  errorHandler(message) {}
+  errorHandler() {}
 
   onReceivingAForwardedMessageFromServer(roomID, messageObject) {
     let dataPost = messageObject.dataPost ? messageObject.dataPost : null;

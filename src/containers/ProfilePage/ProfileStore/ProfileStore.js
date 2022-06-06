@@ -95,6 +95,7 @@ export default class ProfileStore {
       const respondedData = await getMemberInfoAPIService.getMemberInfo(id);
       return respondedData;
     } catch (error) {
+      // no error throw
     }
 
     return false;

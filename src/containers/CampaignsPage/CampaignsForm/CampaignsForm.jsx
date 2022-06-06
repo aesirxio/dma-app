@@ -3,18 +3,15 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from 'react';
-import { observer } from 'mobx-react';
+import React, { Component } from 'react';
 import SimpleReactValidator from 'simple-react-validator';
 
-import { FORM_FIELD_TYPE, FORMAT_DATE } from '../../../constants/FormFieldType';
+import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import Spinner from '../../../components/Spinner';
 
 import { renderingGroupFieldHandler } from '../../../utils/form';
-
-const FormComponent = lazy(() => import('../../../components/Form'));
 
 class CampaignsForm extends Component {
   formPropsData = {

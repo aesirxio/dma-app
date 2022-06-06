@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from 'react';
+import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { withChannelsViewModel } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
@@ -175,9 +175,9 @@ const ConnectChannels = observer(
       this.channelsListViewModel.onSuccessConnect(JSON.stringify(dataAccessToken), 'google_ads');
     };
 
-    onRequestGoogleConnect = (req, res) => {};
+    onRequestGoogleConnect = () => {};
 
-    onSuccessFacebookConnect = (response) => {
+    onSuccessFacebookConnect = () => {
       window.FB.api('me/accounts', (response) => {
         if (response) {
           const connected = response.data.map((item) => item.id);
@@ -212,7 +212,7 @@ const ConnectChannels = observer(
       this.channelsListViewModel.onSuccessConnect(JSON.stringify(dataAccessToken), 'instagram');
     };
 
-    onFailureConnectChannels = (err) => {
+    onFailureConnectChannels = () => {
     };
 
     onSuccessGoogleMyBusinessConnect = (res) => {
@@ -232,11 +232,9 @@ const ConnectChannels = observer(
       let { showModal } = this.state;
 
       const {
-        listFaceBookFanpage,
         listFaceBookFanpageView,
         listFacebookFanpageConnected,
         facebookConnected,
-        listInstagramFanpage,
         listInstagramFanpageView,
         listInstagramFanpageConnected,
         instagramConnected,
@@ -385,7 +383,7 @@ const ConnectChannels = observer(
                           <ComponentItemFanpage
                             key={key}
                             name={value.name}
-                            handleCheckbox={(e) => {
+                            handleCheckbox={() => {
                               this.handleCheckboxAdAccounts(value.id);
                             }}
                           />

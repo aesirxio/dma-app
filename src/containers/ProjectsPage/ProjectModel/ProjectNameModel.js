@@ -5,7 +5,6 @@
 
 import React from 'react';
 import ComponentImage from '../../../components/ComponentImage';
-import Helper from '../../../utils/helper';
 
 class ProjectNameModel {
   constructor(name, logo) {

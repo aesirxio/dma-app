@@ -70,7 +70,9 @@ class ChannelCallbackNotify {
     try {
       this.errorHandler(error);
       this.closeWebSocketClientInstance();
-    } catch (error) {}
+    } catch (error) {
+      // no error throw
+    }
   }
 
   up = () => {

@@ -109,7 +109,6 @@ class List extends React.Component {
   }
 
   render() {
-    const { t, i18n } = this.props;
     return (
       <div>
         <div className="row">

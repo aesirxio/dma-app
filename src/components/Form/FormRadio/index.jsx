@@ -3,8 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from 'react';
-import { Form } from 'react-bootstrap';
+import React from 'react';
 
 const FormRadio = ({ field }) => {
   return (

@@ -9,7 +9,7 @@ import { AesirxAuthenticationApiService, AUTHORIZATION_KEY, Storage } from 'aesi
 import ContentPublishingNotificationWSClient from '../websocket/ContentPublishingNotificationWSClient';
 
 // LOGIN
-const login = async ({ username, password, remember }) => {
+const login = async ({ username, password }) => {
   document.body.classList.add('body_login_page');
   const authService = new AesirxAuthenticationApiService();
   const result = await authService.login(username, password);

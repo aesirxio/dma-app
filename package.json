@@ -1,6 +1,6 @@
 {
   "name": "aesirx-dma-app",
-  "version": "1.2.8",
+  "version": "1.2.10",
   "license": "GPL-3.0-only",
   "author": "AesirX",
   "repository": "https://github.com/aesirxio/dma-app",
@@ -55,7 +55,10 @@
     "start": "npm run build && serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "dev": "react-scripts start"
+    "dev": "react-scripts start",
+    "lint": "eslint --fix \"src/**/\"",
+    "lint:check": "eslint \"src/**/\"",
+    "lint:nowarns": "eslint --quiet \"src/**/\""
   },
   "eslintConfig": {
     "extends": [
@@ -76,9 +79,12 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.18",
+    "@babel/preset-react": "^7.17",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "eslint": "^8.17",
     "react-scripts": "^5.0.1",
     "sass": "^1.52",
     "serve": "^13.0.2"

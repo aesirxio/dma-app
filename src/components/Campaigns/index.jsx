@@ -4,12 +4,10 @@
  */
 
 import React from 'react';
-import CampaignsStore from '../../containers/CampaignsPage/CampaignsStore/CampaignsStore';
 
 import getStatus from '../../utils/status';
 import ComponentNoData from '../ComponentNoData';
 import ComponentAccordion from '../ComponentAccordion';
-const campaignsStore = new CampaignsStore();
 
 class Campaigns extends React.Component {
   constructor(props) {

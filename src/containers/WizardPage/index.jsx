@@ -61,7 +61,7 @@ class WizardPage extends Component {
               <ButtonNormal
                 className="btn btn-success px-4 mw-80"
                 text="Next"
-                onClick={(e) => this.next()}
+                onClick={() => this.next()}
               ></ButtonNormal>
             </div>
           </Route>

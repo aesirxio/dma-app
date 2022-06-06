@@ -3,9 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React from 'react';
-import { makeAutoObservable, runInAction } from 'mobx';
-import PAGE_STATUS from '../../../constants/PageStatus';
+import { runInAction } from 'mobx';
 
 import ProjectUtils from '../ProjectUtils/ProjectUtils';
 import ProjectModel from '../ProjectModel/ProjectModel';

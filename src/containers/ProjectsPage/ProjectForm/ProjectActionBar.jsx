@@ -36,7 +36,7 @@ class ProjectActionBar extends Component {
     }
   }
 
-  createProjectHandler = (event) => {
+  createProjectHandler = () => {
     this.projectFormModalViewModel.openModal();
   };
 

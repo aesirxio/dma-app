@@ -8,32 +8,6 @@ import styles from './index.module.scss';
 import { observer } from 'mobx-react';
 import ComponentImage from '../ComponentImage';
 
-const defaultData = [
-  {
-    images: '/assets/images/ic-facebook.svg',
-    des: 'Facebook',
-  },
-  {
-    images: '/assets/images/ic-facebook.svg',
-    des: 'Youtube',
-  },
-  {
-    images: '/assets/images/ic-facebook.svg',
-    des: 'Twitter',
-  },
-  {
-    images: '/assets/images/ic-facebook.svg',
-    des: 'LinkedIn',
-  },
-  {
-    images: '/assets/images/ic-facebook.svg',
-    des: 'Wordpress',
-  },
-  {
-    images: '/assets/images/ic-facebook.svg',
-    des: 'Mailchimp',
-  },
-];
 const ListConnectedChannel = observer(
   class ListConnectedChannel extends React.Component {
     viewModel = null;
@@ -49,7 +23,7 @@ const ListConnectedChannel = observer(
         <div className="bg-white shadow-sm rounded-2 px-3 py-2 h-100 d-flex align-items-center">
           <div className="row w-100">
             {value
-              ? value.map((value, key) => {
+              ? value.map((value) => {
                   return (
                     <div
                       key={Math.random(10000, 20000)}

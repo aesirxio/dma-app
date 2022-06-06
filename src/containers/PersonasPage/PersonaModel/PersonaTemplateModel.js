@@ -10,10 +10,6 @@ import {
   ESI_PERSONA_TEMPLATE_FIELD_KEY,
 } from '../../../constants/PersonaTemplateModule';
 
-import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
-
-//import {ESI_PERSONA_TEMPLATE_FIELD_KEY} from 'aesirx-dma-lib';
-
 import { format } from 'date-fns';
 
 class PersonaTemplateModel {

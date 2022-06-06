@@ -3,8 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from 'react';
-import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
+import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import { Form } from 'react-bootstrap';
 import Label from '../Label';
@@ -15,7 +14,6 @@ import Dropzone from 'react-dropzone';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons/faImage';
 import { faVideo } from '@fortawesome/free-solid-svg-icons/faVideo';
-import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 
 import 'emoji-mart/css/emoji-mart.css';
 import { Emoji, Picker } from 'emoji-mart';
@@ -56,13 +54,13 @@ const FormTab = observer(
     };
 
     onDrop = (acceptedFiles) => {
-      this.setState((state) => ({
+      this.setState(() => ({
         files: [...this.state.files, ...acceptedFiles],
       }));
     };
 
     render() {
-      let { files, desc } = this.state;
+      let { files } = this.state;
 
       const preview = files.map((file) => (
         <div key={file.name} className="position-relative m-2">
@@ -76,7 +74,7 @@ const FormTab = observer(
 
       const personaSelectionData = this.viewModel.personaSelectionData;
 
-      const { field, validator } = this.props;
+      const { field } = this.props;
 
       return (
         personaSelectionData.length > 0 && (
@@ -84,7 +82,7 @@ const FormTab = observer(
             <Label text={field.label} required={field.required ?? false} />
             <div className="wrapper_tabs border-1 rounded pad">
               <Tabs defaultActiveKey="1" id="desc-tab">
-                {personaSelectionData.map((item) => {
+                {personaSelectionData.map(() => {
                   const channels = [
                     {
                       id: 1,

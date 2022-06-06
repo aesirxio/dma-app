@@ -8,11 +8,6 @@ import { useExpanded, useTable } from "react-table";
 
 import makeData from "./makeData";
 
-const data = [
-  { firstName: "jane", lastName: "doe", age: 20 },
-  { firstName: "john", lastName: "smith", age: 21 },
-];
-
 function SubRows({ row, rowProps, visibleColumns, data, loading }) {
   if (loading) {
     return (
@@ -79,7 +74,6 @@ function Table({ columns: userColumns, data, renderRowSubComponent }) {
     rows,
     prepareRow,
     visibleColumns,
-    state: { expanded },
   } = useTable(
     {
       columns: userColumns,
@@ -101,7 +95,7 @@ function Table({ columns: userColumns, data, renderRowSubComponent }) {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row, i) => {
+          {rows.map((row) => {
             prepareRow(row);
             const rowProps = row.getRowProps();
             return (

@@ -4,13 +4,8 @@
  */
 
 import { makeAutoObservable } from 'mobx';
-import PAGE_STATUS from '../../../constants/PageStatus';
-import PersonaUtils from '../PersonaUtils/PersonaUtils';
-import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 import contentsStore from '../../ContentPage/ContentStore/ContentStore';
 import PersonaTemplateUtils from '../PersonaUtils/PersonaTemplateUtils';
-
-import { notify } from '../../../components/Toast';
 
 class PersonaTemplateViewModel {
   personaStore = null;
@@ -44,7 +39,7 @@ class PersonaTemplateViewModel {
     this.personaTemplatesData = rowDataTransformed;
   };
 
-  callbackOnErrorHander = (error) => {};
+  callbackOnErrorHander = () => {};
 }
 
 export default PersonaTemplateViewModel;

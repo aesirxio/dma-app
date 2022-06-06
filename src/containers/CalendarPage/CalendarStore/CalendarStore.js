@@ -4,13 +4,10 @@
  */
 
 import { runInAction } from 'mobx';
-
-import CalendarUtils from '../CalendarUtils/CalendarUtils';
-
 import { AUTHORIZATION_KEY, AesirxContentApiService, Storage } from 'aesirx-dma-lib';
 
 export default class CalendarStore {
-  async fetchPlanning(callbackOnSuccess, callbackOnError, dataFilter) {
+  async fetchPlanning(callbackOnSuccess, callbackOnError) {
     try {
       const contentService = new AesirxContentApiService();
 

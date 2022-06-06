@@ -11,8 +11,6 @@ import { withWizardViewModel } from '../../WizardViewModels/WizardViewModelConte
 import PAGE_STATUS from '../../../../constants/PageStatus';
 import Spinner from '../../../../components/Spinner';
 import ButtonNormal from '../../../../components/ButtonNormal';
-import WizardSteps from '../../../../components/WizardSteps';
-import history from '../../../../routes/history';
 
 const ProjectForm = lazy(() => import('../../../ProjectsPage/ProjectForm/ProjectForm'));
 

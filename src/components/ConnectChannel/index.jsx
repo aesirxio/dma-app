@@ -13,8 +13,6 @@ import ModalComponent from "../Modal";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
 
-import styles from "./index.module.scss";
-
 class ConnectChannel extends React.Component {
   constructor(props) {
     super(props);
@@ -44,11 +42,11 @@ class ConnectChannel extends React.Component {
   }
 
   handleClick = () => {
-    this.setState((state) => ({ showModal: true }));
+    this.setState(() => ({ showModal: true }));
   };
 
   handleModalShow = (s) => {
-    this.setState((state) => ({ showModal: s }));
+    this.setState(() => ({ showModal: s }));
   };
 
   render() {

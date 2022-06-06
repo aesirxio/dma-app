@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy, Suspense } from 'react';
+import React, { Component, Suspense } from 'react';
 import SimpleReactValidator from 'simple-react-validator';
 
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';

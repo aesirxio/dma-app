@@ -14,7 +14,6 @@ import { ContentViewModelContext } from '../../../ContentViewModels/ContentViewM
 import { observer } from 'mobx-react';
 
 import { CHANNEL_ADS_GOOGLE } from '../../../../../constants/ChannelModule';
-import useValidator from '../../../../../utils/simpleValidator';
 import { debouncedChangeHandlerInterests } from './FetchDataGGAds';
 
 const AdGroup = observer((props) => {
@@ -49,7 +48,7 @@ const AdGroup = observer((props) => {
           all: 'no',
           name: 'googleads',
           isAll: false,
-          changedAll: (data) => {},
+          changedAll: () => {},
           changed: (data) => {
             viewModel.setFromAdsGroupData('location', data, CHANNEL_ADS_GOOGLE);
           },

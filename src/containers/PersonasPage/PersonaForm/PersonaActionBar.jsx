@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import { withPersonaViewModel } from '../PersonaViewModels/PersonaViewModelContextProvider';
