@@ -6,7 +6,6 @@
 import history from '../routes/history';
 import { notify } from '../components/Toast';
 import { AesirxAuthenticationApiService, AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
-import ContentPublishingNotificationWSClient from '../websocket/ContentPublishingNotificationWSClient';
 
 // LOGIN
 const login = async ({ username, password }) => {
@@ -29,9 +28,6 @@ const login = async ({ username, password }) => {
 // LOGOUT
 const logout = () => {
   localStorage.clear();
-  if (window.ContentPublishingNotificationWSClient) {
-    window.ContentPublishingNotificationWSClient.closeWebSocketClientInstance();
-  }
 
   history.push('/login');
 };
@@ -44,8 +40,6 @@ const isLogin = () => {
     const userName = Storage.getItem(AUTHORIZATION_KEY.MEMBER_EMAIL, null);
 
     if (isAuthenticated && userID && userName) {
-      // autoLogoutInitalization();
-      ContentPublishingNotificationWSClient.__init();
       return true;
     }
     return false;
