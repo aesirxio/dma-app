@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 
 import './index.scss';
+
 import BannerLeft from '../../components/BannerLeft';
 
 import { login } from '../../auth';
@@ -112,8 +113,7 @@ class LoginPage extends React.Component {
               {this.validator.message('password', this.state.password, 'required', {
                 className: 'text-danger',
               })}
-              <div className="mt-4 mb-3 d-flex justify-content-between">
-              </div>
+              <div className="mt-4 mb-3 d-flex justify-content-between"></div>
               <button
                 type="button"
                 className={`btn w-100 fw-medium btn-success position-relative d-flex align-item-center justify-content-center wr_btn_login`}

@@ -6,7 +6,6 @@
 import history from '../routes/history';
 import { notify } from '../components/Toast';
 import { AesirxAuthenticationApiService, AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
-import ContentPublishingNotificationWSClient from '../websocket/ContentPublishingNotificationWSClient';
 
 // LOGIN
 const login = async ({ username, password }) => {
@@ -26,35 +25,9 @@ const login = async ({ username, password }) => {
   }
 };
 
-const socialLogin = async (socialType, accessToken) => {
-  document.body.classList.add('body_login_page');
-  const authService = new AesirxAuthenticationApiService();
-  const result = await authService.socialLogin(socialType, accessToken);
-  if (result) {
-    Storage.setItem('auth', true);
-    Storage.setItem('first_login', false);
-    document.body.classList.remove('body_login_page');
-    // if (result.first_login) {
-    //   Storage.setItem('first_login', true);
-    //   history.push('/wizard');
-    // } else {
-    //   history.push('/');
-    // }
-    history.push('/');
-    return true;
-  } else {
-    notify('Login information is incorrect', 'error');
-    document.body.classList.remove('body_login_page');
-    return false;
-  }
-};
-
 // LOGOUT
 const logout = () => {
   localStorage.clear();
-  if (window.ContentPublishingNotificationWSClient) {
-    window.ContentPublishingNotificationWSClient.closeWebSocketClientInstance();
-  }
 
   history.push('/login');
 };
@@ -67,8 +40,6 @@ const isLogin = () => {
     const userName = Storage.getItem(AUTHORIZATION_KEY.MEMBER_EMAIL, null);
 
     if (isAuthenticated && userID && userName) {
-      // autoLogoutInitalization();
-      ContentPublishingNotificationWSClient.__init();
       return true;
     }
     return false;
@@ -77,4 +48,4 @@ const isLogin = () => {
   }
 };
 
-export { login, logout, isLogin, socialLogin };
+export { login, logout, isLogin };
