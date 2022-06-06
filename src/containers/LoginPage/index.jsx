@@ -9,19 +9,12 @@ import SimpleReactValidator from 'simple-react-validator';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 
-import TitleAccount from '../../components/TitlePageAccount';
-
 import './index.scss';
 
-import Line from '../../components/Line';
-import Checkbox from '../../components/Checkbox';
 import BannerLeft from '../../components/BannerLeft';
-import Social from '../../components/Social';
 
-import { login, socialLogin } from '../../auth';
+import { login } from '../../auth';
 import InputPassword from '../../components/inputPassword';
-import { notify } from '../../components/Toast';
-import history from '../../routes/history';
 
 const dataSlider = [
   {
@@ -120,8 +113,7 @@ class LoginPage extends React.Component {
               {this.validator.message('password', this.state.password, 'required', {
                 className: 'text-danger',
               })}
-              <div className="mt-4 mb-3 d-flex justify-content-between">
-              </div>
+              <div className="mt-4 mb-3 d-flex justify-content-between"></div>
               <button
                 type="button"
                 className={`btn w-100 fw-medium btn-success position-relative d-flex align-item-center justify-content-center wr_btn_login`}

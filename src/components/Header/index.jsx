@@ -12,7 +12,7 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCi
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 
 import './index.scss';
-import Notifications from '../Notifications';
+
 import DropdownAvatar from '../DropdownAvatar';
 
 import ComponentHambuger from '../ComponentHambuger';
@@ -106,9 +106,7 @@ class Header extends React.Component {
                   <span className="text white-spacing-nowrap ps-2">{t('txt_help_center')}</span>
                 </span>
               </div>
-              <div className="ps-3 pe-3">
-                <Notifications />
-              </div>
+
               <div className="ps-3 pe-3">
                 <DropdownAvatar />
               </div>

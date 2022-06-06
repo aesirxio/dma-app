@@ -26,29 +26,6 @@ const login = async ({ username, password, remember }) => {
   }
 };
 
-const socialLogin = async (socialType, accessToken) => {
-  document.body.classList.add('body_login_page');
-  const authService = new AesirxAuthenticationApiService();
-  const result = await authService.socialLogin(socialType, accessToken);
-  if (result) {
-    Storage.setItem('auth', true);
-    Storage.setItem('first_login', false);
-    document.body.classList.remove('body_login_page');
-    // if (result.first_login) {
-    //   Storage.setItem('first_login', true);
-    //   history.push('/wizard');
-    // } else {
-    //   history.push('/');
-    // }
-    history.push('/');
-    return true;
-  } else {
-    notify('Login information is incorrect', 'error');
-    document.body.classList.remove('body_login_page');
-    return false;
-  }
-};
-
 // LOGOUT
 const logout = () => {
   localStorage.clear();
@@ -77,4 +54,4 @@ const isLogin = () => {
   }
 };
 
-export { login, logout, isLogin, socialLogin };
+export { login, logout, isLogin };
