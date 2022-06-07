@@ -64,9 +64,11 @@
 
   .rbc-day-bg {
     border-left: 1px solid $border-color;
+    
 
     &:last-child {
       border-right: 1px solid $border-color;
+      
     }
   }
 
@@ -99,7 +101,7 @@
 }
 
 .rbc-today {
-  background-color: transparent;
+  background-color: rgba($color: $color-blue-3, $alpha: 0.3);
 }
 
 .rbc-event,
