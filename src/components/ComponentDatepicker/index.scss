@@ -62,14 +62,14 @@
   .react-datepicker__year-text--selected,
   .react-datepicker__year-text--in-selecting-range,
   .react-datepicker__year-text--in-range {
-    background-color: rgba($color: $color-blue-3, $alpha: 0.08);
+    background-color: rgba($color: $color-blue-3, $alpha: 0.3);
   }
 
   .react-datepicker__day--keyboard-selected,
   .react-datepicker__month-text--keyboard-selected,
   .react-datepicker__quarter-text--keyboard-selected,
   .react-datepicker__year-text--keyboard-selected {
-    background-color: rgba($color: $color-blue-3, $alpha: 0.08);
+    background-color: rgba($color: $color-blue-3, $alpha: 0.3);
     outline: none;
   }
 
@@ -78,7 +78,7 @@
   .react-datepicker__quarter-text,
   .react-datepicker__year-text {
     &:hover {
-      background-color: rgba($color: $color-blue-3, $alpha: 0.08);
+      background-color: rgba($color: $color-blue-3, $alpha: 0.3);
     }
   }
 }
