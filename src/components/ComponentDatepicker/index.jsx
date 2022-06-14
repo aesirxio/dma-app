@@ -46,9 +46,10 @@ class ComponentDatepicker extends React.Component {
   }
 
   handleShowPicker = () => {
-    this.setState({
-      isOpen: true,
-    });
+    this.setState((prevState) => ({
+      isOpen: !prevState.isOpen,
+    })
+    );
   };
 
   onChange = (dates) => {
@@ -139,6 +140,7 @@ class ComponentDatepicker extends React.Component {
           <FontAwesomeIcon icon={faCalendarDay} />
         </i>
         <DatePicker
+
           onChange={this.onChange}
           className="border-0 w-100 rounded-2 h-100 ps-2 bg-transparent cursor-pointer"
           monthsShown={2}
