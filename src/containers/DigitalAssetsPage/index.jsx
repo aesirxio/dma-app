@@ -12,7 +12,9 @@ function DigitalAssetsPage() {
   const urlDam =
     AXIOS_CONFIGS.BASE_ENDPOINT_URL +
     '/administrator/index.php?option=com_aesir_dam&view=collection_assets&token=' +
-    Storage.getItem(AUTHORIZATION_KEY.TOKEN_USER);
+    Storage.getItem(AUTHORIZATION_KEY.TOKEN_USER) +
+    '&license_key=' + AXIOS_CONFIGS.LICENSE;
+
   return (
     <div className="py-4 px-3 h-100 flex-direction-column">
       {/* <div className="d-flex align-items-center justify-content-between mb-4">
