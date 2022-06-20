@@ -46,9 +46,10 @@ class ComponentDatepicker extends React.Component {
   }
 
   handleShowPicker = () => {
-    this.setState({
-      isOpen: true,
-    });
+      this.setState((prevState) => ({
+        isOpen: !prevState.isOpen,
+      })
+    );
   };
 
   onChange = (dates) => {
