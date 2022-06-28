@@ -77,9 +77,6 @@ class FilterCalendar extends React.Component {
     });
     this.setState(this.dataFilter);
   };
-  hanldeClickOutSide = (e) => {
-    console.log(e);
-  };
   isCheck = (name, value) => {
     if (name && value && this.state[name]?.includes(value)) {
       return true;
@@ -90,12 +87,12 @@ class FilterCalendar extends React.Component {
     this.props.handleCloseFilterCalendar();
   };
 
-  handleClickOutside(event) {
+  handleClickOutside = (event) => {
     if (!this.props.show) return null;
     if (this.filterRef.current && !this.filterRef.current.contains(event.target)) {
       this.props.handleCloseFilterCalendar();
     }
-  }
+  };
   render() {
     this.data = [
       {
@@ -121,11 +118,7 @@ class FilterCalendar extends React.Component {
         <div className="bg-white w-400 h-100" ref={this.filterRef}>
           <div className="d-flex align-items-center justify-content-between p-3 border-bottom-1">
             <h4 className="text-blue-0 fw-medium">Filter</h4>
-            <span
-              className="cursor-pointer text-danger"
-              // onClick={this.props.handleCloseFilterCalendar}
-              onClick={() => this.handleClearAll()}
-            >
+            <span className="cursor-pointer text-danger" onClick={() => this.handleClearAll()}>
               <i>
                 <FontAwesomeIcon icon={faTimes} />
               </i>
