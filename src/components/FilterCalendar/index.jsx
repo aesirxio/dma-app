@@ -46,11 +46,15 @@ class FilterCalendar extends React.Component {
     //   data: this.data,
     // });
     if (checkall) {
-      this.data[index].listCheck.forEach((item) => {
-        if (!this.dataFilter[name].includes(item.value)) {
-          this.dataFilter[name].push(item.value);
-        }
-      });
+      if (this.dataFilter[name].length == this.data[index].listCheck.length) {
+        this.dataFilter[name] = [];
+      } else {
+        this.data[index].listCheck.forEach((item) => {
+          if (!this.dataFilter[name].includes(item.value)) {
+            this.dataFilter[name].push(item.value);
+          }
+        });
+      }
     } else {
       if (this.dataFilter[name].includes(value)) {
         const index = this.dataFilter[name].indexOf(value);
@@ -75,7 +79,9 @@ class FilterCalendar extends React.Component {
     this.data.forEach((value) => {
       this.dataFilter[value.name] = [];
     });
+
     this.setState(this.dataFilter);
+    this.onFilter();
   };
   isCheck = (name, value) => {
     if (name && value && this.state[name]?.includes(value)) {
@@ -137,7 +143,9 @@ class FilterCalendar extends React.Component {
                       className="cursor-pointer fs-14 text-black opacity-50"
                       onClick={() => this.handleSelectAll(value.name, key)}
                     >
-                      Select all
+                      {this.data[key].listCheck.length == this.dataFilter[value.name].length
+                        ? 'Deselect all'
+                        : 'Select all'}
                     </span>
                   </div>
                   <div>
