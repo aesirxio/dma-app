@@ -92,7 +92,7 @@
   "txt_confirm_password": "Confirm New Password",
   "txt_new_password" : "New Password",
   "txt_update": "Update",
-  "delete":"Delete",
+  "delete":"Xóa",
   "choose_an_action":"Choose an action",
   "txt_create_project" : "Create Project",
   "txt_create_post":"Create post",
@@ -131,24 +131,7 @@
   "create_your_1st_persona":"create your 1st persona",
   "txt_name_personas":"Name",
   "updated_date":"Updated Date",
-  "connected_channels":"Connected Channels", 
-  "txt_title":"Title",
-  "txt_channels":"Channels",
-  "txt_date":"Date",
-  "txt_edit":"Edit",
-  "txt_general":"General",
-  "txt_choose_the_project":"Choose the Project",
-  "txt_choose_the_campaign":"Choose the Campaign",
-  "txt_headline":"Headline",
-  "txt_add_channels":"Add Channels",
-  "txt_save":"Save",
-  "txt_connected_channels":"Connected Channels",
-  "content_description":"Content Description",
-  "txt_advance_mode":"Advance mode",
-  "txt_back":"Back",
-  "txt_next":"Next"
-
-
+  "connected_channels":"Connected Channels"
 
 
 

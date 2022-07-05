@@ -69,3 +69,10 @@
 .img_menu_color {
   display: none;
 }
+.show{
+  .btn-success.dropdown-toggle{
+    &:focus{
+      box-shadow: none;
+    }
+  }
+}

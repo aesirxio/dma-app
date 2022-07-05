@@ -24,13 +24,14 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import styles from './index.module.scss';
 import './index.scss';
-
+import { withTranslation } from 'react-i18next';
 import GlobalFilter from './GlobalFilter';
 import SubRowAsync from './RowSubComponent';
 import ComponentDatepicker from '../ComponentDatepicker';
 import ComponentFilter from '../ComponentFilter';
 import PaginationComponent from './PaginationComponent';
 import ComponentNoData from '../ComponentNoData';
+import { useTranslation } from 'react-i18next';
 
 let dataFilter = {
   searchText: '',
@@ -237,7 +238,7 @@ const Table = ({
       isFilter: !getState.isFilter,
     });
   };
-
+  const {t} = useTranslation("common");
   return (
     <>
       <div className={`mb-4 ${classNameTable}`}>
@@ -265,7 +266,7 @@ const Table = ({
                     <i>
                       <FontAwesomeIcon icon={faColumns} />
                     </i>
-                    <span className="ps-2 pe-5 text-blue-0 opacity-75">Columns</span>
+                    <span className="ps-2 pe-5 text-blue-0 opacity-75">{t("txt_columns")}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={faChevronDown} />
                     </i>
@@ -310,7 +311,7 @@ const Table = ({
                     <i>
                       <FontAwesomeIcon icon={faFilter} />
                     </i>
-                    <span className="ps-2 pe-5 text-blue-0 opacity-75">Filter</span>
+                    <span className="ps-2 pe-5 text-blue-0 opacity-75">{t("txt_filter")}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={getState.isFilter ? faChevronUp : faChevronDown} />
                     </i>
@@ -331,7 +332,7 @@ const Table = ({
                 <i>
                   <FontAwesomeIcon icon={faList} />
                 </i>
-                <span className="ms-2 opacity-75">List</span>
+                <span className="ms-2 opacity-75">{t("txt_list")}</span>
               </button>
               <button
                 type="button"
@@ -343,7 +344,7 @@ const Table = ({
                 <i>
                   <FontAwesomeIcon icon={faTh} />
                 </i>
-                <span className="ms-2 opacity-75">Thumb</span>
+                <span className="ms-2 opacity-75">{t("txt_thumb")}</span>
               </button>
             </div>
           )}
@@ -534,4 +535,4 @@ function filterGreaterThan(rows, id, filterValue) {
 
 filterGreaterThan.autoRemove = (val) => typeof val !== 'number';
 
-export default Table;
+export default withTranslation('common')(Table);
