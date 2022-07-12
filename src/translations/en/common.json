@@ -146,7 +146,14 @@
   "content_description":"Content Description",
   "txt_advance_mode":"Advance mode",
   "txt_back":"Back",
-  "txt_next":"Next"
+  "txt_next":"Next",
+  "txt_connecting":"Connecting",
+  "txt_connect":"Connect",
+  "txt_enable":"Enable",
+  "txt_remove":"Remove", 
+  "txt_type":"Type",
+  "txt_action":"Action"
+
 
 
 

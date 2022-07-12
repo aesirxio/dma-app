@@ -99,7 +99,6 @@ class Menu extends React.Component {
     const listLanguages = Object.keys(i18n.options.resources).map(function (key) {
       return { language: key, title: i18n.options.resources[key].title };
     });
-    console.log(listLanguages);
     return (
       <nav>
         <ul id="wr_list_menu" className="list-unstyled mb-0 py-3 pt-md-1">

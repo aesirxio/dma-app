@@ -130,7 +130,27 @@
   "create_your_1st_persona":"Opret din første persona",
   "txt_name_personas":"Navn",
   "updated_date":"Opdateret Dato",
-  "connected_channels":"Tilsluttede kanaler"
+  "connected_channels":"Tilsluttede kanaler","txt_title":"Title",
+  "txt_channels":"Channels",
+  "txt_date":"Date",
+  "txt_edit":"Edit",
+  "txt_general":"General",
+  "txt_choose_the_project":"Choose the Project",
+  "txt_choose_the_campaign":"Choose the Campaign",
+  "txt_headline":"Headline",
+  "txt_add_channels":"Add Channels",
+  "txt_save":"Save",
+  "txt_connected_channels":"Connected Channels",
+  "content_description":"Content Description",
+  "txt_advance_mode":"Advance mode",
+  "txt_back":"Back",
+  "txt_next":"Next",
+  "txt_connecting":"Connecting",
+  "txt_connect":"Connect",
+  "txt_enable":"Enable",
+  "txt_remove":"Remove", 
+  "txt_type":"Type",
+  "txt_action":"Action"
 
 
 

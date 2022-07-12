@@ -13,12 +13,14 @@ import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewMode
 import Helper from '../../../utils/helper';
 import ComponentImage from '../../../components/ComponentImage';
 import ChannelTypeChannelToken from './ChannelTypeChannelToken';
+import { useTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 const ChannelTypeChannels = observer(({ channelType }) => {
   const context = useContext(ChannelsViewModelContext);
 
   const [loading, setLoading] = useState(false);
-
+  const { t } = useTranslation('common');
   const pages = channelType.getPages();
 
   if (pages.length === 0) {
@@ -46,9 +48,9 @@ const ChannelTypeChannels = observer(({ channelType }) => {
   return (
     <div className="list_content ms-3 me-3">
       <div className="py-2 px-3 bg-blue d-flex rounded-2">
-        <div className="col col-md-4">Name</div>
-        <div className="col-2 d-none d-md-block">Type</div>
-        <div className="col col-md-6 text-end">Action</div>
+        <div className="col col-md-4">{t('txt_name_personas')}</div>
+        <div className="col-2 d-none d-md-block">{t('txt_type')}</div>
+        <div className="col col-md-6 text-end">{t('txt_action')}</div>
       </div>
 
       {pages.map((channel, index) => (
@@ -83,4 +85,4 @@ const ChannelTypeChannels = observer(({ channelType }) => {
   );
 });
 
-export default ChannelTypeChannels;
+export default withTranslation('common')(ChannelTypeChannels);

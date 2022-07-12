@@ -10,13 +10,14 @@ import i18n from 'translations/i18n';
 import { withTranslation } from 'react-i18next';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
-import {Dropdown } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';
 
 class Menu2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      language: 'English',
       activeMenu: '',
       dataMenu: [
         {
@@ -46,7 +47,10 @@ class Menu2 extends React.Component {
 
   render() {
     let { dataMenu } = this.state;
-    const {t} = this.props;
+    const { t } = this.props;
+    const listLanguages = Object.keys(i18n.options.resources).map(function (key) {
+      return { language: key, title: i18n.options.resources[key].title };
+    });
     return (
       <nav>
         <div className="py-1 px-3 item_menu item_menu_home">
@@ -57,7 +61,7 @@ class Menu2 extends React.Component {
             <i className="text-white">
               <FontAwesomeIcon icon={faArrowLeft} />
             </i>
-            <span className="ms-3 text text-white">{t("txt_back_to_dashboard")}</span>
+            <span className="ms-3 text text-white">{t('txt_back_to_dashboard')}</span>
           </a>
         </div>
         {dataMenu.map((item, index) => {
@@ -89,15 +93,31 @@ class Menu2 extends React.Component {
           );
         })}
         <div className="position-absolute bottom-0 mb-3 border-top w-100 py-1">
-          <Dropdown className='pt-2 ' >
-            <Dropdown.Toggle variant="success" id="dropdown-basic" className='bg-transparent border-0'>
-            <FontAwesomeIcon icon={faGlobe}/> {this.language ?? "EN"}
+          <Dropdown className="pt-2 ">
+            <Dropdown.Toggle
+              variant="success"
+              id="dropdown-basic"
+              className="bg-transparent border-0"
+            >
+              <FontAwesomeIcon icon={faGlobe} /> {this.language ?? 'English'}
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item href="#" className='' onClick={() => {i18n.changeLanguage('de');this.setState(this.language = "DK")}}>DK</Dropdown.Item>
-              <Dropdown.Item href="#" className='' onClick={() => {i18n.changeLanguage('en');this.setState(this.language = "EN")}}>EN</Dropdown.Item>
-              <Dropdown.Item href="#" className='' onClick={() => {i18n.changeLanguage('vi');this.setState(this.language = "VI")}}>VN</Dropdown.Item>
+              {listLanguages.map((item, index) => {
+                return (
+                  <Dropdown.Item
+                    key={index}
+                    href="#"
+                    className=""
+                    onClick={() => {
+                      i18n.changeLanguage(item.language);
+                      this.setState((this.language = item.title));
+                    }}
+                  >
+                    {item.title}
+                  </Dropdown.Item>
+                );
+              })}
             </Dropdown.Menu>
           </Dropdown>
         </div>
@@ -106,4 +126,4 @@ class Menu2 extends React.Component {
   }
 }
 
-export default  withTranslation('common')(Menu2);
+export default withTranslation('common')(Menu2);

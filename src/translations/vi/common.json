@@ -146,7 +146,13 @@
   "content_description":"Mô tả nội dung",
   "txt_advance_mode":"Chế độ nâng cao",
   "txt_back":"Trở lại",
-  "txt_next":"Tiếp theo"
+  "txt_next":"Tiếp theo",
+  "txt_connecting":"Đang kết nối",
+  "txt_connect":"Liên kết",
+  "txt_enable":"Cho phép",
+  "txt_remove":"Xóa", 
+  "txt_type":"Kiểu",
+  "txt_action":"Hoạt động"
 
 
 
