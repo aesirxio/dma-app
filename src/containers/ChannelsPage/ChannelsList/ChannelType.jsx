@@ -5,10 +5,11 @@
 
 import React from 'react';
 import { observer } from 'mobx-react';
-
+import { withTranslation } from 'react-i18next';
 import ChannelTypeConnectButton from './ChannelTypeConnectButton';
 import ChannelTypeChannels from './ChannelTypeChannels';
 import ComponentImage from '../../../components/ComponentImage';
+import { useTranslation } from 'react-i18next';
 
 const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
   const list = channelCategory.getList();
@@ -16,7 +17,7 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
   if (list.length === 0) {
     return null;
   }
-
+  const {t}= useTranslation("common");
   return (
     <div className="accordion mt-4" id={`accordionChannelType${channelTypeIndex}`}>
       {list.map((channelType, index) => (
@@ -43,7 +44,7 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
                   channelType={channelType}
                 />
               ) : (
-                <div className="fs-6 text-nowrap">Coming Soon</div>
+                <div className="fs-6 text-nowrap">{t("txt_coming_soon")}</div>
               )}
             </div>
           </h3>
@@ -63,4 +64,4 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
   );
 });
 
-export default ChannelType;
+export default withTranslation('common')(ChannelType);

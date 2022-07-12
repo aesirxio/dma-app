@@ -9,7 +9,7 @@ import { observer } from 'mobx-react';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 import { Button } from 'react-bootstrap';
 import SimpleReactValidator from 'simple-react-validator';
-
+import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 
@@ -53,7 +53,7 @@ const ProjectFormModal = observer(
     render() {
 
       const { show, editMode } = this.projectFormModalViewModel;
-
+      const {t}= this.props;
       if (!show) {
         return null;
       }
@@ -63,14 +63,14 @@ const ProjectFormModal = observer(
         <ModalComponent
           show={show}
           onHide={this.projectFormModalViewModel.closeModal}
-          header={editMode === false || editMode == null ? 'Create a new project' : 'Edit project'}
+          header={editMode === false || editMode == null ? t("txt_create_a_new_project") : t("txt_edit_project")}
           body={
             <ProjectForm viewModel={this.projectFormModalViewModel} validator={this.validator} />
           }
           footer={
             <Button onClick={this.saveProjectHandler} className="btn btn-success w-100">
               <span>
-                {editMode === false || editMode == null ? 'Create project' : 'Save project'}
+                {editMode === false || editMode == null ? t("txt_create_project") : t("txt_save_project")}
               </span>
               <i className="ms-1">
                 <FontAwesomeIcon icon={faChevronRight} />
@@ -84,4 +84,4 @@ const ProjectFormModal = observer(
   }
 );
 
-export default withProjectViewModel(ProjectFormModal);
+export default withTranslation('common')(withProjectViewModel(ProjectFormModal));

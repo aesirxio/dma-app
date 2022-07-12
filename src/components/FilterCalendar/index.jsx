@@ -75,17 +75,18 @@ class FilterCalendar extends React.Component {
     this.data = [
       {
         id: 1,
-        title: 'Projects',
+        title: 'txt_menu_projects',
         name: 'projects[]',
         listCheck: this.props.filterFormViewModel.projectMasterData,
       },
       {
         id: 2,
-        title: 'Campaigns',
+        title: 'txt_menu_campaigns',
         name: 'campaigns[]',
         listCheck: this.props.filterFormViewModel.campaignMasterData,
       },
     ];
+    const {t}= this.props;
     if (!this.props.show && this.props.filterFormViewModel) {
       return null;
     }
@@ -95,7 +96,7 @@ class FilterCalendar extends React.Component {
       >
         <div className="bg-white w-400 h-100">
           <div className="d-flex align-items-center justify-content-between p-3 border-bottom-1">
-            <h4 className="text-blue-0 fw-medium">Filter</h4>
+            <h4 className="text-blue-0 fw-medium">{t("txt_filter")}</h4>
             <span
               className="cursor-pointer text-danger"
               onClick={this.props.handleCloseFilterCalendar}
@@ -103,7 +104,7 @@ class FilterCalendar extends React.Component {
               <i>
                 <FontAwesomeIcon icon={faTimes} />
               </i>
-              <span className="ms-2">Clear all</span>
+              <span className="ms-2">{t("txt_clear_all")}</span>
             </span>
           </div>
           <div
@@ -113,12 +114,12 @@ class FilterCalendar extends React.Component {
               return (
                 <div key={key} className="border-bottom-1 p-3">
                   <div className="d-flex align-items-center justify-content-between mb-3">
-                    <p className="text-blue-0 mb-0 text-uppercase">{value.title}</p>
+                    <p className="text-blue-0 mb-0 text-uppercase">{t(value.title)}</p>
                     <span
                       className="cursor-pointer fs-14 text-black opacity-50"
                       onClick={() => this.handleSelectAll(value.name, key)}
                     >
-                      Select all
+                      {t("txt_select_all")}
                     </span>
                   </div>
                   <div>
@@ -146,7 +147,7 @@ class FilterCalendar extends React.Component {
               <i>
                 <FontAwesomeIcon icon={faFilter} />
               </i>
-              <span className="ms-2">Filter</span>
+              <span className="ms-2">{t("txt_filter")}</span>
             </Button>
           </div>
         </div>

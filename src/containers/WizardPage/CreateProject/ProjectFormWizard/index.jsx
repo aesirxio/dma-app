@@ -11,7 +11,7 @@ import { withWizardViewModel } from '../../WizardViewModels/WizardViewModelConte
 import PAGE_STATUS from '../../../../constants/PageStatus';
 import Spinner from '../../../../components/Spinner';
 import ButtonNormal from '../../../../components/ButtonNormal';
-
+import { withTranslation } from 'react-i18next';
 const ProjectForm = lazy(() => import('../../../ProjectsPage/ProjectForm/ProjectForm'));
 
 const ProjectFormWizard = observer(
@@ -44,13 +44,13 @@ const ProjectFormWizard = observer(
 
     render() {
       const { tableStatus } = this.projectFormModalViewModel;
-
+      const {t}= this.props;
       return tableStatus === PAGE_STATUS.LOADING ? (
         <Spinner />
       ) : (
         <div className="bg-white d-flex flex-column m-4 p-4">
           <div className="w-40 m-auto">
-            <h3 className="fw-medium text-blue-0 mb-3 fs-2">Create a new project</h3>
+            <h3 className="fw-medium text-blue-0 mb-3 fs-2">{t("txt_create_a_new_project")}</h3>
             <ProjectForm viewModel={this.projectFormModalViewModel} />
             <div className="d-flex justify-content-end">
               <ButtonNormal
@@ -66,4 +66,4 @@ const ProjectFormWizard = observer(
   }
 );
 
-export default withWizardViewModel(ProjectFormWizard);
+export default withTranslation('common')(withWizardViewModel(ProjectFormWizard));

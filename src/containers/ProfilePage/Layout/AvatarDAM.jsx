@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 const AvatarDAM = ({children}) => {
   return (
@@ -18,4 +19,4 @@ const AvatarDAM = ({children}) => {
   );
 };
 
-export default AvatarDAM;
+export default withTranslation('common') (AvatarDAM);

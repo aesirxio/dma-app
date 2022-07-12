@@ -10,7 +10,7 @@ import ContentStore from './ContentStore/ContentStore';
 
 import ContentViewModel from './ContentViewModels/ContentViewModel';
 import GlobalStore from '../../store/Store';
-
+import { withTranslation } from 'react-i18next';
 import { ContentViewModelContextProvider } from './ContentViewModels/ContentViewModelContextProvider';
 
 const ContentFormPage = lazy(() => import('./ContentForm/ContentFormPage'));
@@ -31,13 +31,13 @@ const contentViewModel = new ContentViewModel(contentStore);
 class Contents extends Component {
   render() {
     let { match } = this.props;
-
+    const {t} = this.props;
     return (
       <ContentViewModelContextProvider viewModel={contentViewModel}>
         <div className="py-4 px-3">
           <Route exact path={['/content']}>
             <div className="d-flex align-items-center justify-content-between mb-4">
-              <h2 className="text-blue-0">List posts</h2>
+              <h2 className="text-blue-0">{t("txt_list_post")}</h2>
               <ContentActionBar />
             </div>
             <ContentsList />
@@ -52,4 +52,4 @@ class Contents extends Component {
   }
 }
 
-export default Contents;
+export default withTranslation('common')(Contents);

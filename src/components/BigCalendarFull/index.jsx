@@ -15,6 +15,7 @@ import FilterCalendar from '../FilterCalendar';
 import CustomToolbar from './CustomToolbar';
 import { CSSTransition } from 'react-transition-group';
 import history from '../../routes/history';
+import { withTranslation } from 'react-i18next';
 
 const localizer = momentLocalizer(moment);
 
@@ -102,7 +103,7 @@ class BigCalendarFull extends React.PureComponent {
         })
       : [];
     events = events.concat(this.props.listViewModel.plaining);
-
+    
     return (
       <div className="wr_calendar h-100 ">
         <div className="wr_calendar--left">
@@ -133,4 +134,4 @@ class BigCalendarFull extends React.PureComponent {
   }
 }
 
-export default BigCalendarFull;
+export default withTranslation('common')(BigCalendarFull);

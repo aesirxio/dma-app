@@ -5,17 +5,18 @@
 
 import React from "react";
 import { Form } from "react-bootstrap";
-
+import { withTranslation } from 'react-i18next';
 class Label extends React.Component {
   render() {
     let { text, required } = this.props;
+    const {t}= this.props;
     return (
       <Form.Label className="mb-3 w-100">
-        <span className="text-black">{text}</span>
+        <span className="text-black">{t(text)}</span>
         {required && <span className="text-red-1">*</span>}
       </Form.Label>
     );
   }
 }
 
-export default Label;
+export default withTranslation('common') (Label);

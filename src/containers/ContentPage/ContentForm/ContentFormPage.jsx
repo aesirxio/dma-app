@@ -17,6 +17,7 @@ import { CHANNEL_ADS_GOOGLE, CHANNEL_ADS_FACEBOOK } from '../../../constants/Cha
 import ContentUtils from '../ContentUtils/ContentUtils';
 import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
 import Spinner from '../../../components/Spinner';
+import { withTranslation } from 'react-i18next';
 
 const ContentFormPage = observer(
   class ContentFormPage extends Component {
@@ -109,4 +110,4 @@ const ContentFormPage = observer(
   }
 );
 
-export default withContentViewModel(ContentFormPage);
+export default withTranslation('common')(withContentViewModel(ContentFormPage));

@@ -7,6 +7,7 @@ import React, { Component, lazy } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import history from '../../../routes/history';
 import { withRouter } from 'react-router-dom';
+import { withTranslation } from 'react-i18next';
 import ButtonNormal from '../../../components/ButtonNormal';
 import { withCampaignsViewModel } from '../CampaignsViewModels/CampaignsViewModelContextProvider';
 const CampaignsFormModal = lazy(() => import('./CampaignsFormModal'));
@@ -44,22 +45,23 @@ class CampaignsActionBar extends Component {
   };
 
   render() {
+    const {t}= this.props;
     return (
       <div className="d-flex justify-content-end">
         <Dropdown className="me-3">
           <Dropdown.Toggle className="p-3" variant="info" id="actions">
-            Choose an action
+          {t("choose_an_action")}
           </Dropdown.Toggle>
           <Dropdown.Menu className="w-100">
             <Dropdown.Item className="px-3 py-2" onClick={this.handerDeleteCampaigns}>
-              Delete
+            {t("delete")}
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <ButtonNormal
           onClick={this.createCampaignsHandler}
           iconStart={true}
-          text=" Create campaign"
+          text="txt_create_campaigns"
         />
         <CampaignsFormModal />
       </div>
@@ -67,4 +69,4 @@ class CampaignsActionBar extends Component {
   }
 }
 
-export default withCampaignsViewModel(withRouter(CampaignsActionBar));
+export default withTranslation('common')(withCampaignsViewModel(withRouter(CampaignsActionBar)));

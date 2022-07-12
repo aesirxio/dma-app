@@ -6,13 +6,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
-
+import { withTranslation } from 'react-i18next';
 import "./index.scss";
 
 class ButtonNormal extends React.Component {
   render() {
     let { iconStart, iconEnd, text, onClick, className, disabled } = this.props;
-
+    const {t} = this.props;
     if (className === undefined) {
       className = "btn-success";
     }
@@ -25,7 +25,7 @@ class ButtonNormal extends React.Component {
               <FontAwesomeIcon icon={faPlus} />
             </i>
           )}
-          {text}
+          {t(text)}
 
           {iconEnd && (
             <i className="ms-1">
@@ -38,4 +38,4 @@ class ButtonNormal extends React.Component {
   }
 }
 
-export default ButtonNormal;
+export default withTranslation('common')(ButtonNormal);

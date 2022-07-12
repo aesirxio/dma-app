@@ -7,6 +7,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ComponentImage from '../ComponentImage';
 import styles from './index.module.scss';
+import { withTranslation } from 'react-i18next';
 
 class Button extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class Button extends React.Component {
     if (className !== undefined && styles[className] !== undefined) {
       className = styles[className];
     }
+    const { t } = this.props;
     return (
       <button
         type="button"
@@ -34,10 +36,10 @@ class Button extends React.Component {
         )}
         {image && <ComponentImage alt={text} src={image} className="pe-1" />}
 
-        <span className="text_btn text-nowrap">{text}</span>
+        <span className="text_btn text-nowrap">{t(text)}</span>
       </button>
     );
   }
 }
 
-export default Button;
+export default withTranslation('common')(Button);

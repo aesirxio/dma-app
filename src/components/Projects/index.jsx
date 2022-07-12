@@ -7,6 +7,7 @@ import React from 'react';
 import ComponentNoData from '../ComponentNoData';
 import ComponentAccordion from '../ComponentAccordion';
 import './index.scss';
+import { withTranslation } from 'react-i18next';
 
 class Projects extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Projects extends React.Component {
 
   render() {
     const { projects, PROJECT_COLUMN_INDICATOR } = this.props;
-
+    const {t} = this.props;
     return (
       <ComponentAccordion id="project" title="Projects">
         {projects ? (
@@ -24,10 +25,10 @@ class Projects extends React.Component {
             <div className="py-2 px-3 bg-blue">
               <div className="row">
                 <div className="col-9">
-                  <span>Project Name</span>
+                  <span>{t("project_name")}</span>
                 </div>
                 <div className="col-3 d-none">
-                  <span>Lead</span>
+                  <span>{t("txt_lead")}</span>
                 </div>
               </div>
             </div>
@@ -43,7 +44,7 @@ class Projects extends React.Component {
                     <div className="col-3 d-none">
                       <div className="d-flex align-items-center">
                         <img src={'/assets/images/avatar-4.png'} alt="" className="img-avatar" />
-                        <span className="ps-3">Peter Stanbridge</span>
+                        <span className="ps-3">{t("txt_peter_stanbridge")}</span>
                       </div>
                     </div>
                   </div>
@@ -53,7 +54,7 @@ class Projects extends React.Component {
             {projects.length >= 5 && (
               <div className="text-end mt-3">
                 <a href="/projects" className="mb-0 text-decoration-underline">
-                  Show more
+                 {t("txt_show_more")}
                 </a>
               </div>
             )}
@@ -72,4 +73,4 @@ class Projects extends React.Component {
   }
 }
 
-export default Projects;
+export default withTranslation('common') (Projects);

@@ -12,6 +12,7 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 
+
 const CustomToolbar = (handleFilterCalendar) => {
   return class BaseToolbar extends Toolbar {
     render() {

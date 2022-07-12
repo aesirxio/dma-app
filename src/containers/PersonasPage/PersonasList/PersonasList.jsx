@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 
 import history from '../../../routes/history';
-
+import { withTranslation } from 'react-i18next';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 
@@ -49,11 +49,11 @@ const PersonasList = observer(
 
     render() {
       const { tableStatus, personas, pagination } = this.personaListViewModel;
-
+      const { t } = this.props;
 
       const tableRowHeader = [
         {
-          Header: 'Name',
+          Header: t('txt_name_personas'),
           accessor: PERSONA_FIELD_KEY.NAME, // accessor is the "key" in the data
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
@@ -69,11 +69,11 @@ const PersonasList = observer(
         },
 
         {
-          Header: 'Created Date',
+          Header: t('created_date'),
           accessor: PERSONA_FIELD_KEY.CREATED_DATE,
         },
         {
-          Header: 'Updated Date',
+          Header: t('updated_date'),
           accessor: PERSONA_FIELD_KEY.UPDATED_DATE,
         },
       ];
@@ -92,13 +92,13 @@ const PersonasList = observer(
                 pageSize={this.personaListViewModel.pageSize}
                 listViewModel={this.personaListViewModel}
                 searchFunction={this.personaListViewModel.searchPersonas}
-                searchText="Search your personas"
+                searchText={t('search_your_personas')}
               ></Table>
             )
           ) : (
             <ComponentNoData
               icons="/assets/images/ic_upcoming.svg"
-              title="Create your 1st persona"
+              title={t('create_your_1st_persona')}
               width="w-50"
             />
           )}
@@ -108,4 +108,4 @@ const PersonasList = observer(
   }
 );
 
-export default withPersonaViewModel(PersonasList);
+export default withTranslation('common')(withPersonaViewModel(PersonasList));
