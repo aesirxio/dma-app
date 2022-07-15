@@ -258,12 +258,12 @@ const Table = ({
               <div className="px-2 border-end-1">
                 <Dropdown>
                   <Dropdown.Toggle
-                    variant="info"
+                    variant="white"
                     id="actions"
                     className={`btn_toggle ${styles.btn_toggle}`}
                   >
                     <i>
-                      <FontAwesomeIcon icon={faColumns} />
+                      <FontAwesomeIcon className="text-blue-0" icon={faColumns} />
                     </i>
                     <span className="ps-2 pe-5 text-blue-0 opacity-75">Columns</span>
                     <i className="text-green">
@@ -308,7 +308,7 @@ const Table = ({
                     onClick={handleFilter}
                   >
                     <i>
-                      <FontAwesomeIcon icon={faFilter} />
+                      <FontAwesomeIcon className="text-blue-0" icon={faFilter} />
                     </i>
                     <span className="ps-2 pe-5 text-blue-0 opacity-75">Filter</span>
                     <i className="text-green">

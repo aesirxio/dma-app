@@ -64,11 +64,9 @@
 
   .rbc-day-bg {
     border-left: 1px solid $border-color;
-    
 
     &:last-child {
       border-right: 1px solid $border-color;
-      
     }
   }
 
@@ -123,7 +121,7 @@
     color: $color-blue-7;
   }
 }
-.rbc-day-slot.rbc-today{
+.rbc-day-slot.rbc-today {
   background-color: $white;
 }
 .event-red {
@@ -230,12 +228,13 @@
 }
 
 .label-rounded {
-  padding: 5px;
+  padding: 6px;
   border-radius: 5px;
 }
 
 .rbc-row {
   .rbc-event {
+    padding: 0;
     background: transparent;
   }
 }

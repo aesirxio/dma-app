@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import { ThemesContext } from 'themes/ThemeContextProvider';
 
 import SelectComponent from '../Select';
 
@@ -95,6 +96,7 @@ class ComponentFilter extends React.Component {
   };
 
   render() {
+    const { theme } = this.context;
     data = this.props.dataFormFilter.length > 0 ? this.props.dataFormFilter : data;
     return (
       <div className="d-flex">
@@ -108,7 +110,7 @@ class ComponentFilter extends React.Component {
                 options={item.option}
                 className="text-danger bg-white rounded-2 text-capitalize"
                 isBorder={true}
-                plColor="rgba(8, 18, 64, 0.8)"
+                plColor={theme == 'dark' ? '#fff' : 'rgba(8, 18, 64, 0.8)'}
                 isMulti={item.isMulti}
                 isClearable={true}
                 value={this.props.filter?.titleFilter[`${item.name}[]`]}
@@ -120,5 +122,5 @@ class ComponentFilter extends React.Component {
     );
   }
 }
-
+ComponentFilter.contextType = ThemesContext;
 export default ComponentFilter;

@@ -1,0 +1,18 @@
+@import '../../scss/utils/bootstrap.scss';
+
+.switch-button {
+  transition: all 0.4s ease;
+  .switch-button-ball {
+    position: absolute;
+    transition: all 0.4s ease;
+    width: 25px;
+    height: 25px;
+    background: $white;
+    border-radius: 50%;
+    left: 5px;
+    bottom: 3.5px;
+    &.active {
+      left: 35px;
+    }
+  }
+}

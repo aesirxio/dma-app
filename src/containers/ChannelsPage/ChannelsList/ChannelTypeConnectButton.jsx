@@ -30,6 +30,7 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
     } else {
       notify('Please upgrade account at https://dma.aesirx.io');
     }
+    setConnecting(false);
   };
 
   if (connecting) {
