@@ -29,13 +29,10 @@ class App extends React.Component {
   changeTheme(newTheme) {
     this.setState({ theme: newTheme });
     localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
   }
 
   componentDidMount() {
-    document.documentElement.setAttribute('data-theme', this.state.theme);
-  }
-
-  componentDidUpdate() {
     document.documentElement.setAttribute('data-theme', this.state.theme);
   }
   render() {

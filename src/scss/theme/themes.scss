@@ -3,8 +3,10 @@
   --body-bg: #fff;
 
   --date-picker-color: rgba(8, 18, 64, 0.8);
+  --date-picker-disabled-color: #ccc;
   --date-picker-header-color: #081240;
   --date-picker-selected: rgba(0, 95, 137, 0.08);
+  --date-picker-bg: #fff;
 
   --modal-bg: #fff;
 
@@ -40,8 +42,10 @@
   --body-bg: #3c3c3c;
 
   --date-picker-color: #fff;
+  --date-picker-disabled-color: #c0c0c0;
   --date-picker-header-color: #fff;
   --date-picker-selected: #c0c0c0;
+  --date-picker-bg: #565656;
 
   --modal-bg: #565656;
 
@@ -90,9 +94,6 @@
 .text-blue-0 {
   color: var(--text-blue-0-class) !important;
 }
-.react-datepicker {
-  background-color: inherit !important;
-}
 .wrapper_tabs .nav-tabs .nav-link {
   color: var(--categories-channels-color) !important;
   &.active,
@@ -110,9 +111,25 @@
     }
   }
 }
-.wrapper_datepicker {
+.react-datepicker-popper {
   .react-datepicker__current-month {
     color: var(--date-picker-header-color) !important;
+  }
+  .react-datepicker {
+    background-color: var(--date-picker-bg) !important;
+  }
+  .react-datepicker__triangle {
+    border-bottom-color: var(--date-picker-bg) !important;
+  }
+  .react-datepicker__header {
+    background-color: var(--date-picker-bg) !important;
+  }
+  .react-datepicker__day.react-datepicker__day--disabled {
+    color: var(--date-picker-disabled-color) !important;
+  }
+  .react-datepicker__year-read-view {
+    color: var(--date-picker-disabled-color) !important;
+    color: var(--date-picker-disabled-color) !important;
   }
   .react-datepicker__day-name,
   .react-datepicker__day,
@@ -191,16 +208,21 @@ input::-webkit-input-placeholder {
   opacity: 0.75;
 }
 .form-control {
-  background: var(--input-bg) !important;
-  color: var(--input-color) !important;
+  background: var(--input-bg);
+  color: var(--input-color);
   &:disabled,
   &[readonly] {
-    background-color: var(--input-disabled-bg) !important;
+    background-color: var(--input-disabled-bg);
+  }
+  &:focus {
+    color: var(--input-color);
+    background-color: var(--input-bg);
   }
   &::placeholder {
-    color: var(--input-placeholder-color) !important;
+    color: var(--input-placeholder-color);
   }
   .react-datepicker__input-container input {
     background: inherit !important;
+    color: var(--input-color) !important;
   }
 }
