@@ -16,7 +16,7 @@ const GlobalFilter = ({
   filter,
   setFilter,
 }) => {
-  const [setValue] = React.useState(globalFilter);
+  const [value, setValue] = React.useState(globalFilter);
   const onChange = useAsyncDebounce((value) => {
     setGlobalFilter({ keyword: value });
   }, 200);
@@ -24,6 +24,7 @@ const GlobalFilter = ({
   return (
     <span className=" d-flex align-items-center position-relative pe-3 border-end-1 w-400">
       <input
+        value={value}
         onChange={(e) => {
           if (setFilter) {
             setFilter(e.target.value, 1);
