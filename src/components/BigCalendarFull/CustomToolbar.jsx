@@ -17,20 +17,22 @@ const CustomToolbar = (handleFilterCalendar) => {
     render() {
       return (
         <div className="toolbar-container d-flex justify-content-between align-items-center mb-3">
-          <div className="back-next-buttons d-flex align-items-center">
+          <div className="back-next-buttons">
             <button
               className="cursor-pointer btn btn-outline-secondary btn_today"
               onClick={() => this.navigate('TODAY')}
             >
               Today
             </button>
+          </div>
+          <div className="d-flex align-items-center">
             <button
               className="btn-back mx-2 fs-12 border-0 text-green bg-transparent"
               onClick={() => this.navigate('PREV')}
             >
               <FontAwesomeIcon icon={faChevronLeft} />
             </button>
-            <label className="label-date fs-4 text-blue-0">{this.props.label}</label>
+            <label className="label-date fs-4 text-blue-0 text--themes">{this.props.label}</label>
             <button
               className="btn-next mx-2 fs-12 border-0 text-green bg-transparent"
               onClick={() => this.navigate('NEXT')}

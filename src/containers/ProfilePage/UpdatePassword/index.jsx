@@ -108,7 +108,7 @@ const UpdatePassword = observer(
               <div className="row">
                 <div className="col-4">
                   <label className="form-label mb-3" htmlFor="curr_password">
-                    <span className="text-black opacity-75">Current password</span>
+                    <span className="text-black">Current password</span>
                   </label>
                   <input
                     type="password"
@@ -131,7 +131,7 @@ const UpdatePassword = observer(
                 </div>
                 <div className="col-4">
                   <label className="form-label mb-3" htmlFor="new_password">
-                    <span className="text-black opacity-75">New Password</span>
+                    <span className="text-black">New Password</span>
                   </label>
                   <input
                     type="password"
@@ -152,7 +152,7 @@ const UpdatePassword = observer(
                 </div>
                 <div className="col-4">
                   <label className="form-label mb-3" htmlFor="new_password">
-                    <span className="text-black opacity-75 text-nowrap">Confirm New Password</span>
+                    <span className="text-black text-nowrap">Confirm New Password</span>
                   </label>
                   <input
                     type="password"

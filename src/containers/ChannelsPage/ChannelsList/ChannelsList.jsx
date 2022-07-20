@@ -44,7 +44,7 @@ const ChannelsList = observer(
 
       return (
         <div className="py-4 px-3">
-          <h2 className="text-blue-0 mb-4">Connect a Channel</h2>
+          <h2 className="text-blue-0 mb-4 text--themes">Connect a Channel</h2>
           <div className="wrapper_tabs">
             <Tabs defaultActiveKey="0" id="connectContent-tab" className="bg-white border-0">
               {channelsData.map((channelCategory, index) => (

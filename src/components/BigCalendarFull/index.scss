@@ -57,6 +57,12 @@
     }
   }
 
+  .rbc-time-slot:first-child {
+    border: 0;
+  }
+  .rbc-agenda-view table.rbc-agenda-table .rbc-agenda-time-cell {
+    vertical-align: middle;
+  }
   .rbc-month-header,
   .rbc-time-header {
     background-color: $color-blue-6;

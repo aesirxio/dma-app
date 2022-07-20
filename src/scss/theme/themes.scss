@@ -2,6 +2,10 @@
   --body-color: #1a2226;
   --body-bg: #fff;
 
+  --header-bg: #fff;
+
+  --text-themes-color: #081240;
+
   --date-picker-color: rgba(8, 18, 64, 0.8);
   --date-picker-disabled-color: #ccc;
   --date-picker-header-color: #081240;
@@ -14,13 +18,15 @@
   --input-bg: #fff;
   --input-disabled-bg: #e9ecef;
   --input-placeholder-color: #6c757d;
+  --input-border-color: #ced4da;
 
   --calendar-current-timeline: #74ad31;
   --calendar-header-bg: #dce6eb;
+  --calendar-border-color: #d5d5d5;
   --calendar-bg: #fff;
   --calendar-outrange-bg: #e6e6e6;
+  --calendar-outrange-color: #999;
   --calendar-today-bg: rgba(0, 95, 137, 0.3);
-  --calendar-event-bg: transparent;
 
   --categories-channels-color: rgba(8, 18, 64, 0.5);
   --categories-channels-active-color: #005f89;
@@ -35,45 +41,9 @@
   --bg-blue-3-class: #dce6eb;
   --text-black-class: #000;
   --text-blue-0-class: #081240;
-}
 
-[data-theme='dark'] {
-  --body-color: #fff;
-  --body-bg: #3c3c3c;
-
-  --date-picker-color: #fff;
-  --date-picker-disabled-color: #c0c0c0;
-  --date-picker-header-color: #fff;
-  --date-picker-selected: #c0c0c0;
-  --date-picker-bg: #565656;
-
-  --modal-bg: #565656;
-
-  --input-color: #fff;
-  --input-bg: #565656;
-  --input-disabled-bg: #707070;
-  --input-placeholder-color: #c0c0c0;
-
-  --calendar-current-timeline: #3fff00;
-  --calendar-header-bg: #1a2226;
-  --calendar-bg: #707070;
-  --calendar-outrange-bg: #565656;
-  --calendar-today-bg: #c0c0c0;
-  --calendar-event-bg: #fff;
-
-  --categories-channels-color: #ffffffb3;
-  --categories-channels-active-color: #005f89;
-
-  --dropdown-bg: #565656;
-  --dropdown-color: #fff;
-  --dropdown-item-color: #fff;
-  --dropdown-item-hover-color: #081240;
-
-  --bg-white-class: #565656;
-  --bg-blue-class: #3c3c3c;
-  --bg-blue-3-class: #3c3c3c;
-  --text-black-class: #fff;
-  --text-blue-0-class: #fff;
+  --event-bg: #cfe2ff;
+  --event-color: #0d6efd;
 
   --bs-body-color: var(--body-color);
   --bs-body-bg: var(--body-bg);
@@ -93,6 +63,12 @@
 }
 .text-blue-0 {
   color: var(--text-blue-0-class) !important;
+}
+.text--themes {
+  color: var(--text-themes-color) !important;
+}
+.content_header {
+  background-color: var(--header-bg) !important;
 }
 .wrapper_tabs .nav-tabs .nav-link {
   color: var(--categories-channels-color) !important;
@@ -171,10 +147,17 @@
   .rbc-time-header {
     background-color: var(--calendar-header-bg) !important;
   }
+  .rbc-day-bg,
+  .rbc-month-row + .rbc-month-row,
+  .rbc-time-content,
+  .rbc-time-header-content,
+  .rbc-timeslot-group,
+  .rbc-time-content > * + * > *,
+  .rbc-day-slot .rbc-time-slot,
+  .rbc-time-view {
+    border-color: var(--calendar-border-color) !important ;
+  }
   .rbc-month-view {
-    .rbc-event {
-      background-color: var(--calendar-event-bg) !important;
-    }
     .rbc-day-bg {
       background-color: var(--calendar-bg);
       &.rbc-off-range-bg {
@@ -185,15 +168,22 @@
       }
     }
   }
+  .rbc-agenda-view {
+    * {
+      border-color: var(--calendar-border-color) !important ;
+    }
+    > .rbc-agenda-table {
+      background-color: var(--calendar-header-bg);
+    }
+    .rbc-agenda-content {
+      background-color: var(--calendar-bg);
+    }
+  }
   .rbc-time-content {
     background-color: var(--calendar-bg);
     .rbc-day-slot.rbc-today {
       background-color: var(--calendar-bg);
     }
-  }
-  .rbc-agenda-view .rbc-agenda-event-cell > div {
-    background-color: var(--calendar-event-bg);
-    border-radius: 5px;
   }
   .rbc-current-time-indicator {
     background-color: var(--calendar-current-timeline);
@@ -207,12 +197,23 @@ input::-webkit-input-placeholder {
   color: var(--body-color);
   opacity: 0.75;
 }
+.wrapper_des_event {
+  background-color: var(--event-bg) !important;
+  .wrapper_des_event_title {
+    color: var(--event-color) !important;
+  }
+}
 .form-control {
   background: var(--input-bg);
   color: var(--input-color);
+  border-color: var(--input-border-color);
   &:disabled,
   &[readonly] {
     background-color: var(--input-disabled-bg);
+    &:focus {
+      color: var(--input-color);
+      background-color: var(--input-disabled-bg);
+    }
   }
   &:focus {
     color: var(--input-color);
@@ -226,3 +227,4 @@ input::-webkit-input-placeholder {
     color: var(--input-color) !important;
   }
 }
+@import './dark.scss';
