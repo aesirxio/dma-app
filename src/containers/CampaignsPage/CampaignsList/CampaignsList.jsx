@@ -28,7 +28,7 @@ import ComponentViewList from '../../../components/ComponentViewList';
 const CampaignsList = observer(
   class CampaignsList extends ComponentViewList {
     key = CAMPAIGNS_FIELD_KEY.ID;
-    view="campaigns";
+    view = 'campaigns';
     getDataFormFilter = () => {
       return [
         {
@@ -64,7 +64,7 @@ const CampaignsList = observer(
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
               <span
-                className="ms-2 fw-bold text-black opacity-75"
+                className="ms-2 fw-bold text-blue-0 opacity-75"
                 onClick={(e) => this.handleEdit(e, row.original, pagination.page)}
               >
                 {row.values.expander}

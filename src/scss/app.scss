@@ -247,7 +247,7 @@ textarea {
       &.active,
       &:hover {
         color: $blue;
-        background-color: $white;
+        background-color: transparent;
 
         &:before {
           opacity: 1;

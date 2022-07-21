@@ -1,23 +1,19 @@
 import React from 'react';
-import './index.scss';
+import styles from './index.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon } from '@fortawesome/free-regular-svg-icons';
 import { ThemesContext } from 'themes/ThemeContextProvider';
 
 class SwitchThemes extends React.Component {
   render() {
-    const listColor = ['light', 'dark'];
-    const { changeTheme } = this.context;
+    const { theme, changeTheme } = this.context;
     return (
-      <div className="d-flex bg-gray py-1">
-        {listColor.map((color, index) => {
-          return (
-            <div
-              key={index}
-              onClick={() => changeTheme(color)}
-              className={`box-color ${color}`}
-            ></div>
-          );
-        })}
-      </div>
+      <button
+        onClick={() => changeTheme(theme == 'light' ? 'dark' : 'light')}
+        className={`${styles['theme-icon']} btn btn-light rounded-pill p-0`}
+      >
+        <FontAwesomeIcon icon={faMoon} width={16} height={16} />
+      </button>
     );
   }
 }

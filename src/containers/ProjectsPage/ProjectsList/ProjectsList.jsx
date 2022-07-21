@@ -42,7 +42,7 @@ const ProjectsList = observer(
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
               <span
-                className="text-black opacity-75"
+                className="text-blue-0 opacity-75"
                 onClick={(e) => this.handleEdit(e, row.original)}
               >
                 {row.original.name}
