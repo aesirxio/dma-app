@@ -9,7 +9,7 @@ const customStyles = (isBorder, plColor) => {
       ...provided,
       minHeight: 50,
       boxShadow: 'none',
-      borderColor: isBorder ? '#ced4da' : 'transparent',
+      borderColor: isBorder ? 'var(--border-color)' : 'transparent',
       '&:hover': {
         borderColor: isBorder ? '#8bdcbc' : 'transparent',
       },
@@ -26,7 +26,11 @@ const customStyles = (isBorder, plColor) => {
     indicatorSeparator: () => ({ display: 'none' }),
     dropdownIndicator: (base) => ({
       ...base,
-      color: 'text-green',
+      color: 'var(--body-color)',
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: 'var(--body-color)',
     }),
     placeholder: (defaultStyles) => {
       return {
