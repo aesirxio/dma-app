@@ -34,14 +34,18 @@ class BigCalendarFull extends React.PureComponent {
     };
   };
 
-  handleNavigate = (date) => {
-    const frist_day = moment(new Date(date.getFullYear(), date.getMonth(), 1)).format('YYYY-MM-DD');
-    const last_day = moment(new Date(date.getFullYear(), date.getMonth() + 1, 0)).format(
+  handleNavigate = (date, view) => {
+    let first_day = moment(new Date(date.getFullYear(), date.getMonth(), 1)).format('YYYY-MM-DD');
+    let last_day = moment(new Date(date.getFullYear(), date.getMonth() + 1, 0)).format(
       'YYYY-MM-DD'
     );
+    if (view == 'agenda') {
+      first_day = moment(date).format('YYYY-MM-DD');
+      last_day = moment(date).add(30, 'd').format('YYYY-MM-DD');
+    }
     this.props.onFilter(
       {
-        [CONTENT_FIELD_KEY.START_DATE]: frist_day,
+        [CONTENT_FIELD_KEY.START_DATE]: first_day,
         [CONTENT_FIELD_KEY.END_DATE]: last_day,
       },
       0,

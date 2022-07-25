@@ -23,8 +23,7 @@ const ChannelsList = observer(
       const { viewModel } = props;
 
       this.channelsListViewModel = viewModel ? viewModel.getChannelsListViewModel() : null;
-
-      ChannelCallbackNotify.__init(this.channelsListViewModel);
+      ({ socket: this.socket } = ChannelCallbackNotify.__init(this.channelsListViewModel));
     }
 
     componentDidMount() {
@@ -33,6 +32,10 @@ const ChannelsList = observer(
 
     componentWillUnmount() {
       this.channelsListViewModel.reset();
+      if (this.socket.connected) {
+        this.socket.disconnect();
+      }
+      this.socket.close();
     }
 
     render() {
