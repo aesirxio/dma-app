@@ -16,7 +16,7 @@ const GlobalFilter = ({
   filter,
   setFilter,
 }) => {
-  const [setValue] = React.useState(globalFilter);
+  const [, setValue] = React.useState(globalFilter);
   const onChange = useAsyncDebounce((value) => {
     setGlobalFilter({ keyword: value });
   }, 200);
