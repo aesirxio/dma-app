@@ -19,10 +19,10 @@ class ProfilePage extends React.Component {
       <ProfileViewModelContextProvider viewModel={profileViewModel}>
         <div className="py-4 px-3">
           <div className="w-80-percent">
-            <h2 className="text-blue-0 mb-3">General Information</h2>
+            <h2 className="text-blue-0 mb-3 text--themes">General Information</h2>
             <UpdateGeneral />
 
-            <h2 className="text-blue-0 my-3">Password</h2>
+            <h2 className="text-blue-0 my-3 text--themes">Password</h2>
             <UpdatePassword />
           </div>
         </div>

@@ -73,7 +73,7 @@ const ContentsList = observer(
           accessor: CONTENT_FIELD_KEY.NAME,
           Cell: ({ row }) => (
             <div className="d-flex">
-              <span className="text-black opacity-75 cursor-pointer">
+              <span className="text-blue-0 opacity-75 cursor-pointer">
                 {row.original[CONTENT_FIELD_KEY.NAME]}
               </span>
             </div>

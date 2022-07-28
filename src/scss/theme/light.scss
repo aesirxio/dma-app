@@ -1,0 +1,58 @@
+[data-theme='light'] {
+  --body-color: #1a2226;
+  --body-bg: #fff;
+
+  --shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  --header-bg: #fff;
+
+  --text-themes-color: #081240;
+  --border-color: #d5d5d5;
+
+  --date-picker-color: rgba(8, 18, 64, 0.8);
+  --date-picker-disabled-color: #ccc;
+  --date-picker-header-color: #081240;
+  --date-picker-selected: rgba(0, 95, 137, 0.08);
+  --date-picker-bg: #fff;
+  --date-picker-header-bg: #f0f0f0;
+
+  --modal-bg: #fff;
+
+  --input-color: #1a2226;
+  --input-bg: #fff;
+  --input-disabled-bg: #e9ecef;
+  --input-placeholder-color: #6c757d;
+  --input-border-color: #ced4da;
+
+  --calendar-current-timeline: #74ad31;
+  --calendar-header-bg: #dce6eb;
+  --calendar-border-color: #d5d5d5;
+  --calendar-bg: #fff;
+  --calendar-outrange-bg: #e6e6e6;
+  --calendar-outrange-color: #999;
+  --calendar-today-bg: rgba(0, 95, 137, 0.3);
+
+  --categories-channels-color: rgba(8, 18, 64, 0.5);
+  --categories-channels-active-color: #005f89;
+
+  --dropdown-bg: #fff;
+  --dropdown-item-color: #1a2226;
+  --dropdown-item-hover-bg: #e8f1f6;
+
+  --bg-white-class: #fff;
+  --bg-blue-class: #f5f8fa;
+  --bg-blue-3-class: #dce6eb;
+  --text-black-class: #000;
+  --text-blue-0-class: #081240;
+
+  --event-bg: #cfe2ff;
+  --event-color: #0d6efd;
+
+  --btn-success-color: #fff;
+  --btn-outline-secondary-bg: #fff;
+  --btn-outline-secondary-color: #6c757d;
+  --btn-info-bg: #fff;
+  --btn-info-color: #000;
+
+  --bs-body-color: var(--body-color);
+  --bs-body-bg: var(--body-bg);
+}

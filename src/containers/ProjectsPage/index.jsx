@@ -19,7 +19,7 @@ function Projects(props) {
     <ProjectViewModelContextProvider viewModel={projectViewModel}>
       <div className="py-4 px-3 h-100">
         <div className="d-flex align-items-center justify-content-between mb-4">
-          <h2 className="text-blue-0">Projects</h2>
+          <h2 className="text-blue-0 text--themes">Projects</h2>
           <ProjectActionBar {...props} />
         </div>
         <ProjectsList />

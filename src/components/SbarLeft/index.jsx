@@ -9,6 +9,7 @@ import { withTranslation } from 'react-i18next';
 import './index.scss';
 import Menu from '../Menu';
 import Menu2 from '../Menu2';
+import SwitchThemes from 'components/SwitchThemes';
 
 class SbarLeft extends React.Component {
   constructor(props) {
@@ -32,6 +33,9 @@ class SbarLeft extends React.Component {
         ) : (
           <Menu2 />
         )}
+        <div className="switch-theme-button position-absolute end-0 bottom-0 mb-3 me-3">
+          <SwitchThemes />
+        </div>
       </aside>
     );
   }

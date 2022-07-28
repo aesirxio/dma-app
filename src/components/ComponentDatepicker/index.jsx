@@ -25,6 +25,7 @@ class ComponentDatepicker extends React.Component {
     };
 
     this.wrapperRef = React.createRef();
+    this.pickerRef = React.createRef();
     this.handleShowPicker = this.handleShowPicker.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
@@ -45,11 +46,14 @@ class ComponentDatepicker extends React.Component {
     }
   }
 
-  handleShowPicker = () => {
-      this.setState((prevState) => ({
-        isOpen: !prevState.isOpen,
-      })
-    );
+  handleShowPicker = (event) => {
+    if (
+      this.state.isOpen &&
+      this.pickerRef.current &&
+      !this.pickerRef.current.contains(event.target)
+    ) {
+      this.setState({ isOpen: false });
+    } else this.setState({ isOpen: true });
   };
 
   onChange = (dates) => {
@@ -103,7 +107,7 @@ class ComponentDatepicker extends React.Component {
     let { startDate, endDate } = this.state;
 
     return (
-      <div className="p-3 bg-white rounded-3 shadow">
+      <div ref={this.pickerRef} className="p-3 bg-white rounded-3 shadow">
         <div className={className}>
           <div className="position-relative border-0">{children}</div>
         </div>

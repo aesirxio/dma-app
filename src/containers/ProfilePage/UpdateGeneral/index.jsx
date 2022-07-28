@@ -236,44 +236,49 @@ const UpdateGeneral = observer(
           {!memberInfo ? (
             <Spinner />
           ) : (
-            <div className="bg-white p-3 row">
-              <FormComponent
-                formClassName={'col-9 row'}
-                generateFormSetting={() => this.generateFormSetting()}
-                formPropsData={this.formPropsData}
-                viewModel={this.updateGeneralViewModel}
-                key={Math.random(40, 200)}
-              />
+            <div className="bg-white p-3 rounded-3">
+              <div className="row">
+                <FormComponent
+                  formClassName={'col-9 row'}
+                  generateFormSetting={() => this.generateFormSetting()}
+                  formPropsData={this.formPropsData}
+                  viewModel={this.updateGeneralViewModel}
+                  key={Math.random(40, 200)}
+                />
 
-              <AvatarDAM>
-                <div
-                  className={`position-relative cursor-pointer wr_upload_images ${
-                    getUrlImage.length > 0 ? 'active_img' : ''
-                  }`}
-                >
-                  {!getUrlImage ? (
-                    <div className="wr_img_thumbnail_dam position-relative m-2">
-                      <ComponentImage
-                        className={`img-thumbnail rounded imgTab`}
-                        src={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]}
-                        alt={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME]}
+                <AvatarDAM>
+                  <div
+                    className={`position-relative cursor-pointer wr_upload_images ${
+                      getUrlImage.length > 0 ? 'active_img' : ''
+                    }`}
+                  >
+                    {!getUrlImage ? (
+                      <div className="wr_img_thumbnail_dam position-relative m-2">
+                        <ComponentImage
+                          className={`img-thumbnail rounded imgTab`}
+                          src={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]}
+                          alt={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME]}
+                        />
+                      </div>
+                    ) : null}
+                    <div className="main_upload_images">
+                      <DamButton
+                        data={getUrlImage}
+                        changed={(data) => this.handleDamAssets(data)}
                       />
                     </div>
-                  ) : null}
-                  <div className="main_upload_images">
-                    <DamButton data={getUrlImage} changed={(data) => this.handleDamAssets(data)} />
+                    {getUrlImage ? (
+                      <div
+                        onClick={() => this.clearImage(memberInfo.avatar_dam)}
+                        className={'clear_image_button'}
+                      >
+                        <FontAwesomeIcon icon={faTimesCircle} className="text-white" />
+                      </div>
+                    ) : null}
                   </div>
-                  {getUrlImage ? (
-                    <div
-                      onClick={() => this.clearImage(memberInfo.avatar_dam)}
-                      className={'clear_image_button'}
-                    >
-                      <FontAwesomeIcon icon={faTimesCircle} className="text-white" />
-                    </div>
-                  ) : null}
-                </div>
-              </AvatarDAM>
-              <SubmitButton validateInfoBeforeSending={this.validateInfoBeforeSending} />
+                </AvatarDAM>
+                <SubmitButton validateInfoBeforeSending={this.validateInfoBeforeSending} />
+              </div>
             </div>
           )}
         </>

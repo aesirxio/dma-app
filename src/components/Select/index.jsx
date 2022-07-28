@@ -8,11 +8,15 @@ import React from 'react';
 import Select from 'react-select';
 import AsyncSelect from 'react-select/async';
 import customStyles from './customStyles';
+import { ThemesContext } from 'themes/ThemeContextProvider';
 
 class SelectComponent extends React.Component {
   render() {
+    const { theme } = this.context;
     let { isBorder, plColor, async } = this.props;
-
+    if (theme == 'dark') {
+      plColor = '#bfc9f7';
+    }
     let styles = customStyles(isBorder, plColor);
 
     if (async) {
@@ -27,5 +31,5 @@ SelectComponent.defaultProps = {
   async: false,
   isMulti: false,
 };
-
+SelectComponent.contextType = ThemesContext;
 export default SelectComponent;
