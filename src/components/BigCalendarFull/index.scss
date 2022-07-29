@@ -206,6 +206,8 @@
 
 .rbc-overlay {
   z-index: 101;
+  top: unset !important;
+  bottom: 98% !important;
   .rbc-event {
     background: none;
   }
