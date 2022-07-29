@@ -169,18 +169,33 @@ class ContentModel {
     return publishType;
   };
 
+  convertDateTime = (date, time = null) => {
+    if (!date) return undefined;
+    const [day, month, year] = date.split('-');
+    if (time) {
+      const [hour, minute] = time.split(':');
+      return new Date(year, month, day, hour, minute);
+    }
+    return new Date(year, month, day);
+  };
+
   getPublishDate = () => {
     const f = Object.keys(this.channels)[0];
 
-    return this.channels[f]?.publishedPlan?.schedule[0]?.date;
+    return this.convertDateTime(this.channels[f]?.publishedPlan?.schedule[0]?.date);
   };
 
   getPublishTime = () => {
     const f = Object.keys(this.channels)[0];
-
-    return (
-      this.channels[f]?.publishedPlan?.schedule[0]?.date +
-      ' ' +
+    console.log(
+      'date',
+      this.convertDateTime(
+        this.channels[f]?.publishedPlan?.schedule[0]?.date,
+        this.channels[f]?.publishedPlan?.schedule[0]?.time
+      )
+    );
+    return this.convertDateTime(
+      this.channels[f]?.publishedPlan?.schedule[0]?.date,
       this.channels[f]?.publishedPlan?.schedule[0]?.time
     );
   };
