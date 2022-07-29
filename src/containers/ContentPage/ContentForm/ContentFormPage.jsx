@@ -74,7 +74,7 @@ const ContentFormPage = observer(
 
     render() {
       const { formStatus } = this.viewModel;
-      console.log(this.formPropsData);
+
       if (formStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
       }
