@@ -15,18 +15,28 @@ const customStyles = (isBorder, plColor) => {
       },
       backgroundColor: 'transparent',
     }),
-    option: (provided, state) => ({
-      ...provided,
-      color: state.isSelected ? '#FFFFFF' : '#212529',
-      '&:hover': {
-        backgroundColor: state.isSelected ? '#005f89' : '#8bdcbc',
-      },
-      backgroundColor: state.isSelected ? '#005f89' : '#FFF',
-    }),
+    menu: (styles) => {
+      return {
+        ...styles,
+        border: '1px solid var(--border-color)',
+        backgroundColor: 'var(--input-bg)',
+      };
+    },
+    option: (provided, state) => {
+      return {
+        ...provided,
+        color: state.isSelected ? 'var(--dropdown-item-color)' : 'var(--input-color)',
+        backgroundColor: state.isSelected ? 'var(--dropdown-item-hover-bg)' : 'var(--input-bg)',
+        '&:hover': {
+          color: 'var(--dropdown-item-color)',
+          backgroundColor: 'var(--dropdown-item-hover-bg)',
+        },
+      };
+    },
     indicatorSeparator: () => ({ display: 'none' }),
     dropdownIndicator: (base) => ({
       ...base,
-      color: 'var(--body-color)',
+      color: 'var(--input-color)',
     }),
     singleValue: (provided) => ({
       ...provided,
@@ -38,6 +48,16 @@ const customStyles = (isBorder, plColor) => {
         color: plColor,
       };
     },
+    multiValue: (styles) => {
+      return {
+        ...styles,
+        backgroundColor: 'var(--bg-blue-3-class)',
+      };
+    },
+    multiValueLabel: (styles) => ({
+      ...styles,
+      color: 'var(--body-color)',
+    }),
   };
 };
 
