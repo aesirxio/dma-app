@@ -59,14 +59,25 @@
   }
 
   .react-datepicker-popper {
-    .react-datepicker__current-month {
+    .react-datepicker__current-month,
+    .react-datepicker-time__header {
       color: var(--date-picker-header-color) !important;
     }
-    .react-datepicker {
+    .react-datepicker,
+    .react-datepicker__time,
+    .react-datepicker__year-dropdown--scrollable,
+    .react-datepicker__year-dropdown {
       background-color: var(--date-picker-bg) !important;
     }
-    .react-datepicker__day.react-datepicker__day--disabled {
+    .react-datepicker__day.react-datepicker__day--disabled,
+    .react-datepicker__time-list-item.react-datepicker__time-list-item--disabled {
       color: var(--date-picker-disabled-color) !important;
+    }
+    .react-datepicker__time-list-item:hover,
+    .react-datepicker__year-option:hover,
+    .react-datepicker__month-option:hover,
+    .react-datepicker__month-year-option:hover {
+      background-color: var(--dropdown-item-hover-bg) !important;
     }
     .react-datepicker__triangle {
       border-bottom-color: var(--date-picker-header-bg) !important;
@@ -77,7 +88,9 @@
     .react-datepicker__day-name,
     .react-datepicker__year-read-view,
     .react-datepicker__day,
-    .react-datepicker__time-name {
+    .react-datepicker__time-name,
+    .react-datepicker__time-list-item,
+    .react-datepicker__year-option {
       color: var(--date-picker-color) !important;
     }
     .react-datepicker__day--selected,
@@ -109,7 +122,6 @@
       }
     }
   }
-
   .wrapper_datepicker .react-datepicker-popper {
     .react-datepicker__triangle {
       border-bottom-color: var(--date-picker-bg) !important;
@@ -207,14 +219,25 @@
   [class*='border-'] {
     border-color: var(--border-color) !important;
   }
-  .form-check-input:not(:checked) {
-    background-color: var(--input-bg);
-    border-color: var(--input-border-color);
+  .form-check-input {
+    &[type='checkbox'] {
+      border-color: var(--input-border-color);
+      &:not(:checked) {
+        &:not(:indeterminate) {
+          background-color: var(--input-bg);
+        }
+      }
+    }
+    &[type='radio'] {
+      border-color: var(--input-border-color);
+      &:not(:checked) {
+        background-color: var(--input-bg);
+      }
+    }
   }
   .form-switch {
     .form-check-input:not(:checked) {
       background-color: #fff !important;
-      border-color: var(--input-border-color);
     }
   }
 }

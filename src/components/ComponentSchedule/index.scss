@@ -7,11 +7,12 @@
 @import '../../scss/utils/bootstrap.scss';
 
 .wr_item_schedule {
-  background-color: $color-blue-4;
-
   &:first-child {
     .react-datepicker__input-container {
       input {
+        background-color: var(--input-bg);
+        color: var(--input-color);
+        border-color: var(--input-border-color);
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
       }
@@ -21,6 +22,9 @@
   &:last-child {
     .react-datepicker__input-container {
       input {
+        background-color: var(--input-bg);
+        color: var(--input-color);
+        border-color: var(--input-border-color);
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
       }
