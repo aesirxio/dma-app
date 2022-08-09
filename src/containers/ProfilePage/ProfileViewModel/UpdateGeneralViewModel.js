@@ -86,6 +86,9 @@ class UpdateGeneralViewModel {
         );
       }
       notify('Update successfully', 'success');
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500);
     }
   };
 }
