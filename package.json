@@ -52,8 +52,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run build:lib && npm run build && serve -s build",
-    "build": "react-scripts build",
+    "start": "npm run build && serve -s build",
+    "build": "npm run build:lib && react-scripts build",
     "build:lib": "cd node_modules/aesirx-dma-lib && npm i && npm run build && cd ../../",
     "test": "react-scripts test",
     "dev": "react-scripts start",
