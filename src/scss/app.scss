@@ -24,6 +24,7 @@
 
 @import '~bootstrap/scss/helpers';
 @import '~bootstrap/scss/utilities/api';
+@import './theme/themes';
 
 img {
   max-width: 100%;
@@ -246,7 +247,7 @@ textarea {
       &.active,
       &:hover {
         color: $blue;
-        background-color: $white;
+        background-color: transparent;
 
         &:before {
           opacity: 1;
@@ -429,9 +430,9 @@ textarea {
 .btn-outline-secondary:not(:hover) {
   background: #fff;
 }
-.btn-info.dropdown-toggle{
-  &:focus{
+.btn-info.dropdown-toggle {
+  &:focus {
     box-shadow: none !important;
-    border: 1px solid rgba(0,0,0,.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
   }
 }

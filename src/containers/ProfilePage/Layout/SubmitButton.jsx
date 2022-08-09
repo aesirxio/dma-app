@@ -16,10 +16,10 @@ const SubmitButton = ({validateInfoBeforeSending}) => {
           validateInfoBeforeSending();
         }}
                 className='btn btn-success d-flex align-items-center ps-3 pe-3'>
-          <i className='text-white'>
+          <i>
             <FontAwesomeIcon icon={faUserCog} />
           </i>
-          <span className='flex-1 ps-2 text-white'>Update</span>
+          <span className='flex-1 ps-2'>Update</span>
         </button>
       </div>
     </div>

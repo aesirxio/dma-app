@@ -51,7 +51,7 @@ class BigCalendarFull extends React.PureComponent {
 
   Event = ({ event }) => {
     let divClass = 'wrapper_des_event d-inline-block w-100 shadow label-rounded ';
-    let spanClass = 'fw-bold text-wrap opacity-75 ';
+    let spanClass = 'fw-bold wrapper_des_event_title text-wrap opacity-75 ';
     const channelName = event.channel.length > 0 ? event?.channel[0]?.alias : 'facebook';
     divClass += channelName + '_calendar_background ';
     spanClass += channelName + '_calendar_text';
