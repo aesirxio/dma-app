@@ -57,6 +57,12 @@
     }
   }
 
+  .rbc-time-slot:first-child {
+    border: 0;
+  }
+  .rbc-agenda-view table.rbc-agenda-table .rbc-agenda-time-cell {
+    vertical-align: middle;
+  }
   .rbc-month-header,
   .rbc-time-header {
     background-color: $color-blue-6;
@@ -64,11 +70,9 @@
 
   .rbc-day-bg {
     border-left: 1px solid $border-color;
-    
 
     &:last-child {
       border-right: 1px solid $border-color;
-      
     }
   }
 
@@ -123,7 +127,9 @@
     color: $color-blue-7;
   }
 }
-
+.rbc-day-slot.rbc-today {
+  background-color: $white;
+}
 .event-red {
   background-color: rgba($color: $color-red-3, $alpha: 0.25);
 
@@ -218,6 +224,12 @@
   .rbc-calendar {
     width: 100%;
     min-height: 800px;
+    .rbc-timeslot-group {
+      min-height: 45px;
+    }
+    .rbc-day-slot .rbc-background-event, .rbc-day-slot .rbc-event{
+      height: 50px !important;
+    }
   }
   .rbc-month-row {
     overflow: visible;
@@ -228,12 +240,13 @@
 }
 
 .label-rounded {
-  padding: 5px;
+  padding: 6px;
   border-radius: 5px;
 }
 
 .rbc-row {
   .rbc-event {
+    padding: 0;
     background: transparent;
   }
 }

@@ -46,6 +46,8 @@ const ChannelTypeChannels = observer(({ channelType }) => {
   };
 
   return (
+
+    <hr className="mt-1 mb-4" />
     <div className="list_content ms-3 me-3">
       <div className="py-2 px-3 bg-blue d-flex rounded-2">
         <div className="col col-md-4">{t('txt_name_personas')}</div>
@@ -53,35 +55,37 @@ const ChannelTypeChannels = observer(({ channelType }) => {
         <div className="col col-md-6 text-end">{t('txt_action')}</div>
       </div>
 
-      {pages.map((channel, index) => (
-        <div
-          className={`p-3 d-flex align-items-center ${index ? 'border-top-1' : ''}`}
-          key={Math.random(40, 200)}
-        >
-          <div className="col col-md-4">
-            <div className="d-flex align-items-center">
-              {channel.avatar && (
-                <ComponentImage
-                  className="img-avatar rounded"
-                  src={channel.avatar}
-                  alt={channel.name}
-                />
-              )}
-              <span className="ms-2">{channel.name}</span>
+
+        {pages.map((channel, index) => (
+          <div
+            className={`p-3 d-flex align-items-center ${index ? 'border-top-1' : ''}`}
+            key={Math.random(40, 200)}
+          >
+            <div className="col col-md-4">
+              <div className="d-flex align-items-center">
+                {channel.avatar && (
+                  <ComponentImage
+                    className="img-avatar rounded"
+                    src={channel.avatar}
+                    alt={channel.name}
+                  />
+                )}
+                <span className="ms-2">{channel.name}</span>
+              </div>
+            </div>
+            <div className="col-2 d-none d-md-block">{channel.type}</div>
+            <div className="col col-md-6 text-end">
+              <ChannelTypeChannelToken channel={channel} />
+              <ChannelTypeChannelsAction
+                channelType={channelType}
+                channel={channel}
+                removeChannel={handleRemoveChannel}
+              />
             </div>
           </div>
-          <div className="col-2 d-none d-md-block">{channel.type}</div>
-          <div className="col col-md-6 text-end">
-            <ChannelTypeChannelToken channel={channel} />
-            <ChannelTypeChannelsAction
-              channelType={channelType}
-              channel={channel}
-              removeChannel={handleRemoveChannel}
-            />
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 });
 

@@ -21,7 +21,7 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
   return (
     <div className="accordion mt-4" id={`accordionChannelType${channelTypeIndex}`}>
       {list.map((channelType, index) => (
-        <div className="accordion-item mt-3 bg-white" key={Math.random(40, 200)}>
+        <div className="accordion-item mt-3 bg-white rounded-2 border-0" key={Math.random(40, 200)}>
           <h3 className="accordion-header" id={`flush-heading${index}`}>
             <div
               className={`p-3 d-flex align-items-center`}

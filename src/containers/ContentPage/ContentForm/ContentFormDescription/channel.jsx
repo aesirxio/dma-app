@@ -5,8 +5,7 @@
 
 import React from 'react';
 import { observer } from 'mobx-react';
-import { Form, Tabs } from 'react-bootstrap';
-import { Tab } from 'bootstrap';
+import { Form, Tabs, Tab } from 'react-bootstrap';
 import ContentFormDescriptionMedia from './media';
 import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from '../../../../constants/ContentModule';
 import ContentUtils from '../../ContentUtils/ContentUtils';
@@ -30,7 +29,7 @@ const ContentFormDescriptionAdvanceChannel = observer(
       <>
         <Tabs defaultActiveKey="0" id="connectContent-tab" className="bg-white border-0">
           {list.map((channel, index) => (
-            <Tab key={index} eventKey={index} title={channel.name}>
+            <Tab key={index} eventKey={index} title={channel.name} tabClassName={'border-0'}>
               <Form.Control
                 as="textarea"
                 required={true}

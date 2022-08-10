@@ -23,7 +23,6 @@ class ProfilePage extends React.Component {
           <div className="w-80-percent">
             <h2 className="text-blue-0 mb-3">{t("txt_general_information")}</h2>
             <UpdateGeneral />
-
             <h2 className="text-blue-0 my-3">{t("txt_projectpage_password")}</h2>
             <UpdatePassword />
           </div>

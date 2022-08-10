@@ -153,7 +153,6 @@ const UpdatePassword = observer(
                   )}
                 </div>
                 <div className="col-4">
-                  <label className="form-label mb-3" htmlFor="new_password">
                     <span className="text-black opacity-75 text-nowrap">{t("txt_confirm_password")}</span>
                   </label>
                   <input
@@ -191,10 +190,11 @@ const UpdatePassword = observer(
                   }}
                   className="btn btn-success d-flex align-items-center ps-3 pe-3"
                 >
-                  <i className="text-white">
+                  <i>
                     <FontAwesomeIcon icon={faCog} />
                   </i>
                   <span className="flex-1 ps-2 text-white">{t("txt_update")}</span>
+
                 </button>
               )}
             </form>

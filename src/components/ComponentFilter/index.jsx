@@ -120,5 +120,4 @@ class ComponentFilter extends React.Component {
     );
   }
 }
-
 export default ComponentFilter;
