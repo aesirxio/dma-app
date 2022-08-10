@@ -46,15 +46,14 @@ const ChannelTypeChannels = observer(({ channelType }) => {
   };
 
   return (
-
-    <hr className="mt-1 mb-4" />
-    <div className="list_content ms-3 me-3">
-      <div className="py-2 px-3 bg-blue d-flex rounded-2">
-        <div className="col col-md-4">{t('txt_name_personas')}</div>
-        <div className="col-2 d-none d-md-block">{t('txt_type')}</div>
-        <div className="col col-md-6 text-end">{t('txt_action')}</div>
-      </div>
-
+    <>
+      <hr className="mt-1 mb-4" />
+      <div className="list_content ms-3 me-3">
+        <div className="py-2 px-3 bg-blue d-flex rounded-2">
+          <div className="col col-md-4">{t('txt_name_personas')}</div>
+          <div className="col-2 d-none d-md-block">{t('txt_type')}</div>
+          <div className="col col-md-6 text-end">{t('txt_action')}</div>
+        </div>
 
         {pages.map((channel, index) => (
           <div
