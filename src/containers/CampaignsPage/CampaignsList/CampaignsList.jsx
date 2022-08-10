@@ -25,6 +25,7 @@ import getStatus from '../../../utils/status';
 import CampaignsActionBar from '../CampaignsForm/CampaignsActionBar';
 import ComponentNoData from '../../../components/ComponentNoData';
 import ComponentViewList from '../../../components/ComponentViewList';
+import { withTranslation } from 'react-i18next';
 const CampaignsList = observer(
   class CampaignsList extends ComponentViewList {
     key = CAMPAIGNS_FIELD_KEY.ID;
@@ -44,7 +45,7 @@ const CampaignsList = observer(
     };
     render() {
       const { tableStatus, campaigns, pagination } = this.listViewModel;
-
+      const {t}=this.props;
       const tableRowHeader = [
         {
           Header: '',
@@ -59,7 +60,7 @@ const CampaignsList = observer(
           ),
         },
         {
-          Header: 'Campaign Name',
+          Header: t("txt_campaign_name"),
           accessor: CAMPAIGNS_FIELD_KEY.NAME,
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
@@ -74,7 +75,7 @@ const CampaignsList = observer(
           SubCell: ({ row }) => <span>{row.original.name}</span>,
         },
         {
-          Header: 'Status',
+          Header: t("txt_status"),
           accessor: CAMPAIGNS_FIELD_KEY.STATUS,
           className: 'status',
           Cell: ({ value }) => {
@@ -95,17 +96,17 @@ const CampaignsList = observer(
           ),
         },
         {
-          Header: 'Start date',
+          Header: t("start_date"),
           accessor: CAMPAIGNS_FIELD_KEY.START_DATE,
         },
         {
-          Header: 'End date',
+          Header: t("end_date"),
           accessor: CAMPAIGNS_FIELD_KEY.END_DATE,
         },
       ];
 
       const dataFormFilter = this.getDataFormFilter();
-
+      
       return (
         <>
           <div className="mb-4 d-none">
@@ -122,7 +123,9 @@ const CampaignsList = observer(
             </div>
           </div>
           <div className="d-flex align-items-center justify-content-between mb-4">
-            <h2 className="text-blue-0 text--themes">List Campaigns</h2>
+
+            <h2 className="text-blue-0">{t("txt_list_campaigns")}</h2>
+
             <CampaignsActionBar />
           </div>
           {campaigns ? (
@@ -141,7 +144,7 @@ const CampaignsList = observer(
                   listViewModel={this.listViewModel}
                   searchFunction={this.listViewModel.searchCampaign}
                   dataFormFilter={dataFormFilter}
-                  searchText="Search your Campaign"
+                  searchText= {t("search_your_campaign")}
                   idKey={this.key}
                 />
               </div>
@@ -149,7 +152,7 @@ const CampaignsList = observer(
           ) : (
             <ComponentNoData
               icons="/assets/images/ic_campaigns.svg"
-              title="Create your 1st campaigns"
+              title={t("create_your_1st_campaigns")}
               width="w-50"
             />
           )}
@@ -159,4 +162,4 @@ const CampaignsList = observer(
   }
 );
 
-export default withCampaignsViewModel(CampaignsList);
+export default withTranslation('common')(withCampaignsViewModel(CampaignsList));

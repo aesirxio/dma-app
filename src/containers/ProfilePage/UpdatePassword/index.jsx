@@ -12,6 +12,7 @@ import SimpleReactValidator from 'simple-react-validator';
 import { witheProfileViewModel } from '../ProfileViewModel/ProfileViewModelContextProvider';
 import { notify } from '../../../components/Toast';
 import { Storage } from 'aesirx-dma-lib';
+import { withTranslation } from 'react-i18next';
 
 const UpdatePassword = observer(
   class UpdatePassword extends Component {
@@ -96,6 +97,7 @@ const UpdatePassword = observer(
     };
 
     render() {
+      const { t } = this.props;
       let successResponse = this.updatePasswordViewModel
         ? this.updatePasswordViewModel.successResponse
         : null;
@@ -108,7 +110,7 @@ const UpdatePassword = observer(
               <div className="row">
                 <div className="col-4">
                   <label className="form-label mb-3" htmlFor="curr_password">
-                    <span className="text-black">Current password</span>
+                    <span className="text-black opacity-75">{t('txt_current_password')}</span>
                   </label>
                   <input
                     type="password"
@@ -131,7 +133,7 @@ const UpdatePassword = observer(
                 </div>
                 <div className="col-4">
                   <label className="form-label mb-3" htmlFor="new_password">
-                    <span className="text-black">New Password</span>
+                    <span className="text-black opacity-75">{t('txt_new_password')}</span>
                   </label>
                   <input
                     type="password"
@@ -151,8 +153,10 @@ const UpdatePassword = observer(
                   )}
                 </div>
                 <div className="col-4">
-                  <label className="form-label mb-3" htmlFor="new_password">
-                    <span className="text-black text-nowrap">Confirm New Password</span>
+                  <label>
+                    <span className="text-black opacity-75 text-nowrap">
+                      {t('txt_confirm_password')}
+                    </span>
                   </label>
                   <input
                     type="password"
@@ -192,7 +196,7 @@ const UpdatePassword = observer(
                   <i>
                     <FontAwesomeIcon icon={faCog} />
                   </i>
-                  <span className="flex-1 ps-2">Update</span>
+                  <span className="flex-1 ps-2 text-white">{t('txt_update')}</span>
                 </button>
               )}
             </form>
@@ -203,4 +207,4 @@ const UpdatePassword = observer(
   }
 );
 
-export default witheProfileViewModel(UpdatePassword);
+export default withTranslation('common')(witheProfileViewModel(UpdatePassword));

@@ -7,7 +7,7 @@ import React, { Component, lazy } from 'react';
 import history from '../../../routes/history';
 
 import ButtonNormal from '../../../components/ButtonNormal';
-
+import { withTranslation } from 'react-i18next';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 import { Dropdown } from 'react-bootstrap';
 const ProjectFormModal = lazy(() => import('./ProjectFormModal'));
@@ -45,22 +45,23 @@ class ProjectActionBar extends Component {
   };
 
   render() {
+    const {t} = this.props;
     return (
       <div className="d-flex justify-content-end">
         <Dropdown className="me-3">
           <Dropdown.Toggle className="p-3" variant="info" id="actions">
-            Choose an action
+            {t("choose_an_action")}
           </Dropdown.Toggle>
           <Dropdown.Menu className="w-100">
             <Dropdown.Item className="px-3 py-2" onClick={this.handerDeleteProject}>
-              Delete
+             {t("delete")}
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <ButtonNormal onClick={this.createProjectHandler} iconStart={true} text=" Create project" />
+        <ButtonNormal onClick={this.createProjectHandler} iconStart={true} text="txt_create_project" />
         <ProjectFormModal />
       </div>
     );
   }
 }
-export default withProjectViewModel(ProjectActionBar);
+export default withTranslation('common')(withProjectViewModel(ProjectActionBar));
