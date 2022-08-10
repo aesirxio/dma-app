@@ -28,7 +28,7 @@ const ContentFormPublishAdvance = observer(({ formPropsData }) => {
           <div className="accordion-item bg-white border-1" key={index}>
             <h2 className="accordion-header" id={`heading${index}`}>
               <button
-                className="accordion-button bg-blue-3 text-black shadow-none border-bottom-1"
+                className="accordion-button bg-blue-3 text-blue-0 shadow-none border-bottom-1"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target={`#collapseOne${index}`}

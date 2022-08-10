@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-const customStyles = (isBorder, plColor) => {
+const customStyles = (isBorder) => {
   return {
     control: (provided) => ({
       ...provided,
@@ -19,14 +19,14 @@ const customStyles = (isBorder, plColor) => {
       return {
         ...styles,
         border: '1px solid var(--border-color)',
-        backgroundColor: 'var(--input-bg)',
+        backgroundColor: 'var(--dropdown-bg)',
       };
     },
     option: (provided, state) => {
       return {
         ...provided,
-        color: state.isSelected ? 'var(--dropdown-item-color)' : 'var(--input-color)',
-        backgroundColor: state.isSelected ? 'var(--dropdown-item-hover-bg)' : 'var(--input-bg)',
+        color: state.isSelected ? 'var(--dropdown-item-hover-color)' : 'var(--dropdown-item-color)',
+        backgroundColor: state.isSelected ? 'var(--dropdown-item-hover-bg)' : 'var(--dropdown-bg)',
         '&:hover': {
           color: 'var(--dropdown-item-color)',
           backgroundColor: 'var(--dropdown-item-hover-bg)',
@@ -36,7 +36,7 @@ const customStyles = (isBorder, plColor) => {
     indicatorSeparator: () => ({ display: 'none' }),
     dropdownIndicator: (base) => ({
       ...base,
-      color: 'var(--input-color)',
+      color: 'var(--text-title-color)',
     }),
     singleValue: (provided) => ({
       ...provided,
@@ -45,13 +45,13 @@ const customStyles = (isBorder, plColor) => {
     placeholder: (defaultStyles) => {
       return {
         ...defaultStyles,
-        color: plColor,
+        color: 'var(--text-title-color)',
       };
     },
     multiValue: (styles) => {
       return {
         ...styles,
-        backgroundColor: 'var(--bg-blue-3-class)',
+        backgroundColor: 'var(--view-active-bg)',
       };
     },
     multiValueLabel: (styles) => ({

@@ -2,10 +2,10 @@
   --body-color: #bfc9f7;
   --body-bg: #1a1a1a;
 
-  --shadow: 0 0.5rem 1rem rgb(26 26 26);
-  --header-bg: #1a2226;
+  --box-shadow-color: rgb(26 26 26);
+  --nav-bg: #1a2226;
 
-  --text-themes-color: #c6c4f7;
+  --text-title-color: #c6c4f7;
   --border-color: #373737;
 
   --date-picker-color: #bfc9f7;
@@ -15,8 +15,6 @@
   --date-picker-bg: #0d0d0d;
   --date-picker-header-bg: #0d0d0d;
 
-  --modal-bg: #1a1a1a;
-
   --input-color: #fff;
   --input-bg: #0d0d0d;
   --input-disabled-bg: #282d33;
@@ -25,8 +23,10 @@
 
   --calendar-current-timeline: #3fff00;
   --calendar-header-bg: #1d2c33;
+  --calendar-header-color: #bfc9f7;
   --calendar-border-color: #1f2025;
   --calendar-bg: #0d0d0d;
+  --calendar-color: #bfc9f7;
   --calendar-outrange-bg: #0d0d0d;
   --calendar-today-bg: #1f252c;
 
@@ -35,23 +35,21 @@
 
   --dropdown-bg: #0d0d0d;
   --dropdown-item-color: #bfc9f7;
+  --dropdown-item-hover-color: #bfc9f7;
   --dropdown-item-hover-bg: #102129;
 
-  --bg-white-class: #0d0d0d;
+  --content-bg: #0d0d0d;
   --bg-blue-class: #1a1a1a;
-  --bg-blue-3-class: #3c3c3c;
+  --view-active-bg: #3c3c3c;
   --text-black-class: #fff;
   --text-blue-0-class: #bfc9f7;
 
   --event-bg: #001d49;
   --event-color: #267cfd;
 
-  --btn-success-color: #1a2226;
+  --btn-green-color: #1a2226;
   --btn-outline-secondary-bg: #0d0d0d;
   --btn-outline-secondary-color: #ffffffcc;
-  --btn-info-bg: #0d0d0d;
-  --btn-info-color: #ffffffcc;
-
-  --bs-body-color: var(--body-color);
-  --bs-body-bg: var(--body-bg);
+  --btn-action-bg: #0d0d0d;
+  --btn-action-color: #ffffffcc;
 }

@@ -43,7 +43,7 @@ const ContentActionBar = observer(
             <Dropdown.Toggle className="p-3" variant="info" id="actions">
               Choose an action
             </Dropdown.Toggle>
-            <Dropdown.Menu className="w-100">
+            <Dropdown.Menu className="w-100 shadow">
               <Dropdown.Item className="px-3 py-2" onClick={this.handerDeleteContent}>
                 Delete
               </Dropdown.Item>

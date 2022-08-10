@@ -10,11 +10,11 @@
   &:first-child {
     .react-datepicker__input-container {
       input {
-        background-color: var(--input-bg);
-        color: var(--input-color);
-        border-color: var(--input-border-color);
+        background-color: var(--content-bg);
+        border-color: var(--border-color);
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        color: var(--body-color);
       }
     }
   }
@@ -22,11 +22,11 @@
   &:last-child {
     .react-datepicker__input-container {
       input {
-        background-color: var(--input-bg);
-        color: var(--input-color);
-        border-color: var(--input-border-color);
+        background-color: var(--content-bg);
+        border-color: var(--border-color);
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+        color: var(--body-color);
       }
     }
   }
