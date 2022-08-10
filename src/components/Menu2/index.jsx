@@ -92,7 +92,7 @@ class Menu2 extends React.Component {
             </div>
           );
         })}
-        <div className="position-absolute bottom-0 mb-3 border-top w-100 py-1">
+        <div className="position-absolute bottom-0 mb-3 border-top w-100 py-1 button-language">
           <Dropdown className="pt-2 ">
             <Dropdown.Toggle
               variant="success"

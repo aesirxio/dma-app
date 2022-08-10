@@ -101,7 +101,7 @@ class Menu extends React.Component {
     });
     return (
       <nav>
-        <ul id="wr_list_menu" className="list-unstyled mb-0 py-3 pt-md-1">
+        <ul id="wr_list_menu" className="list-unstyled mb-0 p-3 pt-md-1">
           {dataMenu.map((value, key) => {
             return (
               <li
@@ -131,7 +131,7 @@ class Menu extends React.Component {
             );
           })}
         </ul>
-        <div className="position-absolute bottom-0 mb-3 border-top w-100 py-1">
+        <div className="position-absolute bottom-0 mb-3 border-top w-100 py-1 button-language">
           <Dropdown className="pt-2 ">
             <Dropdown.Toggle
               variant="success"

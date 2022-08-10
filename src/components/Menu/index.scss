@@ -69,10 +69,18 @@
 .img_menu_color {
   display: none;
 }
-.show{
-  .btn-success.dropdown-toggle{
-    &:focus{
+.show {
+  .btn-success.dropdown-toggle {
+    &:focus {
       box-shadow: none;
+    }
+  }
+}
+body.mini_left {
+  .sidebar {
+    .button-language {
+      bottom: 2.25rem !important;
+      padding-bottom: 1rem !important;
     }
   }
 }
