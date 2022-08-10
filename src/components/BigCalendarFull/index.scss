@@ -224,6 +224,12 @@
   .rbc-calendar {
     width: 100%;
     min-height: 800px;
+    .rbc-timeslot-group {
+      min-height: 45px;
+    }
+    .rbc-day-slot .rbc-background-event, .rbc-day-slot .rbc-event{
+      height: 50px !important;
+    }
   }
   .rbc-month-row {
     overflow: visible;
