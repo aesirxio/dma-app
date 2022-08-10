@@ -86,7 +86,7 @@
     &.btn-success {
       color: var(--btn-green-color) !important;
       background-color: var(--btn-green-bg) !important;
-      border-color: inherit !important;
+      border-color: var(--btn-green-bg) !important;
     }
     &.btn-outline-secondary {
       background-color: var(--btn-outline-secondary-bg) !important;
