@@ -22,9 +22,7 @@ class SbarLeft extends React.Component {
 
     return (
       <aside
-        className={`sidebar w-260 ${
-          !settingPage ? 'p-3' : ''
-        } mt-0 position-relative bg-dark mh-100 overflow-hidden overflow-y-auto d-flex flex-column justify-content-between z-index-100`}
+        className={`sidebar w-260  mt-0 position-relative bg-dark mh-100 overflow-hidden overflow-y-auto d-flex flex-column justify-content-between z-index-100`}
       >
         {!settingPage ? (
           <>
@@ -33,7 +31,7 @@ class SbarLeft extends React.Component {
         ) : (
           <Menu2 />
         )}
-        <div className="switch-theme-button position-absolute end-0 bottom-0 mb-3 me-3">
+        <div className="switch-theme-button position-absolute end-0 bottom-0 mb-4 me-3">
           <SwitchThemes />
         </div>
       </aside>

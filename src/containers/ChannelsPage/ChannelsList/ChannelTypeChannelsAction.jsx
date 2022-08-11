@@ -9,10 +9,12 @@ import { observer } from 'mobx-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
 import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
+import { useTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 const ChannelTypeChannelsAction = observer(({ channelType, channel, removeChannel }) => {
   const context = useContext(ChannelsViewModelContext);
-
+  const { t } = useTranslation('common');
   const handleStatus = async (event) => {
     if (event.target.checked) {
       await context.getChannelsListViewModel().actions('reconnectChannel', channelType, channel);
@@ -31,7 +33,7 @@ const ChannelTypeChannelsAction = observer(({ channelType, channel, removeChanne
           onChange={handleStatus}
         />
         <label className="form-check-label d-none d-md-block" htmlFor="flexCheckDefault">
-          Enable
+          {t('txt_enable')}
         </label>
       </div>
 
@@ -42,10 +44,10 @@ const ChannelTypeChannelsAction = observer(({ channelType, channel, removeChanne
         <i className="me-2">
           <FontAwesomeIcon icon={faTrash} />
         </i>
-        <label className="d-none d-md-block">Remove</label>
+        <label className="d-none d-md-block">{t('txt_remove')}</label>
       </div>
     </div>
   );
 });
 
-export default ChannelTypeChannelsAction;
+export default withTranslation('common')(ChannelTypeChannelsAction);

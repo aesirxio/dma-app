@@ -10,6 +10,7 @@ import { ContentViewModelContext } from '../../ContentViewModels/ContentViewMode
 import ChannelAdd from './ChannelAdd';
 import ListChannelComponent from '../../../../components/ChannelComponent/list';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
+import { useTranslation, withTranslation } from 'react-i18next';
 
 const ContentFormGeneralChannel = observer(() => {
   const context = useContext(ContentViewModelContext);
@@ -22,11 +23,11 @@ const ContentFormGeneralChannel = observer(() => {
   }
 
   const data = ChannelUtils.getChannelByFilter(channelsData, 'removed', 'not');
-
+  const { t } = useTranslation('common');
   return (
     <div className=" d-flex flex-wrap">
       <div className="d-flex align-items-center justify-content-between mb-3 w-100">
-        <p className="text-blue-0 mb-0 w-100">Connected Channels</p>
+        <p className="text-blue-0 mb-0 w-100">{t('txt_connected_channels')}</p>
         <ChannelAdd />
       </div>
       <div className="rounded-2 px-3 py-4 h-100  bg-blue-3 w-100">
@@ -36,4 +37,4 @@ const ContentFormGeneralChannel = observer(() => {
   );
 });
 
-export default ContentFormGeneralChannel;
+export default withTranslation('common')(ContentFormGeneralChannel);

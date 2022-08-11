@@ -8,6 +8,10 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
 import common_en from './en/common.json';
+import common_dk from './dk/common.json';
+import common_vn from './vi/common.json';
+import common_ua from './ua/common.json';
+import common_es from './es/common.json';
 
 i18n
   .use(LanguageDetector)
@@ -16,9 +20,27 @@ i18n
     // we init with resources
     resources: {
       en: {
+        title: 'English',
         common: common_en,
       },
+      dk: {
+        title: 'Denmark',
+        common: common_dk,
+      },
+      vi: {
+        title: 'Tiếng Việt',
+        common: common_vn,
+      },
+      ua: {
+        title: 'Ukraine',
+        common: common_ua,
+      },
+      es: {
+        title: 'Spain',
+        common: common_es,
+      },
     },
+    lng: 'en',
     fallbackLng: 'en',
     debug: !process.env.NODE_ENV || process.env.NODE_ENV === 'development',
 

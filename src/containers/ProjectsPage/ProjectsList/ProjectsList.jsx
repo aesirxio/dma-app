@@ -8,7 +8,7 @@ import React from 'react';
 import PAGE_STATUS from '../../../constants/PageStatus';
 
 import Table from '../../../components/Table';
-
+import { withTranslation } from 'react-i18next';
 import { observer } from 'mobx-react';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
@@ -30,14 +30,14 @@ const ProjectsList = observer(
 
     render() {
       const { tableStatus, projects, pagination } = this.listViewModel;
-
+      const {t}= this.props;
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
       }
 
       const tableRowHeader = [
         {
-          Header: 'Project Name',
+          Header: t("txt_project_name"),
           accessor: PROJECT_COLUMN_INDICATOR.NAME, // accessor is the "key" in the data
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
@@ -52,15 +52,15 @@ const ProjectsList = observer(
         //   accessor: PROJECT_COLUMN_INDICATOR.LOGO,
         // },
         {
-          Header: 'Short Description',
+          Header: t("txt_short_description"),
           accessor: PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION,
         },
         {
-          Header: 'Start Date',
+          Header: t("start_date"),
           accessor: PROJECT_COLUMN_INDICATOR.START_DATE,
         },
         {
-          Header: 'End Date',
+          Header: t("end_date"),
           accessor: PROJECT_COLUMN_INDICATOR.END_DATE,
         },
         // {
@@ -72,11 +72,11 @@ const ProjectsList = observer(
         //   accessor: PROJECT_COLUMN_INDICATOR.PROGRESS,
         // },
         {
-          Header: 'Created Date',
+          Header: t("created_date"),
           accessor: PROJECT_COLUMN_INDICATOR.CREATED_DATE,
         },
       ];
-
+     
       return (
         <>
           {projects ? (
@@ -96,14 +96,14 @@ const ProjectsList = observer(
               pagination={pagination}
               listViewModel={this.listViewModel}
               searchFunction={this.listViewModel.searchProjects}
-              searchText="Search your project"
+              searchText={t("search_your_project")}
               hasSubRow={false}
               _handleList={this._handleList}
             />
           ) : (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
-              title="Create your 1st project"
+              title={t("create_your_1st_project")}
               width="w-50"
             />
           )}
@@ -113,4 +113,4 @@ const ProjectsList = observer(
   }
 );
 
-export default withProjectViewModel(ProjectsList);
+export default withTranslation('common')(withProjectViewModel(ProjectsList));

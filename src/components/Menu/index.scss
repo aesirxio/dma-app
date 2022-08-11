@@ -55,3 +55,18 @@
 .header_logo {
   transition: all 0.3s ease;
 }
+.show {
+  .btn-success.dropdown-toggle {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+body.mini_left {
+  .sidebar {
+    .button-language {
+      bottom: 2.25rem !important;
+      padding-bottom: 1rem !important;
+    }
+  }
+}

@@ -6,14 +6,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import i18n from 'translations/i18n';
+import { withTranslation } from 'react-i18next';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
+import { Dropdown } from 'react-bootstrap';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';
 
 class Menu2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      language: 'English',
       activeMenu: '',
       dataMenu: [
         {
@@ -21,7 +25,7 @@ class Menu2 extends React.Component {
           listMenu: [
             {
               name: 'profile',
-              text: 'Profile',
+              text: 'txt_menu_profile',
               link: '/profile',
               icons: faUser,
             },
@@ -43,6 +47,10 @@ class Menu2 extends React.Component {
 
   render() {
     let { dataMenu } = this.state;
+    const { t } = this.props;
+    const listLanguages = Object.keys(i18n.options.resources).map(function (key) {
+      return { language: key, title: i18n.options.resources[key].title };
+    });
     return (
       <nav>
         <div className="py-1 px-3 item_menu item_menu_home">
@@ -53,7 +61,7 @@ class Menu2 extends React.Component {
             <i>
               <FontAwesomeIcon icon={faArrowLeft} />
             </i>
-            <span className="ms-3 text text-white">Back to Dashboard</span>
+            <span className="ms-3 text text-white">{t('txt_back_to_dashboard')}</span>
           </a>
         </div>
         {dataMenu.map((item, index) => {
@@ -75,7 +83,7 @@ class Menu2 extends React.Component {
                         <i>
                           <FontAwesomeIcon icon={value.icons} />
                         </i>
-                        <span className="ms-3 text">{value.text}</span>
+                        <span className="ms-3 text">{t(value.text)}</span>
                       </NavLink>
                     </li>
                   );
@@ -84,9 +92,34 @@ class Menu2 extends React.Component {
             </div>
           );
         })}
+        <div className="position-absolute bottom-0 mb-3 border-top w-100 py-1 button-language">
+          <Dropdown className="pt-2 ">
+            <Dropdown.Toggle variant="dark" id="dropdown-basic" className="bg-transparent border-0">
+              <FontAwesomeIcon icon={faGlobe} /> {this.language ?? 'English'}
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              {listLanguages.map((item, index) => {
+                return (
+                  <Dropdown.Item
+                    key={index}
+                    href="#"
+                    className=""
+                    onClick={() => {
+                      i18n.changeLanguage(item.language);
+                      this.setState((this.language = item.title));
+                    }}
+                  >
+                    {item.title}
+                  </Dropdown.Item>
+                );
+              })}
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
       </nav>
     );
   }
 }
 
-export default Menu2;
+export default withTranslation('common')(Menu2);

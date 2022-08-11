@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { observer } from 'mobx-react';
-
+import { useTranslation, withTranslation } from 'react-i18next';
 import ComponentSwitch from '../../../../components/ComponentSwitch';
 import { CONTENT_FIELD_KEY, CONTENT_DESCRIPTION_MODE } from '../../../../constants/ContentModule';
 import ContentFormDescriptionBasic from './basic';
@@ -32,20 +32,19 @@ const ContentFormDescription = observer(({ formPropsData, onBlurDescription }) =
     formPropsData[CONTENT_FIELD_KEY.MODE] = mode
       ? CONTENT_DESCRIPTION_MODE.ADVANCE
       : CONTENT_DESCRIPTION_MODE.BASIC;
-
   }, [formPropsData, mode]);
-
+  const { t } = useTranslation('common');
   return (
     <>
       <div className="d-flex mb-2">
         <label className="w-100 form-label">
-          <span className="text-blue-0">Content Description</span>
+          <span className="text-blue-0">{t('content_description')}</span>
           <span className="text-red-1">*</span>
         </label>
         <ComponentSwitch
           handleChange={handChangeAdvanceMode}
           checked={mode}
-          textLeft={'Advance mode'}
+          textLeft={t('txt_advance_mode')}
         />
       </div>
 
@@ -64,4 +63,4 @@ const ContentFormDescription = observer(({ formPropsData, onBlurDescription }) =
   );
 });
 
-export default ContentFormDescription;
+export default withTranslation('common')(ContentFormDescription);
