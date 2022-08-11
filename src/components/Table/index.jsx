@@ -385,7 +385,7 @@ const Table = ({
                   <tr {...headerGroup.getHeaderGroupProps()} className="bg-blue">
                     {newHeaderGroup.map((column) => {
                       return (
-                        <th {...column.getHeaderProps()} className="fw-normal px-2 py-3 flex-1">
+                        <th {...column.getHeaderProps()} className="fw-normal px-2 py-3 flex-1 bg-blue">
                           {column.render('Header')}
                         </th>
                       );

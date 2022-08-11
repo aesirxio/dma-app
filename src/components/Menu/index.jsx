@@ -116,7 +116,10 @@ class Menu extends React.Component {
                 >
                   <span
                     className="icon d-inline-block align-text-bottom"
-                    style={{ WebkitMaskBoxImage: `url(${value.icons_color})` }}
+                    style={{
+                      WebkitMaskImage: `url(${value.icons_color})`,
+                      WebkitMaskRepeat: 'no-repeat',
+                    }}
                   ></span>
                   <span className="ms-3 text py-1 d-inline-block">{t(value.text)}</span>
                 </NavLink>

@@ -62,6 +62,7 @@
   }
   .rbc-agenda-view table.rbc-agenda-table .rbc-agenda-time-cell {
     vertical-align: middle;
+    border-left: 1px solid var(--calendar-border-color);
   }
   .rbc-month-header,
   .rbc-time-header {
@@ -227,7 +228,8 @@
     .rbc-timeslot-group {
       min-height: 45px;
     }
-    .rbc-day-slot .rbc-background-event, .rbc-day-slot .rbc-event{
+    .rbc-day-slot .rbc-background-event,
+    .rbc-day-slot .rbc-event {
       height: 50px !important;
     }
   }

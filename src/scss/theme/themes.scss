@@ -76,13 +76,6 @@
     background-color: var(--view-active-bg) !important;
   }
   .btn {
-    &.dropdown-toggle + .dropdown-menu .dropdown-item {
-      &:hover,
-      &:active {
-        background-color: transparent !important;
-      }
-    }
-
     &.btn-success {
       color: var(--btn-green-color) !important;
       background-color: var(--btn-green-bg) !important;
@@ -92,23 +85,11 @@
       background-color: var(--btn-outline-secondary-bg) !important;
       color: var(--btn-outline-secondary-color) !important;
       border-color: var(--border-color) !important;
-      &.dropdown-toggle + .dropdown-menu {
-        background-color: var(--btn-outline-secondary-bg) !important;
-        .dropdown-item {
-          color: var(--btn-outline-secondary-color) !important;
-        }
-      }
     }
     &.btn-info {
       background-color: var(--btn-action-bg) !important;
       color: var(--btn-action-color) !important;
       border-color: transparent !important;
-      &.dropdown-toggle + .dropdown-menu {
-        background-color: var(--btn-action-bg) !important;
-        .dropdown-item {
-          color: var(--btn-action-color) !important;
-        }
-      }
     }
   }
   .content_header {
