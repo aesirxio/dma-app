@@ -63,7 +63,7 @@ class BigCalendarFull extends React.PureComponent {
     const navigateEditPost = () => {
       history.push(`content-edit/${event.id}`);
     };
-    console.log(moment(event.start).format("h:mm A"));
+
     return (
       <div onClick={event.type === 'planing' ? '' : navigateEditPost}>
         <div className={divClass}>
