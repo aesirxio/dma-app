@@ -45,6 +45,11 @@
   .rbc-time-view {
     background-color: $white;
   }
+  .rbc-agenda-view {
+    .wrapper_des_event_time {
+      display: none;
+    }
+  }
 
   .rbc-month-view {
     border: 0;
@@ -64,11 +69,9 @@
 
   .rbc-day-bg {
     border-left: 1px solid $border-color;
-    
 
     &:last-child {
       border-right: 1px solid $border-color;
-      
     }
   }
 
@@ -123,7 +126,7 @@
     color: $color-blue-7;
   }
 }
-.rbc-day-slot.rbc-today{
+.rbc-day-slot.rbc-today {
   background-color: $white;
 }
 .event-red {
@@ -225,7 +228,8 @@
     .rbc-timeslot-group {
       min-height: 45px;
     }
-    .rbc-day-slot .rbc-background-event, .rbc-day-slot .rbc-event{
+    .rbc-day-slot .rbc-background-event,
+    .rbc-day-slot .rbc-event {
       height: 50px !important;
     }
   }
