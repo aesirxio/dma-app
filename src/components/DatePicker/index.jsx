@@ -14,7 +14,7 @@ const CustomizedDatePicker = ({ handleOnChange, defaultDate }) => {
       dateFormat={'MMM d, yyyy'}
       selected={startDate}
       showYearDropdown
-      maxDate={new Date("12-31-" + (moment().year() - 10))}
+      maxDate={moment().subtract(10, 'y').startOf('year').toDate()}
       wrapperClassName="w-100"
       scrollableYearDropdown
       yearDropdownItemNumber={15}
@@ -22,7 +22,7 @@ const CustomizedDatePicker = ({ handleOnChange, defaultDate }) => {
         handleOnChange(date);
         setStartDate(date);
       }}
-      className='m-0 p-0 border-0 outline-none'
+      className="m-0 p-0 border-0 outline-none"
     />
   );
 };
