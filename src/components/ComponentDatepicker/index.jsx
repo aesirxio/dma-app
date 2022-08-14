@@ -107,12 +107,12 @@ class ComponentDatepicker extends React.Component {
     let { startDate, endDate } = this.state;
 
     return (
-      <div ref={this.pickerRef} className="p-3 bg-white rounded-3 shadow">
+      <div ref={this.pickerRef} className="rounded-3 shadow overflow-hidden">
         <div className={className}>
           <div className="position-relative border-0">{children}</div>
         </div>
         {startDate && (
-          <div className="d-flex align-items-center justify-content-end border-top-1 pt-3">
+          <div className="d-flex align-items-center justify-content-end border-top-1 p-3">
             <p className="fs-14 color-bule-0 opacity-75 mb-0">
               {startDate ? moment(startDate).format('LL') : ''} -{' '}
               {endDate ? moment(endDate).format('LL') : ''}
@@ -145,7 +145,7 @@ class ComponentDatepicker extends React.Component {
         </i>
         <DatePicker
           onChange={this.onChange}
-          className="border-0 w-100 rounded-2 h-100 ps-2 bg-transparent cursor-pointer"
+          className="border-0 w-100 rounded-2 h-100 ps-2 bg-transparent cursor-pointer text-blue-0"
           monthsShown={2}
           startDate={startDate}
           endDate={endDate}

@@ -86,7 +86,7 @@ class FilterCalendar extends React.Component {
         listCheck: this.props.filterFormViewModel.campaignMasterData,
       },
     ];
-    const {t}= this.props;
+    const { t } = this.props;
     if (!this.props.show && this.props.filterFormViewModel) {
       return null;
     }
@@ -96,7 +96,7 @@ class FilterCalendar extends React.Component {
       >
         <div className="bg-white w-400 h-100">
           <div className="d-flex align-items-center justify-content-between p-3 border-bottom-1">
-            <h4 className="text-blue-0 fw-medium">{t("txt_filter")}</h4>
+            <h4 className="text-blue-0 fw-medium">{t('txt_filter')}</h4>
             <span
               className="cursor-pointer text-danger"
               onClick={this.props.handleCloseFilterCalendar}
@@ -104,7 +104,7 @@ class FilterCalendar extends React.Component {
               <i>
                 <FontAwesomeIcon icon={faTimes} />
               </i>
-              <span className="ms-2">{t("txt_clear_all")}</span>
+              <span className="ms-2">{t('txt_clear_all')}</span>
             </span>
           </div>
           <div
@@ -116,10 +116,10 @@ class FilterCalendar extends React.Component {
                   <div className="d-flex align-items-center justify-content-between mb-3">
                     <p className="text-blue-0 mb-0 text-uppercase">{t(value.title)}</p>
                     <span
-                      className="cursor-pointer fs-14 text-black opacity-50"
+                      className="cursor-pointer fs-14 text-color opacity-50"
                       onClick={() => this.handleSelectAll(value.name, key)}
                     >
-                      {t("txt_select_all")}
+                      {t('txt_select_all')}
                     </span>
                   </div>
                   <div>
@@ -147,7 +147,7 @@ class FilterCalendar extends React.Component {
               <i>
                 <FontAwesomeIcon icon={faFilter} />
               </i>
-              <span className="ms-2">{t("txt_filter")}</span>
+              <span className="ms-2">{t('txt_filter')}</span>
             </Button>
           </div>
         </div>

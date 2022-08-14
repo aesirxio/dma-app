@@ -38,7 +38,7 @@ const ContentFormDescription = observer(({ formPropsData, onBlurDescription }) =
     <>
       <div className="d-flex mb-2">
         <label className="w-100 form-label">
-          <span className="text-black">{t('content_description')}</span>
+          <span className="text-blue-0">{t('content_description')}</span>
           <span className="text-red-1">*</span>
         </label>
         <ComponentSwitch

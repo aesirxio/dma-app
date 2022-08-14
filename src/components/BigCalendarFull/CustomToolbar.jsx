@@ -33,7 +33,7 @@ const CustomToolbar = (handleFilterCalendar) => {
             >
               <FontAwesomeIcon icon={faChevronLeft} />
             </button>
-            <label className="label-date fs-4 text-blue-0 text--themes">{this.props.label}</label>
+            <label className="label-date fs-4 text-blue-0">{this.props.label}</label>
             <button
               className="btn-next mx-2 fs-12 border-0 text-green bg-transparent"
               onClick={() => this.navigate('NEXT')}
@@ -48,32 +48,30 @@ const CustomToolbar = (handleFilterCalendar) => {
                   {this.props.view}
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="shadow border-0 p-3">
-                  <div className="rbc-btn-group w-100 d-block">
-                    <Dropdown.Item
-                      className="border-0 bg-transparent d-block w-100 color-blue-0 p-0 text-start mb-1"
-                      onClick={() => this.props.onView('day')}
-                    >
-                      day
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                      className="border-0 bg-transparent d-block w-100 color-blue-0 p-0 text-start mb-1"
-                      onClick={() => this.props.onView('week')}
-                    >
-                      week
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                      className="border-0 bg-transparent d-block w-100 color-blue-0 p-0 text-start"
-                      onClick={() => this.props.onView('month')}
-                    >
-                      month
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                      className="border-0 bg-transparent d-block w-100 color-blue-0 p-0 text-start"
-                      onClick={() => this.props.onView('agenda')}
-                    >
-                      agenda
-                    </Dropdown.Item>
-                  </div>
+                  <Dropdown.Item
+                    className="border-0 d-block w-100 color-blue-0 p-0 text-start mb-1"
+                    onClick={() => this.props.onView('day')}
+                  >
+                    day
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    className="border-0 d-block w-100 color-blue-0 p-0 text-start mb-1"
+                    onClick={() => this.props.onView('week')}
+                  >
+                    week
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    className="border-0 d-block w-100 color-blue-0 p-0 text-start"
+                    onClick={() => this.props.onView('month')}
+                  >
+                    month
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    className="border-0 d-block w-100 color-blue-0 p-0 text-start"
+                    onClick={() => this.props.onView('agenda')}
+                  >
+                    agenda
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
               <div className="ms-2">

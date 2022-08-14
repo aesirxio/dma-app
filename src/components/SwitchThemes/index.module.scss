@@ -1,7 +1,10 @@
-@import '../../scss/utils/bootstrap.scss';
+@import '../../scss/theme/list.scss';
 
-.theme-icon {
-  width: 34px;
-  height: 34px;
-  text-align: center;
+@each $theme, $color in $list-themes {
+  .#{$theme} {
+    background-color: $color !important;
+    @if $theme == 'light' {
+      border: 1px solid #bbb;
+    }
+  }
 }

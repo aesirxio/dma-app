@@ -52,7 +52,7 @@ class ProjectActionBar extends Component {
           <Dropdown.Toggle className="p-3" variant="info" id="actions">
             {t("choose_an_action")}
           </Dropdown.Toggle>
-          <Dropdown.Menu className="w-100">
+          <Dropdown.Menu className="w-100 shadow">
             <Dropdown.Item className="px-3 py-2" onClick={this.handerDeleteProject}>
              {t("delete")}
             </Dropdown.Item>
