@@ -22,6 +22,7 @@ const CustomizedDatePicker = ({ handleOnChange, defaultDate }) => {
         handleOnChange(date);
         setStartDate(date);
       }}
+      adjustDateOnChange
       className="m-0 p-0 border-0 outline-none"
     />
   );
