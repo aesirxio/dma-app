@@ -48,7 +48,7 @@ class ContentFormViewModel {
       Storage.getItem(AUTHORIZATION_KEY.MEMBER_ID) ?? 0
     );
 
-    if (!memberProfile.allow_create_item) {
+    if (!memberProfile.allow_create_item && match == '/content/create') {
       notify('Please upgrade account at https://dma.aesirx.io');
       history.push('/content');
     }
