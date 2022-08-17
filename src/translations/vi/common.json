@@ -106,6 +106,7 @@
   "txt_list": "Danh sách",
   "txt_thumb": "Thu nhỏ",
   "search_your_project":"Tìm kiếm dự án của bạn",
+  "search_your_post":"Tìm kiếm bài đăng của bạn",
   "search_your_campaign":"Tìm kiếm chiến dịch của bạn",
   "search_your_personas":"Tìm kiếm chân dung khách hàng của bạn",
   "txt_project_name": "Tên Dự Án",
@@ -152,7 +153,15 @@
   "txt_enable":"Cho phép",
   "txt_remove":"Xóa", 
   "txt_type":"Kiểu",
-  "txt_action":"Hoạt động"
+  "txt_action":"Hoạt động",
+  "txt_profile":"Profile",
+  "txt_days":"ngày",
+  "txt_apply":"Apply",
+  "txt_0_days":"0 days",
+  "txt_week":"tuần",
+  "txt_month":"tháng",
+  "txt_agenda":"nhật ký"
+  
 
 
 

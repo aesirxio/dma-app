@@ -19,7 +19,7 @@ import ComponentImage from '../ComponentImage';
 const data = [
   {
     key: 1,
-    text: 'Profile',
+    text: 'txt_profile',
     link: '/profile',
   },
   // {
@@ -98,7 +98,7 @@ class DropdownAvatar extends React.Component {
                         href={value.link}
                         className="text-blue-0 d-block rounded-1 text-decoration-none p-2"
                       >
-                        {value.text}
+                        {t(value.text)}
                       </Dropdown.Item>
                     </li>
                   );

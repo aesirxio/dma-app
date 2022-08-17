@@ -169,14 +169,14 @@ const ContentsList = observer(
               listViewModel={this.listViewModel}
               searchFunction={this.listViewModel.searchContents}
               dataFormFilter={dataFormFilter}
-              searchText="Search your posts"
+              searchText={t('search_your_post')}
               classNameTable={'wr_content_list'}
               idKey={this.key}
             />
           ) : (
             <ComponentNoData
               icons="/assets/images/ic_upcoming.svg"
-              title="Create your 1st content"
+              title={t('create_your_1st_project')}
               width="w-50"
             />
           )}

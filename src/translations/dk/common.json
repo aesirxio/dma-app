@@ -102,9 +102,10 @@
   "txt_clear_all" : "Slet alt",
   "txt_select_all": "Vælg alt",
   "txt_columns":"Kolonner",
-  "txt_list": "List",
-  "txt_thumb": "Thumb",
+  "txt_list": "Liste",
+  "txt_thumb": "Tommelfinger",
   "search_your_project":"Søg dit projekt",
+  "search_your_post":"Søg dit enpost",
   "search_your_campaign":"Søg din kampagne",
   "search_your_personas":"Søg dine personas",
   "txt_project_name": "Projekt Navn",
@@ -150,7 +151,14 @@
   "txt_enable":"Enable",
   "txt_remove":"Remove", 
   "txt_type":"Type",
-  "txt_action":"Action"
+  "txt_action":"Action",
+  "txt_profile":"Profile",
+  "txt_days":" days",
+  "txt_apply":"Apply",
+  "txt_0_days":"0 days",
+  "txt_week":"week",
+  "txt_month":"month",
+  "txt_agenda":"agenda"
 
 
 

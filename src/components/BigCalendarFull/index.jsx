@@ -6,9 +6,7 @@
 import React from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
-import {
-  CONTENT_FIELD_KEY,
-} from '../../constants/ContentModule';
+import { CONTENT_FIELD_KEY } from '../../constants/ContentModule';
 import ContentUtils from '../../containers/ContentPage/ContentUtils/ContentUtils';
 import './index.scss';
 import FilterCalendar from '../FilterCalendar';
@@ -84,6 +82,7 @@ class BigCalendarFull extends React.PureComponent {
   };
 
   render() {
+    const { t } = this.props;
     let events = this.props?.events
       ? this.props?.events.map((content) => {
           const date = moment(content[CONTENT_FIELD_KEY.DATE], 'DD/MM/YYYY HH:mm');
@@ -103,7 +102,7 @@ class BigCalendarFull extends React.PureComponent {
         })
       : [];
     events = events.concat(this.props.listViewModel.plaining);
-    
+
     return (
       <div className="wr_calendar h-100 ">
         <div className="wr_calendar--left">
@@ -115,7 +114,7 @@ class BigCalendarFull extends React.PureComponent {
             defaultView={this.props.showView}
             showMultiDayTimes
             components={{
-              toolbar: CustomToolbar(this.handleFilterCalendar),
+              toolbar: CustomToolbar(this.handleFilterCalendar, t),
               event: this.Event,
             }}
             eventPropGetter={this.eventPropGetter}
