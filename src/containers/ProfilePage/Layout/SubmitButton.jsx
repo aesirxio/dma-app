@@ -22,7 +22,7 @@ const SubmitButton = ({validateInfoBeforeSending}) => {
           <i>
             <FontAwesomeIcon icon={faUserCog} />
           </i>
-          <span className='flex-1 ps-2 text-white'>{t("txt_update")}</span>
+          <span className='flex-1 ps-2'>{t("txt_update")}</span>
         </button>
       </div>
     </div>

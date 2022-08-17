@@ -277,7 +277,7 @@ const ConnectChannels = observer(
 
       return (
         <div className="py-4 px-3">
-          <h2 className="text-blue-0 mb-4 text--themes">Connect a Channel</h2>
+          <h2 className="text-blue-0 mb-4 text-blue-0">Connect a Channel</h2>
           <div>
             <ComponentConnectaChannel
               channelsListViewModel={this.channelsListViewModel}

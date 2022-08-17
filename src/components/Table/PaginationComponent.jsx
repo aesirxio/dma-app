@@ -40,8 +40,8 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
         <button
           key={i}
           onClick={() => handleGoToPage(i)}
-          className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 rounded-circle ${
-            i === currentNumber ? 'active bg-green text-white border-green' : 'text-black-50'
+          className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 ${
+            i === currentNumber ? 'active bg-red text-white border-red' : 'text-color'
           } ${
             i === currentNumber - 1 ||
             i === currentNumber - 2 ||
@@ -53,7 +53,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
               : ''
           }`}
         >
-          {i}
+          <span className={i === currentNumber ? '' : 'opacity-50'}>{i}</span>
         </button>
       );
     }
@@ -104,14 +104,14 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
           <button
             onClick={() => handlePreviousFirstPage()}
             className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 rounded-circle ${
-              1 === pagination.page ? 'active bg-green text-white border-green' : 'text-black-50'
+              1 === pagination.page ? 'active bg-green text-white border-green' : 'text-color'
             }`}
           >
-            1
+            <span className={1 === pagination.page ? '' : 'opacity-50'}>1</span>
           </button>
         )}
         <p
-          className={`mb-0 d-flex align-items-end ms-2 me-2 text-black-50 fs-5 rounded-circle ${
+          className={`mb-0 d-flex align-items-end ms-2 me-2 text-color fs-5 rounded-circle opacity-50 ${
             pagination.page === 1 ||
             pagination.page === 2 ||
             pagination.page === 3 ||
@@ -126,7 +126,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
         <div className="wr_pagination_number">{paginationHTML()}</div>
 
         <p
-          className={`mb-0 d-flex align-items-end ms-2 me-2 text-black-50 fs-5 rounded-circle ${
+          className={`mb-0 d-flex align-items-end ms-2 me-2 text-color fs-5 rounded-circle opacity-50 ${
             pagination.page === pagination.totalPages - 4 ||
             pagination.page === pagination.totalPages - 3 ||
             pagination.page === pagination.totalPages - 2 ||
@@ -143,10 +143,12 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
           className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 rounded-circle ${
             pagination.totalPages === pagination.page
               ? 'active bg-green text-white border-green'
-              : 'text-black-50'
+              : 'text-color'
           }`}
         >
-          {pagination.totalPages}
+          <span className={pagination.totalPages === pagination.page ? '' : 'opacity-50'}>
+            {pagination.totalPages}
+          </span>
         </button>
         <button
           onClick={() => handleNextPage()}

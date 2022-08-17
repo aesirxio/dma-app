@@ -47,7 +47,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
 
   return (
     <>
-      <hr className="mt-1 mb-4" />
+      <div className="mt-1 mb-4 border-bottom"> </div>
       <div className="list_content ms-3 me-3">
         <div className="py-2 px-3 bg-blue d-flex rounded-2">
           <div className="col col-md-4">{t('txt_name_personas')}</div>

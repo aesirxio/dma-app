@@ -62,7 +62,7 @@ const ContentFormPublish = observer(
           <div className="d-flex border-top-1 pt-3 justify-content-start pb-5">
             <div className="w-100">
               <Button
-                className="btn btn-light border-success "
+                className="btn btn-info border-success "
                 onClick={this.props.previousStep}
                 text="Back"
                 icon={faChevronLeft}

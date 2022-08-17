@@ -20,19 +20,17 @@
       span {
         color: $white !important;
       }
-
-      .img_menu {
-        display: none;
-      }
-
-      .img_menu_color {
-        display: inline-block;
-      }
     }
 
     i,
     span {
       transition: all 0.3s ease;
+    }
+
+    .icon {
+      width: 18px;
+      height: 20px;
+      background-color: var(--sidebar-menu-item-color);
     }
   }
 }
@@ -48,14 +46,6 @@
         span {
           color: $color-blue !important;
         }
-
-        .img_menu {
-          display: inline-block;
-        }
-
-        .img_menu_color {
-          display: none;
-        }
       }
     }
   }
@@ -64,10 +54,6 @@
 .section_menu_title,
 .header_logo {
   transition: all 0.3s ease;
-}
-
-.img_menu_color {
-  display: none;
 }
 .show {
   .btn-success.dropdown-toggle {
