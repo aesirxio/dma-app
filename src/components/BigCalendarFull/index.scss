@@ -231,6 +231,12 @@
     .rbc-day-slot .rbc-background-event,
     .rbc-day-slot .rbc-event {
       height: 50px !important;
+
+      background-color: $color-blue-3;
+      .facebook_calendar_text {
+        color: $white;
+      }
+
     }
   }
   .rbc-month-row {
@@ -375,4 +381,9 @@
 }
 .planing {
   pointer-events: none;
+}
+.rbc-day-slot {
+  .rbc-events-container {
+    margin-right: 0;
+  }
 }
