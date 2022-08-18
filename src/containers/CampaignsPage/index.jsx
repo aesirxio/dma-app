@@ -37,11 +37,11 @@ function Campaigns() {
                 <ComponentDatepicker isDown={true} />
               </div>
               <button className="btn btn-success d-flex align-items-center w-150 ms-2">
-                <i className="text-white">
+                <i>
                   <FontAwesomeIcon icon={faFileExport} />
                 </i>
-                <span className="flex-1 ps-2 text-white">Export</span>
-                <i className="text-white">
+                <span className="flex-1 ps-2">Export</span>
+                <i>
                   <FontAwesomeIcon icon={faChevronDown} />
                 </i>
               </button>

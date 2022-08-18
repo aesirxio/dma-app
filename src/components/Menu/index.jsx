@@ -8,7 +8,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './index.scss';
-import ComponentImage from '../ComponentImage';
 import i18n from 'translations/i18n';
 import { withTranslation } from 'react-i18next';
 import { Dropdown } from 'react-bootstrap';
@@ -115,16 +114,13 @@ class Menu extends React.Component {
                   className={`d-block rounded-1 px-3 py-2 mb-1 link_menu text-white text-decoration-none `}
                   activeClassName={`active`}
                 >
-                  <ComponentImage
-                    src={value.icons_color}
-                    alt={value.icons}
-                    className="mb-1 img_menu"
-                  />
-                  <ComponentImage
-                    src={value.icons_color}
-                    alt={value.icons}
-                    className="mb-1 img_menu_color"
-                  />
+                  <span
+                    className="icon d-inline-block align-text-bottom"
+                    style={{
+                      WebkitMaskImage: `url(${value.icons_color})`,
+                      WebkitMaskRepeat: 'no-repeat',
+                    }}
+                  ></span>
                   <span className="ms-3 text py-1 d-inline-block">{t(value.text)}</span>
                 </NavLink>
               </li>
@@ -133,11 +129,7 @@ class Menu extends React.Component {
         </ul>
         <div className="position-absolute bottom-0 mb-3 border-top w-100 py-1 button-language">
           <Dropdown className="pt-2 ">
-            <Dropdown.Toggle
-              variant="success"
-              id="dropdown-basic"
-              className="bg-transparent border-0"
-            >
+            <Dropdown.Toggle variant="dark" id="dropdown-basic" className="bg-transparent border-0">
               <FontAwesomeIcon icon={faGlobe} /> {this.language ?? 'English'}
             </Dropdown.Toggle>
 

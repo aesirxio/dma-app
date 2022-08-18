@@ -58,7 +58,7 @@ class Menu2 extends React.Component {
             href="/"
             className="d-block text-blue-0 p-3 link_menu rounded-2 text-decoration-none  "
           >
-            <i className="text-white">
+            <i>
               <FontAwesomeIcon icon={faArrowLeft} />
             </i>
             <span className="ms-3 text text-white">{t('txt_back_to_dashboard')}</span>
@@ -94,11 +94,7 @@ class Menu2 extends React.Component {
         })}
         <div className="position-absolute bottom-0 mb-3 border-top w-100 py-1 button-language">
           <Dropdown className="pt-2 ">
-            <Dropdown.Toggle
-              variant="success"
-              id="dropdown-basic"
-              className="bg-transparent border-0"
-            >
+            <Dropdown.Toggle variant="dark" id="dropdown-basic" className="bg-transparent border-0">
               <FontAwesomeIcon icon={faGlobe} /> {this.language ?? 'English'}
             </Dropdown.Toggle>
 

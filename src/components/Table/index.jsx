@@ -261,12 +261,12 @@ const Table = ({
                   <Dropdown.Toggle
                     variant="white"
                     id="actions"
-                    className={`btn_toggle ${styles.btn_toggle}`}
+                    className={`btn_toggle ${styles.btn_toggle} text-blue-0`}
                   >
                     <i>
-                      <FontAwesomeIcon className="text-blue-0" icon={faColumns} />
+                      <FontAwesomeIcon icon={faColumns} />
                     </i>
-                    <span className="ps-2 pe-5 text-blue-0 opacity-75">{t("txt_columns")}</span>
+                    <span className="ps-2 pe-5 opacity-75">{t("txt_columns")}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={faChevronDown} />
                     </i>
@@ -305,13 +305,13 @@ const Table = ({
                 </div>
                 <div className="rounded-0">
                   <button
-                    className={`btn ${getState.isFilter ? 'bg-blue-3' : ''}`}
+                    className={`btn text-blue-0 ${getState.isFilter ? 'bg-blue-3' : ''}`}
                     onClick={handleFilter}
                   >
                     <i>
-                      <FontAwesomeIcon className="text-blue-0" icon={faFilter} />
+                      <FontAwesomeIcon icon={faFilter} />
                     </i>
-                    <span className="ps-2 pe-5 text-blue-0 opacity-75">{t("txt_filter")}</span>
+                    <span className="ps-2 pe-5 opacity-75">{t("txt_filter")}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={getState.isFilter ? faChevronUp : faChevronDown} />
                     </i>
@@ -385,7 +385,7 @@ const Table = ({
                   <tr {...headerGroup.getHeaderGroupProps()} className="bg-blue">
                     {newHeaderGroup.map((column) => {
                       return (
-                        <th {...column.getHeaderProps()} className="fw-normal px-2 py-3 flex-1">
+                        <th {...column.getHeaderProps()} className="fw-normal px-2 py-3 flex-1 bg-blue">
                           {column.render('Header')}
                         </th>
                       );

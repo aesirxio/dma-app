@@ -32,7 +32,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
             >
               <FontAwesomeIcon icon={faChevronLeft} />
             </button>
-            <label className="label-date fs-4 text-blue-0 text--themes">{this.props.label}</label>
+            <label className="label-date fs-4 text-blue-0">{this.props.label}</label>
             <button
               className="btn-next mx-2 fs-12 border-0 text-green bg-transparent"
               onClick={() => this.navigate('NEXT')}
@@ -73,6 +73,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
                       {t('txt_agenda')}
                     </Dropdown.Item>
                   </div>
+
                 </Dropdown.Menu>
               </Dropdown>
               <div className="ms-2">

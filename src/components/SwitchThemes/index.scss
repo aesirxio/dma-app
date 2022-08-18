@@ -1,0 +1,45 @@
+@import '../../scss/theme/list.scss';
+
+.theme-icon {
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  background-color: #e9eaf0;
+  &:hover .theme-icon-list {
+    opacity: 1;
+    visibility: visible;
+  }
+  .theme-icon-list {
+    cursor: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease all;
+    margin-bottom: 10px;
+    background-color: #dce6eb;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      height: 10px;
+    }
+    &:after {
+      left: 0;
+      right: 0;
+      height: 10px;
+    }
+    &::before {
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 8px solid #dce6eb;
+      transition: 0.3s ease all;
+      left: 10px;
+    }
+  }
+}
+
+.box-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
