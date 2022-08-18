@@ -34,14 +34,18 @@ class BigCalendarFull extends React.PureComponent {
     };
   };
 
-  handleNavigate = (date) => {
-    const frist_day = moment(new Date(date.getFullYear(), date.getMonth(), 1)).format('YYYY-MM-DD');
-    const last_day = moment(new Date(date.getFullYear(), date.getMonth() + 1, 0)).format(
+  handleNavigate = (date, view) => {
+    let first_day = moment(new Date(date.getFullYear(), date.getMonth(), 1)).format('YYYY-MM-DD');
+    let last_day = moment(new Date(date.getFullYear(), date.getMonth() + 1, 0)).format(
       'YYYY-MM-DD'
     );
+    if (view == 'agenda') {
+      first_day = moment(date).format('YYYY-MM-DD');
+      last_day = moment(date).add(30, 'd').format('YYYY-MM-DD');
+    }
     this.props.onFilter(
       {
-        [CONTENT_FIELD_KEY.START_DATE]: frist_day,
+        [CONTENT_FIELD_KEY.START_DATE]: first_day,
         [CONTENT_FIELD_KEY.END_DATE]: last_day,
       },
       0,
@@ -51,7 +55,7 @@ class BigCalendarFull extends React.PureComponent {
 
   Event = ({ event }) => {
     let divClass = 'wrapper_des_event d-inline-block w-100 shadow label-rounded ';
-    let spanClass = 'fw-bold text-wrap opacity-75 ';
+    let spanClass = 'fw-semibold text-wrap opacity-75 ';
     const channelName = event.channel.length > 0 ? event?.channel[0]?.alias : 'facebook';
     divClass += channelName + '_calendar_background ';
     spanClass += channelName + '_calendar_text';
@@ -59,11 +63,12 @@ class BigCalendarFull extends React.PureComponent {
     const navigateEditPost = () => {
       history.push(`content-edit/${event.id}`);
     };
+
     return (
       <div onClick={event.type === 'planing' ? '' : navigateEditPost}>
         <div className={divClass}>
-          <span style={{ cursor: 'pointer' }} className="w-100 text-decoration-none d-inline-block">
-            <span className={spanClass}>{event.title}</span>
+          <span style={{ cursor: 'pointer' }} className={spanClass + " w-100 text-decoration-none d-inline-block"}>
+            <span className='wrapper_des_event_time'>{moment(event.start).format("h:mm A")} | </span><span>{event.title}</span>
           </span>
         </div>
       </div>
@@ -86,10 +91,10 @@ class BigCalendarFull extends React.PureComponent {
     let events = this.props?.events
       ? this.props?.events.map((content) => {
           const date = moment(content[CONTENT_FIELD_KEY.DATE], 'DD/MM/YYYY HH:mm');
-          const ampm = date.toDate().getHours() >= 12 ? 'PM' : 'AM';
+
           return {
             id: content[CONTENT_FIELD_KEY.ID],
-            title: date.toDate().getHours() + ' ' + ampm + ' | ' + content[CONTENT_FIELD_KEY.NAME],
+            title: content[CONTENT_FIELD_KEY.NAME],
             allDay: false,
             start: date.toDate(),
             end: date.toDate(),

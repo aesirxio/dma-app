@@ -45,6 +45,11 @@
   .rbc-time-view {
     background-color: $white;
   }
+  .rbc-agenda-view {
+    .wrapper_des_event_time {
+      display: none;
+    }
+  }
 
   .rbc-month-view {
     border: 0;
@@ -204,6 +209,8 @@
 
 .rbc-overlay {
   z-index: 101;
+  top: unset !important;
+  bottom: 98% !important;
   .rbc-event {
     background: none;
   }
@@ -224,10 +231,12 @@
     .rbc-day-slot .rbc-background-event,
     .rbc-day-slot .rbc-event {
       height: 50px !important;
+
       background-color: $color-blue-3;
       .facebook_calendar_text {
         color: $white;
       }
+
     }
   }
   .rbc-month-row {
