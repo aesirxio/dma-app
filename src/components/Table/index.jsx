@@ -54,6 +54,16 @@ let setFilter = (data, key) => {
     // keep datetime filter when render
     case 4:
       return (dataFilter.datetime = data);
+    // keep page when render
+    case 5:
+      return (dataFilter.page = data);
+    case 6:
+      dataFilter.searchText = '';
+      dataFilter.columns = [];
+      dataFilter.titleFilter = {};
+      dataFilter.datetime = null;
+      dataFilter.page = '';
+      break;
     default:
       return null;
   }
@@ -81,6 +91,7 @@ const Table = ({
   _handleList,
   classNameTable,
   idKey,
+  view,
 }) => {
   const [getState, setState] = useState({
     isName: 'list',
@@ -88,13 +99,6 @@ const Table = ({
     indexPagination: 0,
     dataFilter: null,
   });
-  useEffect(() => {
-    dataFilter = {
-      ...dataFilter,
-      searchText: searchText,
-    };
-    return () => {};
-  }, [searchText]);
 
   const filterTypes = React.useMemo(
     () => ({
@@ -196,6 +200,15 @@ const Table = ({
   }, [selectedRowIds, onSelect, data]);
 
   useEffect(() => {
+    if (view !== dataFilter.page) {
+      state.hiddenColumns = [];
+      setFilter(null, 6);
+      setFilter(view, 5);
+      setState({ isFilter: false });
+    }
+  }, [view]);
+
+  useEffect(() => {
     if (setFilter) {
       setFilter(state.hiddenColumns, 2);
     }
@@ -204,7 +217,6 @@ const Table = ({
 
   const setGlobalFilter = (dataFilter) => {
     if (searchFunction !== undefined) {
-
       const finalDataFilter = {
         ...getState.dataFilter,
         ...dataFilter,
