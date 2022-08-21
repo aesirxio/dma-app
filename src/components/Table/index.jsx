@@ -455,7 +455,7 @@ const Table = ({
             />
           ) : (
             <div className="pagination d-flex align-items-center justify-content-between">
-              {pagination && page.length > 10 &&  (
+              {pagination && pagination.totalPages > 1 &&  (
                 <>
                   <PaginationComponent
                     pagination={pagination}
@@ -519,7 +519,7 @@ const Table = ({
           ) : (
             
             <div className="pagination d-flex align-items-center justify-content-between">
-              {pagination ?? (
+              {pagination && pagination.totalPages > 1 && (
                 <>
                   <PaginationComponent
                     pagination={pagination}
