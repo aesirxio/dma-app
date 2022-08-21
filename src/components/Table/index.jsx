@@ -113,7 +113,7 @@ const Table = ({
     }),
     []
   );
-
+  
   const IndeterminateCheckbox = React.forwardRef(({ indeterminate, ...rest }, ref) => {
     const defaultRef = React.useRef();
     const resolvedRef = ref || defaultRef;
@@ -446,7 +446,7 @@ const Table = ({
                 })}
             </tbody>
           </table>
-          {page.length === 0 ? (
+          {page.length === 0  ? (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
               title="No Matching Results"
@@ -455,7 +455,7 @@ const Table = ({
             />
           ) : (
             <div className="pagination d-flex align-items-center justify-content-between">
-              {pagination && (
+              {pagination && page.length > 10 &&  (
                 <>
                   <PaginationComponent
                     pagination={pagination}
@@ -517,8 +517,9 @@ const Table = ({
               width="w-50"
             />
           ) : (
+            
             <div className="pagination d-flex align-items-center justify-content-between">
-              {pagination && (
+              {pagination ?? (
                 <>
                   <PaginationComponent
                     pagination={pagination}
