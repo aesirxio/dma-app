@@ -28,7 +28,7 @@ import ComponentViewList from '../../../components/ComponentViewList';
 const CampaignsList = observer(
   class CampaignsList extends ComponentViewList {
     key = CAMPAIGNS_FIELD_KEY.ID;
-    view="campaigns";
+    view = 'campaigns';
     getDataFormFilter = () => {
       return [
         {
@@ -143,6 +143,7 @@ const CampaignsList = observer(
                   dataFormFilter={dataFormFilter}
                   searchText="Search your Campaign"
                   idKey={this.key}
+                  view={this.view}
                 />
               </div>
             )

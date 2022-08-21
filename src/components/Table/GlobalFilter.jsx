@@ -10,13 +10,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
 
 const GlobalFilter = ({
-  globalFilter,
   setGlobalFilter,
   searchText,
   filter,
   setFilter,
 }) => {
-  const [, setValue] = React.useState(globalFilter);
+  const [, setValue] = React.useState("");
   const onChange = useAsyncDebounce((value) => {
     setGlobalFilter({ keyword: value });
   }, 200);
@@ -31,7 +30,8 @@ const GlobalFilter = ({
           setValue(e.target.value);
           onChange(e.target.value);
         }}
-        placeholder={filter.searchText === '' ? searchText : filter.searchText}
+        value={filter.searchText}
+        placeholder={searchText}
         className="form-control border-end-0 pe-2 border-0 pe-4"
       />
       <i className="text-green position-absolute top-0 bottom-0 end-0 pe-4 d-flex align-items-center">

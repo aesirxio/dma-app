@@ -24,6 +24,7 @@ export default class Inspiration extends Component {
               href={item[NEWS_FIELD_KEY.LINK]}
               target={`_blank`}
               className="block__news--content col-md-4"
+              rel='noopener'
             >
               <div className="mb-3">
                 <ComponentImage
