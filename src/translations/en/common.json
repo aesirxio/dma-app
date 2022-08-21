@@ -106,6 +106,7 @@
   "txt_list": "List",
   "txt_thumb": "Thumb",
   "search_your_project":"Search your project",
+  "search_your_post":"Search your post",
   "search_your_campaign":"Search your campaign",
   "search_your_personas":"Search your personas",
   "txt_project_name": "Project Name",
@@ -152,8 +153,15 @@
   "txt_enable":"Enable",
   "txt_remove":"Remove", 
   "txt_type":"Type",
-  "txt_action":"Action"
-
+  "txt_action":"Action",
+  "txt_profile":"Profile",
+  "txt_days":" days",
+  "txt_apply":"Apply",
+  "txt_0_days":"0 days",
+  "txt_week":"week",
+  "txt_month":"month",
+  "txt_agenda":"agenda"
+  
 
 
 

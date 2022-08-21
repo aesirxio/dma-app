@@ -7,7 +7,7 @@ import React from 'react';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import { format } from 'date-fns';
-
+import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
@@ -21,7 +21,7 @@ class ComponentDatepicker extends React.Component {
       startDate: null,
       endDate: null,
       isOpen: false,
-      selectDate: '0 days',
+      selectDate: 'txt_0_days',
     };
 
     this.wrapperRef = React.createRef();
@@ -74,7 +74,6 @@ class ComponentDatepicker extends React.Component {
   handleApply = (e) => {
     e.stopPropagation();
     let { startDate, endDate } = this.state;
-
     if (endDate === null) {
       endDate = startDate;
     }
@@ -96,16 +95,17 @@ class ComponentDatepicker extends React.Component {
     const ONE_DAY = 1000 * 60 * 60 * 24;
     const differenceMs = Math.abs(startDate - endDate);
     let dayCount = Math.round(differenceMs / ONE_DAY + 1);
+    const { t } = this.props;
 
     this.setState({
-      selectDate: dayCount + ' days',
+      selectDate: dayCount + t('txt_days'),
       isOpen: false,
     });
   };
 
   MyContainer = ({ className, children }) => {
     let { startDate, endDate } = this.state;
-
+    const { t } = this.props;
     return (
       <div ref={this.pickerRef} className="rounded-3 shadow overflow-hidden">
         <div className={className}>
@@ -122,7 +122,7 @@ class ComponentDatepicker extends React.Component {
               className="btn btn-success ms-3"
               onClick={this.handleApply}
             >
-              Apply
+              {t('txt_apply')}
             </span>
           </div>
         )}
@@ -133,7 +133,7 @@ class ComponentDatepicker extends React.Component {
   render() {
     let { startDate, endDate, selectDate, isOpen } = this.state;
     let { isDown } = this.props;
-
+    const { t } = this.props;
     return (
       <div
         ref={this.wrapperRef}
@@ -152,7 +152,7 @@ class ComponentDatepicker extends React.Component {
           selectsRange
           calendarContainer={this.MyContainer}
           popperPlacement="bottom-end"
-          placeholderText={selectDate}
+          placeholderText={t(selectDate)}
           open={isOpen}
           onBlur={this.handleOnBlur}
           disabled={true}
@@ -167,4 +167,4 @@ class ComponentDatepicker extends React.Component {
   }
 }
 
-export default ComponentDatepicker;
+export default withTranslation('common')(ComponentDatepicker);

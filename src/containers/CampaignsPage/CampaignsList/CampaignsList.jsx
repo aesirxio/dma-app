@@ -33,7 +33,7 @@ const CampaignsList = observer(
     getDataFormFilter = () => {
       return [
         {
-          name: 'projects',
+          name: 'txt_title_projects',
           option: this.filterFormViewModel.dropdownlistProjectValues,
           isMulti: true,
         },
@@ -45,7 +45,7 @@ const CampaignsList = observer(
     };
     render() {
       const { tableStatus, campaigns, pagination } = this.listViewModel;
-      const {t}=this.props;
+      const { t } = this.props;
       const tableRowHeader = [
         {
           Header: '',
@@ -60,7 +60,7 @@ const CampaignsList = observer(
           ),
         },
         {
-          Header: t("txt_campaign_name"),
+          Header: t('txt_campaign_name'),
           accessor: CAMPAIGNS_FIELD_KEY.NAME,
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
@@ -75,7 +75,7 @@ const CampaignsList = observer(
           SubCell: ({ row }) => <span>{row.original.name}</span>,
         },
         {
-          Header: t("txt_status"),
+          Header: t('txt_status'),
           accessor: CAMPAIGNS_FIELD_KEY.STATUS,
           className: 'status',
           Cell: ({ value }) => {
@@ -96,17 +96,17 @@ const CampaignsList = observer(
           ),
         },
         {
-          Header: t("start_date"),
+          Header: t('start_date'),
           accessor: CAMPAIGNS_FIELD_KEY.START_DATE,
         },
         {
-          Header: t("end_date"),
+          Header: t('end_date'),
           accessor: CAMPAIGNS_FIELD_KEY.END_DATE,
         },
       ];
 
       const dataFormFilter = this.getDataFormFilter();
-      
+
       return (
         <>
           <div className="mb-4 d-none">
@@ -123,7 +123,7 @@ const CampaignsList = observer(
             </div>
           </div>
           <div className="d-flex align-items-center justify-content-between mb-4">
-            <h2 className="text-blue-0">{t("txt_list_campaigns")}</h2>
+            <h2 className="text-blue-0">{t('txt_list_campaigns')}</h2>
             <CampaignsActionBar />
           </div>
           {campaigns ? (
@@ -142,7 +142,7 @@ const CampaignsList = observer(
                   listViewModel={this.listViewModel}
                   searchFunction={this.listViewModel.searchCampaign}
                   dataFormFilter={dataFormFilter}
-                  searchText= {t("search_your_campaign")}
+                  searchText={t('search_your_campaign')}
                   idKey={this.key}
                 />
               </div>
@@ -150,7 +150,7 @@ const CampaignsList = observer(
           ) : (
             <ComponentNoData
               icons="/assets/images/ic_campaigns.svg"
-              title={t("create_your_1st_campaigns")}
+              title={t('create_your_1st_campaigns')}
               width="w-50"
             />
           )}

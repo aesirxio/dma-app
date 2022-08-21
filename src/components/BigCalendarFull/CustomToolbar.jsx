@@ -12,8 +12,7 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 
-
-const CustomToolbar = (handleFilterCalendar) => {
+const CustomToolbar = (handleFilterCalendar, t) => {
   return class BaseToolbar extends Toolbar {
     render() {
       return (
@@ -23,7 +22,7 @@ const CustomToolbar = (handleFilterCalendar) => {
               className="cursor-pointer btn btn-outline-secondary btn_today"
               onClick={() => this.navigate('TODAY')}
             >
-              Today
+              {t('txt_today')}
             </button>
           </div>
           <div className="d-flex align-items-center">
@@ -48,30 +47,33 @@ const CustomToolbar = (handleFilterCalendar) => {
                   {this.props.view}
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="shadow border-0 p-3">
-                  <Dropdown.Item
-                    className="border-0 d-block w-100 color-blue-0 p-0 text-start mb-1"
-                    onClick={() => this.props.onView('day')}
-                  >
-                    day
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    className="border-0 d-block w-100 color-blue-0 p-0 text-start mb-1"
-                    onClick={() => this.props.onView('week')}
-                  >
-                    week
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    className="border-0 d-block w-100 color-blue-0 p-0 text-start"
-                    onClick={() => this.props.onView('month')}
-                  >
-                    month
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    className="border-0 d-block w-100 color-blue-0 p-0 text-start"
-                    onClick={() => this.props.onView('agenda')}
-                  >
-                    agenda
-                  </Dropdown.Item>
+                  <div className="rbc-btn-group w-100 d-block">
+                    <Dropdown.Item
+                      className="border-0 bg-transparent d-block w-100 color-blue-0 p-0 text-start mb-1"
+                      onClick={() => this.props.onView('day')}
+                    >
+                      {t('txt_days')}
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      className="border-0 bg-transparent d-block w-100 color-blue-0 p-0 text-start mb-1"
+                      onClick={() => this.props.onView('week')}
+                    >
+                      {t('txt_week')}
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      className="border-0 bg-transparent d-block w-100 color-blue-0 p-0 text-start"
+                      onClick={() => this.props.onView('month')}
+                    >
+                      {t('txt_month')}
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      className="border-0 bg-transparent d-block w-100 color-blue-0 p-0 text-start"
+                      onClick={() => this.props.onView('agenda')}
+                    >
+                      {t('txt_agenda')}
+                    </Dropdown.Item>
+                  </div>
+
                 </Dropdown.Menu>
               </Dropdown>
               <div className="ms-2">
@@ -82,7 +84,7 @@ const CustomToolbar = (handleFilterCalendar) => {
                   <i>
                     <FontAwesomeIcon icon={faFilter} />
                   </i>
-                  <span className="ms-2">Filter</span>
+                  <span className="ms-2">{t('txt_filter')}</span>
                 </button>
               </div>
             </div>

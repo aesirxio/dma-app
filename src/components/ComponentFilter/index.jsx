@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-
+import { withTranslation } from 'react-i18next';
 import SelectComponent from '../Select';
 
 let data = [
@@ -17,7 +17,7 @@ let data = [
     ],
   },
   {
-    name: 'Projects',
+    name: 'txt_title_projects',
     option: [
       { value: 'projects1', label: 'Projects 1' },
       { value: 'projects2', label: 'Projects 2' },
@@ -25,7 +25,7 @@ let data = [
     ],
   },
   {
-    name: 'Campaigns',
+    name: 'txt_campaign_name',
     option: [
       { value: 'campaigns1', label: 'Campaigns 1' },
       { value: 'campaigns2', label: 'Campaigns 2' },
@@ -96,13 +96,14 @@ class ComponentFilter extends React.Component {
 
   render() {
     data = this.props.dataFormFilter.length > 0 ? this.props.dataFormFilter : data;
+    const { t } = this.props;
     return (
       <div className="d-flex">
         {data.map((item, key) => {
           return (
             <div key={key} className="flex-1 px-1">
               <SelectComponent
-                placeholder={item.name}
+                placeholder={t(item.name)}
                 name={item.name}
                 onChange={(e) => this.handleSelect(e, item.name, item.isMulti, item.type)}
                 options={item.option}
@@ -120,4 +121,4 @@ class ComponentFilter extends React.Component {
     );
   }
 }
-export default ComponentFilter;
+export default withTranslation('common')(ComponentFilter);
