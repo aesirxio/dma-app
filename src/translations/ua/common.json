@@ -160,7 +160,20 @@
   "txt_0_days":"0 днів",
   "txt_week":"тиждень",
   "txt_month":"місячник",
-  "txt_agenda":"порядок денний"
+  "txt_agenda":"порядок денний",
+  "txt_nopost_agenda":"У цьому діапазоні немає подій.",
+  "txt_video":"відео",
+  "txt_digital_asset_management":"Управління цифровими активами",
+  "txt_digital_assets":"Цифровий актив",
+  "txt_publish": "Опублікувати",
+  "txt_when_to_publish_this?":"Коли опублікувати це?",
+  "txt_save_as_draft":"Зберегти як чернетку",
+  "txt_choose_file":"Виберіть файл",
+  "txt_select...":"Виберіть...",
+  "txt_project": "Демонструвати",
+  "txt_post_now":"Опублікувати зараз",
+  "txt_schedule":"розклад",
+  "txt_publish_date/time":"Дата/час публікації"
 
 
 

@@ -9,7 +9,7 @@ import Iframe from 'react-iframe';
 import { AUTHORIZATION_KEY, AXIOS_CONFIGS, GENERAL_CONFIG, Storage } from 'aesirx-dma-lib';
 import { io } from 'socket.io-client';
 import './index.scss';
-
+import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons/faImage';
 
@@ -86,6 +86,7 @@ class MediaDamButton extends React.Component {
   };
 
   render() {
+    const { t } = this.props;
     return (
       <>
         <button
@@ -97,11 +98,11 @@ class MediaDamButton extends React.Component {
             <FontAwesomeIcon icon={faImage} />
           </i>
           <span className="text-white ms-2">
-            {this.props.video ? 'Video' : 'Digital Asset Management'}
+            {this.props.video ? t('txt_video') : t('txt_digital_asset_management')}
           </span>
         </button>
         <ModalComponent
-          header={'Digital Assets'}
+          header={t('txt_digital_assets')}
           body={
             <Iframe
               url={this.urlDam}
@@ -126,4 +127,4 @@ MediaDamButton.defaultProps = {
   video: false,
 };
 
-export default MediaDamButton;
+export default withTranslation('common')(MediaDamButton);

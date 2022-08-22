@@ -160,7 +160,20 @@
   "txt_0_days":"0 days",
   "txt_week":"week",
   "txt_month":"month",
-  "txt_agenda":"agenda"
+  "txt_agenda":"agenda",
+  "txt_nopost_agenda":"There are no events in this range.",
+  "txt_video":"Video",
+  "txt_digital_asset_management":"Digital Asset Management",
+  "txt_digital_assets":"Digital Asset",
+  "txt_publish": "Publish",
+  "txt_when_to_publish_this?":"When to publish this ?",
+  "txt_save_as_draft":"Save As Draft",
+  "txt_choose_file":"Choose File",
+  "txt_select...":"Select...",
+  "txt_project": "Project",
+  "txt_post_now":"Post Now",
+  "txt_schedule":"Schedule",
+  "txt_publish_date/time":"Publish Date/time"
   
 
 
