@@ -119,6 +119,9 @@ class BigCalendarFull extends React.PureComponent {
             }}
             eventPropGetter={this.eventPropGetter}
             onNavigate={this.handleNavigate}
+            messages={{
+              noEventsInRange: t('txt_nopost_agenda'),
+            }}
           />
         </div>
         <CSSTransition in={this.state.isFilterCalendar} timeout={300} classNames="filter_calendar">

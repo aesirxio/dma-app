@@ -38,14 +38,14 @@ const ChannelsList = observer(
 
     render() {
       const { tableStatus, channelsData } = this.channelsListViewModel;
-      const {t}= this.props;
+      const { t } = this.props;
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
       }
 
       return (
         <div className="py-4 px-3">
-          <h2 className="text-blue-0 mb-4 text-blue-0">{t("txt_connect_a_channel")}</h2>
+          <h2 className="text-blue-0 mb-4 text-blue-0">{t('txt_connect_a_channel')}</h2>
           <div className="wrapper_tabs">
             <Tabs defaultActiveKey="0" id="connectContent-tab" className="bg-white border-0">
               {channelsData.map((channelCategory, index) => (

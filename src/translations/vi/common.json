@@ -160,7 +160,20 @@
   "txt_0_days":"0 days",
   "txt_week":"tuần",
   "txt_month":"tháng",
-  "txt_agenda":"nhật ký"
+  "txt_agenda":"nhật ký",
+  "txt_nopost_agenda":"Không có sự kiện nào trong phạm vi này.",
+  "txt_video":"Video",
+  "txt_digital_asset_management":"Quản lý tài sản kỹ thuật số",
+  "txt_digital_assets":"Tài sản kỹ thuật số",
+  "txt_publish": "Xuất bản",
+  "txt_when_to_publish_this?":"Khi nào thì xuất bản cái này?",
+  "txt_save_as_draft":"Lưu dưới dạng bản nháp",
+  "txt_choose_file":"Chọn tập tin",
+  "txt_select...":"Lựa chọn...",
+  "txt_project": "Dự án",
+  "txt_post_now":"Đăng ngay",
+  "txt_schedule":"Lịch trình",
+  "txt_publish_date/time":"Ngày / giờ xuất bản"
   
 
 

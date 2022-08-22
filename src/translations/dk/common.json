@@ -158,7 +158,20 @@
   "txt_0_days":"0 dage",
   "txt_week":"uge",
   "txt_month":"måned",
-  "txt_agenda":"dagsorden"
+  "txt_agenda":"dagsorden",
+  "txt_nopost_agenda":"Der er ingen begivenheder i dette interval.",
+  "txt_video":"Video",
+  "txt_digital_asset_management":"Digital Asset Management",
+  "txt_digital_assets":"Digitalt aktiv",
+  "txt_publish": "Offentliggøre",
+  "txt_when_to_publish_this?":"Hvornår skal dette offentliggøres?",
+  "txt_save_as_draft":"Gem som kladde",
+  "txt_choose_file":"Vælg fil",
+  "txt_select...":"Vælg...",
+  "txt_project": "Projekt",
+  "txt_post_now":"Send nu",
+  "txt_schedule":"Tidsplan",
+  "txt_publish_date/time":"Udgiv dato/tid"
 
 
 

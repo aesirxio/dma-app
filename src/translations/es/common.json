@@ -126,7 +126,7 @@
   "create_campaign":"Crear Campaña",
   "edit_campaign":"Editar campaña",
   "save_campaign":"Guardar Campaña",
-  "txt_status":"Status",
+  "txt_status":"Estado",
   "create_your_1st_campaigns":"Crear su primera campaña",
   "create_your_1st_project":"Crear su primer proyecto",
   "create_your_1st_persona":"crear su primera personal",
@@ -160,7 +160,20 @@
   "txt_0_days":"0 días",
   "txt_week":"semana",
   "txt_month":"mes",
-  "txt_agenda":"orden del día"
+  "txt_agenda":"orden del día",
+  "txt_nopost_agenda":"No hay eventos en este rango.",
+  "txt_video":"Video",
+  "txt_digital_asset_management":"Gestión de activos digitales",
+  "txt_digital_assets":"Activo digital",
+  "txt_publish": "Publicar",
+  "txt_when_to_publish_this?":"¿Cuándo publicar esto?",
+  "txt_save_as_draft":"Guardar como borrador",
+  "txt_choose_file":"Elija el archivo",
+  "txt_select...":"Seleccione...",
+  "txt_project": "Proyecto",
+  "txt_post_now":"Publicar ahora",
+  "txt_schedule":"Calendario",
+  "txt_publish_date/time":"Fecha/hora de publicación"
 
 
 

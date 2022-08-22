@@ -15,6 +15,23 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 const CustomToolbar = (handleFilterCalendar, t) => {
   return class BaseToolbar extends Toolbar {
     render() {
+      let currentView = 'month';
+      switch (this.props.view) {
+        case 'month':
+          currentView = 'txt_month';
+          break;
+        case 'day':
+          currentView = 'txt_days';
+          break;
+        case 'week':
+          currentView = 'txt_week';
+          break;
+        case 'agenda':
+          currentView = 'txt_agenda';
+          break;
+        default:
+          break;
+      }
       return (
         <div className="toolbar-container d-flex justify-content-between align-items-center mb-3">
           <div className="back-next-buttons">
@@ -44,7 +61,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
             <div className="position-relative d-flex align-items-center">
               <Dropdown>
                 <Dropdown.Toggle variant="outline-secondary" id="dropdown-custom-components">
-                  {this.props.view}
+                  {t(currentView)}
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="shadow border-0 p-3">
                   <div className="rbc-btn-group w-100 d-block">
@@ -73,7 +90,6 @@ const CustomToolbar = (handleFilterCalendar, t) => {
                       {t('txt_agenda')}
                     </Dropdown.Item>
                   </div>
-
                 </Dropdown.Menu>
               </Dropdown>
               <div className="ms-2">

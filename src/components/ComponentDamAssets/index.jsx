@@ -10,6 +10,7 @@ import DamButton from '../DamButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons/faCloudUploadAlt';
 import ComponentImage from '../ComponentImage';
+import { withTranslation } from 'react-i18next';
 
 class ComponentDamAssets extends React.Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class ComponentDamAssets extends React.Component {
 
   render() {
     const { linkImage, checkTypeImage, imageDam } = this.state;
+    const { t } = this.props;
     return (
       <>
         <Form.Group className={`mb-4`}>
@@ -61,7 +63,7 @@ class ComponentDamAssets extends React.Component {
                 <div className="text-center ms-1">
                   {/* <p className="mb-0">Drag and drop a file here </p> */}
                   <p className="mb-0 ms-2">
-                    <strong>Choose file</strong>
+                    <strong>{t('txt_choose_file')}</strong>
                   </p>
                 </div>
               </div>
@@ -81,4 +83,4 @@ class ComponentDamAssets extends React.Component {
   }
 }
 
-export default ComponentDamAssets;
+export default withTranslation('common')(ComponentDamAssets);

@@ -46,12 +46,12 @@ class CampaignsForm extends Component {
     const valueProject = dropdownlistProjectValues
       ? dropdownlistProjectValues.find((elm) => parseInt(elm.value) === parseInt(projectId))
       : null;
-      const {t}= this.props;
+    const { t } = this.props;
     return [
       {
         fields: [
           {
-            label: 'Project',
+            label: t('txt_project'),
             key: CAMPAIGNS_FIELD_KEY.PROJECT,
             type: FORM_FIELD_TYPE.DROPDOWN,
             value: valueProject,
@@ -66,7 +66,7 @@ class CampaignsForm extends Component {
             },
           },
           {
-            label: t("txt_campaign_name"),
+            label: t('txt_campaign_name'),
             key: CAMPAIGNS_FIELD_KEY.NAME,
             type: FORM_FIELD_TYPE.INPUT,
             value: this.formPropsData[CAMPAIGNS_FIELD_KEY.NAME],
@@ -84,7 +84,7 @@ class CampaignsForm extends Component {
           {
             type: FORM_FIELD_TYPE.DATERANGE,
             startField: {
-              label: t("start_date"),
+              label: t('start_date'),
               key: CAMPAIGNS_FIELD_KEY.START_DATE,
               value: this.formPropsData[CAMPAIGNS_FIELD_KEY.START_DATE],
               changed: (date) => {
@@ -97,7 +97,7 @@ class CampaignsForm extends Component {
               },
             },
             endField: {
-              label: t("end_date"),
+              label: t('end_date'),
               key: CAMPAIGNS_FIELD_KEY.END_DATE,
               value: this.formPropsData[CAMPAIGNS_FIELD_KEY.END_DATE],
               changed: (date) => {
@@ -107,7 +107,7 @@ class CampaignsForm extends Component {
           },
 
           {
-            label: t("txt_budget"),
+            label: t('txt_budget'),
             key: `${CAMPAIGNS_FIELD_KEY.DATA}`,
             type: FORM_FIELD_TYPE.PRICE,
             value: this.formPropsData[CAMPAIGNS_FIELD_KEY.DATA].budget,
