@@ -64,11 +64,13 @@ class BigCalendarFull extends React.PureComponent {
       history.push(`content-edit/${event.id}`);
     };
 
+    const time = moment(event.start).format("h:mm A");
+
     return (
-      <div onClick={event.type === 'planing' ? '' : navigateEditPost}>
+      <div title={time+ " | " +event.title} onClick={event.type === 'planing' ? '' : navigateEditPost}>
         <div className={divClass}>
           <span style={{ cursor: 'pointer' }} className={spanClass + " w-100 text-decoration-none d-inline-block"}>
-            <span className='wrapper_des_event_time'>{moment(event.start).format("h:mm A")} | </span><span>{event.title}</span>
+            <span className='wrapper_des_event_time'>{time} | </span><span>{event.title}</span>
           </span>
         </div>
       </div>

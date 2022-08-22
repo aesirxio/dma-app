@@ -32,7 +32,13 @@
       height: auto;
     }
   }
-
+  .rbc-event{
+    padding: 0;
+    background-color: transparent;
+    .rbc-event-label{
+      display: none;
+    }
+  }
   .rbc-btn-group {
     button {
       &:focus {
@@ -228,10 +234,6 @@
     .rbc-timeslot-group {
       min-height: 45px;
     }
-    .rbc-day-slot .rbc-background-event,
-    .rbc-day-slot .rbc-event {
-      height: 50px !important;
-    }
   }
   .rbc-month-row {
     overflow: visible;
@@ -242,8 +244,17 @@
 }
 
 .label-rounded {
-  padding: 5px;
+  padding: 6px;
   border-radius: 5px;
+}
+.rbc-time-view{
+  .rbc-event{
+    border : 1px solid #3e8bfe !important;
+  }
+  .label-rounded {
+    padding: 1px 7px 4px;
+    border-radius: 5px;
+  }
 }
 
 .rbc-row {
@@ -261,7 +272,7 @@
   background: rgba(211, 0, 17, 0.2);
 }
 .facebook_calendar_background {
-  background: rgba(13, 110, 253, 0.2);
+  background: #cfe2ff;
 }
 
 .twitter_calendar_background {
@@ -375,4 +386,9 @@
 }
 .planing {
   pointer-events: none;
+}
+.rbc-day-slot {
+  .rbc-events-container {
+    margin-right: 0;
+  }
 }
