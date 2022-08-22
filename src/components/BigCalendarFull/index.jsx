@@ -55,7 +55,7 @@ class BigCalendarFull extends React.PureComponent {
 
   Event = ({ event }) => {
     let divClass = 'wrapper_des_event d-inline-block w-100 shadow label-rounded ';
-    let spanClass = 'fw-bold text-wrap opacity-75 ';
+    let spanClass = 'fw-semibold text-wrap opacity-75 ';
     const channelName = event.channel.length > 0 ? event?.channel[0]?.alias : 'facebook';
     divClass += channelName + '_calendar_background ';
     spanClass += channelName + '_calendar_text';
@@ -63,11 +63,14 @@ class BigCalendarFull extends React.PureComponent {
     const navigateEditPost = () => {
       history.push(`content-edit/${event.id}`);
     };
+
+    const time = moment(event.start).format("h:mm A");
+
     return (
-      <div onClick={event.type === 'planing' ? '' : navigateEditPost}>
+      <div title={time+ " | " +event.title} onClick={event.type === 'planing' ? '' : navigateEditPost}>
         <div className={divClass}>
-          <span style={{ cursor: 'pointer' }} className="w-100 text-decoration-none d-inline-block">
-            <span className={spanClass}>{event.title}</span>
+          <span style={{ cursor: 'pointer' }} className={spanClass + " w-100 text-decoration-none d-inline-block"}>
+            <span className='wrapper_des_event_time'>{time} | </span><span>{event.title}</span>
           </span>
         </div>
       </div>
@@ -90,10 +93,10 @@ class BigCalendarFull extends React.PureComponent {
     let events = this.props?.events
       ? this.props?.events.map((content) => {
           const date = moment(content[CONTENT_FIELD_KEY.DATE], 'DD/MM/YYYY HH:mm');
-          const ampm = date.toDate().getHours() >= 12 ? 'PM' : 'AM';
+
           return {
             id: content[CONTENT_FIELD_KEY.ID],
-            title: date.toDate().getHours() + ' ' + ampm + ' | ' + content[CONTENT_FIELD_KEY.NAME],
+            title: content[CONTENT_FIELD_KEY.NAME],
             allDay: false,
             start: date.toDate(),
             end: date.toDate(),
