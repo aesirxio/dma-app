@@ -15,6 +15,11 @@ import { CSSTransition } from 'react-transition-group';
 import history from '../../routes/history';
 import { withTranslation } from 'react-i18next';
 
+import 'moment/locale/vi';
+import 'moment/locale/es';
+import 'moment/locale/uk';
+import 'moment/locale/de';
+
 const localizer = momentLocalizer(moment);
 
 class BigCalendarFull extends React.PureComponent {
@@ -82,7 +87,7 @@ class BigCalendarFull extends React.PureComponent {
   };
 
   render() {
-    const { t } = this.props;
+    const { t, i18n } = this.props;
     let events = this.props?.events
       ? this.props?.events.map((content) => {
           const date = moment(content[CONTENT_FIELD_KEY.DATE], 'DD/MM/YYYY HH:mm');
@@ -107,6 +112,7 @@ class BigCalendarFull extends React.PureComponent {
       <div className="wr_calendar h-100 ">
         <div className="wr_calendar--left">
           <Calendar
+            culture={i18n.language || 'en'}
             popup
             localizer={localizer}
             events={events}
