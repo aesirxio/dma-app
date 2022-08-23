@@ -40,7 +40,7 @@ i18n
         common: common_es,
       },
     },
-    lng: 'en',
+    lng: localStorage.getItem('i18nextLng') || 'en',
     fallbackLng: 'en',
     debug: !process.env.NODE_ENV || process.env.NODE_ENV === 'development',
 

@@ -121,6 +121,9 @@ class BigCalendarFull extends React.PureComponent {
             onNavigate={this.handleNavigate}
             messages={{
               noEventsInRange: t('txt_nopost_agenda'),
+              showMore: function (e) {
+                return `+${e}  ${t('txt_more')}`;
+              },
             }}
           />
         </div>
