@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import DatePicker from 'react-datepicker';
+import DatePicker, { registerLocale } from 'react-datepicker';
 import moment from 'moment';
 import { format } from 'date-fns';
 import { withTranslation } from 'react-i18next';
@@ -13,6 +13,15 @@ import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 
 import './index.scss';
+
+import vi from 'date-fns/locale/vi';
+import de from 'date-fns/locale/de';
+import uk from 'date-fns/locale/uk';
+import es from 'date-fns/locale/es';
+registerLocale('vi', vi);
+registerLocale('de', de);
+registerLocale('uk', uk);
+registerLocale('es', es);
 
 class ComponentDatepicker extends React.Component {
   constructor(props) {
@@ -133,7 +142,8 @@ class ComponentDatepicker extends React.Component {
   render() {
     let { startDate, endDate, selectDate, isOpen } = this.state;
     let { isDown } = this.props;
-    const { t } = this.props;
+    const { t, i18n } = this.props;
+
     return (
       <div
         ref={this.wrapperRef}
@@ -156,6 +166,7 @@ class ComponentDatepicker extends React.Component {
           open={isOpen}
           onBlur={this.handleOnBlur}
           disabled={true}
+          locale={i18n.language}
         />
         {isDown && (
           <i className="text-green">

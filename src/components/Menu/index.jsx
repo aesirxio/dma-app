@@ -8,11 +8,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './index.scss';
-import i18n from 'translations/i18n';
 import { withTranslation } from 'react-i18next';
-import { Dropdown } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';
 
 class Menu extends React.Component {
   constructor(props) {
@@ -95,9 +91,6 @@ class Menu extends React.Component {
   render() {
     let { dataMenu } = this.state;
     const { t } = this.props;
-    const listLanguages = Object.keys(i18n.options.resources).map(function (key) {
-      return { language: key, title: i18n.options.resources[key].title };
-    });
     return (
       <nav>
         <ul id="wr_list_menu" className="list-unstyled mb-0 p-3 pt-md-1">
@@ -127,31 +120,6 @@ class Menu extends React.Component {
             );
           })}
         </ul>
-        <div className="position-absolute bottom-0 mb-3 border-top w-100 py-1 button-language">
-          <Dropdown className="pt-2 ">
-            <Dropdown.Toggle variant="dark" id="dropdown-basic" className="bg-transparent border-0">
-              <FontAwesomeIcon icon={faGlobe} /> {this.language ?? 'English'}
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              {listLanguages.map((item, index) => {
-                return (
-                  <Dropdown.Item
-                    key={index}
-                    href="#"
-                    className=""
-                    onClick={() => {
-                      i18n.changeLanguage(item.language);
-                      this.setState((this.language = item.title));
-                    }}
-                  >
-                    {item.title}
-                  </Dropdown.Item>
-                );
-              })}
-            </Dropdown.Menu>
-          </Dropdown>
-        </div>
       </nav>
     );
   }
