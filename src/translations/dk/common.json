@@ -32,7 +32,7 @@
   "txt_if_you_do_not_receive_the_email": "Modtog du ikke vores mail?, så klik på knappen herunder for at få gensendt verifikations mailen.",
   "txt_resend_email": "Gensend mailen",
   "txt_search_for_something": "Søg efter noget ...",
-
+  "txt_create_project" : "Opret projekt",
   "txt_recent": "For nylig",
   "txt_view_all_projects": "Se alle projekter",
   "txt_search_projects": "Søg projekter ...",
@@ -57,7 +57,7 @@
   "txt_title_calendar": "Planlæg",
   "txt_title_projects": "Projekter",
   "txt_title_campaigns": "List kampagner",
-  "txt_title_content": "List posts",
+  "txt_title_content": "Liste indlæg",
   "txt_title_channels": "Tilslut en kanal",
   "txt_title_digital_assets": "Digitale aktiver",
   "txt_title_new_calendar": "Ny tidsplan",
