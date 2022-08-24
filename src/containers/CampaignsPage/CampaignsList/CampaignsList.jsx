@@ -144,6 +144,7 @@ const CampaignsList = observer(
                   dataFormFilter={dataFormFilter}
                   searchText={t('search_your_campaign')}
                   idKey={this.key}
+                  view={this.view}
                 />
               </div>
             )

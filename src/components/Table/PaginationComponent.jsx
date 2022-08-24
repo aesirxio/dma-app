@@ -40,8 +40,8 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
         <button
           key={i}
           onClick={() => handleGoToPage(i)}
-          className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 ${
-            i === currentNumber ? 'active bg-red text-white border-red' : 'text-color'
+          className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 rounded-circle ${
+            i === currentNumber ? 'active bg-green text-white border-green' : 'text-color'
           } ${
             i === currentNumber - 1 ||
             i === currentNumber - 2 ||

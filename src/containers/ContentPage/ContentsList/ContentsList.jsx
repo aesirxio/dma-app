@@ -172,6 +172,7 @@ const ContentsList = observer(
               searchText={t('search_your_post')}
               classNameTable={'wr_content_list'}
               idKey={this.key}
+              view={this.view}
             />
           ) : (
             <ComponentNoData

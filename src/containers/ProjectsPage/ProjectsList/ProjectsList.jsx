@@ -99,6 +99,7 @@ const ProjectsList = observer(
               searchText={t("search_your_project")}
               hasSubRow={false}
               _handleList={this._handleList}
+              view={this.view}
             />
           ) : (
             <ComponentNoData

@@ -6,7 +6,6 @@
 import React from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import moment from 'moment';
-import { format } from 'date-fns';
 import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay';
@@ -27,10 +26,14 @@ class ComponentDatepicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      startDate: null,
-      endDate: null,
+      startDate: props?.filter?.datetime?.startDate
+        ? moment(props?.filter?.datetime?.startDate).toDate()
+        : null,
+      endDate: props?.filter?.datetime?.endDate
+        ? moment(props?.filter?.datetime?.endDate).toDate()
+        : null,
       isOpen: false,
-      selectDate: 'txt_0_days',
+      selectDate: props?.filter?.datetime?.selectDate ?? '0',
     };
 
     this.wrapperRef = React.createRef();
@@ -87,27 +90,28 @@ class ComponentDatepicker extends React.Component {
       endDate = startDate;
     }
 
-    let startDateToFilter = new Date(startDate);
-    startDateToFilter.setDate(startDate.getDate() - 1);
-
-    let endDateToFilter = new Date(endDate);
-    endDateToFilter.setDate(endDate.getDate() + 1);
+    const startDateToFilter = moment(startDate);
+    const endDateToFilter = moment(endDate);
+    const selectDate = endDateToFilter.diff(startDateToFilter, 'days') + 1;
 
     let { setGlobalFilter } = this.props;
 
     setGlobalFilter &&
       setGlobalFilter({
-        startDate: format(new Date(startDateToFilter), 'yyyy-MM-dd'),
-        endDate: format(new Date(endDateToFilter), 'yyyy-MM-dd'),
+        startDate: startDateToFilter.format('yyyy-MM-DD'),
+        endDate: endDateToFilter.format('yyyy-MM-DD'),
       });
 
-    const ONE_DAY = 1000 * 60 * 60 * 24;
-    const differenceMs = Math.abs(startDate - endDate);
-    let dayCount = Math.round(differenceMs / ONE_DAY + 1);
-    const { t } = this.props;
-
+    this.props.setFilter(
+      {
+        startDate: startDateToFilter.toDate(),
+        endDate: endDateToFilter.toDate(),
+        selectDate,
+      },
+      4
+    );
     this.setState({
-      selectDate: dayCount + t('txt_days'),
+      selectDate: selectDate,
       isOpen: false,
     });
   };
@@ -157,12 +161,13 @@ class ComponentDatepicker extends React.Component {
           onChange={this.onChange}
           className="border-0 w-100 rounded-2 h-100 ps-2 bg-transparent cursor-pointer text-blue-0"
           monthsShown={2}
+          value={selectDate + ' ' + t('txt_days')}
+          selected={startDate}
           startDate={startDate}
           endDate={endDate}
           selectsRange
           calendarContainer={this.MyContainer}
           popperPlacement="bottom-end"
-          placeholderText={t(selectDate)}
           open={isOpen}
           onBlur={this.handleOnBlur}
           disabled={true}

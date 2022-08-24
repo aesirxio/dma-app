@@ -131,6 +131,7 @@
     .dropdown-item {
       color: var(--dropdown-item-color) !important;
       &:hover,
+      &:focus,
       &:active {
         background-color: var(--dropdown-item-hover-bg) !important;
       }
