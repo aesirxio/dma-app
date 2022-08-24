@@ -109,6 +109,7 @@ class List extends React.Component {
   }
 
   render() {
+    const {t} = this.props;
     return (
       <div>
         <div className="row">
@@ -123,7 +124,7 @@ class List extends React.Component {
                       className="img-avatar ms-2"
                     />
                   </div>
-                  <h6 className="fw-bold mb-2">{value.projectName}</h6>
+                  <h6 className="fw-bold mb-2">{t(value.projectName)}</h6>
                   <p className="mb-3">{value.text}</p>
                   <ProgressBar className="mb-3">
                     <ProgressBar

@@ -19,7 +19,7 @@ import AvatarDAM from '../Layout/AvatarDAM';
 import SubmitButton from '../Layout/SubmitButton';
 import ComponentImage from '../../../components/ComponentImage';
 import { Storage } from 'aesirx-dma-lib';
-
+import { withTranslation } from 'react-i18next';
 const DamButton = lazy(() => import('../../../components/DamButton'));
 
 const UpdateGeneral = observer(
@@ -101,7 +101,7 @@ const UpdateGeneral = observer(
         {
           fields: [
             {
-              label: 'Username',
+              label: 'txt_Username',
               key: UPDATE_GENERAL_FIELD_KEY.USERNAME,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME],
@@ -109,7 +109,7 @@ const UpdateGeneral = observer(
               readOnly: true,
             },
             {
-              label: 'Email',
+              label: 'txt_Email',
               key: UPDATE_GENERAL_FIELD_KEY.EMAIL,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.EMAIL],
@@ -117,7 +117,7 @@ const UpdateGeneral = observer(
               readOnly: true,
             },
             {
-              label: 'Status',
+              label: 'txt_Status',
               key: 'status',
               type: FORM_FIELD_TYPE.INPUT,
               value: 'Active',
@@ -126,7 +126,7 @@ const UpdateGeneral = observer(
               readOnly: true,
             },
             {
-              label: 'Full name',
+              label: 'txt_Fullname',
               key: UPDATE_GENERAL_FIELD_KEY.FULLNAME,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.FULLNAME],
@@ -136,7 +136,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'Phone',
+              label: 'txt_Phone',
               key: UPDATE_GENERAL_FIELD_KEY.PHONE,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.PHONE],
@@ -146,7 +146,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'Birthday',
+              label: 'txt_Birthday',
               key: UPDATE_GENERAL_FIELD_KEY.BIRTHDAY,
               type: FORM_FIELD_TYPE.BIRTHDAY,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.BIRTHDAY],
@@ -163,7 +163,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'Address 1',
+              label: 'txt_Address_1',
               key: UPDATE_GENERAL_FIELD_KEY.ADDRESS,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.ADDRESS],
@@ -173,7 +173,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'Address 2',
+              label: 'txt_Address_2',
               key: UPDATE_GENERAL_FIELD_KEY.ADDRESS_2,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.ADDRESS_2],
@@ -183,7 +183,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'City',
+              label: 'txt_City',
               key: UPDATE_GENERAL_FIELD_KEY.CITY,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.CITY],
@@ -193,7 +193,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'State',
+              label: 'txt_State',
               key: UPDATE_GENERAL_FIELD_KEY.STATE,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.STATE],
@@ -203,7 +203,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'Country',
+              label: 'txt_Country',
               key: UPDATE_GENERAL_FIELD_KEY.COUNTRY,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.COUNTRY],
@@ -213,7 +213,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'Zipcode',
+              label: 'txt_Zipcode',
               key: UPDATE_GENERAL_FIELD_KEY.ZIPCODE,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.ZIPCODE],
@@ -236,44 +236,49 @@ const UpdateGeneral = observer(
           {!memberInfo ? (
             <Spinner />
           ) : (
-            <div className="bg-white p-3 row">
-              <FormComponent
-                formClassName={'col-9 row'}
-                generateFormSetting={() => this.generateFormSetting()}
-                formPropsData={this.formPropsData}
-                viewModel={this.updateGeneralViewModel}
-                key={Math.random(40, 200)}
-              />
+            <div className="bg-white p-3 rounded-3">
+              <div className="row">
+                <FormComponent
+                  formClassName={'col-9 row'}
+                  generateFormSetting={() => this.generateFormSetting()}
+                  formPropsData={this.formPropsData}
+                  viewModel={this.updateGeneralViewModel}
+                  key={Math.random(40, 200)}
+                />
 
-              <AvatarDAM>
-                <div
-                  className={`position-relative cursor-pointer wr_upload_images ${
-                    getUrlImage.length > 0 ? 'active_img' : ''
-                  }`}
-                >
-                  {!getUrlImage ? (
-                    <div className="wr_img_thumbnail_dam position-relative m-2">
-                      <ComponentImage
-                        className={`img-thumbnail rounded imgTab`}
-                        src={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]}
-                        alt={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME]}
+                <AvatarDAM>
+                  <div
+                    className={`position-relative cursor-pointer wr_upload_images ${
+                      getUrlImage.length > 0 ? 'active_img' : ''
+                    }`}
+                  >
+                    {!getUrlImage ? (
+                      <div className="wr_img_thumbnail_dam position-relative m-2">
+                        <ComponentImage
+                          className={`img-thumbnail rounded imgTab`}
+                          src={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]}
+                          alt={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME]}
+                        />
+                      </div>
+                    ) : null}
+                    <div className="main_upload_images">
+                      <DamButton
+                        data={getUrlImage}
+                        changed={(data) => this.handleDamAssets(data)}
                       />
                     </div>
-                  ) : null}
-                  <div className="main_upload_images">
-                    <DamButton data={getUrlImage} changed={(data) => this.handleDamAssets(data)} />
+                    {getUrlImage ? (
+                      <div
+                        onClick={() => this.clearImage(memberInfo.avatar_dam)}
+                        className={'clear_image_button'}
+                      >
+                        <FontAwesomeIcon icon={faTimesCircle} className="text-white" />
+                      </div>
+                    ) : null}
                   </div>
-                  {getUrlImage ? (
-                    <div
-                      onClick={() => this.clearImage(memberInfo.avatar_dam)}
-                      className={'clear_image_button'}
-                    >
-                      <FontAwesomeIcon icon={faTimesCircle} className="text-white" />
-                    </div>
-                  ) : null}
-                </div>
-              </AvatarDAM>
-              <SubmitButton validateInfoBeforeSending={this.validateInfoBeforeSending} />
+                </AvatarDAM>
+                <SubmitButton validateInfoBeforeSending={this.validateInfoBeforeSending} />
+              </div>
             </div>
           )}
         </>
@@ -282,4 +287,4 @@ const UpdateGeneral = observer(
   }
 );
 
-export default witheProfileViewModel(UpdateGeneral);
+export default withTranslation('common')(witheProfileViewModel(UpdateGeneral));

@@ -9,7 +9,7 @@ import { observer } from 'mobx-react';
 import { withCampaignsViewModel } from '../CampaignsViewModels/CampaignsViewModelContextProvider';
 import { Button } from 'react-bootstrap';
 import SimpleReactValidator from 'simple-react-validator';
-
+import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import PAGE_STATUS from '../../../constants/PageStatus';
@@ -49,6 +49,7 @@ const CampaignsFormModal = observer(
 
     render() {
       const { show, editMode, formStatus } = this.CampaignsFormModalViewModal;
+      const {t}= this.props;
 
       if (!show) {
         return null;
@@ -62,7 +63,7 @@ const CampaignsFormModal = observer(
         <ModalComponent
           show={show}
           onHide={this.CampaignsFormModalViewModal.closeModal}
-          header={editMode === false || editMode == null ? 'Create Campaign' : 'Edit Campaign'}
+          header={editMode === false || editMode == null ? t("create_campaign") : t("edit_campaign")}
           body={
             <CampaignsForm
               viewModel={this.CampaignsFormModalViewModal}
@@ -72,7 +73,7 @@ const CampaignsFormModal = observer(
           footer={
             <Button onClick={this.saveCampaignsHandler} className="btn btn-success w-100">
               <span>
-                {editMode === false || editMode == null ? 'Create Campaign' : 'Save Campaign'}
+                {editMode === false || editMode == null ? t("create_campaign") : t("save_campaign")}
               </span>
               <i className="ms-1">
                 <FontAwesomeIcon icon={faChevronRight} />
@@ -86,4 +87,4 @@ const CampaignsFormModal = observer(
   }
 );
 
-export default withCampaignsViewModel(CampaignsFormModal);
+export default withTranslation('common')(withCampaignsViewModel(CampaignsFormModal));

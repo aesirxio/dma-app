@@ -16,6 +16,7 @@ import ContentUtils from '../../ContentUtils/ContentUtils';
 import DatePickerDay from '../../../../components/ComponentSchedule/DatePickerDay';
 import DatePickerTime from '../../../../components/ComponentSchedule/DatePickerTime';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
+import { withTranslation, useTranslation } from 'react-i18next';
 
 const ContentFormPublishShedule = observer(({ formPropsData, channelCategory = null }) => {
   const mode = formPropsData[CONTENT_FIELD_KEY.MODE];
@@ -95,7 +96,7 @@ const ContentFormPublishShedule = observer(({ formPropsData, channelCategory = n
       channelTypesIds()
     );
   }, [formPropsData, mode, startTime, channelTypesIds]);
-
+  const { t } = useTranslation('common');
   return (
     <>
       <div className="d-flex mb-3">
@@ -108,7 +109,7 @@ const ContentFormPublishShedule = observer(({ formPropsData, channelCategory = n
             id={`now_${htmlId}`}
           />
           <label className="form-check-label" htmlFor={`now_${htmlId}`}>
-            Post now
+            {t('txt_post_now')}
           </label>
         </div>
       </div>
@@ -123,13 +124,13 @@ const ContentFormPublishShedule = observer(({ formPropsData, channelCategory = n
               onChange={() => handleRadio(CONTENT_PUBLISH_MODE.SCHEDULE)}
             />
             <label className="form-check-label" htmlFor={`schedule_${htmlId}`}>
-              Schedule
+              {t('txt_schedule')}
             </label>
           </div>
         </div>
         {publishMode === CONTENT_PUBLISH_MODE.SCHEDULE && (
           <>
-            <p className="mb-2">Publish date/time</p>{' '}
+            <p className="mb-2">{t('txt_publish_date/time')}</p>{' '}
             <div className="d-flex mb-3">
               <div className="item w-50 wr_item_schedule">
                 <DatePickerDay
@@ -152,4 +153,4 @@ const ContentFormPublishShedule = observer(({ formPropsData, channelCategory = n
   );
 });
 
-export default ContentFormPublishShedule;
+export default withTranslation('common')(ContentFormPublishShedule);

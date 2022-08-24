@@ -11,7 +11,7 @@ import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
 
 import PAGE_STATUS from '../../../constants/PageStatus';
-
+import { withTranslation } from 'react-i18next';
 import Spinner from '../../../components/Spinner';
 import { renderingGroupFieldHandler } from '../../../utils/form';
 
@@ -36,13 +36,14 @@ class ProjectForm extends Component {
 
     this.viewModel.setForm(this);
   }
-
+  
   generateFormSetting = () => {
+    const {t} = this.props;
     return [
       {
         fields: [
           {
-            label: 'Project Name',
+            label: t("txt_project_name"),
             key: PROJECT_COLUMN_INDICATOR.NAME,
             type: FORM_FIELD_TYPE.INPUT,
             value: this.formPropsData[PROJECT_COLUMN_INDICATOR.NAME],
@@ -60,7 +61,7 @@ class ProjectForm extends Component {
           {
             type: FORM_FIELD_TYPE.DATERANGE,
             startField: {
-              label: 'Start Date',
+              label: t("start_date"),
               key: PROJECT_COLUMN_INDICATOR.START_DATE,
               value: this.formPropsData[PROJECT_COLUMN_INDICATOR.START_DATE],
               changed: (date) => {
@@ -73,7 +74,7 @@ class ProjectForm extends Component {
               },
             },
             endField: {
-              label: 'End Date',
+              label: t("end_date"),
               key: PROJECT_COLUMN_INDICATOR.END_DATE,
               value: this.formPropsData[PROJECT_COLUMN_INDICATOR.END_DATE],
               changed: (date) => {
@@ -87,7 +88,7 @@ class ProjectForm extends Component {
             },
           },
           {
-            label: 'Project Logo',
+            label: t("txt_project_logo"),
             key: PROJECT_COLUMN_INDICATOR.LOGO,
             type: FORM_FIELD_TYPE.DAM,
             value: this.formPropsData[PROJECT_COLUMN_INDICATOR.LOGO],
@@ -98,7 +99,7 @@ class ProjectForm extends Component {
             },
           },
           {
-            label: 'Short description about project',
+            label: t("txt_short_description_about_project"),
             key: PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION,
             type: FORM_FIELD_TYPE.TEXTAREA,
             value: this.formPropsData[PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION],
@@ -158,4 +159,4 @@ class ProjectForm extends Component {
   }
 }
 
-export default ProjectForm;
+export default withTranslation('common')(ProjectForm);

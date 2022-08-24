@@ -4,14 +4,23 @@
  */
 
 import React from 'react';
-import DatePicker from 'react-datepicker';
+import DatePicker, { registerLocale } from 'react-datepicker';
 import moment from 'moment';
-
+import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 
 import './index.scss';
+
+import vi from 'date-fns/locale/vi';
+import de from 'date-fns/locale/de';
+import uk from 'date-fns/locale/uk';
+import es from 'date-fns/locale/es';
+registerLocale('vi', vi);
+registerLocale('de', de);
+registerLocale('uk', uk);
+registerLocale('es', es);
 
 class ComponentDatepicker extends React.Component {
   constructor(props) {
@@ -24,7 +33,7 @@ class ComponentDatepicker extends React.Component {
         ? moment(props?.filter?.datetime?.endDate).toDate()
         : null,
       isOpen: false,
-      selectDate: props?.filter?.datetime?.selectDate ?? '0 days',
+      selectDate: props?.filter?.datetime?.selectDate ?? '0',
     };
 
     this.wrapperRef = React.createRef();
@@ -77,14 +86,13 @@ class ComponentDatepicker extends React.Component {
   handleApply = (e) => {
     e.stopPropagation();
     let { startDate, endDate } = this.state;
-
     if (endDate === null) {
       endDate = startDate;
     }
 
     const startDateToFilter = moment(startDate);
     const endDateToFilter = moment(endDate);
-    const selectDate = endDateToFilter.diff(startDateToFilter, 'days') + 1 + ' days';
+    const selectDate = endDateToFilter.diff(startDateToFilter, 'days') + 1;
 
     let { setGlobalFilter } = this.props;
 
@@ -110,14 +118,14 @@ class ComponentDatepicker extends React.Component {
 
   MyContainer = ({ className, children }) => {
     let { startDate, endDate } = this.state;
-
+    const { t } = this.props;
     return (
-      <div ref={this.pickerRef} className="p-3 bg-white rounded-3 shadow">
+      <div ref={this.pickerRef} className="rounded-3 shadow overflow-hidden">
         <div className={className}>
           <div className="position-relative border-0">{children}</div>
         </div>
         {startDate && (
-          <div className="d-flex align-items-center justify-content-end border-top-1 pt-3">
+          <div className="d-flex align-items-center justify-content-end border-top-1 p-3">
             <p className="fs-14 color-bule-0 opacity-75 mb-0">
               {startDate ? moment(startDate).format('LL') : ''} -{' '}
               {endDate ? moment(endDate).format('LL') : ''}
@@ -127,7 +135,7 @@ class ComponentDatepicker extends React.Component {
               className="btn btn-success ms-3"
               onClick={this.handleApply}
             >
-              Apply
+              {t('txt_apply')}
             </span>
           </div>
         )}
@@ -138,6 +146,7 @@ class ComponentDatepicker extends React.Component {
   render() {
     let { startDate, endDate, selectDate, isOpen } = this.state;
     let { isDown } = this.props;
+    const { t, i18n } = this.props;
 
     return (
       <div
@@ -152,17 +161,17 @@ class ComponentDatepicker extends React.Component {
           onChange={this.onChange}
           className="border-0 w-100 rounded-2 h-100 ps-2 bg-transparent cursor-pointer text-blue-0"
           monthsShown={2}
-          value={selectDate}
+          value={selectDate + ' ' + t('txt_days')}
           selected={startDate}
           startDate={startDate}
           endDate={endDate}
           selectsRange
           calendarContainer={this.MyContainer}
           popperPlacement="bottom-end"
-          placeholderText={selectDate}
           open={isOpen}
           onBlur={this.handleOnBlur}
           disabled={true}
+          locale={i18n.language}
         />
         {isDown && (
           <i className="text-green">
@@ -174,4 +183,4 @@ class ComponentDatepicker extends React.Component {
   }
 }
 
-export default ComponentDatepicker;
+export default withTranslation('common')(ComponentDatepicker);

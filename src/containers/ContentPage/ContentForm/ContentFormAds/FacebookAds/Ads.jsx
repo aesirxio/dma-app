@@ -6,7 +6,7 @@
 import React, { useContext, lazy } from 'react';
 import Button from '../../../../../components/Button';
 import { ContentViewModelContext } from '../../../ContentViewModels/ContentViewModelContextProvider';
-
+import { withTranslation } from 'react-i18next';
 import Preview from './Preview';
 import { observer } from 'mobx-react';
 import useValidator from '../../../../../utils/simpleValidator';
@@ -57,14 +57,14 @@ const Ads = observer((props) => {
         <Button
           className="btn btn-light border-success "
           onClick={handlePrevious}
-          text="Back"
+          text="txt_back"
           icon={faChevronLeft}
         />
 
-        <Button className="btn btn-success px-4 mw-80" onClick={handleNext} text="Next" />
+        <Button className="btn btn-success px-4 mw-80" onClick={handleNext} text="txt_next" />
       </div>
     </>
   );
 });
 
-export default Ads;
+export default withTranslation('common')(Ads);
