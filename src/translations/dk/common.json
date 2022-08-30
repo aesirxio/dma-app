@@ -171,7 +171,13 @@
   "txt_project": "Projekt",
   "txt_post_now":"Send nu",
   "txt_schedule":"Tidsplan",
-  "txt_publish_date/time":"Udgiv dato/tid"
+  "txt_publish_date/time":"Udgiv dato/tid",
+  "txt_update_successfully":"Update Successfully",
+  "txt_update_unsuccessfully" :"Update Unsuccessfully",
+  "txt_please_upgrade_account":"Please upgrade account",
+  "txt_please_connect_a_channel":"Please connect a channel",
+  "txt_the_video_field_is_required":"The video field is required",
+  "txt_logo_picture":"Logo"
 
 
 
