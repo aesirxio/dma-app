@@ -97,7 +97,7 @@ class UpdateGeneralViewModel {
         result.avatar_dam ? result.avatar_dam : '/assets/images/user_default.png';
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = result.avatar_dam_2
         ? result.avatar_dam_2
-        : '/assets/images/user_default.png';
+        : '/assets/images/logo/logo.svg';
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.ZIPCODE] = result.zipcode;
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.CITY] = result.city;
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.STATE] = result.state;
@@ -109,6 +109,12 @@ class UpdateGeneralViewModel {
         Storage.setItem(
           AUTHORIZATION_KEY.AVATAR,
           this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]
+        );
+      }
+      if (this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] != null) {
+        Storage.setItem(
+          AUTHORIZATION_KEY.LOGO,
+          this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO]
         );
       }
       let currentLang = i18n.language;

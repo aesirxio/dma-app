@@ -56,6 +56,7 @@ const UpdateGeneral = observer(
       this.updateGeneralViewModel.setAllValue(this);
       this.validateInfoBeforeSending = this.validateInfoBeforeSending.bind(this);
       this.handleDamAssets = this.handleDamAssets.bind(this);
+      this.handleDamAssetsLogo = this.handleDamAssetsLogo.bind(this);
       this.updateGeneralViewModel.setForm(this);
     }
 
@@ -245,7 +246,7 @@ const UpdateGeneral = observer(
     render() {
       let { getUrlImage } = this.state;
       const { memberInfo } = this.updateGeneralViewModel;
-
+      console.log(this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO]);
       return (
         <>
           {!memberInfo ? (
