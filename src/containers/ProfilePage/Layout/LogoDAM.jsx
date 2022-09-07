@@ -7,7 +7,6 @@ import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
 
 const LogoDAM = ({ children }) => {
-  console.log(children);
   const { t } = useTranslation('common');
   return (
     <div className="col-3">

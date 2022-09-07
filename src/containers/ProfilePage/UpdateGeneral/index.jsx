@@ -49,6 +49,7 @@ const UpdateGeneral = observer(
       this.state = {
         loading: false,
         getUrlImage: '',
+        getUrlImageLogo: '',
       };
       this.validator = new SimpleReactValidator();
       const { viewModel } = props;
@@ -75,7 +76,7 @@ const UpdateGeneral = observer(
     handleDamAssetsLogo(data) {
       if (data[0].extension !== 'mp4') {
         this.setState({
-          getUrlImage: data,
+          getUrlImageLogo: data,
         });
         this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = data[0].url;
       }
@@ -107,7 +108,7 @@ const UpdateGeneral = observer(
     };
     clearLogo = (defaultImage) => {
       this.setState({
-        getUrlImage: '',
+        getUrlImageLogo: '',
       });
       this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = defaultImage;
     };
@@ -245,8 +246,9 @@ const UpdateGeneral = observer(
 
     render() {
       let { getUrlImage } = this.state;
+      let { getUrlImageLogo } = this.state;
       const { memberInfo } = this.updateGeneralViewModel;
-      console.log(this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO]);
+      console.log(getUrlImageLogo);
       return (
         <>
           {!memberInfo ? (
@@ -296,10 +298,10 @@ const UpdateGeneral = observer(
                 <LogoDAM>
                   <div
                     className={`position-relative cursor-pointer wr_upload_images ${
-                      getUrlImage.length > 0 ? 'active_img' : ''
+                      getUrlImageLogo.length > 0 ? 'active_img' : ''
                     }`}
                   >
-                    {!getUrlImage ? (
+                    {!getUrlImageLogo ? (
                       <div className="wr_img_thumbnail_dam position-relative m-2">
                         <ComponentImage
                           className={`img-thumbnail rounded imgTab`}
@@ -310,11 +312,11 @@ const UpdateGeneral = observer(
                     ) : null}
                     <div className="main_upload_images">
                       <DamButton
-                        data={getUrlImage}
+                        data={getUrlImageLogo}
                         changed={(data) => this.handleDamAssetsLogo(data)}
                       />
                     </div>
-                    {getUrlImage ? (
+                    {getUrlImageLogo ? (
                       <div
                         onClick={() => this.clearLogo(memberInfo.avatar_dam_2)}
                         className={'clear_image_button'}
