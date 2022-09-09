@@ -318,7 +318,7 @@ const UpdateGeneral = observer(
                     </div>
                     {getUrlImageLogo ? (
                       <div
-                        onClick={() => this.clearLogo(memberInfo.avatar_dam_2)}
+                        onClick={() => this.clearLogo(memberInfo.member_logo)}
                         className={'clear_image_button'}
                       >
                         <FontAwesomeIcon icon={faTimesCircle} className="text-white" />
