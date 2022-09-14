@@ -12,6 +12,7 @@ import common_de from './dk/common.json';
 import common_vn from './vi/common.json';
 import common_uk from './ua/common.json';
 import common_es from './es/common.json';
+import common_th from './th/common.json';
 
 i18n
   .use(LanguageDetector)
@@ -39,9 +40,13 @@ i18n
         title: 'Spain',
         common: common_es,
       },
+      th: {
+        title: 'Thai',
+        common: common_th,
+      },
     },
-    lng: localStorage.getItem('i18nextLng') || 'en',
-    fallbackLng: 'en',
+    lng: localStorage.getItem('i18nextLng') || 'th',
+    fallbackLng: 'th',
     debug: !process.env.NODE_ENV || process.env.NODE_ENV === 'development',
 
     // have a common namespace used around the full app
