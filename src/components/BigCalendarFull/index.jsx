@@ -19,6 +19,7 @@ import 'moment/locale/vi';
 import 'moment/locale/es';
 import 'moment/locale/uk';
 import 'moment/locale/de';
+import 'moment/locale/th';
 
 const localizer = momentLocalizer(moment);
 
