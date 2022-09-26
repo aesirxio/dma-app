@@ -61,7 +61,7 @@ const ChannelsList = observer(
           <ModalComponent
             show={this.channelsListViewModel.showUpgrade}
             onHide={this.channelsListViewModel.closeModalUpgrade}
-            header={'Please upgrade account'}
+            header={t('txt_please_upgrade_account')}
             body={<Upgrade></Upgrade>}
             key={Math.random(40, 200)}
           />

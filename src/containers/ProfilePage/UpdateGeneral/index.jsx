@@ -16,6 +16,7 @@ import '../index.scss';
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import FormComponent from '../../../components/Form';
 import AvatarDAM from '../Layout/AvatarDAM';
+import LogoDAM from '../Layout/LogoDAM';
 import SubmitButton from '../Layout/SubmitButton';
 import ComponentImage from '../../../components/ComponentImage';
 import { Storage } from 'aesirx-dma-lib';
@@ -29,6 +30,7 @@ const UpdateGeneral = observer(
       [UPDATE_GENERAL_FIELD_KEY.ID]: Storage.getItem('member_id'),
       [UPDATE_GENERAL_FIELD_KEY.USERNAME]: '',
       [UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]: '',
+      [UPDATE_GENERAL_FIELD_KEY.LOGO]: '',
       [UPDATE_GENERAL_FIELD_KEY.FULLNAME]: '',
       [UPDATE_GENERAL_FIELD_KEY.EMAIL]: '',
       [UPDATE_GENERAL_FIELD_KEY.BIRTHDAY]: '',
@@ -47,6 +49,7 @@ const UpdateGeneral = observer(
       this.state = {
         loading: false,
         getUrlImage: '',
+        getUrlImageLogo: '',
       };
       this.validator = new SimpleReactValidator();
       const { viewModel } = props;
@@ -54,6 +57,7 @@ const UpdateGeneral = observer(
       this.updateGeneralViewModel.setAllValue(this);
       this.validateInfoBeforeSending = this.validateInfoBeforeSending.bind(this);
       this.handleDamAssets = this.handleDamAssets.bind(this);
+      this.handleDamAssetsLogo = this.handleDamAssetsLogo.bind(this);
       this.updateGeneralViewModel.setForm(this);
     }
 
@@ -69,7 +73,14 @@ const UpdateGeneral = observer(
         this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = data[0].url;
       }
     }
-
+    handleDamAssetsLogo(data) {
+      if (data[0].extension !== 'mp4') {
+        this.setState({
+          getUrlImageLogo: data,
+        });
+        this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = data[0].url;
+      }
+    }
     saveGeneralHandler = () => {
       this.updateGeneralViewModel.saveGeneralInformationOnPage();
     };
@@ -94,6 +105,12 @@ const UpdateGeneral = observer(
         getUrlImage: '',
       });
       this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = defaultImage;
+    };
+    clearLogo = (defaultImage) => {
+      this.setState({
+        getUrlImageLogo: '',
+      });
+      this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = defaultImage;
     };
 
     generateFormSetting = () => {
@@ -229,8 +246,9 @@ const UpdateGeneral = observer(
 
     render() {
       let { getUrlImage } = this.state;
+      let { getUrlImageLogo } = this.state;
       const { memberInfo } = this.updateGeneralViewModel;
-
+      console.log(getUrlImageLogo);
       return (
         <>
           {!memberInfo ? (
@@ -277,6 +295,37 @@ const UpdateGeneral = observer(
                     ) : null}
                   </div>
                 </AvatarDAM>
+                <LogoDAM>
+                  <div
+                    className={`position-relative cursor-pointer wr_upload_images ${
+                      getUrlImageLogo.length > 0 ? 'active_img' : ''
+                    }`}
+                  >
+                    {!getUrlImageLogo ? (
+                      <div className="wr_img_thumbnail_dam position-relative m-2">
+                        <ComponentImage
+                          className={`img-thumbnail rounded imgTab`}
+                          src={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO]}
+                          alt={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME]}
+                        />
+                      </div>
+                    ) : null}
+                    <div className="main_upload_images">
+                      <DamButton
+                        data={getUrlImageLogo}
+                        changed={(data) => this.handleDamAssetsLogo(data)}
+                      />
+                    </div>
+                    {getUrlImageLogo ? (
+                      <div
+                        onClick={() => this.clearLogo(memberInfo.member_logo)}
+                        className={'clear_image_button'}
+                      >
+                        <FontAwesomeIcon icon={faTimesCircle} className="text-white" />
+                      </div>
+                    ) : null}
+                  </div>
+                </LogoDAM>
                 <SubmitButton validateInfoBeforeSending={this.validateInfoBeforeSending} />
               </div>
             </div>

@@ -60,6 +60,7 @@ const ESI_PERSONA_FIELD_KEY = {
   PAINT_POINT: 'paint_point',
   AVATAR: 'avatar',
   AVATAR_2: 'avatar_2',
+  LOGO: 'logo_2',
   BIO: 'bio',
   CREATED_DATE: 'created_date',
   MODIFIED_DATE: 'modified_date',

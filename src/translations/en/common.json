@@ -173,7 +173,13 @@
   "txt_project": "Project",
   "txt_post_now":"Post Now",
   "txt_schedule":"Schedule",
-  "txt_publish_date/time":"Publish Date/time"
+  "txt_publish_date/time":"Publish Date/time",
+  "txt_update_successfully":"Update Successfully",
+  "txt_update_unsuccessfully" :"Update Unsuccessfully",
+  "txt_please_upgrade_account":"Please upgrade account",
+  "txt_please_connect_a_channel":"Please connect a channel",
+  "txt_the_video_field_is_required":"The video field is required",
+  "txt_logo_picture":"Logo"
   
 
 

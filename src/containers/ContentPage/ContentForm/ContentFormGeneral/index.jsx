@@ -98,7 +98,7 @@ const ContentFormGeneral = observer(
     onNext = () => {
       const channelsData = this.viewModel.channelMasterData;
       const dataChannels = ChannelUtils.getChannelByFilter(channelsData, 'removed', 'not');
-
+      const { t } = this.props;
       const mediaChannel = ContentUtils.hasMediaChannel(dataChannels);
 
       if (this.validator.allValid()) {
@@ -107,12 +107,12 @@ const ContentFormGeneral = observer(
             mediaChannel.video &&
             !this.viewModel.requiredVideo(this.formPropsData[CONTENT_FIELD_KEY.DAM])
           ) {
-            notify('The video field is required');
+            notify(t('txt_the_video_field_is_required'));
           } else {
             this.props.nextStep();
           }
         } else {
-          notify('Please connect a Channel');
+          notify(t('txt_please_connect_a_channel'));
         }
       } else {
         this.validator.showMessages();
