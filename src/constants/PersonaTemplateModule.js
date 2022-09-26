@@ -48,6 +48,7 @@ const ESI_PERSONA_TEMPLATE_FIELD_KEY = {
   CHALLENGES: 'challenges',
   PAINT_POINT: 'paint_point',
   AVATAR: 'avatar',
+  LOGO: 'logo_2',
   BIO: 'bio',
   CREATED_DATE: 'created_date',
   MODIFIED_DATE: 'modified_date',

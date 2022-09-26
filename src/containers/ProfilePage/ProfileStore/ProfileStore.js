@@ -70,6 +70,7 @@ export default class ProfileStore {
       if (results) {
         const getMemberInfoAPIService = new AesirxMemberApiService();
         const respondedData = await getMemberInfoAPIService.getMemberInfo(id);
+        console.log(respondedData);
         if (respondedData) {
           runInAction(() => {
             callbackOnSuccess(respondedData);
@@ -93,6 +94,7 @@ export default class ProfileStore {
     try {
       const getMemberInfoAPIService = new AesirxMemberApiService();
       const respondedData = await getMemberInfoAPIService.getMemberInfo(id);
+
       return respondedData;
     } catch (error) {
       // no error throw

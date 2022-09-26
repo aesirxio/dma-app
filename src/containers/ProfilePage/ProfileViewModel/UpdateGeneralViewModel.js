@@ -8,6 +8,7 @@ import { makeAutoObservable } from 'mobx';
 import { notify } from '../../../components/Toast';
 import { UPDATE_GENERAL_FIELD_KEY } from '../../../constants/ProfileModule';
 import { AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
+import i18n from 'i18next';
 
 class UpdateGeneralViewModel {
   profileStore = null;
@@ -49,7 +50,29 @@ class UpdateGeneralViewModel {
   };
 
   callbackOnErrorHandler = (error) => {
-    notify('Update unsuccessfully', 'error');
+    let currentLang = i18n.language;
+    let messageerror = '';
+    switch (currentLang) {
+      case 'en':
+        messageerror = 'Update Unsuccessfully';
+        break;
+      case 'vi':
+        messageerror = 'Cập nhật không thành công';
+        break;
+      case 'de':
+        messageerror = 'Opdatering mislykkedes';
+        break;
+      case 'ua':
+        messageerror = 'Невдале оновлення';
+        break;
+      case 'es':
+        messageerror = 'Actualizar sin éxito';
+        break;
+
+      default:
+        break;
+    }
+    notify(messageerror, 'error');
     this.successResponse.state = false;
     this.successResponse.content_id = error.result.content_id;
   };
@@ -72,6 +95,9 @@ class UpdateGeneralViewModel {
         result.address_2;
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] =
         result.avatar_dam ? result.avatar_dam : '/assets/images/user_default.png';
+      this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = result.member_logo
+        ? result.member_logo
+        : '/assets/images/logo/logo.svg';
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.ZIPCODE] = result.zipcode;
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.CITY] = result.city;
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.STATE] = result.state;
@@ -85,10 +111,38 @@ class UpdateGeneralViewModel {
           this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]
         );
       }
-      notify('Update successfully', 'success');
-      setTimeout(() => {
-        window.location.reload();
-      }, 1500);
+      if (this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] != null) {
+        Storage.setItem(
+          AUTHORIZATION_KEY.LOGO,
+          this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO]
+        );
+      }
+      let currentLang = i18n.language;
+      let message = '';
+      switch (currentLang) {
+        case 'en':
+          message = 'Update Successfully';
+          break;
+        case 'vi':
+          message = 'Cập nhật thành công';
+          break;
+        case 'de':
+          message = 'Opdateringen lykkedes';
+          break;
+        case 'ua':
+          message = 'Оновлення успішне';
+          break;
+        case 'es':
+          message = 'Actualización exitosa';
+          break;
+
+        default:
+          break;
+      }
+      notify(message, 'success');
+      // setTimeout(() => {
+      //   window.location.reload();
+      // }, 1500);
     }
   };
 }
