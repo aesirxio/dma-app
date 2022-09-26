@@ -12,6 +12,7 @@ import common_de from './dk/common.json';
 import common_vn from './vi/common.json';
 import common_uk from './ua/common.json';
 import common_es from './es/common.json';
+import common_th from './th/common.json';
 
 i18n
   .use(LanguageDetector)
@@ -38,6 +39,10 @@ i18n
       es: {
         title: 'Spain',
         common: common_es,
+      },
+      th: {
+        title: 'Thai',
+        common: common_th,
       },
     },
     lng: localStorage.getItem('i18nextLng') || 'en',
