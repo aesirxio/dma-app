@@ -7,14 +7,14 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 
 import './index.scss';
 
 import DropdownAvatar from '../DropdownAvatar';
-
+import Helper from '../../utils/helper';
 import ComponentHambuger from '../ComponentHambuger';
 import ComponentImage from '../ComponentImage';
 
@@ -52,13 +52,21 @@ class Header extends React.Component {
             {isMini ? (
               <ComponentImage
                 className="logo_white pe-0"
-                src="/assets/images/logo/logo-white.svg"
+                src={
+                  Helper.isValidUrl(Storage.getItem(AUTHORIZATION_KEY.LOGO))
+                    ? Storage.getItem(AUTHORIZATION_KEY.LOGO)
+                    : '/assets/images/logo/logo-white.svg'
+                }
                 alt="R Digital"
               />
             ) : (
               <ComponentImage
                 className="logo_white pe-6"
-                src="/assets/images/logo/logo-white.svg"
+                src={
+                  Helper.isValidUrl(Storage.getItem(AUTHORIZATION_KEY.LOGO))
+                    ? Storage.getItem(AUTHORIZATION_KEY.LOGO)
+                    : '/assets/images/logo/logo-white.svg'
+                }
                 alt="R Digital"
               />
             )}

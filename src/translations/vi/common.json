@@ -173,7 +173,14 @@
   "txt_project": "Dự án",
   "txt_post_now":"Đăng ngay",
   "txt_schedule":"Lịch trình",
-  "txt_publish_date/time":"Ngày / giờ xuất bản"
+  "txt_publish_date/time":"Ngày / giờ xuất bản",
+  "txt_update_successfully":"Update Successfully",
+  "txt_update_unsuccessfully" :"Update Unsuccessfully",
+  "txt_please_upgrade_account":"Please upgrade account",
+  "txt_please_connect_a_channel":"Please connect a channel",
+  "txt_the_video_field_is_required":"The video field is required",
+  "txt_logo_picture":"Logo"
+ 
   
 
 

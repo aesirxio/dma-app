@@ -29,7 +29,7 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
         await channelsListViewModel.connectChannel(channelType.id);
       }
     } else {
-      notify('Please upgrade account at https://dma.aesirx.io');
+      notify(t('txt_please_upgrade_account') + 'at https://dma.aesirx.io');
     }
     setConnecting(false);
   };
@@ -44,7 +44,7 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
 
   return (
     <button
-      className="btn btn-success d-flex justify-content-center align-items-center p-2"
+      className="btn btn-success d-flex justify-content-center align-items-center p-2 w-110px"
       onClick={handleOnClick}
     >
       <i className="fs-5 me-2">
