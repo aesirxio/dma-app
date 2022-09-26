@@ -8,7 +8,7 @@ const UPDATE_GENERAL_FIELD_KEY = {
   USERNAME: 'username',
   FULLNAME: 'fullname',
   AVATAR_DAM: 'avatar_dam',
-  LOGO: 'avatar_dam_2',
+  LOGO: 'member_logo',
   EMAIL: 'email',
   BIRTHDAY: 'birthday',
   PHONE: 'phone',

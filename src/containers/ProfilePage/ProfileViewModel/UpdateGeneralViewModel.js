@@ -95,8 +95,8 @@ class UpdateGeneralViewModel {
         result.address_2;
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] =
         result.avatar_dam ? result.avatar_dam : '/assets/images/user_default.png';
-      this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = result.avatar_dam_2
-        ? result.avatar_dam_2
+      this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = result.member_logo
+        ? result.member_logo
         : '/assets/images/logo/logo.svg';
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.ZIPCODE] = result.zipcode;
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.CITY] = result.city;
