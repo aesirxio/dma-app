@@ -4,40 +4,40 @@
  */
 
 @font-face {
-  font-family: 'SVN-Sofia Pro';
-  src: url('./sofiaPro.woff2') format('woff2'),
-    /* Super Modern Browsers */ url('./sofiaPro.woff') format('woff'),
-    /* Modern Browsers */ url('./sofiaPro.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-family: 'OpenSans';
+  src: url('./OpenSans-Regular.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('./OpenSans-Regular.woff') format('woff'),
+    /* Modern Browsers */ url('./OpenSans-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'SVN-Sofia Pro';
-  src: url('./sofiaPromedium.woff2') format('woff2'),
-    /* Super Modern Browsers */ url('./sofiaPromedium.woff') format('woff'),
-    /* Modern Browsers */ url('./sofiaPromedium.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-family: 'OpenSans';
+  src: url('./OpenSans-Medium.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('./OpenSans-Medium.woff') format('woff'),
+    /* Modern Browsers */ url('./OpenSans-Medium.ttf') format('truetype'); /* Safari, Android, iOS */
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'SVN-Sofia Pro';
-  src: url('./sofiaProSemiBold.woff2') format('woff2'),
-    /* Super Modern Browsers */ url('./sofiaProSemiBold.woff') format('woff'),
-    /* Modern Browsers */ url('./sofiaProSemiBold.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-family: 'OpenSans';
+  src: url('./OpenSans-SemiBold.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('./OpenSans-SemiBold.woff') format('woff'),
+    /* Modern Browsers */ url('./OpenSans-SemiBold.ttf') format('truetype'); /* Safari, Android, iOS */
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'SVN-Sofia Pro';
-  src: url('./sofiaProBold.woff2') format('woff2'),
-    /* Super Modern Browsers */ url('./sofiaProBold.woff') format('woff'),
-    /* Modern Browsers */ url('./sofiaProBold.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-family: 'OpenSans';
+  src: url('./OpenSans-Bold.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('./OpenSans-Bold.woff') format('woff'),
+    /* Modern Browsers */ url('./OpenSans-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
   font-weight: bold;
   font-style: normal;
   font-display: swap;
