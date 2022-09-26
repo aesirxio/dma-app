@@ -44,7 +44,7 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
 
   return (
     <button
-      className="btn btn-success d-flex justify-content-center align-items-center p-2"
+      className="btn btn-success d-flex justify-content-center align-items-center p-2 w-110px"
       onClick={handleOnClick}
     >
       <i className="fs-5 me-2">
