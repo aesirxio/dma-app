@@ -132,7 +132,7 @@
   "create_your_1st_persona":"create your 1st persona",
   "txt_name_personas":"Name",
   "updated_date":"Updated Date",
-  "connected_channels":"Connected Channels", 
+  "connected_channels":"Connected Channels",
   "txt_title":"Title",
   "txt_channels":"Channels",
   "txt_date":"Date",
@@ -151,7 +151,7 @@
   "txt_connecting":"Connecting",
   "txt_connect":"Connect",
   "txt_enable":"Enable",
-  "txt_remove":"Remove", 
+  "txt_remove":"Remove",
   "txt_type":"Type",
   "txt_action":"Action",
   "txt_profile":"Profile",
@@ -179,16 +179,6 @@
   "txt_please_upgrade_account":"Please upgrade account",
   "txt_please_connect_a_channel":"Please connect a channel",
   "txt_the_video_field_is_required":"The video field is required",
-  "txt_logo_picture":"Logo"
-  
-
-
-
-
-
-
-
-
-
-
+  "txt_logo_picture":"Logo",
+  "txt_canva_api_key_warning":"Please replace REACT_APP_CANVA_API_KEY or Canva button is only working on localhost"
 }
