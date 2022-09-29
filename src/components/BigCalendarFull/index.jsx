@@ -68,7 +68,7 @@ class BigCalendarFull extends React.PureComponent {
     const navigateEditPost = () => {
       history.push(`content-edit/${event.id}`);
     };
-
+    moment.locale('en');
     const time = moment(event.start).format('h:mm A');
 
     return (
