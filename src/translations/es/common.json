@@ -151,7 +151,7 @@
   "txt_connecting":"Conectando",
   "txt_connect":"Conectar",
   "txt_enable":"Habilitar",
-  "txt_remove":"Remover", 
+  "txt_remove":"Remover",
   "txt_type":"Escribe",
   "txt_action":"Acción",
   "txt_profile":"Perfil",
@@ -173,13 +173,12 @@
   "txt_project": "Proyecto",
   "txt_post_now":"Publicar ahora",
   "txt_schedule":"Calendario",
-  "txt_publish_date/time":"Fecha/hora de publicación"
-
-
-
-
-
-
-
-
+  "txt_publish_date/time":"Fecha/hora de publicación",
+  "txt_update_successfully":"Update Successfully",
+  "txt_update_unsuccessfully" :"Update Unsuccessfully",
+  "txt_please_upgrade_account":"Please upgrade account",
+  "txt_please_connect_a_channel":"Please connect a channel",
+  "txt_the_video_field_is_required":"The video field is required",
+  "txt_logo_picture":"Logo",
+  "txt_canva_api_key_warning":"Reemplace REACT_APP_CANVA_API_KEY o el botón de Canva solo funciona en localhost"
 }

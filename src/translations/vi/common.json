@@ -132,7 +132,7 @@
   "create_your_1st_persona":"Tạo chân dung khách hàng đầu tiên của bạn",
   "txt_name_personas":"Tên",
   "updated_date":"Ngày cập nhật",
-  "connected_channels":"Các Kênh được liên kết", 
+  "connected_channels":"Các Kênh được liên kết",
   "txt_title":"Tựa đề",
   "txt_channels":"Các Kênh",
   "txt_date":"Ngày",
@@ -151,7 +151,7 @@
   "txt_connecting":"Đang kết nối",
   "txt_connect":"Liên kết",
   "txt_enable":"Cho phép",
-  "txt_remove":"Xóa", 
+  "txt_remove":"Xóa",
   "txt_type":"Kiểu",
   "txt_action":"Hoạt động",
   "txt_profile":"Hồ sơ",
@@ -173,16 +173,12 @@
   "txt_project": "Dự án",
   "txt_post_now":"Đăng ngay",
   "txt_schedule":"Lịch trình",
-  "txt_publish_date/time":"Ngày / giờ xuất bản"
-  
-
-
-
-
-
-
-
-
-
-
+  "txt_publish_date/time":"Ngày / giờ xuất bản",
+  "txt_update_successfully":"Update Successfully",
+  "txt_update_unsuccessfully" :"Update Unsuccessfully",
+  "txt_please_upgrade_account":"Please upgrade account",
+  "txt_please_connect_a_channel":"Please connect a channel",
+  "txt_the_video_field_is_required":"The video field is required",
+  "txt_logo_picture":"Logo",
+  "txt_canva_api_key_warning":"Vui lòng thay thế REACT_APP_CANVA_API_KEY hoặc nút Canva chỉ hoạt động trên localhost"
 }

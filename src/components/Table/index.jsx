@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import {
   useTable,
@@ -114,7 +114,7 @@ const Table = ({
     }),
     []
   );
-  
+
   const IndeterminateCheckbox = React.forwardRef(({ indeterminate, ...rest }, ref) => {
     const defaultRef = React.useRef();
     const resolvedRef = ref || defaultRef;
@@ -208,6 +208,17 @@ const Table = ({
       setState({ isFilter: false });
     }
   }, [view]);
+  const Filter = useRef(null);
+  useEffect(() => {
+    if (!Filter) return;
+    function handleClick(event) {
+      if (Filter.current && !Filter.current.contains(event.target)) {
+        setState({ isFilter: false });
+      }
+    }
+    window.addEventListener('click', handleClick);
+    return () => window.removeEventListener('click', handleClick);
+  }, [Filter]);
 
   useEffect(() => {
     if (setFilter) {
@@ -250,7 +261,8 @@ const Table = ({
       isFilter: !getState.isFilter,
     });
   };
-  const {t} = useTranslation("common");
+
+  const { t } = useTranslation('common');
   return (
     <>
       <div className={`mb-4 ${classNameTable}`}>
@@ -278,7 +290,7 @@ const Table = ({
                     <i>
                       <FontAwesomeIcon icon={faColumns} />
                     </i>
-                    <span className="ps-2 pe-5 opacity-75">{t("txt_columns")}</span>
+                    <span className="ps-2 pe-5 opacity-75">{t('txt_columns')}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={faChevronDown} />
                     </i>
@@ -315,7 +327,7 @@ const Table = ({
                     setFilter={setFilter}
                   />
                 </div>
-                <div className="rounded-0">
+                <div className="rounded-0" ref={Filter}>
                   <button
                     className={`btn text-blue-0 ${getState.isFilter ? 'bg-blue-3' : ''}`}
                     onClick={handleFilter}
@@ -323,7 +335,7 @@ const Table = ({
                     <i>
                       <FontAwesomeIcon icon={faFilter} />
                     </i>
-                    <span className="ps-2 pe-5 opacity-75">{t("txt_filter")}</span>
+                    <span className="ps-2 pe-5 opacity-75">{t('txt_filter')}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={getState.isFilter ? faChevronUp : faChevronDown} />
                     </i>
@@ -344,7 +356,7 @@ const Table = ({
                 <i>
                   <FontAwesomeIcon icon={faList} />
                 </i>
-                <span className="ms-2 opacity-75">{t("txt_list")}</span>
+                <span className="ms-2 opacity-75">{t('txt_list')}</span>
               </button>
               <button
                 type="button"
@@ -356,7 +368,7 @@ const Table = ({
                 <i>
                   <FontAwesomeIcon icon={faTh} />
                 </i>
-                <span className="ms-2 opacity-75">{t("txt_thumb")}</span>
+                <span className="ms-2 opacity-75">{t('txt_thumb')}</span>
               </button>
             </div>
           )}
@@ -397,7 +409,10 @@ const Table = ({
                   <tr {...headerGroup.getHeaderGroupProps()} className="bg-blue">
                     {newHeaderGroup.map((column) => {
                       return (
-                        <th {...column.getHeaderProps()} className="fw-normal px-2 py-3 flex-1 bg-blue">
+                        <th
+                          {...column.getHeaderProps()}
+                          className="fw-normal px-2 py-3 flex-1 bg-blue"
+                        >
                           {column.render('Header')}
                         </th>
                       );
@@ -447,7 +462,7 @@ const Table = ({
                 })}
             </tbody>
           </table>
-          {page.length === 0  ? (
+          {page.length === 0 ? (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
               title="No Matching Results"
@@ -456,7 +471,7 @@ const Table = ({
             />
           ) : (
             <div className="pagination d-flex align-items-center justify-content-between">
-              {pagination && pagination.totalPages > 1 &&  (
+              {pagination && pagination.totalPages > 1 && (
                 <>
                   <PaginationComponent
                     pagination={pagination}
@@ -518,7 +533,6 @@ const Table = ({
               width="w-50"
             />
           ) : (
-            
             <div className="pagination d-flex align-items-center justify-content-between">
               {pagination && pagination.totalPages > 1 && (
                 <>
