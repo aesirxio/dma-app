@@ -132,7 +132,7 @@
   "create_your_1st_persona":"create your 1st persona",
   "txt_name_personas":"Name",
   "updated_date":"Updated Date",
-  "connected_channels":"ช่องที่เชื่อมต่อ", 
+  "connected_channels":"ช่องที่เชื่อมต่อ",
   "txt_title":"Title",
   "txt_channels":"ช่องทาง",
   "txt_date":"วันที่",
@@ -151,7 +151,7 @@
   "txt_connecting":"กำลังเชื่อมต่อ",
   "txt_connect":"เชื่อมต่อ",
   "txt_enable":"เปิดใช้",
-  "txt_remove":"เอาออก", 
+  "txt_remove":"เอาออก",
   "txt_type":"ประเภท",
   "txt_action":"การกระทำ",
   "txt_profile":"ข้อมูลส่วนตัว",
@@ -173,16 +173,6 @@
   "txt_project": "โครงการ",
   "txt_post_now":"โพส ตอนนี้",
   "txt_schedule":"ตั้งเวลาล่วงหน้า",
-  "txt_publish_date/time":"เผยแพร่ วัน/เวลา"
-  
-
-
-
-
-
-
-
-
-
-
+  "txt_publish_date/time":"เผยแพร่ วัน/เวลา",
+  "txt_canva_api_key_warning":"โปรดแทนที่ REACT_APP_CANVA_API_KEY มิฉะนั้นปุ่ม Canva จะทำงานบน localhost เท่านั้น"
 }
