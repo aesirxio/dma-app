@@ -12,7 +12,7 @@ export let canvaApi = null;
     (async function () {
       if (window.Canva && window.Canva.DesignButton) {
         canvaApi = await window.Canva.DesignButton.initialize({
-          apiKey: process.env.REACT_APP_CANVA_API_KEY ?? '1cXlRfKSEDQWMd7w_2LOVrBb',
+          apiKey: '1cXlRfKSEDQWMd7w_2LOVrBb',
         });
       }
     })();

@@ -3,9 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import { notify } from 'components/Toast';
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { canvaApi } from '../../utils/canva';
 import './index.scss';
 
@@ -13,25 +11,20 @@ class CanvaButton extends React.PureComponent {
   constructor(props) {
     super(props);
     this.componentWillReceiveProps.bind(this);
-
-    if (process.env.REACT_APP_CANVA_API_KEY === undefined) {
-      const { t } = this.props;
-
-      notify(t('txt_canva_api_key_warning'), 'warn');
-    }
   }
 
-  canvaEditHandler = ({ index, id, designId }) => {
+  canvaEditHandler = ({index, id, designId}) => {
     canvaApi.editDesign({
       design: {
         id: designId,
       },
-      onDesignOpen: () => {},
+      onDesignOpen: () => {
+      },
       onDesignPublish: (opts) => {
         this.props.canvaEditItem(index, id, opts);
       },
     });
-  };
+  }
 
   componentWillReceiveProps(nextProps) {
     console.error(nextProps);
@@ -53,6 +46,7 @@ class CanvaButton extends React.PureComponent {
     });
   };
 
+
   render() {
     return (
       <>
@@ -61,7 +55,7 @@ class CanvaButton extends React.PureComponent {
           onClick={this.handleClick}
           type="button"
         >
-          <span className="canva-btn-i" />
+          <span className="canva-btn-i"/>
           Design on Canva
         </button>
       </>
@@ -69,4 +63,4 @@ class CanvaButton extends React.PureComponent {
   }
 }
 
-export default withTranslation('common')(CanvaButton);
+export default CanvaButton;
