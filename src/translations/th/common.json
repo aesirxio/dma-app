@@ -174,6 +174,12 @@
   "txt_post_now":"โพส ตอนนี้",
   "txt_schedule":"ตั้งเวลาล่วงหน้า",
   "txt_publish_date/time":"เผยแพร่ วัน/เวลา"
+  "txt_update_successfully":"การปรับปรุงเสร็จเรียบร้อย",
+  "txt_update_unsuccessfully" :"การปรับปรุงไม่สำเร็จ",
+  "txt_please_upgrade_account":"กรุณาอับเกรดบัญชีของคุณ",
+  "txt_please_connect_a_channel":"กรุณาเชื่อมต่อช่องทาง",
+  "txt_the_video_field_is_required":"ฟิลด์วีดีโอ จำเป็นต้องมี",
+  "txt_logo_picture":"โลโก้"
   
 
 
