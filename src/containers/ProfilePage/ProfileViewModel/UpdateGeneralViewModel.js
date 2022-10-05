@@ -95,9 +95,9 @@ class UpdateGeneralViewModel {
         result.address_2;
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] =
         result.avatar_dam ? result.avatar_dam : '/assets/images/user_default.png';
-      this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = result.member_logo
-        ? result.member_logo
-        : '/assets/images/logo/logo.svg';
+      // this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = result.member_logo
+      //   ? result.member_logo
+      //   : '/assets/images/logo/logo.svg';
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.ZIPCODE] = result.zipcode;
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.CITY] = result.city;
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.STATE] = result.state;
@@ -111,12 +111,12 @@ class UpdateGeneralViewModel {
           this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]
         );
       }
-      if (this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] != null) {
-        Storage.setItem(
-          AUTHORIZATION_KEY.LOGO,
-          this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO]
-        );
-      }
+      // if (this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] != null) {
+      //   Storage.setItem(
+      //     AUTHORIZATION_KEY.LOGO,
+      //     this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO]
+      //   );
+      // }
       let currentLang = i18n.language;
       let message = '';
       switch (currentLang) {
