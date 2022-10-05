@@ -7,7 +7,7 @@ import React, { useRef, useEffect } from 'react';
 import { Tooltip } from 'bootstrap';
 import './index.scss';
 
-const ComponentTooltip = ({ children, title, placement }) => {
+const ComponentTooltip = ({ children, title }) => {
   const textInput = useRef(null);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const ComponentTooltip = ({ children, title, placement }) => {
   }, []);
 
   return (
-    <div data-bs-toggle="tooltip" title={title} placement={placement} ref={textInput}>
+    <div data-bs-toggle="tooltip" title={title} ref={textInput}>
       {children}
     </div>
   );
