@@ -16,7 +16,7 @@ import '../index.scss';
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import FormComponent from '../../../components/Form';
 import AvatarDAM from '../Layout/AvatarDAM';
-// import LogoDAM from '../Layout/LogoDAM';
+import LogoDAM from '../Layout/LogoDAM';
 import SubmitButton from '../Layout/SubmitButton';
 import ComponentImage from '../../../components/ComponentImage';
 import { Storage } from 'aesirx-dma-lib';
@@ -30,7 +30,7 @@ const UpdateGeneral = observer(
       [UPDATE_GENERAL_FIELD_KEY.ID]: Storage.getItem('member_id'),
       [UPDATE_GENERAL_FIELD_KEY.USERNAME]: '',
       [UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]: '',
-      // [UPDATE_GENERAL_FIELD_KEY.LOGO]: '',
+      [UPDATE_GENERAL_FIELD_KEY.LOGO]: '',
       [UPDATE_GENERAL_FIELD_KEY.FULLNAME]: '',
       [UPDATE_GENERAL_FIELD_KEY.EMAIL]: '',
       [UPDATE_GENERAL_FIELD_KEY.BIRTHDAY]: '',
@@ -49,7 +49,7 @@ const UpdateGeneral = observer(
       this.state = {
         loading: false,
         getUrlImage: '',
-        // getUrlImageLogo: '',
+        getUrlImageLogo: '',
       };
       this.validator = new SimpleReactValidator();
       const { viewModel } = props;
@@ -57,7 +57,7 @@ const UpdateGeneral = observer(
       this.updateGeneralViewModel.setAllValue(this);
       this.validateInfoBeforeSending = this.validateInfoBeforeSending.bind(this);
       this.handleDamAssets = this.handleDamAssets.bind(this);
-      // this.handleDamAssetsLogo = this.handleDamAssetsLogo.bind(this);
+      this.handleDamAssetsLogo = this.handleDamAssetsLogo.bind(this);
       this.updateGeneralViewModel.setForm(this);
     }
 
@@ -74,15 +74,15 @@ const UpdateGeneral = observer(
         this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = data[0].url;
       }
     };
-    // handleDamAssetsLogo = (data) => {
-    //   if (data[0].extension !== 'mp4') {
-    //     this.setState((prevState) => ({
-    //       ...prevState,
-    //       getUrlImageLogo: data,
-    //     }));
-    //     this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = data[0].url;
-    //   }
-    // };
+    handleDamAssetsLogo = (data) => {
+      if (data[0].extension !== 'mp4') {
+        this.setState((prevState) => ({
+          ...prevState,
+          getUrlImageLogo: data,
+        }));
+        this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = data[0].url;
+      }
+    };
     saveGeneralHandler = () => {
       this.updateGeneralViewModel.saveGeneralInformationOnPage();
     };
@@ -113,13 +113,13 @@ const UpdateGeneral = observer(
 
       this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = defaultImage;
     };
-    // clearLogo = (defaultImage) => {
-    //   this.setState((prevState) => ({
-    //     ...prevState,
-    //     getUrlImageLogo: '',
-    //   }));
-    //   this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = defaultImage;
-    // };
+    clearLogo = (defaultImage) => {
+      this.setState((prevState) => ({
+        ...prevState,
+        getUrlImageLogo: '',
+      }));
+      this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = defaultImage;
+    };
 
     generateFormSetting = () => {
       return [
@@ -254,7 +254,7 @@ const UpdateGeneral = observer(
 
     render() {
       let { getUrlImage } = this.state;
-      // let { getUrlImageLogo } = this.state;
+      let { getUrlImageLogo } = this.state;
       const { memberInfo } = this.updateGeneralViewModel;
 
       return (
@@ -303,7 +303,7 @@ const UpdateGeneral = observer(
                     ) : null}
                   </div>
                 </AvatarDAM>
-                {/* <LogoDAM>
+                <LogoDAM>
                   <div
                     className={`position-relative cursor-pointer wr_upload_images ${
                       getUrlImageLogo.length > 0 ? 'active_img' : ''
@@ -333,7 +333,7 @@ const UpdateGeneral = observer(
                       </div>
                     ) : null}
                   </div>
-                </LogoDAM> */}
+                </LogoDAM>
                 <SubmitButton validateInfoBeforeSending={this.validateInfoBeforeSending} />
               </div>
             </div>
