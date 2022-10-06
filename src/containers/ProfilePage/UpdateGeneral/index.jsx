@@ -65,24 +65,22 @@ const UpdateGeneral = observer(
       this.updateGeneralViewModel.initializeData();
     }
 
-    handleDamAssets = (data) => {
+    handleDamAssets(data) {
       if (data[0].extension !== 'mp4') {
-        this.setState((prevState) => ({
-          ...prevState,
+        this.setState({
           getUrlImage: data,
-        }));
+        });
         this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = data[0].url;
       }
-    };
-    handleDamAssetsLogo = (data) => {
+    }
+    handleDamAssetsLogo(data) {
       if (data[0].extension !== 'mp4') {
-        this.setState((prevState) => ({
-          ...prevState,
+        this.setState({
           getUrlImageLogo: data,
-        }));
+        });
         this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = data[0].url;
       }
-    };
+    }
     saveGeneralHandler = () => {
       this.updateGeneralViewModel.saveGeneralInformationOnPage();
     };
@@ -93,10 +91,7 @@ const UpdateGeneral = observer(
 
     validateInfoBeforeSending = () => {
       if (this.validator.allValid()) {
-        this.setState((prevState) => ({
-          ...prevState,
-          loading: true,
-        }));
+        this.setState({ loading: true });
         this.saveGeneralHandler();
       } else {
         this.validator.showMessages();
@@ -106,18 +101,15 @@ const UpdateGeneral = observer(
     };
 
     clearImage = (defaultImage) => {
-      this.setState((prevState) => ({
-        ...prevState,
+      this.setState({
         getUrlImage: '',
-      }));
-
+      });
       this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = defaultImage;
     };
     clearLogo = (defaultImage) => {
-      this.setState((prevState) => ({
-        ...prevState,
+      this.setState({
         getUrlImageLogo: '',
-      }));
+      });
       this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = defaultImage;
     };
 
@@ -256,7 +248,7 @@ const UpdateGeneral = observer(
       let { getUrlImage } = this.state;
       let { getUrlImageLogo } = this.state;
       const { memberInfo } = this.updateGeneralViewModel;
-
+      console.log(getUrlImageLogo);
       return (
         <>
           {!memberInfo ? (
@@ -314,7 +306,7 @@ const UpdateGeneral = observer(
                         <ComponentImage
                           className={`img-thumbnail rounded imgTab`}
                           src={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO]}
-                          alt={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO]}
+                          alt={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME]}
                         />
                       </div>
                     ) : null}
