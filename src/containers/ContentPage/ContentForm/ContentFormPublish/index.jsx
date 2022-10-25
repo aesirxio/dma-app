@@ -16,6 +16,7 @@ import ContentFormPublishAdvance from './advance';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import Button from '../../../../components/Button';
 import ContentFormPublishShedule from './shedule';
+import { withTranslation } from 'react-i18next';
 
 const ContentFormPublish = observer(
   class ContentFormPublish extends Component {
@@ -37,17 +38,17 @@ const ContentFormPublish = observer(
 
     render() {
       const mode = this.formPropsData[CONTENT_FIELD_KEY.MODE];
-
+      const { t } = this.props;
       return (
         <>
-          <h3 className="mb-4">Publish</h3>
+          <h3 className="mb-4">{t('txt_publish')}</h3>
           <div className="bg-white p-4">
             <div className="row">
               <div className="col-md-4">
                 <ContentFormPublishChannel formPropsData={this.formPropsData} />
               </div>
               <div className="col-md-6">
-                <h6 className="text-blue mb-0 mb-3">When to publish this?</h6>
+                <h6 className="text-blue mb-0 mb-3">{t('txt_when_to_publish_this?')}</h6>
                 <div className="rounded border-1 p-3">
                   {mode === 'basic' ? (
                     <ContentFormPublishShedule formPropsData={this.formPropsData} />
@@ -62,21 +63,21 @@ const ContentFormPublish = observer(
           <div className="d-flex border-top-1 pt-3 justify-content-start pb-5">
             <div className="w-100">
               <Button
-                className="btn btn-light border-success "
+                className="btn btn-info border-success "
                 onClick={this.props.previousStep}
-                text="Back"
+                text={t('txt_back')}
                 icon={faChevronLeft}
               />
             </div>
             <div className="d-flex">
               <Button
                 className="btn btn-secondary me-1"
-                text="Save as Draft"
+                text={t('txt_save_as_draft')}
                 onClick={() => this.handleSave(CONTENT_POST_TYPE.DRAFT)}
               />
               <Button
                 className="btn btn-success"
-                text="Save"
+                text={t('txt_save')}
                 onClick={() => this.handleSave(CONTENT_POST_TYPE.POST)}
               />
             </div>
@@ -87,4 +88,4 @@ const ContentFormPublish = observer(
   }
 );
 
-export default withContentViewModel(ContentFormPublish);
+export default withTranslation('common')(withContentViewModel(ContentFormPublish));

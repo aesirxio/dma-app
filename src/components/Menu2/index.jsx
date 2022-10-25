@@ -6,7 +6,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { withTranslation } from 'react-i18next';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 
@@ -14,6 +14,7 @@ class Menu2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      language: 'English',
       activeMenu: '',
       dataMenu: [
         {
@@ -21,7 +22,7 @@ class Menu2 extends React.Component {
           listMenu: [
             {
               name: 'profile',
-              text: 'Profile',
+              text: 'txt_menu_profile',
               link: '/profile',
               icons: faUser,
             },
@@ -43,6 +44,8 @@ class Menu2 extends React.Component {
 
   render() {
     let { dataMenu } = this.state;
+    const { t } = this.props;
+
     return (
       <nav>
         <div className="py-1 px-3 item_menu item_menu_home">
@@ -50,10 +53,10 @@ class Menu2 extends React.Component {
             href="/"
             className="d-block text-blue-0 p-3 link_menu rounded-2 text-decoration-none  "
           >
-            <i className="text-white">
+            <i>
               <FontAwesomeIcon icon={faArrowLeft} />
             </i>
-            <span className="ms-3 text text-white">Back to Dashboard</span>
+            <span className="ms-3 text text-white">{t('txt_back_to_dashboard')}</span>
           </a>
         </div>
         {dataMenu.map((item, index) => {
@@ -75,7 +78,7 @@ class Menu2 extends React.Component {
                         <i>
                           <FontAwesomeIcon icon={value.icons} />
                         </i>
-                        <span className="ms-3 text">{value.text}</span>
+                        <span className="ms-3 text">{t(value.text)}</span>
                       </NavLink>
                     </li>
                   );
@@ -89,4 +92,4 @@ class Menu2 extends React.Component {
   }
 }
 
-export default Menu2;
+export default withTranslation('common')(Menu2);

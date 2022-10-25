@@ -7,7 +7,7 @@ import React, { Component, lazy } from 'react';
 import ChannelsStore from './ChannelsStore/ChannelsStore';
 import ChannelsViewModel from './ChannelsViewModels/ChannelsViewModel';
 import { ChannelsViewModelContextProvider } from './ChannelsViewModels/ChannelsViewModelContextProvider';
-
+import { withTranslation } from 'react-i18next';
 import GlobalStore from '../../store/Store';
 
 const ChannelsList = lazy(() => import('./ChannelsList/ChannelsList'));
@@ -37,4 +37,4 @@ class channelsPage extends Component {
   }
 }
 
-export default channelsPage;
+export default withTranslation('common') (channelsPage);

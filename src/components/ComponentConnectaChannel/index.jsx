@@ -16,6 +16,7 @@ import Upgrade from '../Upgrade';
 import ButtonConnect from '../ButtonConnect';
 import { CHANNEL_TYPE } from '../../constants/ChannelModule';
 import { AESIRX_CONFIGS, AXIOS_CONFIGS } from 'aesirx-dma-lib';
+import { withTranslation } from 'react-i18next';
 
 const ModalComponent = lazy(() => import('../../components/Modal'));
 class ComponentConnectaChannel extends Component {
@@ -402,6 +403,7 @@ class ComponentConnectaChannel extends Component {
       listGoogleAdsAccountView,
       listGoogleAdsAccountConnected,
     } = this.props;
+    const { t } = this.props;
     return (
       <div className="wrapper_tabs">
         <Tabs defaultActiveKey="1" id="connectContent-tab" className="bg-white border-0">
@@ -904,7 +906,7 @@ class ComponentConnectaChannel extends Component {
         <ModalComponent
           show={this.state.showModalUpgrade}
           onHide={this.closeModalUpgrade}
-          header={'Please upgrade account'}
+          header={t('txt_please_upgrade_account')}
           body={<Upgrade></Upgrade>}
           key={Math.random(40, 200)}
         />
@@ -913,4 +915,4 @@ class ComponentConnectaChannel extends Component {
   }
 }
 
-export default ComponentConnectaChannel;
+export default withTranslation('common')(ComponentConnectaChannel);

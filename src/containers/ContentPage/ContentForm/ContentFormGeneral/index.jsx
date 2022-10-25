@@ -20,7 +20,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { notify } from '../../../../components/Toast';
 import ContentUtils from '../../ContentUtils/ContentUtils';
-
+import { withTranslation } from 'react-i18next';
 const ContentFormGeneral = observer(
   class ContentFormGeneral extends Component {
     formPropsData = {};
@@ -36,11 +36,12 @@ const ContentFormGeneral = observer(
     }
 
     generateFormSetting = () => {
+      const { t } = this.props;
       return {
         name: {
           fields: [
             {
-              label: 'Headline',
+              label: t('txt_headline'),
               key: CONTENT_FIELD_KEY.NAME,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[CONTENT_FIELD_KEY.NAME],
@@ -60,7 +61,7 @@ const ContentFormGeneral = observer(
         selection: {
           fields: [
             {
-              label: 'Choose the Project',
+              label: t('txt_choose_the_project'),
               key: CONTENT_FIELD_KEY.PROJECT,
               type: FORM_FIELD_TYPE.DROPDOWN,
               value: this.formPropsData[CONTENT_FIELD_KEY.PROJECT],
@@ -71,7 +72,7 @@ const ContentFormGeneral = observer(
               },
             },
             {
-              label: 'Choose the Campaign',
+              label: t('txt_choose_the_campaign'),
               key: CONTENT_FIELD_KEY.CAMPAIGN,
               type: FORM_FIELD_TYPE.DROPDOWN,
               value: this.formPropsData[CONTENT_FIELD_KEY.CAMPAIGN],
@@ -97,7 +98,7 @@ const ContentFormGeneral = observer(
     onNext = () => {
       const channelsData = this.viewModel.channelMasterData;
       const dataChannels = ChannelUtils.getChannelByFilter(channelsData, 'removed', 'not');
-
+      const { t } = this.props;
       const mediaChannel = ContentUtils.hasMediaChannel(dataChannels);
 
       if (this.validator.allValid()) {
@@ -106,17 +107,16 @@ const ContentFormGeneral = observer(
             mediaChannel.video &&
             !this.viewModel.requiredVideo(this.formPropsData[CONTENT_FIELD_KEY.DAM])
           ) {
-            notify('The video field is required');
+            notify(t('txt_the_video_field_is_required'));
           } else {
             this.props.nextStep();
           }
         } else {
-          notify('Please connect a Channel');
+          notify(t('txt_please_connect_a_channel'));
         }
       } else {
         this.validator.showMessages();
       }
-
     };
 
     onBlurDescription = () => {
@@ -125,10 +125,10 @@ const ContentFormGeneral = observer(
 
     render() {
       const formSetting = this.generateFormSetting();
-
+      const { t } = this.props;
       return (
         <div className="pe-md-80">
-          <h3 className="mb-4">General</h3>
+          <h3 className="mb-4">{t('txt_general')}</h3>
           <div className="bg-white p-4">
             <div className="row">
               <div className="col-md-5">
@@ -158,9 +158,9 @@ const ContentFormGeneral = observer(
               className="btn rounded-2 border-1 border-green text-black bg-transparent px-2 mw-80 btn_back_wz d-none"
             >
               <FontAwesomeIcon icon={faChevronLeft} />
-              <span className="ps-2">Back</span>
+              <span className="ps-2">{t('txt_back')}</span>
             </a>
-            <Button className="btn btn-success px-4 mw-80" onClick={this.onNext} text="Next" />
+            <Button className="btn btn-success px-4 mw-80" onClick={this.onNext} text="txt_next" />
           </div>
         </div>
       );
@@ -168,4 +168,4 @@ const ContentFormGeneral = observer(
   }
 );
 
-export default withContentViewModel(ContentFormGeneral);
+export default withTranslation('common')(withContentViewModel(ContentFormGeneral));

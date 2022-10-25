@@ -202,7 +202,7 @@ const renderingGroupFieldHandler = (group, validator) => {
                   <div className="form-control w-full">
                     <CustomizedDatePicker
                       handleOnChange={(date) => field.changed(date)}
-                      defaultDate={field.value ? field.value.substr(0, 10) : null}
+                      defaultDate={field.value ? field.value.split(' ')[0] : null}
                     />
                   </div>
                 </Form.Group>

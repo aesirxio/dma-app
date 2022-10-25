@@ -16,10 +16,11 @@ import '../index.scss';
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import FormComponent from '../../../components/Form';
 import AvatarDAM from '../Layout/AvatarDAM';
+import LogoDAM from '../Layout/LogoDAM';
 import SubmitButton from '../Layout/SubmitButton';
 import ComponentImage from '../../../components/ComponentImage';
 import { Storage } from 'aesirx-dma-lib';
-
+import { withTranslation } from 'react-i18next';
 const DamButton = lazy(() => import('../../../components/DamButton'));
 
 const UpdateGeneral = observer(
@@ -29,6 +30,7 @@ const UpdateGeneral = observer(
       [UPDATE_GENERAL_FIELD_KEY.ID]: Storage.getItem('member_id'),
       [UPDATE_GENERAL_FIELD_KEY.USERNAME]: '',
       [UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]: '',
+      [UPDATE_GENERAL_FIELD_KEY.LOGO]: '',
       [UPDATE_GENERAL_FIELD_KEY.FULLNAME]: '',
       [UPDATE_GENERAL_FIELD_KEY.EMAIL]: '',
       [UPDATE_GENERAL_FIELD_KEY.BIRTHDAY]: '',
@@ -47,6 +49,7 @@ const UpdateGeneral = observer(
       this.state = {
         loading: false,
         getUrlImage: '',
+        getUrlImageLogo: '',
       };
       this.validator = new SimpleReactValidator();
       const { viewModel } = props;
@@ -54,6 +57,7 @@ const UpdateGeneral = observer(
       this.updateGeneralViewModel.setAllValue(this);
       this.validateInfoBeforeSending = this.validateInfoBeforeSending.bind(this);
       this.handleDamAssets = this.handleDamAssets.bind(this);
+      this.handleDamAssetsLogo = this.handleDamAssetsLogo.bind(this);
       this.updateGeneralViewModel.setForm(this);
     }
 
@@ -69,7 +73,14 @@ const UpdateGeneral = observer(
         this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = data[0].url;
       }
     }
-
+    handleDamAssetsLogo(data) {
+      if (data[0].extension !== 'mp4') {
+        this.setState({
+          getUrlImageLogo: data,
+        });
+        this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = data[0].url;
+      }
+    }
     saveGeneralHandler = () => {
       this.updateGeneralViewModel.saveGeneralInformationOnPage();
     };
@@ -95,13 +106,19 @@ const UpdateGeneral = observer(
       });
       this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = defaultImage;
     };
+    clearLogo = (defaultImage) => {
+      this.setState({
+        getUrlImageLogo: '',
+      });
+      this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = defaultImage;
+    };
 
     generateFormSetting = () => {
       return [
         {
           fields: [
             {
-              label: 'Username',
+              label: 'txt_Username',
               key: UPDATE_GENERAL_FIELD_KEY.USERNAME,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME],
@@ -109,7 +126,7 @@ const UpdateGeneral = observer(
               readOnly: true,
             },
             {
-              label: 'Email',
+              label: 'txt_Email',
               key: UPDATE_GENERAL_FIELD_KEY.EMAIL,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.EMAIL],
@@ -117,7 +134,7 @@ const UpdateGeneral = observer(
               readOnly: true,
             },
             {
-              label: 'Status',
+              label: 'txt_Status',
               key: 'status',
               type: FORM_FIELD_TYPE.INPUT,
               value: 'Active',
@@ -126,7 +143,7 @@ const UpdateGeneral = observer(
               readOnly: true,
             },
             {
-              label: 'Full name',
+              label: 'txt_Fullname',
               key: UPDATE_GENERAL_FIELD_KEY.FULLNAME,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.FULLNAME],
@@ -136,7 +153,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'Phone',
+              label: 'txt_Phone',
               key: UPDATE_GENERAL_FIELD_KEY.PHONE,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.PHONE],
@@ -146,7 +163,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'Birthday',
+              label: 'txt_Birthday',
               key: UPDATE_GENERAL_FIELD_KEY.BIRTHDAY,
               type: FORM_FIELD_TYPE.BIRTHDAY,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.BIRTHDAY],
@@ -163,7 +180,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'Address 1',
+              label: 'txt_Address_1',
               key: UPDATE_GENERAL_FIELD_KEY.ADDRESS,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.ADDRESS],
@@ -173,7 +190,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'Address 2',
+              label: 'txt_Address_2',
               key: UPDATE_GENERAL_FIELD_KEY.ADDRESS_2,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.ADDRESS_2],
@@ -183,7 +200,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'City',
+              label: 'txt_City',
               key: UPDATE_GENERAL_FIELD_KEY.CITY,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.CITY],
@@ -193,7 +210,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'State',
+              label: 'txt_State',
               key: UPDATE_GENERAL_FIELD_KEY.STATE,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.STATE],
@@ -203,7 +220,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'Country',
+              label: 'txt_Country',
               key: UPDATE_GENERAL_FIELD_KEY.COUNTRY,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.COUNTRY],
@@ -213,7 +230,7 @@ const UpdateGeneral = observer(
               },
             },
             {
-              label: 'Zipcode',
+              label: 'txt_Zipcode',
               key: UPDATE_GENERAL_FIELD_KEY.ZIPCODE,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.ZIPCODE],
@@ -229,51 +246,88 @@ const UpdateGeneral = observer(
 
     render() {
       let { getUrlImage } = this.state;
+      let { getUrlImageLogo } = this.state;
       const { memberInfo } = this.updateGeneralViewModel;
-
+      console.log(getUrlImageLogo);
       return (
         <>
           {!memberInfo ? (
             <Spinner />
           ) : (
-            <div className="bg-white p-3 row">
-              <FormComponent
-                formClassName={'col-9 row'}
-                generateFormSetting={() => this.generateFormSetting()}
-                formPropsData={this.formPropsData}
-                viewModel={this.updateGeneralViewModel}
-                key={Math.random(40, 200)}
-              />
+            <div className="bg-white p-3 rounded-3">
+              <div className="row">
+                <FormComponent
+                  formClassName={'col-9 row'}
+                  generateFormSetting={() => this.generateFormSetting()}
+                  formPropsData={this.formPropsData}
+                  viewModel={this.updateGeneralViewModel}
+                  key={Math.random(40, 200)}
+                />
 
-              <AvatarDAM>
-                <div
-                  className={`position-relative cursor-pointer wr_upload_images ${
-                    getUrlImage.length > 0 ? 'active_img' : ''
-                  }`}
-                >
-                  {!getUrlImage ? (
-                    <div className="wr_img_thumbnail_dam position-relative m-2">
-                      <ComponentImage
-                        className={`img-thumbnail rounded imgTab`}
-                        src={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]}
-                        alt={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME]}
+                <AvatarDAM>
+                  <div
+                    className={`position-relative cursor-pointer wr_upload_images ${
+                      getUrlImage.length > 0 ? 'active_img' : ''
+                    }`}
+                  >
+                    {!getUrlImage ? (
+                      <div className="wr_img_thumbnail_dam position-relative m-2">
+                        <ComponentImage
+                          className={`img-thumbnail rounded imgTab`}
+                          src={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]}
+                          alt={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME]}
+                        />
+                      </div>
+                    ) : null}
+                    <div className="main_upload_images">
+                      <DamButton
+                        data={getUrlImage}
+                        changed={(data) => this.handleDamAssets(data)}
                       />
                     </div>
-                  ) : null}
-                  <div className="main_upload_images">
-                    <DamButton data={getUrlImage} changed={(data) => this.handleDamAssets(data)} />
+                    {getUrlImage ? (
+                      <div
+                        onClick={() => this.clearImage(memberInfo.avatar_dam)}
+                        className={'clear_image_button'}
+                      >
+                        <FontAwesomeIcon icon={faTimesCircle} className="text-white" />
+                      </div>
+                    ) : null}
                   </div>
-                  {getUrlImage ? (
-                    <div
-                      onClick={() => this.clearImage(memberInfo.avatar_dam)}
-                      className={'clear_image_button'}
-                    >
-                      <FontAwesomeIcon icon={faTimesCircle} className="text-white" />
+                </AvatarDAM>
+                <LogoDAM>
+                  <div
+                    className={`position-relative cursor-pointer wr_upload_images ${
+                      getUrlImageLogo.length > 0 ? 'active_img' : ''
+                    }`}
+                  >
+                    {!getUrlImageLogo ? (
+                      <div className="wr_img_thumbnail_dam position-relative m-2">
+                        <ComponentImage
+                          className={`img-thumbnail rounded imgTab`}
+                          src={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO]}
+                          alt={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME]}
+                        />
+                      </div>
+                    ) : null}
+                    <div className="main_upload_images">
+                      <DamButton
+                        data={getUrlImageLogo}
+                        changed={(data) => this.handleDamAssetsLogo(data)}
+                      />
                     </div>
-                  ) : null}
-                </div>
-              </AvatarDAM>
-              <SubmitButton validateInfoBeforeSending={this.validateInfoBeforeSending} />
+                    {getUrlImageLogo ? (
+                      <div
+                        onClick={() => this.clearLogo(memberInfo.member_logo)}
+                        className={'clear_image_button'}
+                      >
+                        <FontAwesomeIcon icon={faTimesCircle} className="text-white" />
+                      </div>
+                    ) : null}
+                  </div>
+                </LogoDAM>
+                <SubmitButton validateInfoBeforeSending={this.validateInfoBeforeSending} />
+              </div>
             </div>
           )}
         </>
@@ -282,4 +336,4 @@ const UpdateGeneral = observer(
   }
 );
 
-export default witheProfileViewModel(UpdateGeneral);
+export default withTranslation('common')(witheProfileViewModel(UpdateGeneral));

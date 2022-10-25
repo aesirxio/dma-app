@@ -145,6 +145,7 @@ $utilities: (
       bold: $font-weight-bold,
       bolder: $font-weight-bolder,
       medium: 500,
+      semibold: 600,
     ),
   ),
   'width': (
@@ -159,6 +160,7 @@ $utilities: (
       fit: fit-content,
       max: max-content,
       auto: auto,
+      110px: 110px,
     ),
   ),
   'object-fit': (

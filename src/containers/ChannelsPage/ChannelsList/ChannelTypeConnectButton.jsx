@@ -10,15 +10,16 @@ import { observer } from 'mobx-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
-
+import { withTranslation } from 'react-i18next';
 import { notify } from '../../../components/Toast';
+import { useTranslation } from 'react-i18next';
 
 const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => {
   const context = useContext(ChannelsViewModelContext);
   const channelsListViewModel = context.getChannelsListViewModel();
 
   const [connecting, setConnecting] = useState(false);
-
+  const { t } = useTranslation('common');
   const handleOnClick = async () => {
     if (channelsListViewModel.memberProfile?.allow_create_item) {
       if (channelCategory.id === 'cms' || channelType.id === 'medium') {
@@ -28,8 +29,9 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
         await channelsListViewModel.connectChannel(channelType.id);
       }
     } else {
-      notify('Please upgrade account at https://dma.aesirx.io');
+      notify(t('txt_please_upgrade_account') + 'at https://dma.aesirx.io');
     }
+    setConnecting(false);
   };
 
   if (connecting) {
@@ -42,15 +44,15 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
 
   return (
     <button
-      className="btn btn-success d-flex justify-content-center align-items-center p-2"
+      className="btn btn-success d-flex justify-content-center align-items-center p-2 w-110px"
       onClick={handleOnClick}
     >
       <i className="fs-5 me-2">
         <FontAwesomeIcon icon={faPlus} />
       </i>
-      {connecting ? 'connecting' : 'Connect'}
+      {connecting ? t('txt_connecting') : t('txt_connect')}
     </button>
   );
 });
 
-export default ChannelTypeConnectButton;
+export default withTranslation('common')(ChannelTypeConnectButton);

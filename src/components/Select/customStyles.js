@@ -3,37 +3,61 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-const customStyles = (isBorder, plColor) => {
+const customStyles = (isBorder) => {
   return {
     control: (provided) => ({
       ...provided,
       minHeight: 50,
       boxShadow: 'none',
-      borderColor: isBorder ? '#ced4da' : 'transparent',
+      borderColor: isBorder ? 'var(--border-color)' : 'transparent',
       '&:hover': {
         borderColor: isBorder ? '#8bdcbc' : 'transparent',
       },
       backgroundColor: 'transparent',
     }),
-    option: (provided, state) => ({
-      ...provided,
-      color: state.isSelected ? '#FFFFFF' : '#212529',
-      '&:hover': {
-        backgroundColor: state.isSelected ? '#005f89' : '#8bdcbc',
-      },
-      backgroundColor: state.isSelected ? '#005f89' : '#FFF',
-    }),
+    menu: (styles) => {
+      return {
+        ...styles,
+        border: '1px solid var(--border-color)',
+        backgroundColor: 'var(--dropdown-bg)',
+      };
+    },
+    option: (provided, state) => {
+      return {
+        ...provided,
+        color: state.isSelected ? 'var(--dropdown-item-hover-color)' : 'var(--dropdown-item-color)',
+        backgroundColor: state.isSelected ? 'var(--dropdown-item-hover-bg)' : 'var(--dropdown-bg)',
+        '&:hover': {
+          color: 'var(--dropdown-item-color)',
+          backgroundColor: 'var(--dropdown-item-hover-bg)',
+        },
+      };
+    },
     indicatorSeparator: () => ({ display: 'none' }),
     dropdownIndicator: (base) => ({
       ...base,
-      color: 'text-green',
+      color: 'var(--text-title-color)',
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: 'var(--body-color)',
     }),
     placeholder: (defaultStyles) => {
       return {
         ...defaultStyles,
-        color: plColor,
+        color: 'var(--text-title-color)',
       };
     },
+    multiValue: (styles) => {
+      return {
+        ...styles,
+        backgroundColor: 'var(--view-active-bg)',
+      };
+    },
+    multiValueLabel: (styles) => ({
+      ...styles,
+      color: 'var(--body-color)',
+    }),
   };
 };
 

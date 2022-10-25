@@ -6,15 +6,17 @@
 import React from 'react';
 import ChannelChannelComponent from './channel';
 import { observer } from 'mobx-react';
+import { withTranslation, useTranslation } from 'react-i18next';
 
 const ListChannelComponent = observer(({ channelsData, ...props }) => {
+  const { t } = useTranslation('common');
   return (
     <div className="w-100">
       {channelsData.map((channelCategory, index) => (
         <React.Fragment key={index}>
           <div className="mb-4">
             <div className="d-flex w-100 mb-2">
-              <h6 className="text-blue mb-0 w-100">{channelCategory.name}</h6>
+              <h6 className="text-blue mb-0 w-100">{t(channelCategory.name)}</h6>
             </div>
 
             <div className="d-flex d-flex align-items-center flex-wrap">
@@ -29,4 +31,4 @@ const ListChannelComponent = observer(({ channelsData, ...props }) => {
   );
 });
 
-export default ListChannelComponent;
+export default withTranslation('common')(ListChannelComponent);
