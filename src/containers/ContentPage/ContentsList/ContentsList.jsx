@@ -20,7 +20,7 @@ import { observer } from 'mobx-react';
 import { withContentViewModel } from '../ContentViewModels/ContentViewModelContextProvider';
 
 import Spinner from '../../../components/Spinner';
-
+import { withTranslation } from 'react-i18next';
 import ComponentNoData from '../../../components/ComponentNoData';
 
 import ComponentViewList from '../../../components/ComponentViewList';
@@ -39,7 +39,7 @@ const ContentsList = observer(
     getDataFormFilter = () => {
       return [
         {
-          name: 'campaigns',
+          name: 'txt_campaigns',
           option: this.filterFormViewModel.campaignMasterData,
           isMulti: true,
         },
@@ -48,7 +48,7 @@ const ContentsList = observer(
 
     render() {
       const { tableStatus, contents = [], pagination } = this.listViewModel;
-
+      const { t } = this.props;
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
       }
@@ -69,18 +69,18 @@ const ContentsList = observer(
           ),
         },
         {
-          Header: 'Title',
+          Header: t('txt_title'),
           accessor: CONTENT_FIELD_KEY.NAME,
           Cell: ({ row }) => (
             <div className="d-flex">
-              <span className="text-black opacity-75 cursor-pointer">
+              <span className="opacity-75 cursor-pointer">
                 {row.original[CONTENT_FIELD_KEY.NAME]}
               </span>
             </div>
           ),
         },
         {
-          Header: 'Channels',
+          Header: t('txt_channels'),
           accessor: CONTENT_FIELD_KEY.CHANNELS,
           Cell: ({ row, value }) => {
             const data = ContentUtils.getPageDetail(value, this.listViewModel.channelMasterData);
@@ -127,7 +127,7 @@ const ContentsList = observer(
           },
         },
         {
-          Header: 'Date',
+          Header: t('txt_date'),
           accessor: CONTENT_FIELD_KEY.DATE,
           Cell: ({ value }) => <div>{value}</div>,
         },
@@ -150,7 +150,7 @@ const ContentsList = observer(
                 className={`badge mw-100 h-35 d-table-cell align-middle btn btn-success border-0`}
                 onClick={() => this.handerEdit(row.original)}
               >
-                Edit
+                {t('txt_edit')}
               </button>
             ),
         },
@@ -169,14 +169,15 @@ const ContentsList = observer(
               listViewModel={this.listViewModel}
               searchFunction={this.listViewModel.searchContents}
               dataFormFilter={dataFormFilter}
-              searchText="Search your posts"
+              searchText={t('search_your_post')}
               classNameTable={'wr_content_list'}
               idKey={this.key}
+              view={this.view}
             />
           ) : (
             <ComponentNoData
               icons="/assets/images/ic_upcoming.svg"
-              title="Create your 1st content"
+              title={t('create_your_1st_project')}
               width="w-50"
             />
           )}
@@ -186,4 +187,4 @@ const ContentsList = observer(
   }
 );
 
-export default withContentViewModel(ContentsList);
+export default withTranslation('common')(withContentViewModel(ContentsList));

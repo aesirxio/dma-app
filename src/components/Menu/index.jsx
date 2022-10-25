@@ -4,84 +4,56 @@
  */
 
 import React from 'react';
+
 import { NavLink } from 'react-router-dom';
 
 import './index.scss';
-import ComponentImage from '../ComponentImage';
+import { withTranslation } from 'react-i18next';
 
 class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      language: 'English',
       dataMenu: [
         {
           name: 'home',
-          text: 'Calendar',
+          text: 'txt_menu_calendar',
           link: '/',
           icons: '/assets/images/icon_calendar.svg',
           icons_color: '/assets/images/icon_calendar_white.svg',
         },
-        // {
-        //   name: 'wizard',
-        //   text: 'Wizard',
-        //   link: '/wizard',
-        //   icons: '/assets/images/icon_wizard.svg',
-        //   icons_color: '/assets/images/icon_wizard_white.svg',
-        // },
         {
           name: 'projects',
-          text: 'Projects',
+          text: 'txt_menu_projects',
           link: '/projects',
           icons: '/assets/images/icon_projects.svg',
           icons_color: '/assets/images/icon_projects_white.svg',
         },
         {
           name: 'campaigns',
-          text: 'Campaigns',
+          text: 'txt_menu_campaigns',
           link: '/campaigns',
           icons: '/assets/images/icon_campaigns.svg',
           icons_color: '/assets/images/icon_campaigns_white.svg',
         },
-        // {
-        //   name: 'personas',
-        //   text: 'Personas',
-        //   link: '/personas',
-        //   icons: '/assets/images/icon_personas.svg',
-        //   icons_color: '/assets/images/icon_personas_white.svg',
-        //   className: 'fst-italic',
-        // },
         {
           name: 'content',
-          text: 'Content',
+          text: 'txt_menu_content',
           link: '/content',
           icons: '/assets/images/icon_content.svg',
           icons_color: '/assets/images/icon_content_white.svg',
         },
         {
           name: 'channels',
-          text: 'Channels',
+          text: 'txt_menu_channels',
           link: '/channels',
           icons: '/assets/images/icon_channles.svg',
           icons_color: '/assets/images/icon_channles_white.svg',
         },
-        // {
-        //   name: 'calendar',
-        //   text: 'Calendar',
-        //   link: '/calendar',
-        //   icons: '/assets/images/icon_calendar.svg',
-        //   icons_color: '/assets/images/icon_calendar_white.svg',
-        // },
-        // {
-        //   name: 'analytics',
-        //   text: 'Analytics',
-        //   link: '/analytics',
-        //   icons: '/assets/images/icon_analytics.svg',
-        //   icons_color: '/assets/images/icon_analytics_white.svg',
-        //   className: 'fst-italic',
-        // },
         {
           name: 'digital',
-          text: 'Digital Assets',
+          text: 'txt_menu_digital_assets',
           link: '/digital-assets',
           icons: '/assets/images/icon_digital_assets.svg',
           icons_color: '/assets/images/icon_digital_assets_white.svg',
@@ -118,9 +90,10 @@ class Menu extends React.Component {
 
   render() {
     let { dataMenu } = this.state;
+    const { t } = this.props;
     return (
       <nav>
-        <ul id="wr_list_menu" className="list-unstyled mb-0 py-3 pt-md-1">
+        <ul id="wr_list_menu" className="list-unstyled mb-0 p-3 pt-md-1">
           {dataMenu.map((value, key) => {
             return (
               <li
@@ -134,17 +107,14 @@ class Menu extends React.Component {
                   className={`d-block rounded-1 px-3 py-2 mb-1 link_menu text-white text-decoration-none `}
                   activeClassName={`active`}
                 >
-                  <ComponentImage
-                    src={value.icons_color}
-                    alt={value.icons}
-                    className="mb-1 img_menu"
-                  />
-                  <ComponentImage
-                    src={value.icons_color}
-                    alt={value.icons}
-                    className="mb-1 img_menu_color"
-                  />
-                  <span className="ms-3 text py-1 d-inline-block">{value.text}</span>
+                  <span
+                    className="icon d-inline-block align-text-bottom"
+                    style={{
+                      WebkitMaskImage: `url(${value.icons_color})`,
+                      WebkitMaskRepeat: 'no-repeat',
+                    }}
+                  ></span>
+                  <span className="ms-3 text py-1 d-inline-block">{t(value.text)}</span>
                 </NavLink>
               </li>
             );
@@ -155,4 +125,4 @@ class Menu extends React.Component {
   }
 }
 
-export default Menu;
+export default withTranslation('common')(Menu);

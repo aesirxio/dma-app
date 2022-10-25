@@ -32,7 +32,13 @@
       height: auto;
     }
   }
-
+  .rbc-event {
+    padding: 0;
+    background-color: transparent;
+    .rbc-event-label {
+      display: none;
+    }
+  }
   .rbc-btn-group {
     button {
       &:focus {
@@ -44,6 +50,11 @@
   .rbc-month-view,
   .rbc-time-view {
     background-color: $white;
+  }
+  .rbc-agenda-view {
+    .wrapper_des_event_time {
+      display: none;
+    }
   }
 
   .rbc-month-view {
@@ -57,6 +68,13 @@
     }
   }
 
+  .rbc-time-slot:first-child {
+    border: 0;
+  }
+  .rbc-agenda-view table.rbc-agenda-table .rbc-agenda-time-cell {
+    vertical-align: middle;
+    border-left: 1px solid var(--calendar-border-color);
+  }
   .rbc-month-header,
   .rbc-time-header {
     background-color: $color-blue-6;
@@ -64,11 +82,9 @@
 
   .rbc-day-bg {
     border-left: 1px solid $border-color;
-    
 
     &:last-child {
       border-right: 1px solid $border-color;
-      
     }
   }
 
@@ -104,6 +120,14 @@
   background-color: rgba($color: $color-blue-3, $alpha: 0.3);
 }
 
+.rbc-show-more {
+  background-color: var(--calendar-bg);
+  color: var(--event-color);
+  &:hover {
+    color: var(--event-color);
+  }
+}
+
 .rbc-event,
 .rbc-event-content {
   &:focus {
@@ -123,7 +147,7 @@
     color: $color-blue-7;
   }
 }
-.rbc-day-slot.rbc-today{
+.rbc-day-slot.rbc-today {
   background-color: $white;
 }
 .event-red {
@@ -206,8 +230,15 @@
 
 .rbc-overlay {
   z-index: 101;
+  top: unset !important;
+  bottom: 98% !important;
+  background-color: var(--calendar-bg);
+  border-color: var(--calendar-border-color);
   .rbc-event {
     background: none;
+  }
+  .rbc-overlay-header {
+    border-color: var(--calendar-border-color);
   }
 }
 
@@ -220,6 +251,9 @@
   .rbc-calendar {
     width: 100%;
     min-height: 800px;
+    .rbc-timeslot-group {
+      min-height: 45px;
+    }
   }
   .rbc-month-row {
     overflow: visible;
@@ -230,12 +264,22 @@
 }
 
 .label-rounded {
-  padding: 5px;
+  padding: 6px;
   border-radius: 5px;
+}
+.rbc-time-view {
+  .rbc-event {
+    border: 1px solid var(--event-color) !important;
+  }
+  .label-rounded {
+    padding: 1px 7px 4px;
+    border-radius: 5px;
+  }
 }
 
 .rbc-row {
   .rbc-event {
+    padding: 0;
     background: transparent;
   }
 }
@@ -249,7 +293,7 @@
   background: rgba(211, 0, 17, 0.2);
 }
 .facebook_calendar_background {
-  background: rgba(13, 110, 253, 0.2);
+  background: #cfe2ff;
 }
 
 .twitter_calendar_background {
@@ -363,4 +407,9 @@
 }
 .planing {
   pointer-events: none;
+}
+.rbc-day-slot {
+  .rbc-events-container {
+    margin-right: 0;
+  }
 }

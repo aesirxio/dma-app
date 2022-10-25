@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import {
   useTable,
@@ -24,13 +24,14 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import styles from './index.module.scss';
 import './index.scss';
-
+import { withTranslation } from 'react-i18next';
 import GlobalFilter from './GlobalFilter';
 import SubRowAsync from './RowSubComponent';
 import ComponentDatepicker from '../ComponentDatepicker';
 import ComponentFilter from '../ComponentFilter';
 import PaginationComponent from './PaginationComponent';
 import ComponentNoData from '../ComponentNoData';
+import { useTranslation } from 'react-i18next';
 
 let dataFilter = {
   searchText: '',
@@ -54,6 +55,16 @@ let setFilter = (data, key) => {
     // keep datetime filter when render
     case 4:
       return (dataFilter.datetime = data);
+    // keep page when render
+    case 5:
+      return (dataFilter.page = data);
+    case 6:
+      dataFilter.searchText = '';
+      dataFilter.columns = [];
+      dataFilter.titleFilter = {};
+      dataFilter.datetime = null;
+      dataFilter.page = '';
+      break;
     default:
       return null;
   }
@@ -81,6 +92,7 @@ const Table = ({
   _handleList,
   classNameTable,
   idKey,
+  view,
 }) => {
   const [getState, setState] = useState({
     isName: 'list',
@@ -88,13 +100,6 @@ const Table = ({
     indexPagination: 0,
     dataFilter: null,
   });
-  useEffect(() => {
-    dataFilter = {
-      ...dataFilter,
-      searchText: searchText,
-    };
-    return () => {};
-  }, [searchText]);
 
   const filterTypes = React.useMemo(
     () => ({
@@ -196,6 +201,26 @@ const Table = ({
   }, [selectedRowIds, onSelect, data]);
 
   useEffect(() => {
+    if (view !== dataFilter.page) {
+      state.hiddenColumns = [];
+      setFilter(null, 6);
+      setFilter(view, 5);
+      setState({ isFilter: false });
+    }
+  }, [view]);
+  const Filter = useRef(null);
+  useEffect(() => {
+    if (!Filter) return;
+    function handleClick(event) {
+      if (Filter.current && !Filter.current.contains(event.target)) {
+        setState({ isFilter: false });
+      }
+    }
+    window.addEventListener('click', handleClick);
+    return () => window.removeEventListener('click', handleClick);
+  }, [Filter]);
+
+  useEffect(() => {
     if (setFilter) {
       setFilter(state.hiddenColumns, 2);
     }
@@ -204,7 +229,6 @@ const Table = ({
 
   const setGlobalFilter = (dataFilter) => {
     if (searchFunction !== undefined) {
-
       const finalDataFilter = {
         ...getState.dataFilter,
         ...dataFilter,
@@ -238,6 +262,7 @@ const Table = ({
     });
   };
 
+  const { t } = useTranslation('common');
   return (
     <>
       <div className={`mb-4 ${classNameTable}`}>
@@ -258,14 +283,14 @@ const Table = ({
               <div className="px-2 border-end-1">
                 <Dropdown>
                   <Dropdown.Toggle
-                    variant="info"
+                    variant="white"
                     id="actions"
-                    className={`btn_toggle ${styles.btn_toggle}`}
+                    className={`btn_toggle ${styles.btn_toggle} text-blue-0`}
                   >
                     <i>
                       <FontAwesomeIcon icon={faColumns} />
                     </i>
-                    <span className="ps-2 pe-5 text-blue-0 opacity-75">Columns</span>
+                    <span className="ps-2 pe-5 opacity-75">{t('txt_columns')}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={faChevronDown} />
                     </i>
@@ -302,15 +327,15 @@ const Table = ({
                     setFilter={setFilter}
                   />
                 </div>
-                <div className="rounded-0">
+                <div className="rounded-0" ref={Filter}>
                   <button
-                    className={`btn ${getState.isFilter ? 'bg-blue-3' : ''}`}
+                    className={`btn text-blue-0 ${getState.isFilter ? 'bg-blue-3' : ''}`}
                     onClick={handleFilter}
                   >
                     <i>
                       <FontAwesomeIcon icon={faFilter} />
                     </i>
-                    <span className="ps-2 pe-5 text-blue-0 opacity-75">Filter</span>
+                    <span className="ps-2 pe-5 opacity-75">{t('txt_filter')}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={getState.isFilter ? faChevronUp : faChevronDown} />
                     </i>
@@ -331,7 +356,7 @@ const Table = ({
                 <i>
                   <FontAwesomeIcon icon={faList} />
                 </i>
-                <span className="ms-2 opacity-75">List</span>
+                <span className="ms-2 opacity-75">{t('txt_list')}</span>
               </button>
               <button
                 type="button"
@@ -343,7 +368,7 @@ const Table = ({
                 <i>
                   <FontAwesomeIcon icon={faTh} />
                 </i>
-                <span className="ms-2 opacity-75">Thumb</span>
+                <span className="ms-2 opacity-75">{t('txt_thumb')}</span>
               </button>
             </div>
           )}
@@ -384,7 +409,10 @@ const Table = ({
                   <tr {...headerGroup.getHeaderGroupProps()} className="bg-blue">
                     {newHeaderGroup.map((column) => {
                       return (
-                        <th {...column.getHeaderProps()} className="fw-normal px-2 py-3 flex-1">
+                        <th
+                          {...column.getHeaderProps()}
+                          className="fw-normal px-2 py-3 flex-1 bg-blue"
+                        >
                           {column.render('Header')}
                         </th>
                       );
@@ -443,7 +471,7 @@ const Table = ({
             />
           ) : (
             <div className="pagination d-flex align-items-center justify-content-between">
-              {pagination && (
+              {pagination && pagination.totalPages > 1 && (
                 <>
                   <PaginationComponent
                     pagination={pagination}
@@ -506,7 +534,7 @@ const Table = ({
             />
           ) : (
             <div className="pagination d-flex align-items-center justify-content-between">
-              {pagination && (
+              {pagination && pagination.totalPages > 1 && (
                 <>
                   <PaginationComponent
                     pagination={pagination}
@@ -534,4 +562,4 @@ function filterGreaterThan(rows, id, filterValue) {
 
 filterGreaterThan.autoRemove = (val) => typeof val !== 'number';
 
-export default Table;
+export default withTranslation('common')(Table);

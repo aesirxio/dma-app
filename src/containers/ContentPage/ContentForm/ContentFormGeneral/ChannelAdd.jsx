@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ContentViewModelContext } from '../../ContentViewModels/ContentViewModelContextProvider';
 import ListChannelComponent from '../../../../components/ChannelComponent/list';
 import { Button } from 'react-bootstrap';
-
+import { useTranslation, withTranslation } from 'react-i18next';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 
@@ -29,7 +29,7 @@ const ChannelAdd = observer(() => {
   const showModal = () => {
     viewModel.setShowAddChannelModel(true);
   };
-
+  const { t } = useTranslation('common');
   return (
     availableChannels.length > 0 && (
       <>
@@ -37,7 +37,7 @@ const ChannelAdd = observer(() => {
           <i className={`me-2`}>
             <FontAwesomeIcon icon={faPlus} />
           </i>
-          Add Channels
+          {t('txt_add_channels')}
         </span>
         <ModalComponent
           show={viewModel.showAddChannelModel}
@@ -51,7 +51,7 @@ const ChannelAdd = observer(() => {
           }
           footer={
             <Button className="btn btn-success w-100" onClick={viewModel.saveSeletedChannel}>
-              <span>Save</span>
+              <span>{t('txt_save')}</span>
             </Button>
           }
         />
@@ -60,4 +60,4 @@ const ChannelAdd = observer(() => {
   );
 });
 
-export default ChannelAdd;
+export default withTranslation('common')(ChannelAdd);

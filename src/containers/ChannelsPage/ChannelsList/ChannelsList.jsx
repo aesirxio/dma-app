@@ -13,6 +13,7 @@ import ChannelType from './ChannelType';
 import ChannelCallbackNotify from '../../../websocket/ChannelCallbackNotify';
 import './index.scss';
 import Upgrade from '../../../components/Upgrade';
+import { withTranslation } from 'react-i18next';
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
 const ChannelsList = observer(
@@ -23,8 +24,7 @@ const ChannelsList = observer(
       const { viewModel } = props;
 
       this.channelsListViewModel = viewModel ? viewModel.getChannelsListViewModel() : null;
-
-      ChannelCallbackNotify.__init(this.channelsListViewModel);
+      ({ socket: this.socket } = ChannelCallbackNotify.__init(this.channelsListViewModel));
     }
 
     componentDidMount() {
@@ -33,18 +33,22 @@ const ChannelsList = observer(
 
     componentWillUnmount() {
       this.channelsListViewModel.reset();
+      if (this.socket.connected) {
+        this.socket.disconnect();
+      }
+      this.socket.close();
     }
 
     render() {
       const { tableStatus, channelsData } = this.channelsListViewModel;
-
+      const { t } = this.props;
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
       }
 
       return (
         <div className="py-4 px-3">
-          <h2 className="text-blue-0 mb-4">Connect a Channel</h2>
+          <h2 className="text-blue-0 mb-4 text-blue-0">{t('txt_connect_a_channel')}</h2>
           <div className="wrapper_tabs">
             <Tabs defaultActiveKey="0" id="connectContent-tab" className="bg-white border-0">
               {channelsData.map((channelCategory, index) => (
@@ -57,7 +61,7 @@ const ChannelsList = observer(
           <ModalComponent
             show={this.channelsListViewModel.showUpgrade}
             onHide={this.channelsListViewModel.closeModalUpgrade}
-            header={'Please upgrade account'}
+            header={t('txt_please_upgrade_account')}
             body={<Upgrade></Upgrade>}
             key={Math.random(40, 200)}
           />
@@ -67,4 +71,4 @@ const ChannelsList = observer(
   }
 );
 
-export default withChannelsViewModel(ChannelsList);
+export default withTranslation('common')(withChannelsViewModel(ChannelsList));

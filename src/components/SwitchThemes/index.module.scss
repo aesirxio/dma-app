@@ -1,0 +1,10 @@
+@import '../../themes/list.scss';
+
+@each $theme, $color in $list-themes {
+  .#{$theme} {
+    background-color: $color !important;
+    @if $theme == 'light' {
+      border: 1px solid #bbb;
+    }
+  }
+}
