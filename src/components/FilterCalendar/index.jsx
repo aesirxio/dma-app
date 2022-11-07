@@ -129,7 +129,7 @@ class FilterCalendar extends React.Component {
               <i>
                 <FontAwesomeIcon icon={faTimes} />
               </i>
-              <span className="ms-2">Clear all</span>
+              <span className="ms-2">{t('txt_clear_all')}</span>
             </span>
           </div>
           <div

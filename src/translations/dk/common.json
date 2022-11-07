@@ -101,6 +101,7 @@
   "txt_filter": "Filter",
   "txt_clear_all" : "Slet alt",
   "txt_select_all": "Vælg alt",
+  "txt_deselect_all": "Fravælg alle",
   "txt_columns":"Kolonner",
   "txt_list": "Liste",
   "txt_thumb": "Tommelfinger",
