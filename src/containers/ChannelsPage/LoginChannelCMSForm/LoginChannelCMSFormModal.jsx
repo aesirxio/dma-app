@@ -65,6 +65,7 @@ const LoginChannelCMSFormModal = observer(
 
       let header = `Add your ${channelType.name} details`;
       let buttonTitle = 'Save';
+
       let eventName = channelType.id;
 
       return (
