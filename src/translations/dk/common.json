@@ -173,10 +173,11 @@
   "txt_post_now":"Send nu",
   "txt_schedule":"Tidsplan",
   "txt_publish_date/time":"Udgiv dato/tid",
-  "txt_update_successfully":"Update Successfully",
-  "txt_update_unsuccessfully" :"Update Unsuccessfully",
-  "txt_please_upgrade_account":"Please upgrade account",
-  "txt_please_connect_a_channel":"Please connect a channel",
-  "txt_the_video_field_is_required":"The video field is required",
-  "txt_logo_picture":"Logo"
+  "txt_update_successfully":"Opdatering lykkedes",
+  "txt_update_unsuccessfully" :"Opdatering mislykkedes",
+  "txt_please_upgrade_account":"Opgrader venligst kontoen",
+  "txt_please_connect_a_channel":"Tilslut venligst en kanal",
+  "txt_the_video_field_is_required":"Videofeltet er påkrævet",
+  "txt_logo_picture":"Logo",
+  "txt_canva_api_key_warning":"Erstat venligst REACT_APP_CANVA_API_KEY eller Canva-knappen virker kun på localhost"
 }

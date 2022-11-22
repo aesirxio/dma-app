@@ -10,7 +10,7 @@ import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from '../../../../constan
 import ContentUtils from '../../ContentUtils/ContentUtils';
 import MediaDataRender from '../MediaDataRender';
 import MediaDamButton from '../MediaDamButton';
-
+import CanvaButton from 'components/CanvaButton';
 import { ContentViewModelContext } from '../../ContentViewModels/ContentViewModelContextProvider';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 
@@ -38,10 +38,22 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
 
   const [damAssets, setDamAssets] = useState(dam);
 
-  const [setCanvaIndexToEdit] = useState(null);
+  const [canvaIndexToEdit, setCanvaIndexToEdit] = useState(null);
 
   const handleDam = (data) => {
     setDamAssets([...damAssets, ...data]);
+  };
+
+  const handleCanva = (exportUrl, designId) => {
+    setCanvaAssets([
+      ...canvaAssets,
+      ...[
+        {
+          exportUrl: exportUrl,
+          designId: designId,
+        },
+      ],
+    ]);
   };
 
   useEffect(() => {
@@ -72,6 +84,12 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
     setCanvaIndexToEdit({ index, id, designId });
   };
 
+  const canvaEditItem = (index, id, data) => {
+    canvaAssets.splice(index, 1, { id: id, exportUrl: data.exportUrl, designId: data.designId });
+    setCanvaIndexToEdit(null);
+    setCanvaAssets([...canvaAssets]);
+  };
+
   const canvaDeleteItem = (designId) => {
     setCanvaAssets(canvaAssets.filter((item) => item.designId !== designId));
   };
@@ -82,12 +100,19 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
 
   const mediaChannel = ContentUtils.hasMediaChannel(channelData);
 
-
   return (
     <div className="px-3 py-2 bg-blue-3 wr_description_image_asset">
       <div className="d-flex flex-wrap justify-content-start">
         {mediaChannel.dam && (
           <>
+            <div className="me-2 mt-1 mb-1">
+              <CanvaButton
+                data={canvaAssets}
+                changed={handleCanva}
+                canvaIndexToEdit={canvaIndexToEdit}
+                canvaEditItem={canvaEditItem}
+              />
+            </div>
             <div className="me-2 mt-1 mb-1">
               <MediaDamButton changed={handleDam} />
             </div>

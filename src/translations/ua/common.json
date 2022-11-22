@@ -175,10 +175,11 @@
   "txt_post_now":"Опублікувати зараз",
   "txt_schedule":"розклад",
   "txt_publish_date/time":"Дата/час публікації",
-  "txt_update_successfully":"Update Successfully",
-  "txt_update_unsuccessfully" :"Update Unsuccessfully",
-  "txt_please_upgrade_account":"Please upgrade account",
-  "txt_please_connect_a_channel":"Please connect a channel",
-  "txt_the_video_field_is_required":"The video field is required",
-  "txt_logo_picture":"логотип"
+  "txt_update_successfully":"Оновлено успішно",
+  "txt_update_unsuccessfully" :"Невдале оновлення",
+  "txt_please_upgrade_account":"Оновіть обліковий запис",
+  "txt_please_connect_a_channel":"Підключіть канал",
+  "txt_the_video_field_is_required":"Поле відео є обов’язковим",
+  "txt_logo_picture":"логотип",
+  "txt_canva_api_key_warning":"Будь ласка, замініть REACT_APP_CANVA_API_KEY або кнопка Canva працює лише на локальному хості"
 }
