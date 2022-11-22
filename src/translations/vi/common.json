@@ -102,6 +102,7 @@
   "txt_filter": "Bộ lọc",
   "txt_clear_all" : "Xoá tất cả",
   "txt_select_all": "Chọn tất cả",
+  "txt_deselect_all": "Bỏ chọn tất cả",
   "txt_columns":"Cột",
   "txt_list": "Danh sách",
   "txt_thumb": "Thu nhỏ",

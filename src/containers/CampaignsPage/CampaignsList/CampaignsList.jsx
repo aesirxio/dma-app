@@ -106,6 +106,9 @@ const CampaignsList = observer(
       ];
 
       const dataFormFilter = this.getDataFormFilter();
+      if (tableStatus === PAGE_STATUS.LOADING) {
+        return <Spinner />;
+      }
 
       return (
         <>
@@ -127,27 +130,23 @@ const CampaignsList = observer(
             <CampaignsActionBar />
           </div>
           {campaigns ? (
-            tableStatus === PAGE_STATUS.LOADING ? (
-              <Spinner />
-            ) : (
-              <div>
-                <Table
-                  rowData={campaigns}
-                  tableRowHeader={tableRowHeader}
-                  onEdit={this.handerEdit}
-                  onSelect={this.handleSelect}
-                  isFilter={true}
-                  pagination={pagination}
-                  pageSize={this.listViewModel.pageSize}
-                  listViewModel={this.listViewModel}
-                  searchFunction={this.listViewModel.searchCampaign}
-                  dataFormFilter={dataFormFilter}
-                  searchText={t('search_your_campaign')}
-                  idKey={this.key}
-                  view={this.view}
-                />
-              </div>
-            )
+            <div>
+              <Table
+                rowData={campaigns}
+                tableRowHeader={tableRowHeader}
+                onEdit={this.handerEdit}
+                onSelect={this.handleSelect}
+                isFilter={true}
+                pagination={pagination}
+                pageSize={this.listViewModel.pageSize}
+                listViewModel={this.listViewModel}
+                searchFunction={this.listViewModel.searchCampaign}
+                dataFormFilter={dataFormFilter}
+                searchText={t('search_your_campaign')}
+                idKey={this.key}
+                view={this.view}
+              />
+            </div>
           ) : (
             <ComponentNoData
               icons="/assets/images/ic_campaigns.svg"
