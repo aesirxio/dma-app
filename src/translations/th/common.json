@@ -179,5 +179,6 @@
   "txt_please_upgrade_account":"กรุณาอับเกรดบัญชีของคุณ",
   "txt_please_connect_a_channel":"กรุณาเชื่อมต่อช่องทาง",
   "txt_the_video_field_is_required":"ฟิลด์วีดีโอ จำเป็นต้องมี",
-  "txt_logo_picture":"โลโก้"
+  "txt_logo_picture":"โลโก้",
+  "txt_canva_api_key_warning":"โปรดแทนที่ REACT_APP_CANVA_API_KEY มิฉะนั้นปุ่ม Canva จะทำงานบน localhost เท่านั้น"
 }
