@@ -179,5 +179,6 @@
   "txt_please_upgrade_account":"Please upgrade account",
   "txt_please_connect_a_channel":"Please connect a channel",
   "txt_the_video_field_is_required":"The video field is required",
-  "txt_logo_picture":"Logo"
+  "txt_logo_picture":"Logo",
+  "txt_canva_api_key_warning":"Please replace REACT_APP_CANVA_API_KEY or Canva button is only working on localhost"
 }

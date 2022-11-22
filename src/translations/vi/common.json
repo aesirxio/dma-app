@@ -174,10 +174,11 @@
   "txt_post_now":"Đăng ngay",
   "txt_schedule":"Lịch trình",
   "txt_publish_date/time":"Ngày / giờ xuất bản",
-  "txt_update_successfully":"Update Successfully",
-  "txt_update_unsuccessfully" :"Update Unsuccessfully",
-  "txt_please_upgrade_account":"Please upgrade account",
-  "txt_please_connect_a_channel":"Please connect a channel",
-  "txt_the_video_field_is_required":"The video field is required",
-  "txt_logo_picture":"Logo"
+  "txt_update_successfully":"Cập nhật thành công",
+  "txt_update_unsuccessfully" :"Cập nhật không thành công",
+  "txt_please_upgrade_account":"Vui lòng nâng cấp tài khoản",
+  "txt_please_connect_a_channel":"Hãy kết nối một kênh",
+  "txt_the_video_field_is_required":"Trường video là bắt buộc",
+  "txt_logo_picture":"Logo",
+  "txt_canva_api_key_warning":"Vui lòng thay thế REACT_APP_CANVA_API_KEY hoặc nút Canva chỉ hoạt động trên localhost"
 }
