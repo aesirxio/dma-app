@@ -102,6 +102,7 @@
   "txt_filter": "Фільтр",
   "txt_clear_all" : "Очистити все",
   "txt_select_all": "Вибрати все",
+  "txt_deselect_all": "Cкасувати вибір усіх",
   "txt_columns":"Стовпці",
   "txt_list": "Список",
   "txt_thumb": "Мініатюра",

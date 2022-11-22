@@ -102,6 +102,7 @@
   "txt_filter": "Filtro",
   "txt_clear_all" : "Limpiar todo",
   "txt_select_all": "Seleccionar todo",
+  "txt_deselect_all": "Deseleccionar todo",
   "txt_columns":"Columnas",
   "txt_list": "Lista",
   "txt_thumb": "Pulgar",
