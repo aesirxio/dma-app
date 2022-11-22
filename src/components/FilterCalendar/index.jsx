@@ -23,8 +23,17 @@ class FilterCalendar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.filterRef = React.createRef();
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
   handleCheck = (name, value, checkall = false, index) => {
     // this.data.forEach((value) => {
     //   value.listCheck = value.listCheck.map((item) => ({
@@ -37,9 +46,15 @@ class FilterCalendar extends React.Component {
     //   data: this.data,
     // });
     if (checkall) {
-      this.data[index].listCheck.forEach((item) => {
-        this.dataFilter[name].push(item.value);
-      });
+      if (this.dataFilter[name].length == this.data[index].listCheck.length) {
+        this.dataFilter[name] = [];
+      } else {
+        this.data[index].listCheck.forEach((item) => {
+          if (!this.dataFilter[name].includes(item.value)) {
+            this.dataFilter[name].push(item.value);
+          }
+        });
+      }
     } else {
       if (this.dataFilter[name].includes(value)) {
         const index = this.dataFilter[name].indexOf(value);
@@ -60,7 +75,14 @@ class FilterCalendar extends React.Component {
   handleSelectAll = (name, index) => {
     this.handleCheck(name, null, true, index);
   };
+  handleClearAll = () => {
+    this.data.forEach((value) => {
+      this.dataFilter[value.name] = [];
+    });
 
+    this.setState(this.dataFilter);
+    this.onFilter();
+  };
   isCheck = (name, value) => {
     if (name && value && this.state[name]?.includes(value)) {
       return true;
@@ -71,6 +93,12 @@ class FilterCalendar extends React.Component {
     this.props.handleCloseFilterCalendar();
   };
 
+  handleClickOutside = (event) => {
+    if (!this.props.show) return null;
+    if (this.filterRef.current && !this.filterRef.current.contains(event.target)) {
+      this.props.handleCloseFilterCalendar();
+    }
+  };
   render() {
     this.data = [
       {
@@ -94,13 +122,10 @@ class FilterCalendar extends React.Component {
       <div
         className={`wrapper_filter_calendar ${styles.wrapper_filter_calendar} position-fixed top-0 end-0 bottom-0 z-index-100 start-0 d-flex justify-content-end vh-100`}
       >
-        <div className="bg-white w-400 h-100">
+        <div className="bg-white w-400 h-100" ref={this.filterRef}>
           <div className="d-flex align-items-center justify-content-between p-3 border-bottom-1">
             <h4 className="text-blue-0 fw-medium">{t('txt_filter')}</h4>
-            <span
-              className="cursor-pointer text-danger"
-              onClick={this.props.handleCloseFilterCalendar}
-            >
+            <span className="cursor-pointer text-danger" onClick={() => this.handleClearAll()}>
               <i>
                 <FontAwesomeIcon icon={faTimes} />
               </i>
@@ -114,12 +139,14 @@ class FilterCalendar extends React.Component {
               return (
                 <div key={key} className="border-bottom-1 p-3">
                   <div className="d-flex align-items-center justify-content-between mb-3">
-                    <p className="text-blue-0 mb-0 text-uppercase">{t(value.title)}</p>
+                    <p className="text-blue-0 mb-0 text-uppercase">{value.title}</p>
                     <span
                       className="cursor-pointer fs-14 text-color opacity-50"
                       onClick={() => this.handleSelectAll(value.name, key)}
                     >
-                      {t('txt_select_all')}
+                      {this.data[key].listCheck.length == this.dataFilter[value.name].length
+                        ? t('txt_clear_all')
+                        : t('txt_select_all')}
                     </span>
                   </div>
                   <div>
@@ -131,6 +158,7 @@ class FilterCalendar extends React.Component {
                         >
                           <Checkbox
                             text={item?.label}
+                            name={`${key}-${index}`}
                             checked={this.isCheck(value.name, item?.value)}
                             onCheckBoxChange={() => this.onCheckBoxChange(value?.name, item.value)}
                           />

@@ -102,6 +102,7 @@
   "txt_filter": "ตัวกรอง",
   "txt_clear_all" : "ล้างทั้งหมด",
   "txt_select_all": "เลือกทั้งหมด",
+  "txt_deselect_all": "ยกเลิกการเลือกทั้งหมด",
   "txt_columns":"คอลัมภ์",
   "txt_list": "รายการ",
   "txt_thumb": "Thumb",
