@@ -85,15 +85,6 @@
   }
 }
 
-.wrapper_filter_select {
-  display: none;
-  border-radius: 5px;
-
-  &.show_filter_select {
-    display: block;
-  }
-}
-
 .wr_content_list {
   .border-bottom-1.cursor-pointer {
     cursor: inherit !important;
