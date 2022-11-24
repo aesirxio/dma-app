@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import {
   useTable,
@@ -208,17 +208,6 @@ const Table = ({
       setState({ isFilter: false });
     }
   }, [view]);
-  const Filter = useRef(null);
-  useEffect(() => {
-    if (!Filter) return;
-    function handleClick(event) {
-      if (Filter.current && !Filter.current.contains(event.target)) {
-        setState({ isFilter: false });
-      }
-    }
-    window.addEventListener('click', handleClick);
-    return () => window.removeEventListener('click', handleClick);
-  }, [Filter]);
 
   useEffect(() => {
     if (setFilter) {
@@ -327,7 +316,7 @@ const Table = ({
                     setFilter={setFilter}
                   />
                 </div>
-                <div className="rounded-0" ref={Filter}>
+                <div className="rounded-0">
                   <button
                     className={`btn text-blue-0 ${getState.isFilter ? 'bg-blue-3' : ''}`}
                     onClick={handleFilter}
