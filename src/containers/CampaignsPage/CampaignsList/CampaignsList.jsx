@@ -76,14 +76,36 @@ const CampaignsList = observer(
         },
         {
           Header: t('txt_status'),
-          accessor: CAMPAIGNS_FIELD_KEY.STATUS,
+          accessor: CAMPAIGNS_FIELD_KEY.PUBLISHED,
           className: 'status',
           Cell: ({ value }) => {
-            return (
-              <span className={`badge ${value.className} mw-100 h-35 d-table-cell align-middle`}>
-                {value.text}
-              </span>
-            );
+            if (value == 1) {
+              return (
+                <span
+                  className={`badge ${t(
+                    'txt_running'
+                  )} bg-processing  mw-100 h-35 d-table-cell align-middle`}
+                >
+                  {t('txt_running')}
+                </span>
+              );
+            } else if (value == 2) {
+              <span
+                className={`badge ${t(
+                  'txt_schedule'
+                )} bg-schedule mw-100 h-35 d-table-cell align-middle`}
+              >
+                {t('txt_schedule')}
+              </span>;
+            } else {
+              <span
+                className={`badge ${t(
+                  'txt_stop'
+                )}  bg-failed mw-100 h-35 d-table-cell align-middle`}
+              >
+                {t('txt_stop')}
+              </span>;
+            }
           },
           SubCell: ({ row }) => (
             <span

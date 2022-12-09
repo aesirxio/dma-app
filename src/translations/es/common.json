@@ -181,5 +181,7 @@
   "txt_please_connect_a_channel":"Conecta un canal",
   "txt_the_video_field_is_required":"El campo de vídeo es obligatorio",
   "txt_logo_picture":"Logo",
-  "txt_canva_api_key_warning":"Reemplace REACT_APP_CANVA_API_KEY o el botón de Canva solo funciona en localhost"
+  "txt_canva_api_key_warning":"Reemplace REACT_APP_CANVA_API_KEY o el botón de Canva solo funciona en localhost",
+  "txt_running": "Correr",
+  "txt_stop":"deténgase"
 }
