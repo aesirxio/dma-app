@@ -73,7 +73,6 @@ function Table({ columns: userColumns, data, renderRowSubComponent }) {
         columns: userColumns,
         data,
       },
-
       useExpanded
     );
 
