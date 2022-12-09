@@ -181,5 +181,7 @@
   "txt_please_connect_a_channel":"Hãy kết nối một kênh",
   "txt_the_video_field_is_required":"Trường video là bắt buộc",
   "txt_logo_picture":"Logo",
-  "txt_canva_api_key_warning":"Vui lòng thay thế REACT_APP_CANVA_API_KEY hoặc nút Canva chỉ hoạt động trên localhost"
+  "txt_canva_api_key_warning":"Vui lòng thay thế REACT_APP_CANVA_API_KEY hoặc nút Canva chỉ hoạt động trên localhost",
+  "txt_running": "Đang chạy",
+  "txt_stop":"Tạm Dừng"
 }

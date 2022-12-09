@@ -3,10 +3,10 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React from "react";
-import { useExpanded, useTable } from "react-table";
+import React from 'react';
+import { useExpanded, useTable } from 'react-table';
 
-import makeData from "./makeData";
+import makeData from './makeData';
 
 function SubRows({ row, rowProps, visibleColumns, data, loading }) {
   if (loading) {
@@ -26,7 +26,7 @@ function SubRows({ row, rowProps, visibleColumns, data, loading }) {
             {row.cells.map((cell) => {
               return (
                 <td {...cell.getCellProps()}>
-                  {cell.render(cell.column.SubCell ? "SubCell" : "Cell", {
+                  {cell.render(cell.column.SubCell ? 'SubCell' : 'Cell', {
                     value: cell.column.accessor && cell.column.accessor(x, i),
                     row: { ...row, original: x },
                   })}
@@ -67,20 +67,14 @@ function SubRowAsync({ row, rowProps, visibleColumns }) {
 }
 
 function Table({ columns: userColumns, data, renderRowSubComponent }) {
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-    visibleColumns,
-  } = useTable(
-    {
-      columns: userColumns,
-      data,
-    },
-    useExpanded
-  );
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, visibleColumns } =
+    useTable(
+      {
+        columns: userColumns,
+        data,
+      },
+      useExpanded
+    );
 
   return (
     <>
@@ -89,7 +83,7 @@ function Table({ columns: userColumns, data, renderRowSubComponent }) {
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
               ))}
             </tr>
           ))}
@@ -102,13 +96,10 @@ function Table({ columns: userColumns, data, renderRowSubComponent }) {
               <React.Fragment key={rowProps.key}>
                 <tr {...rowProps}>
                   {row.cells.map((cell) => {
-                    return (
-                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                    );
+                    return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
                   })}
                 </tr>
-                {row.isExpanded &&
-                  renderRowSubComponent({ row, rowProps, visibleColumns })}
+                {row.isExpanded && renderRowSubComponent({ row, rowProps, visibleColumns })}
               </React.Fragment>
             );
           })}
@@ -125,53 +116,51 @@ function TableListCampaigns() {
     () => [
       {
         Header: () => null,
-        id: "expander",
+        id: 'expander',
         Cell: ({ row }) => (
-          <span {...row.getToggleRowExpandedProps()}>
-            {row.isExpanded ? "👇" : "👉"}
-          </span>
+          <span {...row.getToggleRowExpandedProps()}>{row.isExpanded ? '👇' : '👉'}</span>
         ),
         SubCell: () => null,
       },
       {
-        Header: "Name",
+        Header: 'Name',
         columns: [
           {
-            Header: "Campaign Name",
+            Header: 'Campaign Name',
             accessor: (d) => d.Name,
             SubCell: (cellProps) => <>🥳 {cellProps.value} 🎉</>,
           },
         ],
       },
       {
-        Header: "Info",
+        Header: 'Info',
         columns: [
           {
-            Header: "Status",
+            Header: 'Status',
             accessor: (d) => d.status,
           },
           {
-            Header: "Start date",
+            Header: 'Start date',
             accessor: (d) => d.status,
           },
           {
-            Header: "End date",
+            Header: 'End date',
             accessor: (d) => d.status,
           },
           {
-            Header: "Number of post that need to do",
+            Header: 'Number of post that need to do',
             accessor: (d) => d.status,
           },
           {
-            Header: "Number of the schedude post",
+            Header: 'Number of the schedude post',
             accessor: (d) => d.status,
           },
           {
-            Header: "Number of the published content",
+            Header: 'Number of the published content',
             accessor: (d) => d.status,
           },
           {
-            Header: "Percentage campaign complete (%)",
+            Header: 'Percentage campaign complete (%)',
             accessor: (d) => d.progress,
           },
         ],
@@ -184,22 +173,12 @@ function TableListCampaigns() {
 
   const renderRowSubComponent = React.useCallback(
     ({ row, rowProps, visibleColumns }) => (
-      <SubRowAsync
-        row={row}
-        rowProps={rowProps}
-        visibleColumns={visibleColumns}
-      />
+      <SubRowAsync row={row} rowProps={rowProps} visibleColumns={visibleColumns} />
     ),
     []
   );
 
-  return (
-    <Table
-      columns={columns}
-      data={data}
-      renderRowSubComponent={renderRowSubComponent}
-    />
-  );
+  return <Table columns={columns} data={data} renderRowSubComponent={renderRowSubComponent} />;
 }
 
 export default TableListCampaigns;

@@ -47,6 +47,7 @@ class CampaignsModel {
       : 0;
 
     this.data = data[CAMPAIGN_API_FIELD_KEY.DATA] ?? '';
+    this.published = data[CAMPAIGN_API_FIELD_KEY.PUBLISHED] ?? '';
   }
 
   getId = () => {
@@ -84,6 +85,14 @@ class CampaignsModel {
       type: FIELD_TYPE.TEXT,
       columnName: CAMPAIGNS_FIELD_KEY.STATUS,
       columnText: 'Status',
+    };
+  };
+  getPublished = () => {
+    return {
+      value: this.published,
+      type: FIELD_TYPE.TEXT,
+      columnName: CAMPAIGNS_FIELD_KEY.PUBLISHED,
+      columnText: 'Published',
     };
   };
 
@@ -160,6 +169,7 @@ class CampaignsModel {
       const schedudePost = this.getSchedudePost();
       const publishedContent = this.getPublishedContent();
       const progress = this.getProgress();
+      const published = this.getPublished();
 
       const result = {
         [id.columnName]: id.value,
@@ -171,6 +181,7 @@ class CampaignsModel {
         [schedudePost.columnName]: schedudePost.value,
         [publishedContent.columnName]: publishedContent.value,
         [progress.columnName]: progress.value,
+        [published.columnName]: published.value,
       };
       return result;
     } catch (error) {
@@ -192,6 +203,8 @@ class CampaignsModel {
           [CAMPAIGN_API_FIELD_KEY.PUBLISHED_CONTENT]:
             campaignsData[CAMPAIGNS_FIELD_KEY.PUBLISHED_CONTENT] ?? '',
           [CAMPAIGN_API_FIELD_KEY.PROGRESS]: campaignsData[CAMPAIGNS_FIELD_KEY.PROGRESS] ?? '',
+
+          [CAMPAIGN_API_FIELD_KEY.PUBLISHED]: campaignsData[CAMPAIGNS_FIELD_KEY.PUBLISHED] ?? '',
 
           [CAMPAIGN_API_FIELD_KEY.DATA]:
             JSON.stringify(campaignsData[CAMPAIGN_API_FIELD_KEY.DATA]) ?? '',
