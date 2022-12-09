@@ -22,6 +22,7 @@ const customStyles = (isBorder) => {
         backgroundColor: 'var(--dropdown-bg)',
       };
     },
+    input: (styles) => ({ ...styles, color: 'var(--body-color)' }),
     option: (provided, state) => {
       return {
         ...provided,

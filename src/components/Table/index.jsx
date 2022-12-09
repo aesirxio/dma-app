@@ -3,8 +3,8 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useEffect, useState, useRef } from 'react';
-import { Dropdown } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Collapse, Dropdown } from 'react-bootstrap';
 import {
   useTable,
   useRowSelect,
@@ -96,7 +96,8 @@ const Table = ({
 }) => {
   const [getState, setState] = useState({
     isName: 'list',
-    isFilter: Object.keys(dataFilter.titleFilter).length > 0 ? true : false,
+    // isFilter: Object.keys(dataFilter.titleFilter).length > 0 ? true : false,
+    isFilter: false,
     indexPagination: 0,
     dataFilter: null,
   });
@@ -208,17 +209,6 @@ const Table = ({
       setState({ isFilter: false });
     }
   }, [view]);
-  const Filter = useRef(null);
-  useEffect(() => {
-    if (!Filter) return;
-    function handleClick(event) {
-      if (Filter.current && !Filter.current.contains(event.target)) {
-        setState({ isFilter: false });
-      }
-    }
-    window.addEventListener('click', handleClick);
-    return () => window.removeEventListener('click', handleClick);
-  }, [Filter]);
 
   useEffect(() => {
     if (setFilter) {
@@ -327,7 +317,7 @@ const Table = ({
                     setFilter={setFilter}
                   />
                 </div>
-                <div className="rounded-0" ref={Filter}>
+                <div className="rounded-0">
                   <button
                     className={`btn text-blue-0 ${getState.isFilter ? 'bg-blue-3' : ''}`}
                     onClick={handleFilter}
@@ -375,20 +365,30 @@ const Table = ({
         </div>
         {isFilter && (
           <>
-            <div
-              className={`py-2 px-1 bg-blue-3 wrapper_filter_select ${
-                getState.isFilter ? 'show_filter_select' : ''
-              }`}
-            >
-              {dataFormFilter && (
-                <ComponentFilter
-                  dataFormFilter={dataFormFilter}
-                  setGlobalFilter={setGlobalFilter}
-                  filter={dataFilter}
-                  setFilter={setFilter}
-                />
-              )}
-            </div>
+            <Collapse in={getState.isFilter}>
+              <div>
+                <div
+                  className={`py-2 px-1 bg-blue-3 rounded-2 ${
+                    getState.isFilter ? 'z-2 position-relative' : ''
+                  }`}
+                >
+                  {dataFormFilter && (
+                    <ComponentFilter
+                      dataFormFilter={dataFormFilter}
+                      setGlobalFilter={setGlobalFilter}
+                      filter={dataFilter}
+                      setFilter={setFilter}
+                    />
+                  )}
+                </div>
+              </div>
+            </Collapse>
+            {getState.isFilter && (
+              <div
+                className="filter-backdrop position-fixed top-0 start-0 end-0 bottom-0 z-1"
+                onClick={() => setState({ isFilter: false })}
+              ></div>
+            )}
           </>
         )}
       </div>
