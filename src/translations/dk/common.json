@@ -179,5 +179,7 @@
   "txt_please_connect_a_channel":"Tilslut venligst en kanal",
   "txt_the_video_field_is_required":"Videofeltet er påkrævet",
   "txt_logo_picture":"Logo",
-  "txt_canva_api_key_warning":"Erstat venligst REACT_APP_CANVA_API_KEY eller Canva-knappen virker kun på localhost"
+  "txt_canva_api_key_warning":"Erstat venligst REACT_APP_CANVA_API_KEY eller Canva-knappen virker kun på localhost",
+  "txt_running": "Løb",
+  "txt_stop":"Hold op"
 }

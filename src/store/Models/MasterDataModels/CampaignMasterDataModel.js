@@ -20,6 +20,7 @@ class CampaignMasterDataItemModel extends BaseMasterDataItemModel {
       this.endDate = entity[CAMPAIGN_API_FIELD_KEY.END_DATE] ?? '';
       this.status = entity[CAMPAIGN_API_FIELD_KEY.STATUS] ?? '';
       this.data = entity[CAMPAIGN_API_FIELD_KEY.DATA] ?? '';
+      this.published = entity[CAMPAIGN_API_FIELD_KEY.PUBLISHED] ?? '';
     }
   }
 
@@ -30,6 +31,7 @@ class CampaignMasterDataItemModel extends BaseMasterDataItemModel {
       [CAMPAIGNS_FIELD_KEY.START_DATE]: this.startDate ?? '',
       [CAMPAIGNS_FIELD_KEY.END_DATE]: this.endDate ?? '',
       [CAMPAIGNS_FIELD_KEY.STATUS]: this.status ?? 0,
+      [CAMPAIGNS_FIELD_KEY.PUBLISHED]: this.published ?? 0,
       [CAMPAIGNS_FIELD_KEY.DATA]: Helper.isNull(this.data) ? {} : JSON.parse(this.data),
     };
   };
