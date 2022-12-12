@@ -70,7 +70,7 @@ class DamButton extends React.Component {
               })}
             </>
           )}
-          {checkTypeImage && <p className="mt-2 text-danger">Supported .jpg/png/jpeg only</p>}
+          {checkTypeImage && <><p className="mt-2 mb-1 text-danger">Supported .jpg/png/jpeg only</p><p className="text-danger">And please choose file without space in name</p></>}
         </div>
         <ModalComponent
           body={
