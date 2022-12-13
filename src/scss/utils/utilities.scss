@@ -171,7 +171,7 @@ $utilities: (
   'cursor': (
     property: cursor,
     class: cursor,
-    values: none auto pointer,
+    values: none auto pointer move,
   ),
   'z-index': (
     property: z-index,
@@ -182,6 +182,18 @@ $utilities: (
       2: 99,
       3: 999,
       4: 9999,
+    ),
+  ),
+  'zindex': (
+    property: z-index,
+    class: zindex,
+    values: (
+      n1: -1,
+      0: 0,
+      1: 1,
+      2: 2,
+      3: 3,
+      5: 5,
     ),
   ),
 );
