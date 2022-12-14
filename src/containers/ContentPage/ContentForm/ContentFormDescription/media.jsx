@@ -39,7 +39,6 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
   const [damAssets, setDamAssets] = useState(dam);
 
   const [canvaIndexToEdit, setCanvaIndexToEdit] = useState(null);
-
   const handleDam = (data) => {
     setDamAssets([...damAssets, ...data]);
   };

@@ -5,20 +5,15 @@
 
 import React, { lazy } from 'react';
 
-import Iframe from 'react-iframe';
-import { AUTHORIZATION_KEY, AXIOS_CONFIGS, GENERAL_CONFIG, Storage } from 'aesirx-dma-lib';
-import { io } from 'socket.io-client';
 import './index.scss';
 import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons/faImage';
-
+import { AesirXDam } from 'aesirx-dam-app';
 const ModalComponent = lazy(() => import('../../../../components/Modal'));
 
 class MediaDamButton extends React.Component {
   modalSelectionDAMSession = null;
-  roomID = null;
-  urlDam = '';
 
   constructor(props) {
     super(props);
@@ -26,54 +21,9 @@ class MediaDamButton extends React.Component {
     this.state = {
       showModal: false,
     };
-    this.onWebSocketCallbackSuccess.bind(this);
   }
-
-  componentDidMount() {
-    this.modalSelectionDAMSession = Math.floor(Date.now() / 1000);
-    const type = this.props.video ? 'VIDEO_' : 'IMAGE_';
-    this.modalSelectionDAMSession = type + this.modalSelectionDAMSession;
-
-    this.roomID = 'DAM_BTN_WS_CLIENT_'.concat(this.modalSelectionDAMSession);
-    this.socket = io(GENERAL_CONFIG.WEBSOCKET_ENDPOINT, {
-      autoConnect: false,
-    });
-
-    if (!this.socket.connected) {
-      this.socket.connect();
-    }
-
-    this.socket.on('connect', () => {
-      this.socket.emit('join room', this.roomID);
-      this.socket.on('response assets', this.onWebSocketCallbackSuccess);
-    });
-  }
-
-  componentWillUnmount() {
-    this.socket.disconnect();
-    this.socket.close();
-  }
-
-  onWebSocketCallbackSuccess = (roomId, data) => {
-    if (roomId === this.roomID && data) {
-      this.closeModal();
-      this.props.changed(data);
-    }
-  };
 
   handleClick = () => {
-    this.urlDam = AXIOS_CONFIGS.BASE_ENDPOINT_URL.concat(
-      '/administrator/index.php?option=com_aesir_dam&view=aesirx_dam'
-    )
-      .concat('&token=')
-      .concat(Storage.getItem(AUTHORIZATION_KEY.TOKEN_USER))
-      .concat('&modalSelectionDAMSession=')
-      .concat(this.modalSelectionDAMSession);
-
-    if (this.props.video) {
-      this.urlDam += '&file_type=mp4';
-    }
-
     this.setState({
       showModal: true,
     });
@@ -102,21 +52,17 @@ class MediaDamButton extends React.Component {
           </span>
         </button>
         <ModalComponent
-          header={t('txt_digital_assets')}
           body={
-            <Iframe
-              url={this.urlDam}
-              width="100%"
-              height="100%"
-              id="ifram_digital_assets"
-              className="myClassname ifram_digital_assets"
-              display="initial"
-              position="relative"
+            <AesirXDam
+              onSelect={(data) => {
+                this.props.changed(data);
+                this.closeModal();
+              }}
             />
           }
           show={this.state.showModal}
           onHide={this.closeModal}
-          dialogClassName="modal-fullscreen modal_digital_assets "
+          dialogClassName="modal-fullscreen modal_digital_assets position-fixed start-0"
         />
       </>
     );
