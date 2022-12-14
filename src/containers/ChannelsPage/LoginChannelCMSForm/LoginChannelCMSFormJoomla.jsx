@@ -10,11 +10,12 @@ import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 
 import { renderingGroupFieldHandler } from '../../../utils/form';
 
-class LoginChannelCMSForm extends Component {
+class LoginChannelCMSFormJoomla extends Component {
   formPropsData = {
     endpoint_url: '',
-    username: '',
-    password: '',
+    grant_type: '',
+    client_id: '',
+    client_secret: '',
   };
 
   constructor(props) {
@@ -44,32 +45,46 @@ class LoginChannelCMSForm extends Component {
           },
         },
         {
-          label: 'Username',
-          key: 'username',
+          label: 'Grant Type',
+          key: 'grant_type',
           type: FORM_FIELD_TYPE.INPUT,
-          value: this.formPropsData.username,
+          value: this.formPropsData.grant_type,
           required: true,
           validation: 'required',
           changed: (event) => {
-            this.formPropsData.username = event.target.value;
+            this.formPropsData.grant_type = event.target.value;
           },
           blurred: () => {
-            this.validator.showMessageFor('Username');
+            this.validator.showMessageFor('Grant Type');
           },
         },
         {
-          label: 'Password',
-          key: 'password',
+          label: 'Client Id',
+          key: 'client_id',
           type: FORM_FIELD_TYPE.INPUT,
-          typeFormat: FORM_FIELD_TYPE.PASSWORD,
-          value: this.formPropsData.password,
+          // typeFormat: FORM_FIELD_TYPE.PASSWORD,
+          value: this.formPropsData.client_id,
           required: true,
           validation: 'required',
           changed: (event) => {
-            this.formPropsData.password = event.target.value;
+            this.formPropsData.client_id = event.target.value;
           },
           blurred: () => {
-            this.validator.showMessageFor('Password');
+            this.validator.showMessageFor('Client Id');
+          },
+        },
+        {
+          label: 'Client Secret',
+          key: 'client_secret',
+          type: FORM_FIELD_TYPE.INPUT,
+          value: this.formPropsData.client_secret,
+          required: true,
+          validation: 'required',
+          changed: (event) => {
+            this.formPropsData.client_secret = event.target.value;
+          },
+          blurred: () => {
+            this.validator.showMessageFor('Client Secret');
           },
         },
       ],
@@ -81,9 +96,10 @@ class LoginChannelCMSForm extends Component {
     return (
       <Suspense fallback={<div>Loading...</div>}>
         {renderingGroupFieldHandler(formSetting, this.props.validator)}
+        <a>Document-link </a>
       </Suspense>
     );
   }
 }
 
-export default LoginChannelCMSForm;
+export default LoginChannelCMSFormJoomla;
