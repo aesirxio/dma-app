@@ -23,7 +23,7 @@ class ComponentDamAssets extends React.Component {
   }
 
   handleDamAssets = (data) => {
-    if (data[0].extension !== 'mp4' && !data[0].basename.includes(" ")) {
+    if (data[0].file_extension !== 'mp4' && !data[0].name.includes(' ')) {
       this.props.field.changed(data);
       this.setState({
         checkTypeImage: false,

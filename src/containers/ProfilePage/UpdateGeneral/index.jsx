@@ -66,19 +66,19 @@ const UpdateGeneral = observer(
     }
 
     handleDamAssets(data) {
-      if (data[0].extension !== 'mp4') {
+      if (data[0].file_extension !== 'mp4') {
         this.setState({
           getUrlImage: data,
         });
-        this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = data[0].url;
+        this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = data[0].download_url;
       }
     }
     handleDamAssetsLogo(data) {
-      if (data[0].extension !== 'mp4') {
+      if (data[0].file_extension !== 'mp4') {
         this.setState({
           getUrlImageLogo: data,
         });
-        this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = data[0].url;
+        this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = data[0].download_url;
       }
     }
     saveGeneralHandler = () => {

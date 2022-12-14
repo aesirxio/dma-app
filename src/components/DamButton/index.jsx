@@ -61,8 +61,8 @@ class DamButton extends React.Component {
                     <div className="wr_img_thumbnail_dam position-relative m-2">
                       <ComponentImage
                         className={`img-thumbnail rounded imgTab`}
-                        alt={value.url}
-                        src={value.url}
+                        alt={value.download_url}
+                        src={value.download_url}
                       />
                     </div>
                   </div>
@@ -70,7 +70,12 @@ class DamButton extends React.Component {
               })}
             </>
           )}
-          {checkTypeImage && <><p className="mt-2 mb-1 text-danger">Supported .jpg/png/jpeg only</p><p className="text-danger">And please choose file without space in name</p></>}
+          {checkTypeImage && (
+            <>
+              <p className="mt-2 mb-1 text-danger">Supported .jpg/png/jpeg only</p>
+              <p className="text-danger">And please choose file without space in name</p>
+            </>
+          )}
         </div>
         <ModalComponent
           body={

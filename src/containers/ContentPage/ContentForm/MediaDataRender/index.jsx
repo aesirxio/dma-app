@@ -79,8 +79,8 @@ class MediaDataRender extends React.Component {
               </div>
               <ComponentImage
                 className={`img-thumbnail rounded imgTab`}
-                alt={damAsset.url}
-                src={damAsset.url}
+                alt={damAsset?.url ?? damAsset?.download_url}
+                src={damAsset?.url ?? damAsset?.download_url}
               />
             </div>
           </div>

@@ -95,7 +95,7 @@ class ProjectForm extends Component {
             formPropsData: this.formPropsData,
             getLinkImage: this.formPropsData[PROJECT_COLUMN_INDICATOR.LOGO],
             changed: (data) => {
-              this.formPropsData[PROJECT_COLUMN_INDICATOR.LOGO] = data[0].url;
+              this.formPropsData[PROJECT_COLUMN_INDICATOR.LOGO] = data[0].download_url;
             },
           },
           {
