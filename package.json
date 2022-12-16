@@ -27,7 +27,7 @@
     "lint": "eslint --fix \"src/**/\"",
     "lint:check": "eslint \"src/**/\"",
     "lint:nowarns": "eslint --quiet \"src/**/\"",
-    "prepare": "npm run microbundle && npm run build:css",
+    "prepublishOnly": "npm run microbundle && npm run build:css",
     "microbundle": "microbundle --globals react=React,react-dom=ReactDOM --no-sourcemap --jsx React.createElement --jsxFragment React.Fragment --generateTypes true --no-compress --format modern,cjs,esm",
     "microbundle:watch": "microbundle --globals react=React,react-dom=ReactDOM --jsx React.createElement --jsxFragment React.Fragment --generateTypes true --no-compress --format modern,cjs,esm -w",
     "build:css": "sass  --no-source-map --style=compressed ./src/integration/index.scss ./dist/app.css"
