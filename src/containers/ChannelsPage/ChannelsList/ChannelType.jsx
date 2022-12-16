@@ -17,7 +17,7 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
   if (list.length === 0) {
     return null;
   }
-  const {t}= useTranslation("common");
+  const { t } = useTranslation('common');
   return (
     <div className="accordion mt-4" id={`accordionChannelType${channelTypeIndex}`}>
       {list.map((channelType, index) => (
@@ -44,7 +44,7 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
                   channelType={channelType}
                 />
               ) : (
-                <div className="fs-6 text-nowrap">{t("txt_coming_soon")}</div>
+                <div className="fs-6 text-nowrap">{t('txt_coming_soon')}</div>
               )}
             </div>
           </h3>
