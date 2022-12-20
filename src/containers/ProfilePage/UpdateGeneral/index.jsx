@@ -3,10 +3,8 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from 'react';
+import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import SimpleReactValidator from 'simple-react-validator';
 import { UPDATE_GENERAL_FIELD_KEY } from '../../../constants/ProfileModule';
 import { witheProfileViewModel } from '../ProfileViewModel/ProfileViewModelContextProvider';
@@ -15,13 +13,10 @@ import 'react-datepicker/dist/react-datepicker.css';
 import '../index.scss';
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import FormComponent from '../../../components/Form';
-import AvatarDAM from '../Layout/AvatarDAM';
-import LogoDAM from '../Layout/LogoDAM';
 import SubmitButton from '../Layout/SubmitButton';
-import ComponentImage from '../../../components/ComponentImage';
 import { Storage } from 'aesirx-dma-lib';
 import { withTranslation } from 'react-i18next';
-const DamButton = lazy(() => import('../../../components/DamButton'));
+import DamComponent from 'components/DamComponent';
 
 const UpdateGeneral = observer(
   class UpdateGeneral extends Component {
@@ -48,8 +43,6 @@ const UpdateGeneral = observer(
       super(props);
       this.state = {
         loading: false,
-        getUrlImage: '',
-        getUrlImageLogo: '',
       };
       this.validator = new SimpleReactValidator();
       const { viewModel } = props;
@@ -66,20 +59,10 @@ const UpdateGeneral = observer(
     }
 
     handleDamAssets(data) {
-      if (data[0].file_extension !== 'mp4') {
-        this.setState({
-          getUrlImage: data,
-        });
-        this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = data[0].download_url;
-      }
+      this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = data[0].download_url;
     }
     handleDamAssetsLogo(data) {
-      if (data[0].file_extension !== 'mp4') {
-        this.setState({
-          getUrlImageLogo: data,
-        });
-        this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = data[0].download_url;
-      }
+      this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = data[0].download_url;
     }
     saveGeneralHandler = () => {
       this.updateGeneralViewModel.saveGeneralInformationOnPage();
@@ -98,19 +81,6 @@ const UpdateGeneral = observer(
         this.forceUpdate();
         return false;
       }
-    };
-
-    clearImage = (defaultImage) => {
-      this.setState({
-        getUrlImage: '',
-      });
-      this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] = defaultImage;
-    };
-    clearLogo = (defaultImage) => {
-      this.setState({
-        getUrlImageLogo: '',
-      });
-      this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = defaultImage;
     };
 
     generateFormSetting = () => {
@@ -245,10 +215,8 @@ const UpdateGeneral = observer(
     };
 
     render() {
-      let { getUrlImage } = this.state;
-      let { getUrlImageLogo } = this.state;
+      const { t } = this.props;
       const { memberInfo } = this.updateGeneralViewModel;
-      console.log(getUrlImageLogo);
       return (
         <>
           {!memberInfo ? (
@@ -263,69 +231,26 @@ const UpdateGeneral = observer(
                   viewModel={this.updateGeneralViewModel}
                   key={Math.random(40, 200)}
                 />
-
-                <AvatarDAM>
-                  <div
-                    className={`position-relative cursor-pointer wr_upload_images ${
-                      getUrlImage.length > 0 ? 'active_img' : ''
-                    }`}
-                  >
-                    {!getUrlImage ? (
-                      <div className="wr_img_thumbnail_dam position-relative m-2">
-                        <ComponentImage
-                          className={`img-thumbnail rounded imgTab`}
-                          src={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM]}
-                          alt={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME]}
-                        />
-                      </div>
-                    ) : null}
-                    <div className="main_upload_images">
-                      <DamButton
-                        data={getUrlImage}
-                        changed={(data) => this.handleDamAssets(data)}
-                      />
-                    </div>
-                    {getUrlImage ? (
-                      <div
-                        onClick={() => this.clearImage(memberInfo.avatar_dam)}
-                        className={'clear_image_button'}
-                      >
-                        <FontAwesomeIcon icon={faTimesCircle} className="text-white" />
-                      </div>
-                    ) : null}
-                  </div>
-                </AvatarDAM>
-                <LogoDAM>
-                  <div
-                    className={`position-relative cursor-pointer wr_upload_images ${
-                      getUrlImageLogo.length > 0 ? 'active_img' : ''
-                    }`}
-                  >
-                    {!getUrlImageLogo ? (
-                      <div className="wr_img_thumbnail_dam position-relative m-2">
-                        <ComponentImage
-                          className={`img-thumbnail rounded imgTab`}
-                          src={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO]}
-                          alt={this.formPropsData[UPDATE_GENERAL_FIELD_KEY.USERNAME]}
-                        />
-                      </div>
-                    ) : null}
-                    <div className="main_upload_images">
-                      <DamButton
-                        data={getUrlImageLogo}
-                        changed={(data) => this.handleDamAssetsLogo(data)}
-                      />
-                    </div>
-                    {getUrlImageLogo ? (
-                      <div
-                        onClick={() => this.clearLogo(memberInfo.member_logo)}
-                        className={'clear_image_button'}
-                      >
-                        <FontAwesomeIcon icon={faTimesCircle} className="text-white" />
-                      </div>
-                    ) : null}
-                  </div>
-                </LogoDAM>
+                <div className="col-3">
+                  <label className="form-label mb-3">
+                    <span className="text-blue-0">{t('txt_profile_picture')}</span>
+                  </label>
+                  <DamComponent
+                    field={{
+                      value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM],
+                      changed: this.handleDamAssets,
+                    }}
+                  />
+                  <label className="form-label mt-4 mb-3">
+                    <span className="text-blue-0">{t('txt_logo_picture')}</span>
+                  </label>
+                  <DamComponent
+                    field={{
+                      value: this.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO],
+                      changed: this.handleDamAssetsLogo,
+                    }}
+                  />
+                </div>
                 <SubmitButton validateInfoBeforeSending={this.validateInfoBeforeSending} />
               </div>
             </div>

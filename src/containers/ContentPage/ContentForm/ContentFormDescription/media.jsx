@@ -9,11 +9,13 @@ import { observer } from 'mobx-react';
 import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from '../../../../constants/ContentModule';
 import ContentUtils from '../../ContentUtils/ContentUtils';
 import MediaDataRender from '../MediaDataRender';
-import MediaDamButton from '../MediaDamButton';
 import CanvaButton from 'components/CanvaButton';
 import { ContentViewModelContext } from '../../ContentViewModels/ContentViewModelContextProvider';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
-
+import DamComponent from 'components/DamComponent';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faImage } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null }) => {
   const context = useContext(ContentViewModelContext);
   const channelMasterData = context.getFormViewModel().channelMasterData;
@@ -98,7 +100,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
   };
 
   const mediaChannel = ContentUtils.hasMediaChannel(channelData);
-
+  const { t } = useTranslation('common');
   return (
     <div className="px-3 py-2 bg-blue-3 wr_description_image_asset">
       <div className="d-flex flex-wrap justify-content-start">
@@ -113,13 +115,33 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
               />
             </div>
             <div className="me-2 mt-1 mb-1">
-              <MediaDamButton changed={handleDam} />
+              <DamComponent field={{ changed: handleDam }}>
+                <button
+                  className="wr_btn_dam border-0 bg-blue-2 rounded-2 px-3 text-nowrap canva-btn-size-m"
+                  type="button"
+                >
+                  <i className="text-white">
+                    <FontAwesomeIcon icon={faImage} />
+                  </i>
+                  <span className="text-white ms-2">{t('txt_digital_asset_management')}</span>
+                </button>
+              </DamComponent>
             </div>
           </>
         )}
         {mediaChannel.video && (
           <div className="me-2 mt-1 mb-1">
-            <MediaDamButton changed={handleDam} video={true} />
+            <DamComponent field={{ changed: handleDam }} allowType={['video']}>
+              <button
+                className="wr_btn_dam border-0 bg-blue-2 rounded-2 px-3 text-nowrap canva-btn-size-m"
+                type="button"
+              >
+                <i className="text-white">
+                  <FontAwesomeIcon icon={faImage} />
+                </i>
+                <span className="text-white ms-2">{t('txt_video')}</span>
+              </button>
+            </DamComponent>
           </div>
         )}
       </div>

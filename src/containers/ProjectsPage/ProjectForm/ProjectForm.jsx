@@ -92,8 +92,6 @@ class ProjectForm extends Component {
             key: PROJECT_COLUMN_INDICATOR.LOGO,
             type: FORM_FIELD_TYPE.DAM,
             value: this.formPropsData[PROJECT_COLUMN_INDICATOR.LOGO],
-            formPropsData: this.formPropsData,
-            getLinkImage: this.formPropsData[PROJECT_COLUMN_INDICATOR.LOGO],
             changed: (data) => {
               this.formPropsData[PROJECT_COLUMN_INDICATOR.LOGO] = data[0].download_url;
             },
