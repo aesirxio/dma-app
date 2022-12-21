@@ -23,8 +23,8 @@ class MediaDataRender extends React.Component {
   render() {
     const { damData, deleteDamItem, canvaData } = this.props;
     const { canvaEditHandler, canvaDeleteHandler } = this;
-    const imageData = damData.filter((data) => !['mp4', 'mov'].includes(data.extension));
-    const videoData = damData.filter((data) => ['mp4', 'mov'].includes(data.extension));
+    const imageData = damData.filter((data) => !['mp4', 'mov'].includes(data.file_extension));
+    const videoData = damData.filter((data) => ['mp4', 'mov'].includes(data.file_extension));
     return (
       <div className="d-flex">
         {canvaData.map((canvaAsset, index) => (
@@ -79,8 +79,8 @@ class MediaDataRender extends React.Component {
               </div>
               <ComponentImage
                 className={`img-thumbnail rounded imgTab`}
-                alt={damAsset.url}
-                src={damAsset.url}
+                alt={damAsset?.url ?? damAsset?.download_url}
+                src={damAsset?.url ?? damAsset?.download_url}
               />
             </div>
           </div>
@@ -105,8 +105,8 @@ class MediaDataRender extends React.Component {
                       </span>
                     </div>
                     <video width="260" controls>
-                      <source src={value.url} type="video/mp4" />
-                      <source src={value.url} type="video/mov" />
+                      <source src={value.download_url} type="video/mp4" />
+                      <source src={value.download_url} type="video/mov" />
                       This vide does not support this video.
                     </video>
                   </div>
