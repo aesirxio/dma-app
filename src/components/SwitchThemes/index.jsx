@@ -16,7 +16,7 @@ class SwitchThemes extends React.Component {
           width={16}
           height={16}
         />
-        <div className="theme-icon-list position-absolute bottom-100 start-50 py-1 rounded-3 px-2 translate-middle-x d-flex flex-column-reverse shadow">
+        <div className="theme-icon-list position-absolute top-100 start-50 py-1 m-1 rounded-3 px-2 translate-middle-x d-flex  shadow">
           {Object.keys(listThemes)
             .slice(0, 5)
             .map((item, index) => {
@@ -25,7 +25,7 @@ class SwitchThemes extends React.Component {
                   key={index}
                   title={item + ' theme'}
                   disabled={theme === item}
-                  className={listThemes[item] + ' box-color m-0 my-1 cursor-pointer btn p-0'}
+                  className={listThemes[item] + ' box-color  m-1 cursor-pointer btn p-0'}
                   onClick={() => changeTheme(item)}
                 ></button>
               );
