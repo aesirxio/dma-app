@@ -293,7 +293,6 @@ class ContentModel {
             .filter(({ removed }) => !removed)
             .map(({ id }) => ({ pageId: id, contentId: 0 }));
         }
-
         if (selectedPage.length > 0) {
           // channels
           const description = contentData[CONTENT_FIELD_KEY.DESCRIPTION][id];
@@ -347,6 +346,102 @@ class ContentModel {
         }
       });
     });
+
+    const result = {
+      [ESI_CONTENT_API_RESPONSE_FIELD_KEY.GENERAL]: general,
+      [ESI_CONTENT_API_RESPONSE_FIELD_KEY.CHANNELS]: channels,
+    };
+
+    return JSON.stringify(result);
+  }
+
+  static convertSubmittedIntegrationDataToAPIService(
+    contentData,
+    channelMasterData,
+    channel,
+    pageId
+  ) {
+    const general = contentData
+      ? {
+          [ESI_CONTENT_API_RESPONSE_FIELD_KEY.ID]: contentData[CONTENT_FIELD_KEY.ID] ?? 0,
+          [ESI_CONTENT_API_RESPONSE_FIELD_KEY.HEADLINE]: contentData[CONTENT_FIELD_KEY.NAME],
+          [ESI_CONTENT_API_RESPONSE_FIELD_KEY.MODE]: contentData[CONTENT_FIELD_KEY.MODE],
+
+          [ESI_CONTENT_API_RESPONSE_FIELD_KEY.PROJECT]: ContentUtils.getValueFromSelection(
+            contentData[CONTENT_FIELD_KEY.PROJECT]
+          ),
+          [ESI_CONTENT_API_RESPONSE_FIELD_KEY.CAMPAIGN]: ContentUtils.getValueFromSelection(
+            contentData[CONTENT_FIELD_KEY.CAMPAIGN]
+          ),
+          [ESI_CONTENT_API_RESPONSE_FIELD_KEY.PERSONA]: ContentUtils.getValueFromSelection(
+            contentData[CONTENT_FIELD_KEY.PERSONA]
+          ),
+        }
+      : null;
+
+    // channels
+    let channels = {};
+    let selectedPage = [];
+    channelMasterData.forEach(({ list }) => {
+      list.forEach(({ id, pages }) => {
+        // selectedPage
+        if (id === channel) {
+          pages.forEach((page) => {
+            if (page.id === pageId) {
+              selectedPage = [{ pageId: id, contentId: 0 }];
+            }
+          });
+        }
+      });
+    });
+    // channels
+    const description = contentData[CONTENT_FIELD_KEY.DESCRIPTION];
+    const canvaAssets = contentData[CONTENT_FIELD_KEY.CANVA][channel];
+
+    // DAM
+    const damData = contentData[CONTENT_FIELD_KEY.DAM];
+    const damAssets = damData.filter((data) => !['mp4', 'mov'].includes(data.extension));
+    const videoAssets = damData.filter((data) => ['mp4', 'mov'].includes(data.extension));
+
+    // Publish
+    const publishDate = contentData[CONTENT_FIELD_KEY.PUBLISH_DATE];
+    const publishTime = contentData[CONTENT_FIELD_KEY.TIME];
+    const publishMode = contentData[CONTENT_FIELD_KEY.PUBLISH_MODE];
+
+    // Ads
+    const setupAds = ContentAdsModel.convertSubmittedDataToAPIService(
+      contentData[CONTENT_FIELD_KEY.ADS],
+      channel
+    );
+
+    channels = {
+      ...{
+        [channel]: {
+          description: description,
+          assets: {
+            canvaAssets: canvaAssets,
+            damAssets: damAssets,
+            videoAssets: videoAssets,
+          },
+          selectedPage: selectedPage,
+          publishedPlan: {
+            publishingType: publishMode,
+            schedule:
+              publishMode === CONTENT_PUBLISH_MODE.SCHEDULE
+                ? [
+                    {
+                      date: format(publishDate, 'dd-MM-yyyy'),
+                      time: format(publishTime, 'HH:mm'),
+                      timezone: Helper.getTimezoneDefault(),
+                    },
+                  ]
+                : [],
+          },
+
+          setupAds: setupAds,
+        },
+      },
+    };
 
     const result = {
       [ESI_CONTENT_API_RESPONSE_FIELD_KEY.GENERAL]: general,

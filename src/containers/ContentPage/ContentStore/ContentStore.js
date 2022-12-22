@@ -275,6 +275,26 @@ export default class ContentStore {
     }
   };
 
+  saveContentIntegration = async (contentData, channelMasterData, type, channel, pageId) => {
+    try {
+      const convertedContentData = ContentModel.convertSubmittedIntegrationDataToAPIService(
+        contentData,
+        channelMasterData,
+        channel,
+        pageId
+      );
+      console.log(convertedContentData);
+      const contentService = new AesirxContentApiService();
+
+      let resultContent = await contentService.createPost(convertedContentData, type);
+
+      return resultContent;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  };
+
   getMasterData = async () => {
     try {
       if (!this.globalStore) {
