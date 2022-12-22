@@ -24,7 +24,11 @@
     }
   }
 }
-
+.button-language {
+  .dropdown-menu.show {
+    min-width: 7rem;
+  }
+}
 .item_collap {
   width: 24px;
   height: 24px;
