@@ -28,13 +28,13 @@
       right: 0;
       height: 10px;
     }
-    &::before {
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-top: 8px solid #dce6eb;
-      transition: 0.3s ease all;
-      left: 10px;
-    }
+    // &::before {
+    //   border-left: 7px solid transparent;
+    //   border-right: 7px solid transparent;
+    //   border-top: 8px solid #dce6eb;
+    //   transition: 0.3s ease all;
+    //   left: 10px;
+    // }
   }
 }
 
