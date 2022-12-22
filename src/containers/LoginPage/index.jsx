@@ -86,7 +86,11 @@ class LoginPage extends React.Component {
                 text={t('txt_sign_in_with_sso')}
                 onGetData={onGetData}
               />
-              <hr></hr>
+              <div className="d-flex align-items-center flex-nowrap">
+                <div className="border-bottom w-50"></div>
+                <span className="px-2">or</span>
+                <div className="border-bottom w-50"></div>
+              </div>
               <label className="form-label mb-3" htmlFor="email">
                 Email <span>*</span>
               </label>
