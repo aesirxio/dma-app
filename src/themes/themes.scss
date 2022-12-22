@@ -52,6 +52,7 @@
   --btn-outline-secondary-color: #6c757d;
   --btn-action-bg: #fff;
   --btn-action-color: #000;
+  --button-language-color: #000;
 
   --bs-body-color: var(--body-color);
   --bs-body-bg: var(--body-bg);
@@ -459,5 +460,11 @@
 
   .mailchimp_calendar_text {
     color: var(--mailchimp-calendar-text);
+  }
+
+  .button-language {
+    .btn-dark {
+      color: var(--button-language-color);
+    }
   }
 }
