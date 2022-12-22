@@ -7,6 +7,7 @@
   "txt_remember_me": "จดจำฉัน",
   "txt_forgot_password": "ลืมรหัสผ่าน?",
   "txt_sign_in": "เข้าสู่ระบบ",
+  "txt_sign_in_with_sso": "เข้าสู่ระบบด้วย SSO",
   "txt_sign_up": "ลงชื่อเข้าใช้",
   "txt_do_not_have_an_account": "ยังไม่มีบัญชีผู้ใช้? สร้างบัญชีผู้ใช้ฟรี",
   "txt_welcome_to_our_aesirx": "ยินดีต้อนรับสู่ AesirX - DMA.",
