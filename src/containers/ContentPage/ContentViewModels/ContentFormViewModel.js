@@ -101,6 +101,46 @@ class ContentFormViewModel {
     });
   };
 
+  initIntegration = async (form) => {
+    this.formStatus = PAGE_STATUS.LOADING;
+    this.form = form;
+    this.contentData = null;
+
+    // const masterData = await this.contentStore.getMasterData();
+    const channelsData = await this.channelStore.getChannelsData();
+
+    // const campaignMasterData = CampaignsUtils.toDropdownOptions(
+    //   masterData?.campaignMasterData?.result
+    // );
+
+    // const personaMasterData = PersonaUtils.toDropdownOptions(masterData?.personaMasterData);
+    // const projectMasterData = ProjectUtils.toDropdownOptions(masterData?.projectMasterData);
+
+    let channelMasterData = [];
+    channelMasterData = ChannelUtils.getChannelByFilter(channelsData, 'connected');
+
+    if (channelMasterData.length === 0) {
+      notify('Please connect a Channel');
+    }
+
+    runInAction(() => {
+      // this.campaignMasterData = campaignMasterData;
+      // this.projectMasterData = projectMasterData;
+      // this.personaMasterData = personaMasterData;
+      this.channelMasterData = channelMasterData;
+
+      // get edit content
+      this.form.populatingFormDataHandler(
+        this.contentData,
+        channelMasterData
+        // projectMasterData,
+        // campaignMasterData,
+        // personaMasterData
+      );
+      this.formStatus = PAGE_STATUS.READY;
+    });
+  };
+
   getPersonaChannel = async (data) => {
     let channelMasterData = [];
 
@@ -145,6 +185,7 @@ class ContentFormViewModel {
 
   save = async (type) => {
     this.formStatus = PAGE_STATUS.LOADING;
+
     const result = await this.contentStore.saveContent(
       this.form.formPropsData,
       this.channelMasterData,
@@ -158,6 +199,27 @@ class ContentFormViewModel {
     if (result) {
       notify('Saved');
       history.push('/content');
+    } else {
+      notify('Something was wrong. Please try again', 'error');
+    }
+  };
+
+  saveIntegration = async (type, channel, pageId) => {
+    this.formStatus = PAGE_STATUS.LOADING;
+    const result = await this.contentStore.saveContentIntegration(
+      this.form.formPropsData,
+      this.channelMasterData,
+      type,
+      channel,
+      pageId
+    );
+
+    runInAction(() => {
+      this.formStatus = PAGE_STATUS.READY;
+    });
+
+    if (result) {
+      notify('Saved');
     } else {
       notify('Something was wrong. Please try again', 'error');
     }
