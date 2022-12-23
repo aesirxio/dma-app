@@ -22,8 +22,7 @@
   },
   "scripts": {
     "start": "npm run build && serve -s build",
-    "build": "npm run build:lib && react-scripts build",
-    "build:lib": "cd node_modules/aesirx-dma-lib && npm i && npm run build && cd ../../",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "dev": "react-scripts start",
     "lint": "eslint --fix \"src/**/\"",
