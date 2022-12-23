@@ -12,6 +12,7 @@ import ErrorBoundary from './layouts/ErrorBoundary';
 import i18n from 'translations/i18n';
 import { I18nextProvider } from 'react-i18next';
 import { ThemesContext, ThemesContextProvider } from 'themes/ThemeContextProvider';
+import { SSOContextProvider } from 'aesirx-sso';
 import 'aesirx-dam-app/dist/index.css';
 import 'aesirx-dam-app/dist/app.css';
 class App extends React.Component {
@@ -44,7 +45,9 @@ class App extends React.Component {
       <ThemesContextProvider value={{ theme: this.state.theme, changeTheme: this.changeTheme }}>
         <ErrorBoundary>
           <I18nextProvider i18n={i18n}>
-            <RouterLayout />
+            <SSOContextProvider>
+              <RouterLayout />
+            </SSOContextProvider>
           </I18nextProvider>
         </ErrorBoundary>
       </ThemesContextProvider>
