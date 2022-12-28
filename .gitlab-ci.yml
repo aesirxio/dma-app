@@ -1,0 +1,44 @@
+image: node:14-alpine
+
+cache:
+  untracked: true
+  key: aesirx-cms-cache
+  paths:
+    - node_modules/
+
+stages:
+  - test
+  - demo
+
+.before_script: &build_before
+  before_script:
+    - apk add --update openssh-client rsync && apk add git
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - echo REACT_APP_CLIENT_ID=$REACT_APP_CLIENT_ID >> .env
+    - echo REACT_APP_CLIENT_SECRET=$REACT_APP_CLIENT_SECRET >> .env
+    - echo REACT_APP_ENDPOINT_URL=$REACT_APP_ENDPOINT_URL >> .env
+    - echo REACT_APP_ENCRYPT=$REACT_APP_ENCRYPT >> .env
+    - echo REACT_APP_LICENSE=$REACT_APP_LICENSE >> .env
+    - echo REACT_APP_TEST_MODE=$REACT_APP_TEST_MODE >> .env
+    - rm yarn.lock
+    - yarn cache clean
+    - yarn install --network-concurrency 1
+
+demo:
+  <<: *build_before
+  stage: demo
+  environment:
+    name: demo
+  artifacts:
+    paths:
+      - build/
+  only:
+    - demo
+  script:
+    - yarn run build
+    - rsync -a --delete --progress --rsh='ssh -p4975' build/ dma@web1.aesirx.io:/home/dma/domains/demo.dma.aesirx.io/public_html/
+
