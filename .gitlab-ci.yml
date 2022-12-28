@@ -2,7 +2,7 @@ image: node:14-alpine
 
 cache:
   untracked: true
-  key: aesirx-cms-cache
+  key: aesirx-dma-cache
   paths:
     - node_modules/
 
