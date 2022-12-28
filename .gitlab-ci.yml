@@ -24,9 +24,7 @@ stages:
     - echo REACT_APP_ENCRYPT=$REACT_APP_ENCRYPT >> .env
     - echo REACT_APP_LICENSE=$REACT_APP_LICENSE >> .env
     - echo REACT_APP_TEST_MODE=$REACT_APP_TEST_MODE >> .env
-    - rm yarn.lock
-    - yarn cache clean
-    - yarn install --network-concurrency 1
+    - npm install
 
 demo:
   <<: *build_before
@@ -39,6 +37,6 @@ demo:
   only:
     - demo
   script:
-    - yarn run build
+    - npm run build
     - rsync -a --delete --progress --rsh='ssh -p4975' build/ dma@web1.aesirx.io:/home/dma/domains/demo.dma.aesirx.io/public_html/
 
