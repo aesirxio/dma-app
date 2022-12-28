@@ -15,8 +15,8 @@ import BannerLeft from '../../components/BannerLeft';
 
 import { login } from '../../auth';
 import InputPassword from '../../components/inputPassword';
-// import { SSOButton } from 'aesirx-sso';
-// import { AesirxAuthenticationApiService, Storage } from 'aesirx-dma-lib';
+import { SSOButton } from 'aesirx-sso';
+import { AesirxAuthenticationApiService, Storage } from 'aesirx-dma-lib';
 const dataSlider = [
   {
     text: 'Building a Global Media Content Marketing Team requires structure, process and automation we utilize technology to make this happen',
@@ -69,28 +69,28 @@ class LoginPage extends React.Component {
 
   render() {
     const { t } = this.props;
-    // const onGetData = async (response) => {
-    //   const authService = new AesirxAuthenticationApiService();
-    //   await authService.setTokenUser(response, false);
-    //   Storage.setItem('auth', true);
-    //   window.location.reload();
-    // };
+    const onGetData = async (response) => {
+      const authService = new AesirxAuthenticationApiService();
+      await authService.setTokenUser(response, false);
+      Storage.setItem('auth', true);
+      window.location.reload();
+    };
     return (
       <div className="row">
         <BannerLeft dataSlider={dataSlider} />
         <div className="col-md-8 d-flex flex-column justify-content-center align-items-center ">
           <div className="d-block">
             <form>
-              {/* <SSOButton
+              <SSOButton
                 className="btn w-100 fw-medium btn-success position-relative d-flex align-item-center justify-content-center mb-3 px-6"
                 text={t('txt_sign_in_with_sso')}
                 onGetData={onGetData}
-              /> */}
-              {/* <div className="d-flex align-items-center flex-nowrap">
+              />
+              <div className="d-flex align-items-center flex-nowrap">
                 <div className="border-bottom w-50"></div>
                 <span className="px-2">or</span>
                 <div className="border-bottom w-50"></div>
-              </div> */}
+              </div>
               <label className="form-label mb-3" htmlFor="email">
                 Email <span>*</span>
               </label>
