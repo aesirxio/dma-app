@@ -29,7 +29,7 @@ class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: 'demo',
+      username: 'demo-dma@aesirx.io',
       password: 'demo',
       remember: false,
       isProcessing: false,
@@ -54,7 +54,7 @@ class LoginPage extends React.Component {
 
   async handleSubmit() {
     if (this.validator.allValid()) {
-      await login({ username: 'demo-dma@mail.com', password: 'demo-dma' });
+      await login({ username: 'demo-dma@aesirx.io', password: 'demo-dma' });
     } else {
       this.validator.showMessages();
       return;
