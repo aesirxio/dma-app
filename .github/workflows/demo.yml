@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: demo
     env:
+      CI: false
       REACT_APP_CLIENT_ID: ${{ secrets.REACT_APP_CLIENT_ID }}
       REACT_APP_CLIENT_SECRET: ${{ secrets.REACT_APP_CLIENT_SECRET }}
       REACT_APP_ENDPOINT_URL: ${{ secrets.REACT_APP_ENDPOINT_URL }}
@@ -19,8 +20,10 @@ jobs:
       REACT_APP_DAM_LICENSE: ${{ secrets.REACT_APP_DAM_LICENSE }}
       REACT_APP_TEST_MODE: ${{ secrets.REACT_APP_TEST_MODE }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
 
       - run: npm install
       - run: npm run build
