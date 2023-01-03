@@ -54,7 +54,7 @@ class LoginPage extends React.Component {
 
   async handleSubmit() {
     if (this.validator.allValid()) {
-      await login({ username: 'demo-dma@aesirx.io', password: 'demo-dma' });
+      await login(this.state);
     } else {
       this.validator.showMessages();
       return;
