@@ -30,7 +30,7 @@ class LoginPage extends React.Component {
     super(props);
     this.state = {
       username: 'demo-dma@aesirx.io',
-      password: 'demo',
+      password: 'demo-dma',
       remember: false,
       isProcessing: false,
     };
