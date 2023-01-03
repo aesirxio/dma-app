@@ -1,0 +1,38 @@
+name: demo
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *' # Everyday at 12am
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: demo
+    env:
+      REACT_APP_CLIENT_ID: ${{ secrets.REACT_APP_CLIENT_ID }}
+      REACT_APP_CLIENT_SECRET: ${{ secrets.REACT_APP_CLIENT_SECRET }}
+      REACT_APP_ENDPOINT_URL: ${{ secrets.REACT_APP_ENDPOINT_URL }}
+      REACT_APP_WEBSOCKET_ENDPOINT: ${{ secrets.REACT_APP_WEBSOCKET_ENDPOINT }}
+      REACT_APP_ENCRYPT: ${{ secrets.REACT_APP_ENCRYPT }}
+      REACT_APP_LICENSE: ${{ secrets.REACT_APP_LICENSE }}
+      REACT_APP_DAM_LICENSE: ${{ secrets.REACT_APP_DAM_LICENSE }}
+      REACT_APP_TEST_MODE: ${{ secrets.REACT_APP_TEST_MODE }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+
+      - run: npm install
+      - run: npm run build
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: unnecessary
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT}} -H ${{ secrets.SSH_HOST }}  >> ~/.ssh/known_hosts
+
+      - name: Deploy with rsync
+        run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./build/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PATH }}
