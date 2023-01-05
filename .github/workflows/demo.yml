@@ -21,6 +21,8 @@ jobs:
       REACT_APP_TEST_MODE: ${{ secrets.REACT_APP_TEST_MODE }}
       REACT_APP_DEMO_USER: ${{ secrets.REACT_APP_DEMO_USER }}
       REACT_APP_DEMO_PASSWORD: ${{ secrets.REACT_APP_DEMO_PASSWORD }}
+      REACT_APP_SSO_CLIENT_ID: ${{ secrets.REACT_APP_SSO_CLIENT_ID }}
+      REACT_APP_SSO_CLIENT_SECRET: ${{ secrets.REACT_APP_SSO_CLIENT_SECRET }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
