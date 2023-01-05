@@ -48,6 +48,7 @@
 
   --btn-green-color: #fff;
   --btn-green-bg: #1ab394;
+  --btn-blue-bg: #3b7ab5;
   --btn-outline-secondary-bg: #fff;
   --btn-outline-secondary-color: #6c757d;
   --btn-action-bg: #fff;
@@ -108,6 +109,11 @@
       color: var(--btn-green-color) !important;
       background-color: var(--btn-green-bg) !important;
       border-color: var(--btn-green-bg) !important;
+    }
+    &.btn-sso {
+      color: var(--btn-green-color) !important;
+      background-color: var(--btn-blue-bg) !important;
+      border-color: var(--btn-blue-bg) !important;
     }
     &.btn-outline-secondary {
       background-color: var(--btn-outline-secondary-bg) !important;
