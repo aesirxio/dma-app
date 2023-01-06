@@ -139,7 +139,7 @@ class FilterCalendar extends React.Component {
               return (
                 <div key={key} className="border-bottom-1 p-3">
                   <div className="d-flex align-items-center justify-content-between mb-3">
-                    <p className="text-blue-0 mb-0 text-uppercase">{value.title}</p>
+                    <p className="text-blue-0 mb-0 text-uppercase">{t(value.title)}</p>
                     <span
                       className="cursor-pointer fs-14 text-color opacity-50"
                       onClick={() => this.handleSelectAll(value.name, key)}
