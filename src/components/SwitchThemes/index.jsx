@@ -1,39 +1,18 @@
 import React from 'react';
 import './index.scss';
-import listThemes from './index.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPalette } from '@fortawesome/free-solid-svg-icons';
-import { ThemesContext } from 'themes/ThemeContextProvider';
+
+import { withThemeContext } from 'themes/ThemeContextProvider';
+import ThemeMode from 'SVG/ThemeMode';
 
 class SwitchThemes extends React.Component {
   render() {
-    const { theme, changeTheme } = this.context;
+    const { theme, changeTheme } = this.props;
     return (
-      <div className="theme-icon rounded-pill position-relative cursor-pointer border">
-        <FontAwesomeIcon
-          className="text-dark align-bottom"
-          icon={faPalette}
-          width={16}
-          height={16}
-        />
-        <div className="theme-icon-list position-absolute top-100 start-50 py-1 m-1 rounded-3 px-2 translate-middle-x d-flex  shadow">
-          {Object.keys(listThemes)
-            .slice(0, 5)
-            .map((item, index) => {
-              return (
-                <button
-                  key={index}
-                  title={item + ' theme'}
-                  disabled={theme === item}
-                  className={listThemes[item] + ' box-color  m-1 cursor-pointer btn p-0'}
-                  onClick={() => changeTheme(item)}
-                ></button>
-              );
-            })}
-        </div>
+      <div className=" position-relative cursor-pointer">
+        <ThemeMode fill={theme.color} onClick={() => changeTheme(theme)} />
       </div>
     );
   }
 }
-SwitchThemes.contextType = ThemesContext;
-export default SwitchThemes;
+
+export default withThemeContext(SwitchThemes);
