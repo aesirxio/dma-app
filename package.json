@@ -13,12 +13,12 @@
     "react-dom": "^17.0.1"
   },
   "dependencies": {
-    "aesirx-dam-app": "^1.1.0",
-    "aesirx-dma-lib": "^1.7.4",
-    "aesirx-sso": "^1.0.0",
+    "aesirx-sso": "^1.0.3",
     "date-fns": "^2.16.1",
     "date-fns-tz": "^1.1.6",
-    "react-datepicker": "^3.3.0"
+    "react-datepicker": "^3.3.0",
+    "aesirx-dam-app": "^1.1.0",
+    "aesirx-dma-lib": "^1.7.4"
   },
   "scripts": {
     "start": "npm run build && serve -s build",
