@@ -1,6 +1,6 @@
 {
   "name": "aesirx-dma-app",
-  "version": "1.5.3-alpha.1",
+  "version": "1.6.1",
   "license": "GPL-3.0-only",
   "author": "AesirX",
   "main": "dist/index.js",
@@ -13,8 +13,8 @@
     "react-dom": "^17.0.1"
   },
   "dependencies": {
-    "aesirx-dam-app": "aesirxio/dam-app",
-    "aesirx-dma-lib": "^1.7.1",
+    "aesirx-dam-app": "^1.1.0",
+    "aesirx-dma-lib": "^1.7.4",
     "aesirx-sso": "^1.0.0",
     "date-fns": "^2.16.1",
     "date-fns-tz": "^1.1.6",
