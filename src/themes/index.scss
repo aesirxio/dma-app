@@ -86,7 +86,7 @@
   );
 
   $body-color: #eeeeee;
-  $body-bg: #263c5c;
+  $body-bg: #0f1314;
   color: $body-color;
   background-color: $body-bg;
 
@@ -145,6 +145,11 @@
   $accordion-button-focus-box-shadow: $color-blue-6;
   $nav-tabs-link-active-color: #fff;
   $nav-tabs-link-active-bg: $color-blue-3;
+
+  //CALENDAR
+  $background-color-header: #242d31;
+  $bg-color-off-range: #22272c;
+
   // maps
   @import '../../node_modules/bootstrap/scss/maps';
   // end of maps
@@ -266,5 +271,36 @@
     --text-title-color: #fff;
     --dropdown-bg: #e8e9ec;
     --dropdown-item-color: #fff;
+  }
+  // calendar
+
+  .wrapper_calendar_full {
+    .rbc-month-row + .rbc-month-row {
+      border-top: 1px solid $gray-700;
+    }
+    .rbc-day-bg {
+      border-left: 1px solid $gray-700;
+      &:last-child {
+        border-right: 1px solid $gray-700;
+      }
+    }
+    .rbc-off-range-bg {
+      background: $bg-color-off-range;
+    }
+    .rbc-month-header,
+    .rbc-time-header {
+      background-color: $background-color-header;
+      border: 1px solid $gray-700;
+    }
+    .rbc-month-view,
+    .rbc-time-view {
+      background-color: $gray-900;
+    }
+  }
+  .accordion-item {
+    color: $white;
+  }
+  .wrapper_tabs .nav-tabs .nav-link {
+    color: $white;
   }
 }
