@@ -133,7 +133,13 @@
     }
   }
 }
-
+.css-1toi5xn-singleValue {
+  grid-area: 1 / 1 / 2 / 3;
+  max-width: 100% !important;
+  font-weight: 600;
+  position: unset !important;
+  transform: none !important;
+}
 @include media-breakpoint-down(xl) {
   .sidebar {
     position: fixed !important;

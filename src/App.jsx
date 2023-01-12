@@ -18,31 +18,11 @@ import 'aesirx-dam-app/dist/app.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      theme: this.getCurrentTheme(),
-    };
-    this.changeTheme = this.changeTheme.bind(this);
-  }
-  getCurrentTheme() {
-    let currentTheme = localStorage.getItem('theme');
-    if (!currentTheme) {
-      localStorage.setItem('theme', 'light');
-      return currentTheme ?? 'light';
-    }
-    return currentTheme;
-  }
-  changeTheme(newTheme) {
-    this.setState({ theme: newTheme });
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
   }
 
-  componentDidMount() {
-    document.documentElement.setAttribute('data-theme', this.state.theme);
-  }
   render() {
     return (
-      <ThemesContextProvider value={{ theme: this.state.theme, changeTheme: this.changeTheme }}>
+      <ThemesContextProvider>
         <ErrorBoundary>
           <I18nextProvider i18n={i18n}>
             <SSOContextProvider>

@@ -1,0 +1,81 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+ */
+
+$utilities: (
+  'color': (
+    property: color,
+    class: text,
+    values:
+      map-merge(
+        $colors,
+        (
+          'body': $body-color,
+          'muted': $text-muted,
+          'black-50': rgba($black, 0.5),
+          'white-50': rgba($white, 0.5),
+          'reset': inherit,
+          'black': $black,
+          'green': $green,
+          'blue-0': $color-blue,
+          'red-1': $color-red,
+          'blue-3': $color-blue-3,
+          'red-2': $color-red-4,
+          'white': #fff,
+        )
+      ),
+  ),
+  'background-color': (
+    property: background-color,
+    class: bg,
+    values:
+      map-merge(
+        $theme-colors,
+        (
+          'body': $body-bg,
+          'white': #000,
+          'orange': $orange,
+          'green': $green,
+          'yellow': $yellow,
+          'red': $red,
+          'blue': $color-blue-4,
+          'blue-1': $color-blue-5,
+          'blue-2': $color-blue-3,
+          'blue-3': $color-blue-6,
+          'blue-4': $color-blue-8,
+          'gray-2': rgba($color-gray-2, 0.7),
+          'gray-3': $color-gray-3,
+          'green-2': rgba($green, 0.15),
+          'red-2': rgba($red, 0.15),
+          'transparent': transparent,
+          'sidebar': #0c1215,
+        )
+      ),
+  ),
+  'border-color': (
+    property: border-color,
+    class: border,
+    values:
+      map-merge(
+        $theme-colors,
+        (
+          'white': $white,
+          'gray': $border-color,
+          'green': $green,
+          'red': $color-red,
+          'transparent': transparent,
+        )
+      ),
+  ),
+  'shadow': (
+    property: box-shadow,
+    class: shadow,
+    values: (
+      null: $box-shadow,
+      sm: $box-shadow-sm,
+      lg: $box-shadow-lg,
+      none: none,
+    ),
+  ),
+);

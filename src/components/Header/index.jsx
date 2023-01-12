@@ -12,11 +12,12 @@ import { AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
 
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 
 import './index.scss';
 import SwitchThemes from 'components/SwitchThemes';
 import DropdownAvatar from '../DropdownAvatar';
-import { Dropdown } from 'react-bootstrap';
+import Select from 'components/Select/index';
 import Helper from '../../utils/helper';
 import ComponentHambuger from '../ComponentHambuger';
 import ComponentImage from '../ComponentImage';
@@ -42,13 +43,14 @@ class Header extends React.Component {
   };
 
   render() {
+    const { t } = this.props;
     let { isMini } = this.state;
     const listLanguages = Object.keys(i18n.options.resources).map(function (key) {
-      return { language: key, title: i18n.options.resources[key].title };
+      return { value: key, label: i18n.options.resources[key].title };
     });
     let currentLanguage = listLanguages.filter((lang) => {
-      if (lang.language == i18n.language) {
-        return lang.title;
+      if (lang.value == i18n.language) {
+        return lang;
       }
     });
     return (
@@ -98,58 +100,36 @@ class Header extends React.Component {
             "
             onClick={this.handleCollap}
           >
-            <FontAwesomeIcon icon={faChevronLeft} />
+            <FontAwesomeIcon icon={faChevronLeft} className="text-green" />
           </span>
-          <div className="d-flex justify-content-between flex-1 align-items-center">
-            <div>{/* <AllProjects /> */}</div>
+          <div className="d-flex flex-1 align-items-center">
+            {/* <Search /> */}
+            <div className="ms-auto d-flex align-items-center button-language ">
+              <FontAwesomeIcon icon={faGlobe} className="text-body" />
+              <Select
+                isClearable={false}
+                isSearchable={false}
+                isBorder={false}
+                isShadow={false}
+                options={listLanguages}
+                className="shadow-none"
+                onChange={(data) => {
+                  i18n.changeLanguage(data.value);
+                }}
+                defaultValue={currentLanguage}
+              />
+            </div>
+            <div className="switch-theme-button col-auto py-2 px-3">
+              <SwitchThemes />
+            </div>
             <div className="d-flex align-items-center">
-              {/* <div className="input-group mb-0 pe-2 wr_input_search">
-                <input
-                  type="text"
-                  placeholder={t("txt_search_for_something")}
-                  aria-describedby="button-search"
-                  className="form-control border-end-0 pe-2"
-                />
-                <button
-                  type="button"
-                  id="button-search"
-                  className="btn btn_search border-1 border-start-0 border-gray text-green"
-                >
-                  <FontAwesomeIcon icon={faSearch} />
-                </button>
-              </div> */}
-
-              <div className="bottom-0 mb-2 py-1 button-language">
-                <Dropdown className="pt-2 ">
-                  <Dropdown.Toggle
-                    variant="dark"
-                    id="dropdown-basic"
-                    className="bg-transparent border-0"
-                  >
-                    <FontAwesomeIcon icon={faGlobe} /> {currentLanguage[0].title}
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu>
-                    {listLanguages.map((item, index) => {
-                      return (
-                        <Dropdown.Item
-                          key={index}
-                          href="#"
-                          className=""
-                          onClick={() => {
-                            i18n.changeLanguage(item.language);
-                          }}
-                        >
-                          {item.title}
-                        </Dropdown.Item>
-                      );
-                    })}
-                  </Dropdown.Menu>
-                </Dropdown>
+              <div className="wr_help_center ps-3 pe-3 d-none">
+                <span className="item_help d-flex align-items-center text-blue-0 cursor-pointer">
+                  <FontAwesomeIcon icon={faQuestionCircle} />
+                  <span className="text white-spacing-nowrap ps-2">{t('txt_help_center')}</span>
+                </span>
               </div>
-              <div className="switch-theme-button ps-3 pe-3">
-                <SwitchThemes />
-              </div>
+
               <div className="ps-3 pe-3">
                 <DropdownAvatar />
               </div>
