@@ -184,5 +184,6 @@
   "txt_logo_picture":"Logo",
   "txt_canva_api_key_warning":"Reemplace REACT_APP_CANVA_API_KEY o el botón de Canva solo funciona en localhost",
   "txt_running": "Correr",
-  "txt_stop":"deténgase"
+  "txt_stop":"deténgase",
+  "txt_sign_in_to_getting_started": "Inicia sesión para empezar."
 }
