@@ -184,5 +184,6 @@
   "txt_logo_picture":"โลโก้",
   "txt_canva_api_key_warning":"โปรดแทนที่ REACT_APP_CANVA_API_KEY มิฉะนั้นปุ่ม Canva จะทำงานบน localhost เท่านั้น",
   "txt_running": "วิ่ง",
-  "txt_stop":"หยุด"
+  "txt_stop":"หยุด",
+  "txt_sign_in_to_getting_started": "ลงชื่อเข้าใช้เพื่อเริ่มต้นใช้งาน"
 }

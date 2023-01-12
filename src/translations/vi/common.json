@@ -184,5 +184,6 @@
   "txt_logo_picture":"Logo",
   "txt_canva_api_key_warning":"Vui lòng thay thế REACT_APP_CANVA_API_KEY hoặc nút Canva chỉ hoạt động trên localhost",
   "txt_running": "Đang chạy",
-  "txt_stop":"Tạm Dừng"
+  "txt_stop":"Tạm Dừng",
+  "txt_sign_in_to_getting_started": "Đăng nhập để bắt đầu."
 }
