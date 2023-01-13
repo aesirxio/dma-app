@@ -11,6 +11,14 @@ const listThemes = [
   { theme: 'dark', color: '#fff', className: '' },
 ];
 
+function isJson(str) {
+  try {
+    JSON.parse(str);
+  } catch (e) {
+    return false;
+  }
+  return true;
+}
 export class ThemesContextProvider extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +33,7 @@ export class ThemesContextProvider extends React.Component {
       localStorage.setItem('theme', JSON.stringify(listThemes[0]));
       return currentTheme ?? listThemes[0];
     }
-    return JSON.parse(currentTheme);
+    return isJson(currentTheme) ? JSON.parse(currentTheme) : listThemes[0];
   };
 
   changeTheme = (theme) => {
