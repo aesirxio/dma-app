@@ -13,7 +13,7 @@
     "react-dom": "^17.0.1"
   },
   "dependencies": {
-    "aesirx-dam-app": "^1.2.0",
+    "aesirx-dam-app": "^1.2.1",
     "aesirx-dma-lib": "^1.7.5",
     "aesirx-sso": "^1.0.3",
     "date-fns": "^2.16.1",
