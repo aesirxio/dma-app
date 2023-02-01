@@ -391,6 +391,10 @@ textarea {
     border: 1px solid rgba(0, 0, 0, 0.15);
   }
 }
+.modal.show,
+.modal-backdrop.show {
+  width: 100% !important;
+}
 
 @include media-breakpoint-down(lg) {
   .w-400 {
