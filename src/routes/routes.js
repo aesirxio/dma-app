@@ -32,7 +32,7 @@ const mainRoutes = [
   },
   {
     path: [
-      '/wizard',
+      '/channel',
       '/wizard/createproject',
       '/wizard/project/:id',
       '/wizard/project/:id/content',

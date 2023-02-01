@@ -52,7 +52,7 @@ class WizardPage extends Component {
         <WizardSteps match={this.props.match} />
 
         <Suspense fallback={<Spinner />}>
-          <Route exact path="/wizard">
+          <Route exact path="/channel">
             <ChannelsViewModelContextProvider viewModel={channelsViewModel}>
               <ChannelsList />
             </ChannelsViewModelContextProvider>
