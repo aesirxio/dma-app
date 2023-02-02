@@ -185,5 +185,8 @@
   "txt_canva_api_key_warning":"Будь ласка, замініть REACT_APP_CANVA_API_KEY або кнопка Canva працює лише на локальному хості",
   "txt_running": "Біг",
   "txt_stop":"СТОП",
-  "txt_sign_in_to_getting_started": "Увійдіть, щоб почати."
+  "txt_sign_in_to_getting_started": "Увійдіть, щоб почати.",
+  "txt_warning": "Попередження",
+  "txt_successful": "Успішно",
+  "txt_error": "Помилка"
 }

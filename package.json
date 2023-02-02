@@ -103,7 +103,7 @@
     "react-step-wizard": "^5.3.5",
     "react-table": "^7.6.2",
     "react-timezone-select": "^1.0.7",
-    "react-toastify": "^6.2.0",
+    "react-toastify": "^9.0.8",
     "react-transition-group": "^4.4.2",
     "simple-react-validator": "^1.6.0",
     "socket.io-client": "^4.0.1",
