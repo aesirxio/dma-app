@@ -76,16 +76,19 @@ $rt-color-success: $green !default;
       z-index: 0;
     }
     &.Toastify__toast--success {
+      background: $noti-bg-success;
       &:before {
         background-color: $noti-bg-success;
       }
     }
     &.Toastify__toast--warning {
+      background: $noti-warn;
       &:before {
         background-color: $noti-warn;
       }
     }
     &.Toastify__toast--error {
+      background: $noti-error;
       &:before {
         background-color: $noti-error;
       }
