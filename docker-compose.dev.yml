@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  app:
+    container_name: dma-app-dev
+    image: dma-app-dev
+    build:
+      context: .
+      target: development
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 3000:3000
