@@ -8,9 +8,9 @@ WORKDIR /app
 
 # Cache and Install dependencies
 COPY package.json .
-COPY package-lock.json .
+COPY yarn.lock .
 
-RUN npm install
+RUN yarn install
 
 # Copy app files
 COPY . .
@@ -19,7 +19,7 @@ COPY . .
 EXPOSE 3000
 
 # Start the app
-CMD [ "npm", "run", "dev" ]
+CMD [ "yarn", "dev" ]
 
 ## Production
 FROM node:16-alpine AS builder
@@ -30,15 +30,15 @@ WORKDIR /app
 
 # Cache and Install dependencies
 COPY package.json .
-COPY package-lock.json .
+COPY yarn.lock .
 
-RUN npm install
+RUN yarn install
 
 # Copy app files
 COPY . .
 
 # Build the app
-RUN npm run build
+RUN yarn run build
 
 # Bundle static assets with nginx
 FROM nginx:1-alpine as production

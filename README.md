@@ -13,14 +13,14 @@ Find out more in [https://dma.aesirx.io/](https://dma.aesirx.io)
 1. Get your `REACT_APP_CLIENT_SECRET` key from https://dma.aesirx.io by creating an account.
 1. Rename the `.env.dist` file to `.env`.
 1. Replace the `REACT_APP_CLIENT_SECRET` in the `.env` file with the one provided in your profile account.
-1. Run `npm install`
+1. Run `yarn install`
 
-### `npm dev`
+### `yarn dev`
 
 Run the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm build`
+### `yarn build`
 
 Get a full build and install it in your favorite web server.
 
