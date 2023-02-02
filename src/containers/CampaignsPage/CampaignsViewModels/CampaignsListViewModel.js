@@ -57,17 +57,20 @@ class CampaignsListViewModel {
     );
   };
 
-  deleteCampaigns = () => {
+  deleteCampaigns = async () => {
     let getArrayId = this.campaignsIdsSelected;
 
     if (getArrayId.length > 0) {
       if (Helper.confirmDeleteItem()) {
         this.tableStatus = PAGE_STATUS.LOADING;
-        this.campaignsStore.deleteCampaigns(
+        const notify_success = await this.campaignsStore.deleteCampaigns(
           this.campaignsIdsSelected,
           this.refreshTableCampaignsList,
           this.callbackOnErrorHander
         );
+        if (notify_success?.result) {
+          notify('Delete success');
+        }
       }
     } else {
       notify('Please choose an item to delete');
