@@ -132,6 +132,7 @@ export default class ProjectStore {
           callbackOnSuccess();
         });
       }
+      return respondedFromApi;
     } catch (error) {
       runInAction(() => {
         callbackOnError(error);
