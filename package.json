@@ -61,7 +61,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run build && serve -s build",
+    "start": "yarn run build && serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "dev": "react-scripts start",
