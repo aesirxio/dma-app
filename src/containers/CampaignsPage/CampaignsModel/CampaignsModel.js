@@ -92,7 +92,7 @@ class CampaignsModel {
       value: this.published,
       type: FIELD_TYPE.TEXT,
       columnName: CAMPAIGNS_FIELD_KEY.PUBLISHED,
-      columnText: 'Published',
+      columnText: 'Status',
     };
   };
 

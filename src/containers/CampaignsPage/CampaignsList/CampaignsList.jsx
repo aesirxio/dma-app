@@ -90,21 +90,25 @@ const CampaignsList = observer(
                 </span>
               );
             } else if (value == 2) {
-              <span
-                className={`badge ${t(
-                  'txt_schedule'
-                )} bg-schedule mw-100 h-35 d-table-cell align-middle`}
-              >
-                {t('txt_schedule')}
-              </span>;
+              return (
+                <span
+                  className={`badge ${t(
+                    'txt_schedule'
+                  )} bg-schedule mw-100 h-35 d-table-cell align-middle`}
+                >
+                  {t('txt_schedule')}
+                </span>
+              );
             } else {
-              <span
-                className={`badge ${t(
-                  'txt_stop'
-                )}  bg-failed mw-100 h-35 d-table-cell align-middle`}
-              >
-                {t('txt_stop')}
-              </span>;
+              return (
+                <span
+                  className={`badge ${t(
+                    'txt_stop'
+                  )}  bg-failed mw-100 h-35 d-table-cell align-middle`}
+                >
+                  {t('txt_stop')}
+                </span>
+              );
             }
           },
           SubCell: ({ row }) => (
