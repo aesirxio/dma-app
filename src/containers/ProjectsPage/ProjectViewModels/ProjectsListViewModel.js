@@ -63,17 +63,20 @@ class ProjectsListViewModel {
     );
   };
 
-  deleteProjects = () => {
+  deleteProjects = async () => {
     let getArrayId = this.projectIdsSelected;
 
     if (getArrayId.length > 0) {
       if (Helper.confirmDeleteItem()) {
         this.tableStatus = PAGE_STATUS.LOADING;
-        this.projectStore.deleteProjects(
+        const notify_success = await this.projectStore.deleteProjects(
           this.projectIdsSelected,
           this.refreshTableProjectList,
           this.callbackOnErrorHander
         );
+        if (notify_success?.result) {
+          notify('Delete success');
+        }
       }
     } else {
       notify('Please choose an item to delete');

@@ -123,6 +123,7 @@ class CampaignsStore {
           callbackOnSuccess();
         });
       }
+      return respondedFromApi;
     } catch (error) {
       runInAction(() => {
         callbackOnError(error);

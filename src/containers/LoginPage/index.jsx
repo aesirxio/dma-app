@@ -78,7 +78,7 @@ class LoginPage extends React.Component {
     return (
       <div className="vh-100 bg-blue-9">
         <div className="row justify-content-center align-items-center h-100">
-          <div className="col-lg-7 col-xxl-5">
+          <div className="col-lg-7 col-xxl-4">
             <div className="d-block p-2 p-lg-5">
               <p className="fs-2 fw-bold mb-2 text-center text-blue-0">
                 {t('txt_welcome_to')}

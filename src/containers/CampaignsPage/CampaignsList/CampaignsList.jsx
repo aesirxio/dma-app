@@ -33,7 +33,7 @@ const CampaignsList = observer(
     getDataFormFilter = () => {
       return [
         {
-          name: 'projects',
+          name: 'txt_title_projects',
           option: this.filterFormViewModel.dropdownlistProjectValues,
           isMulti: true,
         },

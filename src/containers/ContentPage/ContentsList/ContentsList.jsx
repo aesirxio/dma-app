@@ -39,7 +39,7 @@ const ContentsList = observer(
     getDataFormFilter = () => {
       return [
         {
-          name: 'campaigns',
+          name: 'txt_campaign_name',
           option: this.filterFormViewModel.campaignMasterData,
           isMulti: true,
         },

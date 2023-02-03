@@ -82,11 +82,13 @@ $rt-color-success: $green !default;
       }
     }
     &.Toastify__toast--warning {
+      background: $noti-warn;
       &:before {
         background-color: $noti-warn;
       }
     }
     &.Toastify__toast--error {
+      background: $noti-error;
       &:before {
         background-color: $noti-error;
       }
