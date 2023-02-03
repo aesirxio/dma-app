@@ -3054,10 +3054,10 @@ aesirx-dam-app@^1.2.1:
     moment "^2.29.4"
     react-datepicker "^3.3.0"
 
-aesirx-dma-lib@^1.7.5:
-  version "1.7.6"
-  resolved "https://registry.yarnpkg.com/aesirx-dma-lib/-/aesirx-dma-lib-1.7.6.tgz#0b2273188b99eba5c597d6c80e49f693970a763e"
-  integrity sha512-uj+/lmm20yo+rucx7XIqOPLzklKJ/XNmUErXgLvk8h65m43sA0Vs6jiyh3tGKUTWn1UxkAH6X91o2SDh02u0Yw==
+aesirx-dma-lib@^1.7.7:
+  version "1.7.7"
+  resolved "https://registry.yarnpkg.com/aesirx-dma-lib/-/aesirx-dma-lib-1.7.7.tgz#6085c2392a8f3cf3ec3de2dc30ca0ef6de9d4fad"
+  integrity sha512-xiCQmflNiBMklTCCGubXqdHIjlfbG8dSjgmttC0Kv0vIpkqMD1vK8wSzZzzC+6lVbXsazZ/S2i9daPUsfBBg0g==
   dependencies:
     axios "^0.21.0"
     axios-auth-refresh "^3.0.0"
