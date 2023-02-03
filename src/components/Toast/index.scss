@@ -76,6 +76,7 @@ $rt-color-success: $green !default;
       z-index: 0;
     }
     &.Toastify__toast--success {
+      background: $noti-bg-success;
       &:before {
         background-color: $noti-bg-success;
       }
