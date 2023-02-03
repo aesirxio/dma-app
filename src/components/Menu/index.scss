@@ -11,7 +11,11 @@
     white-space: nowrap;
     font-size: 1.1rem;
 
-    &.active,
+    &.active {
+      background-color: $blue;
+      color: $white !important;
+      font-weight: bold;
+    }
     &:hover {
       background-color: $blue;
       color: $white !important;

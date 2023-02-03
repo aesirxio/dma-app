@@ -42,6 +42,7 @@ export default class ContentStore {
           callbackOnSuccess();
         });
       }
+      return repondedDataFromLibrary;
     } catch (error) {
       runInAction(() => {
         callbackOnError(error);

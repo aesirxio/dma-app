@@ -183,5 +183,8 @@
   "txt_canva_api_key_warning":"Erstat venligst REACT_APP_CANVA_API_KEY eller Canva-knappen virker kun på localhost",
   "txt_running": "Løb",
   "txt_stop":"Hold op",
-  "txt_sign_in_to_getting_started": "Log ind for at komme i gang."
+  "txt_sign_in_to_getting_started": "Log ind for at komme i gang.",
+  "txt_warning": "Advarsel",
+  "txt_successful": "Vellykket",
+  "txt_error": "Fejl"
 }

@@ -78,9 +78,9 @@ class LoginPage extends React.Component {
     return (
       <div className="vh-100 bg-blue-9">
         <div className="row justify-content-center align-items-center h-100">
-          <div className="col-lg-7 col-xxl-3">
+          <div className="col-lg-7 col-xxl-4">
             <div className="d-block p-2 p-lg-5">
-              <p className="fs-2 fw-bold mb-2 text-center text-blue-0">
+              <p className="fs-2 fw-semibold mb-2 text-center text-blue-5">
                 {t('txt_welcome_to')}
                 <img
                   className="pe-2"
@@ -90,7 +90,7 @@ class LoginPage extends React.Component {
                 />
                 DMA.
               </p>
-              <p className="fs-2 fw-bold text-center text-blue-0">
+              <p className="fs-2 fw-semibold text-center text-blue-5">
                 {t('txt_sign_in_to_getting_started')}
               </p>
 
