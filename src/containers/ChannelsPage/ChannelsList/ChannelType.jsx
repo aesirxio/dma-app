@@ -38,14 +38,23 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
                 )}
                 <span className="ms-2 fs-4 text-blue-0 text-capitalize">{channelType.name}</span>
               </div>
-              {channelType.status !== '100' ? (
-                <ChannelTypeConnectButton
-                  channelCategory={channelCategory}
-                  channelType={channelType}
-                />
-              ) : (
-                <div className="fs-6 text-nowrap">{t('txt_coming_soon')}</div>
-              )}
+              {(() => {
+                switch (channelType.status) {
+                  case '100':
+                    return <div className="fs-6 text-nowrap">{t('txt_coming_soon')}</div>;
+                  case '1':
+                    return (
+                      <ChannelTypeConnectButton
+                        channelCategory={channelCategory}
+                        channelType={channelType}
+                      />
+                    );
+                  case '2':
+                    return <div className="fs-6 text-nowrap">{t('txt_ maintenance')}</div>;
+                  default:
+                    break;
+                }
+              })()}
             </div>
           </h3>
           <div
