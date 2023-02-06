@@ -3134,7 +3134,6 @@ aesirx-dam-app@^1.2.3:
     simple-react-validator "^1.6.0"
     swiper "^6.3.5"
 
-
 aesirx-dma-lib@^1.7.8:
   version "1.7.8"
   resolved "https://registry.yarnpkg.com/aesirx-dma-lib/-/aesirx-dma-lib-1.7.8.tgz#f77de5ef17ce14efe92ccad60a6053c64c60530c"
