@@ -3096,17 +3096,17 @@ adjust-sourcemap-loader@^4.0.0:
     loader-utils "^2.0.0"
     regex-parser "^2.2.11"
 
-aesirx-dam-app@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/aesirx-dam-app/-/aesirx-dam-app-1.2.2.tgz#609b81eb55fe74baf5a34bd505e2f9b03c9e6f85"
-  integrity sha512-IVKPIz/w3gSF0/cqOkx+Y2quR0Z+wRYUsrcXdC2RwGcTYhQdPHU9lAbu+q4evfACDRCQWQMgsZReelg2hB9FIQ==
+aesirx-dam-app@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/aesirx-dam-app/-/aesirx-dam-app-1.2.3.tgz#3855943f131112a5bedf1d0d0f2404a88af3cd56"
+  integrity sha512-KIij3YHt72bfcskzu3pAnil7H7zOGeaz+VwgJ767gGXUnbRTCPUrLnO4A2S+Xu5gqGDRlf/luEUhMbHOu4MG8g==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^6.2.0"
     "@fortawesome/free-brands-svg-icons" "^6.2.0"
     "@fortawesome/free-regular-svg-icons" "^6.2.0"
     "@fortawesome/free-solid-svg-icons" "^6.2.0"
     "@fortawesome/react-fontawesome" "^0.2.0"
-    aesirx-dma-lib "^1.7.7"
+    aesirx-dma-lib "^1.7.8"
     aesirx-sso "^1.0.3"
     babel-plugin-file-loader "^2.0.0"
     bootstrap "^5.2.2"
@@ -3114,8 +3114,6 @@ aesirx-dam-app@^1.2.2:
     date-fns-tz "^1.1.6"
     file-saver "^2.0.5"
     html-react-parser "^1.2.7"
-    i18next "^19.8.4"
-    i18next-browser-languagedetector "^6.0.1"
     mobx "^6.0.4"
     mobx-react "^7.0.5"
     moment "^2.29.4"
@@ -3125,7 +3123,6 @@ aesirx-dam-app@^1.2.2:
     react-dnd "^15.1.2"
     react-dnd-html5-backend "^15.1.2"
     react-dropzone "^11.2.4"
-    react-i18next "^11.7.3"
     react-lazy-load-image-component "^1.5.1"
     react-number-format "^4.6.4"
     react-router-dom "^5.2.0"
@@ -3137,10 +3134,10 @@ aesirx-dam-app@^1.2.2:
     simple-react-validator "^1.6.0"
     swiper "^6.3.5"
 
-aesirx-dma-lib@^1.7.7:
-  version "1.7.7"
-  resolved "https://registry.yarnpkg.com/aesirx-dma-lib/-/aesirx-dma-lib-1.7.7.tgz#6085c2392a8f3cf3ec3de2dc30ca0ef6de9d4fad"
-  integrity sha512-xiCQmflNiBMklTCCGubXqdHIjlfbG8dSjgmttC0Kv0vIpkqMD1vK8wSzZzzC+6lVbXsazZ/S2i9daPUsfBBg0g==
+aesirx-dma-lib@^1.7.8:
+  version "1.7.8"
+  resolved "https://registry.yarnpkg.com/aesirx-dma-lib/-/aesirx-dma-lib-1.7.8.tgz#f77de5ef17ce14efe92ccad60a6053c64c60530c"
+  integrity sha512-/bwKhGj22YCv5BggDq8bGrJmvxu1/MtLNZnNWlJlkD739Usy3ZezJu8fVzlquSznYKAzQjMEDZFemI4GHHZBHQ==
   dependencies:
     axios "^0.21.0"
     axios-auth-refresh "^3.0.0"
