@@ -188,5 +188,7 @@
   "txt_sign_in_to_getting_started": "Увійдіть, щоб почати.",
   "txt_warning": "Попередження",
   "txt_successful": "Успішно",
-  "txt_error": "Помилка"
+  "txt_error": "Помилка",
+  "txt_title_no_matching_results":"Немає відповідних результатів",
+  "txt_text_no_matching_results": "Не вдалося знайти жодного проекту з цим ключовим словом. Спробуйте інше ключове слово."
 }

@@ -465,8 +465,8 @@ const Table = ({
           {page.length === 0 ? (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
-              title="No Matching Results"
-              text="Can not found any project with that keyword. Please try another keyword."
+              title="txt_title_no_matching_results"
+              text="txt_text_no_matching_results"
               width="w-50"
             />
           ) : (
@@ -528,8 +528,8 @@ const Table = ({
           {page.length === 0 ? (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
-              title="No Matching Results"
-              text="Can not found any project with that keyword. Please try another keyword."
+              title="txt_title_no_matching_results"
+              text="txt_text_no_matching_results"
               width="w-50"
             />
           ) : (

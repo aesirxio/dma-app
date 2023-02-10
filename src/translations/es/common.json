@@ -188,5 +188,7 @@
   "txt_sign_in_to_getting_started": "Inicia sesión para empezar.",
   "txt_warning": "Advertencia",
   "txt_successful": "Exitoso",
-  "txt_error": "Error"
+  "txt_error": "Error",
+  "txt_title_no_matching_results":"Sin resultados coincidentes",
+  "txt_text_no_matching_results":"No se puede encontrar ningún proyecto con esa palabra clave. Intente con otra palabra clave"
 }

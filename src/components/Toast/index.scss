@@ -77,18 +77,21 @@ $rt-color-success: $green !default;
     }
     &.Toastify__toast--success {
       background: $noti-bg-success;
+      color: $green;
       &:before {
         background-color: $noti-bg-success;
       }
     }
     &.Toastify__toast--warning {
       background: $noti-bg-warn;
+      color: $noti-warn;
       &:before {
         background-color: $noti-warn;
       }
     }
     &.Toastify__toast--error {
       background: $noti-bg-error;
+      color: $noti-error;
       &:before {
         background-color: $noti-error;
       }

@@ -9,11 +9,13 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { Link } from 'react-router-dom';
 import './index.scss';
 import ComponentImage from '../ComponentImage';
+import { withTranslation } from 'react-i18next';
 
 class ComponentNoData extends Component {
   render() {
     let { icons, text, title, link, linlText, isBtn, width, className, iconColor, iconBg } =
       this.props;
+    const { t } = this.props;
     return (
       <div
         className={
@@ -32,8 +34,8 @@ class ComponentNoData extends Component {
             alt={icons}
           />
         </p>
-        <h5 className="mb-2">{title}</h5>
-        <p className={`mb-2 fs-14 text-black-50 w-100 mx-auto ${width}`}>{text}</p>
+        <h5 className="mb-2">{t(title)}</h5>
+        <p className={`mb-2 fs-14 text-black-50 w-100 mx-auto ${width}`}>{t(text)}</p>
         {isBtn && (
           <Link
             to={{ pathname: link, state: { openModal: true } }}
@@ -50,4 +52,4 @@ class ComponentNoData extends Component {
   }
 }
 
-export default ComponentNoData;
+export default withTranslation('common')(ComponentNoData);

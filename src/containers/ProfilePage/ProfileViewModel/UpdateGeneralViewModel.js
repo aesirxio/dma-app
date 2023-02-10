@@ -140,9 +140,9 @@ class UpdateGeneralViewModel {
           break;
       }
       notify(message, 'success');
-      // setTimeout(() => {
-      //   window.location.reload();
-      // }, 1500);
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500);
     }
   };
 }

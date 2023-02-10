@@ -91,7 +91,7 @@ const notify = (msg, type = 'success') => {
 };
 
 const notifyHTML = (text) => {
-  return toast.success(<div className="text-white" dangerouslySetInnerHTML={{ __html: text }} />);
+  return toast.success(<div className="text-green" dangerouslySetInnerHTML={{ __html: text }} />);
 };
 
 export { Toast, notify, notifyHTML };
