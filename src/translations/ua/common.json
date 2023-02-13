@@ -189,5 +189,7 @@
   "txt_warning": "Попередження",
   "txt_successful": "Успішно",
   "txt_error": "Помилка",
-  "txt_forgot_password": "Забули пароль?"
+  "txt_forgot_password": "Забули пароль?",
+  "txt_ maintenance":"обслуговування"
+
 }

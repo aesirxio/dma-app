@@ -189,5 +189,6 @@
   "txt_warning": "คำเตือน",
   "txt_successful": "ประสบความสำเร็จ",
   "txt_error": "ข้อผิดพลาด",
-  "txt_forgot_password": "ลืมรหัสผ่าน ?"
+  "txt_forgot_password": "ลืมรหัสผ่าน ?",
+  "txt_ maintenance":"การซ่อมบำรุง"
 }

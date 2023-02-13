@@ -189,5 +189,6 @@
   "txt_warning": "Cảnh báo",
   "txt_successful": "Thành công",
   "txt_error": "Lỗi",
-  "txt_forgot_password": "Quên mật khẩu ?"
+  "txt_forgot_password": "Quên mật khẩu ?",
+  "txt_ maintenance":"Bảo trì"
 }
