@@ -20,7 +20,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.12",
-    "aesirx-dam-app": "^1.2.3",
+    "aesirx-dam-app": "^1.2.6",
     "aesirx-dma-lib": "^1.7.8",
     "aesirx-sso": "^1.0.3",
     "bootstrap": "^5.2.2",

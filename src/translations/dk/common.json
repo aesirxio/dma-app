@@ -186,5 +186,6 @@
   "txt_sign_in_to_getting_started": "Log ind for at komme i gang.",
   "txt_warning": "Advarsel",
   "txt_successful": "Vellykket",
-  "txt_error": "Fejl"
+  "txt_error": "Fejl",
+  "txt_forgot_password": "Glemt adgangskode?"
 }

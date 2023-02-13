@@ -3096,17 +3096,17 @@ adjust-sourcemap-loader@^4.0.0:
     loader-utils "^2.0.0"
     regex-parser "^2.2.11"
 
-aesirx-dam-app@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/aesirx-dam-app/-/aesirx-dam-app-1.2.3.tgz#3855943f131112a5bedf1d0d0f2404a88af3cd56"
-  integrity sha512-KIij3YHt72bfcskzu3pAnil7H7zOGeaz+VwgJ767gGXUnbRTCPUrLnO4A2S+Xu5gqGDRlf/luEUhMbHOu4MG8g==
+aesirx-dam-app@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/aesirx-dam-app/-/aesirx-dam-app-1.2.6.tgz#a19136e79c53d8cb1e230d8e2f87b47fef6be2ff"
+  integrity sha512-I3Z0J4Ns5Mdn+EmXjtEnW0E+5qsMBIzAGoi+K8OdlmclbtQXR0TY4PlCKPS/cukC/RJUJgGp6J+Av/z84MckgA==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^6.2.0"
     "@fortawesome/free-brands-svg-icons" "^6.2.0"
     "@fortawesome/free-regular-svg-icons" "^6.2.0"
     "@fortawesome/free-solid-svg-icons" "^6.2.0"
     "@fortawesome/react-fontawesome" "^0.2.0"
-    aesirx-dma-lib "^1.7.8"
+    aesirx-dma-lib "^1.7.9"
     aesirx-sso "^1.0.3"
     babel-plugin-file-loader "^2.0.0"
     bootstrap "^5.2.2"
@@ -3138,6 +3138,18 @@ aesirx-dma-lib@^1.7.8:
   version "1.7.8"
   resolved "https://registry.yarnpkg.com/aesirx-dma-lib/-/aesirx-dma-lib-1.7.8.tgz#f77de5ef17ce14efe92ccad60a6053c64c60530c"
   integrity sha512-/bwKhGj22YCv5BggDq8bGrJmvxu1/MtLNZnNWlJlkD739Usy3ZezJu8fVzlquSznYKAzQjMEDZFemI4GHHZBHQ==
+  dependencies:
+    axios "^0.21.0"
+    axios-auth-refresh "^3.0.0"
+    crypto-js "^4.1.1"
+    css-minimizer-webpack-plugin "^4.0.0"
+    qs "^6.10.1"
+    query-string "^7.1.1"
+
+aesirx-dma-lib@^1.7.9:
+  version "1.7.9"
+  resolved "https://registry.yarnpkg.com/aesirx-dma-lib/-/aesirx-dma-lib-1.7.9.tgz#6404441ef043a01ab9c25db11b39a112615c6a6e"
+  integrity sha512-A8U3lJrrIiG5NPYWux2ERUpKd0colnjaoeuRvuc5DcXFnM/chtmRwaMNucTZFNLNdV+RXbMxr5/AIg5ySixyrA==
   dependencies:
     axios "^0.21.0"
     axios-auth-refresh "^3.0.0"
