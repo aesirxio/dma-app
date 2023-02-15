@@ -212,8 +212,7 @@ const ConnectChannels = observer(
       this.channelsListViewModel.onSuccessConnect(JSON.stringify(dataAccessToken), 'instagram');
     };
 
-    onFailureConnectChannels = () => {
-    };
+    onFailureConnectChannels = () => {};
 
     onSuccessGoogleMyBusinessConnect = (res) => {
       let dataAccessToken = {

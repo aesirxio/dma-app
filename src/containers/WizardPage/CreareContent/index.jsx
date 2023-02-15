@@ -3,19 +3,19 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import StepWizard from "react-step-wizard";
+import StepWizard from 'react-step-wizard';
 
-import ContentFormGeneralWizard from "./ContentFormGeneralWizard";
-import ContentFormPublishWizard from "./ContentFormPublishWizard";
+import ContentFormGeneralWizard from './ContentFormGeneralWizard';
+import ContentFormPublishWizard from './ContentFormPublishWizard';
 
 class CreareContent extends Component {
   custom = {
-    enterRight: "",
-    enterLeft: "",
-    exitRight: "",
-    exitLeft: "",
+    enterRight: '',
+    enterLeft: '',
+    exitRight: '',
+    exitLeft: '',
   };
 
   render() {
@@ -27,11 +27,11 @@ class CreareContent extends Component {
     return (
       <StepWizard isLazyMount={true} transitions={this.custom} className="px-3">
         <ContentFormGeneralWizard
-          hashKey={"contentgeneral"}
+          hashKey={'contentgeneral'}
           selectedProjectIdFromWizardStep1={selectedProjectIdFromWizardStep1}
           match={this.props.match}
         />
-        <ContentFormPublishWizard hashKey={"contentpublish"} />
+        <ContentFormPublishWizard hashKey={'contentpublish'} />
       </StepWizard>
     );
   }

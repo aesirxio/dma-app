@@ -21,8 +21,7 @@ const ComponentLocations = ({
   viewModel,
   getAge,
 }) => {
-  const handleOnchange = () => {
-  };
+  const handleOnchange = () => {};
 
   const handleOnchangeAge = (name) => {
     viewModel.getAge = name;
@@ -86,7 +85,7 @@ const ComponentLocations = ({
         <Label text={'Gender'} required={false} />
         <div className="d-flex">
           <span
-            style={{cursor:"pointer"}}
+            style={{ cursor: 'pointer' }}
             className={`w-80 btn_gender border-1 bg-transparent cursor-pointer d-flex align-items-center justify-content-center ${
               getAge === 'all' ? 'active' : ''
             }`}
@@ -95,7 +94,7 @@ const ComponentLocations = ({
             All
           </span>
           <span
-            style={{cursor:"pointer"}}
+            style={{ cursor: 'pointer' }}
             className={`w-80 btn_gender border-1 bg-transparent cursor-pointer d-flex align-items-center justify-content-center ${
               getAge === 'men' ? 'active' : ''
             }`}
@@ -104,7 +103,7 @@ const ComponentLocations = ({
             Men
           </span>
           <span
-            style={{cursor:"pointer"}}
+            style={{ cursor: 'pointer' }}
             className={`w-80 btn_gender border-1 bg-transparent cursor-pointer d-flex align-items-center justify-content-center ${
               getAge === 'women' ? 'active' : ''
             }`}

@@ -3,28 +3,26 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React from "react";
-import SelectComponent from "../Select";
+import React from 'react';
+import SelectComponent from '../Select';
 
 const optionCampaigns = [
-  { value: "project1", label: "Project 1" },
-  { value: "project2", label: "Project 2" },
-  { value: "project3", label: "Project 3" },
+  { value: 'project1', label: 'Project 1' },
+  { value: 'project2', label: 'Project 2' },
+  { value: 'project3', label: 'Project 3' },
 ];
 
 class CreateCampaign extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      campaign: null
+      campaign: null,
     };
-
   }
 
   handleCampaign = (selectedOption) => {
     this.setState(() => ({ campaign: selectedOption }));
   };
-
 
   render() {
     return (
@@ -60,7 +58,6 @@ class CreateCampaign extends React.Component {
             <span className="text-red-1">*</span>
           </label>
           <input type="text" className="form-control" id="enddate" />
-
         </form>
       </div>
     );

@@ -12,13 +12,11 @@ import ProjectViewModel from './ProjectViewModels/ProjectViewModel';
 import { ProjectViewModelContextProvider } from './ProjectViewModels/ProjectViewModelContextProvider';
 import { withTranslation } from 'react-i18next';
 
-
-
 const projectStore = new ProjectStore();
 const projectViewModel = new ProjectViewModel(projectStore);
 
 function Projects(props) {
-  const {t} =props;
+  const { t } = props;
   return (
     <ProjectViewModelContextProvider viewModel={projectViewModel}>
       <div className="py-4 px-3 h-100">

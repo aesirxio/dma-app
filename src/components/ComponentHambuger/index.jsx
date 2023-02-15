@@ -3,8 +3,8 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React from "react";
-import "./index.scss";
+import React from 'react';
+import './index.scss';
 
 class ComponentHambuger extends React.Component {
   constructor(props) {

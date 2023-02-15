@@ -8,15 +8,13 @@ import { observer } from 'mobx-react';
 import PAGE_STATUS from '../../../constants/PageStatus';
 
 import Spinner from '../../../components/Spinner';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import BigCalendarFull from '../../../components/BigCalendarFull';
 import { withContentViewModel } from '../../ContentPage/ContentViewModels/ContentViewModelContextProvider';
 
-
 import ComponentViewList from '../../../components/ComponentViewList';
 import { withTranslation } from 'react-i18next';
-
 
 const CalendarList = observer(
   class CalendarList extends ComponentViewList {
@@ -27,22 +25,22 @@ const CalendarList = observer(
 
     render() {
       const { tableStatus, contents, showView, showDate, searchContents } = this.listViewModel;
-      const {t}= this.props;
+      const { t } = this.props;
 
       return tableStatus === PAGE_STATUS.LOADING ? (
         <Spinner />
       ) : (
         <div className="wrapper_calendar wrapper_calendar_full py-4 px-3 overflow-y-auto">
-            <div className="d-flex align-items-center justify-content-between mb-4">
-                <h2 className="fs-2 mb-0 text-blue-0">{t('txt_title_calendar')}</h2>
-                {/*TODO Add an action and remove d-none*/}
-                <span className={`cursor-pointer btn btn-success d-none`}>
-                    <i>
-                        <FontAwesomeIcon icon={faPlus} />
-                    </i>
-                    <span className="ps-2">{t('txt_title_new_calendar')}</span>
-                </span>
-            </div>
+          <div className="d-flex align-items-center justify-content-between mb-4">
+            <h2 className="fs-2 mb-0 text-blue-0">{t('txt_title_calendar')}</h2>
+            {/*TODO Add an action and remove d-none*/}
+            <span className={`cursor-pointer btn btn-success d-none`}>
+              <i>
+                <FontAwesomeIcon icon={faPlus} />
+              </i>
+              <span className="ps-2">{t('txt_title_new_calendar')}</span>
+            </span>
+          </div>
           <BigCalendarFull
             showView={showView}
             showDate={showDate}
@@ -57,4 +55,4 @@ const CalendarList = observer(
   }
 );
 
-export default  withTranslation('common')(withContentViewModel(CalendarList));
+export default withTranslation('common')(withContentViewModel(CalendarList));
