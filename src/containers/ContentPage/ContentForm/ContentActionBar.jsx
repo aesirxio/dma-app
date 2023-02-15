@@ -36,17 +36,17 @@ const ContentActionBar = observer(
     };
 
     render() {
-      const {t}= this.props;
+      const { t } = this.props;
       return (
         <div className="d-flex justify-content-end">
           {/*  TODO Move to filter block */}
           <Dropdown className="me-3">
             <Dropdown.Toggle className="p-3" variant="info" id="actions">
-            {t("choose_an_action")}
+              {t('choose_an_action')}
             </Dropdown.Toggle>
             <Dropdown.Menu className="w-100 shadow">
               <Dropdown.Item className="px-3 py-2" onClick={this.handerDeleteContent}>
-              {t("delete")}
+                {t('delete')}
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
@@ -57,7 +57,7 @@ const ContentActionBar = observer(
             <i className="me-2">
               <FontAwesomeIcon icon={faPlus} />
             </i>
-            <span>{t("txt_create_post")}</span>
+            <span>{t('txt_create_post')}</span>
           </Link>
         </div>
       );

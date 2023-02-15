@@ -26,7 +26,6 @@ const ProjectFormModal = observer(
 
       const { viewModel } = props;
       this.projectFormModalViewModel = viewModel ? viewModel.getFormModalViewModel() : null;
-
     }
 
     saveProjectHandler = () => {
@@ -51,26 +50,30 @@ const ProjectFormModal = observer(
     };
 
     render() {
-
       const { show, editMode } = this.projectFormModalViewModel;
-      const {t}= this.props;
+      const { t } = this.props;
       if (!show) {
         return null;
       }
-
 
       return (
         <ModalComponent
           show={show}
           onHide={this.projectFormModalViewModel.closeModal}
-          header={editMode === false || editMode == null ? t("txt_create_a_new_project") : t("txt_edit_project")}
+          header={
+            editMode === false || editMode == null
+              ? t('txt_create_a_new_project')
+              : t('txt_edit_project')
+          }
           body={
             <ProjectForm viewModel={this.projectFormModalViewModel} validator={this.validator} />
           }
           footer={
             <Button onClick={this.saveProjectHandler} className="btn btn-success w-100">
               <span>
-                {editMode === false || editMode == null ? t("txt_create_project") : t("txt_save_project")}
+                {editMode === false || editMode == null
+                  ? t('txt_create_project')
+                  : t('txt_save_project')}
               </span>
               <i className="ms-1">
                 <FontAwesomeIcon icon={faChevronRight} />

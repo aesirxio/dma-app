@@ -3,12 +3,12 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { observer } from "mobx-react";
+import { observer } from 'mobx-react';
 
-import { withPersonaViewModel } from "../PersonaViewModels/PersonaViewModelContextProvider";
-import ContentSbarRight from "../../../components/ContentSbarRight";
+import { withPersonaViewModel } from '../PersonaViewModels/PersonaViewModelContextProvider';
+import ContentSbarRight from '../../../components/ContentSbarRight';
 
 const FormPreviewPersona = observer(
   class FormPreviewPersona extends Component {
@@ -21,15 +21,11 @@ const FormPreviewPersona = observer(
       super(props);
 
       const { viewModel } = props;
-      this.personaTableSelectionModalViewModel = this.props
-        .personaTableSelectionModalViewModel
+      this.personaTableSelectionModalViewModel = this.props.personaTableSelectionModalViewModel
         ? this.props.personaTableSelectionModalViewModel
         : null;
 
-      this.previewPersonaViewModel = viewModel
-        ? viewModel.personaFormViewModel
-        : null;
-
+      this.previewPersonaViewModel = viewModel ? viewModel.personaFormViewModel : null;
     }
 
     componentDidMount = () => {};
@@ -52,11 +48,7 @@ const FormPreviewPersona = observer(
 
       let { getValueSelected } = this.personaTableSelectionModalViewModel;
 
-      if (
-        getValueSelected
-          ? getValueSelected.length <= 0
-          : null || getValueSelected === null
-      ) {
+      if (getValueSelected ? getValueSelected.length <= 0 : null || getValueSelected === null) {
         this.isHiddenPersonaPeview = true;
         this.isDisable = true;
       } else {
@@ -69,9 +61,7 @@ const FormPreviewPersona = observer(
           handleSelect={this.handleSelect}
           options={getValueSelected ? getValueSelected : null}
           disabled={this.isDisable}
-          handlShowPreviewPersona={() =>
-            this.handlShowPreviewPersona(getValueSelected)
-          }
+          handlShowPreviewPersona={() => this.handlShowPreviewPersona(getValueSelected)}
           isHidden={this.isHiddenPersonaPeview}
         />
       );

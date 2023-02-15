@@ -21,7 +21,6 @@ class PersonaActionBar extends Component {
     this.personaFormViewModel = viewModel ? viewModel.getPersonaFormViewModel() : null;
 
     this.personasListViewModel = viewModel ? viewModel.getPersonaListViewModel() : null;
-
   }
 
   handerDeletePersona = () => {
@@ -29,25 +28,25 @@ class PersonaActionBar extends Component {
   };
 
   render() {
-    const {t}= this.props;
+    const { t } = this.props;
     return (
       <div className="d-flex justify-content-end">
         <Dropdown className="me-3">
           <Dropdown.Toggle variant="info" id="actions">
-          {t("choose_an_action")}
+            {t('choose_an_action')}
           </Dropdown.Toggle>
           <Dropdown.Menu className="w-100">
-            <Dropdown.Item onClick={this.handerDeletePersona}> {t("delete")}</Dropdown.Item>
+            <Dropdown.Item onClick={this.handerDeletePersona}> {t('delete')}</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <Link to={'/personas/create'} className="btn btn-success">
           <i className="green me-2">
             <FontAwesomeIcon icon={faPlus} />
           </i>
-          <span>{t("create_a_new_persona")}</span>
+          <span>{t('create_a_new_persona')}</span>
         </Link>
       </div>
     );
   }
 }
-export default withTranslation('common') (withPersonaViewModel(PersonaActionBar));
+export default withTranslation('common')(withPersonaViewModel(PersonaActionBar));

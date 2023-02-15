@@ -3,33 +3,33 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component } from "react";
-import { Tabs, Tab } from "react-bootstrap";
+import React, { Component } from 'react';
+import { Tabs, Tab } from 'react-bootstrap';
 
 const dataTabs = [
   {
-    name: "overall",
-    text: "Overall",
+    name: 'overall',
+    text: 'Overall',
   },
   {
-    name: "facebook",
-    text: "Facebook",
+    name: 'facebook',
+    text: 'Facebook',
   },
   {
-    name: "youtube",
-    text: "Youtube",
+    name: 'youtube',
+    text: 'Youtube',
   },
   {
-    name: "twitter",
-    text: "Twitter",
+    name: 'twitter',
+    text: 'Twitter',
   },
   {
-    name: "linkedin",
-    text: "Linkedin",
+    name: 'linkedin',
+    text: 'Linkedin',
   },
   {
-    name: "instagram",
-    text: "Instagram",
+    name: 'instagram',
+    text: 'Instagram',
   },
 ];
 
@@ -58,10 +58,7 @@ class ComponentTopPosts extends Component {
                   <div className="px-3">
                     {data.map((value, key) => {
                       return (
-                        <div
-                          key={key}
-                          className="row py-3 border-bottom-1 item_project"
-                        >
+                        <div key={key} className="row py-3 border-bottom-1 item_project">
                           <div className="col-8">
                             <div className="d-flex align-items-center">
                               <span>{value.text}</span>

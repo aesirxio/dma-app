@@ -3,16 +3,16 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from "react";
+import React, { Component, lazy } from 'react';
 
-import { observer } from "mobx-react";
-import { withCampaignTableSelectionModalViewModel } from "./CampaignTableSelectionModalViewModelContextProvider";
-import { CAMPAIGNS_FIELD_KEY } from "../../constants/CampaignsModule";
-import PAGE_STATUS from "../../constants/PageStatus";
-import Spinner from "../../components/Spinner";
-import Table from "../../components/Table";
+import { observer } from 'mobx-react';
+import { withCampaignTableSelectionModalViewModel } from './CampaignTableSelectionModalViewModelContextProvider';
+import { CAMPAIGNS_FIELD_KEY } from '../../constants/CampaignsModule';
+import PAGE_STATUS from '../../constants/PageStatus';
+import Spinner from '../../components/Spinner';
+import Table from '../../components/Table';
 
-const ModalComponent = lazy(() => import("../../components/Modal"));
+const ModalComponent = lazy(() => import('../../components/Modal'));
 
 const CampaignTableSelectionModal = observer(
   class CampaignTableSelectionModal extends Component {
@@ -34,17 +34,13 @@ const CampaignTableSelectionModal = observer(
     };
 
     render() {
-      const {
-        tableStatus,
-        CampaignsMasterData,
-        show,
-      } = this.CampaignTableSelectionModalViewModel;
+      const { tableStatus, CampaignsMasterData, show } = this.CampaignTableSelectionModalViewModel;
 
       if (!show) return null;
 
       const tableRowHeader = [
         {
-          Header: "Campaign Name",
+          Header: 'Campaign Name',
           accessor: CAMPAIGNS_FIELD_KEY.NAME, // accessor is the "key" in the data
           Cell: ({ row }) => (
             <div className="d-flex">
@@ -58,15 +54,15 @@ const CampaignTableSelectionModal = observer(
           ),
         },
         {
-          Header: "Campaign ID",
+          Header: 'Campaign ID',
           accessor: CAMPAIGNS_FIELD_KEY.ID,
         },
         {
-          Header: "Start date",
+          Header: 'Start date',
           accessor: CAMPAIGNS_FIELD_KEY.START_DATE,
         },
         {
-          Header: "End date",
+          Header: 'End date',
           accessor: CAMPAIGNS_FIELD_KEY.END_DATE,
         },
         // {
@@ -91,7 +87,7 @@ const CampaignTableSelectionModal = observer(
         <ModalComponent
           show={show}
           onHide={this.CampaignTableSelectionModalViewModel.closeModal}
-          header={"Choose campaigns"}
+          header={'Choose campaigns'}
           dialogClassName="modal-lg modal_content_general"
           body={
             <Table
@@ -109,6 +105,4 @@ const CampaignTableSelectionModal = observer(
   }
 );
 
-export default withCampaignTableSelectionModalViewModel(
-  CampaignTableSelectionModal
-);
+export default withCampaignTableSelectionModalViewModel(CampaignTableSelectionModal);

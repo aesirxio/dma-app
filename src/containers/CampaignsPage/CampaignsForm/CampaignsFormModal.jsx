@@ -49,7 +49,7 @@ const CampaignsFormModal = observer(
 
     render() {
       const { show, editMode, formStatus } = this.CampaignsFormModalViewModal;
-      const {t}= this.props;
+      const { t } = this.props;
 
       if (!show) {
         return null;
@@ -63,7 +63,9 @@ const CampaignsFormModal = observer(
         <ModalComponent
           show={show}
           onHide={this.CampaignsFormModalViewModal.closeModal}
-          header={editMode === false || editMode == null ? t("create_campaign") : t("edit_campaign")}
+          header={
+            editMode === false || editMode == null ? t('create_campaign') : t('edit_campaign')
+          }
           body={
             <CampaignsForm
               viewModel={this.CampaignsFormModalViewModal}
@@ -73,7 +75,7 @@ const CampaignsFormModal = observer(
           footer={
             <Button onClick={this.saveCampaignsHandler} className="btn btn-success w-100">
               <span>
-                {editMode === false || editMode == null ? t("create_campaign") : t("save_campaign")}
+                {editMode === false || editMode == null ? t('create_campaign') : t('save_campaign')}
               </span>
               <i className="ms-1">
                 <FontAwesomeIcon icon={faChevronRight} />

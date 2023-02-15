@@ -3,18 +3,16 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component, lazy } from "react";
+import React, { Component, lazy } from 'react';
 
-import { observer } from "mobx-react";
-import { withProjectTableSelectionModalViewModel } from "./ProjectTableSelectionModalViewModelContextProvider";
-import {
-  PROJECT_TABLE_SELECTION_MODAL_COLUMN_INDICATOR,
-} from "../../constants/ProjectModule";
-import PAGE_STATUS from "../../constants/PageStatus";
-import Spinner from "../../components/Spinner";
-import Table from "../../components/Table";
+import { observer } from 'mobx-react';
+import { withProjectTableSelectionModalViewModel } from './ProjectTableSelectionModalViewModelContextProvider';
+import { PROJECT_TABLE_SELECTION_MODAL_COLUMN_INDICATOR } from '../../constants/ProjectModule';
+import PAGE_STATUS from '../../constants/PageStatus';
+import Spinner from '../../components/Spinner';
+import Table from '../../components/Table';
 
-const ModalComponent = lazy(() => import("../../components/Modal"));
+const ModalComponent = lazy(() => import('../../components/Modal'));
 
 const ProjectTableSelectionModal = observer(
   class ProjectTableSelectionModal extends Component {
@@ -36,17 +34,13 @@ const ProjectTableSelectionModal = observer(
     };
 
     render() {
-      const {
-        tableStatus,
-        projectsMasterData,
-        show,
-      } = this.projectTableSelectionModalViewModel;
+      const { tableStatus, projectsMasterData, show } = this.projectTableSelectionModalViewModel;
 
       if (!show) return null;
 
       const tableRowHeader = [
         {
-          Header: "Name",
+          Header: 'Name',
           accessor: PROJECT_TABLE_SELECTION_MODAL_COLUMN_INDICATOR.NAME, // accessor is the "key" in the data
           Cell: ({ row }) => (
             <div className="d-flex">
@@ -60,7 +54,7 @@ const ProjectTableSelectionModal = observer(
           ),
         },
         {
-          Header: "Project ID",
+          Header: 'Project ID',
           accessor: PROJECT_TABLE_SELECTION_MODAL_COLUMN_INDICATOR.ID,
         },
         // {
@@ -79,7 +73,7 @@ const ProjectTableSelectionModal = observer(
         <ModalComponent
           show={show}
           onHide={this.projectTableSelectionModalViewModel.closeModal}
-          header={"Choose A Project"}
+          header={'Choose A Project'}
           dialogClassName="modal-lg modal_content_general"
           body={
             <Table
@@ -97,6 +91,4 @@ const ProjectTableSelectionModal = observer(
   }
 );
 
-export default withProjectTableSelectionModalViewModel(
-  ProjectTableSelectionModal
-);
+export default withProjectTableSelectionModalViewModel(ProjectTableSelectionModal);

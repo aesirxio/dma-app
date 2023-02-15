@@ -49,9 +49,7 @@ class ComponentAudience extends Component {
             dataAudience.map((value, key) => {
               return (
                 <div key={key} className="bg-blue-3 p-3 rounded-2 mb-2 position-relative">
-                  <span
-                    className="position-absolute top-0 end-0 text-blue-0 d-flex fs-14 mt-2 me-2 cursor-pointer"
-                  >
+                  <span className="position-absolute top-0 end-0 text-blue-0 d-flex fs-14 mt-2 me-2 cursor-pointer">
                     <i className="text-blue-0 me-1">
                       <FontAwesomeIcon icon={faEdit} />
                     </i>

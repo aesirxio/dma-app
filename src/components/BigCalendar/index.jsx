@@ -74,10 +74,7 @@ class BigCalendar extends React.Component {
 
     divClass += channelName + '_calendar_background';
 
-    return (
-      <div className={divClass}>
-      </div>
-    );
+    return <div className={divClass}></div>;
   };
 
   convert(str) {

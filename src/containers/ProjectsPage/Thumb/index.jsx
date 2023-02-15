@@ -18,8 +18,7 @@ const data = [
     avatar: '/assets/images/avatar-1.png',
     progress: 70,
     day: '31/08/2020',
-    text:
-      'Suntory PepsiCo Vietnam Beverage (SPVB), is 100% owned by foreign capital, and is a new beverage joint venture between PepsiCo Inc. and Suntory',
+    text: 'Suntory PepsiCo Vietnam Beverage (SPVB), is 100% owned by foreign capital, and is a new beverage joint venture between PepsiCo Inc. and Suntory',
   },
   {
     key: 2,
@@ -28,8 +27,7 @@ const data = [
     avatar: '/assets/images/avatar-2.png',
     progress: 50,
     day: '31/08/2020',
-    text:
-      'Suntory PepsiCo Vietnam Beverage (SPVB), is 100% owned by foreign capital, and is a new beverage joint venture between PepsiCo Inc. and Suntory',
+    text: 'Suntory PepsiCo Vietnam Beverage (SPVB), is 100% owned by foreign capital, and is a new beverage joint venture between PepsiCo Inc. and Suntory',
   },
   {
     key: 3,
@@ -38,8 +36,7 @@ const data = [
     avatar: '/assets/images/avatar-3.png',
     progress: 70,
     day: '31/08/2020',
-    text:
-      'Suntory PepsiCo Vietnam Beverage (SPVB), is 100% owned by foreign capital, and is a new beverage joint venture between PepsiCo Inc. and Suntory',
+    text: 'Suntory PepsiCo Vietnam Beverage (SPVB), is 100% owned by foreign capital, and is a new beverage joint venture between PepsiCo Inc. and Suntory',
   },
   {
     key: 4,
@@ -48,8 +45,7 @@ const data = [
     avatar: '/assets/images/avatar-4.png',
     progress: 50,
     day: '31/08/2020',
-    text:
-      'Suntory PepsiCo Vietnam Beverage (SPVB), is 100% owned by foreign capital, and is a new beverage joint venture between PepsiCo Inc. and Suntory',
+    text: 'Suntory PepsiCo Vietnam Beverage (SPVB), is 100% owned by foreign capital, and is a new beverage joint venture between PepsiCo Inc. and Suntory',
   },
   {
     key: 5,
@@ -58,8 +54,7 @@ const data = [
     avatar: '/assets/images/avatar-5.png',
     progress: 90,
     day: '31/08/2020',
-    text:
-      'Suntory PepsiCo Vietnam Beverage (SPVB), is 100% owned by foreign capital, and is a new beverage joint venture between PepsiCo Inc. and Suntory',
+    text: 'Suntory PepsiCo Vietnam Beverage (SPVB), is 100% owned by foreign capital, and is a new beverage joint venture between PepsiCo Inc. and Suntory',
   },
   {
     key: 6,
@@ -68,8 +63,7 @@ const data = [
     avatar: '/assets/images/avatar-5.png',
     progress: 50,
     day: '31/08/2020',
-    text:
-      'Suntory PepsiCo Vietnam Beverage (SPVB), is 100% owned by foreign capital, and is a new beverage joint venture between PepsiCo Inc. and Suntory',
+    text: 'Suntory PepsiCo Vietnam Beverage (SPVB), is 100% owned by foreign capital, and is a new beverage joint venture between PepsiCo Inc. and Suntory',
   },
   {
     key: 7,
@@ -78,8 +72,7 @@ const data = [
     avatar: '/assets/images/avatar-5.png',
     progress: 70,
     day: '31/08/2020',
-    text:
-      'Samsung Galaxy Note20 Ultra 5G. The Samsung Galaxy Note 20 Ultra 5G sets the pace for 2020 smartphones with a huge screen.',
+    text: 'Samsung Galaxy Note20 Ultra 5G. The Samsung Galaxy Note 20 Ultra 5G sets the pace for 2020 smartphones with a huge screen.',
   },
   {
     key: 8,
@@ -97,8 +90,7 @@ const data = [
     avatar: '/assets/images/avatar-5.png',
     progress: 90,
     day: '31/08/2020',
-    text:
-      'Donec at maximus nulla, ac molestie purus. Aliquam nunc lacus, lobortis ut placerat eu, suscipit at erat. Sed at mi diam. Sed aliquam diam ac',
+    text: 'Donec at maximus nulla, ac molestie purus. Aliquam nunc lacus, lobortis ut placerat eu, suscipit at erat. Sed at mi diam. Sed aliquam diam ac',
   },
 ];
 
@@ -109,7 +101,7 @@ class List extends React.Component {
   }
 
   render() {
-    const {t} = this.props;
+    const { t } = this.props;
     return (
       <div>
         <div className="row">
