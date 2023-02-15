@@ -3,22 +3,22 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React from "react";
-import { withTranslation } from "react-i18next";
-import history from "../../routes/history";
+import React from 'react';
+import { withTranslation } from 'react-i18next';
+import history from '../../routes/history';
 
-import "./index.scss";
-import styles from "./index.module.scss";
+import './index.scss';
+import styles from './index.module.scss';
 
 const WizardSteps = () => {
   const steps = [
     {
       key: 1,
-      text: "Connect channel",
+      text: 'Connect channel',
     },
     {
       key: 2,
-      text: "Create content",
+      text: 'Create content',
     },
   ];
 
@@ -52,20 +52,16 @@ const WizardSteps = () => {
         return (
           <div
             key={key}
-            className={`position-absolute top-0 start-${
-              (key - 1) * 100
-            } translate-middle`}
+            className={`position-absolute top-0 start-${(key - 1) * 100} translate-middle`}
           >
             <div
               className={`${
-                isActive ? "bg-primary" : "bg-secondary"
+                isActive ? 'bg-primary' : 'bg-secondary'
               } text-white text-center rounded-circle ${styles.step}`}
             >
               {key}
             </div>
-            <div className="position-absolute text-nowrap start-50 translate-middle-x">
-              {text}
-            </div>
+            <div className="position-absolute text-nowrap start-50 translate-middle-x">{text}</div>
           </div>
         );
       })}
@@ -77,4 +73,4 @@ const WizardSteps = () => {
   );
 };
 
-export default withTranslation("common")(WizardSteps);
+export default withTranslation('common')(WizardSteps);

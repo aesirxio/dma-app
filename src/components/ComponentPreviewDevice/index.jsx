@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class ComponentPreviewDevice extends Component {
   constructor(props) {
