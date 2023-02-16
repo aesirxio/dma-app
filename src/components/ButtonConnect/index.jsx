@@ -6,7 +6,6 @@
 import React from 'react';
 
 const ButtonConnect = ({ onClick, isConnected, disabled = false }) => {
-
   return disabled ? (
     <div>Coming soon!</div>
   ) : (

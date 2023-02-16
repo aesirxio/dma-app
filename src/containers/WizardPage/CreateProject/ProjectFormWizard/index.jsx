@@ -44,13 +44,13 @@ const ProjectFormWizard = observer(
 
     render() {
       const { tableStatus } = this.projectFormModalViewModel;
-      const {t}= this.props;
+      const { t } = this.props;
       return tableStatus === PAGE_STATUS.LOADING ? (
         <Spinner />
       ) : (
         <div className="bg-white d-flex flex-column m-4 p-4">
           <div className="w-40 m-auto">
-            <h3 className="fw-medium text-blue-0 mb-3 fs-2">{t("txt_create_a_new_project")}</h3>
+            <h3 className="fw-medium text-blue-0 mb-3 fs-2">{t('txt_create_a_new_project')}</h3>
             <ProjectForm viewModel={this.projectFormModalViewModel} />
             <div className="d-flex justify-content-end">
               <ButtonNormal

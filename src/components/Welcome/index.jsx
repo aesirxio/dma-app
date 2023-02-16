@@ -32,7 +32,6 @@ class Welcome extends Component {
     });
   };
   render() {
-    
     return (
       <ModalComponent
         show={this.state.showModal}

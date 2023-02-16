@@ -26,46 +26,57 @@ class ComponentPublishListChannels extends Component {
       listLinkedinFanpageView,
     } = this.props;
 
-
     let checkLabelFacebook = labelsConnectedChannels.includes('facebook');
     let checkLabelLinkedin = labelsConnectedChannels.includes('linkedin');
     let checkLabelInstagram = labelsConnectedChannels.includes('instagram');
 
     if (isDeselectAllSocial === true) {
       if (checkLabelFacebook) {
-        contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSocial.list_channels.social.facebook.selectedPage = [];
-        contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSingle.list_channels.facebook.selectedPage = [];
+        contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSocial.list_channels.social.facebook.selectedPage =
+          [];
+        contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSingle.list_channels.facebook.selectedPage =
+          [];
       }
 
       if (checkLabelLinkedin) {
-        contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSocial.list_channels.social.linkedin.selectedPage = [];
-        contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSingle.list_channels.linkedin.selectedPage = [];
+        contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSocial.list_channels.social.linkedin.selectedPage =
+          [];
+        contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSingle.list_channels.linkedin.selectedPage =
+          [];
       }
 
       if (checkLabelInstagram) {
-        contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSocial.list_channels.social.instagram.selectedPage = [];
-        contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSingle.list_channels.instagram.selectedPage = [];
+        contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSocial.list_channels.social.instagram.selectedPage =
+          [];
+        contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSingle.list_channels.instagram.selectedPage =
+          [];
       }
     } else {
       if (isAdvanceMode === true) {
         if (checkLabelFacebook) {
-          contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSocial.list_channels.social.facebook.selectedPage = listFacebookFanpageConnected;
+          contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSocial.list_channels.social.facebook.selectedPage =
+            listFacebookFanpageConnected;
         }
         if (checkLabelLinkedin) {
-          contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSocial.list_channels.social.linkedin.selectedPage = listLinkedinFanpageConnected;
+          contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSocial.list_channels.social.linkedin.selectedPage =
+            listLinkedinFanpageConnected;
         }
         if (checkLabelInstagram) {
-          contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSocial.list_channels.social.instagram.selectedPage = listInstagramFanpageConnected;
+          contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSocial.list_channels.social.instagram.selectedPage =
+            listInstagramFanpageConnected;
         }
       } else {
         if (checkLabelFacebook) {
-          contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSingle.list_channels.facebook.selectedPage = listFacebookFanpageConnected;
+          contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSingle.list_channels.facebook.selectedPage =
+            listFacebookFanpageConnected;
         }
         if (checkLabelLinkedin) {
-          contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSingle.list_channels.linkedin.selectedPage = listLinkedinFanpageConnected;
+          contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSingle.list_channels.linkedin.selectedPage =
+            listLinkedinFanpageConnected;
         }
         if (checkLabelInstagram) {
-          contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSingle.list_channels.instagram.selectedPage = listInstagramFanpageConnected;
+          contentConnectedChannelsByOrganisationViewModel.dataContentDescriptionSingle.list_channels.instagram.selectedPage =
+            listInstagramFanpageConnected;
         }
       }
     }
@@ -104,7 +115,6 @@ class ComponentPublishListChannels extends Component {
               <>
                 {getListConnectFacebookPagePublisd &&
                   getListConnectFacebookPagePublisd.map((i) => {
-
                     const currentFanpage = listFaceBookFanpageView.filter(function (e) {
                       return e.id === i;
                     })[0];

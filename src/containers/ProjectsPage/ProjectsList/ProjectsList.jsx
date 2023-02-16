@@ -30,14 +30,14 @@ const ProjectsList = observer(
 
     render() {
       const { tableStatus, projects, pagination } = this.listViewModel;
-      const {t}= this.props;
+      const { t } = this.props;
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
       }
 
       const tableRowHeader = [
         {
-          Header: t("txt_project_name"),
+          Header: t('txt_project_name'),
           accessor: PROJECT_COLUMN_INDICATOR.NAME, // accessor is the "key" in the data
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
@@ -52,15 +52,15 @@ const ProjectsList = observer(
         //   accessor: PROJECT_COLUMN_INDICATOR.LOGO,
         // },
         {
-          Header: t("txt_short_description"),
+          Header: t('txt_short_description'),
           accessor: PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION,
         },
         {
-          Header: t("start_date"),
+          Header: t('start_date'),
           accessor: PROJECT_COLUMN_INDICATOR.START_DATE,
         },
         {
-          Header: t("end_date"),
+          Header: t('end_date'),
           accessor: PROJECT_COLUMN_INDICATOR.END_DATE,
         },
         // {
@@ -72,11 +72,11 @@ const ProjectsList = observer(
         //   accessor: PROJECT_COLUMN_INDICATOR.PROGRESS,
         // },
         {
-          Header: t("created_date"),
+          Header: t('created_date'),
           accessor: PROJECT_COLUMN_INDICATOR.CREATED_DATE,
         },
       ];
-     
+
       return (
         <>
           {projects ? (
@@ -96,7 +96,7 @@ const ProjectsList = observer(
               pagination={pagination}
               listViewModel={this.listViewModel}
               searchFunction={this.listViewModel.searchProjects}
-              searchText={t("search_your_project")}
+              searchText={t('search_your_project')}
               hasSubRow={false}
               _handleList={this._handleList}
               view={this.view}
@@ -104,7 +104,7 @@ const ProjectsList = observer(
           ) : (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
-              title={t("create_your_1st_project")}
+              title={t('create_your_1st_project')}
               width="w-50"
             />
           )}

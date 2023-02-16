@@ -36,14 +36,14 @@ class ProjectForm extends Component {
 
     this.viewModel.setForm(this);
   }
-  
+
   generateFormSetting = () => {
-    const {t} = this.props;
+    const { t } = this.props;
     return [
       {
         fields: [
           {
-            label: t("txt_project_name"),
+            label: t('txt_project_name'),
             key: PROJECT_COLUMN_INDICATOR.NAME,
             type: FORM_FIELD_TYPE.INPUT,
             value: this.formPropsData[PROJECT_COLUMN_INDICATOR.NAME],
@@ -61,7 +61,7 @@ class ProjectForm extends Component {
           {
             type: FORM_FIELD_TYPE.DATERANGE,
             startField: {
-              label: t("start_date"),
+              label: t('start_date'),
               key: PROJECT_COLUMN_INDICATOR.START_DATE,
               value: this.formPropsData[PROJECT_COLUMN_INDICATOR.START_DATE],
               changed: (date) => {
@@ -74,7 +74,7 @@ class ProjectForm extends Component {
               },
             },
             endField: {
-              label: t("end_date"),
+              label: t('end_date'),
               key: PROJECT_COLUMN_INDICATOR.END_DATE,
               value: this.formPropsData[PROJECT_COLUMN_INDICATOR.END_DATE],
               changed: (date) => {
@@ -88,7 +88,7 @@ class ProjectForm extends Component {
             },
           },
           {
-            label: t("txt_project_logo"),
+            label: t('txt_project_logo'),
             key: PROJECT_COLUMN_INDICATOR.LOGO,
             type: FORM_FIELD_TYPE.DAM,
             value: this.formPropsData[PROJECT_COLUMN_INDICATOR.LOGO],
@@ -97,7 +97,7 @@ class ProjectForm extends Component {
             },
           },
           {
-            label: t("txt_short_description_about_project"),
+            label: t('txt_short_description_about_project'),
             key: PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION,
             type: FORM_FIELD_TYPE.TEXTAREA,
             value: this.formPropsData[PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION],
@@ -117,10 +117,8 @@ class ProjectForm extends Component {
     this.formPropsData[PROJECT_COLUMN_INDICATOR.START_DATE] = data.getOriginalStartDate();
     this.formPropsData[PROJECT_COLUMN_INDICATOR.END_DATE] = data.getOriginalEndDate();
     this.formPropsData[PROJECT_COLUMN_INDICATOR.LOGO] = data.getLogoUrlValue();
-    this.formPropsData[
-      PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION
-    ] = data.getShortDescriptionValue();
-
+    this.formPropsData[PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION] =
+      data.getShortDescriptionValue();
   };
 
   onDrop = (files) => {
@@ -128,7 +126,6 @@ class ProjectForm extends Component {
   };
 
   render() {
-
     const { formStatus, projectEditdata, editMode } = this.viewModel;
 
     if (editMode) {

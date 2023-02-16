@@ -3,15 +3,15 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React from "react";
-import { withTranslation } from "react-i18next";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
-import { faMinus } from "@fortawesome/free-solid-svg-icons/faMinus";
+import React from 'react';
+import { withTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
+import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
 
-import "./index.scss";
-import { Accordion, Button, Image } from "react-bootstrap";
-import ButtonNormal from "../ButtonNormal";
+import './index.scss';
+import { Accordion, Button, Image } from 'react-bootstrap';
+import ButtonNormal from '../ButtonNormal';
 
 class CreateProject extends React.Component {
   constructor(props) {
@@ -31,10 +31,7 @@ class CreateProject extends React.Component {
               onClick={() => this.setState({ pernona: !this.state.pernona })}
             >
               Pernona 1
-              <FontAwesomeIcon
-                icon={this.state.pernona ? faMinus : faPlus}
-                color="#16b979"
-              />
+              <FontAwesomeIcon icon={this.state.pernona ? faMinus : faPlus} color="#16b979" />
             </Accordion.Toggle>
           </div>
           <Accordion.Collapse eventKey="0">
@@ -71,21 +68,13 @@ class CreateProject extends React.Component {
               onClick={() => this.setState({ social: !this.state.social })}
             >
               Social Media
-              <FontAwesomeIcon
-                icon={this.state.social ? faMinus : faPlus}
-                color="#16b979"
-              />
+              <FontAwesomeIcon icon={this.state.social ? faMinus : faPlus} color="#16b979" />
             </Accordion.Toggle>
           </div>
           <Accordion.Collapse eventKey="0">
             <div className="py-4 d-flex">
               <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  id="flexRadioDefault1"
-                  checked
-                />
+                <input className="form-check-input" type="radio" id="flexRadioDefault1" checked />
                 <label className="form-check-label" htmlFor="flexRadioDefault1">
                   Post now
                 </label>
@@ -95,18 +84,12 @@ class CreateProject extends React.Component {
         </Accordion>
 
         <div className="d-flex justify-content-between">
-          <ButtonNormal
-            className="btn btn-light border-success"
-            text="Back"
-          ></ButtonNormal>
-          <ButtonNormal
-            className="btn btn-success"
-            text="Post now"
-          ></ButtonNormal>
+          <ButtonNormal className="btn btn-light border-success" text="Back"></ButtonNormal>
+          <ButtonNormal className="btn btn-success" text="Post now"></ButtonNormal>
         </div>
       </div>
     );
   }
 }
 
-export default withTranslation("common")(CreateProject);
+export default withTranslation('common')(CreateProject);

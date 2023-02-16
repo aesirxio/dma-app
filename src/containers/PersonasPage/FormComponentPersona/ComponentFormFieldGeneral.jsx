@@ -14,7 +14,7 @@ class ComponentFormFieldGeneral extends Component {
   formPropsData = {};
 
   constructor(props) {
-    super(props)
+    super(props);
     this.validator = this.props.validator;
     this.formPropsData = this.props.formPropsData;
   }

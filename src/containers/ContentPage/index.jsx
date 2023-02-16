@@ -31,13 +31,13 @@ const contentViewModel = new ContentViewModel(contentStore);
 class Contents extends Component {
   render() {
     let { match } = this.props;
-    const {t} = this.props;
+    const { t } = this.props;
     return (
       <ContentViewModelContextProvider viewModel={contentViewModel}>
         <div className="py-4 px-3">
           <Route exact path={['/content']}>
             <div className="d-flex align-items-center justify-content-between mb-4">
-              <h2 className="text-blue-0">{t("txt_list_post")}</h2>
+              <h2 className="text-blue-0">{t('txt_list_post')}</h2>
               <ContentActionBar />
             </div>
             <ContentsList />

@@ -28,7 +28,6 @@ class ComponentFormFieldTarget extends Component {
     this.validator = this.props.validator;
 
     this.formPropsData = this.props.formPropsData;
-
   }
 
   componentDidMount = async () => {
@@ -133,7 +132,6 @@ class ComponentFormFieldTarget extends Component {
   };
 
   render() {
-
     const formSetting = this.generateFormSetting();
 
     return (

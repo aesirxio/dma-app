@@ -3,55 +3,52 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { Suspense } from "react";
+import React, { Suspense } from 'react';
 
-import { Route, Redirect, useLocation } from "react-router-dom";
+import { Route, Redirect, useLocation } from 'react-router-dom';
 import { settingRoutes } from '../../routes/routes';
 
-import Spinner from "../../components/Spinner";
-import Header from "../../components/Header";
-import SbarLeft from "../../components/SbarLeft";
+import Spinner from '../../components/Spinner';
+import Header from '../../components/Header';
+import SbarLeft from '../../components/SbarLeft';
 
-import { isLogin } from "../../auth";
+import { isLogin } from '../../auth';
 
 const SettingLayout = () => {
-  const pathname = useLocation().pathname
+  const pathname = useLocation().pathname;
 
   return isLogin() ? (
-    pathname === '/welcome' ?
+    pathname === '/welcome' ? (
       <div className="container-fluid">
         <div className="row">
           <main>
             <Suspense fallback={<Spinner />}>
               {settingRoutes.map(({ path, exact, main }, i) => {
-                return (
-                  <Route key={i} exact={exact} path={path} component={main} />
-                );
+                return <Route key={i} exact={exact} path={path} component={main} />;
               })}
             </Suspense>
           </main>
         </div>
       </div>
-      :
-    <div className="container-fluid">
-      <div className="row">
-        <main className="p-0">
-          <Header />
-          <div className="main_content vh-100 main_content_dashboard pd-t-80 d-flex">
-            <SbarLeft settingPage />
-            <div className="flex-1 border-start-1 border-gray bg-blue mh-100 overflow-hidden overflow-y-auto position-relative">
-              <Suspense fallback={<Spinner />}>
-                {settingRoutes.map(({ path, exact, main }, i) => {
-                  return (
-                    <Route key={i} exact={exact} path={path} component={main} />
-                  );
-                })}
-              </Suspense>
+    ) : (
+      <div className="container-fluid">
+        <div className="row">
+          <main className="p-0">
+            <Header />
+            <div className="main_content vh-100 main_content_dashboard pd-t-80 d-flex">
+              <SbarLeft settingPage />
+              <div className="flex-1 border-start-1 border-gray bg-blue mh-100 overflow-hidden overflow-y-auto position-relative">
+                <Suspense fallback={<Spinner />}>
+                  {settingRoutes.map(({ path, exact, main }, i) => {
+                    return <Route key={i} exact={exact} path={path} component={main} />;
+                  })}
+                </Suspense>
+              </div>
             </div>
-          </div>
-        </main>
+          </main>
+        </div>
       </div>
-    </div>
+    )
   ) : (
     <Redirect to="/login" />
   );

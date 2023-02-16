@@ -45,10 +45,7 @@ class CampaignsTotalNumber extends React.Component {
       <div className="h-100 d-flex flex-column justify-content-between">
         {data.map((value, key) => {
           return (
-            <div
-              key={key}
-              className={`item_social ${styles.item_social} bg-white p-3 shadow-sm`}
-            >
+            <div key={key} className={`item_social ${styles.item_social} bg-white p-3 shadow-sm`}>
               <div className={`main_social ${styles.main_social} d-flex`}>
                 <p
                   className={`mb-0 wrapper_images ${styles.wrapper_images} d-flex align-items-center justify-content-center`}

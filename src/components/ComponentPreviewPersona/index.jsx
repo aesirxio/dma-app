@@ -9,7 +9,6 @@ import SelectComponent from '../Select';
 import ComponentImage from '../ComponentImage';
 
 class ComponentPreviewPersona extends Component {
-
   componentDidMount = () => {};
 
   render() {
