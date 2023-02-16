@@ -1,6 +1,6 @@
 {
   "name": "aesirx-dma-app",
-  "version": "1.6.7-alpha",
+  "version": "1.6.3",
   "license": "GPL-3.0-only",
   "author": "AesirX",
   "main": "dist/index.js",
@@ -9,8 +9,10 @@
   "source": "src/integration/index.js",
   "repository": "https://github.com/aesirxio/dma-app",
   "peerDependencies": {
+    "emoji-mart": "^3.0.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "socket.io-client": "^4.0.1"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^27.1.0",
