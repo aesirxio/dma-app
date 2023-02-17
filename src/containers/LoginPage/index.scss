@@ -29,3 +29,11 @@
     border: 1px solid;
   }
 }
+.form-control{
+  &:focus{
+    color: #1a2226;
+    background-color: #fff;
+    border-color: #0A083B !important;
+    box-shadow: none;
+  }
+}
