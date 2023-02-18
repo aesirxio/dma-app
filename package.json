@@ -23,7 +23,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.12",
     "aesirx-dam-app": "^1.2.3",
-    "aesirx-dma-lib": "^1.7.11",
+    "aesirx-dma-lib": "^1.7.8",
     "aesirx-sso": "^1.0.3",
     "bootstrap": "^5.2.2",
     "date-fns": "^2.16.1",
@@ -63,7 +63,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "yarn run build && react-inject-env set && serve -s build",
+    "start": "yarn run build && serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "dev": "react-scripts start",
@@ -112,7 +112,6 @@
     "microbundle": "^0.15.1",
     "postcss-scss": "^4.0.5",
     "prettier": "^2.8.4",
-    "react-inject-env": "^2.1.0",
     "react-scripts": "^5.0.1",
     "sass": "^1.52",
     "serve": "^14.1.2",
