@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package.json .
 COPY yarn.lock .
 
-RUN yarn install --frozen-lockfile
+RUN yarn install --frozen-lockfile --network-timeout 600000
 
 ## Builder
 FROM node:16-alpine AS builder
