@@ -47,4 +47,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: luredweb/dma-app:${{ github.event.issue.number }}-qa
+          tags: luredweb/dma-app:${{ github.event.pull_request.number }}-qa
