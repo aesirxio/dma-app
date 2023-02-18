@@ -82,7 +82,7 @@ class LoginPage extends React.Component {
           <div className="col-lg-7 col-xxl-4">
             <div className="d-block p-2 p-lg-5">
               <p className="fs-2 fw-semibold mb-2 text-center text-blue-5">
-                {t('txt_welcome_to')}QA
+                {t('txt_welcome_to')}22QA
                 <img
                   className="pe-2"
                   style={{ verticalAlign: 'inherit' }}
