@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+
+  app:
+    build:
+      context: .
+      target: production
+    ports:
+      - 8080:80

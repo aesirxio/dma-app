@@ -24,14 +24,13 @@ import { AesirxAuthenticationApiService, Storage } from 'aesirx-dma-lib';
 //     subtitle: 'CEO & Founder R Digital',
 //   },
 // ];
-import { env } from 'env';
 
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: env.REACT_APP_DEMO_USER ?? '',
-      password: env.REACT_APP_DEMO_PASSWORD ?? '',
+      username: process.env.REACT_APP_DEMO_USER ?? '',
+      password: process.env.REACT_APP_DEMO_PASSWORD ?? '',
       remember: false,
       isProcessing: false,
     };
