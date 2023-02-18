@@ -1,6 +1,11 @@
 name: qa
 
 on:
+  pull_request:
+    branches:
+      - master
+      - develop
+
   issue_comment:
     types: [created, edited]
 
@@ -45,4 +50,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: luredweb/dma-app:${{ github.event.issue.number }}
+          tags: luredweb/dma-app:${{ github.event.issue.number }}-qa
