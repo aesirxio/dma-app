@@ -2,7 +2,7 @@ version: "3"
 
 services:
   app:
-    image: aesirxio/dma-app:latest
+    image: luredweb/dma-app:latest
     environment:
       REACT_APP_CLIENT_ID: ${REACT_APP_CLIENT_ID}
       REACT_APP_CLIENT_SECRET: ${REACT_APP_CLIENT_SECRET}
