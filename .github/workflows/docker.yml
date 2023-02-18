@@ -1,9 +1,15 @@
 name: docker
 
 on:
+
   push:
     branches:
-      - 'master'
+      - "**"
+    tags:
+      - "*.*.*"
+  pull_request:
+    branches:
+      - "master"
 
 jobs:
   docker:
@@ -13,6 +19,23 @@ jobs:
         name: Checkout
         uses: actions/checkout@v3
       -
+        name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          # list of Docker images to use as base name for tags
+          images: |
+            luredweb/dma-app
+          # generate Docker tags based on the following events/attributes
+          tags: |
+            type=schedule
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=sha
+      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       -
@@ -20,6 +43,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
       -
         name: Login to Docker Hub
+        if: github.event_name != 'pull_request'
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -30,5 +54,6 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm64
-          push: true
-          tags: luredweb/dma-app:latest
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
