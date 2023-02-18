@@ -2,7 +2,6 @@ name: qa
 
 on:
   pull_request:
-    types: [opened, reopened]
     branches:
       - master
       - develop
