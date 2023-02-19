@@ -1,6 +1,6 @@
 {
   "name": "aesirx-dma-app",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "license": "GPL-3.0-only",
   "author": "AesirX",
   "main": "dist/index.js",
@@ -62,8 +62,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "yarn run build && react-inject-env set && serve -s build",
-    "build": "react-scripts build",
+    "start": "yarn run build && serve -s build",
+    "build": "react-scripts build && react-inject-env set",
     "test": "react-scripts test",
     "dev": "craco start",
     "lint": "eslint --fix \"src/**/\"",
