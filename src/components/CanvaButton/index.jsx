@@ -8,13 +8,14 @@ import { notify } from 'components/Toast';
 import { withTranslation } from 'react-i18next';
 import { canvaApi } from '../../utils/canva';
 import './index.scss';
+import { env } from 'env';
 
 class CanvaButton extends React.PureComponent {
   constructor(props) {
     super(props);
     this.componentWillReceiveProps.bind(this);
 
-    if (process.env.REACT_APP_CANVA_API_KEY === undefined) {
+    if (env.REACT_APP_CANVA_API_KEY === undefined) {
       const { t } = this.props;
 
       notify(t('txt_canva_api_key_warning'), 'warn');

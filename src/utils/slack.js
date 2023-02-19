@@ -4,9 +4,10 @@
  */
 
 import axios from 'axios';
+import { env } from 'env';
 
 const postMessage = async (title, info, image = '') => {
-  const slackHook = process.env.REACT_APP_SLACK_HOOK;
+  const slackHook = env.REACT_APP_SLACK_HOOK;
   const data = {
     attachments: [
       {
