@@ -3175,10 +3175,9 @@ adjust-sourcemap-loader@^4.0.0:
     loader-utils "^2.0.0"
     regex-parser "^2.2.11"
 
-
 aesirx-dam-app@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/aesirx-dam-app/-/aesirx-dam-app-1.2.3.tgz#a19136e79c53d8cb1e230d8e2f87b47fef6be2ff"
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/aesirx-dam-app/-/aesirx-dam-app-1.2.6.tgz#a19136e79c53d8cb1e230d8e2f87b47fef6be2ff"
   integrity sha512-I3Z0J4Ns5Mdn+EmXjtEnW0E+5qsMBIzAGoi+K8OdlmclbtQXR0TY4PlCKPS/cukC/RJUJgGp6J+Av/z84MckgA==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^6.2.0"
@@ -3222,18 +3221,6 @@ aesirx-dma-lib@^1.7.11, aesirx-dma-lib@^1.7.9:
     axios "^0.21.0"
     axios-auth-refresh "^3.0.0"
     crypto-js "^4.1.1"
-    qs "^6.10.1"
-    query-string "^7.1.1"
-
-aesirx-dma-lib@^1.7.9:
-  version "1.7.9"
-  resolved "https://registry.yarnpkg.com/aesirx-dma-lib/-/aesirx-dma-lib-1.7.9.tgz#6404441ef043a01ab9c25db11b39a112615c6a6e"
-  integrity sha512-A8U3lJrrIiG5NPYWux2ERUpKd0colnjaoeuRvuc5DcXFnM/chtmRwaMNucTZFNLNdV+RXbMxr5/AIg5ySixyrA==
-  dependencies:
-    axios "^0.21.0"
-    axios-auth-refresh "^3.0.0"
-    crypto-js "^4.1.1"
-    css-minimizer-webpack-plugin "^4.0.0"
     qs "^6.10.1"
     query-string "^7.1.1"
 
@@ -6462,7 +6449,7 @@ idb@^7.0.1:
   resolved "https://registry.yarnpkg.com/idb/-/idb-7.1.1.tgz#d910ded866d32c7ced9befc5bfdf36f572ced72b"
   integrity sha512-gchesWBzyvGHRO9W8tzUWFDycow5gwjvFKfyV9FF32Y7F50yZMp7mP+T2mJIWFx49zicqyC4uefHM17o6xKIVQ==
 
-identity-obj-proxy@3.0.0, identity-obj-proxy@^3.0.0:
+identity-obj-proxy@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/identity-obj-proxy/-/identity-obj-proxy-3.0.0.tgz#94d2bda96084453ef36fbc5aaec37e0f79f1fc14"
   integrity sha512-00n6YnVHKrinT9t0d9+5yZC6UBNJANpYEQvL2LlX6Ab9lnmxzIRcEmTPuyGScvl1+jKuCICX1Z0Ab1pPKKdikA==
