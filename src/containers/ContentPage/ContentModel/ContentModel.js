@@ -307,7 +307,7 @@ class ContentModel {
           const publishDate = contentData[CONTENT_FIELD_KEY.PUBLISH_DATE][id];
           const publishTime = contentData[CONTENT_FIELD_KEY.TIME][id];
           const publishMode = contentData[CONTENT_FIELD_KEY.PUBLISH_MODE][id];
-          console.log('publishDate', publishDate);
+          
           // Ads
           const setupAds = ContentAdsModel.convertSubmittedDataToAPIService(
             contentData[CONTENT_FIELD_KEY.ADS],
