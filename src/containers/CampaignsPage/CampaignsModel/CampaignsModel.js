@@ -9,7 +9,7 @@ import FIELD_TYPE from '../../../constants/FieldType';
 import { FORMAT_DATE } from '../../../constants/FormFieldType';
 import { ProgressModel } from './ProgressModel';
 import getStatus from '../../../utils/status';
-
+import moment from 'moment';
 import { CAMPAIGNS_FIELD_KEY, CAMPAIGN_API_FIELD_KEY } from '../../../constants/CampaignsModule';
 
 import Helper from '../../../utils/helper';
@@ -194,8 +194,8 @@ class CampaignsModel {
       ? {
           [CAMPAIGN_API_FIELD_KEY.ID]: campaignsData[CAMPAIGN_API_FIELD_KEY.ID] ?? '',
           [CAMPAIGN_API_FIELD_KEY.NAME]: campaignsData[CAMPAIGNS_FIELD_KEY.NAME] ?? '',
-          [CAMPAIGN_API_FIELD_KEY.START_DATE]: campaignsData[CAMPAIGNS_FIELD_KEY.START_DATE] ?? '',
-          [CAMPAIGN_API_FIELD_KEY.END_DATE]: campaignsData[CAMPAIGNS_FIELD_KEY.END_DATE] ?? '',
+          [CAMPAIGN_API_FIELD_KEY.START_DATE]: moment(campaignsData[CAMPAIGNS_FIELD_KEY.START_DATE]).format("YYYY/MM/DD h:mm") ?? '',
+          [CAMPAIGN_API_FIELD_KEY.END_DATE]: moment(campaignsData[CAMPAIGNS_FIELD_KEY.END_DATE]).format("YYYY/MM/DD h:mm") ?? '',
           [CAMPAIGN_API_FIELD_KEY.PROJECT]: campaignsData[CAMPAIGNS_FIELD_KEY.PROJECT] ?? '',
           [CAMPAIGN_API_FIELD_KEY.NEED_TO_DO]: campaignsData[CAMPAIGNS_FIELD_KEY.NEED_TO_DO] ?? '',
           [CAMPAIGN_API_FIELD_KEY.SCHEDUDE_POST]:
