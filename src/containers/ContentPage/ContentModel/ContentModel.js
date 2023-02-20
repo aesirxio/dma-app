@@ -171,17 +171,17 @@ class ContentModel {
 
   convertDateTime = (date, time = null) => {
     if (!date) return undefined;
-    const [day, month, year] = date.split('-');
+    const [year, month, day] = date.split('-');
     if (time) {
       const [hour, minute] = time.split(':');
-      return new Date(year, month, day, hour, minute);
+      return new Date(year, month -1, day, hour, minute);
     }
-    return new Date(year, month, day);
+    return new Date(year, month -1, day);
   };
 
   getPublishDate = () => {
     const f = Object.keys(this.channels)[0];
-
+    console.log(this.convertDateTime(this.channels[f]?.publishedPlan?.schedule[0]?.date));
     return this.convertDateTime(this.channels[f]?.publishedPlan?.schedule[0]?.date);
   };
 
@@ -193,7 +193,7 @@ class ContentModel {
       this.channels[f]?.publishedPlan?.schedule[0]?.time
     );
   };
-
+  
   getDate = () => {
     if (this.entity === 'category') {
       return formatDate(this.createDate, true);
@@ -307,7 +307,7 @@ class ContentModel {
           const publishDate = contentData[CONTENT_FIELD_KEY.PUBLISH_DATE][id];
           const publishTime = contentData[CONTENT_FIELD_KEY.TIME][id];
           const publishMode = contentData[CONTENT_FIELD_KEY.PUBLISH_MODE][id];
-
+          console.log('publishDate', publishDate);
           // Ads
           const setupAds = ContentAdsModel.convertSubmittedDataToAPIService(
             contentData[CONTENT_FIELD_KEY.ADS],
@@ -331,7 +331,7 @@ class ContentModel {
                     publishMode === CONTENT_PUBLISH_MODE.SCHEDULE
                       ? [
                           {
-                            date: format(publishDate, 'dd-MM-yyyy'),
+                            date: format(publishDate, 'yyyy-MM-dd'),
                             time: format(publishTime, 'HH:mm'),
                             timezone: Helper.getTimezoneDefault(),
                           },
