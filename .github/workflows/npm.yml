@@ -13,9 +13,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm i
-      - run: npm run lint
-      - run: CI=false npm run build
+      - run: yarn install
+      - run: yarn run lint
+      - run: CI=false yarn run build
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
