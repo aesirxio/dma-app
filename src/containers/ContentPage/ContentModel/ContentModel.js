@@ -174,9 +174,9 @@ class ContentModel {
     const [year, month, day] = date.split('-');
     if (time) {
       const [hour, minute] = time.split(':');
-      return new Date(year, month -1, day, hour, minute);
+      return new Date(year, month - 1, day, hour, minute);
     }
-    return new Date(year, month -1, day);
+    return new Date(year, month - 1, day);
   };
 
   getPublishDate = () => {
@@ -193,7 +193,7 @@ class ContentModel {
       this.channels[f]?.publishedPlan?.schedule[0]?.time
     );
   };
-  
+
   getDate = () => {
     if (this.entity === 'category') {
       return formatDate(this.createDate, true);
@@ -307,7 +307,7 @@ class ContentModel {
           const publishDate = contentData[CONTENT_FIELD_KEY.PUBLISH_DATE][id];
           const publishTime = contentData[CONTENT_FIELD_KEY.TIME][id];
           const publishMode = contentData[CONTENT_FIELD_KEY.PUBLISH_MODE][id];
-          
+
           // Ads
           const setupAds = ContentAdsModel.convertSubmittedDataToAPIService(
             contentData[CONTENT_FIELD_KEY.ADS],
