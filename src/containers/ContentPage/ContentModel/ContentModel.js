@@ -181,7 +181,7 @@ class ContentModel {
 
   getPublishDate = () => {
     const f = Object.keys(this.channels)[0];
-    console.log(this.convertDateTime(this.channels[f]?.publishedPlan?.schedule[0]?.date));
+
     return this.convertDateTime(this.channels[f]?.publishedPlan?.schedule[0]?.date);
   };
 
