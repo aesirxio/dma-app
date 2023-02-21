@@ -189,5 +189,8 @@
   "txt_warning": "Cảnh báo",
   "txt_successful": "Thành công",
   "txt_error": "Lỗi",
+  "txt_title_no_matching_results":"Không có kết quả phù hợp",
+  "txt_text_no_matching_results":"Không tìm thấy dự án nào với từ khóa đó. Vui lòng thử từ khóa khác.",
   "txt_ maintenance":"Bảo trì"
+
 }

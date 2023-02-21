@@ -381,10 +381,9 @@ textarea {
     z-index: 5;
   }
 }
-
-.btn-outline-secondary:not(:hover) {
-  background: #fff;
-}
+// .btn-outline-secondary:not(:hover) {
+//   background: #fff;
+// }
 .btn-info.dropdown-toggle {
   &:focus {
     box-shadow: none !important;
