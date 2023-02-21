@@ -96,7 +96,7 @@ class LoginPage extends React.Component {
 
               <form>
                 <SSOButton
-                  className="btn w-100 fw-medium btn-sso position-relative d-flex align-item-center justify-content-center mb-3 px-6"
+                  className="btn w-100 fw-bold btn-sso position-relative d-flex align-item-center justify-content-center mb-3 px-6"
                   text={t('txt_sign_in_with_sso')}
                   onGetData={onGetData}
                 />
