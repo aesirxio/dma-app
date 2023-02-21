@@ -317,11 +317,8 @@ const Table = ({
                     setFilter={setFilter}
                   />
                 </div>
-                <div className="rounded-0">
-                  <button
-                    className={`btn text-blue-0 ${getState.isFilter ? 'bg-blue-3' : ''}`}
-                    onClick={handleFilter}
-                  >
+                <div className="px-2 rounded-0">
+                  <button className={`btn text-blue-0 ${getState.isFilter}`} onClick={handleFilter}>
                     <i>
                       <FontAwesomeIcon icon={faFilter} />
                     </i>
@@ -368,7 +365,7 @@ const Table = ({
             <Collapse in={getState.isFilter}>
               <div>
                 <div
-                  className={`py-2 px-1 bg-blue-3 rounded-2 ${
+                  className={`py-2 px-1 rounded-2 ${
                     getState.isFilter ? 'z-2 position-relative' : ''
                   }`}
                 >

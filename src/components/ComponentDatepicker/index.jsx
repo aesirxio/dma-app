@@ -151,7 +151,9 @@ class ComponentDatepicker extends React.Component {
     return (
       <div
         ref={this.wrapperRef}
-        className="wrapper_datepicker d-flex align-items-center px-2 cursor-pointer"
+        className={`wrapper_datepicker d-flex align-items-center px-2 cursor-pointer ${
+          isOpen ? 'open' : ''
+        } `}
         onClick={this.handleShowPicker}
       >
         <i className="text-blue-0">

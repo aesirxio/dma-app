@@ -391,6 +391,22 @@ textarea {
     border: 1px solid rgba(0, 0, 0, 0.15);
   }
 }
+.btn_toggle.show,
+.btn.true {
+  border: 0;
+  box-shadow: 0 0 0 0.25rem rgb(26 179 148 / 25%);
+}
+.filter-select {
+  .css-1px9wzq-control {
+    box-shadow: 0 0 0 0.25rem rgb(26 179 148 / 25%);
+    border: 0;
+    border-color: transparent;
+  }
+}
+.wrapper_datepicker.open {
+  box-shadow: 0 0 0 0.25rem rgb(26 179 148 / 25%);
+  border-radius: 5px;
+}
 .modal.show,
 .modal-backdrop.show {
   width: 100% !important;
