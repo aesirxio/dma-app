@@ -10,7 +10,6 @@ import Ads from './Ads';
 import Campaign from './Campaign';
 
 const ContentFormAdsFacebookAds = (props) => {
-
   return (
     <div className="pt-3">
       <StepWizard

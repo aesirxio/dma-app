@@ -187,5 +187,6 @@
   "txt_warning": "Advarsel",
   "txt_successful": "Vellykket",
   "txt_error": "Fejl",
-  "txt_forgot_password": "Glemt adgangskode?"
+  "txt_forgot_password": "Glemt adgangskode?",
+  "txt_ maintenance":"vedligeholdelse"
 }

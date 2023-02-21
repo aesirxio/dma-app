@@ -11,13 +11,10 @@ class ComponentPublishListChannelsEmail extends Component {
 
   // }
 
-  componentDidMount = () => {
-  };
+  componentDidMount = () => {};
 
   render() {
-    let { 
-      labelsConnectedChannels
-    } = this.props;
+    let { labelsConnectedChannels } = this.props;
 
     return (
       <>
@@ -26,17 +23,15 @@ class ComponentPublishListChannelsEmail extends Component {
         </div>
         <div>
           <ul className={`list-unstyled d-flex align-items-center mb-0 flex-wrap`}>
-            {
-              labelsConnectedChannels.includes("mailchimp") && (
-                <li className={`me-2 mb-2`}>
-                  <span style={{cursor:"pointer"}} className="d-block" >
-                    <span className="position-relative d-block">
-                      <img className="img-avatar" src={"/assets/images/mailchimp.png"} alt="" />
-                    </span>
+            {labelsConnectedChannels.includes('mailchimp') && (
+              <li className={`me-2 mb-2`}>
+                <span style={{ cursor: 'pointer' }} className="d-block">
+                  <span className="position-relative d-block">
+                    <img className="img-avatar" src={'/assets/images/mailchimp.png'} alt="" />
                   </span>
-                </li>
-              )
-            }
+                </span>
+              </li>
+            )}
           </ul>
         </div>
       </>

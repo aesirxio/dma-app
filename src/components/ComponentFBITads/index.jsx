@@ -50,22 +50,23 @@ class ComponentFBITads extends React.Component {
               />
             </Tab>
           )}
-          {getDataValueSelectedPersona && getDataValueSelectedPersona.indexOf('google_ads') > -1 && (
-            <Tab eventKey={2} title={'Google Ads'}>
-              <SelectComponentAds
-                title={'Demographics'}
-                getDataSelectOptions={this.props.getDataSelectOptionsGGemographics}
-              />
-              <SelectComponentAds
-                title={'Interests'}
-                getDataSelectOptions={this.props.getDataSelectOptionsGGInterests}
-              />
-              <SelectComponentAds
-                title={'Behaviours'}
-                getDataSelectOptions={this.props.getDataSelectOptionsGGBehaviours}
-              />
-            </Tab>
-          )}
+          {getDataValueSelectedPersona &&
+            getDataValueSelectedPersona.indexOf('google_ads') > -1 && (
+              <Tab eventKey={2} title={'Google Ads'}>
+                <SelectComponentAds
+                  title={'Demographics'}
+                  getDataSelectOptions={this.props.getDataSelectOptionsGGemographics}
+                />
+                <SelectComponentAds
+                  title={'Interests'}
+                  getDataSelectOptions={this.props.getDataSelectOptionsGGInterests}
+                />
+                <SelectComponentAds
+                  title={'Behaviours'}
+                  getDataSelectOptions={this.props.getDataSelectOptionsGGBehaviours}
+                />
+              </Tab>
+            )}
         </Tabs>
       </div>
     );

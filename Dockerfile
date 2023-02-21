@@ -1,58 +1,41 @@
 
-## Development
-FROM node:16-alpine AS development
-ENV NODE_ENV development
-
-# Add a work directory
+## Deps
+FROM node:16-alpine AS deps
 WORKDIR /app
 
-# Cache and Install dependencies
 COPY package.json .
 COPY yarn.lock .
 
-RUN yarn install
+RUN yarn install --frozen-lockfile --network-timeout 600000
+
+## Builder
+FROM node:16-alpine AS builder
+WORKDIR /app
+
+# Cache and Install dependencies
+COPY --from=deps ./app/node_modules ./node_modules
 
 # Copy app files
-COPY . .
+COPY ./package.json ./
+COPY ./jsconfig.json ./
+COPY ./.eslintrc ./
+COPY ./public ./public/
+COPY ./src ./src/
+
+# Build the app
+RUN npx react-scripts build
+
+# Bundle static assets
+FROM node:16-alpine AS production
+WORKDIR /app
+
+# Copy built assets from builder
+COPY --from=builder ./app/build ./build
+
+RUN yarn add serve react-inject-env
 
 # Expose port
 EXPOSE 3000
 
-# Start the app
-CMD [ "yarn", "dev" ]
-
-## Production
-FROM node:16-alpine AS builder
-
-
-# Add a work directory
-WORKDIR /app
-
-# Cache and Install dependencies
-COPY package.json .
-COPY yarn.lock .
-
-RUN yarn install
-
-# Copy app files
-COPY . .
-
-# Build the app
-RUN yarn run build
-
-# Bundle static assets with nginx
-FROM nginx:1-alpine as production
-
-# Copy built assets from builder
-COPY --from=builder /app/build /usr/share/nginx/html
-
-# Add your nginx.conf
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Expose port
-EXPOSE 80
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
-
+ENTRYPOINT npx react-inject-env set && npx serve -s build
 

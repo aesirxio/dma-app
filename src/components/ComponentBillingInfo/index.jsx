@@ -12,18 +12,14 @@ function ComponentBillingInfo(props) {
   let countCMSChannel = props.countCMSConnected;
   let countEmailMarketingChannel = props.countEmailMarketingConnected;
   let uploadHistoryQuotas = props.uploadHistoryQuotas;
-  let lastPaymentDay = props.subscriptionDetail && props.subscriptionDetail.last_payment.date
+  let lastPaymentDay = props.subscriptionDetail && props.subscriptionDetail.last_payment.date;
   if (!lastPaymentDay) {
     lastPaymentDay = uploadHistoryQuotas && uploadHistoryQuotas.user_created_at;
   }
   let dayLefts = null;
   let maxChannel = cmsFeaturesMasterData && cmsFeaturesMasterData[0].option;
 
-  if (
-    lastPaymentDay &&
-    ((props.planName === 'free') ||
-      props.subscriptionDetail == null)
-  ) {
+  if (lastPaymentDay && (props.planName === 'free' || props.subscriptionDetail == null)) {
     let arr = lastPaymentDay.split('/');
     let now = new Date();
     let date = new Date(arr[2] + '/' + arr[1] + '/' + arr[0]);

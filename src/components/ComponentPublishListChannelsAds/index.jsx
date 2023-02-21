@@ -11,14 +11,11 @@ class ComponentPublishListChannelsAds extends Component {
 
   // }
 
-  componentDidMount = () => {
-  };
+  componentDidMount = () => {};
 
   render() {
-    let { 
-      labelsConnectedChannels
-    } = this.props;
-    
+    let { labelsConnectedChannels } = this.props;
+
     return (
       <>
         <div className="d-flex align-items-center justify-content-between mb-3">
@@ -26,28 +23,24 @@ class ComponentPublishListChannelsAds extends Component {
         </div>
         <div>
           <ul className={`list-unstyled d-flex align-items-center mb-0 flex-wrap`}>
-            {
-              labelsConnectedChannels.includes("fbad") && (
-                <li className={`me-2 mb-2`}>
-                  <span style={{cursor:"pointer"}} className="d-block" >
-                    <span className="position-relative d-block">
-                      <img className="img-avatar" src={"/assets/images/fbad.png"} alt="" />
-                    </span>
+            {labelsConnectedChannels.includes('fbad') && (
+              <li className={`me-2 mb-2`}>
+                <span style={{ cursor: 'pointer' }} className="d-block">
+                  <span className="position-relative d-block">
+                    <img className="img-avatar" src={'/assets/images/fbad.png'} alt="" />
                   </span>
-                </li>
-              )
-            }
-            {
-              labelsConnectedChannels.includes("google_ads") && (
-                <li className={`me-2 mb-2`}>
-                  <span style={{cursor:"pointer"}} className="d-block" >
-                    <span className="position-relative d-block">
-                      <img className="img-avatar" src={"/assets/images/google_ads.png"} alt="" />
-                    </span>
+                </span>
+              </li>
+            )}
+            {labelsConnectedChannels.includes('google_ads') && (
+              <li className={`me-2 mb-2`}>
+                <span style={{ cursor: 'pointer' }} className="d-block">
+                  <span className="position-relative d-block">
+                    <img className="img-avatar" src={'/assets/images/google_ads.png'} alt="" />
                   </span>
-                </li>
-              )
-            }
+                </span>
+              </li>
+            )}
           </ul>
         </div>
       </>

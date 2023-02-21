@@ -24,13 +24,14 @@ import { AesirxAuthenticationApiService, Storage } from 'aesirx-dma-lib';
 //     subtitle: 'CEO & Founder R Digital',
 //   },
 // ];
+import { env } from 'env';
 
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: process.env.REACT_APP_DEMO_USER ?? '',
-      password: process.env.REACT_APP_DEMO_PASSWORD ?? '',
+      username: env.REACT_APP_DEMO_USER ?? '',
+      password: env.REACT_APP_DEMO_PASSWORD ?? '',
       remember: false,
       isProcessing: false,
     };
@@ -101,16 +102,16 @@ class LoginPage extends React.Component {
                   onGetData={onGetData}
                 />
                 <div className="d-flex align-items-center flex-nowrap">
-                  <div className="border-bottom w-50"></div>
-                  <span className="px-2">or</span>
-                  <div className="border-bottom w-50"></div>
+                  <div className="border-bottom-2 w-50"></div>
+                  <span className="px-2 text-gray-4 text-uppercase">or</span>
+                  <div className="border-bottom-2 w-50"></div>
                 </div>
-                <label className="form-label mb-16 fw-bold">
-                  Email <span className="text-danger">*</span>
+                <label className="form-label mb-16 fw-semibold text-black">
+                  Email <span className="text-red-1">*</span>
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control border"
                   name="username"
                   value={this.state.username}
                   onChange={this.handleInputChange}
@@ -122,8 +123,8 @@ class LoginPage extends React.Component {
                 {this.validator.message('Email or username', this.state.username, 'required', {
                   className: 'text-danger',
                 })}
-                <label className="form-label mt-2 mb-16 fw-bold" htmlFor="password">
-                  Password <span className="text-danger">*</span>
+                <label className="form-label mt-2 mb-16 fw-semibold text-black" htmlFor="password">
+                  Password <span className="text-red-1">*</span>
                 </label>
                 <InputPassword
                   type="password"
@@ -145,14 +146,14 @@ class LoginPage extends React.Component {
                     href="https://dam.aesirx.io/auth/forgotpassword"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="d-flex fw-semibold fs-6"
+                    className="d-flex fw-semibold fs-6 text-blue-3"
                   >
                     {t('txt_forgot_password')}
                   </a>
                 </div>
                 <button
                   type="button"
-                  className={`btn w-100 fw-medium btn-success position-relative d-flex align-item-center justify-content-center wr_btn_login mt-3`}
+                  className={`btn w-100 fw-medium btn-success position-relative d-flex align-item-center text-uppercase justify-content-center wr_btn_login mt-3`}
                   onClick={this.handleSubmit}
                 >
                   {t('txt_sign_in')}

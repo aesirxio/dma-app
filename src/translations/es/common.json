@@ -189,5 +189,7 @@
   "txt_warning": "Advertencia",
   "txt_successful": "Exitoso",
   "txt_error": "Error",
-  "txt_forgot_password": "¿Olvidaste la contraseña?"
+  "txt_forgot_password": "¿Olvidaste la contraseña?",
+  "txt_ maintenance":"Mantenimiento"
+
 }

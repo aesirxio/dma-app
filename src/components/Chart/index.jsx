@@ -3,22 +3,22 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React from "react";
-import Chart from "react-google-charts";
+import React from 'react';
+import Chart from 'react-google-charts';
 
 const data = [
-  ["", "Comments", "Followers", "Posts", "Engagement"],
-  ["Facebook", 1000, 400, 200, 100],
-  ["Facebook Ads", 1000, 400, 200, 100],
-  ["Youtube", 1170, 460, 250, 800],
-  ["Joomla", 660, 1120, 300, 700],
-  ["Twitter", 1030, 540, 350, 50],
-  ["Pinterest", 1030, 540, 350, 2000],
-  ["Instagram", 1030, 540, 350, 1200],
-  ["Linkedin", 1030, 540, 350, 600],
+  ['', 'Comments', 'Followers', 'Posts', 'Engagement'],
+  ['Facebook', 1000, 400, 200, 100],
+  ['Facebook Ads', 1000, 400, 200, 100],
+  ['Youtube', 1170, 460, 250, 800],
+  ['Joomla', 660, 1120, 300, 700],
+  ['Twitter', 1030, 540, 350, 50],
+  ['Pinterest', 1030, 540, 350, 2000],
+  ['Instagram', 1030, 540, 350, 1200],
+  ['Linkedin', 1030, 540, 350, 600],
 ];
 
-const colorsLine = ["#4791FF", "#FFD950", "#02BC77", "#FF2366"];
+const colorsLine = ['#4791FF', '#FFD950', '#02BC77', '#FF2366'];
 
 class ComponentChart extends React.Component {
   constructor(props) {
@@ -38,51 +38,51 @@ class ComponentChart extends React.Component {
 
         <div className="p-3">
           <Chart
-            width={"100%"}
-            height={"340px"}
+            width={'100%'}
+            height={'340px'}
             chartType="ColumnChart"
             loader={<div>Loading Chart</div>}
             data={data}
             options={{
               chartArea: {
-                width: "92%",
+                width: '92%',
                 right: 0,
               },
-              color: "red",
+              color: 'red',
               legend: {
-                position: "bottom",
+                position: 'bottom',
                 textStyle: {
-                  color: "#081240",
-                  fontName: "SVN-Sofia Pro",
-                  borderRadius: "20px",
+                  color: '#081240',
+                  fontName: 'SVN-Sofia Pro',
+                  borderRadius: '20px',
                 },
               },
               colors: colorsLine,
               vAxis: {
                 textStyle: {
-                  color: "#081240",
-                  fontName: "SVN-Sofia Pro",
+                  color: '#081240',
+                  fontName: 'SVN-Sofia Pro',
                 },
-                baselineColor: "#EFEFEF",
+                baselineColor: '#EFEFEF',
                 gridlines: {
-                  color: "#EFEFEF",
-                  zeroLineColor: "#EFEFEF",
+                  color: '#EFEFEF',
+                  zeroLineColor: '#EFEFEF',
                 },
               },
               hAxis: {
                 textStyle: {
                   fontSize: 12,
-                  fontName: "SVN-Sofia Pro",
-                  color: "#081240",
+                  fontName: 'SVN-Sofia Pro',
+                  color: '#081240',
                 },
-                baselineColor: "#EFEFEF",
+                baselineColor: '#EFEFEF',
                 gridlines: {
-                  color: "#EFEFEF",
-                  zeroLineColor: "#EFEFEF",
+                  color: '#EFEFEF',
+                  zeroLineColor: '#EFEFEF',
                 },
               },
             }}
-            rootProps={{ "data-testid": "2" }}
+            rootProps={{ 'data-testid': '2' }}
           />
         </div>
       </div>

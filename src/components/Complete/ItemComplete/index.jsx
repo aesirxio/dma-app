@@ -3,10 +3,10 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React from "react";
-import { ProgressBar } from "react-bootstrap";
+import React from 'react';
+import { ProgressBar } from 'react-bootstrap';
 
-import "../index.scss";
+import '../index.scss';
 
 class ItemComplete extends React.Component {
   constructor(props) {
@@ -25,10 +25,7 @@ class ItemComplete extends React.Component {
             <ul className="list-unstyled d-flex align-items-center mb-0 flex-wrap">
               {value.complete.map((item, index) => {
                 return (
-                  <li
-                    key={index}
-                    className="col-4 fs-12 d-flex align-items-center"
-                  >
+                  <li key={index} className="col-4 fs-12 d-flex align-items-center">
                     <span
                       className={`
                           number_progre 
