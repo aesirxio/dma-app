@@ -23,7 +23,7 @@
   }
 }
 .btn-sso {
-  background-color: #005f89;
+  background-color: #3b7ab5;
   color: white;
   font-size: 1.125rem;
   line-height: 1.563rem;
@@ -31,11 +31,11 @@
     border: 1px solid;
   }
 }
-.form-control{
-  &:focus{
+.form-control {
+  &:focus {
     color: #1a2226;
     background-color: #fff;
-    border-color: #0A083B !important;
+    border-color: #0a083b !important;
     box-shadow: none;
   }
 }
