@@ -189,7 +189,9 @@
   "txt_warning": "Warning",
   "txt_successful": "Successful",
   "txt_error": "Error",
+  "txt_forgot_password": "Forgot password ?",
   "txt_title_no_matching_results":"No Matching Results",
   "txt_text_no_matching_results":"Can not found any project with that keyword. Please try another keyword.",
   "txt_ maintenance":"Maintenance"
+
 }

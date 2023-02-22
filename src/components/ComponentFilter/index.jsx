@@ -107,7 +107,7 @@ class ComponentFilter extends React.Component {
                 name={item.name}
                 onChange={(e) => this.handleSelect(e, item.name, item.isMulti, item.type)}
                 options={item.option}
-                className=" filter-select border-green bg-white rounded-2 text-capitalize"
+                className="text-danger bg-white rounded-2 text-capitalize"
                 isBorder={true}
                 plColor="rgba(8, 18, 64, 0.8)"
                 isMulti={item.isMulti}
