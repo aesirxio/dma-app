@@ -381,40 +381,15 @@ textarea {
     z-index: 5;
   }
 }
-// .btn-outline-secondary:not(:hover) {
-//   background: #fff;
-// }
+
+.btn-outline-secondary:not(:hover) {
+  background: #fff;
+}
 .btn-info.dropdown-toggle {
   &:focus {
-    border: none;
-    box-shadow: 0 0 0 0.25rem rgb(26 179 148 / 25%);
+    box-shadow: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.15);
   }
-}
-.btn {
-  &:first-child {
-    &:active {
-      border-color: transparent;
-      border: none;
-    }
-  }
-  transition: none;
-}
-.btn_toggle.show,
-.btn.true,
-.btn.show {
-  border: none;
-  box-shadow: 0 0 0 0.25rem rgb(26 179 148 / 25%);
-}
-.filter-select {
-  .css-1px9wzq-control {
-    box-shadow: 0 0 0 0.25rem rgb(26 179 148 / 25%);
-    border: none;
-    border-color: transparent;
-  }
-}
-.wrapper_datepicker.open {
-  box-shadow: 0 0 0 0.25rem rgb(26 179 148 / 25%);
-  border-radius: 5px;
 }
 .modal.show,
 .modal-backdrop.show {

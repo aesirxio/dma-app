@@ -187,6 +187,7 @@
   "txt_warning": "Advarsel",
   "txt_successful": "Vellykket",
   "txt_error": "Fejl",
+  "txt_forgot_password": "Glemt adgangskode?",
   "txt_title_no_matching_results":"Ingen matchende resultater",
   "txt_text_no_matching_results":"Kan ikke finde noget projekt med dette søgeord. Prøv venligst et andet søgeord.",
   "txt_ maintenance":"vedligeholdelse"

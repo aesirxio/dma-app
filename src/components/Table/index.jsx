@@ -317,8 +317,11 @@ const Table = ({
                     setFilter={setFilter}
                   />
                 </div>
-                <div className="px-2 rounded-0">
-                  <button className={`btn text-blue-0 ${getState.isFilter}`} onClick={handleFilter}>
+                <div className="rounded-0">
+                  <button
+                    className={`btn text-blue-0 ${getState.isFilter ? 'bg-blue-3' : ''}`}
+                    onClick={handleFilter}
+                  >
                     <i>
                       <FontAwesomeIcon icon={faFilter} />
                     </i>
@@ -365,7 +368,7 @@ const Table = ({
             <Collapse in={getState.isFilter}>
               <div>
                 <div
-                  className={`py-2 px-1 rounded-2 ${
+                  className={`py-2 px-1 bg-blue-3 rounded-2 ${
                     getState.isFilter ? 'z-2 position-relative' : ''
                   }`}
                 >
@@ -462,8 +465,8 @@ const Table = ({
           {page.length === 0 ? (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
-              title="txt_title_no_matching_results"
-              text="txt_text_no_matching_results"
+              title="No Matching Results"
+              text="Can not found any project with that keyword. Please try another keyword."
               width="w-50"
             />
           ) : (
@@ -525,8 +528,8 @@ const Table = ({
           {page.length === 0 ? (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
-              title="txt_title_no_matching_results"
-              text="txt_text_no_matching_results"
+              title="No Matching Results"
+              text="Can not found any project with that keyword. Please try another keyword."
               width="w-50"
             />
           ) : (

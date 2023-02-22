@@ -12,7 +12,7 @@ import SimpleReactValidator from 'simple-react-validator';
 import './index.scss';
 
 // import BannerLeft from '../../components/BannerLeft';
-
+import Checkbox from 'components/Checkbox';
 import { login } from '../../auth';
 import InputPassword from '../../components/inputPassword';
 import { SSOButton } from 'aesirx-sso';
@@ -97,21 +97,21 @@ class LoginPage extends React.Component {
 
               <form>
                 <SSOButton
-                  className="btn w-100 fw-medium btn-sso position-relative d-flex align-item-center justify-content-center mb-3 px-6"
+                  className="btn w-100 fw-bold btn-sso position-relative d-flex align-item-center justify-content-center mb-3 px-6"
                   text={t('txt_sign_in_with_sso')}
                   onGetData={onGetData}
                 />
                 <div className="d-flex align-items-center flex-nowrap">
-                  <div className="border-bottom w-50"></div>
-                  <span className="px-2">or</span>
-                  <div className="border-bottom w-50"></div>
+                  <div className="border-bottom-2 w-50"></div>
+                  <span className="px-2 text-gray-4 text-uppercase">or</span>
+                  <div className="border-bottom-2 w-50"></div>
                 </div>
-                <label className="form-label mb-16">
-                  Username <span>*</span>
+                <label className="form-label mb-16 fw-semibold text-black">
+                  Email <span className="text-red-1">*</span>
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control border"
                   name="username"
                   value={this.state.username}
                   onChange={this.handleInputChange}
@@ -123,8 +123,8 @@ class LoginPage extends React.Component {
                 {this.validator.message('Email or username', this.state.username, 'required', {
                   className: 'text-danger',
                 })}
-                <label className="form-label mt-2 mb-16" htmlFor="password">
-                  Password <span>*</span>
+                <label className="form-label mt-2 mb-16 fw-semibold text-black" htmlFor="password">
+                  Password <span className="text-red-1">*</span>
                 </label>
                 <InputPassword
                   type="password"
@@ -140,9 +140,20 @@ class LoginPage extends React.Component {
                 {this.validator.message('password', this.state.password, 'required', {
                   className: 'text-danger',
                 })}
+                <div className="d-flex justify-content-between pt-4 text-black">
+                  <Checkbox text={t('txt_remember_me')} />
+                  <a
+                    href="https://dam.aesirx.io/auth/forgotpassword"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="d-flex fw-semibold fs-6 text-blue-3"
+                  >
+                    {t('txt_forgot_password')}
+                  </a>
+                </div>
                 <button
                   type="button"
-                  className={`btn w-100 fw-medium btn-success position-relative d-flex align-item-center justify-content-center wr_btn_login mt-3`}
+                  className={`btn w-100 fw-medium btn-success position-relative d-flex align-item-center text-uppercase justify-content-center wr_btn_login mt-3`}
                   onClick={this.handleSubmit}
                 >
                   {t('txt_sign_in')}

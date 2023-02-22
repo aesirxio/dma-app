@@ -17,12 +17,10 @@ import vi from 'date-fns/locale/vi';
 import de from 'date-fns/locale/de';
 import uk from 'date-fns/locale/uk';
 import es from 'date-fns/locale/es';
-import th from 'date-fns/locale/th';
 registerLocale('vi', vi);
 registerLocale('de', de);
 registerLocale('uk', uk);
 registerLocale('es', es);
-registerLocale('th', th);
 
 class ComponentDatepicker extends React.Component {
   constructor(props) {
@@ -153,9 +151,7 @@ class ComponentDatepicker extends React.Component {
     return (
       <div
         ref={this.wrapperRef}
-        className={`wrapper_datepicker d-flex align-items-center px-2 cursor-pointer ${
-          isOpen ? 'open' : ''
-        } `}
+        className="wrapper_datepicker d-flex align-items-center px-2 cursor-pointer"
         onClick={this.handleShowPicker}
       >
         <i className="text-blue-0">

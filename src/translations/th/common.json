@@ -189,8 +189,8 @@
   "txt_warning": "คำเตือน",
   "txt_successful": "ประสบความสำเร็จ",
   "txt_error": "ข้อผิดพลาด",
+  "txt_forgot_password": "ลืมรหัสผ่าน ?",
   "txt_title_no_matching_results":"ไม่มีผลลัพธ์ที่ตรงกัน",
   "txt_text_no_matching_results":"ไม่พบโครงการใดๆ ที่มีคำหลักนั้น โปรดลองคำหลักอื่น",
   "txt_ maintenance":"การซ่อมบำรุง"
-
 }
