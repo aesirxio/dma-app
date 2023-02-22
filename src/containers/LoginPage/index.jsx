@@ -97,11 +97,11 @@ class LoginPage extends React.Component {
 
               <form>
                 <SSOButton
-                  className="btn w-100 fw-bold btn-sso position-relative d-flex align-item-center justify-content-center mb-3 px-6"
+                  className="btn w-100 fw-bold btn-sso position-relative d-flex align-item-center justify-content-center my-3  px-6"
                   text={t('txt_sign_in_with_sso')}
                   onGetData={onGetData}
                 />
-                <div className="d-flex align-items-center flex-nowrap">
+                {/* <div className="d-flex align-items-center flex-nowrap">
                   <div className="border-bottom-2 w-50"></div>
                   <span className="px-2 text-gray-4 text-uppercase">or</span>
                   <div className="border-bottom-2 w-50"></div>
@@ -166,7 +166,7 @@ class LoginPage extends React.Component {
                       <span className="visually-hidden">Loading...</span>
                     </div>
                   </div>
-                </button>
+                </button> */}
               </form>
             </div>
           </div>
