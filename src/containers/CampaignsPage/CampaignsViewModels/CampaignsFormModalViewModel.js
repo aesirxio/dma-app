@@ -14,7 +14,6 @@ class CampaignsFormModalViewModel {
   formStatus = PAGE_STATUS.READY;
   editMode = false;
   campaignsListViewModel = null;
-
   campaignsStore = null;
   campaignsFormComponent = null;
 
@@ -124,6 +123,7 @@ class CampaignsFormModalViewModel {
     this.closeModal();
 
     this.campaignsListViewModel.refreshTableCampaignsList();
+    notify();
   };
 }
 

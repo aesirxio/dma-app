@@ -82,7 +82,9 @@ class ProjectFormModalViewModel {
     );
   };
 
-  callbackOnErrorHander = () => {};
+  callbackOnErrorHander = (error) => {
+    notify(error.message);
+  };
 
   callbackOnSuccessHandler = (projectId) => {
     this.closeModal();
@@ -92,6 +94,7 @@ class ProjectFormModalViewModel {
     }
 
     this.projectListViewModel.refreshTableProjectList();
+    notify();
   };
 }
 
