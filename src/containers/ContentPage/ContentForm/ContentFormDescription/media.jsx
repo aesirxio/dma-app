@@ -10,6 +10,7 @@ import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from '../../../../constan
 import ContentUtils from '../../ContentUtils/ContentUtils';
 import MediaDataRender from '../MediaDataRender';
 import CanvaButton from 'components/CanvaButton';
+import ChatGPT from 'components/ChatGPT';
 import { ContentViewModelContext } from '../../ContentViewModels/ContentViewModelContextProvider';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 import DamComponent from 'components/DamComponent';
@@ -126,6 +127,9 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
                   <span className="text-white ms-2">{t('txt_digital_asset_management')}</span>
                 </button>
               </DamComponent>
+            </div>
+            <div>
+              <ChatGPT/>
             </div>
           </>
         )}

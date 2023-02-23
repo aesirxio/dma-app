@@ -14,7 +14,7 @@ import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
 import ContentUtils from '../ContentUtils/ContentUtils';
 import history from '../../../routes/history';
 import ProfileStore from '../../ProfilePage/ProfileStore/ProfileStore';
-import { AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
+//                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           b';
 
 class ContentFormViewModel {
   formStatus = PAGE_STATUS.LOADING;
@@ -44,14 +44,14 @@ class ContentFormViewModel {
     this.form = form;
     this.contentData = null;
 
-    const memberProfile = await this.profileStore.getMemberProfile(
-      Storage.getItem(AUTHORIZATION_KEY.MEMBER_ID) ?? 0
-    );
+    // const memberProfile = await this.profileStore.getMemberProfile(
+    //   Storage.getItem(AUTHORIZATION_KEY.MEMBER_ID) ?? 0
+    // );
 
-    if (!memberProfile.allow_create_item && match.path == '/content/create') {
-      notify('Please upgrade account at https://dma.aesirx.io');
-      history.push('/content');
-    }
+    // if (!memberProfile.allow_create_item && match.path == '/content/create') {
+    //   notify('Please upgrade account at https://dma.aesirx.io');
+    //   history.push('/content');
+    // }
 
     const masterData = await this.contentStore.getMasterData();
     const channelsData = await this.channelStore.getChannelsData();
