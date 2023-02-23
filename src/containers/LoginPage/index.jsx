@@ -78,7 +78,9 @@ class LoginPage extends React.Component {
     };
     return (
       <div className="vh-100 bg-blue-9 login-page position-relative">
-        <div className='bg-login position-absolute bottom-0'><img alt="bg-login" src="/assets/images/bg.png" /></div>
+        <div className="bg-login position-absolute bottom-0">
+          <img alt="bg-login" src="/assets/images/bg.png" />
+        </div>
         <div className="row justify-content-center align-items-center h-100 ">
           <div className="col-lg-7 col-xxl-4 ">
             <div className="d-block p-2 p-lg-5">
