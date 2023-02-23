@@ -12,9 +12,9 @@ import SimpleReactValidator from 'simple-react-validator';
 import './index.scss';
 
 // import BannerLeft from '../../components/BannerLeft';
-import Checkbox from 'components/Checkbox';
+// import Checkbox from 'components/Checkbox';
 import { login } from '../../auth';
-import InputPassword from '../../components/inputPassword';
+// import InputPassword from '../../components/inputPassword';
 import { SSOButton } from 'aesirx-sso';
 import { AesirxAuthenticationApiService, Storage } from 'aesirx-dma-lib';
 // const dataSlider = [
@@ -77,9 +77,10 @@ class LoginPage extends React.Component {
       window.location.reload();
     };
     return (
-      <div className="vh-100 bg-blue-9">
-        <div className="row justify-content-center align-items-center h-100">
-          <div className="col-lg-7 col-xxl-4">
+      <div className="vh-100 bg-blue-9 login-page position-relative">
+        <div className='bg-login position-absolute bottom-0'><img alt="bg-login" src="/assets/images/bg.png" /></div>
+        <div className="row justify-content-center align-items-center h-100 ">
+          <div className="col-lg-7 col-xxl-4 ">
             <div className="d-block p-2 p-lg-5">
               <p className="fs-2 fw-semibold mb-2 text-center text-blue-5">
                 {t('txt_welcome_to')}
