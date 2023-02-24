@@ -1,6 +1,6 @@
 {
   "name": "aesirx-dma-app",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "license": "GPL-3.0-only",
   "author": "AesirX",
   "main": "dist/index.js",
