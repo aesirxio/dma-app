@@ -308,7 +308,7 @@ const Table = ({
             )}
             {isFilter && (
               <>
-                <div className="px-2 border-end-1 w-200">
+                <div className="px-2 border-end-1 w-300">
                   <ComponentDatepicker
                     isDown={true}
                     listViewModel={listViewModel}

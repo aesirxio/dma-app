@@ -6,9 +6,10 @@
 import React from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import moment from 'moment';
+import ComponentSVG from 'components/ComponentSVG';
 import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay';
+// import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 
 import './index.scss';
@@ -33,6 +34,8 @@ class ComponentDatepicker extends React.Component {
         ? moment(props?.filter?.datetime?.endDate).toDate()
         : null,
       isOpen: false,
+      placeholder: '',
+      isDays:'',
       selectDate: props?.filter?.datetime?.selectDate ?? '0',
     };
 
@@ -125,14 +128,14 @@ class ComponentDatepicker extends React.Component {
           <div className="position-relative border-0">{children}</div>
         </div>
         {startDate && (
-          <div className="d-flex align-items-center justify-content-end border-top-1 p-3">
+          <div className="d-flex align-items-center justify-content-end border-top-1 bg-white p-3">
             <p className="fs-14 color-bule-0 opacity-75 mb-0">
               {startDate ? moment(startDate).format('LL') : ''} -{' '}
               {endDate ? moment(endDate).format('LL') : ''}
             </p>
             <span
               style={{ cursor: 'pointer' }}
-              className="btn btn-success ms-3"
+              className="btn btn-success ms-4 fw-bold text-uppercase fs-14 lh-sm rounded-1 "
               onClick={this.handleApply}
             >
               {t('txt_apply')}
@@ -142,11 +145,32 @@ class ComponentDatepicker extends React.Component {
       </div>
     );
   };
+   getDateDiff = (start, end) => {
+    if (!start || !end) return 0;
+    return moment(end).diff(moment(start), 'days') + 1;
+  };
+   getDateDiffString = (start, end) => {
+    const { t } = this.props;
+    let startDate = start ? moment(start).format('DD MMM, YYYY') : '';
+    let endDate = end ? moment(end).format('DD MMM, YYYY') : '';
+    let result = this.placeholder;
+    if (start || end) {
+      result =
+        this.getDateDiff(start, end) == 1
+          ? startDate !== moment().format('DD MMM, YYYY')
+            ? startDate
+            :t('txt_days')
+          : startDate + ` ${endDate ? '-' : ''} ` + endDate;
+    }
+    return result;
+  };
 
   render() {
-    let { startDate, endDate, selectDate, isOpen } = this.state;
+    let { startDate, endDate,  isOpen , isDays , placeholder } = this.state;
     let { isDown } = this.props;
-    const { t, i18n } = this.props;
+    const {t,i18n } = this.props;
+
+   
 
     return (
       <div
@@ -154,14 +178,20 @@ class ComponentDatepicker extends React.Component {
         className="wrapper_datepicker d-flex align-items-center px-2 cursor-pointer"
         onClick={this.handleShowPicker}
       >
-        <i className="text-blue-0">
-          <FontAwesomeIcon icon={faCalendarDay} />
-        </i>
+         <i className="text-green">
+          <ComponentSVG url="/assets/images/calendar.svg" color="#00B96D" />
+        </i> 
+
         <DatePicker
           onChange={this.onChange}
           className="border-0 w-100 rounded-2 h-100 ps-2 bg-transparent cursor-pointer text-blue-0"
           monthsShown={2}
-          value={selectDate + ' ' + t('txt_days')}
+          value={!isDays
+            ? this.getDateDiffString(startDate, endDate)
+            : this.getDateDiff(startDate, endDate)
+            ? `${this.getDateDiff(startDate, endDate)} ${t('txt_days')}`
+            : placeholder}
+            placeholderText = {t('txt_days')}
           selected={startDate}
           startDate={startDate}
           endDate={endDate}
