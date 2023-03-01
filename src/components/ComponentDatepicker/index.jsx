@@ -35,7 +35,7 @@ class ComponentDatepicker extends React.Component {
         : null,
       isOpen: false,
       placeholder: '',
-      isDays:'',
+      isDays: '',
       selectDate: props?.filter?.datetime?.selectDate ?? '0',
     };
 
@@ -145,11 +145,11 @@ class ComponentDatepicker extends React.Component {
       </div>
     );
   };
-   getDateDiff = (start, end) => {
+  getDateDiff = (start, end) => {
     if (!start || !end) return 0;
     return moment(end).diff(moment(start), 'days') + 1;
   };
-   getDateDiffString = (start, end) => {
+  getDateDiffString = (start, end) => {
     const { t } = this.props;
     let startDate = start ? moment(start).format('DD MMM, YYYY') : '';
     let endDate = end ? moment(end).format('DD MMM, YYYY') : '';
@@ -159,18 +159,16 @@ class ComponentDatepicker extends React.Component {
         this.getDateDiff(start, end) == 1
           ? startDate !== moment().format('DD MMM, YYYY')
             ? startDate
-            :t('txt_days')
+            : t('txt_days')
           : startDate + ` ${endDate ? '-' : ''} ` + endDate;
     }
     return result;
   };
 
   render() {
-    let { startDate, endDate,  isOpen , isDays , placeholder } = this.state;
+    let { startDate, endDate, isOpen, isDays, placeholder } = this.state;
     let { isDown } = this.props;
-    const {t,i18n } = this.props;
-
-   
+    const { t, i18n } = this.props;
 
     return (
       <div
@@ -178,20 +176,22 @@ class ComponentDatepicker extends React.Component {
         className="wrapper_datepicker d-flex align-items-center px-2 cursor-pointer"
         onClick={this.handleShowPicker}
       >
-         <i className="text-green">
+        <i className="text-green">
           <ComponentSVG url="/assets/images/calendar.svg" color="#00B96D" />
-        </i> 
+        </i>
 
         <DatePicker
           onChange={this.onChange}
           className="border-0 w-100 rounded-2 h-100 ps-2 bg-transparent cursor-pointer text-blue-0"
           monthsShown={2}
-          value={!isDays
-            ? this.getDateDiffString(startDate, endDate)
-            : this.getDateDiff(startDate, endDate)
-            ? `${this.getDateDiff(startDate, endDate)} ${t('txt_days')}`
-            : placeholder}
-            placeholderText = {t('txt_days')}
+          value={
+            !isDays
+              ? this.getDateDiffString(startDate, endDate)
+              : this.getDateDiff(startDate, endDate)
+              ? `${this.getDateDiff(startDate, endDate)} ${t('txt_days')}`
+              : placeholder
+          }
+          placeholderText={t('txt_days')}
           selected={startDate}
           startDate={startDate}
           endDate={endDate}
