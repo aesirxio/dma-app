@@ -8,9 +8,9 @@ import DatePicker, { registerLocale } from 'react-datepicker';
 import moment from 'moment';
 import ComponentSVG from 'components/ComponentSVG';
 import { withTranslation } from 'react-i18next';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
+// import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 
 import './index.scss';
 
