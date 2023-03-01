@@ -120,19 +120,19 @@ class ComponentDatepicker extends React.Component {
   };
 
   MyContainer = ({ className, children }) => {
-    let { startDate, endDate } = this.state;
+    let { startDate} = this.state;
     const { t } = this.props;
     return (
       <div ref={this.pickerRef} className="rounded-3 shadow overflow-hidden">
-        <div className={className}>
+        <div className={` bg-white ${className}`}>
           <div className="position-relative border-0">{children}</div>
         </div>
         {startDate && (
           <div className="d-flex align-items-center justify-content-end border-top-1 bg-white p-3">
-            <p className="fs-14 color-bule-0 opacity-75 mb-0">
+            {/* <p className="fs-14 color-bule-0 opacity-75 mb-0">
               {startDate ? moment(startDate).format('LL') : ''} -{' '}
               {endDate ? moment(endDate).format('LL') : ''}
-            </p>
+            </p> */}
             <span
               style={{ cursor: 'pointer' }}
               className="btn btn-success ms-4 fw-bold text-uppercase fs-14 lh-sm rounded-1 "
@@ -178,7 +178,7 @@ class ComponentDatepicker extends React.Component {
       >
         <DatePicker
           onChange={this.onChange}
-          className="border-0 w-100 rounded-2 h-100 ps-2 bg-transparent cursor-pointer text-blue-0"
+          className="border-0 w-100 bg-white rounded-2 h-100 ps-2 bg-transparent cursor-pointer text-blue-0"
           monthsShown={2}
           value={
             !isDays
@@ -195,6 +195,7 @@ class ComponentDatepicker extends React.Component {
           calendarContainer={this.MyContainer}
           popperPlacement="bottom-end"
           open={isOpen}
+          showPopperArrow={false}
           onBlur={this.handleOnBlur}
           disabled={true}
           locale={i18n.language}
