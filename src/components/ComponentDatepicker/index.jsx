@@ -176,10 +176,6 @@ class ComponentDatepicker extends React.Component {
         className="wrapper_datepicker d-flex align-items-center px-2 cursor-pointer"
         onClick={this.handleShowPicker}
       >
-        <i className="text-green">
-          <ComponentSVG url="/assets/images/calendar.svg" color="#00B96D" />
-        </i>
-
         <DatePicker
           onChange={this.onChange}
           className="border-0 w-100 rounded-2 h-100 ps-2 bg-transparent cursor-pointer text-blue-0"
@@ -191,7 +187,7 @@ class ComponentDatepicker extends React.Component {
               ? `${this.getDateDiff(startDate, endDate)} ${t('txt_days')}`
               : placeholder
           }
-          placeholderText={t('txt_days')}
+          placeholderText={t('txt_all_dates')}
           selected={startDate}
           startDate={startDate}
           endDate={endDate}
@@ -205,7 +201,7 @@ class ComponentDatepicker extends React.Component {
         />
         {isDown && (
           <i className="text-green">
-            <FontAwesomeIcon icon={faChevronDown} />
+            <ComponentSVG url="/assets/images/calendar.svg" color="#00B96D" />
           </i>
         )}
       </div>
