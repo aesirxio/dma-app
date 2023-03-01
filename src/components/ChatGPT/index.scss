@@ -1,13 +1,17 @@
 
 .modal-dialog{
-   max-width: 100%;
-    margin: 0 30px;
+height: 100vh;
+max-width: 100%;
+margin: 0 30px;
+overflow: hidden;
+}
+.modal-content{
+    height: 100%;
 }
 .modal-body{
     background-color: rgb(162 167 171 / 47%);
     .formchat{
         .body-chat{
-            height: 730px;
             overflow-y: auto;
             .chatgpt{
                 background-color: rgba(32,33,35,.5);
@@ -29,16 +33,12 @@
                 background-color: white;
                 border-radius: 6px;
                 color: black;
-                &::before{
-                    content: "";
-                    background-image: url(../../../public/favicon.ico);
-                    background-repeat: no-repeat;
-                    width: 35px;
-                    height: 35px;
-                    background-size: 35px;
-                    position: absolute;
+                .img-avatar{
                     top: 25%;
                     left: 7px;
+                    height: 35px;
+                    max-width: 35px;
+                    min-width: 35px;
                 }
             }
         }

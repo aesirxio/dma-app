@@ -8,7 +8,10 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import './index.scss';
 import { env } from 'env';
+import { AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
 import { Configuration, OpenAIApi } from 'openai';
+import Helper from '../../utils/helper';
+import ComponentImage from '../ComponentImage';
 
 
 class ChatGPT extends React.Component {
@@ -19,7 +22,6 @@ class ChatGPT extends React.Component {
       messages: [],
       input: '',
       show: false,
-      // copied : false,
     };
     // Set up OpenAI API key and API client
     const apiKey = env.REACT_APP_OPENAI_API_KEY;
@@ -28,10 +30,6 @@ class ChatGPT extends React.Component {
     });
     this.apiClient = new OpenAIApi(configuration);
   }
-
-  // componentDidMount() {
-  //   this.addMessage('DMA : Hi there! How can I assist you today?');
-  // }
 
   addMessage = (message) => {
     const messages = this.state.messages.slice();
@@ -82,13 +80,25 @@ class ChatGPT extends React.Component {
 
     return (
       <>
-            <div className='formchat h-100 position-relative my-4'>
-              <div className='body-chat'>
+            <div className='formchat h-100 position-relative'>
+              <div className='body-chat pt-3'>
                 {messages.map((message, index) => (
-                  <div className={`my-2 py-4  ${message.type} position-relative`} key={index}><p className='px-5 mx-2 mb-0'>{message.message}</p></div>
+                  <div className={`my-3 py-4  ${message.type} position-relative d-flex align-content-center flex-wrap`} key={index}>
+                     {message.type === 'user' &&(
+                      <ComponentImage
+                        src={
+                          Helper.isValidUrl(Storage.getItem(AUTHORIZATION_KEY.AVATAR))
+                            ? Storage.getItem(AUTHORIZATION_KEY.AVATAR)
+                            : '/assets/images/user_default.png'
+                        }
+                        alt=""
+                        className="img-avatar rounded-circle object-fit-cover h-45 position-absolute "
+                      />
+                    )}
+                    <p className='px-5 mx-2 mb-0 '>{message.message}</p></div>
                 ))}
               </div>
-              <form  className='d-flex' onSubmit={this.handleInputSubmit}>
+              <form  className='d-flex position-absolute w-100 bottom-0' onSubmit={this.handleInputSubmit}>
                 <input className='w-100'  type="text" value={input} placeholder="Hi there! How can I assist you today?" onChange={this.handleInputChange} />
                 <button className='btn submit btn-success' type="submit">Send</button>
               </form>
