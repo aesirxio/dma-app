@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext , lazy } from 'react';
 import { observer } from 'mobx-react';
 
 import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from '../../../../constants/ContentModule';
@@ -17,6 +17,7 @@ import DamComponent from 'components/DamComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
+const ModalComponent = lazy(() => import('components/Modal'));
 const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null }) => {
   const context = useContext(ContentViewModelContext);
   const channelMasterData = context.getFormViewModel().channelMasterData;
@@ -25,6 +26,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
   let canva = [];
   let dam = [];
   let mode = CONTENT_DESCRIPTION_MODE.BASIC;
+
 
   // Advance
   if (channel) {
@@ -40,6 +42,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
   const [canvaAssets, setCanvaAssets] = useState(canva);
 
   const [damAssets, setDamAssets] = useState(dam);
+  const [show, setShow] = useState(false);
 
   const [canvaIndexToEdit, setCanvaIndexToEdit] = useState(null);
   const handleDam = (data) => {
@@ -100,6 +103,15 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
     setDamAssets(damAssets.filter((item) => item.id !== id));
   };
 
+  const handleShow = () => {
+    setShow(true);
+  };
+
+  const handleClose= () =>{
+    setShow(false);
+  };
+
+
   const mediaChannel = ContentUtils.hasMediaChannel(channelData);
   const { t } = useTranslation('common');
   return (
@@ -128,8 +140,24 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
                 </button>
               </DamComponent>
             </div>
-            <div>
-              <ChatGPT/>
+            <div className="me-2 mt-1 mb-1">
+            <button
+                  className="wr_btn_dam border-0 bg-green rounded-2 px-3 text-nowrap canva-btn-size-m btn-success"
+                  type="button"
+                  onClick={handleShow}
+                >
+                  <span className="text-white">ChatGPT</span>
+                </button>
+              <ModalComponent
+               show={show}
+               onHide={handleClose}
+               header={
+                 <h3 className='fw-bold'>ChatGPT</h3>
+               }
+              body={
+                <ChatGPT/>
+              }
+              />
             </div>
           </>
         )}
