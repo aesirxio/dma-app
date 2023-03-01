@@ -306,4 +306,39 @@
   .wrapper_tabs .nav-tabs .nav-link {
     color: $white;
   }
+  .wrapper_datepicker {
+    .react-datepicker__input-container {
+      height: 50px;
+      input{
+        &::placeholder{
+          color: white;
+        }
+      }
+    }
+    .react-datepicker__month-container {
+      border-right: 1px solid $gray-800 ;
+    }
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    color: white;
+  }
+  .react-datepicker__current-month {
+    color: white;
+  }
+  .react-datepicker__navigation-icon{
+    &::before {
+    border-color: $green !important;
+    }
+  }
+}
+.text-color{
+  color: white;
+}
+.css-sdnn1j-indicatorContainer,.css-palmm5-indicatorContainer {
+  color:  $color-green-3;
+  &:hover{
+    color:  $color-green-3;
+  }
+}
 }
