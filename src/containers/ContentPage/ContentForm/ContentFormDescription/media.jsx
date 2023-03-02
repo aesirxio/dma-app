@@ -146,6 +146,9 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
                   type="button"
                   onClick={handleShow}
                 >
+                  <i className="text-white">
+                    <FontAwesomeIcon icon={faImage} />
+                  </i>
                   <span className="text-white">ChatGPT</span>
                 </button>
               <ModalComponent
