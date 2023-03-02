@@ -368,9 +368,6 @@
   background-color: $green;
 
 }
-    .text-color{
-      color: white;
-    }
     .css-sdnn1j-indicatorContainer,.css-palmm5-indicatorContainer {
       color:  $color-green-3;
       &:hover{
@@ -384,5 +381,8 @@
   }
   .react-datepicker {
     background-color: #0f1314 !important;
-}
+  }
+  .text-color{
+    color: white;
+  }
   }
