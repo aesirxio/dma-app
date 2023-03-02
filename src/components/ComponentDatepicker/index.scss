@@ -38,7 +38,6 @@
     border-right: 1px solid #e8e9ec ;
     padding-right: 20px;
     padding-bottom: 10px;
-    height: 32vh;
     &:last-child {
       padding-right: 0;
       border-right: none;
@@ -111,5 +110,8 @@
   top: 12px;
   }
   }
+}
+.react-datepicker__day-names{
+  padding-top: 15px;
 }
 }
