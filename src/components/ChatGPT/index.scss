@@ -26,16 +26,20 @@ overflow: hidden;
                     height: 35px;
                     background-size: 35px;
                     position: absolute;
+                    border-radius: 100%;
                     top: -5px;
                     left: 7px;
                 }
+                }
+                .text-avatar{
+                  display: none !important;
                 }
             }
             .user{
                 background-color: white;
                 border-radius: 6px;
                 color: black;
-                .img-avatar{
+                .img-avatar, .text-avatar{
                     top: 25%;
                     left: 15px;
                     height: 35px;

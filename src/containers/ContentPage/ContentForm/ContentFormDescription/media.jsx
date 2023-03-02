@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useEffect, useState, useContext , lazy } from 'react';
+import React, { useEffect, useState, useContext, lazy } from 'react';
 import { observer } from 'mobx-react';
 
 import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from '../../../../constants/ContentModule';
@@ -27,7 +27,6 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
   let canva = [];
   let dam = [];
   let mode = CONTENT_DESCRIPTION_MODE.BASIC;
-
 
   // Advance
   if (channel) {
@@ -108,10 +107,9 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
     setShow(true);
   };
 
-  const handleClose= () =>{
+  const handleClose = () => {
     setShow(false);
   };
-
 
   const mediaChannel = ContentUtils.hasMediaChannel(channelData);
   const { t } = useTranslation('common');
@@ -142,31 +140,27 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
               </DamComponent>
             </div>
             <div className="me-2 mt-1 mb-1">
-            <button
-                  className="wr_btn_dam border-0 rounded-2 px-2 text-nowrap canva-btn-size-m chatgpt-btn"
-                  type="button"
-                  onClick={handleShow}
-                >
-                  <div className="p-1 d-flex align-items-center">
-                        <ComponentImage
-                          src="/assets/images/chatgpt-icon.svg"
-                          alt=""
-                          className="img-chatgpt "
-                          width="30"
-                          height="30"
-                        />
-                        <span className="text-white fw-medium ">ChatGPT</span>
-                  </div>
-                </button>
+              <button
+                className="wr_btn_dam border-0 rounded-2 px-2 text-nowrap canva-btn-size-m chatgpt-btn"
+                type="button"
+                onClick={handleShow}
+              >
+                <div className="p-1 d-flex align-items-center">
+                  <ComponentImage
+                    src="/assets/images/chatgpt-icon.svg"
+                    alt=""
+                    className="img-chatgpt "
+                    width="30"
+                    height="30"
+                  />
+                  <span className="text-white fw-medium ">ChatGPT</span>
+                </div>
+              </button>
               <ModalComponent
-               show={show}
-               onHide={handleClose}
-               header={
-                 <h3 className='fw-bold'>ChatGPT</h3>
-               }
-              body={
-                <ChatGPT/>
-              }
+                show={show}
+                onHide={handleClose}
+                header={<h3 className="fw-bold title-chatgpt">ChatGPT</h3>}
+                body={<ChatGPT />}
               />
             </div>
           </>

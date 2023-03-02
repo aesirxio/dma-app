@@ -191,5 +191,8 @@
   "txt_title_no_matching_results":"Ingen matchende resultater",
   "txt_text_no_matching_results":"Kan ikke finde noget projekt med dette søgeord. Prøv venligst et andet søgeord.",
   "txt_ maintenance":"vedligeholdelse",
-  "txt_all_dates":" Alle datoer"
+  "txt_all_dates":" Alle datoer",
+  "txt_api_error":"Der opstod en fejl. Prøv venligst igen senere.",
+  "txt_intro_chatgpt":"Hej! Hvordan kan jeg hjælpe dig i dag?",
+  "txt_open_api_key_warning":"Indtast venligst API-nøgler fra https://platform.openai.com/account/api-keys"
 }

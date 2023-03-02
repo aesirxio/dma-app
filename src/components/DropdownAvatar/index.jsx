@@ -58,15 +58,19 @@ class DropdownAvatar extends React.Component {
       }}
       className="d-flex align-items-center text-decoration-none cursor-pointer"
     >
-      <ComponentImage
-        src={
-          Helper.isValidUrl(Storage.getItem(AUTHORIZATION_KEY.AVATAR))
-            ? Storage.getItem(AUTHORIZATION_KEY.AVATAR)
-            : '/assets/images/user_default.png'
-        }
-        alt=""
-        className="img-avatar rounded-circle object-fit-cover h-45"
-      />
+      {Helper.isValidUrl(Storage.getItem(AUTHORIZATION_KEY.AVATAR)) ? (
+        <ComponentImage
+          src={Storage.getItem(AUTHORIZATION_KEY.AVATAR)}
+          alt=""
+          className="img-avatar rounded-circle object-fit-cover h-45"
+        />
+      ) : (
+        <div className="position-relative d-inline-flex align-items-center justify-content-center text-uppercase cursor-pointer rounded-circle w-45 h-45 bg-blue-2 opacity-50">
+          <span className="text-white" style={{ fontSize: '1.75rem' }}>
+            {Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME).slice(0, 1).slice(0, 1)}
+          </span>
+        </div>
+      )}
       <div className="text ps-3 pe-3">
         <p className="mb-0 text-blue-0 fs-14 fw-bold">
           {Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME)}

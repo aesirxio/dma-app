@@ -261,7 +261,7 @@
   // end of table
 
   .btn-close {
-    filter: $btn-close-white-filter;
+    // filter: $btn-close-white-filter;
   }
 
   @import '../../node_modules/bootstrap/scss/utilities/api';
@@ -379,5 +379,8 @@
   }
   .apply{
     border-top: 1px solid $gray-800 !important;
+  }
+  .title-chatgpt{
+    color: #081240 !important;
   }
 }
