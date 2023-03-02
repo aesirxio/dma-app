@@ -21,9 +21,12 @@ const CampaignsForm = lazy(() => import('./CampaignsForm'));
 const CampaignsFormModal = observer(
   class CampaignsFormModal extends Component {
     CampaignsFormModalViewModal = null;
+
     constructor(props) {
       super(props);
-
+      this.state = {
+        isLoading: false,
+      };
       this.validator = new SimpleReactValidator({ autoForceUpdate: this });
 
       const { viewModel } = props;
@@ -32,7 +35,10 @@ const CampaignsFormModal = observer(
 
     saveCampaignsHandler = () => {
       if (this.isFormValid()) {
-        this.CampaignsFormModalViewModal.saveOnModal();
+        this.setState({ isLoading: true });
+        this.CampaignsFormModalViewModal.saveOnModal(() => {
+          this.setState({ isLoading: false });
+        });
       }
     };
 
@@ -73,13 +79,33 @@ const CampaignsFormModal = observer(
             />
           }
           footer={
-            <Button onClick={this.saveCampaignsHandler} className="btn btn-success w-100">
-              <span>
-                {editMode === false || editMode == null ? t('create_campaign') : t('save_campaign')}
-              </span>
-              <i className="ms-1">
-                <FontAwesomeIcon icon={faChevronRight} />
-              </i>
+            <Button
+              disabled={this.state.isLoading}
+              onClick={this.saveCampaignsHandler}
+              className="btn btn-success w-100"
+            >
+              {this.state.isLoading ? (
+                <div className="ps-2 btn_loading">
+                  <div
+                    className="spinner-border"
+                    style={{ width: '1.7rem', height: '1.7rem' }}
+                    role="status"
+                  >
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <span>
+                    {editMode === false || editMode == null
+                      ? t('create_campaign')
+                      : t('save_campaign')}
+                  </span>
+                  <i className="ms-1">
+                    <FontAwesomeIcon icon={faChevronRight} />
+                  </i>
+                </>
+              )}
             </Button>
           }
           key={Math.random(40, 200)}

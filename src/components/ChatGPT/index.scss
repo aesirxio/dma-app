@@ -17,7 +17,8 @@ overflow: hidden;
                 background-color: rgba(32,33,35,.5);
                 border-radius: 6px;
                 color: white;
-                &::before{
+                .text-chatgpt{
+                    &::before{
                     content: "";
                     background-image: url(../../../public/assets/images/chatgpt-icon.svg);
                     background-repeat: no-repeat;
@@ -25,8 +26,9 @@ overflow: hidden;
                     height: 35px;
                     background-size: 35px;
                     position: absolute;
-                    top: 25%;
+                    top: -5px;
                     left: 7px;
+                }
                 }
             }
             .user{
@@ -35,7 +37,7 @@ overflow: hidden;
                 color: black;
                 .img-avatar{
                     top: 25%;
-                    left: 7px;
+                    left: 15px;
                     height: 35px;
                     max-width: 35px;
                     min-width: 35px;
@@ -61,3 +63,84 @@ overflow: hidden;
         }
     }
 }
+/// DOT FALLING ///
+
+.dot-falling {
+    position: relative;
+    left: -9999px;
+    width: 6px;
+    height: 6px;
+    border-radius: 5px;
+    background-color: white;
+    color: white;
+    box-shadow: 9999px 0 0 0 white;
+    animation: dot-falling 1s infinite linear;
+    animation-delay: 0.1s;
+  }
+  .dot-falling{
+    &::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }&::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  }
+  .dot-falling::before {
+    width: 6px;
+    height: 6px;
+    border-radius: 5px;
+    background-color: white;
+    color: white;
+    animation: dot-falling-before 1s infinite linear;
+    animation-delay: 0s;
+  }
+  .dot-falling::after {
+    width: 6px;
+    height: 6px;
+    border-radius: 5px;
+    background-color: white;
+    color: white;
+    animation: dot-falling-after 1s infinite linear;
+    animation-delay: 0.2s;
+  }
+  
+  @keyframes dot-falling {
+    0% {
+      box-shadow: 9999px -15px 0 0 rgba(152, 128, 255, 0);
+    }
+    25%, 50%, 75% {
+      box-shadow: 9999px 0 0 0 white;
+    }
+    100% {
+      box-shadow: 9999px 15px 0 0 rgba(152, 128, 255, 0);
+    }
+  }
+  @keyframes dot-falling-before {
+    0% {
+      box-shadow: 9984px -15px 0 0 rgba(152, 128, 255, 0);
+    }
+    25%, 50%, 75% {
+      box-shadow: 9984px 0 0 0 white;
+    }
+    100% {
+      box-shadow: 9984px 15px 0 0 rgba(152, 128, 255, 0);
+    }
+  }
+  @keyframes dot-falling-after {
+    0% {
+      box-shadow: 10014px -15px 0 0 rgba(152, 128, 255, 0);
+    }
+    25%, 50%, 75% {
+      box-shadow: 10014px 0 0 0 white;
+    }
+    100% {
+      box-shadow: 10014px 15px 0 0 rgba(152, 128, 255, 0);
+    }
+  }

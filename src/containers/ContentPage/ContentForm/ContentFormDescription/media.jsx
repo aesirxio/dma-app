@@ -17,6 +17,7 @@ import DamComponent from 'components/DamComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
+import ComponentImage from 'components/ComponentImage';
 const ModalComponent = lazy(() => import('components/Modal'));
 const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null }) => {
   const context = useContext(ContentViewModelContext);
@@ -142,14 +143,20 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
             </div>
             <div className="me-2 mt-1 mb-1">
             <button
-                  className="wr_btn_dam border-0 bg-green rounded-2 px-3 text-nowrap canva-btn-size-m btn-success"
+                  className="wr_btn_dam border-0 rounded-2 px-2 text-nowrap canva-btn-size-m chatgpt-btn"
                   type="button"
                   onClick={handleShow}
                 >
-                  <i className="text-white">
-                    <FontAwesomeIcon icon={faImage} />
-                  </i>
-                  <span className="text-white">ChatGPT</span>
+                  <div className="p-1 d-flex align-items-center">
+                        <ComponentImage
+                          src="/assets/images/chatgpt-icon.svg"
+                          alt=""
+                          className="img-chatgpt "
+                          width="30"
+                          height="30"
+                        />
+                        <span className="text-white fw-medium ">ChatGPT</span>
+                  </div>
                 </button>
               <ModalComponent
                show={show}

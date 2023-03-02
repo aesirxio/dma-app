@@ -22,6 +22,9 @@ const ProjectFormModal = observer(
     projectListViewModel = null;
     constructor(props) {
       super(props);
+      this.state = {
+        isLoading: false,
+      };
       this.validator = new SimpleReactValidator({ autoForceUpdate: this });
 
       const { viewModel } = props;
@@ -30,7 +33,10 @@ const ProjectFormModal = observer(
 
     saveProjectHandler = () => {
       if (this.isFormValid()) {
-        this.projectFormModalViewModel.saveOnModal();
+        this.setState({ isLoading: true });
+        this.projectFormModalViewModel.saveOnModal(() => {
+          this.setState({ isLoading: false });
+        });
       }
     };
 
@@ -69,15 +75,33 @@ const ProjectFormModal = observer(
             <ProjectForm viewModel={this.projectFormModalViewModel} validator={this.validator} />
           }
           footer={
-            <Button onClick={this.saveProjectHandler} className="btn btn-success w-100">
-              <span>
-                {editMode === false || editMode == null
-                  ? t('txt_create_project')
-                  : t('txt_save_project')}
-              </span>
-              <i className="ms-1">
-                <FontAwesomeIcon icon={faChevronRight} />
-              </i>
+            <Button
+              disabled={this.state.isLoading}
+              onClick={this.saveProjectHandler}
+              className="btn btn-success w-100"
+            >
+              {this.state.isLoading ? (
+                <div className="ps-2 btn_loading">
+                  <div
+                    className="spinner-border"
+                    style={{ width: '1.7rem', height: '1.7rem' }}
+                    role="status"
+                  >
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <span>
+                    {editMode === false || editMode == null
+                      ? t('txt_create_project')
+                      : t('txt_save_project')}
+                  </span>
+                  <i className="ms-1">
+                    <FontAwesomeIcon icon={faChevronRight} />
+                  </i>
+                </>
+              )}
             </Button>
           }
           // key={Math.random(40, 200)}
