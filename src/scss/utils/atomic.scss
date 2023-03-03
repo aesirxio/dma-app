@@ -398,7 +398,16 @@ textarea {
 .modal-backdrop.show {
   width: 100% !important;
 }
-
+.rbc-header{
+  span{
+    color: $color-blue-9;
+  }
+}
+.rbc-date-cell{
+  a{
+    color: $color-blue-9 !important;
+  }
+}
 @include media-breakpoint-down(lg) {
   .w-400 {
     width: 250px;

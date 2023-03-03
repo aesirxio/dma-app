@@ -32,7 +32,7 @@ const CalendarList = observer(
       ) : (
         <div className="wrapper_calendar wrapper_calendar_full py-4 px-3 overflow-y-auto">
           <div className="d-flex align-items-center justify-content-between mb-4">
-            <h2 className="fs-2 mb-0 text-blue-0">{t('txt_title_calendar')}</h2>
+            <h2 className="fs-2 mb-0 text-gray-5">{t('txt_title_calendar')}</h2>
             {/*TODO Add an action and remove d-none*/}
             <span className={`cursor-pointer btn btn-success d-none`}>
               <i>
