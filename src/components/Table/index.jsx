@@ -308,7 +308,7 @@ const Table = ({
             )}
             {isFilter && (
               <>
-                <div className="px-2 border-end-1 w-200">
+                <div className="px-2 border-end-1 w-330">
                   <ComponentDatepicker
                     isDown={true}
                     listViewModel={listViewModel}
@@ -465,8 +465,8 @@ const Table = ({
           {page.length === 0 ? (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
-              title="No Matching Results"
-              text="Can not found any project with that keyword. Please try another keyword."
+              title={t('txt_title_no_matching_results')}
+              text={t('txt_text_no_matching_results')}
               width="w-50"
             />
           ) : (
@@ -528,8 +528,8 @@ const Table = ({
           {page.length === 0 ? (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
-              title="No Matching Results"
-              text="Can not found any project with that keyword. Please try another keyword."
+              title={t('txt_title_no_matching_results')}
+              text={t('txt_text_no_matching_results')}
               width="w-50"
             />
           ) : (
