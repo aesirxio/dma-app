@@ -60,7 +60,11 @@ const CustomToolbar = (handleFilterCalendar, t) => {
           <div>
             <div className="position-relative d-flex align-items-center">
               <Dropdown>
-                <Dropdown.Toggle variant="outline-secondary" id="dropdown-custom-components" className='text-gray-5'>
+                <Dropdown.Toggle
+                  variant="outline-secondary"
+                  id="dropdown-custom-components"
+                  className="text-gray-5"
+                >
                   {t(currentView)}
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="shadow border-0 p-3">
