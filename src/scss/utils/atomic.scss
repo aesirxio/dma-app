@@ -398,6 +398,9 @@ textarea {
 .modal-backdrop.show {
   width: 100% !important;
 }
+.dropdown-menu.show{
+  width: 100%;
+}
 
 @include media-breakpoint-down(lg) {
   .w-400 {
