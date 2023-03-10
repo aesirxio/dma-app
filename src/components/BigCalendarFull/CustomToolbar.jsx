@@ -68,7 +68,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
                 >
                   {t(currentView)}
                   <i className="text-green ps-2">
-                      <FontAwesomeIcon icon={faChevronDown} />
+                    <FontAwesomeIcon icon={faChevronDown} />
                   </i>
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="shadow border-0 p-3">
@@ -99,7 +99,6 @@ const CustomToolbar = (handleFilterCalendar, t) => {
                     </Dropdown.Item>
                   </div>
                 </Dropdown.Menu>
-               
               </Dropdown>
               <div className="ms-2">
                 <button
