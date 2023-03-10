@@ -36,6 +36,7 @@
     "lodash": "^4.17.21",
     "mobx": "^6.0.4",
     "mobx-react": "^7.0.5",
+    "openai": "^3.1.0",
     "react": "^17.0.1",
     "react-big-calendar": "^0.33.5",
     "react-bootstrap": "^2.5.0",

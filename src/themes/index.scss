@@ -263,7 +263,7 @@
   // end of table
 
   .btn-close {
-    filter: $btn-close-white-filter;
+    // filter: $btn-close-white-filter;
   }
 
   @import '../../node_modules/bootstrap/scss/utilities/api';
@@ -317,7 +317,9 @@
           }
         }
       }
-      
+      .react-datepicker__month-container {
+        border-right: 1px solid  $gray-800 ;
+      }
       .react-datepicker__month-container {
         border-right: 1px solid  #3E545E ;
       }
@@ -370,14 +372,18 @@
   background-color: $green;
 
 }
+    .text-color{
+      color: white;
+    }
     .css-sdnn1j-indicatorContainer,.css-palmm5-indicatorContainer {
       color:  $color-green-3;
       &:hover{
         color:  $color-green-3;
       }
     }
-  }
+}
   .apply{
+    border-top: 1px solid $gray-800 !important;
     border-top: 1px solid #3E545E !important;
     background-color: #0f1314 !important;
   }
@@ -392,4 +398,7 @@
   .text-color{
     color: white;
   }
+  .title-chatgpt{
+    color: #081240 !important;
   }
+}

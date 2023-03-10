@@ -193,6 +193,9 @@
   "txt_title_no_matching_results":"Sin resultados coincidentes",
   "txt_text_no_matching_results":"No se puede encontrar ningún proyecto con esa palabra clave. Intente con otra palabra clave",
   "txt_ maintenance":"Mantenimiento",
-  "txt_all_dates":" Todas las fechas"
+  "txt_all_dates":" Todas las fechas",
+  "txt_api_error":"Ocurrió un error. Vuelve a intentarlo más tarde.",
+  "txt_intro_chatgpt":"¡Hola! ¿Cómo puedo ayudarte hoy?",
+  "txt_open_api_key_warning":"Ingrese las claves API de https://platform.openai.com/account/api-keys"
 
 }

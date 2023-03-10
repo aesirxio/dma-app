@@ -3,19 +3,22 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, lazy } from 'react';
 import { observer } from 'mobx-react';
 
 import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from '../../../../constants/ContentModule';
 import ContentUtils from '../../ContentUtils/ContentUtils';
 import MediaDataRender from '../MediaDataRender';
 import CanvaButton from 'components/CanvaButton';
+import ChatGPT from 'components/ChatGPT';
 import { ContentViewModelContext } from '../../ContentViewModels/ContentViewModelContextProvider';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 import DamComponent from 'components/DamComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
+import ComponentImage from 'components/ComponentImage';
+const ModalComponent = lazy(() => import('components/Modal'));
 const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null }) => {
   const context = useContext(ContentViewModelContext);
   const channelMasterData = context.getFormViewModel().channelMasterData;
@@ -39,6 +42,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
   const [canvaAssets, setCanvaAssets] = useState(canva);
 
   const [damAssets, setDamAssets] = useState(dam);
+  const [show, setShow] = useState(false);
 
   const [canvaIndexToEdit, setCanvaIndexToEdit] = useState(null);
   const handleDam = (data) => {
@@ -99,6 +103,14 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
     setDamAssets(damAssets.filter((item) => item.id !== id));
   };
 
+  const handleShow = () => {
+    setShow(true);
+  };
+
+  const handleClose = () => {
+    setShow(false);
+  };
+
   const mediaChannel = ContentUtils.hasMediaChannel(channelData);
   const { t } = useTranslation('common');
   return (
@@ -126,6 +138,30 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
                   <span className="text-white ms-2">{t('txt_digital_asset_management')}</span>
                 </button>
               </DamComponent>
+            </div>
+            <div className="me-2 mt-1 mb-1">
+              <button
+                className="wr_btn_dam border-0 rounded-2 px-2 text-nowrap canva-btn-size-m chatgpt-btn"
+                type="button"
+                onClick={handleShow}
+              >
+                <div className="p-1 d-flex align-items-center">
+                  <ComponentImage
+                    src="/assets/images/chatgpt-icon.svg"
+                    alt=""
+                    className="img-chatgpt "
+                    width="30"
+                    height="30"
+                  />
+                  <span className="text-white fw-medium ">ChatGPT</span>
+                </div>
+              </button>
+              <ModalComponent
+                show={show}
+                onHide={handleClose}
+                header={<h3 className="fw-bold title-chatgpt">ChatGPT</h3>}
+                body={<ChatGPT />}
+              />
             </div>
           </>
         )}

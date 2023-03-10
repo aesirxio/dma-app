@@ -193,5 +193,8 @@
   "txt_title_no_matching_results":"ไม่มีผลลัพธ์ที่ตรงกัน",
   "txt_text_no_matching_results":"ไม่พบโครงการใดๆ ที่มีคำหลักนั้น โปรดลองคำหลักอื่น",
   "txt_ maintenance":"การซ่อมบำรุง",
-  "txt_all_dates":" วันที่ทั้งหมด"
+  "txt_all_dates":" วันที่ทั้งหมด",
+  "txt_api_error":"เกิดข้อผิดพลาด โปรดลองอีกครั้งในภายหลัง",
+  "txt_intro_chatgpt":"สวัสดี วันนี้ฉันจะช่วยคุณได้อย่างไร",
+  "txt_open_api_key_warning":"โปรดป้อนคีย์ API จาก https://platform.openai.com/account/api-keys"
 }

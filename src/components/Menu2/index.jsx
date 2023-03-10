@@ -53,7 +53,7 @@ class Menu2 extends React.Component {
             href="/"
             className="d-block text-blue-0 p-3 link_menu rounded-2 text-decoration-none  "
           >
-            <i>
+            <i className="text-white">
               <FontAwesomeIcon icon={faArrowLeft} />
             </i>
             <span className="ms-3 text text-white">{t('txt_back_to_dashboard')}</span>

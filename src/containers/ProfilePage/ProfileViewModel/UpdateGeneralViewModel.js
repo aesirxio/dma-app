@@ -94,7 +94,7 @@ class UpdateGeneralViewModel {
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.ADDRESS_2] =
         result.address_2;
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.AVATAR_DAM] =
-        result.avatar_dam ? result.avatar_dam : '/assets/images/user_default.png';
+        result.avatar_dam ? result.avatar_dam : '';
       this.updateGeneralViewModel.formPropsData[UPDATE_GENERAL_FIELD_KEY.LOGO] = result.member_logo
         ? result.member_logo
         : '/assets/images/logo/logo.svg';
