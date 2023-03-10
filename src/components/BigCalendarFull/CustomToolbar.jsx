@@ -105,8 +105,8 @@ const CustomToolbar = (handleFilterCalendar, t) => {
                   className="cursor-pointer w-98 d-flex align-items-center justify-content-center btn btn-outline-secondary text-gray-5"
                   onClick={handleFilterCalendar}
                 >
-                  <i className='text-gray-5'>
-                  <ComponentSVG url="assets/images/filter.svg" color="#222328" />
+                  <i className="text-gray-5">
+                    <ComponentSVG url="assets/images/filter.svg" color="#222328" />
                   </i>
                   <span className="ms-2">{t('txt_filter')}</span>
                 </button>
