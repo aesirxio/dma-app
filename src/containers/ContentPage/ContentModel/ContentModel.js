@@ -73,20 +73,20 @@ class ContentModel {
 
   getProject = (projectMasterData) => {
     return projectMasterData
-      ? projectMasterData.filter((option) => this.project?.includes(option.value))
+      ? projectMasterData.filter((option) => this.project === +option.value)
       : '';
   };
 
   getCampaign = (campaignMasterData) => {
     return campaignMasterData
-      ? campaignMasterData.filter((option) => this.campaign?.includes(option.value))
+      ? campaignMasterData.filter((option) => this.campaign === +option.value)
       : '';
   };
 
   getPersona = (personaMasterData) => {
     // Helper.isJson(this.persona) ? JSON.parse(this.persona) : this.persona
     return personaMasterData
-      ? personaMasterData.filter((option) => this.persona?.includes(option.value))
+      ? personaMasterData.filter((option) => this.persona === +option.value)
       : '';
   };
 
