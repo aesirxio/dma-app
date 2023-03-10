@@ -319,7 +319,7 @@
       }
       
       .react-datepicker__month-container {
-        border-right: 1px solid  $gray-800 ;
+        border-right: 1px solid  #3E545E ;
       }
       .react-datepicker__day-name,
       .react-datepicker__day,
@@ -370,9 +370,6 @@
   background-color: $green;
 
 }
-    .text-color{
-      color: white;
-    }
     .css-sdnn1j-indicatorContainer,.css-palmm5-indicatorContainer {
       color:  $color-green-3;
       &:hover{
@@ -381,7 +378,7 @@
     }
   }
   .apply{
-    border-top: 1px solid $gray-800 !important;
+    border-top: 1px solid #3E545E !important;
     background-color: #0f1314 !important;
   }
   .react-datepicker {
@@ -392,4 +389,7 @@
     color: white !important;
   }
 }
+  .text-color{
+    color: white;
+  }
   }

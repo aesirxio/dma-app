@@ -398,6 +398,7 @@ textarea {
 .modal-backdrop.show {
   width: 100% !important;
 }
+
 .rbc-header{
   span{
     color: $color-blue-9;
@@ -414,6 +415,9 @@ textarea {
     display: none !important;
   }
 }
+}
+.dropdown-menu.show{
+  width: 100%;
 }
 
 @include media-breakpoint-down(lg) {
