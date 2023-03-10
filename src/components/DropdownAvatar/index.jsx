@@ -49,9 +49,9 @@ class DropdownAvatar extends React.Component {
 
   Helper;
   memberName =
-  Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME).length > 30
-    ? shortenString(Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME))
-    : Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME);
+    Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME).length > 30
+      ? shortenString(Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME))
+      : Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME);
   CustomToggleAvatar = React.forwardRef(({ onClick }, ref) => (
     <div
       ref={ref}
@@ -70,15 +70,13 @@ class DropdownAvatar extends React.Component {
       ) : (
         <div className="position-relative d-inline-flex align-items-center justify-content-center text-uppercase cursor-pointer rounded-circle w-45 h-45 bg-blue-2 ">
           <span className="text-white" style={{ fontSize: '1.75rem' }}>
-          {this.memberName?.slice(0, 1).slice(0, 1)}
-          {console.log("sdasd",this.memberName)}
+            {this.memberName?.slice(0, 1).slice(0, 1)}
+            {console.log('sdasd', this.memberName)}
           </span>
         </div>
       )}
       <div className="text ps-3 pe-3">
-        <p className="mb-0 text-gray-5 fs-14 fw-bold">
-        {this.memberName ?? 'Admin'}
-        </p>
+        <p className="mb-0 text-gray-5 fs-14 fw-bold">{this.memberName ?? 'Admin'}</p>
         {/* <p className="mb-0 text-blue-0 fs-14 opacity-75">Small business owner</p> */}
       </div>
       <i className="icons text-green">
