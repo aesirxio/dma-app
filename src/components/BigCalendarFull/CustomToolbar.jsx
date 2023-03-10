@@ -12,7 +12,7 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
-
+import ComponentSVG from 'components/ComponentSVG';
 const CustomToolbar = (handleFilterCalendar, t) => {
   return class BaseToolbar extends Toolbar {
     render() {
@@ -105,8 +105,8 @@ const CustomToolbar = (handleFilterCalendar, t) => {
                   className="cursor-pointer w-98 d-flex align-items-center justify-content-center btn btn-outline-secondary text-gray-5"
                   onClick={handleFilterCalendar}
                 >
-                  <i>
-                    <FontAwesomeIcon icon={faFilter} />
+                  <i className='text-gray-5'>
+                  <ComponentSVG url="assets/images/filter.svg" color="#222328" />
                   </i>
                   <span className="ms-2">{t('txt_filter')}</span>
                 </button>
