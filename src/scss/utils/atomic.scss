@@ -398,6 +398,24 @@ textarea {
 .modal-backdrop.show {
   width: 100% !important;
 }
+
+.rbc-header{
+  span{
+    color: $color-blue-9;
+  }
+}
+.rbc-date-cell{
+  a{
+    color: $color-blue-9 !important;
+  }
+}
+.rbc-calendar{
+  .dropdown-toggle{
+  &::after{
+    display: none !important;
+  }
+}
+}
 .dropdown-menu.show{
   width: 100%;
 }

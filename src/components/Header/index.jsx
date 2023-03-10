@@ -63,7 +63,7 @@ class Header extends React.Component {
     return (
       <div
         id="all_header"
-        className="wrapper_header d-flex position-fixed w-100 top-0 left-0 right-0 pr-3 align-items-center shadow-sm z-index-100 bg-white"
+        className="wrapper_header d-flex position-fixed w-100 top-0 left-0 right-0 pr-3 align-items-center border-bottom border-color-2 z-index-100 bg-white"
       >
         <ComponentHambuger handleAction={this.handleMenuLeft} />
         <div className="wrapper_header_logo bg-dark w-280 h-80 d-flex align-items-center">
@@ -119,7 +119,7 @@ class Header extends React.Component {
                 isBorder={false}
                 isShadow={false}
                 options={listLanguages}
-                className="shadow-none"
+                className="shadow-none text-gray-5"
                 onChange={(data) => {
                   i18n.changeLanguage(data.value);
                 }}

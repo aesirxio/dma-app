@@ -32,7 +32,7 @@ $grays: (
 ) !default;
 // fusv-enable
 
-$blue: #005f89 !default;
+$blue: #3b7ab5 !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #d63384 !default;
@@ -183,6 +183,7 @@ $color-gray: #616161 !default;
 $color-gray-2: #f2f2f2 !default;
 $color-gray-3: #e9ebee !default;
 $color-gray-4: #8E8E8E !default;
+$color-gray-5: #222328 !default;
 
 $color-purple: #4052b3 !default;
 
@@ -208,6 +209,7 @@ $noti-bg-error: #fee2e2 !default;
 //BORDER COLOR
 $border-color: #d5d5d5;
 $border-color-1: #dedede;
+$border-color-2: $gray-900;
 
 //Z-INDEX
 
