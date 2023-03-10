@@ -10,7 +10,6 @@ import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
-import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import ComponentSVG from 'components/ComponentSVG';
 const CustomToolbar = (handleFilterCalendar, t) => {
