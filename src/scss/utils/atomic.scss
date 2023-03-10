@@ -408,6 +408,14 @@ textarea {
     color: $color-blue-9 !important;
   }
 }
+.rbc-calendar{
+  .dropdown-toggle{
+  &::after{
+    display: none !important;
+  }
+}
+}
+
 @include media-breakpoint-down(lg) {
   .w-400 {
     width: 250px;

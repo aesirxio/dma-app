@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 
 const CustomToolbar = (handleFilterCalendar, t) => {
   return class BaseToolbar extends Toolbar {
@@ -66,6 +67,9 @@ const CustomToolbar = (handleFilterCalendar, t) => {
                   className="text-gray-5"
                 >
                   {t(currentView)}
+                  <i className="text-green ps-2">
+                      <FontAwesomeIcon icon={faChevronDown} />
+                  </i>
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="shadow border-0 p-3">
                   <div className="rbc-btn-group w-100 d-block">
@@ -95,6 +99,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
                     </Dropdown.Item>
                   </div>
                 </Dropdown.Menu>
+               
               </Dropdown>
               <div className="ms-2">
                 <button
