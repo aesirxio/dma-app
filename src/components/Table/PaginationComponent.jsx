@@ -104,7 +104,9 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
           <button
             onClick={() => handlePreviousFirstPage()}
             className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 m-0 rounded-0 ${
-              1 === pagination.page ? 'active bg-gray-700 border-gray-700 text-white m-0 rounded-0 ' : 'text-gray-5 '
+              1 === pagination.page
+                ? 'active bg-gray-700 border-gray-700 text-white m-0 rounded-0 '
+                : 'text-gray-5 '
             }`}
           >
             <span className={1 === pagination.page ? '' : 'text-gray-5'}>1</span>
