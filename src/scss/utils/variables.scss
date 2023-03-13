@@ -13,7 +13,7 @@ $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
 $gray-600: #6c757d !default;
-$gray-700: #495057 !default;
+$gray-700: #3e545e !default;
 $gray-800: #343a40 !default;
 $gray-900: #1a2226 !default;
 $black: #000 !default;
@@ -58,6 +58,8 @@ $colors: (
   'white': $white,
   'gray': $gray-600,
   'gray-dark': $gray-800,
+
+
 ) !default;
 // scss-docs-end colors-map
 
@@ -80,6 +82,7 @@ $theme-colors: (
   'danger': $danger,
   'light': $light,
   'dark': $dark,
+  'gray-700':$gray-700,
 ) !default;
 // scss-docs-end theme-colors-map
 

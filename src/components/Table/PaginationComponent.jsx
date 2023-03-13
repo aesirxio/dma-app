@@ -40,8 +40,8 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
         <button
           key={i}
           onClick={() => handleGoToPage(i)}
-          className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 rounded-circle ${
-            i === currentNumber ? 'active bg-green text-white border-green' : 'text-color'
+          className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 m-0 rounded-0 ${
+            i === currentNumber ? 'active bg-gray-700 border-gray-700 text-white' : 'text-gray-5 '
           } ${
             i === currentNumber - 1 ||
             i === currentNumber - 2 ||
@@ -53,7 +53,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
               : ''
           }`}
         >
-          <span className={i === currentNumber ? '' : 'opacity-50'}>{i}</span>
+          <span className={i === currentNumber ? '' : 'text-gray-5'}>{i}</span>
         </button>
       );
     }
@@ -83,7 +83,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
           isMulti={false}
         />
       </div>
-      <div className={'ps-3 col-md-12 d-flex justify-content-center'}>
+      <div className={'ps-3 col-md-12 d-flex justify-content-end'}>
         {/* <button
           onClick={() => handlePreviousFirstPage()}
           disabled={pagination && pagination.page <= 1 ? true : false}
@@ -96,22 +96,22 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
           //onClick={() => previousPage()}
           onClick={() => handlePreviousPage()}
           disabled={pagination && pagination.page <= 1 ? true : false}
-          className={`btn ${styles.btn} border-1 border-gray p-0 text-green rounded-circle`}
+          className={`btn ${styles.btn} border-1 border-gray p-0 text-gray-5 m-0 rounded-0 `}
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         {pagination && pagination.totalPages > 1 && (
           <button
             onClick={() => handlePreviousFirstPage()}
-            className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 rounded-circle ${
-              1 === pagination.page ? 'active bg-green text-white border-green' : 'text-color'
+            className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 m-0 rounded-0 ${
+              1 === pagination.page ? 'active bg-gray-700 border-gray-700 text-white m-0 rounded-0 ' : 'text-gray-5 '
             }`}
           >
-            <span className={1 === pagination.page ? '' : 'opacity-50'}>1</span>
+            <span className={1 === pagination.page ? '' : 'text-gray-5'}>1</span>
           </button>
         )}
         <p
-          className={`mb-0 d-flex align-items-end ms-2 me-2 text-color fs-5 rounded-circle opacity-50 ${
+          className={`mb-0 d-flex align-items-end ms-2 me-2 text-gray-5  fs-5  text-gray-5 ${
             pagination.page === 1 ||
             pagination.page === 2 ||
             pagination.page === 3 ||
@@ -126,7 +126,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
         <div className="wr_pagination_number">{paginationHTML()}</div>
 
         <p
-          className={`mb-0 d-flex align-items-end ms-2 me-2 text-color fs-5 rounded-circle opacity-50 ${
+          className={`mb-0 d-flex align-items-end ms-2 me-2 text-gray-5  fs-5  text-gray-5 ${
             pagination.page === pagination.totalPages - 4 ||
             pagination.page === pagination.totalPages - 3 ||
             pagination.page === pagination.totalPages - 2 ||
@@ -140,20 +140,20 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
         </p>
         <button
           onClick={() => handlePreviousLastPage()}
-          className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 rounded-circle ${
+          className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 m-0 rounded-0  ${
             pagination.totalPages === pagination.page
-              ? 'active bg-green text-white border-green'
-              : 'text-color'
+              ? 'active bg-gray-700 text-white border-gray-700'
+              : 'text-gray-5 '
           }`}
         >
-          <span className={pagination.totalPages === pagination.page ? '' : 'opacity-50'}>
+          <span className={pagination.totalPages === pagination.page ? '' : 'text-gray-5'}>
             {pagination.totalPages}
           </span>
         </button>
         <button
           onClick={() => handleNextPage()}
           disabled={pagination && pagination.page === pagination.totalPages ? true : false}
-          className={`btn ${styles.btn} border-1 border-gray p-0 text-green rounded-circle`}
+          className={`btn ${styles.btn} border-1 border-gray p-0 text-gray-5 m-0 rounded-0`}
         >
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
