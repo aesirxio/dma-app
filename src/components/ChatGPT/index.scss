@@ -1,71 +1,70 @@
-
-.modal-dialog{
-height: 100vh;
-max-width: 100%;
-margin: 0 30px;
-overflow: hidden;
-}
-.modal-content{
-    height: 100%;
-}
-.modal-body{
-    background-color: rgb(162 167 171 / 47%);
-    .formchat{
-        .body-chat{
-            overflow-y: auto;
-            .chatgpt{
-                background-color: rgba(32,33,35,.5);
-                border-radius: 6px;
-                color: white;
-                .text-chatgpt{
-                    &::before{
-                    content: "";
-                    background-image: url(../../../public/assets/images/chatgpt-icon.svg);
-                    background-repeat: no-repeat;
-                    width: 35px;
-                    height: 35px;
-                    background-size: 35px;
-                    position: absolute;
-                    border-radius: 100%;
-                    top: -5px;
-                    left: 7px;
-                }
-                }
-                .text-avatar{
-                  display: none !important;
-                }
-            }
-            .user{
-                background-color: white;
-                border-radius: 6px;
-                color: black;
-                .img-avatar, .text-avatar{
-                    top: 25%;
-                    left: 15px;
-                    height: 35px;
-                    max-width: 35px;
-                    min-width: 35px;
-                }
-            }
-        }
-        form{
-            height: 70px;
-            outline: none;
-            input{
-            border-radius: 6px 0 0 6px;
-            border: none;
-            padding: 5px 20px;
-            &:focus{
-            border: none;
-            outline: none;
-            }
-            }
-            
-            .btn.submit{
-                border-radius: 0 6px 6px 0 !important;
-            }
-        }
-    }
+.chatgpt.modal-dialog{
+  height: 100vh;
+  max-width: 100%;
+  margin: 0 30px;
+  overflow: hidden;
+  
+  .modal-content{
+      height: 100%;
+  }
+  .modal-body{
+      background-color: rgb(162 167 171 / 47%);
+      .formchat{
+          .body-chat{
+              overflow-y: auto;
+              .chatgpt{
+                  background-color: rgba(32,33,35,.5);
+                  border-radius: 6px;
+                  color: white;
+                  .text-chatgpt{
+                      &::before{
+                      content: "";
+                      background-image: url(../../../public/assets/images/chatgpt-icon.svg);
+                      background-repeat: no-repeat;
+                      width: 35px;
+                      height: 35px;
+                      background-size: 35px;
+                      position: absolute;
+                      border-radius: 100%;
+                      top: -5px;
+                      left: 7px;
+                  }
+                  }
+                  .text-avatar{
+                    display: none !important;
+                  }
+              }
+              .user{
+                  background-color: white;
+                  border-radius: 6px;
+                  color: black;
+                  .img-avatar, .text-avatar{
+                      top: 25%;
+                      left: 15px;
+                      height: 35px;
+                      max-width: 35px;
+                      min-width: 35px;
+                  }
+              }
+          }
+          form{
+              height: 70px;
+              outline: none;
+              input{
+              border-radius: 6px 0 0 6px;
+              border: none;
+              padding: 5px 20px;
+              &:focus{
+              border: none;
+              outline: none;
+              }
+              }
+              .btn.submit{
+                  border-radius: 0 6px 6px 0 !important;
+              }
+          }
+      }
+  }
 }
 /// DOT FALLING ///
 
