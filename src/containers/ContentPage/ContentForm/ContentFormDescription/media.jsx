@@ -157,6 +157,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
                 </div>
               </button>
               <ModalComponent
+                dialogClassName="chatgpt"
                 show={show}
                 onHide={handleClose}
                 header={<h3 className="fw-bold title-chatgpt">ChatGPT</h3>}
