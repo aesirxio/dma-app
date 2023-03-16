@@ -236,3 +236,13 @@ $accordion-button-focus-border-color: $border-color;
 $accordion-button-focus-box-shadow: $color-blue-6;
 $nav-tabs-link-active-color: #fff;
 $nav-tabs-link-active-bg: $color-blue-3;
+
+ // for react-select
+ :root {
+  --dropdown-item-hover-color: #1ab394;
+  --dropdown-item-hover-bg: #e8e9ec;
+  --view-active-bg: #e8e9ec;
+  --text-title-color: #e8e9ec;
+  --dropdown-bg: white;
+  --dropdown-item-color: #282831;
+}

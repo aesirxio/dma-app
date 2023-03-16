@@ -24,7 +24,7 @@ class FormSelectDropdown extends Component {
         defaultValue={this.field.value}
         onChange={this.field.changed}
         options={this.field.option}
-        className="mb-3 text-danger"
+        className="mb-3"
         isBorder={true}
         plColor="rgba(8, 18, 64, 0.8)"
         isMulti={this.field.isMulti ?? false}
