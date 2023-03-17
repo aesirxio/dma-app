@@ -124,7 +124,7 @@ class ComponentDatepicker extends React.Component {
   };
 
   MyContainer = ({ className, children }) => {
-    let { startDate , endDate } = this.state;
+    let { startDate, endDate } = this.state;
     const { t } = this.props;
     return (
       <div ref={this.pickerRef} className="rounded-3 shadow overflow-hidden">
