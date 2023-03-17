@@ -40,8 +40,8 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
         <button
           key={i}
           onClick={() => handleGoToPage(i)}
-          className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 m-0 rounded-0 ${
-            i === currentNumber ? 'active bg-gray-700 border-gray-700 text-white' : 'text-gray-5 '
+          className={`btn ${styles.btn} border-1 border-gray-1 p-0 fs-6 m-0 rounded-0 ${
+            i === currentNumber ? 'active bg-gray-700 border-gray-1-700 text-white' : 'text-gray-6 '
           } ${
             i === currentNumber - 1 ||
             i === currentNumber - 2 ||
@@ -53,7 +53,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
               : ''
           }`}
         >
-          <span className={i === currentNumber ? '' : 'text-gray-5'}>{i}</span>
+          <span className={i === currentNumber ? '' : 'text-gray-6'}>{i}</span>
         </button>
       );
     }
@@ -87,7 +87,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
         {/* <button
           onClick={() => handlePreviousFirstPage()}
           disabled={pagination && pagination.page <= 1 ? true : false}
-          className={`btn ${styles.btn} border-1 border-gray p-0 text-green`}
+          className={`btn ${styles.btn} border-1 border-gray-1 p-0 text-green`}
         >
           <FontAwesomeIcon icon={faAngleDoubleLeft} />
         </button> */}
@@ -96,24 +96,24 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
           //onClick={() => previousPage()}
           onClick={() => handlePreviousPage()}
           disabled={pagination && pagination.page <= 1 ? true : false}
-          className={`btn ${styles.btn} border-1 border-gray rounded-start p-0 text-gray-5 m-0 rounded-0 `}
+          className={`btn ${styles.btn} border-1 border-gray-1 rounded-start p-0 text-gray-6 m-0 rounded-0 `}
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         {pagination && pagination.totalPages > 1 && (
           <button
             onClick={() => handlePreviousFirstPage()}
-            className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 m-0 rounded-0 ${
+            className={`btn ${styles.btn} border-1 border-gray-1 p-0 fs-6 m-0 rounded-0 ${
               1 === pagination.page
-                ? 'active bg-gray-700 border-gray-700 text-white m-0 rounded-0 '
-                : 'text-gray-5 '
+                ? 'active bg-gray-700 border-gray-1-700 text-white m-0 rounded-0 '
+                : 'text-gray-6 '
             }`}
           >
-            <span className={1 === pagination.page ? '' : 'text-gray-5'}>1</span>
+            <span className={1 === pagination.page ? '' : 'text-gray-6'}>1</span>
           </button>
         )}
         <p
-          className={`mb-0 d-flex align-items-end ms-2 me-2 text-gray-5  fs-5  text-gray-5 ${
+          className={`mb-0 d-flex align-items-end ms-2 me-2 text-gray-6  fs-5  text-gray-6 ${
             pagination.page === 1 ||
             pagination.page === 2 ||
             pagination.page === 3 ||
@@ -128,7 +128,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
         <div className="wr_pagination_number">{paginationHTML()}</div>
 
         <p
-          className={`mb-0 d-flex align-items-end px-2 text-gray-5 align-items-center fs-5 border-1 border-gray  text-gray-5 ${
+          className={`mb-0 d-flex align-items-end px-2 text-gray-6 align-items-center fs-5 border-1 border-gray-1  text-gray-6 ${
             pagination.page === pagination.totalPages - 4 ||
             pagination.page === pagination.totalPages - 3 ||
             pagination.page === pagination.totalPages - 2 ||
@@ -142,20 +142,20 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
         </p>
         <button
           onClick={() => handlePreviousLastPage()}
-          className={`btn ${styles.btn} border-1 border-gray p-0 fs-6 m-0 rounded-0  ${
+          className={`btn ${styles.btn} border-1 border-gray-1 p-0 fs-6 m-0 rounded-0  ${
             pagination.totalPages === pagination.page
-              ? 'active bg-gray-700 text-white border-gray-700'
-              : 'text-gray-5 '
+              ? 'active bg-gray-700 text-white border-gray-1-700'
+              : 'text-gray-6 '
           }`}
         >
-          <span className={pagination.totalPages === pagination.page ? '' : 'text-gray-5'}>
+          <span className={pagination.totalPages === pagination.page ? '' : 'text-gray-6'}>
             {pagination.totalPages}
           </span>
         </button>
         <button
           onClick={() => handleNextPage()}
           disabled={pagination && pagination.page === pagination.totalPages ? true : false}
-          className={`btn ${styles.btn} border-1 border-gray p-0 rounded-end text-gray-5 m-0 rounded-0`}
+          className={`btn ${styles.btn} border-1 border-gray-1 p-0 rounded-end text-gray-6 m-0 rounded-0`}
         >
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
@@ -166,7 +166,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
               ? true
               : false
           }
-          className={`btn ${styles.btn} border-1 border-gray p-0 text-green`}
+          className={`btn ${styles.btn} border-1 border-gray-1 p-0 text-green`}
         >
           <FontAwesomeIcon icon={faAngleDoubleRight} />
         </button> */}

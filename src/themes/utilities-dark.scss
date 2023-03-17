@@ -23,7 +23,7 @@ $utilities: (
           'blue-3': $color-blue-3,
           'red-2': $color-red-4,
           'white': #fff,
-          'gray-5': white,
+          'gray-6': white
         )
       ),
   ),
@@ -63,10 +63,11 @@ $utilities: (
         $theme-colors,
         (
           'white': $white,
-          'gray': $gray-700,
+          'gray': border-color,
           'green': $green,
           'red': $color-red,
           'transparent': transparent,
+          'gray-1': $gray-700,
         )
       ),
   ),
