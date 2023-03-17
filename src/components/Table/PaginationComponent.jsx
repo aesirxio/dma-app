@@ -96,7 +96,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
           //onClick={() => previousPage()}
           onClick={() => handlePreviousPage()}
           disabled={pagination && pagination.page <= 1 ? true : false}
-          className={`btn ${styles.btn} border-1 border-gray p-0 text-gray-5 m-0 rounded-0 `}
+          className={`btn ${styles.btn} border-1 border-gray rounded-start p-0 text-gray-5 m-0 rounded-0 `}
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
@@ -128,7 +128,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
         <div className="wr_pagination_number">{paginationHTML()}</div>
 
         <p
-          className={`mb-0 d-flex align-items-end ms-2 me-2 text-gray-5  fs-5  text-gray-5 ${
+          className={`mb-0 d-flex align-items-end px-2 text-gray-5 align-items-center fs-5 border-1 border-gray  text-gray-5 ${
             pagination.page === pagination.totalPages - 4 ||
             pagination.page === pagination.totalPages - 3 ||
             pagination.page === pagination.totalPages - 2 ||
@@ -155,7 +155,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
         <button
           onClick={() => handleNextPage()}
           disabled={pagination && pagination.page === pagination.totalPages ? true : false}
-          className={`btn ${styles.btn} border-1 border-gray p-0 text-gray-5 m-0 rounded-0`}
+          className={`btn ${styles.btn} border-1 border-gray p-0 rounded-end text-gray-5 m-0 rounded-0`}
         >
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
