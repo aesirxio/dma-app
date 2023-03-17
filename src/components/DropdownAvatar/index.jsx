@@ -9,7 +9,7 @@ import { Dropdown } from 'react-bootstrap';
 import { AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
-
+import { shortenString } from 'utils/shortenString';
 import './index.scss';
 
 import { logout } from '../../auth';
@@ -48,7 +48,10 @@ class DropdownAvatar extends React.Component {
   }
 
   Helper;
-
+  memberName =
+    Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME).length > 30
+      ? shortenString(Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME))
+      : Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME);
   CustomToggleAvatar = React.forwardRef(({ onClick }, ref) => (
     <div
       ref={ref}
@@ -65,16 +68,15 @@ class DropdownAvatar extends React.Component {
           className="img-avatar rounded-circle object-fit-cover h-45"
         />
       ) : (
-        <div className="position-relative d-inline-flex align-items-center justify-content-center text-uppercase cursor-pointer rounded-circle w-45 h-45 bg-blue-2 opacity-50">
+        <div className="position-relative d-inline-flex align-items-center justify-content-center text-uppercase cursor-pointer rounded-circle w-45 h-45 bg-blue-2 ">
           <span className="text-white" style={{ fontSize: '1.75rem' }}>
-            {Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME).slice(0, 1).slice(0, 1)}
+            {this.memberName?.slice(0, 1).slice(0, 1)}
+            {console.log('sdasd', this.memberName)}
           </span>
         </div>
       )}
       <div className="text ps-3 pe-3">
-        <p className="mb-0 text-gray-5 fs-14 fw-bold">
-          {Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME)}
-        </p>
+        <p className="mb-0 text-gray-5 fs-14 fw-bold">{this.memberName ?? 'Admin'}</p>
         {/* <p className="mb-0 text-blue-0 fs-14 opacity-75">Small business owner</p> */}
       </div>
       <i className="icons text-green">
@@ -100,7 +102,7 @@ class DropdownAvatar extends React.Component {
                     <li key={index}>
                       <Dropdown.Item
                         href={value.link}
-                        className="text-blue-0 d-block rounded-1 text-decoration-none p-2"
+                        className="text-gray-5 d-block rounded-1 text-decoration-none p-2"
                       >
                         {t(value.text)}
                       </Dropdown.Item>
