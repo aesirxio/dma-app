@@ -196,6 +196,7 @@
   "txt_all_dates":" Tất cả các ngày",
   "txt_api_error":"Đã xảy ra lỗi. Vui lòng thử lại sau.",
   "txt_intro_chatgpt":"Xin chào! Tôi có thể hỗ trợ bạn như thế nào hôm nay?",
-  "txt_open_api_key_warning":"Vui lòng nhập khóa API từ https://platform.openai.com/account/api-keys"
-
+  "txt_open_api_key_warning":"Vui lòng nhập khóa API từ https://platform.openai.com/account/api-keys",
+  "txt_connect_channel":"Kết nối kênh",
+  "txt_create_content":"Tạo nội dung"
 }

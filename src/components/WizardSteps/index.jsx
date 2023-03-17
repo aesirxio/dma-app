@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { withTranslation , useTranslation } from 'react-i18next';
+import { withTranslation, useTranslation } from 'react-i18next';
 import history from '../../routes/history';
 
 import './index.scss';
@@ -61,7 +61,9 @@ const WizardSteps = () => {
             >
               {key}
             </div>
-            <div className="position-absolute text-nowrap start-50 translate-middle-x">{t(text)}</div>
+            <div className="position-absolute text-nowrap start-50 translate-middle-x">
+              {t(text)}
+            </div>
           </div>
         );
       })}
