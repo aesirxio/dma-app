@@ -22,7 +22,9 @@ $utilities: (
           'red-1': $color-red,
           'blue-3': $color-blue-3,
           'red-2': $color-red-4,
-          'white': #fff,
+          'white': white,
+          'gray-5':white,
+          'blue-5': white,
         )
       ),
   ),
@@ -50,6 +52,7 @@ $utilities: (
           'red-2': rgba($red, 0.15),
           'transparent': transparent,
           'sidebar': #0c1215,
+          
         )
       ),
   ),

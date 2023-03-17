@@ -255,7 +255,7 @@ const Table = ({
   const { t } = useTranslation('common');
   return (
     <>
-      <div className={`mb-4 ${classNameTable}`}>
+      <div className={`mb-2 ${classNameTable}`}>
         <div className="bg-white rounded-3 d-flex align-items-center justify-content-between">
           <div className="wrapper_search_global d-flex align-items-center">
             {isSearch ? (
