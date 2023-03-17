@@ -12,7 +12,7 @@ import ContentStore from '../ContentPage/ContentStore/ContentStore';
 import history from '../../routes/history';
 import WizardSteps from '../../components/WizardSteps';
 import Spinner from '../../components/Spinner';
-
+import { withTranslation , useTranslation } from 'react-i18next';
 import GlobalStore from '../../store/Store';
 import { ChannelsViewModelContextProvider } from '../ChannelsPage/ChannelsViewModels/ChannelsViewModelContextProvider';
 import ChannelsViewModel from '../ChannelsPage/ChannelsViewModels/ChannelsViewModel';
@@ -47,6 +47,7 @@ class WizardPage extends Component {
   };
 
   render() {
+    const { t } = this.props;
     return (
       <>
         <WizardSteps match={this.props.match} />
@@ -60,7 +61,7 @@ class WizardPage extends Component {
             <div className="d-flex justify-content-end pb-6 m-3">
               <ButtonNormal
                 className="btn btn-success px-4 mw-80"
-                text="Next"
+                text={t("txt_next")}
                 onClick={() => this.next()}
               ></ButtonNormal>
             </div>
@@ -79,4 +80,4 @@ class WizardPage extends Component {
   }
 }
 
-export default WizardPage;
+export default withTranslation('common')(WizardPage);

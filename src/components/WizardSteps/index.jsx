@@ -4,24 +4,24 @@
  */
 
 import React from 'react';
-import { withTranslation } from 'react-i18next';
+import { withTranslation , useTranslation } from 'react-i18next';
 import history from '../../routes/history';
 
 import './index.scss';
 import styles from './index.module.scss';
 
 const WizardSteps = () => {
+  const { t } = useTranslation('common');
   const steps = [
     {
       key: 1,
-      text: 'Connect channel',
+      text: 'txt_connect_channel',
     },
     {
       key: 2,
-      text: 'Create content',
+      text: 'txt_create_content',
     },
   ];
-
   let processW = 0;
   let currentStep = 1;
 
@@ -61,7 +61,7 @@ const WizardSteps = () => {
             >
               {key}
             </div>
-            <div className="position-absolute text-nowrap start-50 translate-middle-x">{text}</div>
+            <div className="position-absolute text-nowrap start-50 translate-middle-x">{t(text)}</div>
           </div>
         );
       })}

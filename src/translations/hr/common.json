@@ -195,5 +195,7 @@
 "txt_all_dates":" Svi datumi",
 "txt_api_error": "Došlo je do pogreške. Pokušajte ponovno kasnije.",
 "txt_intro_chatgpt": "Bok! Kako vam mogu pomoći danas?",
-"txt_open_api_key_warning": "Unesite API ključeve s https://platform.openai.com/account/api-keys"
+"txt_open_api_key_warning": "Unesite API ključeve s https://platform.openai.com/account/api-keys",
+"txt_connect_channel": "Poveži kanal",
+"txt_create_content": "Stvori sadržaj"
 }

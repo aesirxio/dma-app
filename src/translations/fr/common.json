@@ -195,5 +195,7 @@
 "txt_all_dates":" Toutes les dates",
 "txt_api_error":"Une erreur s'est produite. Veuillez réessayer plus tard.",
 "txt_intro_chatgpt":"Bonjour ! Comment puis-je vous aider aujourd'hui ?",
-"txt_open_api_key_warning":"Veuillez saisir les clés API de https://platform.openai.com/account/api-keys"
+"txt_open_api_key_warning":"Veuillez saisir les clés API de https://platform.openai.com/account/api-keys",
+"txt_connect_channel":"Connecter le canal",
+"txt_create_content":"Créer du contenu"
 }

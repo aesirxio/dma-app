@@ -196,6 +196,7 @@
   "txt_all_dates":" All Dates",
   "txt_api_error":"An error occurred. Please try again later.",
   "txt_intro_chatgpt":"Hi there! How can I assist you today?",
-  "txt_open_api_key_warning":"Please enter API keys from https://platform.openai.com/account/api-keys"
-
+  "txt_open_api_key_warning":"Please enter API keys from https://platform.openai.com/account/api-keys",
+  "txt_connect_channel":"Connect channel",
+  "txt_create_content":"Create content"
 }
