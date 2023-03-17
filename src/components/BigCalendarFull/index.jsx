@@ -20,6 +20,8 @@ import 'moment/locale/es';
 import 'moment/locale/uk';
 import 'moment/locale/de';
 import 'moment/locale/th';
+import 'moment/locale/hr';
+import 'moment/locale/fr';
 
 const localizer = momentLocalizer(moment);
 

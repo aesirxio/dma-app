@@ -13,7 +13,8 @@ import common_vn from './vi/common.json';
 import common_uk from './ua/common.json';
 import common_es from './es/common.json';
 import common_th from './th/common.json';
-
+import common_hr from './hr/common.json';
+import common_fr from './fr/common.json';
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -43,6 +44,14 @@ i18n
       th: {
         title: 'Thai',
         common: common_th,
+      },
+      hr: {
+        title: 'Croatia',
+        common: common_hr,
+      },
+      fr: {
+        title: 'France',
+        common: common_fr,
       },
     },
     lng: localStorage.getItem('i18nextLng') || 'en',
