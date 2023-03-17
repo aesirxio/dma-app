@@ -12,7 +12,7 @@ import ContentStore from '../ContentPage/ContentStore/ContentStore';
 import history from '../../routes/history';
 import WizardSteps from '../../components/WizardSteps';
 import Spinner from '../../components/Spinner';
-import { withTranslation, useTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import GlobalStore from '../../store/Store';
 import { ChannelsViewModelContextProvider } from '../ChannelsPage/ChannelsViewModels/ChannelsViewModelContextProvider';
 import ChannelsViewModel from '../ChannelsPage/ChannelsViewModels/ChannelsViewModel';
