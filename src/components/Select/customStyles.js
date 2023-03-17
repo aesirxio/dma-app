@@ -46,7 +46,7 @@ const customStyles = (isBorder) => {
     placeholder: (defaultStyles) => {
       return {
         ...defaultStyles,
-        color: 'var(--text-title-color)',
+        color: 'var(--dropdown-item-color)',
       };
     },
     multiValue: (styles) => {
