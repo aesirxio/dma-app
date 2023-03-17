@@ -36,11 +36,15 @@
 
   .react-datepicker__month-container {
     border-right: 1px solid #e8e9ec ;
-    padding-right: 20px;
+    padding:0 20px;
     padding-bottom: 10px;
+    height: 33vh;
+    margin: 0 10px;
+    margin-right: 0;
     &:last-child {
-      padding-right: 0;
       border-right: none;
+      margin-left: 0;
+
     }
   }
 
@@ -107,7 +111,7 @@
   top: 13px;
   .react-datepicker__navigation-icon{
   &::before {
-  border-color: #222328;
+  border-color: $green;
   border-width: 2px 2px 0 0;
   top: 12px;
   }
@@ -115,5 +119,17 @@
 }
 .react-datepicker__day-names{
   padding-top: 15px;
+  border-bottom: 1px solid #e8e9ec  ;
 }
+.react-datepicker-popper:has(.apply){
+  .react-datepicker__month-container {
+    border-bottom: 1px solid #e8e9ec ;
+    padding:0;
+    margin: 0 20px;
+    border-right: none;
+  }
+}
+
+
+
 }
