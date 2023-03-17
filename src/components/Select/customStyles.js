@@ -22,7 +22,7 @@ const customStyles = (isBorder) => {
         backgroundColor: 'var(--dropdown-bg)',
       };
     },
-    input: (styles) => ({ ...styles, color: 'var(--body-color)' }),
+    input: (styles) => ({ ...styles, color: 'var(--dropdown-item-color)' }),
     option: (provided, state) => {
       return {
         ...provided,
@@ -37,7 +37,7 @@ const customStyles = (isBorder) => {
     indicatorSeparator: () => ({ display: 'none' }),
     dropdownIndicator: (base) => ({
       ...base,
-      color: 'var(--text-title-color)',
+      color: 'var(--dropdown-item-hover-color)',
     }),
     singleValue: (provided) => ({
       ...provided,

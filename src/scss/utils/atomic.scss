@@ -428,7 +428,9 @@ textarea {
 .dropdown-menu.show{
   width: 100%;
 }
-
+.css-lilgime-menu{
+  background-color: #fff !important;
+}
 @include media-breakpoint-down(lg) {
   .w-400 {
     width: 250px;
