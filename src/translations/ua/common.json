@@ -196,6 +196,8 @@
   "txt_all_dates":" Усі дати",
   "txt_api_error": "Сталася помилка. Повторіть спробу пізніше.",
   "txt_intro_chatgpt":"Вітаю! Чим я можу допомогти вам сьогодні?",
-  "txt_open_api_key_warning": "Будь ласка, введіть ключі API з https://platform.openai.com/account/api-keys"
+  "txt_open_api_key_warning": "Будь ласка, введіть ключі API з https://platform.openai.com/account/api-keys",
+  "txt_connect_channel":"Підключити канал",
+  "txt_create_content":"Створити вміст"
 
 }

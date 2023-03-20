@@ -106,7 +106,7 @@
   "txt_deselect_all": "ยกเลิกการเลือกทั้งหมด",
   "txt_columns":"คอลัมภ์",
   "txt_list": "รายการ",
-  "txt_thumb": "Thumb",
+  "txt_thumb": "หัวแม่มือ",
   "search_your_project":"ค้นหา โครงการของคุณ",
   "search_your_post":"ค้นหาโพสของคุณ",
   "search_your_campaign":"ค้นหาแคมเปญของคุณ",
@@ -196,5 +196,7 @@
   "txt_all_dates":" วันที่ทั้งหมด",
   "txt_api_error":"เกิดข้อผิดพลาด โปรดลองอีกครั้งในภายหลัง",
   "txt_intro_chatgpt":"สวัสดี วันนี้ฉันจะช่วยคุณได้อย่างไร",
-  "txt_open_api_key_warning":"โปรดป้อนคีย์ API จาก https://platform.openai.com/account/api-keys"
+  "txt_open_api_key_warning":"โปรดป้อนคีย์ API จาก https://platform.openai.com/account/api-keys",
+  "txt_connect_channel":"เชื่อมต่อช่องสัญญาณ",
+  "txt_create_content":"สร้างเนื้อหา"
 }

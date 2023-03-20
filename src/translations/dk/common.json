@@ -194,5 +194,7 @@
   "txt_all_dates":" Alle datoer",
   "txt_api_error":"Der opstod en fejl. Prøv venligst igen senere.",
   "txt_intro_chatgpt":"Hej! Hvordan kan jeg hjælpe dig i dag?",
-  "txt_open_api_key_warning":"Indtast venligst API-nøgler fra https://platform.openai.com/account/api-keys"
+  "txt_open_api_key_warning":"Indtast venligst API-nøgler fra https://platform.openai.com/account/api-keys",
+  "txt_connect_channel":"Tilslut kanal",
+  "txt_create_content":"Opret indhold"
 }

@@ -18,10 +18,17 @@ import vi from 'date-fns/locale/vi';
 import de from 'date-fns/locale/de';
 import uk from 'date-fns/locale/uk';
 import es from 'date-fns/locale/es';
+import th from 'date-fns/locale/th';
+import hr from 'date-fns/locale/hr';
+import fr from 'date-fns/locale/fr';
+
 registerLocale('vi', vi);
 registerLocale('de', de);
 registerLocale('uk', uk);
 registerLocale('es', es);
+registerLocale('th', th);
+registerLocale('hr', hr);
+registerLocale('fr', fr);
 
 class ComponentDatepicker extends React.Component {
   constructor(props) {
