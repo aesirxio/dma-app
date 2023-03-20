@@ -23,6 +23,7 @@ $utilities: (
           'blue-3': $color-blue-3,
           'red-2': $color-red-4,
           'white': #fff,
+          'gray-6': white
         )
       ),
   ),
@@ -34,7 +35,7 @@ $utilities: (
         $theme-colors,
         (
           'body': $body-bg,
-          'white': #000,
+          'white': $body-bg,
           'orange': $orange,
           'green': $green,
           'yellow': $yellow,
@@ -50,6 +51,7 @@ $utilities: (
           'red-2': rgba($red, 0.15),
           'transparent': transparent,
           'sidebar': #0c1215,
+          'gray-700': #1A2226,
         )
       ),
   ),
@@ -61,10 +63,11 @@ $utilities: (
         $theme-colors,
         (
           'white': $white,
-          'gray': $border-color,
+          'gray': border-color,
           'green': $green,
           'red': $color-red,
           'transparent': transparent,
+          'gray-1': $gray-700,
         )
       ),
   ),

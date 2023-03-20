@@ -13,7 +13,7 @@ $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
 $gray-600: #6c757d !default;
-$gray-700: #495057 !default;
+$gray-700: #3e545e !default;
 $gray-800: #343a40 !default;
 $gray-900: #1a2226 !default;
 $black: #000 !default;
@@ -58,6 +58,8 @@ $colors: (
   'white': $white,
   'gray': $gray-600,
   'gray-dark': $gray-800,
+
+
 ) !default;
 // scss-docs-end colors-map
 
@@ -80,6 +82,7 @@ $theme-colors: (
   'danger': $danger,
   'light': $light,
   'dark': $dark,
+  'gray-700':$gray-700,
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -184,6 +187,7 @@ $color-gray-2: #f2f2f2 !default;
 $color-gray-3: #e9ebee !default;
 $color-gray-4: #8E8E8E !default;
 $color-gray-5: #222328 !default;
+$color-gray-6: #526269 !default;
 
 $color-purple: #4052b3 !default;
 
@@ -210,6 +214,7 @@ $noti-bg-error: #fee2e2 !default;
 $border-color: #d5d5d5;
 $border-color-1: #dedede;
 $border-color-2: $gray-900;
+$border-color-3: #EBEBEB;
 
 //Z-INDEX
 
