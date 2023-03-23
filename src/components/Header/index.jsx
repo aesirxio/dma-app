@@ -54,7 +54,11 @@ class Header extends React.Component {
     const { t } = this.props;
     let { isMini } = this.state;
     const listLanguages = Object.keys(i18n.options.resources).map(function (key) {
-      return { value: key, label: i18n.options.resources[key].title , icon:i18n.options.resources[key].icon};
+      return {
+        value: key,
+        label: i18n.options.resources[key].title,
+        icon: i18n.options.resources[key].icon,
+      };
     });
     console.log(listLanguages);
     let currentLanguage = listLanguages.filter((lang) => {
@@ -63,7 +67,7 @@ class Header extends React.Component {
       }
     });
     moment.locale(i18n.language);
-    
+
     return (
       <div
         id="all_header"
@@ -125,13 +129,13 @@ class Header extends React.Component {
                 options={listLanguages}
                 getOptionLabel={(options) => (
                   <div className="language-option d-flex align-items-center">
-                   <img
-                    className="me-2 rounded-3"
-                    width={20}
-                    height={20}
-                    src={options.icon}
-                    alt={options.label}
-                  />
+                    <img
+                      className="me-2 rounded-3"
+                      width={20}
+                      height={20}
+                      src={options.icon}
+                      alt={options.label}
+                    />
                     <span>{options.label}</span>
                   </div>
                 )}
