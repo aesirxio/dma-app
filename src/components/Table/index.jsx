@@ -255,7 +255,7 @@ const Table = ({
   const { t } = useTranslation('common');
   return (
     <>
-      <div className={`mb-4 ${classNameTable}`}>
+      <div className={`mb-2 ${classNameTable}`}>
         <div className="bg-white rounded-3 d-flex align-items-center justify-content-between">
           <div className="wrapper_search_global d-flex align-items-center">
             {isSearch ? (
@@ -393,7 +393,7 @@ const Table = ({
         )}
       </div>
       {isList ? (
-        <div className="bg-white p-3 rounded-3">
+        <div className="bg-white p-3 pt-0 rounded-3">
           <table {...getTableProps()} className={`w-100 mb-4 ${classNameTable}`}>
             <thead>
               {headerGroups.map((headerGroup) => {
