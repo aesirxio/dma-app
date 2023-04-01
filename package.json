@@ -52,7 +52,7 @@
     "react-select": "^3.1.1",
     "react-step-wizard": "^5.3.5",
     "react-table": "^7.6.2",
-    "react-timezone-select": "^1.0.7",
+    "react-timezone-select": "^1.5.6",
     "react-toastify": "^9.0.8",
     "react-transition-group": "^4.4.2",
     "simple-react-validator": "^1.6.0",
