@@ -40,24 +40,9 @@ class CampaignsActionBar extends Component {
     this.campaignsFormModalViewModal.loadForm();
   };
 
-  handerDeleteCampaigns = () => {
-    this.campaignsListViewModel.deleteCampaigns();
-  };
-
   render() {
-    const { t } = this.props;
     return (
       <div className="d-flex justify-content-end">
-        <Dropdown className="me-3">
-          <Dropdown.Toggle className="p-3" variant="info" id="actions">
-            {t('choose_an_action')}
-          </Dropdown.Toggle>
-          <Dropdown.Menu className="w-100 shadow">
-            <Dropdown.Item className="px-3 py-2" onClick={this.handerDeleteCampaigns}>
-              {t('delete')}
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
         <ButtonNormal
           onClick={this.createCampaignsHandler}
           iconStart={true}
