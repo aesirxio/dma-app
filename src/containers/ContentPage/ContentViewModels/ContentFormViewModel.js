@@ -249,7 +249,7 @@ class ContentFormViewModel {
 
   requiredVideo = (data) => {
     if (data?.youtube.length > 0) {
-      return data?.youtube.some((value) => value.extension === 'mp4');
+      return data?.youtube.some((value) => value.file_extension === 'mp4');
     } else {
       return false;
     }

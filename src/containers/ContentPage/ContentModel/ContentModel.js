@@ -116,7 +116,6 @@ class ContentModel {
     Object.keys(this.channels).forEach(
       (key) => (damAssets[key] = this.channels[key].assets.damAssets)
     );
-
     return damAssets;
   };
 

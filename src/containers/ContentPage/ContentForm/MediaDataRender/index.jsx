@@ -105,8 +105,8 @@ class MediaDataRender extends React.Component {
                       </span>
                     </div>
                     <video width="260" controls>
-                      <source src={value.download_url} type="video/mp4" />
-                      <source src={value.download_url} type="video/mov" />
+                      <source src={value?.url ?? value?.download_url} type="video/mp4" />
+                      <source src={value?.url ?? value?.download_url} type="video/mov" />
                       This vide does not support this video.
                     </video>
                   </div>
