@@ -100,7 +100,6 @@ const ContentFormGeneral = observer(
       const dataChannels = ChannelUtils.getChannelByFilter(channelsData, 'removed', 'not');
       const { t } = this.props;
       const mediaChannel = ContentUtils.hasMediaChannel(dataChannels);
-
       if (this.validator.allValid()) {
         if (dataChannels.length > 0) {
           if (
