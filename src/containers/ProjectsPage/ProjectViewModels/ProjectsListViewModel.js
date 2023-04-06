@@ -82,7 +82,6 @@ class ProjectsListViewModel {
   };
 
   getPagination = (paginationStep, isList, limit = 5) => {
-    console.log('paginationStep', paginationStep);
     this.pageSize = limit;
     this.tableStatus = PAGE_STATUS.LOADING;
     this.isList = isList;
