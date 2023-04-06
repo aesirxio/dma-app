@@ -7,7 +7,7 @@ import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import ProjectUtils from '../ProjectUtils/ProjectUtils';
 import { notify } from '../../../components/Toast';
-import Helper from '../../../utils/helper';
+
 class ProjectsListViewModel {
   projectStore = null;
 

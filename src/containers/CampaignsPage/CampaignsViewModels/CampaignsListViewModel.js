@@ -8,7 +8,6 @@ import PAGE_STATUS from '../../../constants/PageStatus';
 import CampaignsUtils from '../CampaignsUtils/CampaignsUtils';
 import { notify } from '../../../components/Toast';
 import ContentStore from '../../ContentPage/ContentStore/ContentStore';
-import Helper from '../../../utils/helper';
 
 class CampaignsListViewModel {
   campaignsStore = null;

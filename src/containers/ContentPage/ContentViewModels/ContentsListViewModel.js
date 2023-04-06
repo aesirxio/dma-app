@@ -7,7 +7,6 @@ import { makeAutoObservable, runInAction } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import ContentUtils from '../ContentUtils/ContentUtils';
 import { notify } from '../../../components/Toast';
-import Helper from '../../../utils/helper';
 import ChannelsStore from '../../ChannelsPage/ChannelsStore/ChannelsStore';
 import { CONTENT_FIELD_KEY } from '../../../constants/ContentModule';
 import moment from 'moment';
