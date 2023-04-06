@@ -60,7 +60,7 @@ class ContentFormAdsViewModel {
           this.validateGG = true;
         } else {
           this.validateGG = false;
-          notify('The Google Ads field is required.');
+          notify('The Google Ads field is required.', 'error');
         }
         break;
       case 'google_ads':
@@ -82,7 +82,7 @@ class ContentFormAdsViewModel {
           this.validateFB = true;
         } else {
           this.validateFB = false;
-          notify('The Facebook Ads field is required.');
+          notify('The Facebook Ads field is required.', 'error');
         }
         break;
       default:

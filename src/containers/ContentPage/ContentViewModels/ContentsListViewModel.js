@@ -112,10 +112,10 @@ class ContentsListViewModel {
         this.callbackOnErrorHander
       );
       if (notify_success?.result) {
-        notify('Delete success');
+        notify('Delete success', 'success');
       }
     } else {
-      notify('Please choose an item to delete');
+      notify('Please choose an item to delete', 'warn');
     }
   };
 
