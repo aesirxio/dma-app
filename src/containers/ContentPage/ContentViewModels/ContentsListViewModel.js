@@ -106,16 +106,14 @@ class ContentsListViewModel {
     let getArrayId = this.contentIdsSelected;
     console.warn(this.contentIdsSelected);
     if (getArrayId.length > 0) {
-      if (Helper.confirmDeleteItem()) {
-        this.tableStatus = PAGE_STATUS.LOADING;
-        const notify_success = await this.contentStore.deleteContents(
-          this.contentIdsSelected,
-          this.searchContents,
-          this.callbackOnErrorHander
-        );
-        if (notify_success?.result) {
-          notify('Delete success');
-        }
+      this.tableStatus = PAGE_STATUS.LOADING;
+      const notify_success = await this.contentStore.deleteContents(
+        this.contentIdsSelected,
+        this.searchContents,
+        this.callbackOnErrorHander
+      );
+      if (notify_success?.result) {
+        notify('Delete success');
       }
     } else {
       notify('Please choose an item to delete');

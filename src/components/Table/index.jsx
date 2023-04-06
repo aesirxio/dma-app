@@ -32,6 +32,8 @@ import ComponentFilter from '../ComponentFilter';
 import PaginationComponent from './PaginationComponent';
 import ComponentNoData from '../ComponentNoData';
 import { useTranslation } from 'react-i18next';
+import CampaignsDelete from 'containers/CampaignsPage/CampaignsForm/CampaignsDelete';
+import ComponentButtonDelete from 'components/ComponentButtonDelete/ComponentButtonDelete';
 
 let dataFilter = {
   searchText: '',
@@ -269,6 +271,9 @@ const Table = ({
                 setFilter={setFilter}
               />
             ) : null}
+            <div className="px-2 border-end-1">
+              <ComponentButtonDelete />
+            </div>
             {!noDropDownColumns && (
               <div className="px-2 border-end-1">
                 <Dropdown>

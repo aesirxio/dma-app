@@ -198,6 +198,11 @@
   "txt_intro_chatgpt":"Вітаю! Чим я можу допомогти вам сьогодні?",
   "txt_open_api_key_warning": "Будь ласка, введіть ключі API з https://platform.openai.com/account/api-keys",
   "txt_connect_channel":"Підключити канал",
-  "txt_create_content":"Створити вміст"
+  "txt_create_content":"Створити вміст",
+  "txt_delete_folder": "Видалити папку",
+  "txt_are_you_sure": "Ви впевнені?",
+  "txt_delete_assets_popup_desc": "Ви впевнені, що хочете видалити цей ресурс?",
+  "txt_Cancel": "Скасувати",
+  "txt_yes_delete": "Так, видалити"
 
 }
