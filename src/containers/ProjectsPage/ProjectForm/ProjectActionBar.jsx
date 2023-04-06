@@ -9,7 +9,6 @@ import history from '../../../routes/history';
 import ButtonNormal from '../../../components/ButtonNormal';
 import { withTranslation } from 'react-i18next';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
-import { Dropdown } from 'react-bootstrap';
 const ProjectFormModal = lazy(() => import('./ProjectFormModal'));
 
 class ProjectActionBar extends Component {
