@@ -197,5 +197,10 @@
 "txt_intro_chatgpt": "Bok! Kako vam mogu pomoći danas?",
 "txt_open_api_key_warning": "Unesite API ključeve s https://platform.openai.com/account/api-keys",
 "txt_connect_channel": "Poveži kanal",
-"txt_create_content": "Stvori sadržaj"
+"txt_create_content": "Stvori sadržaj",
+"txt_delete_folder": "Izbriši mapu",
+"txt_are_you_sure": "Da li set sigurni?",
+"txt_delete_assets_popup_desc": "Jeste li sigurni da želite izbrisati ovaj materijal ?",
+"txt_Cancel": "Prekini",
+"txt_yes_delete": "Da, izbriši"
 }

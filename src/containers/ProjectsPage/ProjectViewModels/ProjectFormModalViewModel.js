@@ -71,7 +71,7 @@ class ProjectFormModalViewModel {
       );
 
       if (startDateParse >= endDateParse) {
-        notify('Something went wrong from Server response');
+        notify('Something went wrong from Server response', 'error');
       }
     }
 

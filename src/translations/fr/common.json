@@ -197,5 +197,10 @@
 "txt_intro_chatgpt":"Bonjour ! Comment puis-je vous aider aujourd'hui ?",
 "txt_open_api_key_warning":"Veuillez saisir les clés API de https://platform.openai.com/account/api-keys",
 "txt_connect_channel":"Connecter le canal",
-"txt_create_content":"Créer du contenu"
+"txt_create_content":"Créer du contenu",
+"txt_delete_folder": "Supprimer un dossier",
+"txt_are_you_sure": "Êtes-vous certain.e?",
+"txt_delete_assets_popup_desc": "Êtes-vous sûr de vouloir supprimer cet actif?",
+"txt_Cancel": "Abandonner",
+"txt_yes_delete": "Oui, supprimez"
 }

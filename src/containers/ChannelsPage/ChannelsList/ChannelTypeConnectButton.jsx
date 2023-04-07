@@ -29,7 +29,7 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
         await channelsListViewModel.connectChannel(channelType.id);
       }
     } else {
-      notify(t('txt_please_upgrade_account') + 'at https://dma.aesirx.io');
+      notify(t('txt_please_upgrade_account') + 'at https://dma.aesirx.io', 'warn');
     }
     setConnecting(false);
   };

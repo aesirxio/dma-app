@@ -53,7 +53,7 @@ i18n
       },
       hr: {
         icon: '/assets/flag-icons/hr.svg',
-        title: 'Croatian',
+        title: 'Hrvatski',
         common: common_hr,
       },
       fr: {

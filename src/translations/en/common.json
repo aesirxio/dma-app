@@ -198,5 +198,10 @@
   "txt_intro_chatgpt":"Hi there! How can I assist you today?",
   "txt_open_api_key_warning":"Please enter API keys from https://platform.openai.com/account/api-keys",
   "txt_connect_channel":"Connect channel",
-  "txt_create_content":"Create content"
+  "txt_create_content":"Create content",
+  "txt_delete_folder": "Delete Folder",
+  "txt_are_you_sure": "Are you sure?",
+  "txt_delete_assets_popup_desc": "Are you sure you want to delete this asset ?",
+  "txt_Cancel": "Cancel",
+  "txt_yes_delete": "Yes, Delete"
 }

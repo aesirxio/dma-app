@@ -198,5 +198,10 @@
   "txt_intro_chatgpt":"สวัสดี วันนี้ฉันจะช่วยคุณได้อย่างไร",
   "txt_open_api_key_warning":"โปรดป้อนคีย์ API จาก https://platform.openai.com/account/api-keys",
   "txt_connect_channel":"เชื่อมต่อช่องสัญญาณ",
-  "txt_create_content":"สร้างเนื้อหา"
+  "txt_create_content":"สร้างเนื้อหา",
+  "txt_delete_folder": "ลบโฟลเดอร์",
+  "txt_are_you_sure": "คุณแน่ใจนะ?",
+  "txt_delete_assets_popup_desc": "คุณแน่ใจหรือไม่ว่าต้องการลบเนื้อหานี้ ?",
+  "txt_Cancel": "ยกเลิก",
+  "txt_yes_delete": "ใช่, ลบ"
 }

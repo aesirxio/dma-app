@@ -4,7 +4,6 @@
  */
 
 import React, { Component, lazy } from 'react';
-import { Dropdown } from 'react-bootstrap';
 import history from '../../../routes/history';
 import { withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
@@ -14,7 +13,6 @@ const CampaignsFormModal = lazy(() => import('./CampaignsFormModal'));
 
 class CampaignsActionBar extends Component {
   campaignsFormModalViewModal = null;
-  campaignsListViewModel = null;
   openModal = false;
 
   constructor(props) {
@@ -22,8 +20,6 @@ class CampaignsActionBar extends Component {
 
     const { viewModel } = props;
     this.campaignsFormModalViewModal = viewModel ? viewModel.getFormModalViewModel() : null;
-
-    this.campaignsListViewModel = viewModel ? viewModel.getListViewModel() : null;
     if (props.location.state) {
       this.openModal = props.location.state.openModal;
 

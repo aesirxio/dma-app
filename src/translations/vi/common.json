@@ -198,5 +198,10 @@
   "txt_intro_chatgpt":"Xin chào! Tôi có thể hỗ trợ bạn như thế nào hôm nay?",
   "txt_open_api_key_warning":"Vui lòng nhập khóa API từ https://platform.openai.com/account/api-keys",
   "txt_connect_channel":"Kết nối kênh",
-  "txt_create_content":"Tạo nội dung"
+  "txt_create_content":"Tạo nội dung",
+  "txt_delete_folder": "Xóa thư mục",
+  "txt_are_you_sure": "Bạn chắc chắn muốn xóa?",
+  "txt_delete_assets_popup_desc": "Bạn có chắc chắn muốn xóa mục này?",
+  "txt_Cancel": "Hủy",
+  "txt_yes_delete": "Đồng ý, xóa"
 }
