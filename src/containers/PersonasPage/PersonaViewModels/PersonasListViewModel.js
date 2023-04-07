@@ -67,7 +67,7 @@ class PersonasListViewModel {
         );
       }
     } else {
-      notify('Please choose an item to delete');
+      notify('Please choose an item to delete', 'warn');
     }
   };
 

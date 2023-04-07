@@ -104,7 +104,7 @@ class CampaignsFormModalViewModel {
         this.campaignsFormComponent.formPropsData[CAMPAIGNS_FIELD_KEY.NAME] === '' ||
         startDateParse >= endDateParse
       ) {
-        notify('Something went wrong from Server response');
+        notify('Something went wrong from Server response', 'error');
       }
     }
 

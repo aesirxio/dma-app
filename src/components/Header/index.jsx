@@ -59,7 +59,6 @@ class Header extends React.Component {
         label: i18n.options.resources[key].title,
       };
     });
-    console.log(listLanguages);
     let currentLanguage = listLanguages.filter((lang) => {
       if (lang.value == i18n.language) {
         return lang;

@@ -14,7 +14,7 @@ export default class InvesterContactStore {
       callbackOnSuccess(response);
     });
     setTimeout(function () {
-      notify('Thank you! Your information has been submitted successfully');
+      notify('Thank you! Your information has been submitted successfully', 'success');
     }, 1000);
   }
 }

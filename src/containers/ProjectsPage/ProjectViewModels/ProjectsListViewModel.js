@@ -7,7 +7,7 @@ import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import ProjectUtils from '../ProjectUtils/ProjectUtils';
 import { notify } from '../../../components/Toast';
-import Helper from '../../../utils/helper';
+
 class ProjectsListViewModel {
   projectStore = null;
 
@@ -67,24 +67,21 @@ class ProjectsListViewModel {
     let getArrayId = this.projectIdsSelected;
 
     if (getArrayId.length > 0) {
-      if (Helper.confirmDeleteItem()) {
-        this.tableStatus = PAGE_STATUS.LOADING;
-        const notify_success = await this.projectStore.deleteProjects(
-          this.projectIdsSelected,
-          this.refreshTableProjectList,
-          this.callbackOnErrorHander
-        );
-        if (notify_success?.result) {
-          notify('Delete success');
-        }
+      this.tableStatus = PAGE_STATUS.LOADING;
+      const notify_success = await this.projectStore.deleteProjects(
+        this.projectIdsSelected,
+        this.refreshTableProjectList,
+        this.callbackOnErrorHander
+      );
+      if (notify_success?.result) {
+        notify('Delete success', 'success');
       }
     } else {
-      notify('Please choose an item to delete');
+      notify('Please choose an item to delete', 'warn');
     }
   };
 
   getPagination = (paginationStep, isList, limit = 5) => {
-    console.log('paginationStep', paginationStep);
     this.pageSize = limit;
     this.tableStatus = PAGE_STATUS.LOADING;
     this.isList = isList;

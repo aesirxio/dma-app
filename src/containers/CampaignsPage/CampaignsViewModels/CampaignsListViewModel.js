@@ -8,7 +8,6 @@ import PAGE_STATUS from '../../../constants/PageStatus';
 import CampaignsUtils from '../CampaignsUtils/CampaignsUtils';
 import { notify } from '../../../components/Toast';
 import ContentStore from '../../ContentPage/ContentStore/ContentStore';
-import Helper from '../../../utils/helper';
 
 class CampaignsListViewModel {
   campaignsStore = null;
@@ -61,19 +60,17 @@ class CampaignsListViewModel {
     let getArrayId = this.campaignsIdsSelected;
 
     if (getArrayId.length > 0) {
-      if (Helper.confirmDeleteItem()) {
-        this.tableStatus = PAGE_STATUS.LOADING;
-        const notify_success = await this.campaignsStore.deleteCampaigns(
-          this.campaignsIdsSelected,
-          this.refreshTableCampaignsList,
-          this.callbackOnErrorHander
-        );
-        if (notify_success?.result) {
-          notify('Delete success');
-        }
+      this.tableStatus = PAGE_STATUS.LOADING;
+      const notify_success = await this.campaignsStore.deleteCampaigns(
+        this.campaignsIdsSelected,
+        this.refreshTableCampaignsList,
+        this.callbackOnErrorHander
+      );
+      if (notify_success?.result) {
+        notify('Delete success', 'success');
       }
     } else {
-      notify('Please choose an item to delete');
+      notify('Please choose an item to delete', 'warn');
     }
   };
 

@@ -116,7 +116,6 @@ class ContentModel {
     Object.keys(this.channels).forEach(
       (key) => (damAssets[key] = this.channels[key].assets.damAssets)
     );
-
     return damAssets;
   };
 
@@ -171,12 +170,12 @@ class ContentModel {
 
   convertDateTime = (date, time = null) => {
     if (!date) return undefined;
-    const [day, month, year] = date.split('-');
+    const [year, month, day] = date.split('-');
     if (time) {
       const [hour, minute] = time.split(':');
-      return new Date(year, month, day, hour, minute);
+      return new Date(year, month - 1, day, hour, minute);
     }
-    return new Date(year, month, day);
+    return new Date(year, month - 1, day);
   };
 
   getPublishDate = () => {
@@ -331,7 +330,7 @@ class ContentModel {
                     publishMode === CONTENT_PUBLISH_MODE.SCHEDULE
                       ? [
                           {
-                            date: format(publishDate, 'dd-MM-yyyy'),
+                            date: format(publishDate, 'yyyy-MM-dd'),
                             time: format(publishTime, 'HH:mm'),
                             timezone: Helper.getTimezoneDefault(),
                           },

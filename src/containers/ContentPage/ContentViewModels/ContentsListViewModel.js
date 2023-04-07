@@ -7,7 +7,6 @@ import { makeAutoObservable, runInAction } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import ContentUtils from '../ContentUtils/ContentUtils';
 import { notify } from '../../../components/Toast';
-import Helper from '../../../utils/helper';
 import ChannelsStore from '../../ChannelsPage/ChannelsStore/ChannelsStore';
 import { CONTENT_FIELD_KEY } from '../../../constants/ContentModule';
 import moment from 'moment';
@@ -106,19 +105,17 @@ class ContentsListViewModel {
     let getArrayId = this.contentIdsSelected;
     console.warn(this.contentIdsSelected);
     if (getArrayId.length > 0) {
-      if (Helper.confirmDeleteItem()) {
-        this.tableStatus = PAGE_STATUS.LOADING;
-        const notify_success = await this.contentStore.deleteContents(
-          this.contentIdsSelected,
-          this.searchContents,
-          this.callbackOnErrorHander
-        );
-        if (notify_success?.result) {
-          notify('Delete success');
-        }
+      this.tableStatus = PAGE_STATUS.LOADING;
+      const notify_success = await this.contentStore.deleteContents(
+        this.contentIdsSelected,
+        this.searchContents,
+        this.callbackOnErrorHander
+      );
+      if (notify_success?.result) {
+        notify('Delete success', 'success');
       }
     } else {
-      notify('Please choose an item to delete');
+      notify('Please choose an item to delete', 'warn');
     }
   };
 

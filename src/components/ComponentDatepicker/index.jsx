@@ -21,7 +21,6 @@ import es from 'date-fns/locale/es';
 import th from 'date-fns/locale/th';
 import hr from 'date-fns/locale/hr';
 import fr from 'date-fns/locale/fr';
-
 registerLocale('vi', vi);
 registerLocale('de', de);
 registerLocale('uk', uk);
@@ -127,7 +126,7 @@ class ComponentDatepicker extends React.Component {
   };
 
   MyContainer = ({ className, children }) => {
-    let { startDate } = this.state;
+    let { startDate, endDate } = this.state;
     const { t } = this.props;
     return (
       <div ref={this.pickerRef} className="rounded-3 shadow overflow-hidden">
@@ -135,11 +134,11 @@ class ComponentDatepicker extends React.Component {
           <div className="position-relative border-0">{children}</div>
         </div>
         {startDate && (
-          <div className="d-flex apply align-items-center justify-content-end border-top-1 bg-white p-3">
-            {/* <p className="fs-14 color-bule-0 opacity-75 mb-0">
+          <div className="d-flex apply align-items-center justify-content-end bg-white p-3">
+            <p className="fs-14 color-bule-0 opacity-75 mb-0">
               {startDate ? moment(startDate).format('LL') : ''} -{' '}
               {endDate ? moment(endDate).format('LL') : ''}
-            </p> */}
+            </p>
             <span
               style={{ cursor: 'pointer' }}
               className="btn btn-success ms-4 fw-bold text-uppercase fs-14 lh-sm rounded-1 "

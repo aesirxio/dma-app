@@ -79,7 +79,7 @@ class ContentFormViewModel {
     }
 
     if (channelMasterData.length === 0) {
-      notify('Please connect a Channel');
+      notify('Please connect a Channel', 'warn');
       history.push('/channel');
     }
 
@@ -120,7 +120,7 @@ class ContentFormViewModel {
     channelMasterData = ChannelUtils.getChannelByFilter(channelsData, 'connected');
 
     if (channelMasterData.length === 0) {
-      notify('Please connect a Channel');
+      notify('Please connect a Channel', 'warn');
     }
 
     runInAction(() => {
@@ -197,7 +197,7 @@ class ContentFormViewModel {
     });
 
     if (result) {
-      notify('Saved');
+      notify('Saved', 'success');
       history.push('/content');
     } else {
       notify('Something was wrong. Please try again', 'error');
@@ -219,7 +219,7 @@ class ContentFormViewModel {
     });
 
     if (result) {
-      notify('Saved');
+      notify('Saved', 'success');
     } else {
       notify('Something was wrong. Please try again', 'error');
     }
@@ -231,7 +231,7 @@ class ContentFormViewModel {
   };
 
   catchError = () => {
-    notify('Something went wrong from Server response. Please try again.');
+    notify('Something went wrong from Server response. Please try again.', 'error');
   };
 
   setFacebookAdPreviewFromFacebookData = async (creative, pageId) => {
@@ -249,7 +249,7 @@ class ContentFormViewModel {
 
   requiredVideo = (data) => {
     if (data?.youtube.length > 0) {
-      return data?.youtube.some((value) => value.extension === 'mp4');
+      return data?.youtube.some((value) => value.file_extension === 'mp4');
     } else {
       return false;
     }
