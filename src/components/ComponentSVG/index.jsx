@@ -10,7 +10,7 @@ function ComponentSVG({ url, width, height, color }) {
         WebkitMaskPosition: 'center',
         width: width ?? '24px',
         height: height ?? '24px',
-        backgroundColor: color ? `${color}` : 'var(--body-color)',
+        backgroundColor: color ? `${color}` : 'var(--dropdown-item-color)',
       }}
     ></span>
   );
