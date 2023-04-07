@@ -46,7 +46,7 @@ class PersonaFormViewModel {
     const connectedChannelMasterData = ChannelUtils.connectedChannelGroupOptions(channelData);
 
     if (!connectedChannelMasterData) {
-      notify('Please connect a channel');
+      notify('Please connect a channel', 'warn');
       history.push('/channels');
     }
 
@@ -102,7 +102,7 @@ class PersonaFormViewModel {
     });
 
     if (result) {
-      notify('Saved');
+      notify('Saved', 'success');
       history.push('/personas');
     } else {
       notify('Something was wrong. Please try again', 'error');

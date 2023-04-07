@@ -196,5 +196,10 @@
   "txt_intro_chatgpt":"Hej! Hvordan kan jeg hjælpe dig i dag?",
   "txt_open_api_key_warning":"Indtast venligst API-nøgler fra https://platform.openai.com/account/api-keys",
   "txt_connect_channel":"Tilslut kanal",
-  "txt_create_content":"Opret indhold"
+  "txt_create_content":"Opret indhold",
+  "txt_delete_folder": "Slet mappe",
+  "txt_are_you_sure": "Er du sikker?",
+  "txt_delete_assets_popup_desc": "Er du sikker på, at du vil slette dette aktiv?",
+  "txt_Cancel": "Fortryd",
+  "txt_yes_delete": "Ja, slet"
 }

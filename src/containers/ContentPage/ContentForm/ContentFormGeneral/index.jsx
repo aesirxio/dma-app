@@ -106,12 +106,12 @@ const ContentFormGeneral = observer(
             mediaChannel.video &&
             !this.viewModel.requiredVideo(this.formPropsData[CONTENT_FIELD_KEY.DAM])
           ) {
-            notify(t('txt_the_video_field_is_required'));
+            notify(t('txt_the_video_field_is_required'), 'error');
           } else {
             this.props.nextStep();
           }
         } else {
-          notify(t('txt_please_connect_a_channel'));
+          notify(t('txt_please_connect_a_channel'), 'warn');
         }
       } else {
         this.validator.showMessages();

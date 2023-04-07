@@ -4,7 +4,6 @@
  */
 
 import React, { Component, lazy } from 'react';
-import { Dropdown } from 'react-bootstrap';
 import history from '../../../routes/history';
 import { withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
@@ -14,7 +13,6 @@ const CampaignsFormModal = lazy(() => import('./CampaignsFormModal'));
 
 class CampaignsActionBar extends Component {
   campaignsFormModalViewModal = null;
-  campaignsListViewModel = null;
   openModal = false;
 
   constructor(props) {
@@ -22,8 +20,6 @@ class CampaignsActionBar extends Component {
 
     const { viewModel } = props;
     this.campaignsFormModalViewModal = viewModel ? viewModel.getFormModalViewModel() : null;
-
-    this.campaignsListViewModel = viewModel ? viewModel.getListViewModel() : null;
     if (props.location.state) {
       this.openModal = props.location.state.openModal;
 
@@ -40,24 +36,9 @@ class CampaignsActionBar extends Component {
     this.campaignsFormModalViewModal.loadForm();
   };
 
-  handerDeleteCampaigns = () => {
-    this.campaignsListViewModel.deleteCampaigns();
-  };
-
   render() {
-    const { t } = this.props;
     return (
       <div className="d-flex justify-content-end">
-        <Dropdown className="me-3">
-          <Dropdown.Toggle className="p-3" variant="info" id="actions">
-            {t('choose_an_action')}
-          </Dropdown.Toggle>
-          <Dropdown.Menu className="w-100 shadow">
-            <Dropdown.Item className="px-3 py-2" onClick={this.handerDeleteCampaigns}>
-              {t('delete')}
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
         <ButtonNormal
           onClick={this.createCampaignsHandler}
           iconStart={true}
