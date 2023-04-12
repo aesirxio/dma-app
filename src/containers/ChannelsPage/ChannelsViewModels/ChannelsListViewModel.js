@@ -51,8 +51,8 @@ class ChannelsListViewModel {
     this.tableStatus = PAGE_STATUS.LOADING;
   };
 
-  setChannelsDataFromWebsocket = (channelsData) => {
-    this.channelsData = ChannelUtils.transformChannelResponseIntoModel(JSON.parse(channelsData));
+  setChannelsDataFromMessage = (channelsData) => {
+    this.channelsData = ChannelUtils.transformChannelResponseIntoModel(channelsData);
   };
 
   connectChannel = async (channelType) => {
