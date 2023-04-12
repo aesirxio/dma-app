@@ -10,10 +10,11 @@ import { withChannelsViewModel } from '../ChannelsViewModels/ChannelsViewModelCo
 import Spinner from '../../../components/Spinner';
 import { Tab, Tabs } from 'react-bootstrap';
 import ChannelType from './ChannelType';
-import ChannelCallbackNotify from '../../../websocket/ChannelCallbackNotify';
 import './index.scss';
 import Upgrade from '../../../components/Upgrade';
 import { withTranslation } from 'react-i18next';
+import { env } from 'env';
+import { notifyHTML } from 'components/Toast';
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
 const ChannelsList = observer(
@@ -22,21 +23,39 @@ const ChannelsList = observer(
     constructor(props) {
       super(props);
       const { viewModel } = props;
-
       this.channelsListViewModel = viewModel ? viewModel.getChannelsListViewModel() : null;
-      ({ socket: this.socket } = ChannelCallbackNotify.__init(this.channelsListViewModel));
     }
 
     componentDidMount() {
       this.channelsListViewModel.init();
+      this.handleMessage(this.channelsListViewModel);
+    }
+
+    handleMessage(channelsListViewModel) {
+      window.addEventListener(
+        'message',
+        (event) => {
+          if (event.origin !== env.REACT_APP_ENDPOINT_URL) return;
+
+          if (event.data.channelConnected?.length > 0) {
+            let message = 'Connected successfully: <ul>';
+
+            event.data.channelConnected.forEach((channel) => {
+              message += `<li>${channel}</li>`;
+            });
+
+            notifyHTML(message + '</ul>');
+
+            channelsListViewModel.setChannelsDataFromMessage(event.data?.channels);
+          }
+        },
+        false
+      );
     }
 
     componentWillUnmount() {
       this.channelsListViewModel.reset();
-      if (this.socket.connected) {
-        this.socket.disconnect();
-      }
-      this.socket.close();
+      window.removeEventListener('message');
     }
 
     render() {
