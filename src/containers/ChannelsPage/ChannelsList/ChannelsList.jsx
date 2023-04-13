@@ -55,7 +55,7 @@ const ChannelsList = observer(
 
     componentWillUnmount() {
       this.channelsListViewModel.reset();
-      window.removeEventListener('message');
+      window.removeEventListener('message', {});
     }
 
     render() {
