@@ -7,7 +7,7 @@ import { runInAction } from 'mobx';
 
 import ProjectUtils from '../ProjectUtils/ProjectUtils';
 import ProjectModel from '../ProjectModel/ProjectModel';
-import { AesirxProjectApiService } from 'aesirx-dma-lib';
+import { AesirxProjectApiService } from 'aesirx-lib';
 
 export default class ProjectStore {
   async fetchProjects(callbackOnSuccess, callbackOnError, paginationStep = 0, paginationSize = 25) {

@@ -15,7 +15,7 @@ import './index.scss';
 import Upgrade from '../Upgrade';
 import ButtonConnect from '../ButtonConnect';
 import { CHANNEL_TYPE } from '../../constants/ChannelModule';
-import { AESIRX_CONFIGS, AXIOS_CONFIGS } from 'aesirx-dma-lib';
+import { AESIRX_CONFIGS, AXIOS_CONFIGS } from 'aesirx-lib';
 import { withTranslation } from 'react-i18next';
 
 const ModalComponent = lazy(() => import('../../components/Modal'));

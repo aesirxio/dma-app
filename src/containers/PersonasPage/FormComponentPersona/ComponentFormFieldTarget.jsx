@@ -4,7 +4,7 @@
  */
 
 import React, { Component, lazy } from 'react';
-import { AesirxFacebookDataApiService } from 'aesirx-dma-lib';
+import { AesirxFacebookDataApiService } from 'aesirx-lib';
 
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';

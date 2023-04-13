@@ -8,7 +8,7 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import './index.scss';
 import { env } from 'env';
-import { AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
+import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
 import { Configuration, OpenAIApi } from 'openai';
 import Helper from '../../utils/helper';
 import ButtonCopy from '../../utils/ButtonCopy';

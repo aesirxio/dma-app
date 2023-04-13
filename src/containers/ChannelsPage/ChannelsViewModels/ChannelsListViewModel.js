@@ -7,7 +7,7 @@ import { runInAction, makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { notify } from '../../../components/Toast';
 import ChannelUtils from '../ChannelUtils/ChannelUtils';
-import { AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
+import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
 import ProfileStore from '../../ProfilePage/ProfileStore/ProfileStore';
 
 class ChannelsListViewModel {

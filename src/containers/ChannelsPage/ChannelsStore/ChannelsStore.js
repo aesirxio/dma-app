@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import { AesirxOrganisationChannelApiService } from 'aesirx-dma-lib';
+import { AesirxOrganisationChannelApiService } from 'aesirx-lib';
 import ChannelUtils from '../ChannelUtils/ChannelUtils';
 
 export default class ChannelsStore {

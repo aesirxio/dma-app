@@ -11,7 +11,7 @@ import { UPDATE_PASSWORD_FIELD_KEY } from '../../../constants/ProfileModule';
 import SimpleReactValidator from 'simple-react-validator';
 import { witheProfileViewModel } from '../ProfileViewModel/ProfileViewModelContextProvider';
 import { notify } from '../../../components/Toast';
-import { Storage } from 'aesirx-dma-lib';
+import { Storage } from 'aesirx-lib';
 import { withTranslation } from 'react-i18next';
 
 const UpdatePassword = observer(

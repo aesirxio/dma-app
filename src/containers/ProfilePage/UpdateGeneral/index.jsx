@@ -14,7 +14,7 @@ import '../index.scss';
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import FormComponent from '../../../components/Form';
 import SubmitButton from '../Layout/SubmitButton';
-import { Storage } from 'aesirx-dma-lib';
+import { Storage } from 'aesirx-lib';
 import { withTranslation } from 'react-i18next';
 import DamComponent from 'components/DamComponent';
 

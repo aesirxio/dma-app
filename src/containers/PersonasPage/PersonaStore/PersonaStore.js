@@ -7,7 +7,7 @@ import { runInAction } from 'mobx';
 
 import PersonaUtils from '../PersonaUtils/PersonaUtils';
 import PersonaModel from '../PersonaModel/PersonaModel';
-import { AesirxPersonaApiService, AesirxPersonaTemplateApiService } from 'aesirx-dma-lib';
+import { AesirxPersonaApiService, AesirxPersonaTemplateApiService } from 'aesirx-lib';
 import { PersonaMasterDataModel } from '../../../store/Models/MasterDataModels/PersonaMasterDataModel';
 import { ConnectedChannelMasterDataModel } from '../../../store/Models/MasterDataModels/ConnectedChannelMasterDataModel';
 import PersonaTemplateUtils from '../PersonaUtils/PersonaTemplateUtils';

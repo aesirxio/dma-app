@@ -14,7 +14,7 @@ import {
   AesirxFacebookDataApiService,
   AesirxPlanningApiService,
   Storage,
-} from 'aesirx-dma-lib';
+} from 'aesirx-lib';
 
 import { ContentConnectedChannelsModel } from '../ContentModel/ContentConnectedChannelsModel';
 

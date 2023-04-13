@@ -4,7 +4,7 @@
  */
 
 import _ from 'lodash';
-import { AesirxFacebookDataApiService } from 'aesirx-dma-lib';
+import { AesirxFacebookDataApiService } from 'aesirx-lib';
 
 const fetchSearchTargetingFromFacebookData = async (inputValue, name) => {
   const facebookDataAPIService = new AesirxFacebookDataApiService();

@@ -6,7 +6,7 @@
 import React, { Component, lazy } from 'react';
 
 import Iframe from 'react-iframe';
-import { AUTHORIZATION_KEY, AXIOS_CONFIGS, GENERAL_CONFIG, Storage } from 'aesirx-dma-lib';
+import { AUTHORIZATION_KEY, AXIOS_CONFIGS, GENERAL_CONFIG, Storage } from 'aesirx-lib';
 import { io } from 'socket.io-client';
 import './index.scss';
 

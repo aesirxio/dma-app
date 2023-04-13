@@ -8,7 +8,7 @@ import { withTranslation } from 'react-i18next';
 import i18n from 'translations/i18n';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
+import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
 
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';

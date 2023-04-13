@@ -8,7 +8,7 @@ import { withTranslation } from 'react-i18next';
 import './index.scss';
 import ButtonConnectFacebook from '../../components/ButtonConnectFacebook';
 import ButtonConnectGoogle from '../../components/ButtonConnectGoogle';
-import { AESIRX_CONFIGS } from 'aesirx-dma-lib';
+import { AESIRX_CONFIGS } from 'aesirx-lib';
 
 class Social extends React.Component {
   render() {

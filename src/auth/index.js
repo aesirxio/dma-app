@@ -11,7 +11,7 @@ import {
   Storage,
   AXIOS_CONFIGS,
   GENERAL_CONFIG,
-} from 'aesirx-dma-lib';
+} from 'aesirx-lib';
 
 if (
   AXIOS_CONFIGS.CLIENT_ID === '' ||
