@@ -14,7 +14,7 @@ import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
 import ContentUtils from '../ContentUtils/ContentUtils';
 import history from '../../../routes/history';
 import ProfileStore from '../../ProfilePage/ProfileStore/ProfileStore';
-import { AUTHORIZATION_KEY, Storage } from 'aesirx-dma-lib';
+import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
 //                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           b';
 
 class ContentFormViewModel {
@@ -193,7 +193,6 @@ class ContentFormViewModel {
       this.channelMasterData,
       type
     );
-    console.log(result, 'sdasd');
 
     runInAction(() => {
       this.formStatus = PAGE_STATUS.READY;
