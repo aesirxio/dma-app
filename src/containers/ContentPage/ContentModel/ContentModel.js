@@ -100,15 +100,15 @@ class ContentModel {
     return description;
   };
 
-  getCanvaAssets = () => {
-    let canvaAssets = {};
+  // getCanvaAssets = () => {
+  //   let canvaAssets = {};
 
-    Object.keys(this.channels).forEach(
-      (key) => (canvaAssets[key] = this.channels[key].assets.canvaAssets)
-    );
+  //   Object.keys(this.channels).forEach(
+  //     (key) => (canvaAssets[key] = this.channels[key].assets.canvaAssets)
+  //   );
 
-    return canvaAssets;
-  };
+  //   return canvaAssets;
+  // };
 
   getDamAssets = () => {
     let damAssets = {};
@@ -295,7 +295,7 @@ class ContentModel {
         if (selectedPage.length > 0) {
           // channels
           const description = contentData[CONTENT_FIELD_KEY.DESCRIPTION][id];
-          const canvaAssets = contentData[CONTENT_FIELD_KEY.CANVA][id];
+          // const canvaAssets = contentData[CONTENT_FIELD_KEY.CANVA][id];
 
           // DAM
           const damData = contentData[CONTENT_FIELD_KEY.DAM][id];
@@ -319,7 +319,7 @@ class ContentModel {
               [id]: {
                 description: description,
                 assets: {
-                  canvaAssets: canvaAssets,
+                  // canvaAssets: canvaAssets,
                   damAssets: damAssets,
                   videoAssets: videoAssets,
                 },

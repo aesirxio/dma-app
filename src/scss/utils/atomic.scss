@@ -72,8 +72,14 @@ textarea {
   min-width: 45px;
   max-width: 45px;
 }
-.chatgpt-btn{
- background-color: #10a37f;
+.chatgpt-btn {
+  background-color: #10a37f;
+}
+.btn-size-m {
+  height: 40px;
+  border-radius: 4px;
+  font-size: 14px;
+  padding-right: 16px;
 }
 
 .w-80 {
@@ -99,7 +105,7 @@ textarea {
 .w-200 {
   width: 200px;
 }
-.w-330{
+.w-330 {
   width: 330px;
 }
 
@@ -408,27 +414,27 @@ textarea {
   width: 100% !important;
 }
 
-.rbc-header{
-  span{
+.rbc-header {
+  span {
     color: $color-blue-9;
   }
 }
-.rbc-date-cell{
-  a{
+.rbc-date-cell {
+  a {
     color: $color-blue-9 !important;
   }
 }
-.rbc-calendar{
-  .dropdown-toggle{
-  &::after{
-    display: none !important;
+.rbc-calendar {
+  .dropdown-toggle {
+    &::after {
+      display: none !important;
+    }
   }
 }
-}
-.dropdown-menu.show{
+.dropdown-menu.show {
   width: 100%;
 }
-.css-lilgime-menu{
+.css-lilgime-menu {
   background-color: #fff !important;
 }
 @include media-breakpoint-down(lg) {

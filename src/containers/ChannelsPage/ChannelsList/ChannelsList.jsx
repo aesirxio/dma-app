@@ -14,7 +14,7 @@ import './index.scss';
 import Upgrade from '../../../components/Upgrade';
 import { withTranslation } from 'react-i18next';
 import { env } from 'env';
-import { notifyHTML } from 'components/Toast';
+import { notify } from 'components/Toast';
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
 const ChannelsList = observer(
@@ -44,7 +44,7 @@ const ChannelsList = observer(
               message += `<li>${channel}</li>`;
             });
 
-            notifyHTML(message + '</ul>');
+            notify(message + '</ul>');
 
             channelsListViewModel.setChannelsDataFromMessage(event.data?.channels);
           }

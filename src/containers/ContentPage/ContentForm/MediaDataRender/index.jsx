@@ -8,26 +8,26 @@ import React from 'react';
 import './index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+// import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import ComponentImage from '../../../../components/ComponentImage';
 
 class MediaDataRender extends React.Component {
-  canvaEditHandler = (index, id) => {
-    this.props.onSetCanvaIndexToEdit(index, id);
-  };
+  // canvaEditHandler = (index, id) => {
+  //   this.props.onSetCanvaIndexToEdit(index, id);
+  // };
 
-  canvaDeleteHandler = (index) => {
-    this.props.canvaDeleteItem(index);
-  };
+  // canvaDeleteHandler = (index) => {
+  //   this.props.canvaDeleteItem(index);
+  // };
 
   render() {
-    const { damData, deleteDamItem, canvaData } = this.props;
-    const { canvaEditHandler, canvaDeleteHandler } = this;
+    const { damData, deleteDamItem } = this.props;
+    // const { canvaEditHandler, canvaDeleteHandler } = this;
     const imageData = damData.filter((data) => !['mp4', 'mov'].includes(data.file_extension));
     const videoData = damData.filter((data) => ['mp4', 'mov'].includes(data.file_extension));
     return (
       <div className="d-flex">
-        {canvaData.map((canvaAsset, index) => (
+        {/* {canvaData.map((canvaAsset, index) => (
           <div
             key={canvaAsset.designId}
             className="item_dam_assets justify-content-start border-top mt-4"
@@ -60,7 +60,7 @@ class MediaDataRender extends React.Component {
               />
             </div>
           </div>
-        ))}
+        ))} */}
 
         {imageData.map((damAsset, index) => (
           <div key={index} className="item_dam_assets justify-content-start border-top mt-4">

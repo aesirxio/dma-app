@@ -103,6 +103,7 @@ class LoginPage extends React.Component {
                   className="btn w-100 fw-bold btn-sso position-relative d-flex align-item-center justify-content-center my-3  px-6"
                   text={t('txt_sign_in_with_sso')}
                   onGetData={onGetData}
+                  // options={['concordium']}
                 />
                 {/* <div className="d-flex align-items-center flex-nowrap">
                   <div className="border-bottom-2 w-50"></div>
