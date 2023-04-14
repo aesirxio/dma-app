@@ -23,7 +23,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.12",
     "aesirx-dam-app": "^1.2.9",
-    "aesirx-dma-lib": "^1.8.1",
+    "aesirx-lib": "https://gitpkg.now.sh/aesirxio/aesirx-lib?develop&scripts.postinstall=yarn%20install%20--ignore-scripts%20%26%26%20yarn%20build",
     "aesirx-sso": "^1.0.7",
     "bootstrap": "^5.2.2",
     "date-fns": "^2.29.3",

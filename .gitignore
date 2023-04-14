@@ -30,3 +30,5 @@ yarn-error.log*
 
 #dist
 /dist
+.yalc
+yalc.lock

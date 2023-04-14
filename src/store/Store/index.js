@@ -10,7 +10,7 @@ import {
   AesirxBillingPlanApiService,
   AUTHORIZATION_KEY,
   Storage,
-} from 'aesirx-dma-lib';
+} from 'aesirx-lib';
 
 class GlobalStore {
   projectMasterData = null;

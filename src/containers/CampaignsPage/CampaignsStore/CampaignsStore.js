@@ -7,7 +7,7 @@ import { runInAction } from 'mobx';
 
 import CampaignsUtils from '../CampaignsUtils/CampaignsUtils';
 import CampaignsModel from '../CampaignsModel/CampaignsModel';
-import { AesirxCampaignApiService } from 'aesirx-dma-lib';
+import { AesirxCampaignApiService } from 'aesirx-lib';
 import { ProjectMasterDataModel } from '../../../store/Models/MasterDataModels/ProjectMasterDataModel';
 import { CampaignMasterDataModel } from '../../../store/Models/MasterDataModels/CampaignMasterDataModel';
 

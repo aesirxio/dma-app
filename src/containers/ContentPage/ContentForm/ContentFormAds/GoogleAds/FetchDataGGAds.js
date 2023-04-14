@@ -4,7 +4,7 @@
  */
 
 import _ from 'lodash';
-import { AesirxGoogleDataApiService } from 'aesirx-dma-lib';
+import { AesirxGoogleDataApiService } from 'aesirx-lib';
 
 const fetchSearchInterestFromGoogleData = async (inputValue) => {
   if (inputValue.length > 3) {
