@@ -3,8 +3,8 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import { AesirxBillingPlanApiService } from 'aesirx-dma-lib';
-import { AesirxNewsApiService } from 'aesirx-dma-lib';
+import { AesirxBillingPlanApiService } from 'aesirx-lib';
+import { AesirxNewsApiService } from 'aesirx-lib';
 import { runInAction } from 'mobx';
 export default class HomeStore {
   getMemberSubscriptionDetail = async () => {

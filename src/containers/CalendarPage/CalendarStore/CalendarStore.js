@@ -4,7 +4,7 @@
  */
 
 import { runInAction } from 'mobx';
-import { AUTHORIZATION_KEY, AesirxContentApiService, Storage } from 'aesirx-dma-lib';
+import { AUTHORIZATION_KEY, AesirxContentApiService, Storage } from 'aesirx-lib';
 
 export default class CalendarStore {
   async fetchPlanning(callbackOnSuccess, callbackOnError) {

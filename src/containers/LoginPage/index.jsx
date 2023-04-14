@@ -16,7 +16,7 @@ import './index.scss';
 import { login } from '../../auth';
 // import InputPassword from '../../components/inputPassword';
 import { SSOButton } from 'aesirx-sso';
-import { AesirxAuthenticationApiService, Storage } from 'aesirx-dma-lib';
+import { AesirxAuthenticationApiService, Storage } from 'aesirx-lib';
 // const dataSlider = [
 //   {
 //     text: 'Building a Global Media Content Marketing Team requires structure, process and automation we utilize technology to make this happen',

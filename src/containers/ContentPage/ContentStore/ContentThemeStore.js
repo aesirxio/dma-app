@@ -8,7 +8,7 @@ import { runInAction } from 'mobx';
 import ContentThemeUtils from '../ContentUtils/ContentThemeUtils';
 import ContentThemeModel from '../ContentModel/ContentThemeModel';
 
-import { AesirxContentThemeApiService } from 'aesirx-dma-lib';
+import { AesirxContentThemeApiService } from 'aesirx-lib';
 
 import { ESI_CONTENT_THEME_API_RESPONSE_FIELD_KEY } from '../../../constants/ContentThemeModule';
 
