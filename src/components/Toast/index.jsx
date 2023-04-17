@@ -14,7 +14,6 @@ const Toast = () => {
 };
 
 const notify = (msg, type = 'success') => {
-  console.log(msg);
   switch (type) {
     case 'error':
       toast.error(
@@ -91,7 +90,10 @@ const notify = (msg, type = 'success') => {
 };
 
 const notifyHTML = (text) => {
-  return toast.success(<div className="text-white" dangerouslySetInnerHTML={{ __html: text }} />);
+  return toast.success(<div dangerouslySetInnerHTML={{ __html: text }} />, {
+    className: 'bg-noti-bg-success text-green fw-bold px-2 py-1',
+    icon: () => <img alt="success" src="/assets/images/success.png" />,
+  });
 };
 
 export { Toast, notify, notifyHTML };

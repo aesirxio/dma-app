@@ -54,7 +54,7 @@ const ContentFormPage = observer(
       this.formPropsData[CONTENT_FIELD_KEY.TIME] = data?.getPublishTime() ?? new Date();
 
       this.formPropsData[CONTENT_FIELD_KEY.DESELECTED] = [];
-      this.formPropsData[CONTENT_FIELD_KEY.CANVA] = data?.getCanvaAssets() ?? {};
+      // this.formPropsData[CONTENT_FIELD_KEY.CANVA] = data?.getCanvaAssets() ?? {};
       this.formPropsData[CONTENT_FIELD_KEY.DAM] = data?.getDamAssets() ?? {};
 
       this.formPropsData[CONTENT_FIELD_KEY.ADS] = data?.getAds() ?? {

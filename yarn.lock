@@ -3234,19 +3234,28 @@ aesirx-dma-lib@^1.8.1:
     crypto-js "^4.1.1"
     query-string "7"
 
-"aesirx-lib@https://gitpkg.now.sh/aesirxio/aesirx-lib?develop&scripts.postinstall=yarn%20install%20--ignore-scripts%20%26%26%20yarn%20build":
+aesirx-lib@^1.9.1:
   version "1.9.1"
-  resolved "https://gitpkg.now.sh/aesirxio/aesirx-lib?develop&scripts.postinstall=yarn%20install%20--ignore-scripts%20%26%26%20yarn%20build#5309784c01ecfa448f2b6b7ddc6b542a1901589c"
+  resolved "https://registry.yarnpkg.com/aesirx-lib/-/aesirx-lib-1.9.1.tgz#5d7d708dc5dd6a5d932924970fdf4a4234afd681"
+  integrity sha512-fb36HEw4Dhfen2W3QU7NIPfRQNoDxpGHucnNyAhXY4Y9mU2dQRr252hJb8dt2kRwX1Iald9frg9HYszCIXOp+g==
   dependencies:
     axios "^1.3.4"
     axios-auth-refresh "^3.0.0"
     crypto-js "^4.1.1"
     query-string "7"
 
-aesirx-sso@^1.0.6, aesirx-sso@^1.0.7:
+aesirx-sso@^1.0.6:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/aesirx-sso/-/aesirx-sso-1.0.7.tgz#2db06c7d8a19e27adfd7bedf82a9533852b9b97d"
   integrity sha512-3Hqn4gFM2XI4s4QQ/As0+C3F6Ba8tbWKPXEHSZewONQOIktcVmEBq6EcPbyfDj2COK3DUAjsxqjh7SEc6aYshw==
+  dependencies:
+    cross-env "^7.0.3"
+    dotenv "^16.0.3"
+    react-spinners "^0.13.6"
+
+"aesirx-sso@https://gitpkg.now.sh/aesirxio/sso?f2e467405b058e948fe8623a3697025aa2ff48f9&scripts.postinstall=yarn%20install%20--ignore-scripts%20%26%26%20yarn%20build":
+  version "1.0.7"
+  resolved "https://gitpkg.now.sh/aesirxio/sso?f2e467405b058e948fe8623a3697025aa2ff48f9&scripts.postinstall=yarn%20install%20--ignore-scripts%20%26%26%20yarn%20build#c9d382c333ad68f43ff6e22d2dbe494df948a305"
   dependencies:
     cross-env "^7.0.3"
     dotenv "^16.0.3"
@@ -4379,21 +4388,21 @@ cookie@0.5.0:
   integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
 
 core-js-compat@^3.25.1:
-  version "3.30.0"
-  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.30.0.tgz#99aa2789f6ed2debfa1df3232784126ee97f4d80"
-  integrity sha512-P5A2h/9mRYZFIAP+5Ab8ns6083IyVpSclU74UNvbGVQ8VM7n3n3/g2yF3AkKQ9NXz2O+ioxLbEWKnDtgsFamhg==
+  version "3.30.1"
+  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.30.1.tgz#961541e22db9c27fc48bfc13a3cafa8734171dfe"
+  integrity sha512-d690npR7MC6P0gq4npTl5n2VQeNAmUrJ90n+MHiKS7W2+xno4o3F5GDEuylSdi6EJ3VssibSGXOa1r3YXD3Mhw==
   dependencies:
     browserslist "^4.21.5"
 
 core-js-pure@^3.23.3:
-  version "3.30.0"
-  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.30.0.tgz#41b6c42e5f363bd53d79999bd35093b17e42e1bf"
-  integrity sha512-+2KbMFGeBU0ln/csoPqTe0i/yfHbrd2EUhNMObsGtXMKS/RTtlkYyi+/3twLcevbgNR0yM/r0Psa3TEoQRpFMQ==
+  version "3.30.1"
+  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.30.1.tgz#7d93dc89e7d47b8ef05d7e79f507b0e99ea77eec"
+  integrity sha512-nXBEVpmUnNRhz83cHd9JRQC52cTMcuXAmR56+9dSMpRdpeA4I1PX6yjmhd71Eyc/wXNsdBdUDIj1QTIeZpU5Tg==
 
 core-js@^3.19.2:
-  version "3.30.0"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.30.0.tgz#64ac6f83bc7a49fd42807327051701d4b1478dea"
-  integrity sha512-hQotSSARoNh1mYPi9O2YaWeiq/cEB95kOrFb4NCrO4RIFt1qqNpKsaE+vy/L3oiqvND5cThqXzUU3r9F7Efztg==
+  version "3.30.1"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.30.1.tgz#fc9c5adcc541d8e9fa3e381179433cbf795628ba"
+  integrity sha512-ZNS5nbiSwDTq4hFosEDqm65izl2CWmLz0hARJMyNQBgkUZMIF51cQiMvIQKA6hvuaeWxQDP3hEedM1JZIgTldQ==
 
 core-util-is@~1.0.0:
   version "1.0.3"
@@ -5072,9 +5081,9 @@ ejs@^3.1.6:
     jake "^10.8.5"
 
 electron-to-chromium@^1.4.284:
-  version "1.4.361"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.361.tgz#010ddd5e623470ab9d1bf776b009d11c3669a4e3"
-  integrity sha512-VocVwjPp05HUXzf3xmL0boRn5b0iyqC7amtDww84Jb1QJNPBc7F69gJyEeXRoriLBC4a5pSyckdllrXAg4mmRA==
+  version "1.4.363"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.363.tgz#a3d51d16169d8f212f00bafb78cf0667e24c3647"
+  integrity sha512-ReX5qgmSU7ybhzMuMdlJAdYnRhT90UB3k9M05O5nF5WH3wR5wgdJjXw0uDeFyKNhmglmQiOxkAbzrP0hMKM59g==
 
 emittery@^0.10.2:
   version "0.10.2"
@@ -5425,9 +5434,9 @@ eslint-scope@5.1.1, eslint-scope@^5.1.1:
     estraverse "^4.1.1"
 
 eslint-scope@^7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-7.1.1.tgz#fff34894c2f65e5226d3041ac480b4513a163642"
-  integrity sha512-QKQM/UXpIiHcLqJ5AOyIW7XZmzjkzQXYE54n1++wb0u9V/abW3l9uQnxX8Z5Xd18xyKIMTUAyQ0k1e8pz6LUrw==
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-7.2.0.tgz#f21ebdafda02352f103634b96dd47d9f81ca117b"
+  integrity sha512-DYj5deGlHBfMt15J7rdtyKNq/Nqlv5KfU4iodrQ019XESsRnwXH9KAE0y3cwtUHDo2ob7CypAnCqefh6vioWRw==
   dependencies:
     esrecurse "^4.3.0"
     estraverse "^5.2.0"
