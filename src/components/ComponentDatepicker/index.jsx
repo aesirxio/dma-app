@@ -216,4 +216,4 @@ class ComponentDatepicker extends React.Component {
   }
 }
 
-export default withTranslation('common')(ComponentDatepicker);
+export default withTranslation()(ComponentDatepicker);

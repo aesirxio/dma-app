@@ -148,4 +148,4 @@ class AllProjects extends React.Component {
   }
 }
 
-export default withTranslation('common')(AllProjects);
+export default withTranslation()(AllProjects);

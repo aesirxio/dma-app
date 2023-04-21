@@ -186,4 +186,4 @@ const CampaignsList = observer(
   }
 );
 
-export default withTranslation('common')(withCampaignsViewModel(CampaignsList));
+export default withTranslation()(withCampaignsViewModel(CampaignsList));

@@ -205,4 +205,4 @@ const UpdatePassword = observer(
   }
 );
 
-export default withTranslation('common')(witheProfileViewModel(UpdatePassword));
+export default withTranslation()(witheProfileViewModel(UpdatePassword));

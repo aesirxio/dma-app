@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import SelectComponent from '../Select';
+import { AesirXSelect } from 'aesirx-uikit';
 
 let data = [
   {
@@ -102,7 +102,7 @@ class ComponentFilter extends React.Component {
         {data.map((item, key) => {
           return (
             <div key={key} className="flex-1 px-1">
-              <SelectComponent
+              <AesirXSelect
                 placeholder={t(item.name)}
                 name={item.name}
                 onChange={(e) => this.handleSelect(e, item.name, item.isMulti, item.type)}
@@ -121,4 +121,4 @@ class ComponentFilter extends React.Component {
     );
   }
 }
-export default withTranslation('common')(ComponentFilter);
+export default withTranslation()(ComponentFilter);

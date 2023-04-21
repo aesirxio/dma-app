@@ -66,4 +66,4 @@ const ProjectFormWizard = observer(
   }
 );
 
-export default withTranslation('common')(withWizardViewModel(ProjectFormWizard));
+export default withTranslation()(withWizardViewModel(ProjectFormWizard));

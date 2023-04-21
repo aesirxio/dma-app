@@ -114,4 +114,4 @@ const ProjectsList = observer(
   }
 );
 
-export default withTranslation('common')(withProjectViewModel(ProjectsList));
+export default withTranslation()(withProjectViewModel(ProjectsList));

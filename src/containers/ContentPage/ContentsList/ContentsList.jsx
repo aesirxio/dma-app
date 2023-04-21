@@ -187,4 +187,4 @@ const ContentsList = observer(
   }
 );
 
-export default withTranslation('common')(withContentViewModel(ContentsList));
+export default withTranslation()(withContentViewModel(ContentsList));

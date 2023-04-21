@@ -92,4 +92,4 @@ class CreateProject extends React.Component {
   }
 }
 
-export default withTranslation('common')(CreateProject);
+export default withTranslation()(CreateProject);

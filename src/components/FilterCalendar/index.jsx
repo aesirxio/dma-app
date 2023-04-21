@@ -184,4 +184,4 @@ class FilterCalendar extends React.Component {
   }
 }
 
-export default withTranslation('common')(FilterCalendar);
+export default withTranslation()(FilterCalendar);

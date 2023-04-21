@@ -38,4 +38,4 @@ class Upgrade extends React.Component {
   }
 }
 
-export default withTranslation('common')(Upgrade);
+export default withTranslation()(Upgrade);

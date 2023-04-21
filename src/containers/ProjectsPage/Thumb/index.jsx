@@ -139,4 +139,4 @@ class List extends React.Component {
   }
 }
 
-export default withTranslation('common')(List);
+export default withTranslation()(List);

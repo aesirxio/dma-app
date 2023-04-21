@@ -5,7 +5,7 @@
 
 import React, { Component } from 'react';
 
-import SelectComponent from '../Select';
+import { AesirXSelect } from 'aesirx-uikit';
 import ComponentImage from '../ComponentImage';
 
 class ComponentPreviewPersona extends Component {
@@ -18,7 +18,7 @@ class ComponentPreviewPersona extends Component {
         <div className="d-flex align-items-center justify-content-between mb-3">
           <h3>Preview Persona</h3>
         </div>
-        <SelectComponent
+        <AesirXSelect
           placeholder={data ? data.name : null}
           onChange={this.props.handleSelect}
           options={this.props.options}

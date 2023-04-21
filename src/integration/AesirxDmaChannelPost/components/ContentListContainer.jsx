@@ -84,4 +84,4 @@ const ContentListContainer = observer(
   }
 );
 
-export default withTranslation('common')(withContentViewModel(ContentListContainer));
+export default withTranslation()(withContentViewModel(ContentListContainer));

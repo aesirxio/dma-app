@@ -67,4 +67,4 @@ const Ads = observer((props) => {
   );
 });
 
-export default withTranslation('common')(Ads);
+export default withTranslation()(Ads);

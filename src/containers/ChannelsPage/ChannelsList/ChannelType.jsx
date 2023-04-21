@@ -17,7 +17,7 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
   if (list.length === 0) {
     return null;
   }
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <div className="accordion mt-4" id={`accordionChannelType${channelTypeIndex}`}>
       {list.map((channelType, index) => (
@@ -73,4 +73,4 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
   );
 });
 
-export default withTranslation('common')(ChannelType);
+export default withTranslation()(ChannelType);

@@ -80,4 +80,4 @@ class WizardPage extends Component {
   }
 }
 
-export default withTranslation('common')(WizardPage);
+export default withTranslation()(WizardPage);

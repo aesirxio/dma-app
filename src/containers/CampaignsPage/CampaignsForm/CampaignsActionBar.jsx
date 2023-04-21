@@ -50,4 +50,4 @@ class CampaignsActionBar extends Component {
   }
 }
 
-export default withTranslation('common')(withCampaignsViewModel(withRouter(CampaignsActionBar)));
+export default withTranslation()(withCampaignsViewModel(withRouter(CampaignsActionBar)));

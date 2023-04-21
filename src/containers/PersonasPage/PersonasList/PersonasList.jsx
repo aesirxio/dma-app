@@ -108,4 +108,4 @@ const PersonasList = observer(
   }
 );
 
-export default withTranslation('common')(withPersonaViewModel(PersonasList));
+export default withTranslation()(withPersonaViewModel(PersonasList));

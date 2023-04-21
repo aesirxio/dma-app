@@ -167,4 +167,4 @@ const ContentFormGeneral = observer(
   }
 );
 
-export default withTranslation('common')(withContentViewModel(ContentFormGeneral));
+export default withTranslation()(withContentViewModel(ContentFormGeneral));

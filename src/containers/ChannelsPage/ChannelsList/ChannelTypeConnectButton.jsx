@@ -19,7 +19,7 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
   const channelsListViewModel = context.getChannelsListViewModel();
 
   const [connecting, setConnecting] = useState(false);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const handleOnClick = async () => {
     if (channelsListViewModel.memberProfile?.allow_create_item) {
       if (channelCategory.id === 'cms' || channelType.id === 'medium') {
@@ -55,4 +55,4 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
   );
 });
 
-export default withTranslation('common')(ChannelTypeConnectButton);
+export default withTranslation()(ChannelTypeConnectButton);

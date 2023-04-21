@@ -9,7 +9,7 @@ import { observer } from 'mobx-react';
 import { withTranslation, useTranslation } from 'react-i18next';
 
 const ListChannelComponent = observer(({ channelsData, ...props }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <div className="w-100">
       {channelsData.map((channelCategory, index) => (
@@ -31,4 +31,4 @@ const ListChannelComponent = observer(({ channelsData, ...props }) => {
   );
 });
 
-export default withTranslation('common')(ListChannelComponent);
+export default withTranslation()(ListChannelComponent);

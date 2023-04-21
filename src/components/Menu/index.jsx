@@ -125,4 +125,4 @@ class Menu extends React.Component {
   }
 }
 
-export default withTranslation('common')(Menu);
+export default withTranslation()(Menu);

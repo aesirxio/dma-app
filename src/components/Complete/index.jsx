@@ -183,4 +183,4 @@ class Complete extends React.Component {
   }
 }
 
-export default withTranslation('common')(Complete);
+export default withTranslation()(Complete);

@@ -161,4 +161,4 @@ class CampaignsForm extends Component {
   }
 }
 
-export default withTranslation('common')(CampaignsForm);
+export default withTranslation()(CampaignsForm);

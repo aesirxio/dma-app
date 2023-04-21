@@ -23,7 +23,7 @@ const ContentFormGeneralChannel = observer(() => {
   }
 
   const data = ChannelUtils.getChannelByFilter(channelsData, 'removed', 'not');
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <div className=" d-flex flex-wrap">
       <div className="d-flex align-items-center justify-content-between mb-3 w-100">
@@ -37,4 +37,4 @@ const ContentFormGeneralChannel = observer(() => {
   );
 });
 
-export default withTranslation('common')(ContentFormGeneralChannel);
+export default withTranslation()(ContentFormGeneralChannel);

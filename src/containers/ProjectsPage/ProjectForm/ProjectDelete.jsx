@@ -84,4 +84,4 @@ class ProjectActionBar extends Component {
     );
   }
 }
-export default withTranslation('common')(withProjectViewModel(ProjectActionBar));
+export default withTranslation()(withProjectViewModel(ProjectActionBar));

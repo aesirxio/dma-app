@@ -31,4 +31,4 @@ class Checkbox extends React.Component {
   }
 }
 
-export default withTranslation('common')(Checkbox);
+export default withTranslation()(Checkbox);

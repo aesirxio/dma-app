@@ -5,26 +5,7 @@
 
 import history from '../routes/history';
 import { notify } from '../components/Toast';
-import {
-  AesirxAuthenticationApiService,
-  AUTHORIZATION_KEY,
-  Storage,
-  AXIOS_CONFIGS,
-  GENERAL_CONFIG,
-} from 'aesirx-lib';
-
-if (
-  AXIOS_CONFIGS.CLIENT_ID === '' ||
-  AXIOS_CONFIGS.CLIENT_SECRET === '' ||
-  AXIOS_CONFIGS.BASE_ENDPOINT_URL === '' ||
-  AXIOS_CONFIGS.LICENSE === '' ||
-  GENERAL_CONFIG.WEBSOCKET_ENDPOINT === ''
-) {
-  notify(
-    'The app has not been fully configured and you will not be able to login.  Go to https://dma.aesirx.io/install-guide/npm for instructions on how to configure your .env file',
-    'error'
-  );
-}
+import { AesirxAuthenticationApiService, AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
 
 // LOGIN
 const login = async ({ username, password }) => {

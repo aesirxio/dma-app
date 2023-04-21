@@ -33,7 +33,7 @@ const ContentFormDescription = observer(({ formPropsData, onBlurDescription }) =
       ? CONTENT_DESCRIPTION_MODE.ADVANCE
       : CONTENT_DESCRIPTION_MODE.BASIC;
   }, [formPropsData, mode]);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <>
       <div className="d-flex mb-2">
@@ -63,4 +63,4 @@ const ContentFormDescription = observer(({ formPropsData, onBlurDescription }) =
   );
 });
 
-export default withTranslation('common')(ContentFormDescription);
+export default withTranslation()(ContentFormDescription);

@@ -8,9 +8,8 @@ import React, { lazy, useEffect, useState } from 'react';
 import _ from 'lodash';
 
 import { AesirxFacebookDataApiService, AesirxGoogleDataApiService } from 'aesirx-lib';
-
+import { AesirXSelect } from 'aesirx-uikit';
 const FormRadio = lazy(() => import('../FormRadio'));
-const SelectComponent = lazy(() => import('../../Select'));
 
 const FormLocationField = ({ field, validator }) => {
   const [locations] = useState([]);
@@ -89,7 +88,7 @@ const FormLocationField = ({ field, validator }) => {
 
       {fieldSelect.value !== 'yes' && (
         <>
-          <SelectComponent
+          <AesirXSelect
             defaultValue={field.value}
             onChange={field.changed}
             className="text-green w-100"

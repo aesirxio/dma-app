@@ -115,4 +115,4 @@ const CampaignsFormModal = observer(
   }
 );
 
-export default withTranslation('common')(withCampaignsViewModel(CampaignsFormModal));
+export default withTranslation()(withCampaignsViewModel(CampaignsFormModal));

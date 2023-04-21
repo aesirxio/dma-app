@@ -55,4 +55,4 @@ const CalendarList = observer(
   }
 );
 
-export default withTranslation('common')(withContentViewModel(CalendarList));
+export default withTranslation()(withContentViewModel(CalendarList));

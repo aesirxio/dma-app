@@ -88,4 +88,4 @@ const ContentFormPublish = observer(
   }
 );
 
-export default withTranslation('common')(withContentViewModel(ContentFormPublish));
+export default withTranslation()(withContentViewModel(ContentFormPublish));

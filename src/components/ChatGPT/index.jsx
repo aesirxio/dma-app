@@ -174,4 +174,4 @@ class ChatGPT extends React.Component {
   }
 }
 
-export default withTranslation('common')(ChatGPT);
+export default withTranslation()(ChatGPT);

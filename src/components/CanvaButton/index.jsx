@@ -70,4 +70,4 @@ class CanvaButton extends React.PureComponent {
   }
 }
 
-export default withTranslation('common')(CanvaButton);
+export default withTranslation()(CanvaButton);

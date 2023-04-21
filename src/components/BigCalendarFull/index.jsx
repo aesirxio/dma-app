@@ -162,4 +162,4 @@ class BigCalendarFull extends React.PureComponent {
   }
 }
 
-export default withTranslation('common')(BigCalendarFull);
+export default withTranslation()(BigCalendarFull);

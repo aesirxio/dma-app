@@ -49,4 +49,4 @@ class PersonaActionBar extends Component {
     );
   }
 }
-export default withTranslation('common')(withPersonaViewModel(PersonaActionBar));
+export default withTranslation()(withPersonaViewModel(PersonaActionBar));

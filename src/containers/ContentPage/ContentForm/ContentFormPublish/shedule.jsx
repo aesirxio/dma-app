@@ -96,7 +96,7 @@ const ContentFormPublishShedule = observer(({ formPropsData, channelCategory = n
       channelTypesIds()
     );
   }, [formPropsData, mode, startTime, channelTypesIds]);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <>
       <div className="d-flex mb-3">
@@ -153,4 +153,4 @@ const ContentFormPublishShedule = observer(({ formPropsData, channelCategory = n
   );
 });
 
-export default withTranslation('common')(ContentFormPublishShedule);
+export default withTranslation()(ContentFormPublishShedule);

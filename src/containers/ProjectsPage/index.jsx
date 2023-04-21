@@ -30,4 +30,4 @@ function Projects(props) {
   );
 }
 
-export default withTranslation('common')(Projects);
+export default withTranslation()(Projects);

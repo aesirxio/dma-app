@@ -154,4 +154,4 @@ class ProjectForm extends Component {
   }
 }
 
-export default withTranslation('common')(ProjectForm);
+export default withTranslation()(ProjectForm);

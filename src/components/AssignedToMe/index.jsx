@@ -100,4 +100,4 @@ class AssignedToMe extends React.Component {
   }
 }
 
-export default withTranslation('common')(AssignedToMe);
+export default withTranslation()(AssignedToMe);

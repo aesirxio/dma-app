@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
 import { faColumns } from '@fortawesome/free-solid-svg-icons/faColumns';
 
-import SelectComponent from '../Select';
+import { AesirXSelect } from 'aesirx-uikit';
 import ComponentDatepicker from '../ComponentDatepicker';
 
 const optionAction = [
@@ -71,7 +71,7 @@ class ListThumb extends React.Component {
                 </div>
               </div>
               <div className="col-2 border-end-1">
-                <SelectComponent
+                <AesirXSelect
                   value={anAction}
                   onChange={this.handleAnAction}
                   options={optionAction}
@@ -87,7 +87,7 @@ class ListThumb extends React.Component {
                     <FontAwesomeIcon icon={faColumns} />
                   </i>
                   <div className="w-260">
-                    <SelectComponent
+                    <AesirXSelect
                       value={columns}
                       onChange={this.handleColumns}
                       options={optionColumns}

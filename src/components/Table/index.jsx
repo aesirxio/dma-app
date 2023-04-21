@@ -253,7 +253,7 @@ const Table = ({
     });
   };
 
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <>
       <div className={`mb-2 ${classNameTable}`}>
@@ -566,4 +566,4 @@ function filterGreaterThan(rows, id, filterValue) {
 
 filterGreaterThan.autoRemove = (val) => typeof val !== 'number';
 
-export default withTranslation('common')(Table);
+export default withTranslation()(Table);

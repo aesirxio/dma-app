@@ -124,4 +124,4 @@ class DropdownAvatar extends React.Component {
   }
 }
 
-export default withTranslation('common')(DropdownAvatar);
+export default withTranslation()(DropdownAvatar);

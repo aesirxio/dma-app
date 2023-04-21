@@ -20,7 +20,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
   const context = useContext(ChannelsViewModelContext);
 
   const [loading, setLoading] = useState(false);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const pages = channelType.getPages();
 
   if (pages.length === 0) {
@@ -88,4 +88,4 @@ const ChannelTypeChannels = observer(({ channelType }) => {
   );
 });
 
-export default withTranslation('common')(ChannelTypeChannels);
+export default withTranslation()(ChannelTypeChannels);

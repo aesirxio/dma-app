@@ -16,7 +16,7 @@ const ContentListItem = observer(({ channelData }) => {
   const logoSocial = channelData.img ? channelData.img : `/assets/images/${channelData.id}.png`;
 
   const channels = [...channelData?.pages];
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const { contentFormViewModel } = useContentViewModel();
 
   return (

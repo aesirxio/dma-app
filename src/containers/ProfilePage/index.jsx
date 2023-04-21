@@ -33,4 +33,4 @@ class ProfilePage extends React.Component {
   }
 }
 
-export default withTranslation('common')(ProfilePage);
+export default withTranslation()(ProfilePage);

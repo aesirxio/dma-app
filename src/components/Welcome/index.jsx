@@ -85,4 +85,4 @@ class Welcome extends Component {
   }
 }
 
-export default withTranslation('common')(Welcome);
+export default withTranslation()(Welcome);

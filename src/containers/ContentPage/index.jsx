@@ -52,4 +52,4 @@ class Contents extends Component {
   }
 }
 
-export default withTranslation('common')(Contents);
+export default withTranslation()(Contents);

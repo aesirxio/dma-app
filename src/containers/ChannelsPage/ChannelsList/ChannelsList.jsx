@@ -90,4 +90,4 @@ const ChannelsList = observer(
   }
 );
 
-export default withTranslation('common')(withChannelsViewModel(ChannelsList));
+export default withTranslation()(withChannelsViewModel(ChannelsList));

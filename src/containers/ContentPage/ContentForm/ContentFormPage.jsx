@@ -110,4 +110,4 @@ const ContentFormPage = observer(
   }
 );
 
-export default withTranslation('common')(withContentViewModel(ContentFormPage));
+export default withTranslation()(withContentViewModel(ContentFormPage));

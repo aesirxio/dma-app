@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 
-import SelectComponent from '../../Select';
+import { AesirXSelect } from 'aesirx-uikit';
 
 const dataSelectOptionsAgeFrom = [
   { value: '18', label: '18' },
@@ -61,7 +61,7 @@ const FormAgeField = ({ field }) => {
 
   return (
     <div className="d-flex justify-content-start position-relative z-index-5">
-      <SelectComponent
+      <AesirXSelect
         defaultValue={field.valueFrom}
         onChange={handleOnChange}
         options={field.isAgeGG ? dataSelectOptionsGGAgeFrom : dataSelectOptionsAgeFrom}
@@ -76,7 +76,7 @@ const FormAgeField = ({ field }) => {
       />
 
       <div className="align-self-center m-1">-</div>
-      <SelectComponent
+      <AesirXSelect
         defaultValue={field.valueTo}
         onChange={handleOnChange}
         options={field.isAgeGG ? dataSelectOptionsGGAgeTo : getDataSelectOptionsAge}

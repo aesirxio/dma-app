@@ -84,4 +84,4 @@ class CampaignsDelete extends Component {
   }
 }
 
-export default withTranslation('common')(withCampaignsViewModel(withRouter(CampaignsDelete)));
+export default withTranslation()(withCampaignsViewModel(withRouter(CampaignsDelete)));

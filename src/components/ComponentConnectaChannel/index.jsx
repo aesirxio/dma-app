@@ -915,4 +915,4 @@ class ComponentConnectaChannel extends Component {
   }
 }
 
-export default withTranslation('common')(ComponentConnectaChannel);
+export default withTranslation()(ComponentConnectaChannel);
