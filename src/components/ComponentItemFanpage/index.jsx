@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Checkbox } from 'aesirx-uikit';
-import {Image as ComponentImage} from "aesirx-uikit";
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 class ComponentItemFanpage extends React.Component {
   constructor(props) {
