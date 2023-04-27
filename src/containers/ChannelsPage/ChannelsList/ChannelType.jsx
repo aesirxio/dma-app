@@ -8,7 +8,7 @@ import { observer } from 'mobx-react';
 import { withTranslation } from 'react-i18next';
 import ChannelTypeConnectButton from './ChannelTypeConnectButton';
 import ChannelTypeChannels from './ChannelTypeChannels';
-import ComponentImage from '../../../components/ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import { useTranslation } from 'react-i18next';
 
 const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {

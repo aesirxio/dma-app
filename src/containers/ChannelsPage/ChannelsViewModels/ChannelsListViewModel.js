@@ -5,7 +5,7 @@
 
 import { runInAction, makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 import ChannelUtils from '../ChannelUtils/ChannelUtils';
 import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
 import ProfileStore from '../../ProfilePage/ProfileStore/ProfileStore';

@@ -10,8 +10,8 @@ import { observer } from 'mobx-react';
 import ChannelTypeChannelsAction from './ChannelTypeChannelsAction';
 import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
 
-import Helper from '../../../utils/helper';
-import ComponentImage from '../../../components/ComponentImage';
+import { Helper } from 'aesirx-lib';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import ChannelTypeChannelToken from './ChannelTypeChannelToken';
 import { useTranslation } from 'react-i18next';
 import { withTranslation } from 'react-i18next';

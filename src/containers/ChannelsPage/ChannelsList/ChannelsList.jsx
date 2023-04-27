@@ -7,14 +7,14 @@ import React, { Component, lazy } from 'react';
 import { observer } from 'mobx-react';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { withChannelsViewModel } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 import { Tab, Tabs } from 'react-bootstrap';
 import ChannelType from './ChannelType';
 import './index.scss';
 import Upgrade from '../../../components/Upgrade';
 import { withTranslation } from 'react-i18next';
 import { env } from 'env';
-import { notifyHTML } from 'components/Toast';
+import { notifyHTML } from 'aesirx-uikit';
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
 const ChannelsList = observer(

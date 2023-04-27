@@ -6,7 +6,7 @@
 import React from 'react';
 
 import 'aesirx-uikit/dist/index.css';
-// import 'scss/app.scss';
+import 'scss/app.scss';
 
 import { AppProvider, Menu } from 'aesirx-uikit';
 import appLanguages from 'translations';

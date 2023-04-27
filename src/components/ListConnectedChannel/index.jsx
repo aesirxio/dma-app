@@ -6,7 +6,7 @@
 import React from 'react';
 import styles from './index.module.scss';
 import { observer } from 'mobx-react';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 const ListConnectedChannel = observer(
   class ListConnectedChannel extends React.Component {

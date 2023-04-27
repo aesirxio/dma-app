@@ -6,8 +6,8 @@
 import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import PersonaUtils from '../PersonaUtils/PersonaUtils';
-import Helper from '../../../utils/helper';
-import { notify } from '../../../components/Toast';
+import { Helper } from 'aesirx-lib';
+import { notify } from 'aesirx-uikit';
 
 class PersonasListViewModel {
   personaStore = null;

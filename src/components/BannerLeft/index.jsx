@@ -6,7 +6,7 @@
 import React from 'react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 // Import Swiper styles
 import 'swiper/swiper.scss';

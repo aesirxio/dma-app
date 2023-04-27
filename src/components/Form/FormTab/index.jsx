@@ -19,7 +19,7 @@ import 'emoji-mart/css/emoji-mart.css';
 import { Emoji, Picker } from 'emoji-mart';
 
 import './index.scss';
-import ComponentImage from '../../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 const FormTab = observer(
   class FormTab extends Component {

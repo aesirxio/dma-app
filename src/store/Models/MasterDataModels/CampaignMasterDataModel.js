@@ -6,7 +6,7 @@
 import BaseMasterDataItemModel from '../Abstract/BaseMasterDataItemModel';
 import BaseMasterDataModel from '../Abstract/BaseMasterDataModel';
 import { CAMPAIGNS_FIELD_KEY, CAMPAIGN_API_FIELD_KEY } from '../../../constants/CampaignsModule';
-import Helper from '../../../utils/helper';
+import { Helper } from 'aesirx-lib';
 
 class CampaignMasterDataItemModel extends BaseMasterDataItemModel {
   startDate = '';

@@ -5,7 +5,7 @@
 
 import { makeAutoObservable } from 'mobx';
 import { CONTENT_FIELD_KEY } from '../../../constants/ContentModule';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 class ContentFormAdsViewModel {
   parentNextStep = null;
   parentPreviousStep = null;

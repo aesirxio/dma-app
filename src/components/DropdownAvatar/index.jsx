@@ -6,15 +6,15 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { Dropdown } from 'react-bootstrap';
-import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
+import { AUTHORIZATION_KEY, Storage, Helper } from 'aesirx-lib';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { shortenString } from 'utils/shortenString';
 import './index.scss';
 
 import { logout } from '../../auth';
-import Helper from '../../utils/helper';
-import ComponentImage from '../ComponentImage';
+
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 const data = [
   {

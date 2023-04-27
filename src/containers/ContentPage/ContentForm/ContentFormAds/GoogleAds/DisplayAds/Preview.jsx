@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { observer } from 'mobx-react';
-import ComponentImage from '../../../../../../components/ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 const DisplayAdsPreview = observer(({ previewData }) => {
   return (

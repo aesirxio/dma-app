@@ -6,7 +6,7 @@
 import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../constants/PageStatus';
 import { PERSONA_TABLE_SELECTION_MODAL_COLUMN_INDICATOR } from '../../constants/PersonaModule';
-import { notify } from '../../components/Toast';
+import { notify } from 'aesirx-uikit';
 
 class PersonaTableSelectionModalViewModel {
   show = false;

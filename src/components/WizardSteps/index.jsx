@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
-import history from '../../routes/history';
+import { history } from 'aesirx-uikit';
 
 import './index.scss';
 import styles from './index.module.scss';

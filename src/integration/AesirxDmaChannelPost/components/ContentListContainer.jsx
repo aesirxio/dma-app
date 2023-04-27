@@ -16,7 +16,7 @@ import ContentListConnected from './ContentListConnected';
 import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from 'constants/ContentModule';
 import { CHANNEL_ADS_GOOGLE, CHANNEL_ADS_FACEBOOK } from 'constants/ChannelModule';
 import PAGE_STATUS from 'constants/PageStatus';
-import Spinner from 'components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 
 const ContentListContainer = observer(
   class ContentListContainer extends Component {

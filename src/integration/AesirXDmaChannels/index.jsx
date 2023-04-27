@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toast } from 'components/Toast';
+import { Toast } from 'aesirx-uikit';
 import ErrorBoundary from 'layouts/ErrorBoundary';
 import i18n from 'translations/i18n';
 import { I18nextProvider } from 'react-i18next';

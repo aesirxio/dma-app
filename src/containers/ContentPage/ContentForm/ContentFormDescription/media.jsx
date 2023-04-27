@@ -17,7 +17,7 @@ import DamComponent from 'components/DamComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
-import ComponentImage from 'components/ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 const ModalComponent = lazy(() => import('components/Modal'));
 const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null }) => {
   const context = useContext(ContentViewModelContext);

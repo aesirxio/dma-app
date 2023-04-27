@@ -19,7 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
 
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 
 import getStatus from '../../../utils/status';
 import CampaignsActionBar from '../CampaignsForm/CampaignsActionBar';

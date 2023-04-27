@@ -5,7 +5,7 @@
 
 import React, { Component } from 'react';
 
-import history from '../../../routes/history';
+import { history } from 'aesirx-uikit';
 
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';

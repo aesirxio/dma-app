@@ -4,7 +4,7 @@
  */
 
 import React, { Component, lazy } from 'react';
-import history from '../../../routes/history';
+import { history } from 'aesirx-uikit';
 import { withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import ButtonNormal from '../../../components/ButtonNormal';

@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-import history from '../../../routes/history';
+import { history } from 'aesirx-uikit';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
@@ -19,12 +19,12 @@ import Table from '../../../components/Table';
 import { observer } from 'mobx-react';
 import { withContentViewModel } from '../ContentViewModels/ContentViewModelContextProvider';
 
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 import { withTranslation } from 'react-i18next';
 import ComponentNoData from '../../../components/ComponentNoData';
 
 import ComponentViewList from '../../../components/ComponentViewList';
-import ComponentImage from '../../../components/ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import ContentUtils from '../ContentUtils/ContentUtils';
 
 const ContentsList = observer(

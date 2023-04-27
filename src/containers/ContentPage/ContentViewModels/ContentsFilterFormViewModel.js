@@ -4,7 +4,7 @@
  */
 
 import { makeAutoObservable, runInAction } from 'mobx';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 
 import CampaignsUtils from '../../CampaignsPage/CampaignsUtils/CampaignsUtils';
 import PersonaUtils from '../../PersonasPage/PersonaUtils/PersonaUtils';

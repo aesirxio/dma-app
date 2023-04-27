@@ -14,7 +14,7 @@ import { withPersonaViewModel } from '../PersonaViewModels/PersonaViewModelConte
 import ComponentFormFieldPersonaName from '../FormComponentPersona/ComponentFormFieldPersonaName';
 import ComponentHeaderPage from '../../../components/ComponentHeaderPage';
 import PAGE_STATUS from '../../../constants/PageStatus';
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 
 import { faSave } from '@fortawesome/free-regular-svg-icons/faSave';
 import ComponentFormChannels from '../FormComponentPersona/ComponentFormChannels';

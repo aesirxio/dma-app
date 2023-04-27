@@ -12,7 +12,7 @@ import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
 
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { withTranslation } from 'react-i18next';
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 import { renderingGroupFieldHandler } from '../../../utils/form';
 
 class ProjectForm extends Component {

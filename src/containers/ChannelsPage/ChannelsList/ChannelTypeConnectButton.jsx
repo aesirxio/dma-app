@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
 import { withTranslation } from 'react-i18next';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 import { useTranslation } from 'react-i18next';
 
 const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => {

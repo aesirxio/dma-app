@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { Link } from 'react-router-dom';
 import './index.scss';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 class ComponentNoData extends Component {
   render() {

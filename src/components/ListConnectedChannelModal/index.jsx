@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 const ModalComponent = lazy(() => import('../Modal'));
 

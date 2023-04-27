@@ -9,7 +9,7 @@ import './index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 // import { faEdit } from '@fortawesome/free-solid-svg-icons';
-import ComponentImage from '../../../../components/ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 class MediaDataRender extends React.Component {
   // canvaEditHandler = (index, id) => {

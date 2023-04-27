@@ -8,14 +8,14 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import './index.scss';
 import { env } from 'env';
-import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
+import { AUTHORIZATION_KEY, Storage, Helper } from 'aesirx-lib';
 import { Configuration, OpenAIApi } from 'openai';
-import Helper from '../../utils/helper';
+
 import ButtonCopy from '../../utils/ButtonCopy';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons/faPaperPlane';
-import { notify } from 'components/Toast';
+import { notify } from 'aesirx-uikit';
 
 class ChatGPT extends React.Component {
   constructor(props) {

@@ -4,8 +4,8 @@
  */
 
 import { makeAutoObservable, runInAction } from 'mobx';
-import { notify } from '../../../components/Toast';
-import history from '../../../routes/history';
+import { notify } from 'aesirx-uikit';
+import { history } from 'aesirx-uikit';
 
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { PERSONA_TABLE_SELECTION_MODAL_COLUMN_INDICATOR } from '../../../constants/PersonaModule';

@@ -6,7 +6,7 @@
 import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import ProjectUtils from '../ProjectUtils/ProjectUtils';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 
 class ProjectsListViewModel {
   projectStore = null;

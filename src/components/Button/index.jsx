@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import styles from './index.module.scss';
 import { withTranslation } from 'react-i18next';
 

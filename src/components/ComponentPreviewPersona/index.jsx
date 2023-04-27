@@ -5,8 +5,7 @@
 
 import React, { Component } from 'react';
 
-import { AesirXSelect } from 'aesirx-uikit';
-import ComponentImage from '../ComponentImage';
+import { AesirXSelect, Image as ComponentImage } from 'aesirx-uikit';
 
 class ComponentPreviewPersona extends Component {
   componentDidMount = () => {};

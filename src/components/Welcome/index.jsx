@@ -10,7 +10,7 @@ import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import './index.scss';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 import { Storage } from 'aesirx-lib';
 class Welcome extends Component {

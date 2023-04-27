@@ -11,7 +11,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
 
 import ItemAccordion from './ItemAccordion';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 const data = [
   {

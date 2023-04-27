@@ -12,7 +12,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 
 import styles from './index.module.scss';
-import Checkbox from '../Checkbox';
+import { Checkbox } from 'aesirx-uikit';
 
 class FilterCalendar extends React.Component {
   data = [];

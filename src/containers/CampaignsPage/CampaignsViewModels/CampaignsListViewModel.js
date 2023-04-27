@@ -6,7 +6,7 @@
 import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import CampaignsUtils from '../CampaignsUtils/CampaignsUtils';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 import ContentStore from '../../ContentPage/ContentStore/ContentStore';
 
 class CampaignsListViewModel {

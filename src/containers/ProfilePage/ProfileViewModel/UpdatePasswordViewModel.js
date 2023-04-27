@@ -6,7 +6,7 @@
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { makeAutoObservable } from 'mobx';
 import { logout } from '../../../auth';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 
 class UpdatePasswordViewModel {
   profileStore = null;

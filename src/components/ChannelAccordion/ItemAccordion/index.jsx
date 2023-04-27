@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import ComponentImage from '../../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import ChartLine from '../ChartLine';
 
 import '../index.scss';

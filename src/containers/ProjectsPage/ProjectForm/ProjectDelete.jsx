@@ -8,7 +8,7 @@ import React, { Component, lazy } from 'react';
 import { withTranslation } from 'react-i18next';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 import { Dropdown } from 'react-bootstrap';
-import ComponentImage from 'components/ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import Button from 'components/Button';
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 

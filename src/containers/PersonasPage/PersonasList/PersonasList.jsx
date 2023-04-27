@@ -5,13 +5,13 @@
 
 import React, { Component } from 'react';
 
-import history from '../../../routes/history';
+import { history } from 'aesirx-uikit';
 import { withTranslation } from 'react-i18next';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 
 import Table from '../../../components/Table';
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 
 import { observer } from 'mobx-react';
 import { withPersonaViewModel } from '../PersonaViewModels/PersonaViewModelContextProvider';

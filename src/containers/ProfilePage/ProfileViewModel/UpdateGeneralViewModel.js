@@ -5,7 +5,7 @@
 
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { makeAutoObservable } from 'mobx';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 import { UPDATE_GENERAL_FIELD_KEY } from '../../../constants/ProfileModule';
 import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
 import i18n from 'i18next';

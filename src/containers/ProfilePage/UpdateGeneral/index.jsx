@@ -8,7 +8,7 @@ import { observer } from 'mobx-react';
 import SimpleReactValidator from 'simple-react-validator';
 import { UPDATE_GENERAL_FIELD_KEY } from '../../../constants/ProfileModule';
 import { witheProfileViewModel } from '../ProfileViewModel/ProfileViewModelContextProvider';
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../index.scss';
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';

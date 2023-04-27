@@ -7,7 +7,7 @@ import React from 'react';
 
 import './index.scss';
 import ComponentNoData from '../ComponentNoData';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import moment from 'moment';
 
 class UpcomingPosts extends React.Component {

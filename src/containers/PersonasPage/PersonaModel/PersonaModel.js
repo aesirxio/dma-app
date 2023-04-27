@@ -8,7 +8,7 @@ import { FORMAT_DATE } from '../../../constants/FormFieldType';
 import { PERSONA_FIELD_KEY, ESI_PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 
 import { format } from 'date-fns';
-import Helper from '../../../utils/helper';
+import { Helper } from 'aesirx-lib';
 
 class PersonaModel {
   constructor(data) {

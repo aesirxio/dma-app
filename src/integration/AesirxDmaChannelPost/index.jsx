@@ -11,7 +11,7 @@ import ContentViewModel from 'containers/ContentPage/ContentViewModels/ContentVi
 import GlobalStore from 'store/Store';
 import { ContentViewModelContextProvider } from 'containers/ContentPage/ContentViewModels/ContentViewModelContextProvider';
 import ContentListContainer from './components/ContentListContainer';
-import { Toast } from 'components/Toast';
+import { Toast } from 'aesirx-uikit';
 
 if (!window.globalStore) {
   window.globalStore = new GlobalStore();

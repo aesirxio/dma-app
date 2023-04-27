@@ -4,7 +4,7 @@
  */
 
 import { makeAutoObservable } from 'mobx';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 
 class InvesterContactFormViewModel {
   show = false;

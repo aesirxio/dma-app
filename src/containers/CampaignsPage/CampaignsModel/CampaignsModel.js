@@ -12,7 +12,7 @@ import getStatus from '../../../utils/status';
 import moment from 'moment';
 import { CAMPAIGNS_FIELD_KEY, CAMPAIGN_API_FIELD_KEY } from '../../../constants/CampaignsModule';
 
-import Helper from '../../../utils/helper';
+import { Helper } from 'aesirx-lib';
 
 class CampaignsModel {
   constructor(data) {

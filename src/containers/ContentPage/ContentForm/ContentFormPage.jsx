@@ -16,7 +16,7 @@ import ContentFormAds from './ContentFormAds';
 import { CHANNEL_ADS_GOOGLE, CHANNEL_ADS_FACEBOOK } from '../../../constants/ChannelModule';
 import ContentUtils from '../ContentUtils/ContentUtils';
 import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 import { withTranslation } from 'react-i18next';
 
 const ContentFormPage = observer(

@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import { NEWS_FIELD_KEY } from '../../constants/NewsConstant';
 import { formatDate } from '../../utils/date';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import DefaultImage from './Image.png';
 import './index.scss';
 export default class Inspiration extends Component {

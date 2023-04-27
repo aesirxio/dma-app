@@ -5,7 +5,7 @@
 
 import { runInAction } from 'mobx';
 
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 
 export default class InvesterContactStore {
   async investerContactSave(callbackOnSuccess) {
