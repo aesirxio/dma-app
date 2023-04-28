@@ -13,10 +13,11 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight
 
 import { withChannelsViewModel } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
 
-import { CHANNEL_CMS_MEDIUM, CHANNEL_CMS_JOOMLA } from '../../../constants/ChannelModule';
+import { CHANNEL_CMS_MEDIUM, CHANNEL_CMS_JOOMLA , CHANNEL_TELEGRAM } from '../../../constants/ChannelModule';
 import LoginChannelCMSForm from './LoginChannelCMSForm';
 import LoginChannelCMSMedium from './LoginChannelCMSMedium';
 import LoginChannelCMSFormJoomla from './LoginChannelCMSFormJoomla';
+import LoginChannelFormTelegram from './LoginChannelFormTelegram';
 
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
@@ -85,12 +86,17 @@ const LoginChannelCMSFormModal = observer(
                 viewModel={this.loginCMSChannelFormModalViewModel}
                 validator={this.validator}
               />
+            ) : eventName === CHANNEL_TELEGRAM ? (
+              <LoginChannelFormTelegram
+                viewModel={this.loginCMSChannelFormModalViewModel}
+                validator={this.validator}
+              />
             ) : (
               <LoginChannelCMSForm
                 viewModel={this.loginCMSChannelFormModalViewModel}
                 validator={this.validator}
               />
-            )
+            ) 
           }
           footer={
             <Button
