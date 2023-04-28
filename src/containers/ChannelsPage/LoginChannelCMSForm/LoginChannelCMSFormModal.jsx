@@ -13,7 +13,11 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight
 
 import { withChannelsViewModel } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
 
-import { CHANNEL_CMS_MEDIUM, CHANNEL_CMS_JOOMLA , CHANNEL_TELEGRAM } from '../../../constants/ChannelModule';
+import {
+  CHANNEL_CMS_MEDIUM,
+  CHANNEL_CMS_JOOMLA,
+  CHANNEL_TELEGRAM,
+} from '../../../constants/ChannelModule';
 import LoginChannelCMSForm from './LoginChannelCMSForm';
 import LoginChannelCMSMedium from './LoginChannelCMSMedium';
 import LoginChannelCMSFormJoomla from './LoginChannelCMSFormJoomla';
@@ -96,7 +100,7 @@ const LoginChannelCMSFormModal = observer(
                 viewModel={this.loginCMSChannelFormModalViewModel}
                 validator={this.validator}
               />
-            ) 
+            )
           }
           footer={
             <Button
