@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
 import { withTranslation } from 'react-i18next';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 import { useTranslation } from 'react-i18next';
 
 const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => {
@@ -19,7 +19,7 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
   const channelsListViewModel = context.getChannelsListViewModel();
 
   const [connecting, setConnecting] = useState(false);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const handleOnClick = async () => {
     if (channelsListViewModel.memberProfile?.allow_create_item) {
       if (
@@ -59,4 +59,4 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
   );
 });
 
-export default withTranslation('common')(ChannelTypeConnectButton);
+export default withTranslation()(ChannelTypeConnectButton);

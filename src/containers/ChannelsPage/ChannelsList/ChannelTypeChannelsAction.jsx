@@ -14,7 +14,7 @@ import { withTranslation } from 'react-i18next';
 
 const ChannelTypeChannelsAction = observer(({ channelType, channel, removeChannel }) => {
   const context = useContext(ChannelsViewModelContext);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const handleStatus = async (event) => {
     if (event.target.checked) {
       await context.getChannelsListViewModel().actions('reconnectChannel', channelType, channel);
@@ -50,4 +50,4 @@ const ChannelTypeChannelsAction = observer(({ channelType, channel, removeChanne
   );
 });
 
-export default withTranslation('common')(ChannelTypeChannelsAction);
+export default withTranslation()(ChannelTypeChannelsAction);

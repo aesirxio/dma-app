@@ -22,4 +22,4 @@ class ComponentButtonDelete extends Component {
   }
 }
 
-export default withTranslation('common')(ComponentButtonDelete);
+export default withTranslation()(ComponentButtonDelete);

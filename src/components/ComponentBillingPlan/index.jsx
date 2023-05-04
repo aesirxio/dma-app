@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { notify } from '../Toast';
+import { notify } from 'aesirx-uikit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';

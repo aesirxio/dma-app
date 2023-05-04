@@ -7,7 +7,7 @@ import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';
 
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 
 class CampaignsSelectionViewModel {
   show = false;

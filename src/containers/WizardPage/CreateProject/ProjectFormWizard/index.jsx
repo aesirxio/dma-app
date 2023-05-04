@@ -9,7 +9,7 @@ import { observer } from 'mobx-react';
 import { withWizardViewModel } from '../../WizardViewModels/WizardViewModelContextProvider';
 
 import PAGE_STATUS from '../../../../constants/PageStatus';
-import Spinner from '../../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 import ButtonNormal from '../../../../components/ButtonNormal';
 import { withTranslation } from 'react-i18next';
 const ProjectForm = lazy(() => import('../../../ProjectsPage/ProjectForm/ProjectForm'));
@@ -66,4 +66,4 @@ const ProjectFormWizard = observer(
   }
 );
 
-export default withTranslation('common')(withWizardViewModel(ProjectFormWizard));
+export default withTranslation()(withWizardViewModel(ProjectFormWizard));

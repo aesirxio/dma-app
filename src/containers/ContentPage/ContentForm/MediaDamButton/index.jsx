@@ -73,4 +73,4 @@ MediaDamButton.defaultProps = {
   video: false,
 };
 
-export default withTranslation('common')(MediaDamButton);
+export default withTranslation()(MediaDamButton);

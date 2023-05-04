@@ -9,7 +9,7 @@ import { observer } from 'mobx-react';
 import { withContentViewModel } from '../ContentViewModels/ContentViewModelContextProvider';
 import { Dropdown } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
-import ComponentImage from 'components/ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import Button from 'components/Button';
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
@@ -92,4 +92,4 @@ const ContentActionBar = observer(
   }
 );
 
-export default withTranslation('common')(withContentViewModel(ContentActionBar));
+export default withTranslation()(withContentViewModel(ContentActionBar));

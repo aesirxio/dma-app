@@ -45,4 +45,4 @@ const ContentActionBar = observer(
   }
 );
 
-export default withTranslation('common')(withContentViewModel(ContentActionBar));
+export default withTranslation()(withContentViewModel(ContentActionBar));

@@ -7,7 +7,7 @@ import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 
 class PersonasSelectionViewModel {
   show = false;

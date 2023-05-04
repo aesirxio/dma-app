@@ -73,4 +73,4 @@ class Projects extends React.Component {
   }
 }
 
-export default withTranslation('common')(Projects);
+export default withTranslation()(Projects);

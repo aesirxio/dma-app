@@ -10,8 +10,8 @@ import { observer } from 'mobx-react';
 import ChannelTypeChannelsAction from './ChannelTypeChannelsAction';
 import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
 
-import Helper from '../../../utils/helper';
-import ComponentImage from '../../../components/ComponentImage';
+import { Helper } from 'aesirx-lib';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import ChannelTypeChannelToken from './ChannelTypeChannelToken';
 import { useTranslation } from 'react-i18next';
 import { withTranslation } from 'react-i18next';
@@ -20,7 +20,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
   const context = useContext(ChannelsViewModelContext);
 
   const [loading, setLoading] = useState(false);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const pages = channelType.getPages();
 
   if (pages.length === 0) {
@@ -88,4 +88,4 @@ const ChannelTypeChannels = observer(({ channelType }) => {
   );
 });
 
-export default withTranslation('common')(ChannelTypeChannels);
+export default withTranslation()(ChannelTypeChannels);

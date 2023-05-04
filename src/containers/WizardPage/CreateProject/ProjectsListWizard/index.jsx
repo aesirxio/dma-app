@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 
 import PAGE_STATUS from '../../../../constants/PageStatus';
-import history from '../../../../routes/history';
+import { history } from 'aesirx-uikit';
 
 import Table from '../../../../components/Table';
 
@@ -14,7 +14,7 @@ import { observer } from 'mobx-react';
 import { withWizardViewModel } from '../../WizardViewModels/WizardViewModelContextProvider';
 import { PROJECT_COLUMN_INDICATOR } from '../../../../constants/ProjectModule';
 
-import Spinner from '../../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

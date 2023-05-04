@@ -97,4 +97,4 @@ class ContentSbarRight extends React.Component {
   }
 }
 
-export default withTranslation('common')(ContentSbarRight);
+export default withTranslation()(ContentSbarRight);

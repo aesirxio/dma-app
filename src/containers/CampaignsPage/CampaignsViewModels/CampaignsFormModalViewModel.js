@@ -4,7 +4,7 @@
  */
 
 import { makeAutoObservable, runInAction } from 'mobx';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';
 

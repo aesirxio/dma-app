@@ -9,7 +9,7 @@ import { observer } from 'mobx-react';
 import { withPersonaTableSelectionModalViewModel } from './PersonaTableSelectionModalViewModelContextProvider';
 import { PERSONA_TABLE_SELECTION_MODAL_COLUMN_INDICATOR } from '../../constants/PersonaModule';
 import PAGE_STATUS from '../../constants/PageStatus';
-import Spinner from '../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 import Table from '../../components/Table';
 
 const ModalComponent = lazy(() => import('../../components/Modal'));

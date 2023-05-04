@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { withChannelsViewModel } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 import ComponentConnectaChannel from '../../../components/ComponentConnectaChannel';
 import ModalComponent from '../../../components/Modal';
 import ComponentItemFanpage from '../../../components/ComponentItemFanpage';

@@ -7,7 +7,7 @@ import ContentListItem from './ContentListItem';
 import { useTranslation } from 'react-i18next';
 
 const ContentListConnected = observer((props) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const context = useContext(ContentViewModelContext);
   const viewModel = context.getFormViewModel();
 

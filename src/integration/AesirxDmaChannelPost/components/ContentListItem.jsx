@@ -6,7 +6,7 @@
 import React from 'react';
 
 import { observer } from 'mobx-react';
-import ComponentImage from 'components/ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import ComponentTooltip from 'components/ComponentTooltip';
 import Button from 'components/Button';
 import { useTranslation } from 'react-i18next';
@@ -16,7 +16,7 @@ const ContentListItem = observer(({ channelData }) => {
   const logoSocial = channelData.img ? channelData.img : `/assets/images/${channelData.id}.png`;
 
   const channels = [...channelData?.pages];
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const { contentFormViewModel } = useContentViewModel();
 
   return (

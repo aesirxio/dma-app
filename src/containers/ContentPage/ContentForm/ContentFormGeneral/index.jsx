@@ -18,7 +18,7 @@ import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 import Button from '../../../../components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
-import { notify } from '../../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 import ContentUtils from '../../ContentUtils/ContentUtils';
 import { withTranslation } from 'react-i18next';
 const ContentFormGeneral = observer(
@@ -167,4 +167,4 @@ const ContentFormGeneral = observer(
   }
 );
 
-export default withTranslation('common')(withContentViewModel(ContentFormGeneral));
+export default withTranslation()(withContentViewModel(ContentFormGeneral));

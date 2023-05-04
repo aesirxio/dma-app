@@ -11,7 +11,7 @@ import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 
 import './index.scss';
-import Checkbox from '../Checkbox';
+import { Checkbox } from 'aesirx-uikit';
 
 class ComponentAdExtensions extends Component {
   constructor(props) {

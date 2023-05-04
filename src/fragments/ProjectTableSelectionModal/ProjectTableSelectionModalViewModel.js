@@ -6,7 +6,7 @@
 import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../constants/PageStatus';
 import { PROJECT_TABLE_SELECTION_MODAL_COLUMN_INDICATOR } from '../../constants/ProjectModule';
-import { notify } from '../../components/Toast';
+import { notify } from 'aesirx-uikit';
 
 class ProjectTableSelectionModalViewModel {
   show = false;

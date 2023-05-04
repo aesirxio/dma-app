@@ -1,6 +1,6 @@
 import ModalDAMComponent from 'components/ModalDamComponent';
 import React, { useState } from 'react';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 

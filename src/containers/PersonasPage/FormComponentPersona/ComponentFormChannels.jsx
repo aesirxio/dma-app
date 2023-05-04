@@ -11,7 +11,7 @@ import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
 import { renderingGroupFieldHandler } from '../../../utils/form';
 
 import { components } from 'react-select';
-import ComponentImage from '../../../components/ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 const IconOption = (props) => (
   <components.Option {...props}>

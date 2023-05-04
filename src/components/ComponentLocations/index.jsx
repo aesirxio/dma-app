@@ -8,7 +8,7 @@ import { Form } from 'react-bootstrap';
 import Label from '../Form/Label';
 
 import { PERSONA_FIELD_KEY } from '../../constants/PersonaModule';
-import SelectComponent from '../Select';
+import { AesirXSelect } from 'aesirx-uikit';
 import './index.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -32,7 +32,7 @@ const ComponentLocations = ({
     <div>
       <Form.Group key={Math.random(40, 200)} className="mb-4">
         <Label text={'Locations'} required={false} />
-        <SelectComponent
+        <AesirXSelect
           options={getDataSelectOptions}
           className="mb-3 text-danger"
           isBorder={true}
@@ -66,14 +66,14 @@ const ComponentLocations = ({
       <Form.Group key={Math.random(40, 200)} className="mb-4">
         <Label text={'Age'} required={false} />
         <div className="d-flex align-items-center">
-          <SelectComponent
+          <AesirXSelect
             options={getDataSelectOptionsAge}
             className="text-green w-110 mb-0"
             isBorder={true}
             plColor="rgba(8, 18, 64, 0.8)"
           />
           <span className="px-2">-</span>
-          <SelectComponent
+          <AesirXSelect
             options={getDataSelectOptionsAge}
             className="text-green w-110 mb-0"
             isBorder={true}

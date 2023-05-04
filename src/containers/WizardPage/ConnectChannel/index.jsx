@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 
 import ModalComponent from '../../../components/Modal';
-import history from '../../../routes/history';
+import { history } from 'aesirx-uikit';
 
 import ButtonNormal from '../../../components/ButtonNormal';
 import ComponentConnectaChannel from '../../../components/ComponentConnectaChannel';
@@ -18,7 +18,7 @@ import ComponentItemFanpage from '../../../components/ComponentItemFanpage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { CHANNEL_ADS_GOOGLE } from '../../../constants/ChannelModule';
 

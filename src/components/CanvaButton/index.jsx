@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { notify } from 'components/Toast';
+import { notify } from 'aesirx-uikit';
 import { withTranslation } from 'react-i18next';
 import { canvaApi } from '../../utils/canva';
 import './index.scss';
@@ -70,4 +70,4 @@ class CanvaButton extends React.PureComponent {
   }
 }
 
-export default withTranslation('common')(CanvaButton);
+export default withTranslation()(CanvaButton);

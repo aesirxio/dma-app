@@ -4,7 +4,7 @@
  */
 
 import { makeAutoObservable, runInAction } from 'mobx';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import ProjectUtils from '../../ProjectsPage/ProjectUtils/ProjectUtils';
 import CampaignsUtils from '../../CampaignsPage/CampaignsUtils/CampaignsUtils';
@@ -12,7 +12,7 @@ import PersonaUtils from '../../PersonasPage/PersonaUtils/PersonaUtils';
 import ChannelsStore from '../../ChannelsPage/ChannelsStore/ChannelsStore';
 import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
 import ContentUtils from '../ContentUtils/ContentUtils';
-import history from '../../../routes/history';
+import { history } from 'aesirx-uikit';
 import ProfileStore from '../../ProfilePage/ProfileStore/ProfileStore';
 import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
 //                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           b';

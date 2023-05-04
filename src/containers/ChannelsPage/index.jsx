@@ -37,4 +37,4 @@ class channelsPage extends Component {
   }
 }
 
-export default withTranslation('common')(channelsPage);
+export default withTranslation()(channelsPage);

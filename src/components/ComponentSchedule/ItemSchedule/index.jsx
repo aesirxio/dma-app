@@ -14,7 +14,7 @@ import '../index.scss';
 class ItemSchedule extends Component {
   render() {
     let { startDateTime, timeDate, handlChangeDay, handlChangeTime } = this.props;
-    const { t } = useTranslation('common');
+    const { t } = useTranslation();
     return (
       <>
         <div className="">
@@ -33,4 +33,4 @@ class ItemSchedule extends Component {
   }
 }
 
-export default withTranslation('common')(ItemSchedule);
+export default withTranslation()(ItemSchedule);

@@ -7,7 +7,7 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import PAGE_STATUS from '../../../constants/PageStatus';
 
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import BigCalendarFull from '../../../components/BigCalendarFull';
@@ -55,4 +55,4 @@ const CalendarList = observer(
   }
 );
 
-export default withTranslation('common')(withContentViewModel(CalendarList));
+export default withTranslation()(withContentViewModel(CalendarList));

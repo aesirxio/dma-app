@@ -13,7 +13,7 @@ import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import PAGE_STATUS from '../../../constants/PageStatus';
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 const CampaignsForm = lazy(() => import('./CampaignsForm'));
@@ -115,4 +115,4 @@ const CampaignsFormModal = observer(
   }
 );
 
-export default withTranslation('common')(withCampaignsViewModel(CampaignsFormModal));
+export default withTranslation()(withCampaignsViewModel(CampaignsFormModal));

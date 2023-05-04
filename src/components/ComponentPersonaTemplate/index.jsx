@@ -4,7 +4,7 @@
  */
 
 import React, { Component } from 'react';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import './index.scss';
 
 class ComponentPersonaTemplate extends Component {

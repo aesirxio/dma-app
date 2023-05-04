@@ -6,7 +6,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import ContentUtils from '../ContentUtils/ContentUtils';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 import ChannelsStore from '../../ChannelsPage/ChannelsStore/ChannelsStore';
 import { CONTENT_FIELD_KEY } from '../../../constants/ContentModule';
 import moment from 'moment';

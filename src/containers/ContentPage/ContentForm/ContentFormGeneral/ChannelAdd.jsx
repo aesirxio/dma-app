@@ -29,7 +29,7 @@ const ChannelAdd = observer(() => {
   const showModal = () => {
     viewModel.setShowAddChannelModel(true);
   };
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     availableChannels.length > 0 && (
       <>
@@ -60,4 +60,4 @@ const ChannelAdd = observer(() => {
   );
 });
 
-export default withTranslation('common')(ChannelAdd);
+export default withTranslation()(ChannelAdd);

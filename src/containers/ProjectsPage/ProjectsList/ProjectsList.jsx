@@ -13,7 +13,7 @@ import { observer } from 'mobx-react';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
 
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 import ComponentNoData from '../../../components/ComponentNoData';
 import ComponentViewList from '../../../components/ComponentViewList';
 const ProjectsList = observer(
@@ -114,4 +114,4 @@ const ProjectsList = observer(
   }
 );
 
-export default withTranslation('common')(withProjectViewModel(ProjectsList));
+export default withTranslation()(withProjectViewModel(ProjectsList));

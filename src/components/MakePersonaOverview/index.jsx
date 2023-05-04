@@ -12,7 +12,7 @@ import { components } from 'react-select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons/faCloudUploadAlt';
 
-import SelectComponent from '../Select';
+import { AesirXSelect } from 'aesirx-uikit';
 
 import styles from './index.module.scss';
 import ComponentLinkChannels from '../ComponentLinkChannels';
@@ -244,7 +244,7 @@ class MakePersonaOverview extends React.Component {
                 <label className="form-label mb-2" htmlFor="age">
                   Gender
                 </label>
-                <SelectComponent
+                <AesirXSelect
                   value={gender}
                   onChange={this.handleGender}
                   options={optionGender}
@@ -275,7 +275,7 @@ class MakePersonaOverview extends React.Component {
                 <label className="form-label mb-2" htmlFor="age">
                   Marital Status
                 </label>
-                <SelectComponent
+                <AesirXSelect
                   value={status}
                   onChange={this.handleStatus}
                   options={optionstatus}
@@ -322,7 +322,7 @@ class MakePersonaOverview extends React.Component {
                   <label className="form-label mb-2" htmlFor="age">
                     Channels
                   </label>
-                  <SelectComponent
+                  <AesirXSelect
                     value={channels}
                     onChange={this.handleChannels}
                     options={optionChannels}
@@ -336,7 +336,7 @@ class MakePersonaOverview extends React.Component {
                   <label className="form-label mb-2" htmlFor="age">
                     Interest
                   </label>
-                  <SelectComponent
+                  <AesirXSelect
                     value={interest}
                     onChange={this.handleInterest}
                     options={optionInterest}
@@ -381,4 +381,4 @@ class MakePersonaOverview extends React.Component {
   }
 }
 
-export default withTranslation('common')(MakePersonaOverview);
+export default withTranslation()(MakePersonaOverview);

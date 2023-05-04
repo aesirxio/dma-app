@@ -25,4 +25,4 @@ class Social extends React.Component {
   }
 }
 
-export default withTranslation('common')(Social);
+export default withTranslation()(Social);

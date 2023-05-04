@@ -12,7 +12,7 @@ import './index.scss';
 import FilterCalendar from '../FilterCalendar';
 import CustomToolbar from './CustomToolbar';
 import { CSSTransition } from 'react-transition-group';
-import history from '../../routes/history';
+import { history } from 'aesirx-uikit';
 import { withTranslation } from 'react-i18next';
 
 import 'moment/locale/vi';
@@ -162,4 +162,4 @@ class BigCalendarFull extends React.PureComponent {
   }
 }
 
-export default withTranslation('common')(BigCalendarFull);
+export default withTranslation()(BigCalendarFull);

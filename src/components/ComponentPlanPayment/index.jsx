@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons/faArrowUp';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import './index.scss';
 
 const ModalComponent = lazy(() => import('../Modal'));

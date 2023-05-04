@@ -8,7 +8,7 @@ import { useDropzone } from 'react-dropzone';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons/faCloudUploadAlt';
-import ComponentImage from '../../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 const FormImage = ({ field }) => {
   const [file, setFile] = useState(field.value);

@@ -13,7 +13,7 @@ import {
 } from '../../../constants/ContentModule';
 
 import { format } from 'date-fns';
-import Helper from '../../../utils/helper';
+import { Helper } from 'aesirx-lib';
 
 import { CHANNEL_ADS_GOOGLE, CHANNEL_ADS_FACEBOOK } from '../../../constants/ChannelModule';
 import ContentGoogleAdsModel from './ContentGoogleAdsModel';

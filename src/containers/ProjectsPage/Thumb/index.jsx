@@ -8,7 +8,7 @@ import { withTranslation } from 'react-i18next';
 import { ProgressBar } from 'react-bootstrap';
 
 import '../index.module.scss';
-import ComponentImage from '../../../components/ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 const data = [
   {
@@ -139,4 +139,4 @@ class List extends React.Component {
   }
 }
 
-export default withTranslation('common')(List);
+export default withTranslation()(List);

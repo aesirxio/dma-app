@@ -4,7 +4,7 @@
  */
 
 import React, { Component } from 'react';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 class ComponentPreview extends Component {
   constructor(props) {

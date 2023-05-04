@@ -9,7 +9,7 @@ import { observer } from 'mobx-react';
 import { withCampaignTableSelectionModalViewModel } from './CampaignTableSelectionModalViewModelContextProvider';
 import { CAMPAIGNS_FIELD_KEY } from '../../constants/CampaignsModule';
 import PAGE_STATUS from '../../constants/PageStatus';
-import Spinner from '../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 import Table from '../../components/Table';
 
 const ModalComponent = lazy(() => import('../../components/Modal'));

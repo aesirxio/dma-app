@@ -26,4 +26,4 @@ class ModalComponent extends React.Component {
   }
 }
 
-export default withTranslation('common')(ModalComponent);
+export default withTranslation()(ModalComponent);

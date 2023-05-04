@@ -12,7 +12,7 @@ import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
 import ItemSchedule from './ItemSchedule';
 
 import { CONTENT_FIELD_KEY } from '../../constants/ContentModule';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 class ComponentSchedule extends Component {
   formPropsData = {

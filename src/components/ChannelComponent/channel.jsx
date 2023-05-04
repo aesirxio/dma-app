@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { observer } from 'mobx-react';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 import ComponentTooltip from '../ComponentTooltip';
 
 const ChannelChannelComponent = observer(({ channelData, removeChannel, handleOnSelect }) => {

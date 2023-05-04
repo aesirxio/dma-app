@@ -18,7 +18,7 @@ import Campaigns from '../../../components/Campaigns';
 import BigCalendar from '../../../components/BigCalendar';
 import UpcomingPosts from '../../../components/UpcomingPosts';
 import BigCalendarFull from '../../../components/BigCalendarFull';
-import Spinner from '../../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 import UpgradeAlert from '../../../components/UpgradeAlert';
 import Feature from '../../../components/Feature';
 import Inspiration from '../../../components/Inspiration';

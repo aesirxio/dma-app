@@ -12,7 +12,7 @@ import { faList } from '@fortawesome/free-solid-svg-icons/faList';
 import { faTh } from '@fortawesome/free-solid-svg-icons/faTh';
 import { faColumns } from '@fortawesome/free-solid-svg-icons/faColumns';
 
-import SelectComponent from '../Select';
+import { AesirXSelect } from 'aesirx-uikit';
 
 const optionAction = [
   { value: 'action-1', label: 'Action 1' },
@@ -74,7 +74,7 @@ class ListThumb extends React.Component {
                 </div>
               </div>
               <div className="col-3 border-end-1">
-                <SelectComponent
+                <AesirXSelect
                   value={anAction}
                   onChange={this.handleAnAction}
                   options={optionAction}
@@ -90,7 +90,7 @@ class ListThumb extends React.Component {
                     <FontAwesomeIcon icon={faColumns} />
                   </i>
                   <div className="w-260">
-                    <SelectComponent
+                    <AesirXSelect
                       value={columns}
                       onChange={this.handleColumns}
                       options={optionColumns}
@@ -132,4 +132,4 @@ class ListThumb extends React.Component {
   }
 }
 
-export default withTranslation('common')(ListThumb);
+export default withTranslation()(ListThumb);

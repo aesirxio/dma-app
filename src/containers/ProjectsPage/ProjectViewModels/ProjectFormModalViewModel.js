@@ -4,9 +4,9 @@
  */
 
 import { makeAutoObservable } from 'mobx';
-import { notify } from '../../../components/Toast';
+import { notify } from 'aesirx-uikit';
 import PAGE_STATUS from '../../../constants/PageStatus';
-import history from '../../../routes/history';
+import { history } from 'aesirx-uikit';
 import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
 
 class ProjectFormModalViewModel {

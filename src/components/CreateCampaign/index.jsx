@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import SelectComponent from '../Select';
+import { AesirXSelect } from 'aesirx-uikit';
 
 const optionCampaigns = [
   { value: 'project1', label: 'Project 1' },
@@ -32,7 +32,7 @@ class CreateCampaign extends React.Component {
             <span className="text-black opacity-75">Project </span>
             <span className="text-red-1">*</span>
           </label>
-          <SelectComponent
+          <AesirXSelect
             value={this.state.campaign}
             onChange={this.handleCampaign}
             options={optionCampaigns}

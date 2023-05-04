@@ -7,7 +7,7 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons/faCog';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 class Upgrade extends React.Component {
   constructor(props) {
@@ -38,4 +38,4 @@ class Upgrade extends React.Component {
   }
 }
 
-export default withTranslation('common')(Upgrade);
+export default withTranslation()(Upgrade);

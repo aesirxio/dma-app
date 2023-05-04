@@ -4,8 +4,7 @@
  */
 
 import React, { Component } from 'react';
-
-import SelectComponent from '../../../components/Select';
+import { AesirXSelect } from 'aesirx-uikit';
 
 import { components } from 'react-select';
 
@@ -20,7 +19,7 @@ class FormSelectDropdown extends Component {
 
   render() {
     return (
-      <SelectComponent
+      <AesirXSelect
         defaultValue={this.field.value}
         onChange={this.field.changed}
         options={this.field.option}

@@ -4,7 +4,7 @@
  */
 
 import React, { Component, lazy, Suspense } from 'react';
-import Spinner from '../../components/Spinner';
+import { Spinner } from 'aesirx-uikit';
 
 import HomeStore from './HomeStore/HomeStore';
 import ProjectStore from '../ProjectsPage/ProjectStore/ProjectStore';

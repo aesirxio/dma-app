@@ -111,4 +111,4 @@ const ProjectFormModal = observer(
   }
 );
 
-export default withTranslation('common')(withProjectViewModel(ProjectFormModal));
+export default withTranslation()(withProjectViewModel(ProjectFormModal));

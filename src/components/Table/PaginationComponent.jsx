@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import SelectComponent from '../../components/Select';
+import { AesirXSelect } from 'aesirx-uikit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
@@ -68,7 +68,7 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
   return (
     <>
       <div className="w-150 d-none">
-        <SelectComponent
+        <AesirXSelect
           defaultValue={{ value: pageSize, label: 'Show ' + pageSize }}
           onChange={handleChangeLimit}
           options={[

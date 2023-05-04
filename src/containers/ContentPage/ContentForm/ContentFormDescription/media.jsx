@@ -17,7 +17,7 @@ import DamComponent from 'components/DamComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
-import ComponentImage from 'components/ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 const ModalComponent = lazy(() => import('components/Modal'));
 const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null }) => {
   const context = useContext(ContentViewModelContext);
@@ -111,7 +111,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
   };
 
   const mediaChannel = ContentUtils.hasMediaChannel(channelData);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   return (
     <div className="px-3 py-2 bg-blue-3 wr_description_image_asset">
       <div className="d-flex flex-wrap justify-content-start">

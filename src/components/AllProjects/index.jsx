@@ -11,8 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
-import ComponentImage from '../ComponentImage';
-
+import { Image as ComponentImage } from 'aesirx-uikit';
 const data = [
   {
     key: '1',
@@ -148,4 +147,4 @@ class AllProjects extends React.Component {
   }
 }
 
-export default withTranslation('common')(AllProjects);
+export default withTranslation()(AllProjects);

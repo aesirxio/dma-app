@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import ComponentImage from '../ComponentImage';
+import { Image as ComponentImage } from 'aesirx-uikit';
 
 import './index.scss';
 
@@ -100,4 +100,4 @@ class AssignedToMe extends React.Component {
   }
 }
 
-export default withTranslation('common')(AssignedToMe);
+export default withTranslation()(AssignedToMe);

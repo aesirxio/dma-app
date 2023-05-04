@@ -51,4 +51,4 @@ class WelcomePage extends React.Component {
   }
 }
 
-export default withTranslation('common')(WelcomePage);
+export default withTranslation()(WelcomePage);

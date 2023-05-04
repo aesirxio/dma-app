@@ -6,7 +6,7 @@
 import React, { Component, lazy } from 'react';
 
 import { observer } from 'mobx-react';
-import history from '../../../../routes/history';
+import { history } from 'aesirx-uikit';
 import { withWizardViewModel } from '../../WizardViewModels/WizardViewModelContextProvider';
 import ComponentContentFormGeneral from '../../../ContentPage/ContentForm/ComponentContentFormGeneral';
 import GlobalStore from '../../../../store/Store';

@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import SelectComponent from '../Select';
+import { AesirXSelect } from 'aesirx-uikit';
 
 class SelectComponentAds extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class SelectComponentAds extends React.Component {
       <div className="border-start-5 bg-white p-2 px-3 mb-3 rounded-2 mt-3">
         {title && <p className="text-blue-0 opacity-75 mb-2 fs-5">{title}</p>}
 
-        <SelectComponent
+        <AesirXSelect
           value={getValueSelected}
           options={getDataSelectOptions}
           className="mb-3 text-danger"
