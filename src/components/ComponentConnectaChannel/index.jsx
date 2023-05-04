@@ -364,6 +364,19 @@ class ComponentConnectaChannel extends Component {
           }
           this.handleConnectChannel(name, isConnected);
           break;
+        case CHANNEL_TYPE.TELEGRAM:
+          accepted = this.isAllowedConnectChannel(
+            CHANNEL_TYPE.TELEGRAM.NAME,
+            CHANNEL_TYPE.TELEGRAM.TYPE
+          );
+          if (!accepted && isConnected === true) {
+            this.setState({
+              showModalUpgrade: true,
+            });
+            return;
+          }
+          this.props.handleModalCms(name, isConnected);
+          break;
 
         default:
       }

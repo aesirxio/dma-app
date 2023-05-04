@@ -22,7 +22,11 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
   const { t } = useTranslation();
   const handleOnClick = async () => {
     if (channelsListViewModel.memberProfile?.allow_create_item) {
-      if (channelCategory.id === 'cms' || channelType.id === 'medium') {
+      if (
+        channelCategory.id === 'cms' ||
+        channelType.id === 'medium' ||
+        channelType.id === 'telegram'
+      ) {
         context.getChannelsListLoginViewModel().openModal(channelType);
       } else {
         setConnecting(true);
