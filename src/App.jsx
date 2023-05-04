@@ -8,10 +8,9 @@ import React from 'react';
 import 'aesirx-uikit/dist/index.css';
 import 'scss/app.scss';
 
-import { AppProvider, Menu } from 'aesirx-uikit';
+import { AppProvider, Menu, isLogin } from 'aesirx-uikit';
 import appLanguages from 'translations';
 import { authRoutes, mainRoutes, settingRoutes } from 'routes/routes';
-import { isLogin } from 'auth';
 
 import { AesirXDamStorage } from 'aesirx-dam-app';
 import { mainMenu, settingMenu, profileMenu } from 'routes/menu';

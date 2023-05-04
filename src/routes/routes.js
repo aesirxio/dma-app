@@ -4,15 +4,14 @@
  */
 
 import React, { lazy } from 'react';
+import { LoginPage, ProfilePage } from 'aesirx-uikit';
 
 const CalendarPage = lazy(() => import('../containers/CalendarPage'));
 const Projects = lazy(() => import('../containers/ProjectsPage'));
-const LoginPage = lazy(() => import('../containers/LoginPage'));
 const CampaignsPage = lazy(() => import('../containers/CampaignsPage'));
 const ContentPage = lazy(() => import('../containers/ContentPage'));
 const WizardPage = lazy(() => import('../containers/WizardPage'));
 const ChannelsPage = lazy(() => import('../containers/ChannelsPage'));
-const ProfilePage = lazy(() => import('../containers/ProfilePage'));
 const DigitalAssetsPage = lazy(() => import('../containers/DigitalAssetsPage'));
 const WelcomePage = lazy(() => import('../containers/WelcomePage'));
 
@@ -20,7 +19,7 @@ const authRoutes = [
   {
     path: '/login',
     exact: true,
-    main: () => <LoginPage />,
+    main: () => <LoginPage text="DMA" />,
   },
 ];
 
@@ -81,7 +80,7 @@ const settingRoutes = [
   {
     path: '/profile',
     exact: false,
-    main: ({ match, location }) => <ProfilePage match={match} location={location} />,
+    main: () => <ProfilePage />,
   },
   {
     path: '/welcome',
