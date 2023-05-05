@@ -40,7 +40,7 @@
     "react-lazy-load-image-component": "^1.5.1",
     "react-number-format": "^4.6.4",
     "react-router-dom": "^5.2.0",
-    "react-select": "^5.7.2",
+    "react-select": "^5.7.3",
     "react-step-wizard": "^5.3.5",
     "react-table": "^7.6.2",
     "react-timezone-select": "^1.0.7",
