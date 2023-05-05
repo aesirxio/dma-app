@@ -11,7 +11,7 @@ import { env } from 'env';
 import { AUTHORIZATION_KEY, Storage, Helper } from 'aesirx-lib';
 import { Configuration, OpenAIApi } from 'openai';
 
-import ButtonCopy from '../../utils/ButtonCopy';
+import ButtonCopy from '../../components/ButtonCopy';
 import { Image as ComponentImage } from 'aesirx-uikit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons/faPaperPlane';
