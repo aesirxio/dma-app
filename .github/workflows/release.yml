@@ -17,7 +17,7 @@ jobs:
           node-version: 16
 
       - run: yarn install
-      - run: yarn run lint
+      - run: yarn lint
       - run: CI=false yarn run build
       - uses: JS-DevTools/npm-publish@v1
         with:
