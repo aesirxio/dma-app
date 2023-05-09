@@ -100,23 +100,59 @@ const ContentFormGeneral = observer(
       const dataChannels = ChannelUtils.getChannelByFilter(channelsData, 'removed', 'not');
       const { t } = this.props;
       const mediaChannel = ContentUtils.hasMediaChannel(dataChannels);
+      const validate = {description : 3600 , hashtag:0 , headline: 220 , image: false, media: false,video: false }
+      dataChannels.forEach((channel)=>{
+        channel.list.forEach((list) =>{
+        
+        if(list?.requirements?.description <  validate.description && list?.requirements?.description != 0){
+          validate.description = list?.requirements?.description;
+        
+        }
+        //  if(list?.requirements?.hashtag <  validate.hashtag && list?.requirements?.hashtag !=0){
+        //   validate.hashtag = list?.requirements?.hashtag;
+        //  }
+        if(list?.requirements?.headline <  validate.headline && list?.requirements?.headline !=0){
+          validate.headline = list?.requirements?.headline;
+        }
+        if(list?.requirements?.image == true){
+          validate.image = list?.requirements?.image
+        }
+        if(list?.requirements?.video == true){
+          validate.video = list?.requirements?.video
+        }
+        if(list?.requirements?.media == true){
+          validate.media = list?.requirements?.media
+        }
+       
+        }) 
+      })
+        
+     
       if (this.validator.allValid()) {
+
         if (dataChannels.length > 0) {
           if (
             mediaChannel.video &&
             !this.viewModel.requiredVideo(this.formPropsData[CONTENT_FIELD_KEY.DAM])
           ) {
             notify(t('txt_the_video_field_is_required'), 'error');
+          } else if ( this.formPropsData[CONTENT_FIELD_KEY.NAME].length >  validate.headline){
+            notify(t('txt_headline_limmit'), 'error');
+          } else if(Object.values(this.formPropsData[CONTENT_FIELD_KEY.DESCRIPTION])[0].length > validate.description){
+            notify(t('txt_description_limmit'), 'error');
+          } else if(Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0].length == 0){
+            notify(t('txt_the_images_field_is_required'), 'error');
           } else {
-            this.props.nextStep();
-          }
+              this.props.nextStep();
+            } 
         } else {
           notify(t('txt_please_connect_a_channel'), 'warn');
-        }
+        }      
       } else {
         this.validator.showMessages();
       }
     };
+    
 
     onBlurDescription = () => {
       this.validator.showMessageFor('Description');
@@ -159,7 +195,7 @@ const ContentFormGeneral = observer(
               <FontAwesomeIcon icon={faChevronLeft} />
               <span className="ps-2">{t('txt_back')}</span>
             </a>
-            <Button className="btn btn-success px-4 mw-80" onClick={this.onNext} text="txt_next" />
+            <Button className="btn btn-success px-4 mw-80 " onClick={this.onNext} text="txt_next" />
           </div>
         </div>
       );
@@ -167,4 +203,4 @@ const ContentFormGeneral = observer(
   }
 );
 
-export default withTranslation()(withContentViewModel(ContentFormGeneral));
+export default withTranslation('common')(withContentViewModel(ContentFormGeneral));

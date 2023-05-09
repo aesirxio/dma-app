@@ -185,6 +185,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
         // canvaData={canvaAssets}
         damData={damAssets}
         deleteDamItem={deleteDamItem}
+        channelData={channelData}
         // canvaDeleteItem={canvaDeleteItem}
         // onSetCanvaIndexToEdit={onSetCanvaIndexToEdit}
       />
