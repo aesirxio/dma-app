@@ -16,8 +16,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "aesirx-dam-app": "^1.2.10",
-    "aesirx-lib": "^1.9.5",
-    "aesirx-uikit": "^1.0.5",
+    "aesirx-lib": "^1.9.6",
+    "aesirx-uikit": "^1.0.6",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
     "emoji-mart": "^3.0.0",
@@ -40,6 +40,7 @@
     "react-lazy-load-image-component": "^1.5.1",
     "react-number-format": "^4.6.4",
     "react-router-dom": "^5.2.0",
+    "react-secure-storage": "^1.2.2",
     "react-select": "^5.7.3",
     "react-step-wizard": "^5.3.5",
     "react-table": "^7.6.2",
@@ -53,7 +54,7 @@
     "start": "yarn run build && serve -s build",
     "build": "react-scripts build && react-inject-env set",
     "test": "react-scripts test",
-    "dev": "craco start",
+    "dev": "PORT=3001 craco start",
     "lint": "eslint --fix \"src/**/\"",
     "lint:check": "eslint \"src/**/\"",
     "lint:nowarns": "eslint --quiet \"src/**/\"",
@@ -114,6 +115,7 @@
   "resolutions": {
     "react": "^18",
     "react-dom": "^18",
-    "react-dnd": "^16"
+    "react-dnd": "^16",
+    "aesirx-lib": "^1.9.6"
   }
 }

@@ -1,22 +1,15 @@
 name: demo
 on:
   push:
-    tags:
-      - "*"
+    branches:
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     environment: demo
     env:
       CI: false
-      REACT_APP_CLIENT_ID: ${{ secrets.REACT_APP_CLIENT_ID }}
-      REACT_APP_CLIENT_SECRET: ${{ secrets.REACT_APP_CLIENT_SECRET }}
       REACT_APP_ENDPOINT_URL: ${{ secrets.REACT_APP_ENDPOINT_URL }}
-      REACT_APP_WEBSOCKET_ENDPOINT: ${{ secrets.REACT_APP_WEBSOCKET_ENDPOINT }}
-      REACT_APP_ENCRYPT: ${{ secrets.REACT_APP_ENCRYPT }}
-      REACT_APP_LICENSE: ${{ secrets.REACT_APP_LICENSE }}
-      REACT_APP_DAM_LICENSE: ${{ secrets.REACT_APP_DAM_LICENSE }}
-      REACT_APP_TEST_MODE: ${{ secrets.REACT_APP_TEST_MODE }}
       REACT_APP_DEMO_USER: ${{ secrets.REACT_APP_DEMO_USER }}
       REACT_APP_DEMO_PASSWORD: ${{ secrets.REACT_APP_DEMO_PASSWORD }}
       REACT_APP_SSO_CLIENT_ID: ${{ secrets.REACT_APP_SSO_CLIENT_ID }}
