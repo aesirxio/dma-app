@@ -100,39 +100,55 @@ const ContentFormGeneral = observer(
       const dataChannels = ChannelUtils.getChannelByFilter(channelsData, 'removed', 'not');
       const { t } = this.props;
       const mediaChannel = ContentUtils.hasMediaChannel(dataChannels);
-      const validate = {
-        description: 3600,
-        hashtag: 0,
-        headline: 220,
-        image: false,
-        media: false,
-        video: false,
-      };
+      const listMedia = Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0];
+      const typeImage = listMedia.find((items) => items.type == 'images');
+      const typeVideo = listMedia.find((items) => items.type == 'video');
+
+      const validate = {};
       dataChannels.forEach((channel) => {
         channel.list.forEach((list) => {
-          if (
-            list?.requirements?.description < validate.description &&
-            list?.requirements?.description != 0
-          ) {
-            validate.description = list?.requirements?.description;
+          //description
+          if (!validate?.description) {
+            if (list?.requirements?.description != 0) {
+              validate.description = list?.requirements?.description;
+            }
+          } else {
+            if (
+              list?.requirements?.description != 0 &&
+              list?.requirements?.description < validate.description
+            ) {
+              validate.description = list?.requirements?.description;
+            }
           }
-          //  if(list?.requirements?.hashtag <  validate.hashtag && list?.requirements?.hashtag !=0){
-          //   validate.hashtag = list?.requirements?.hashtag;
-          //  }
-          if (
-            list?.requirements?.headline < validate.headline &&
-            list?.requirements?.headline != 0
-          ) {
-            validate.headline = list?.requirements?.headline;
+          //headline
+          if (!validate?.headline) {
+            if (list?.requirements?.headline != 0) {
+              validate.headline = list?.requirements?.headline;
+            }
+          } else {
+            if (
+              list?.requirements?.headline != 0 &&
+              list?.requirements?.headline < validate.headline
+            ) {
+              validate.headline = list?.requirements?.headline;
+            }
           }
-          if (list?.requirements?.image == true) {
-            validate.image = list?.requirements?.image;
+          //media
+          if (!validate?.media) {
+            if (list?.requirements?.media) {
+              validate.media = list?.requirements?.media;
+            }
           }
-          if (list?.requirements?.video == true) {
-            validate.video = list?.requirements?.video;
+          //image
+          if (!validate?.image) {
+            if (list?.requirements?.image) {
+              validate.image = list?.requirements?.image;
+            }
           }
-          if (list?.requirements?.media == true) {
-            validate.media = list?.requirements?.media;
+          if (!validate?.video) {
+            if (list?.requirements?.video) {
+              validate.video = list?.requirements?.video;
+            }
           }
         });
       });
@@ -151,8 +167,24 @@ const ContentFormGeneral = observer(
             validate.description
           ) {
             notify(t('txt_description_limmit'), 'error');
-          } else if (Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0].length == 0) {
-            notify(t('txt_the_images_field_is_required'), 'error');
+          } else if (
+            validate?.media &&
+            Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0].length == 0
+          ) {
+            notify(t('txt_the_media_field_is_required'), 'error');
+          }
+          if (
+            validate?.image &&
+            Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0].length == 0 &&
+            !typeImage
+          ) {
+            notify(t('txt_the_image_field_is_required'), 'error');
+          } else if (
+            validate?.video &&
+            Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0].length == 0 &&
+            !typeVideo
+          ) {
+            notify(t('txt_the_video_field_is_required'), 'error');
           } else {
             this.props.nextStep();
           }
@@ -213,4 +245,4 @@ const ContentFormGeneral = observer(
   }
 );
 
-export default withTranslation('common')(withContentViewModel(ContentFormGeneral));
+export default withTranslation()(withContentViewModel(ContentFormGeneral));
