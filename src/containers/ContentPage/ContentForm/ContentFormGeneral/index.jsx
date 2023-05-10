@@ -103,7 +103,6 @@ const ContentFormGeneral = observer(
       const listMedia = Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0];
       const typeImage = listMedia.find((items) => items.type == 'images');
       const typeVideo = listMedia.find((items) => items.type == 'video');
-
       const validate = {};
       dataChannels.forEach((channel) => {
         channel.list.forEach((list) => {
@@ -145,6 +144,7 @@ const ContentFormGeneral = observer(
               validate.image = list?.requirements?.image;
             }
           }
+          //video
           if (!validate?.video) {
             if (list?.requirements?.video) {
               validate.video = list?.requirements?.video;
@@ -172,18 +172,9 @@ const ContentFormGeneral = observer(
             Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0].length == 0
           ) {
             notify(t('txt_the_media_field_is_required'), 'error');
-          }
-          if (
-            validate?.image &&
-            Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0].length == 0 &&
-            !typeImage
-          ) {
+          } else if (validate?.image && !typeImage) {
             notify(t('txt_the_image_field_is_required'), 'error');
-          } else if (
-            validate?.video &&
-            Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0].length == 0 &&
-            !typeVideo
-          ) {
+          } else if (validate?.video && !typeVideo) {
             notify(t('txt_the_video_field_is_required'), 'error');
           } else {
             this.props.nextStep();
