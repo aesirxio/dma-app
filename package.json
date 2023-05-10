@@ -54,7 +54,7 @@
     "start": "yarn run build && serve -s build",
     "build": "react-scripts build && react-inject-env set",
     "test": "react-scripts test",
-    "dev": "PORT=3001 craco start",
+    "dev": "craco start",
     "lint": "eslint --fix \"src/**/\"",
     "lint:check": "eslint \"src/**/\"",
     "lint:nowarns": "eslint --quiet \"src/**/\"",
