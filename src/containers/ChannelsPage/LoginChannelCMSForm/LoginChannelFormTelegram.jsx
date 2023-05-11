@@ -25,13 +25,13 @@ class LoginChannelFormTelegram extends Component {
 
     this.validator = new SimpleReactValidator({ autoForceUpdate: this });
   }
-
+     
   generateFormSetting = () => {
     return {
       fields: [
         {
           label: 'Organisation Id',
-          key: 'organisation_idl',
+          key: 'organisation_id',
           type: FORM_FIELD_TYPE.INPUT,
           value: this.formPropsData.organisation_id,
           required: true,
@@ -62,7 +62,6 @@ class LoginChannelFormTelegram extends Component {
           label: 'Bot token',
           key: 'bot_token',
           type: FORM_FIELD_TYPE.INPUT,
-          // typeFormat: FORM_FIELD_TYPE.PASSWORD,
           value: this.formPropsData.bot_token,
           required: true,
           validation: 'required',

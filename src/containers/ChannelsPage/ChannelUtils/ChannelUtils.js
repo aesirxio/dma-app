@@ -82,13 +82,16 @@ class ChannelUtils {
     if (!data) {
       return null;
     }
-
     const result = {
       [CHANNEL_CMS_FIELD_KEY.ENDPOINT]: data.endpoint_url ?? null,
       [CHANNEL_CMS_FIELD_KEY.USERNAME]: data.username ?? null,
       [CHANNEL_CMS_FIELD_KEY.PASSWORD]: data.password ?? null,
       [CHANNEL_CMS_FIELD_KEY.TOKEN]: data?.token ?? null,
       [CHANNEL_CMS_FIELD_KEY.CHANNEL_TYPE]: channelType?.id ?? null,
+      [CHANNEL_CMS_FIELD_KEY.ORGANISATION_ID]:  data.organisation_id ?? null,
+      [CHANNEL_CMS_FIELD_KEY.BOT_USERNAME]:  data.bot_username ?? null,
+      [CHANNEL_CMS_FIELD_KEY.BOT_TOKEN]:  data.bot_token ?? null,
+      [CHANNEL_CMS_FIELD_KEY.CHAT_IDS]:  data.chat_ids ?? null,
     };
 
     return result;
