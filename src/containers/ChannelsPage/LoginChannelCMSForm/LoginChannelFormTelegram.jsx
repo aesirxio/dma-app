@@ -25,7 +25,7 @@ class LoginChannelFormTelegram extends Component {
 
     this.validator = new SimpleReactValidator({ autoForceUpdate: this });
   }
-     
+
   generateFormSetting = () => {
     return {
       fields: [
