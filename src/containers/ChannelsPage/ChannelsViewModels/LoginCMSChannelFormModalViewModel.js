@@ -37,16 +37,14 @@ class LoginCMSChannelFormModalViewModel {
   saveCMSHandler = async () => {
     try {
       const result = this.channelsStore.connectCMS(this.form.formPropsData, this.channelType);
-
       if (result) {
         const channelsData = await this.channelsStore.getChannelsData();
-
         runInAction(() => {
           this.show = false;
           this.channelsListViewModel.channelsData = channelsData;
         });
       } else {
-        throw new Error(`coonect CMS failed`);
+        throw new Error(`connect CMS failed`);
       }
     } catch (error) {
       this.catchError(error);

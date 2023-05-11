@@ -109,6 +109,10 @@ const CHANNEL_CMS_FIELD_KEY = {
   USERNAME: 'username',
   PASSWORD: 'password',
   TOKEN: 'token',
+  ORGANISATION_ID: 'organisation_id',
+  BOT_USERNAME: 'bot_username',
+  BOT_TOKEN: 'bot_token',
+  CHAT_IDS: 'chat_ids',
 };
 
 export {
