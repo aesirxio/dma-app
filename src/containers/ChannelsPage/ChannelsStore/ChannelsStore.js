@@ -75,7 +75,6 @@ export default class ChannelsStore {
   connectCMS = async (dataPost, channelType) => {
     try {
       const dataToAPi = ChannelUtils.convertSubmittedDataToAPIService(dataPost, channelType);
-
       const status = await this.channelService.doLoginCMS(dataToAPi);
 
       return status;

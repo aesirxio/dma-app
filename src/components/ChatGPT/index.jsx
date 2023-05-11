@@ -7,7 +7,7 @@ import React from 'react';
 
 import { withTranslation } from 'react-i18next';
 import './index.scss';
-import { env } from 'env';
+import { env } from 'aesirx-lib';
 import { AUTHORIZATION_KEY, Storage, Helper } from 'aesirx-lib';
 import { Configuration, OpenAIApi } from 'openai';
 
