@@ -1,0 +1,35 @@
+name: dma
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: dma
+    env:
+      CI: false
+      REACT_APP_ENDPOINT_URL: ${{ secrets.REACT_APP_ENDPOINT_URL }}
+      REACT_APP_SSO_CLIENT_ID: ${{ secrets.REACT_APP_SSO_CLIENT_ID }}
+      REACT_APP_SSO_CLIENT_SECRET: ${{ secrets.REACT_APP_SSO_CLIENT_SECRET }}
+      REACT_APP_OPENAI_API_KEY : ${{ secrets.REACT_APP_OPENAI_API_KEY}}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - run: yarn install
+      - run: yarn build
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: unnecessary
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT}} -H ${{ secrets.SSH_HOST }}  >> ~/.ssh/known_hosts
+
+      - name: Deploy with rsync
+        run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./build/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PATH }}
