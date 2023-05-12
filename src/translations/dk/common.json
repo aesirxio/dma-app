@@ -201,5 +201,9 @@
   "txt_are_you_sure": "Er du sikker?",
   "txt_delete_assets_popup_desc": "Er du sikker på, at du vil slette dette aktiv?",
   "txt_Cancel": "Fortryd",
-  "txt_yes_delete": "Ja, slet"
+  "txt_yes_delete": "Ja, slet",
+  "txt_description_limmit": "Beskrivelsen overskrider de tilladte tegn.",
+  "txt_headline_limmit": "Overskriften overskrider de tilladte tegn.",
+  "txt_the_media_field_is_required": "Mediefeltet er påkrævet.",
+  "txt_the_image_field_is_required":"Billedfeltet er påkrævet."
 }

@@ -152,7 +152,6 @@ const ContentFormGeneral = observer(
           }
         });
       });
-
       if (this.validator.allValid()) {
         if (dataChannels.length > 0) {
           if (

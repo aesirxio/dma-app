@@ -202,5 +202,9 @@
   "txt_are_you_sure": "Are you sure?",
   "txt_delete_assets_popup_desc": "Are you sure you want to delete this asset ?",
   "txt_Cancel": "Cancel",
-  "txt_yes_delete": "Yes, Delete"
+  "txt_yes_delete": "Yes, Delete",
+  "txt_description_limmit": "The description exceeds the allowed characters.",
+  "txt_headline_limmit": "The headline exceeds the allowed characters.",
+  "txt_the_media_field_is_required": "The media field is required.",
+  "txt_the_image_field_is_required":"The image field is required."
 }
