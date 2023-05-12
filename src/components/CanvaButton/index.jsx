@@ -8,7 +8,7 @@ import { notify } from 'aesirx-uikit';
 import { withTranslation } from 'react-i18next';
 import { canvaApi } from '../../utils/canva';
 import './index.scss';
-import { env } from 'env';
+import { env } from 'aesirx-lib';
 
 class CanvaButton extends React.PureComponent {
   constructor(props) {
