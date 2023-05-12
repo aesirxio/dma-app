@@ -30,21 +30,6 @@ class LoginChannelFormTelegram extends Component {
     return {
       fields: [
         {
-          label: 'Organisation Id',
-          key: 'organisation_id',
-          type: FORM_FIELD_TYPE.INPUT,
-          value: this.formPropsData.organisation_id,
-          required: true,
-          validation: 'required',
-          placeholder: '',
-          changed: (event) => {
-            this.formPropsData.organisation_id = event.target.value;
-          },
-          blurred: () => {
-            this.validator.showMessageFor('Organisation Id');
-          },
-        },
-        {
           label: 'Bot Username',
           key: 'bot_username',
           type: FORM_FIELD_TYPE.INPUT,
