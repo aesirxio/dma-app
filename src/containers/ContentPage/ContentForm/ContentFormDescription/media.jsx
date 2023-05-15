@@ -165,7 +165,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
             </div>
           </>
         )}
-        {/* {mediaChannel.video && ( */}
+        {mediaChannel.video && (
         <div className="me-2 mt-1 mb-1">
           <DamComponent field={{ changed: handleDam }} allowType={['video']}>
             <button
@@ -179,7 +179,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
             </button>
           </DamComponent>
         </div>
-        {/* )} */}
+        )}
       </div>
       <MediaDataRender
         // canvaData={canvaAssets}
