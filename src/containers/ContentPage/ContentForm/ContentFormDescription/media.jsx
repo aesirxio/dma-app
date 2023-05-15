@@ -166,19 +166,19 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
           </>
         )}
         {mediaChannel.video && (
-        <div className="me-2 mt-1 mb-1">
-          <DamComponent field={{ changed: handleDam }} allowType={['video']}>
-            <button
-              className="wr_btn_dam border-0 bg-blue-2 rounded-2 px-3 py-2 text-nowrap btn "
-              type="button"
-            >
-              <i className="text-white">
-                <FontAwesomeIcon icon={faImage} />
-              </i>
-              <span className="text-white ms-2">{t('txt_video')}</span>
-            </button>
-          </DamComponent>
-        </div>
+          <div className="me-2 mt-1 mb-1">
+            <DamComponent field={{ changed: handleDam }} allowType={['video']}>
+              <button
+                className="wr_btn_dam border-0 bg-blue-2 rounded-2 px-3 py-2 text-nowrap btn "
+                type="button"
+              >
+                <i className="text-white">
+                  <FontAwesomeIcon icon={faImage} />
+                </i>
+                <span className="text-white ms-2">{t('txt_video')}</span>
+              </button>
+            </DamComponent>
+          </div>
         )}
       </div>
       <MediaDataRender
