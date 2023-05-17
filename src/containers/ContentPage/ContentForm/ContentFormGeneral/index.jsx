@@ -18,7 +18,7 @@ import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 import Button from '../../../../components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
-import { notify, notifyHTML } from 'aesirx-uikit';
+import { notify } from 'aesirx-uikit';
 import ContentUtils from '../../ContentUtils/ContentUtils';
 import { withTranslation } from 'react-i18next';
 const ContentFormGeneral = observer(
@@ -104,7 +104,6 @@ const ContentFormGeneral = observer(
       const typeImage = listMedia.find((items) => items.type == 'images');
       const typeVideo = listMedia.find((items) => items.type == 'video');
       const validate = {};
-      const description_limmit = t('txt_description_limmit');
       dataChannels.forEach((channel) => {
         channel.list.forEach((list) => {
           //description
