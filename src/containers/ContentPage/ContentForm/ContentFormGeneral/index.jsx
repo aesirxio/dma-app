@@ -18,7 +18,7 @@ import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 import Button from '../../../../components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
-import { notify } from 'aesirx-uikit';
+import { notify , notifyHTML } from 'aesirx-uikit';
 import ContentUtils from '../../ContentUtils/ContentUtils';
 import { withTranslation } from 'react-i18next';
 const ContentFormGeneral = observer(
@@ -104,6 +104,7 @@ const ContentFormGeneral = observer(
       const typeImage = listMedia.find((items) => items.type == 'images');
       const typeVideo = listMedia.find((items) => items.type == 'video');
       const validate = {};
+      const description_limmit = t('txt_description_limmit');
       dataChannels.forEach((channel) => {
         channel.list.forEach((list) => {
           //description
@@ -117,12 +118,15 @@ const ContentFormGeneral = observer(
               list?.requirements?.description < validate.description
             ) {
               validate.description = list?.requirements?.description;
+              validate.channelDescription = list?.name;
             }
           }
           //headline
           if (!validate?.headline) {
             if (list?.requirements?.headline != 0) {
               validate.headline = list?.requirements?.headline;
+              validate.channelHeadline = list?.name;
+             console.log(validate.channelHeadline , "1");
             }
           } else {
             if (
@@ -130,12 +134,15 @@ const ContentFormGeneral = observer(
               list?.requirements?.headline < validate.headline
             ) {
               validate.headline = list?.requirements?.headline;
+              validate.channelHeadline = list?.name;
+              console.log(validate.channelHeadline , "2");
             }
           }
           //media
           if (!validate?.media) {
             if (list?.requirements?.media) {
               validate.media = list?.requirements?.media;
+              validate.channelMedia = list?.name;
             }
           }
           //image
@@ -150,8 +157,11 @@ const ContentFormGeneral = observer(
               validate.video = list?.requirements?.video;
             }
           }
+          console.log(list);
         });
+    
       });
+     
       if (this.validator.allValid()) {
         if (dataChannels.length > 0) {
           if (
@@ -160,17 +170,17 @@ const ContentFormGeneral = observer(
           ) {
             notify(t('txt_the_video_field_is_required'), 'error');
           } else if (this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline) {
-            notify(t('txt_headline_limmit'), 'error');
+            notify(validate.channelHeadline + t('txt_headline_limmit' ) + validate.headline, 'error');
           } else if (
             Object.values(this.formPropsData[CONTENT_FIELD_KEY.DESCRIPTION])[0].length >
             validate.description
           ) {
-            notify(t('txt_description_limmit'), 'error');
+            notify( validate.channelDescription + t('txt_description_limmit') + validate.description, 'error');
           } else if (
             validate?.media &&
             Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0].length == 0
           ) {
-            notify(t('txt_the_media_field_is_required'), 'error');
+            notify(validate.channelMedia + t('txt_the_media_field_is_required'), 'error');
           } else if (validate?.image && !typeImage) {
             notify(t('txt_the_image_field_is_required'), 'error');
           } else if (validate?.video && !typeVideo) {

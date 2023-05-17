@@ -204,8 +204,8 @@
   "txt_delete_assets_popup_desc": "Bạn có chắc chắn muốn xóa mục này?",
   "txt_Cancel": "Hủy",
   "txt_yes_delete": "Đồng ý, xóa",
-  "txt_description_limmit": "Mô tả vượt quá số ký tự cho phép.",
-  "txt_headline_limmit": "Tiêu đề vượt quá số ký tự cho phép.",
-  "txt_the_media_field_is_required": "Trường phương tiện là bắt buộc.",
-  "txt_the_image_field_is_required":"Trường hình ảnh là bắt buộc."
+  "txt_description_limmit": " Mô tả vượt quá số ký tự cho phép ",
+  "txt_headline_limmit": " Tiêu đề vượt quá số ký tự cho phép ",
+  "txt_the_media_field_is_required": " Trường phương tiện là bắt buộc ",
+  "txt_the_image_field_is_required":" Trường hình ảnh là bắt buộc "
 }
