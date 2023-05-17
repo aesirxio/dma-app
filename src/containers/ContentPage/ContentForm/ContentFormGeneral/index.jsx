@@ -18,7 +18,7 @@ import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 import Button from '../../../../components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
-import { notify , notifyHTML } from 'aesirx-uikit';
+import { notify, notifyHTML } from 'aesirx-uikit';
 import ContentUtils from '../../ContentUtils/ContentUtils';
 import { withTranslation } from 'react-i18next';
 const ContentFormGeneral = observer(
@@ -126,7 +126,7 @@ const ContentFormGeneral = observer(
             if (list?.requirements?.headline != 0) {
               validate.headline = list?.requirements?.headline;
               validate.channelHeadline = list?.name;
-             console.log(validate.channelHeadline , "1");
+              console.log(validate.channelHeadline, '1');
             }
           } else {
             if (
@@ -135,7 +135,7 @@ const ContentFormGeneral = observer(
             ) {
               validate.headline = list?.requirements?.headline;
               validate.channelHeadline = list?.name;
-              console.log(validate.channelHeadline , "2");
+              console.log(validate.channelHeadline, '2');
             }
           }
           //media
@@ -159,9 +159,8 @@ const ContentFormGeneral = observer(
           }
           console.log(list);
         });
-    
       });
-     
+
       if (this.validator.allValid()) {
         if (dataChannels.length > 0) {
           if (
@@ -170,12 +169,18 @@ const ContentFormGeneral = observer(
           ) {
             notify(t('txt_the_video_field_is_required'), 'error');
           } else if (this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline) {
-            notify(validate.channelHeadline + t('txt_headline_limmit' ) + validate.headline, 'error');
+            notify(
+              validate.channelHeadline + t('txt_headline_limmit') + validate.headline,
+              'error'
+            );
           } else if (
             Object.values(this.formPropsData[CONTENT_FIELD_KEY.DESCRIPTION])[0].length >
             validate.description
           ) {
-            notify( validate.channelDescription + t('txt_description_limmit') + validate.description, 'error');
+            notify(
+              validate.channelDescription + t('txt_description_limmit') + validate.description,
+              'error'
+            );
           } else if (
             validate?.media &&
             Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0].length == 0
