@@ -203,5 +203,9 @@
   "txt_are_you_sure": "คุณแน่ใจนะ?",
   "txt_delete_assets_popup_desc": "คุณแน่ใจหรือไม่ว่าต้องการลบเนื้อหานี้ ?",
   "txt_Cancel": "ยกเลิก",
-  "txt_yes_delete": "ใช่, ลบ"
+  "txt_yes_delete": "ใช่, ลบ",
+  "txt_description_limmit": " คำอธิบายเกินอักขระที่อนุญาต ",
+  "txt_headline_limmit": " บรรทัดแรกเกินอักขระที่อนุญาต ",
+  "txt_the_media_field_is_required": " ฟิลด์สื่อจำเป็น ",
+  "txt_the_image_field_is_required":" ต้องระบุช่องรูปภาพ "
 }

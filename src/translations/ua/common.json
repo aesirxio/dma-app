@@ -203,6 +203,10 @@
   "txt_are_you_sure": "Ви впевнені?",
   "txt_delete_assets_popup_desc": "Ви впевнені, що хочете видалити цей ресурс?",
   "txt_Cancel": "Скасувати",
-  "txt_yes_delete": "Так, видалити"
+  "txt_yes_delete": "Так, видалити",
+  "txt_description_limmit": "Опис перевищує допустиму кількість символів ",
+  "txt_headline_limmit": " Заголовок перевищує допустиму кількість символів ",
+  "txt_the_media_field_is_required": " Поле медіа є обов'язковим ",
+  "txt_the_image_field_is_required": " Поле зображення є обов'язковим "
 
 }

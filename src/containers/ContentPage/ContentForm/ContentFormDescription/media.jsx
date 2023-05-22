@@ -128,7 +128,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
             <div className="me-2 mt-1 mb-1">
               <DamComponent field={{ changed: handleDam }}>
                 <button
-                  className="wr_btn_dam border-0 bg-blue-2 rounded-2 px-3 text-nowrap btn-size-m"
+                  className="wr_btn_dam border-0 bg-blue-2 rounded-2 py-2 px-3 text-nowrap btn"
                   type="button"
                 >
                   <i className="text-white">
@@ -140,7 +140,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
             </div>
             <div className="me-2 mt-1 mb-1">
               <button
-                className="wr_btn_dam border-0 rounded-2 px-2 text-nowrap btn-size-m chatgpt-btn"
+                className="wr_btn_dam border-0 rounded-2 px-2 py-0 text-nowrap btn btn-success"
                 type="button"
                 onClick={handleShow}
               >
@@ -152,7 +152,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
                     width="30"
                     height="30"
                   />
-                  <span className="text-white fw-medium ">ChatGPT</span>
+                  <span className="text-white fw-medium py-1 ms-1 ">ChatGPT</span>
                 </div>
               </button>
               <ModalComponent
@@ -169,7 +169,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
           <div className="me-2 mt-1 mb-1">
             <DamComponent field={{ changed: handleDam }} allowType={['video']}>
               <button
-                className="wr_btn_dam border-0 bg-blue-2 rounded-2 px-3 text-nowrap canva-btn-size-m"
+                className="wr_btn_dam border-0 bg-blue-2 rounded-2 px-3 py-2 text-nowrap btn "
                 type="button"
               >
                 <i className="text-white">
@@ -185,6 +185,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
         // canvaData={canvaAssets}
         damData={damAssets}
         deleteDamItem={deleteDamItem}
+        channelData={channelData}
         // canvaDeleteItem={canvaDeleteItem}
         // onSetCanvaIndexToEdit={onSetCanvaIndexToEdit}
       />
