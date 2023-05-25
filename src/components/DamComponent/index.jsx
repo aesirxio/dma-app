@@ -1,6 +1,5 @@
-import ModalDAMComponent from 'components/ModalDamComponent';
 import React, { useState } from 'react';
-import { Image as ComponentImage } from 'aesirx-uikit';
+import { Image as ComponentImage, ModalDAMComponent } from 'aesirx-uikit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,7 +21,15 @@ function ImageDamComponent({ field, allowType = ['image'], children }) {
   };
   return (
     <>
-      <ModalDAMComponent show={show} onHide={() => setShow(false)} onSelect={onSelect} />
+      <ModalDAMComponent
+        show={show}
+        onHide={() => setShow(false)}
+        onSelect={onSelect}
+        type="image"
+        accept={{
+          'image/*': ['.png', '.gif', '.jpeg', '.jpg'],
+        }}
+      />
       {children ? (
         <div onClick={() => setShow(true)}>{children}</div>
       ) : (

@@ -4,7 +4,7 @@
  */
 
 import React, { lazy } from 'react';
-import { LoginPage, ProfilePage } from 'aesirx-uikit';
+import { LoginPage, ProfilePage, DigitalAssetsPage } from 'aesirx-uikit';
 
 const CalendarPage = lazy(() => import('../containers/CalendarPage'));
 const Projects = lazy(() => import('../containers/ProjectsPage'));
@@ -12,7 +12,6 @@ const CampaignsPage = lazy(() => import('../containers/CampaignsPage'));
 const ContentPage = lazy(() => import('../containers/ContentPage'));
 const WizardPage = lazy(() => import('../containers/WizardPage'));
 const ChannelsPage = lazy(() => import('../containers/ChannelsPage'));
-const DigitalAssetsPage = lazy(() => import('../containers/DigitalAssetsPage'));
 const WelcomePage = lazy(() => import('../containers/WelcomePage'));
 
 const authRoutes = [
@@ -72,7 +71,7 @@ const mainRoutes = [
   {
     path: '/digital-assets',
     exact: false,
-    main: ({ match, location }) => <DigitalAssetsPage match={match} location={location} />,
+    main: () => <DigitalAssetsPage />,
   },
 ];
 

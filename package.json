@@ -15,9 +15,9 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "aesirx-dam-app": "^1.2.10",
-    "aesirx-lib": "^1.9.6",
-    "aesirx-uikit": "^1.0.6",
+    "aesirx-dam-app": "^1.2.11",
+    "aesirx-lib": "^1.9.7",
+    "aesirx-uikit": "^1.0.8",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
     "emoji-mart": "^3.0.0",
@@ -115,7 +115,6 @@
   "resolutions": {
     "react": "^18",
     "react-dom": "^18",
-    "react-dnd": "^16",
-    "aesirx-lib": "^1.9.6"
+    "react-dnd": "^16"
   }
 }
