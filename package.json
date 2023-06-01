@@ -1,6 +1,6 @@
 {
   "name": "aesirx-dma-app",
-  "version": "1.6.7",
+  "version": "1.7.0",
   "license": "GPL-3.0-only",
   "author": "AesirX",
   "main": "dist/index.js",
@@ -52,8 +52,8 @@
   },
   "scripts": {
     "start": "yarn run build && serve -s build",
-    "build": "react-scripts build && react-inject-env set",
-    "test": "react-scripts test",
+    "build": "craco build && react-inject-env set",
+    "test": "craco test",
     "dev": "craco start",
     "lint": "eslint --fix \"src/**/\"",
     "lint:check": "eslint \"src/**/\"",
@@ -99,6 +99,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-react-css-modules": "^5.2.6",
     "eslint": "^8.17",
+    "git-revision-webpack-plugin": "^5.0.0",
     "microbundle": "^0.15.1",
     "postcss-scss": "^4.0.5",
     "prettier": "^2.8.4",
