@@ -10,7 +10,7 @@ import { Route } from 'react-router-dom';
 import ChannelsStore from '../ChannelsPage/ChannelsStore/ChannelsStore';
 import ContentStore from '../ContentPage/ContentStore/ContentStore';
 import WizardSteps from '../../components/WizardSteps';
-import { history, Spinner , ButtonNormal} from 'aesirx-uikit';
+import { history, Spinner, ButtonNormal } from 'aesirx-uikit';
 import { withTranslation } from 'react-i18next';
 import GlobalStore from '../../store/Store';
 import { ChannelsViewModelContextProvider } from '../ChannelsPage/ChannelsViewModels/ChannelsViewModelContextProvider';

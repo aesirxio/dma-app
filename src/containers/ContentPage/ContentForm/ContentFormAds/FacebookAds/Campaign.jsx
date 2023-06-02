@@ -6,7 +6,7 @@
 import React, { useContext } from 'react';
 
 import { FORM_FIELD_TYPE } from '../../../../../constants/FormFieldType';
-import {Button} from 'aesirx-uikit';
+import { Button } from 'aesirx-uikit';
 
 import { renderingGroupFieldHandler } from '../../../../../utils/form';
 
