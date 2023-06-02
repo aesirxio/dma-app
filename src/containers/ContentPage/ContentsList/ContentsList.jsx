@@ -135,9 +135,9 @@ const ContentsList = observer(
           Header: '',
           accessor: CONTENT_FIELD_KEY.STATUS,
           className: 'status',
-          Cell: ({ value }) => (
+          Cell: ({ value}) => (
             <span className={`badge bg-${value} mw-100 h-35 d-table-cell align-middle`}>
-              {CONTENT_STATUS[value]}
+              {CONTENT_STATUS[value]}   
             </span>
           ),
         },
@@ -145,14 +145,16 @@ const ContentsList = observer(
           Header: '',
           accessor: CONTENT_FIELD_KEY.EDIT,
           Cell: ({ row }) =>
-            row.original[CONTENT_FIELD_KEY.ENTITY] === 'category' && (
+          
+            row.original[CONTENT_FIELD_KEY.ENTITY] === 'item' && row.original[CONTENT_FIELD_KEY.STATUS] !== "posted" ?(
+            
               <button
                 className={`badge mw-100 h-35 d-table-cell align-middle btn btn-success border-0`}
                 onClick={() => this.handerEdit(row.original)}
               >
                 {t('txt_edit')}
               </button>
-            ),
+            ): null,
         },
       ];
 
