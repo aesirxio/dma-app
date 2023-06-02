@@ -14,7 +14,7 @@ import SimpleReactValidator from 'simple-react-validator';
 import ContentFormPublishChannel from './channel';
 import ContentFormPublishAdvance from './advance';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
-import Button from '../../../../components/Button';
+import { Button } from 'aesirx-uikit';
 import ContentFormPublishShedule from './shedule';
 import { withTranslation } from 'react-i18next';
 

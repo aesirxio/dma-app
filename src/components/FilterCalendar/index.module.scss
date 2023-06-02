@@ -3,10 +3,8 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-@import '../../scss/utils/bootstrap.scss';
-
 .wrapper_filter_calendar {
-  background-color: rgba($color: $black, $alpha: 0.7);
+  background-color: rgba(var(--bs-black), 0.7);
 }
 
 .main_filter_calendar {

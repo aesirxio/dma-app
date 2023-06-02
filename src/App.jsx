@@ -9,7 +9,7 @@ import 'aesirx-uikit/dist/index.css';
 import 'scss/app.scss';
 
 import { AppProvider, Menu, isLogin } from 'aesirx-uikit';
-import appLanguages from 'translations';
+import { appLanguages } from 'translations';
 import { authRoutes, mainRoutes, settingRoutes } from 'routes/routes';
 
 import { AesirXDamStorage } from 'aesirx-dam-app';
@@ -20,7 +20,7 @@ const App = () => {
     <AppProvider
       appLanguages={appLanguages}
       authRoutes={authRoutes}
-      mainRoutes={mainRoutes}
+      mainRoutes={mainRoutes()}
       settingRoutes={settingRoutes}
       profileMenu={profileMenu}
       isLogin={isLogin}

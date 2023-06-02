@@ -9,14 +9,12 @@ import { Route } from 'react-router-dom';
 // import ProjectStore from "../ProjectsPage/ProjectStore/ProjectStore";
 import ChannelsStore from '../ChannelsPage/ChannelsStore/ChannelsStore';
 import ContentStore from '../ContentPage/ContentStore/ContentStore';
-import { history } from 'aesirx-uikit';
 import WizardSteps from '../../components/WizardSteps';
-import { Spinner } from 'aesirx-uikit';
+import { history, Spinner, ButtonNormal } from 'aesirx-uikit';
 import { withTranslation } from 'react-i18next';
 import GlobalStore from '../../store/Store';
 import { ChannelsViewModelContextProvider } from '../ChannelsPage/ChannelsViewModels/ChannelsViewModelContextProvider';
 import ChannelsViewModel from '../ChannelsPage/ChannelsViewModels/ChannelsViewModel';
-import ButtonNormal from '../../components/ButtonNormal';
 import ContentViewModel from '../ContentPage/ContentViewModels/ContentViewModel';
 
 import { ContentViewModelContextProvider } from '../ContentPage/ContentViewModels/ContentViewModelContextProvider';

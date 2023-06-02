@@ -4,10 +4,10 @@
  */
 
 import React, { Component, lazy } from 'react';
-import { history } from 'aesirx-uikit';
+import { history, ButtonNormal } from 'aesirx-uikit';
 import { withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
-import ButtonNormal from '../../../components/ButtonNormal';
+
 import { withCampaignsViewModel } from '../CampaignsViewModels/CampaignsViewModelContextProvider';
 const CampaignsFormModal = lazy(() => import('./CampaignsFormModal'));
 

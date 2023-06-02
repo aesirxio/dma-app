@@ -15,10 +15,10 @@ import { renderingGroupFieldHandler } from '../../../../utils/form';
 import ContentFormGeneralChannel from './channel';
 import ContentFormDescription from '../ContentFormDescription';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
-import Button from '../../../../components/Button';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
-import { notify } from 'aesirx-uikit';
+import { notify, Button } from 'aesirx-uikit';
 import ContentUtils from '../../ContentUtils/ContentUtils';
 import { withTranslation } from 'react-i18next';
 const ContentFormGeneral = observer(

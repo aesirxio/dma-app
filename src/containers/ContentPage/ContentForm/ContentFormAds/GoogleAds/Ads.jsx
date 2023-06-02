@@ -4,7 +4,7 @@
  */
 
 import React, { useContext, lazy } from 'react';
-import Button from '../../../../../components/Button';
+import { Button } from 'aesirx-uikit';
 import { ContentViewModelContext } from '../../../ContentViewModels/ContentViewModelContextProvider';
 
 import Preview from './Preview';

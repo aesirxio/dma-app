@@ -18,4 +18,4 @@ const appLanguages = {
   fr: common_fr,
 };
 
-export default appLanguages;
+export { appLanguages };
