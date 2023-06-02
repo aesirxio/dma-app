@@ -62,4 +62,11 @@ const profileMenu = [
   },
 ];
 
-export { profileMenu, mainMenu, settingMenu };
+const integrationMenu = () =>
+  mainMenu
+    .filter((item) => item.name !== 'digital')
+    .map((item) => {
+      item.link = '/dma' + item.link;
+      return item;
+    });
+export { profileMenu, mainMenu, settingMenu, integrationMenu };

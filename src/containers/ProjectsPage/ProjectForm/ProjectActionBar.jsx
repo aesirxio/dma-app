@@ -4,9 +4,8 @@
  */
 
 import React, { Component, lazy } from 'react';
-import { history } from 'aesirx-uikit';
+import { history, ButtonNormal } from 'aesirx-uikit';
 
-import ButtonNormal from '../../../components/ButtonNormal';
 import { withTranslation } from 'react-i18next';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 const ProjectFormModal = lazy(() => import('./ProjectFormModal'));

@@ -1,2 +1,3 @@
-export { default as AesirXDmaChannels } from './AesirXDmaChannels/index';
-export { default as AesirxDmaChannelPost } from './AesirxDmaChannelPost/index';
+export { integrationRoutes } from '../routes/routes';
+export { integrationMenu } from '../routes/menu';
+export { appLanguages } from '../translations';

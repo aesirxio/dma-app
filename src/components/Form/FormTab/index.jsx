@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons/faImage';
 import { faVideo } from '@fortawesome/free-solid-svg-icons/faVideo';
 
-import 'emoji-mart/css/emoji-mart.css';
+// import 'emoji-mart/css/emoji-mart.css';
 import { Emoji, Picker } from 'emoji-mart';
 
 import './index.scss';

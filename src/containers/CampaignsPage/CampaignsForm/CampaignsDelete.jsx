@@ -8,8 +8,8 @@ import { Dropdown } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import { withCampaignsViewModel } from '../CampaignsViewModels/CampaignsViewModelContextProvider';
-import { Image as ComponentImage } from 'aesirx-uikit';
-import Button from 'components/Button';
+import { Image as ComponentImage, Button } from 'aesirx-uikit';
+
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
 class CampaignsDelete extends Component {
