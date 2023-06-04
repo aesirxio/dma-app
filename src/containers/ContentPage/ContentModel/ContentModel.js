@@ -27,7 +27,6 @@ class ContentModel {
   channels = [];
   constructor(data) {
     const dataParse = Helper.isJson(data?.data) ? JSON.parse(data?.data) : data?.data;
-
     if (dataParse) {
       this.id = data[ESI_CONTENT_API_RESPONSE_FIELD_KEY.ID] ?? 0;
       this.categoryId = data.categoryId;
@@ -59,6 +58,8 @@ class ContentModel {
       this.channel_name = data[ESI_CONTENT_API_RESPONSE_FIELD_KEY.CHANNEL_NAME] ?? '';
       this.items = data[ESI_CONTENT_API_RESPONSE_FIELD_KEY.ITEMS] ?? [];
       this.entity = data[ESI_CONTENT_API_RESPONSE_FIELD_KEY.ENTITY] ?? 'category';
+      this.link_post = data[ESI_CONTENT_API_RESPONSE_FIELD_KEY.LINK_POST] ?? '';
+
     }
   }
 
@@ -144,6 +145,14 @@ class ContentModel {
       return this.status;
     }
   };
+  getLinks = () => {
+    return {
+      value: this.link_post ? this.link_post : '',
+      type: FIELD_TYPE.TEXT,
+      columnName: CONTENT_FIELD_KEY.LINK_POST,
+      columnText: 'Links',
+    };
+  };
 
   getChannels = () => (this.channels ? this.channels : []);
 
@@ -222,9 +231,12 @@ class ContentModel {
 
   getPageChannels = () => {
     const pageIds = Object.keys(this.channels)
-      .map((key) => this.channels[key].selectedPage)
-      .reduce((arr, el) => [...arr, ...el], [])
-      .map(({ pageId }) => pageId);
+    
+    
+      .map((key) => this.channels[key])
+      console.log(pageIds);
+      // .reduce((arr, el) => [...arr, ...el], [])
+      // .map(({ pageId }) => pageId);
 
     return pageIds;
   };
@@ -239,6 +251,7 @@ class ContentModel {
       [CONTENT_FIELD_KEY.STATUS]: this.getStatus(),
       [CONTENT_FIELD_KEY.ENTITY]: this.entity,
       [CONTENT_FIELD_KEY.MODE]: this.mode,
+      [CONTENT_FIELD_KEY.LINK_POST]: this.getLinks(),
     };
   };
 

@@ -27,6 +27,7 @@ import ComponentViewList from '../../../components/ComponentViewList';
 import { Image as ComponentImage } from 'aesirx-uikit';
 import ContentUtils from '../ContentUtils/ContentUtils';
 
+
 const ContentsList = observer(
   class ContentsList extends ComponentViewList {
     key = CONTENT_FIELD_KEY.ID;
@@ -45,15 +46,17 @@ const ContentsList = observer(
         },
       ];
     };
-
+    
     render() {
-      const { tableStatus, contents = [], pagination } = this.listViewModel;
+      const { tableStatus, contents = [], pagination  } = this.listViewModel;
       const { t } = this.props;
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
       }
-
+   
       const dataFormFilter = this.getDataFormFilter();
+     
+     
 
       const tableRowHeader = [
         {
@@ -145,6 +148,7 @@ const ContentsList = observer(
           Header: '',
           accessor: CONTENT_FIELD_KEY.EDIT,
           Cell: ({ row }) =>
+            
             row.original[CONTENT_FIELD_KEY.ENTITY] === 'category' && (
               <button
                 className={`badge mw-100 h-35 d-table-cell align-middle btn btn-success border-0`}
@@ -154,8 +158,22 @@ const ContentsList = observer(
               </button>
             ),
         },
+        {
+          Header: 'link',
+          accessor: CONTENT_FIELD_KEY.LINK_POST,
+          Cell: ({ row }) => {
+            if (row.original.link_post.value) {
+              return (
+                <button
+                className={`badge mw-100 h-35 d-table-cell align-middle btn btn-success border-0`}
+              >
+                <a href={`${row.original.link_post.value}?utm_source=&utm_medium=cpc&utm_campaign=`}>link</a>
+              </button>
+              );
+            }
+          },
+          },     
       ];
-
       return (
         <>
           {contents ? (

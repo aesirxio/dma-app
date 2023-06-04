@@ -35,6 +35,7 @@ const CONTENT_FIELD_KEY = {
   DATE: 'date',
   ADS: 'content-ads',
   ENTITY: 'entity',
+  LINK_POST:'link_post',
 };
 
 const CONTENT_PUBLISH_MODE = {
@@ -91,6 +92,7 @@ const ESI_CONTENT_API_RESPONSE_FIELD_KEY = {
   CHANNEL_NAME: 'channel_name',
   ITEMS: 'items',
   ENTITY: 'entity',
+  LINK_POST:'link_post',
 };
 
 export {
