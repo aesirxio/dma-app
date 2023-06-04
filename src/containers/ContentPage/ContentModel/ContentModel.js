@@ -59,7 +59,6 @@ class ContentModel {
       this.items = data[ESI_CONTENT_API_RESPONSE_FIELD_KEY.ITEMS] ?? [];
       this.entity = data[ESI_CONTENT_API_RESPONSE_FIELD_KEY.ENTITY] ?? 'category';
       this.link_post = data[ESI_CONTENT_API_RESPONSE_FIELD_KEY.LINK_POST] ?? '';
-
     }
   }
 
@@ -231,12 +230,10 @@ class ContentModel {
 
   getPageChannels = () => {
     const pageIds = Object.keys(this.channels)
-    
-    
-      .map((key) => this.channels[key])
-      console.log(pageIds);
-      // .reduce((arr, el) => [...arr, ...el], [])
-      // .map(({ pageId }) => pageId);
+    .map((key) => this.channels[key]);
+    console.log(pageIds);
+    // .reduce((arr, el) => [...arr, ...el], [])
+    // .map(({ pageId }) => pageId);
 
     return pageIds;
   };

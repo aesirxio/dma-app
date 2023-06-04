@@ -78,7 +78,7 @@ class ContentChannelsModel {
       [name.columnName]: name.value,
       [status.columnName]: status.value,
       [channels.columnName]: channels.value,
-      [links.columnName]:links.value,
+      [links.columnName]: links.value,
     };
   };
 
