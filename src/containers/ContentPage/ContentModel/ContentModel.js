@@ -229,8 +229,7 @@ class ContentModel {
   };
 
   getPageChannels = () => {
-    const pageIds = Object.keys(this.channels)
-    .map((key) => this.channels[key]);
+    const pageIds = Object.keys(this.channels).map((key) => this.channels[key]);
     console.log(pageIds);
     // .reduce((arr, el) => [...arr, ...el], [])
     // .map(({ pageId }) => pageId);
