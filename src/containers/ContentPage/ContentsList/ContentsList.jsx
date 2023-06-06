@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, {lazy} from 'react';
+import React, { lazy } from 'react';
 
 import { history } from 'aesirx-uikit';
 
@@ -32,13 +32,13 @@ const ContentsList = observer(
   class ContentsList extends ComponentViewList {
     key = CONTENT_FIELD_KEY.ID;
     view = 'content';
-    
+
     constructor(props) {
       super(props);
       this.state = {
         show: false,
       };
-    } 
+    }
 
     handerEdit = (data) => {
       history.push(`/content-edit/${data[CONTENT_FIELD_KEY.ID]}`);
@@ -64,7 +64,6 @@ const ContentsList = observer(
         show: false,
       });
     };
-  
 
     render() {
       const { tableStatus, contents = [], pagination } = this.listViewModel;
@@ -75,7 +74,6 @@ const ContentsList = observer(
       const shortenString = (str, first, last) => {
         return str?.substring(0, first) + '...' + str?.substring(str.length - last);
       };
-     
 
       const dataFormFilter = this.getDataFormFilter();
 
@@ -182,54 +180,61 @@ const ContentsList = observer(
           Header: '',
           accessor: CONTENT_FIELD_KEY.LINK_POST,
           Cell: ({ row }) => {
-            const data = ContentUtils.getPageDetail(row.original[CONTENT_FIELD_KEY.CHANNELS], this.listViewModel.channelMasterData);
-          
+            const data = ContentUtils.getPageDetail(
+              row.original[CONTENT_FIELD_KEY.CHANNELS],
+              this.listViewModel.channelMasterData
+            );
+
             if (data) {
               return (
                 <div>
                   {data.map((channel) => {
-                    const link = `${row.original.link_post?.value}?utm_source=${channel.alias}&utm_medium=cpc&utm_campaign=${row.original[CONTENT_FIELD_KEY.CAMPAIGN].value}`;
+                    const link = `${row.original.link_post?.value}?utm_source=${
+                      channel.alias
+                    }&utm_medium=cpc&utm_campaign=${
+                      row.original[CONTENT_FIELD_KEY.CAMPAIGN].value
+                    }`;
                     const shortened = shortenString(link, 43, 0);
-                    if(row.original.link_post?.value){
-
-                      return (                   
-                    <div className="me-2 mt-1 mb-1">
-                      <button
-                        className="px-1 py-1 fs-12 lh-base font-opensans fw-bold btn btn-success cursor-copy"
-                        type="button"
-                        onClick={this.handleShow}
-                      >
-                        <i className="text-white p-2">
-                          <FontAwesomeIcon icon={faArrowUpFromBracket} />
-                        </i>
-                      </button>
-                      <ModalComponent
-                        dialogClassName="share-link"
-                        show={this.state.show}
-                        onHide={this.handleClose}
-                        header={<h3 className="fw-bold title-share-link">Share Link</h3>}
-                        body={
-                          <div>
-                            <p className='mb-0'>Anyone with the URL can see the shared post.</p>
-                            <div className="d-flex justify-content-start align-items-center pb-5 pt-3">
-                              <div className='border p-1'> <a href={link} target="_blank" rel="noopener noreferrer">{shortened}</a></div>
-                              <ButtonShareLink
-                                content={link}
-                              />
-                            </div>
-                            
-                          </div>
-                        }
-                      />
-                    </div>                        
-                    );
-                    } 
+                    if (row.original.link_post?.value) {
+                      return (
+                        <div className="me-2 mt-1 mb-1">
+                          <button
+                            className="px-1 py-1 fs-12 lh-base font-opensans fw-bold btn btn-success cursor-copy"
+                            type="button"
+                            onClick={this.handleShow}
+                          >
+                            <i className="text-white p-2">
+                              <FontAwesomeIcon icon={faArrowUpFromBracket} />
+                            </i>
+                          </button>
+                          <ModalComponent
+                            dialogClassName="share-link"
+                            show={this.state.show}
+                            onHide={this.handleClose}
+                            header={<h3 className="fw-bold title-share-link">Share Link</h3>}
+                            body={
+                              <div>
+                                <p className="mb-0">Anyone with the URL can see the shared post.</p>
+                                <div className="d-flex justify-content-start align-items-center pb-5 pt-3">
+                                  <div className="border p-1">
+                                    {' '}
+                                    <a href={link} target="_blank" rel="noopener noreferrer">
+                                      {shortened}
+                                    </a>
+                                  </div>
+                                  <ButtonShareLink content={link} />
+                                </div>
+                              </div>
+                            }
+                          />
+                        </div>
+                      );
+                    }
                   })}
                 </div>
               );
             }
           },
-          
         },
       ];
       return (
