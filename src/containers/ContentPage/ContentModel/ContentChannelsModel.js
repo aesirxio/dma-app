@@ -20,6 +20,7 @@ class ContentChannelsModel {
     this.status = data.status ?? '';
     this.channels = data.channel_type ?? '';
     this.link_post = dataParse.general[ESI_CONTENT_API_RESPONSE_FIELD_KEY.LINK_POST] ?? '';
+    this.campaign = dataParse.general[ESI_CONTENT_API_RESPONSE_FIELD_KEY.CAMPAIGN] ?? '';
   }
 
   getId = () => {
@@ -63,6 +64,14 @@ class ContentChannelsModel {
       type: FIELD_TYPE.TEXT,
       columnName: CONTENT_FIELD_KEY.LINK_POST,
       columnText: 'Link',
+    };
+  };
+  getCampaigns = () => {
+    return {
+      value: this.campaign,
+      type: FIELD_TYPE.TEXT,
+      columnName: CONTENT_FIELD_KEY.CAMPAIGN,
+      columnText: 'campaign',
     };
   };
 
