@@ -15,11 +15,12 @@ import getStatus from '../../../utils/status';
 class ContentChannelsModel {
   constructor(data) {
     const dataParse = JSON.parse(data.data);
-
     this.id = dataParse.general[ESI_CONTENT_API_RESPONSE_FIELD_KEY.ID] ?? 0;
     this.name = dataParse.general[ESI_CONTENT_API_RESPONSE_FIELD_KEY.HEADLINE] ?? '';
     this.status = data.status ?? '';
-    this.channel = data.channel_type ?? '';
+    this.channels = data.channel_type ?? '';
+    this.link_post = dataParse.general[ESI_CONTENT_API_RESPONSE_FIELD_KEY.LINK_POST] ?? '';
+    this.campaign = dataParse.general[ESI_CONTENT_API_RESPONSE_FIELD_KEY.CAMPAIGN] ?? '';
   }
 
   getId = () => {
@@ -57,18 +58,36 @@ class ContentChannelsModel {
       columnText: 'Channels',
     };
   };
+  getLinks = () => {
+    return {
+      value: this.link_post,
+      type: FIELD_TYPE.TEXT,
+      columnName: CONTENT_FIELD_KEY.LINK_POST,
+      columnText: 'Link',
+    };
+  };
+  getCampaigns = () => {
+    return {
+      value: this.campaign,
+      type: FIELD_TYPE.TEXT,
+      columnName: CONTENT_FIELD_KEY.CAMPAIGN,
+      columnText: 'campaign',
+    };
+  };
 
   toTableRowData = () => {
     const id = this.getId();
     const name = this.getName();
     const status = this.getStatus();
     const channels = this.getChannels();
+    const links = this.getLinks();
 
     return {
       [id.columnName]: id.value,
       [name.columnName]: name.value,
       [status.columnName]: status.value,
       [channels.columnName]: channels.value,
+      [links.columnName]: links.value,
     };
   };
 
