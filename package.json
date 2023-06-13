@@ -44,7 +44,7 @@
     "react-timezone-select": "^1.0.7",
     "react-transition-group": "^4.4.2",
     "simple-react-validator": "^1.6.0",
-    "swiper": "^6.3.5",
+    "swiper": "^9.4.0",
     "web-vitals": "^3.3.1"
   },
   "scripts": {
