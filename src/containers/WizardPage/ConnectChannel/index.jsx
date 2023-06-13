@@ -21,6 +21,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight
 import { notify } from 'aesirx-uikit';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { CHANNEL_ADS_GOOGLE } from '../../../constants/ChannelModule';
+import { historyPush } from 'routes/routes';
 
 const ConnectChannel = observer(
   class ConnectChannel extends Component {
@@ -257,7 +258,7 @@ const ConnectChannel = observer(
         googleadsConnected === true ||
         googleMyBusinessConnected === true
       ) {
-        history.push(`${history.location.pathname}/content`);
+        historyPush(`${history.location.pathname}/content`);
       } else {
         notify('Please connect a channel');
       }

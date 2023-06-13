@@ -6,7 +6,7 @@
 import { makeAutoObservable } from 'mobx';
 import { notify } from 'aesirx-uikit';
 import PAGE_STATUS from '../../../constants/PageStatus';
-import { history } from 'aesirx-uikit';
+import { historyPush } from 'routes/routes';
 import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
 
 class ProjectFormModalViewModel {
@@ -90,7 +90,7 @@ class ProjectFormModalViewModel {
     this.closeModal();
 
     if (history.location.pathname === '/wizard/createproject') {
-      history.push(`/wizard/project/${projectId}`);
+      historyPush(`/wizard/project/${projectId}`);
     }
 
     this.projectListViewModel.refreshTableProjectList();

@@ -35,7 +35,7 @@ class Contents extends Component {
     return (
       <ContentViewModelContextProvider viewModel={contentViewModel}>
         <div className="py-4 px-3">
-          <Route exact path={['/content']}>
+          <Route exact path={['/content', '/dma/content']}>
             <div className="d-flex align-items-center justify-content-between mb-4">
               <h2 className="text-blue-0">{t('txt_list_post')}</h2>
               <ContentActionBar />
@@ -43,7 +43,15 @@ class Contents extends Component {
             <ContentsList />
           </Route>
 
-          <Route exact path={['/content/create', '/content-edit/:categoryId']}>
+          <Route
+            exact
+            path={[
+              '/content/create',
+              '/content-edit/:categoryId',
+              '/dma/content/create',
+              '/dma/content-edit/:categoryId',
+            ]}
+          >
             <ContentFormPage match={match} />
           </Route>
         </div>

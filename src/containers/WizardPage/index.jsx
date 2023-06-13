@@ -18,6 +18,7 @@ import ChannelsViewModel from '../ChannelsPage/ChannelsViewModels/ChannelsViewMo
 import ContentViewModel from '../ContentPage/ContentViewModels/ContentViewModel';
 
 import { ContentViewModelContextProvider } from '../ContentPage/ContentViewModels/ContentViewModelContextProvider';
+import { historyPush } from 'routes/routes';
 
 const ContentFormPage = lazy(() => import('../ContentPage/ContentForm/ContentFormPage'));
 const ChannelsList = lazy(() => import('../ChannelsPage/ChannelsList/ChannelsList'));
@@ -41,7 +42,7 @@ const contentViewModel = new ContentViewModel(contentStore);
 
 class WizardPage extends Component {
   next = () => {
-    history.push(`${history.location.pathname}/content`);
+    historyPush(`${history.location.pathname}/content`);
   };
 
   render() {

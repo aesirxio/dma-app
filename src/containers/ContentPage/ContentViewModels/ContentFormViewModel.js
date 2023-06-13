@@ -12,10 +12,10 @@ import PersonaUtils from '../../PersonasPage/PersonaUtils/PersonaUtils';
 import ChannelsStore from '../../ChannelsPage/ChannelsStore/ChannelsStore';
 import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
 import ContentUtils from '../ContentUtils/ContentUtils';
-import { history } from 'aesirx-uikit';
+
 import ProfileStore from '../../ProfilePage/ProfileStore/ProfileStore';
 import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
-//                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           b';
+import { historyPush } from 'routes/routes';
 
 class ContentFormViewModel {
   formStatus = PAGE_STATUS.LOADING;
@@ -48,11 +48,10 @@ class ContentFormViewModel {
     const memberProfile = await this.profileStore.getMemberProfile(
       Storage.getItem(AUTHORIZATION_KEY.MEMBER_ID) ?? 0
     );
-    console.log(memberProfile);
 
-    if (!memberProfile.allow_create_item && match.path == '/content/create') {
+    if (!memberProfile?.allow_create_item && match.path == '/content/create') {
       notify('Please upgrade account at https://dma.aesirx.io');
-      history.push('/content');
+      historyPush('/content');
     }
 
     const masterData = await this.contentStore.getMasterData();
@@ -82,7 +81,7 @@ class ContentFormViewModel {
 
     if (channelMasterData.length === 0) {
       notify('Please connect a Channel', 'warn');
-      history.push('/channel');
+      historyPush('/channel');
     }
 
     runInAction(() => {
@@ -200,7 +199,7 @@ class ContentFormViewModel {
 
     if (result) {
       notify('Saved', 'success');
-      history.push('/content');
+      historyPush('/content');
     } else {
       notify('Something was wrong. Please try again', 'error');
     }

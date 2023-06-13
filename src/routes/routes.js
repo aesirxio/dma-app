@@ -4,7 +4,7 @@
  */
 
 import React, { lazy } from 'react';
-import { LoginPage, ProfilePage, DigitalAssetsPage } from 'aesirx-uikit';
+import { LoginPage, ProfilePage, DigitalAssetsPage, history } from 'aesirx-uikit';
 import { BrowserRouter } from 'react-router-dom';
 
 const CalendarPage = lazy(() => import('../containers/CalendarPage'));
@@ -23,80 +23,62 @@ const authRoutes = [
   },
 ];
 
-const mainRoutes = (basename = '/') => {
-  return [
-    {
-      path: '/',
-      exact: true,
-      main: () => <CalendarPage />,
-    },
-    {
-      path: [
-        '/channel',
-        '/wizard/createproject',
-        '/wizard/project/:id',
-        '/wizard/project/:id/content',
-        '/wizard/:id/content',
-        '/wizard/content',
-      ],
-      exact: true,
-      main: ({ match, location }) => <WizardPage match={match} location={location} />,
-    },
-    {
-      path: '/projects',
-      exact: false,
-      main: ({ match, location }) => (
-        <BrowserRouter basename={basename}>
-          <Projects match={match} location={location} />
-        </BrowserRouter>
-      ),
-    },
+const mainRoutes = [
+  {
+    path: '/',
+    exact: true,
+    main: () => <CalendarPage />,
+  },
+  {
+    path: [
+      '/channel',
+      '/wizard/createproject',
+      '/wizard/project/:id',
+      '/wizard/project/:id/content',
+      '/wizard/:id/content',
+      '/wizard/content',
+    ],
+    exact: true,
+    main: ({ match, location }) => <WizardPage match={match} location={location} />,
+  },
+  {
+    path: '/projects',
+    exact: false,
+    main: ({ match, location }) => <Projects match={match} location={location} />,
+  },
 
-    {
-      path: '/campaigns',
-      exact: false,
-      main: ({ match, location }) => (
-        <BrowserRouter basename={basename}>
-          <CampaignsPage match={match} location={location} />
-        </BrowserRouter>
-      ),
-    },
-    {
-      path: '/channels',
-      exact: false,
-      main: ({ match, location }) => (
-        <BrowserRouter basename={basename}>
-          <ChannelsPage match={match} location={location} />
-        </BrowserRouter>
-      ),
-    },
+  {
+    path: '/campaigns',
+    exact: false,
+    main: ({ match, location }) => <CampaignsPage match={match} location={location} />,
+  },
+  {
+    path: '/channels',
+    exact: false,
+    main: ({ match, location }) => <ChannelsPage match={match} location={location} />,
+  },
 
-    {
-      path: '/calendar',
-      exact: false,
-      main: ({ match, location }) => (
-        <BrowserRouter basename={basename}>
-          <CalendarPage match={match} location={location} />
-        </BrowserRouter>
-      ),
-    },
-    {
-      path: ['/content', '/content/create', '/content-edit/:categoryId', '/content/:id'],
-      exact: true,
-      main: ({ match, location }) => (
-        <BrowserRouter basename={basename}>
-          <ContentPage match={match} location={location} />
-        </BrowserRouter>
-      ),
-    },
+  {
+    path: '/calendar',
+    exact: false,
+    main: ({ match, location }) => <CalendarPage match={match} location={location} />,
+  },
+  {
+    path: ['/content', '/content/create', '/content-edit/:categoryId', '/content/:id'],
+    exact: true,
+    main: ({ match, location }) => (
+      <BrowserRouter basename="dma">
+        <ContentPage match={match} location={location} />
+      </BrowserRouter>
+    ),
+  },
 
-    {
-      path: '/digital-assets',
-      exact: false,
-      main: () => <DigitalAssetsPage />,
-    },
-  ];
-};
+  {
+    path: '/digital-assets',
+    exact: false,
+    main: () => <DigitalAssetsPage />,
+  },
+];
 
 const settingRoutes = [
   {
@@ -112,7 +94,7 @@ const settingRoutes = [
 ];
 
 const integrationRoutes = () =>
-  mainRoutes('dma')
+  mainRoutes
     .filter((item) => item.path !== '/digital-assets')
     .map((item) => {
       if (Array.isArray(item.path)) {
@@ -124,4 +106,8 @@ const integrationRoutes = () =>
       return item;
     });
 
-export { authRoutes, mainRoutes, settingRoutes, integrationRoutes };
+const historyPush = (link) => {
+  return history.push((process.env.REACT_APP_INTERGRATION ? '/dma' : '') + link);
+};
+
+export { authRoutes, mainRoutes, settingRoutes, integrationRoutes, historyPush };

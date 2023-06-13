@@ -5,7 +5,7 @@
 
 import React, { Component } from 'react';
 
-import { history } from 'aesirx-uikit';
+import { historyPush } from 'routes/routes';
 
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -37,7 +37,7 @@ const PersonaTemplate = observer(
     }
 
     handlerClick = (id) => {
-      history.push(`/personas/create/bypersonatemplate/` + id);
+      historyPush(`/personas/create/bypersonatemplate/` + id);
     };
 
     render() {

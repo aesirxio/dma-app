@@ -5,7 +5,7 @@
 
 import { makeAutoObservable, runInAction } from 'mobx';
 import { notify } from 'aesirx-uikit';
-import { history } from 'aesirx-uikit';
+import { historyPush } from 'routes/routes';
 
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { PERSONA_TABLE_SELECTION_MODAL_COLUMN_INDICATOR } from '../../../constants/PersonaModule';
@@ -47,7 +47,7 @@ class PersonaFormViewModel {
 
     if (!connectedChannelMasterData) {
       notify('Please connect a channel', 'warn');
-      history.push('/channels');
+      historyPush('/channels');
     }
 
     if (match.params.id) {
@@ -103,7 +103,7 @@ class PersonaFormViewModel {
 
     if (result) {
       notify('Saved', 'success');
-      history.push('/personas');
+      historyPush('/personas');
     } else {
       notify('Something was wrong. Please try again', 'error');
     }
@@ -113,7 +113,7 @@ class PersonaFormViewModel {
 
   callbackOnSuccessHandler = () => {
     this.formStatus = PAGE_STATUS.READY;
-    history.push('/personas');
+    historyPush('/personas');
   };
 
   getSelectedLabels = (value) => {
