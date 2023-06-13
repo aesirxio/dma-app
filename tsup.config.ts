@@ -6,7 +6,7 @@ import inlineImage from 'esbuild-plugin-inline-image';
 const env = process.env.NODE_ENV;
 
 export const tsup: Options = {
-  clean: env !== 'development',
+  clean: true,
   format: ['esm'],
   minify: env === 'development' ? false : 'terser',
   watch: env === 'development',

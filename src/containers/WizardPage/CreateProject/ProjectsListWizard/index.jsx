@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 
 import PAGE_STATUS from '../../../../constants/PageStatus';
-import { history } from 'aesirx-uikit';
+import { historyPush } from 'routes/routes';
 
 import Table from '../../../../components/Table';
 
@@ -35,10 +35,10 @@ const ProjectsListWizard = observer(
 
     handerEditProject = ({ id }) => {
       if (id > 0) {
-        history.push(`/wizard/project/${id}`);
+        historyPush(`/wizard/project/${id}`);
         //this.props.goToStep(3);
       } else {
-        history.push(`/wizard/createproject`);
+        historyPush(`/wizard/createproject`);
       }
     };
 

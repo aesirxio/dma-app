@@ -5,7 +5,7 @@
 
 import React, { Component } from 'react';
 
-import { history } from 'aesirx-uikit';
+import { historyPush } from 'routes/routes';
 import { withTranslation } from 'react-i18next';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { PERSONA_FIELD_KEY } from '../../../constants/PersonaModule';
@@ -34,7 +34,7 @@ const PersonasList = observer(
     }
 
     handerEditPersona = (e, row) => {
-      history.push(`/personas/edit/${row[PERSONA_FIELD_KEY.ID]}`);
+      historyPush(`/personas/edit/${row[PERSONA_FIELD_KEY.ID]}`);
     };
 
     handerSelectPersona = (data) => {

@@ -5,8 +5,6 @@
 
 import React, { lazy } from 'react';
 
-import { history } from 'aesirx-uikit';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
@@ -26,6 +24,7 @@ import ComponentViewList from '../../../components/ComponentViewList';
 import { Image as ComponentImage } from 'aesirx-uikit';
 import ContentUtils from '../ContentUtils/ContentUtils';
 import ButtonShareLink from 'components/ButtonShareLink';
+import { historyPush } from 'routes/routes';
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
 const ContentsList = observer(
@@ -41,7 +40,7 @@ const ContentsList = observer(
     }
 
     handerEdit = (data) => {
-      history.push(`/content-edit/${data[CONTENT_FIELD_KEY.ID]}`);
+      historyPush(`/content-edit/${data[CONTENT_FIELD_KEY.ID]}`);
     };
 
     getDataFormFilter = () => {

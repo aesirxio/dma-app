@@ -12,7 +12,7 @@ import './index.scss';
 import FilterCalendar from '../FilterCalendar';
 import CustomToolbar from './CustomToolbar';
 import { CSSTransition } from 'react-transition-group';
-import { history } from 'aesirx-uikit';
+
 import { withTranslation } from 'react-i18next';
 
 import 'moment/locale/vi';
@@ -22,6 +22,7 @@ import 'moment/locale/de';
 import 'moment/locale/th';
 import 'moment/locale/hr';
 import 'moment/locale/fr';
+import { historyPush } from 'routes/routes';
 
 const localizer = momentLocalizer(moment);
 
@@ -68,7 +69,7 @@ class BigCalendarFull extends React.PureComponent {
     spanClass += channelName + '_calendar_text';
 
     const navigateEditPost = () => {
-      history.push(`content-edit/${event.id}`);
+      historyPush(`content-edit/${event.id}`);
     };
     moment.locale('en');
     const time = moment(event.start).format('h:mm A');
