@@ -123,6 +123,7 @@ class CampaignsListViewModel {
   };
 
   callbackOnErrorHander = () => {
+    this.tableStatus = PAGE_STATUS.READY;
     this.campaigns = null;
   };
 

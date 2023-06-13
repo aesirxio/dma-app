@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import { makeAutoObservable, runInAction } from 'mobx';
+import { makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import ProjectUtils from '../ProjectUtils/ProjectUtils';
 import { notify } from 'aesirx-uikit';
@@ -33,10 +33,7 @@ class ProjectsListViewModel {
   }
 
   initializeData = () => {
-    runInAction(() => {
-      this.tableStatus = PAGE_STATUS.LOADING;
-    });
-
+    this.tableStatus = PAGE_STATUS.LOADING;
     this.projectStore.fetchProjects(
       this.callbackOnSuccessHandler,
       this.callbackOnErrorHander,
@@ -122,13 +119,13 @@ class ProjectsListViewModel {
     if (error.message === 'No result') {
       this.projects = [];
     }
+
+    this.tableStatus = PAGE_STATUS.READY;
   };
 
   callbackOnSuccessHandler = (projectModelData) => {
     if (projectModelData) {
-      runInAction(() => {
-        this.tableStatus = PAGE_STATUS.READY;
-      });
+      this.tableStatus = PAGE_STATUS.READY;
 
       const rowDataTransformed = ProjectUtils.transformProjectModelIntoTableDataRow(
         projectModelData.list
