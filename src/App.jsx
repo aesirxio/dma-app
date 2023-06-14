@@ -20,7 +20,7 @@ const App = () => {
     <AppProvider
       appLanguages={appLanguages}
       authRoutes={authRoutes}
-      mainRoutes={mainRoutes()}
+      mainRoutes={mainRoutes}
       settingRoutes={settingRoutes}
       profileMenu={profileMenu}
       isLogin={isLogin}
