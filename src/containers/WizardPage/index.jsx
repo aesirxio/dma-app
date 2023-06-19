@@ -42,7 +42,7 @@ const contentViewModel = new ContentViewModel(contentStore);
 
 class WizardPage extends Component {
   next = () => {
-    historyPush(`${history.location.pathname}/content`);
+    historyPush(`/content/create`);
   };
 
   render() {
@@ -53,10 +53,6 @@ class WizardPage extends Component {
 
         <Suspense fallback={<Spinner />}>
           <Route exact path="/channel">
-            <ChannelsViewModelContextProvider viewModel={channelsViewModel}>
-              <ChannelsList />
-            </ChannelsViewModelContextProvider>
-
             <div className="d-flex justify-content-end pb-6 m-3">
               <ButtonNormal
                 className="btn btn-success px-4 mw-80"
@@ -64,6 +60,10 @@ class WizardPage extends Component {
                 onClick={() => this.next()}
               ></ButtonNormal>
             </div>
+
+            <ChannelsViewModelContextProvider viewModel={channelsViewModel}>
+              <ChannelsList />
+            </ChannelsViewModelContextProvider>
           </Route>
 
           <Route exact path="/wizard/content">
