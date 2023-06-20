@@ -5,7 +5,7 @@
 
 import React, { Component, lazy } from 'react';
 import { history, ButtonNormal } from 'aesirx-uikit';
-
+import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { withTranslation } from 'react-i18next';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 const ProjectFormModal = lazy(() => import('./ProjectFormModal'));
@@ -39,8 +39,9 @@ class ProjectActionBar extends Component {
     return (
       <div className="d-flex justify-content-end">
         <ButtonNormal
+          className="btn-success"
           onClick={this.createProjectHandler}
-          iconStart={true}
+          iconStart={faPlus}
           text="txt_create_project"
         />
         <ProjectFormModal />
