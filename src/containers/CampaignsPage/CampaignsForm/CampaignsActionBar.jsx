@@ -7,7 +7,7 @@ import React, { Component, lazy } from 'react';
 import { history, ButtonNormal } from 'aesirx-uikit';
 import { withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
-
+import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { withCampaignsViewModel } from '../CampaignsViewModels/CampaignsViewModelContextProvider';
 const CampaignsFormModal = lazy(() => import('./CampaignsFormModal'));
 
@@ -40,8 +40,9 @@ class CampaignsActionBar extends Component {
     return (
       <div className="d-flex justify-content-end">
         <ButtonNormal
+          className="btn-success"
           onClick={this.createCampaignsHandler}
-          iconStart={true}
+          iconStart={faPlus}
           text="txt_create_campaigns"
         />
         <CampaignsFormModal />
