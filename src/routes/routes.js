@@ -68,7 +68,7 @@ const mainRoutes = [
     exact: true,
     main: ({ match, location }) => (
       // <BrowserRouter basename="dma">
-          <ContentPage match={match} location={location} />
+      <ContentPage match={match} location={location} />
       // </BrowserRouter>
     ),
   },
