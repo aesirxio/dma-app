@@ -5,7 +5,7 @@
 
 import React, { lazy } from 'react';
 import { LoginPage, ProfilePage, DigitalAssetsPage, history } from 'aesirx-uikit';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 
 const CalendarPage = lazy(() => import('../containers/CalendarPage'));
 const Projects = lazy(() => import('../containers/ProjectsPage'));
@@ -67,9 +67,9 @@ const mainRoutes = [
     path: ['/content', '/content/create', '/content-edit/:categoryId', '/content/:id'],
     exact: true,
     main: ({ match, location }) => (
-      <BrowserRouter basename="dma">
-        <ContentPage match={match} location={location} />
-      </BrowserRouter>
+      // <BrowserRouter basename="dma">
+          <ContentPage match={match} location={location} />
+      // </BrowserRouter>
     ),
   },
 
