@@ -166,7 +166,7 @@ const ContentsList = observer(
           Header: '',
           accessor: CONTENT_FIELD_KEY.EDIT,
           Cell: ({ row }) =>
-            row.original[CONTENT_FIELD_KEY.ENTITY] === 'item' &&
+            row.original[CONTENT_FIELD_KEY.ENTITY] === 'category' &&
             row.original[CONTENT_FIELD_KEY.STATUS] !== 'posted' ? (
               <button
                 className={`badge mw-100 h-35 d-table-cell align-middle btn btn-success border-0`}
@@ -237,6 +237,7 @@ const ContentsList = observer(
           },
         },
       ];
+
       return (
         <>
           {contents ? (
