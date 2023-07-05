@@ -57,7 +57,6 @@ class ContentUtils {
       });
 
       formPropsData[key] = data;
-      console.log(formPropsData[key], 'key');
     } else if (mode === CONTENT_DESCRIPTION_MODE.ADVANCE) {
       if (channelTypeIds.length > 0) {
         if (typeof formPropsData[key] !== 'object' || formPropsData[key] === null) {
@@ -138,7 +137,6 @@ class ContentUtils {
         return [data.value];
       }
     }
-    console.log(data, 'data');
     return '';
   };
 
