@@ -59,6 +59,9 @@ class ContentUtils {
       formPropsData[key] = data;
     } else if (mode === CONTENT_DESCRIPTION_MODE.ADVANCE) {
       if (channelTypeIds.length > 0) {
+        if (typeof formPropsData[key] !== 'object' || formPropsData[key] === null) {
+          formPropsData[key] = {};
+        }
         channelTypeIds.forEach((channelType) => (formPropsData[key][channelType] = value));
       }
     }
@@ -71,7 +74,6 @@ class ContentUtils {
           .map((key) => channelsData[key].selectedPage.map(({ pageId }) => pageId))
           .reduce((arr, el) => [...arr, ...el], [])
       : contentData;
-
     return channelMasterData
       .map((category) => ({
         ...category,
@@ -135,7 +137,6 @@ class ContentUtils {
         return [data.value];
       }
     }
-
     return '';
   };
 
@@ -156,7 +157,6 @@ class ContentUtils {
         })),
       ].filter((option) => option.options.length > 0);
     });
-
     return data;
   };
 }

@@ -110,6 +110,7 @@ const ContentFormGeneral = observer(
           if (!validate?.description) {
             if (list?.requirements?.description != 0) {
               validate.description = list?.requirements?.description;
+              validate.channelDescription = list?.name;
             }
           } else {
             if (
@@ -125,7 +126,6 @@ const ContentFormGeneral = observer(
             if (list?.requirements?.headline != 0) {
               validate.headline = list?.requirements?.headline;
               validate.channelHeadline = list?.name;
-              console.log(validate.channelHeadline, '1');
             }
           } else {
             if (
@@ -134,7 +134,6 @@ const ContentFormGeneral = observer(
             ) {
               validate.headline = list?.requirements?.headline;
               validate.channelHeadline = list?.name;
-              console.log(validate.channelHeadline, '2');
             }
           }
           //media
@@ -156,7 +155,6 @@ const ContentFormGeneral = observer(
               validate.video = list?.requirements?.video;
             }
           }
-          console.log(list);
         });
       });
 
