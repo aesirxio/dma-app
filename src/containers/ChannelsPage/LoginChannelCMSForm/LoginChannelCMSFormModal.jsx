@@ -25,7 +25,6 @@ import LoginChannelCMSFormJoomla from './LoginChannelCMSFormJoomla';
 import LoginChannelFormTelegram from './LoginChannelFormTelegram';
 import LoginChannelFormWriteFreely from './LoginChannelFormWriteFreely';
 
-
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
 const LoginChannelCMSFormModal = observer(
@@ -76,7 +75,7 @@ const LoginChannelCMSFormModal = observer(
       let buttonTitle = 'Save';
 
       let eventName = channelType.id;
-      console.log(eventName,"eventName");
+      console.log(eventName, 'eventName');
 
       return (
         <ModalComponent

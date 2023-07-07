@@ -117,7 +117,7 @@ const CHANNEL_CMS_FIELD_KEY = {
   BOT_USERNAME: 'bot_username',
   BOT_TOKEN: 'bot_token',
   CHAT_IDS: 'chat_ids',
-  BLOG : 'blog',
+  BLOG: 'blog',
 };
 
 export {
