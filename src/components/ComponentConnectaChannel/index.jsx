@@ -377,6 +377,19 @@ class ComponentConnectaChannel extends Component {
           }
           this.props.handleModalCms(name, isConnected);
           break;
+          case CHANNEL_TYPE.TWRITEFREELY:
+          accepted = this.isAllowedConnectChannel(
+            CHANNEL_TYPE.TWRITEFREELY.NAME,
+            CHANNEL_TYPE.TWRITEFREELY.TYPE
+          );
+          if (!accepted && isConnected === true) {
+            this.setState({
+              showModalUpgrade: true,
+            });
+            return;
+          }
+          this.props.handleModalCms(name, isConnected);
+          break;
 
         default:
       }
