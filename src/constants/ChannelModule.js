@@ -7,6 +7,7 @@ export const CHANNEL_CMS_WORDPRESS = 'wordpress';
 export const CHANNEL_CMS_DRUPAL = 'drupal';
 export const CHANNEL_CMS_MEDIUM = 'medium';
 export const CHANNEL_TELEGRAM = 'telegram';
+export const CHANNEL_CMS_TWRITEFREELY = 'writefreely';
 export const CHANNEL_CMS_JOOMLA = 'joomla';
 export const CHANNEL_ADS_GOOGLE = 'google_ads';
 export const CHANNEL_ADS_FACEBOOK = 'fbad';
@@ -45,6 +46,10 @@ export const CHANNEL_TYPE = {
   },
   TUMBLR: {
     NAME: 'tumblr',
+    TYPE: 'social_media',
+  },
+  WRITEFREELY: {
+    NAME: 'writefreely',
     TYPE: 'social_media',
   },
   MEDIUM: {
@@ -112,6 +117,7 @@ const CHANNEL_CMS_FIELD_KEY = {
   BOT_USERNAME: 'bot_username',
   BOT_TOKEN: 'bot_token',
   CHAT_IDS: 'chat_ids',
+  BLOG: 'blog',
 };
 
 export {
