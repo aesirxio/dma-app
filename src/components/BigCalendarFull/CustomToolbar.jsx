@@ -6,11 +6,13 @@
 import React from 'react';
 import Toolbar from 'react-big-calendar/lib/Toolbar';
 import { Dropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
+import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import ComponentSVG from 'components/ComponentSVG';
 const CustomToolbar = (handleFilterCalendar, t) => {
   return class BaseToolbar extends Toolbar {
@@ -59,6 +61,17 @@ const CustomToolbar = (handleFilterCalendar, t) => {
           </div>
           <div>
             <div className="position-relative d-flex align-items-center">
+              <div className="d-flex justify-content-end mx-2">
+                <Link
+                  to="/content/create"
+                  className="btn btn-success d-flex align-items-center justify-content-center"
+                >
+                  <i className="me-2">
+                    <FontAwesomeIcon icon={faPlus} />
+                  </i>
+                  <span>{t('txt_create_new_post')}</span>
+                </Link>
+              </div>
               <Dropdown>
                 <Dropdown.Toggle
                   variant="outline-secondary"
@@ -101,7 +114,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
               </Dropdown>
               <div className="ms-2">
                 <button
-                  className="cursor-pointer w-98 d-flex align-items-center bg-white justify-content-center btn btn-outline-secondary text-gray-5"
+                  className="cursor-pointer w-110 d-flex align-items-center bg-white justify-content-center btn btn-outline-secondary text-gray-5"
                   onClick={handleFilterCalendar}
                 >
                   <i className="icon-filter text-gray-5">

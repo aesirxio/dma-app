@@ -207,5 +207,6 @@
   "txt_headline_limmit": " The headline exceeds the allowed characters ",
   "txt_the_media_field_is_required": " The media field is required",
   "txt_the_image_field_is_required":" The image field is required",
-  "txt_left_menu_dma": "Marketing"
+  "txt_left_menu_dma": "Marketing",
+  "txt_create_new_post": "Create new Post"
 }
