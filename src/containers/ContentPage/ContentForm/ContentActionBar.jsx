@@ -32,7 +32,7 @@ const ContentActionBar = observer(
       return (
         <div className="d-flex justify-content-end">
           <Link
-            to={linkPush("/content/create")}
+            to={linkPush('/content/create')}
             className="btn btn-success d-flex align-items-center justify-content-center"
           >
             <i className="me-2">

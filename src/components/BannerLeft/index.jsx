@@ -8,7 +8,6 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Image as ComponentImage } from 'aesirx-uikit';
 
-
 import './index.scss';
 
 SwiperCore.use([Navigation, Pagination]);

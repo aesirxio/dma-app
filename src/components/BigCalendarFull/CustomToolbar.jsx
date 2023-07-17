@@ -64,7 +64,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
             <div className="position-relative d-flex align-items-center">
               <div className="d-flex justify-content-end mx-2">
                 <Link
-                  to={linkPush("/content/create")}
+                  to={linkPush('/content/create')}
                   className="btn btn-success d-flex align-items-center justify-content-center"
                 >
                   <i className="me-2">

@@ -108,7 +108,7 @@ class UpcomingPosts extends React.Component {
             icons="/assets/images/document-text-outline.svg"
             title="Create your 1st upcoming Posts"
             linlText="Create content"
-            link={linkPush("/content/create")}
+            link={linkPush('/content/create')}
             iconBg="icon-post"
             isBtn={true}
           />
