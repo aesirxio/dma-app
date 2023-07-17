@@ -30,8 +30,6 @@ const ContentFormDescription = lazy(() =>
   import('../containers/ContentPage/ContentForm/ContentFormDescription')
 );
 
-const CanvaButton = lazy(() => import('../components/CanvaButton'));
-
 const renderingGroupFieldHandler = (group, validator) => {
   return Object.keys(group.fields)
     .map((fieldIndex) => {
@@ -139,18 +137,6 @@ const renderingGroupFieldHandler = (group, validator) => {
                 </Form.Group>
               );
 
-            case FORM_FIELD_TYPE.CANVA:
-              return (
-                <Form.Group key={Math.random(40, 200)} className={`${className}`}>
-                  {field.label && <Label text={field.label} required={field.required ?? false} />}
-
-                  <CanvaButton key={Math.random(40, 200)} field={field} />
-                  {field.validation &&
-                    validator.message(field.label, field.value, field.validation, {
-                      className: 'text-danger',
-                    })}
-                </Form.Group>
-              );
             case FORM_FIELD_TYPE.DAM:
               return (
                 <Form.Group key={FORM_FIELD_TYPE.DAM} className={`${className}`}>
