@@ -14,6 +14,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import ComponentSVG from 'components/ComponentSVG';
+import { linkPush } from 'routes/routes';
 const CustomToolbar = (handleFilterCalendar, t) => {
   return class BaseToolbar extends Toolbar {
     render() {
@@ -63,7 +64,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
             <div className="position-relative d-flex align-items-center">
               <div className="d-flex justify-content-end mx-2">
                 <Link
-                  to="/content/create"
+                  to={linkPush("/content/create")}
                   className="btn btn-success d-flex align-items-center justify-content-center"
                 >
                   <i className="me-2">

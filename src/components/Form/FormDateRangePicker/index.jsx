@@ -10,7 +10,7 @@ import { Form } from 'react-bootstrap';
 import { FORMAT_DATE } from '../../../constants/FormFieldType';
 import Label from '../Label';
 
-import 'react-datepicker/dist/react-datepicker.css';
+
 import '../../ComponentDatepicker/index.scss';
 import './index.scss';
 

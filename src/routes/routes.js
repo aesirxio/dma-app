@@ -105,4 +105,8 @@ const historyPush = (link) => {
   return history.push((process.env.REACT_APP_INTERGRATION ? '/dma' : '') + link);
 };
 
-export { authRoutes, mainRoutes, settingRoutes, integrationRoutes, historyPush };
+const linkPush = (link) => {
+  return (process.env.REACT_APP_INTERGRATION ? '/dma' : '') + link;
+};
+
+export { authRoutes, mainRoutes, settingRoutes, integrationRoutes, historyPush, linkPush };

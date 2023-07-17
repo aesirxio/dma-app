@@ -81,7 +81,7 @@ class ContentFormViewModel {
 
     if (channelMasterData.length === 0) {
       notify('Please connect a Channel', 'warn');
-      historyPush('/channel');
+      historyPush('/channels');
     }
 
     runInAction(() => {

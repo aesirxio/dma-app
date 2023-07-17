@@ -9,6 +9,7 @@ import './index.scss';
 import ComponentNoData from '../ComponentNoData';
 import { Image as ComponentImage } from 'aesirx-uikit';
 import moment from 'moment';
+import { linkPush } from 'routes/routes';
 
 class UpcomingPosts extends React.Component {
   constructor(props) {
@@ -107,7 +108,7 @@ class UpcomingPosts extends React.Component {
             icons="/assets/images/document-text-outline.svg"
             title="Create your 1st upcoming Posts"
             linlText="Create content"
-            link="/content/create"
+            link={linkPush("/content/create")}
             iconBg="icon-post"
             isBtn={true}
           />
