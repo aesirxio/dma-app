@@ -112,6 +112,7 @@
   .rbc-day-slot {
     .rbc-event {
       border: 0;
+      height: auto !important;
     }
   }
 }
@@ -272,7 +273,7 @@
     border: 1px solid var(--event-color) !important;
   }
   .label-rounded {
-    padding: 1px 7px 4px;
+    padding: 15px 10px;
     border-radius: 5px;
   }
 }

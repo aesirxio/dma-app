@@ -84,8 +84,8 @@ class BigCalendarFull extends React.PureComponent {
             style={{ cursor: 'pointer' }}
             className={spanClass + ' w-100 text-decoration-none d-inline-block'}
           >
-            <span className="wrapper_des_event_time">{time} | </span>
-            <span>{event.title}</span>
+            <p className="wrapper_des_event_time mb-1">{time}</p>
+            <p className='mb-1'>{event.title}</p>
           </span>
         </div>
       </div>
@@ -135,7 +135,7 @@ class BigCalendarFull extends React.PureComponent {
             localizer={localizer}
             events={events}
             defaultDate={this.props.showDate}
-            defaultView={this.props.showView}
+            defaultView={"week"}
             showMultiDayTimes
             components={{
               toolbar: CustomToolbar(this.handleFilterCalendar, t),

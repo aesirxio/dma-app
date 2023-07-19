@@ -34,7 +34,7 @@ const CalendarList = observer(
           <div className="d-flex align-items-center justify-content-between mb-4">
             <h2 className="fs-2 mb-0 text-gray-5 fw-bold">{t('txt_title_calendar')}</h2>
             {/*TODO Add an action and remove d-none*/}
-            <span className={`cursor-pointer btn btn-success d-none`}>
+            <span className={`cursor-pointer btn btn-success`}>
               <i>
                 <FontAwesomeIcon icon={faPlus} />
               </i>
