@@ -12,8 +12,8 @@ import SimpleReactValidator from 'simple-react-validator';
 import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
+import { ModalComponent } from 'aesirx-uikit';
 
-const ModalComponent = lazy(() => import('../../../components/Modal'));
 const ProjectForm = lazy(() => import('./ProjectForm'));
 
 const ProjectFormModal = observer(

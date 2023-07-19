@@ -279,7 +279,7 @@ const Table = ({
                   <Dropdown.Toggle
                     variant="white"
                     id="actions"
-                    className={`btn_toggle ${styles.btn_toggle} text-blue-0`}
+                    className={`align-items-center d-flex btn_toggle ${styles.btn_toggle} text-blue-0`}
                   >
                     <i>
                       <FontAwesomeIcon icon={faColumns} />
@@ -323,7 +323,7 @@ const Table = ({
                 </div>
                 <div className="rounded-0">
                   <button
-                    className={`btn text-blue-0 ${getState.isFilter ? 'bg-blue-3' : ''}`}
+                    className={`d-flex btn text-blue-0 ${getState.isFilter ? 'bg-blue-3' : ''}`}
                     onClick={handleFilter}
                   >
                     <i>

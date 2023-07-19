@@ -40,7 +40,7 @@ class CampaignsActionBar extends Component {
     return (
       <div className="d-flex justify-content-end">
         <ButtonNormal
-          className="btn-success"
+          className="d-flex btn-success"
           onClick={this.createCampaignsHandler}
           iconStart={faPlus}
           text="txt_create_campaigns"
