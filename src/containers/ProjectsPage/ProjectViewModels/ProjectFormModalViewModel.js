@@ -89,7 +89,7 @@ class ProjectFormModalViewModel {
   callbackOnSuccessHandler = (projectId) => {
     this.closeModal();
 
-    if (history.location.pathname === '/wizard/createproject') {
+    if (history.location?.pathname === '/wizard/createproject') {
       historyPush(`/wizard/project/${projectId}`);
     }
 
