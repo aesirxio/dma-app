@@ -239,7 +239,11 @@ const ContentFormGeneral = observer(
               <FontAwesomeIcon icon={faChevronLeft} />
               <span className="ps-2">{t('txt_back')}</span>
             </a>
-            <Button className="btn btn-success px-4 mw-80 " onClick={this.onNext} text={t('txt_next')} />
+            <Button
+              className="btn btn-success px-4 mw-80 "
+              onClick={this.onNext}
+              text={t('txt_next')}
+            />
           </div>
         </div>
       );
