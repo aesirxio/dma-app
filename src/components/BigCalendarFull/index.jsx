@@ -85,19 +85,19 @@ class BigCalendarFull extends React.PureComponent {
     let spanClass = 'fw-semibold wrapper_des_event_title text-wrap opacity-75 ';
     // const channelName = event.channel.length > 0 ? event?.channel[0]?.alias : 'facebook';
 
-  // Define an array of four colors
-  const colors = ['orange','blue','green','red'];
+    // Define an array of four colors
+    const colors = ['orange', 'blue', 'green', 'red'];
 
-  // Get the index of the event to select the color from the array
-  const colorIndex = event.id % colors.length;
-  console.log(colorIndex);
+    // Get the index of the event to select the color from the array
+    const colorIndex = event.id % colors.length;
+    console.log(colorIndex);
 
-  // Get the selected color from the colors array
-  const backgroundColor = colors[colorIndex];
+    // Get the selected color from the colors array
+    const backgroundColor = colors[colorIndex];
 
     // divClass += 'bg-' + backgroundColor ;
     divClass += backgroundColor + '_calendar_background ';
-    spanClass += backgroundColor +'_calendar_text'  ;
+    spanClass += backgroundColor + '_calendar_text';
 
     const navigateEditPost = () => {
       historyPush(`content-edit/${event.id}`);
@@ -115,7 +115,7 @@ class BigCalendarFull extends React.PureComponent {
             style={{ cursor: 'pointer' }}
             className={spanClass + ' w-100 text-decoration-none d-inline-block'}
           >
-            <div className='d-flex justify-content-between align-items-center'>
+            <div className="d-flex justify-content-between align-items-center">
               <p className="wrapper_des_event_time mb-1">{time}</p>
               <FontAwesomeIcon width={16} height={16} icon={faCircleExclamation} />
             </div>
@@ -186,8 +186,8 @@ class BigCalendarFull extends React.PureComponent {
           />
         </div>
         {this.state.selectedTimeSlot && (
-        <button onClick={this.handleNewSchedule}>Create New Schedule</button>
-      )}
+          <button onClick={this.handleNewSchedule}>Create New Schedule</button>
+        )}
         <CSSTransition in={this.state.isFilterCalendar} timeout={300} classNames="filter_calendar">
           <FilterCalendar
             show={this.state.isFilterCalendar}

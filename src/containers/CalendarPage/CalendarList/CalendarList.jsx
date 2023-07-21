@@ -35,10 +35,7 @@ const CalendarList = observer(
             <h2 className="fs-2 mb-0 text-gray-5 fw-bold">{t('txt_title_calendar')}</h2>
             {/*TODO Add an action and remove d-none*/}
             <span className={`cursor-pointer btn btn-success`}>
-              <Link
-                to={linkPush('/content/create')}
-                className="text-white"
-              >
+              <Link to={linkPush('/content/create')} className="text-white">
                 <i>
                   <FontAwesomeIcon icon={faPlus} />
                 </i>
