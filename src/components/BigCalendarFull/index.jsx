@@ -12,7 +12,8 @@ import './index.scss';
 import FilterCalendar from '../FilterCalendar';
 import CustomToolbar from './CustomToolbar';
 import { CSSTransition } from 'react-transition-group';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons/faCircleExclamation';
 import { withTranslation } from 'react-i18next';
 
 import 'moment/locale/vi';
@@ -33,9 +34,9 @@ class BigCalendarFull extends React.PureComponent {
       textBtnGroup: 'Month',
       textDayGroup: 'Today',
       isFilterCalendar: false,
+      selectedTimeSlot: null,
     };
   }
-
   eventPropGetter = (event) => {
     return {
       style: { backgroundColor: event.background },
@@ -43,30 +44,60 @@ class BigCalendarFull extends React.PureComponent {
   };
 
   handleNavigate = (date, view) => {
-    let first_day = moment(new Date(date.getFullYear(), date.getMonth(), 1)).format('YYYY-MM-DD');
-    let last_day = moment(new Date(date.getFullYear(), date.getMonth() + 1, 0)).format(
-      'YYYY-MM-DD'
-    );
-    if (view == 'agenda') {
-      first_day = moment(date).format('YYYY-MM-DD');
-      last_day = moment(date).add(30, 'd').format('YYYY-MM-DD');
+    if (view === 'agenda') {
+      // If the view is 'agenda', update the selected time slot.
+      const selectedSlot = {
+        start: date,
+        end: moment(date).add(1, 'hour'), // Assuming new schedules will have 1-hour duration.
+      };
+      this.setState({
+        selectedTimeSlot: selectedSlot,
+      });
+    } else {
+      // If the view is not 'agenda', perform the existing filtering logic.
+      let first_day = moment(new Date(date.getFullYear(), date.getMonth(), 1)).format('YYYY-MM-DD');
+      let last_day = moment(new Date(date.getFullYear(), date.getMonth() + 1, 0)).format(
+        'YYYY-MM-DD'
+      );
+      this.props.onFilter(
+        {
+          [CONTENT_FIELD_KEY.START_DATE]: first_day,
+          [CONTENT_FIELD_KEY.END_DATE]: last_day,
+        },
+        0,
+        0
+      );
     }
-    this.props.onFilter(
-      {
-        [CONTENT_FIELD_KEY.START_DATE]: first_day,
-        [CONTENT_FIELD_KEY.END_DATE]: last_day,
-      },
-      0,
-      0
-    );
+  };
+  handleNewSchedule = () => {
+    // Check if there is a selected time slot.
+    if (this.state.selectedTimeSlot) {
+      // Navigate to the new schedule page and pass the selected time slot as a parameter.
+      const { start, end } = this.state.selectedTimeSlot;
+      const startTime = moment(start).format('YYYY-MM-DDTHH:mm:ss');
+      const endTime = moment(end).format('YYYY-MM-DDTHH:mm:ss');
+      historyPush(`content-edit/new?start=${startTime}&end=${endTime}`);
+    }
   };
 
   Event = ({ event }) => {
     let divClass = 'wrapper_des_event d-inline-block w-100 shadow label-rounded ';
     let spanClass = 'fw-semibold wrapper_des_event_title text-wrap opacity-75 ';
-    const channelName = event.channel.length > 0 ? event?.channel[0]?.alias : 'facebook';
-    divClass += channelName + '_calendar_background ';
-    spanClass += channelName + '_calendar_text';
+    // const channelName = event.channel.length > 0 ? event?.channel[0]?.alias : 'facebook';
+
+  // Define an array of four colors
+  const colors = ['orange','blue','green','red'];
+
+  // Get the index of the event to select the color from the array
+  const colorIndex = event.id % colors.length;
+  console.log(colorIndex);
+
+  // Get the selected color from the colors array
+  const backgroundColor = colors[colorIndex];
+
+    // divClass += 'bg-' + backgroundColor ;
+    divClass += backgroundColor + '_calendar_background ';
+    spanClass += backgroundColor +'_calendar_text'  ;
 
     const navigateEditPost = () => {
       historyPush(`content-edit/${event.id}`);
@@ -80,13 +111,16 @@ class BigCalendarFull extends React.PureComponent {
         onClick={event.type === 'planing' ? '' : navigateEditPost}
       >
         <div className={divClass}>
-          <span
+          <div
             style={{ cursor: 'pointer' }}
             className={spanClass + ' w-100 text-decoration-none d-inline-block'}
           >
-            <p className="wrapper_des_event_time mb-1">{time}</p>
+            <div className='d-flex justify-content-between align-items-center'>
+              <p className="wrapper_des_event_time mb-1">{time}</p>
+              <FontAwesomeIcon width={16} height={16} icon={faCircleExclamation} />
+            </div>
             <p className="mb-1">{event.title}</p>
-          </span>
+          </div>
         </div>
       </div>
     );
@@ -151,6 +185,9 @@ class BigCalendarFull extends React.PureComponent {
             }}
           />
         </div>
+        {this.state.selectedTimeSlot && (
+        <button onClick={this.handleNewSchedule}>Create New Schedule</button>
+      )}
         <CSSTransition in={this.state.isFilterCalendar} timeout={300} classNames="filter_calendar">
           <FilterCalendar
             show={this.state.isFilterCalendar}

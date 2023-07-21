@@ -6,13 +6,13 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import PAGE_STATUS from '../../../constants/PageStatus';
-
+import { Link } from 'react-router-dom';
 import { Spinner } from 'aesirx-uikit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import BigCalendarFull from '../../../components/BigCalendarFull';
 import { withContentViewModel } from '../../ContentPage/ContentViewModels/ContentViewModelContextProvider';
-
+import { linkPush } from 'routes/routes';
 import ComponentViewList from '../../../components/ComponentViewList';
 import { withTranslation } from 'react-i18next';
 
@@ -35,10 +35,15 @@ const CalendarList = observer(
             <h2 className="fs-2 mb-0 text-gray-5 fw-bold">{t('txt_title_calendar')}</h2>
             {/*TODO Add an action and remove d-none*/}
             <span className={`cursor-pointer btn btn-success`}>
-              <i>
-                <FontAwesomeIcon icon={faPlus} />
-              </i>
-              <span className="ps-2">{t('txt_title_new_calendar')}</span>
+              <Link
+                to={linkPush('/content/create')}
+                className="text-white"
+              >
+                <i>
+                  <FontAwesomeIcon icon={faPlus} />
+                </i>
+                <span className="ps-2">{t('txt_title_new_calendar')}</span>
+              </Link>
             </span>
           </div>
           <BigCalendarFull
