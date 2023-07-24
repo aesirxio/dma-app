@@ -342,3 +342,21 @@
     margin-right: 0;
   }
 }
+.rbc-current-time-indicator {
+ background-color: #C60202;
+ &::before {
+  display: block;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  content:"";
+  background-color:  #C60202;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+.rbc-rtl &::before {
+  left: 0;
+  right: -3px;
+}
+}

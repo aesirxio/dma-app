@@ -71,7 +71,7 @@ class BigCalendarFull extends React.PureComponent {
     };
     moment.locale('en');
     const time = moment(event.start).format('h:mm A');
-
+    console.log(event);
     return (
       <div
         title={time + ' | ' + event.title}
