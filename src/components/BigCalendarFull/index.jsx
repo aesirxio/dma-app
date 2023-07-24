@@ -42,33 +42,6 @@ class BigCalendarFull extends React.PureComponent {
       style: { backgroundColor: event.background },
     };
   };
-
-  handleNavigate = (date, view) => {
-    if (view === 'agenda') {
-      // If the view is 'agenda', update the selected time slot.
-      const selectedSlot = {
-        start: date,
-        end: moment(date).add(1, 'hour'), // Assuming new schedules will have 1-hour duration.
-      };
-      this.setState({
-        selectedTimeSlot: selectedSlot,
-      });
-    } else {
-      // If the view is not 'agenda', perform the existing filtering logic.
-      let first_day = moment(new Date(date.getFullYear(), date.getMonth(), 1)).format('YYYY-MM-DD');
-      let last_day = moment(new Date(date.getFullYear(), date.getMonth() + 1, 0)).format(
-        'YYYY-MM-DD'
-      );
-      this.props.onFilter(
-        {
-          [CONTENT_FIELD_KEY.START_DATE]: first_day,
-          [CONTENT_FIELD_KEY.END_DATE]: last_day,
-        },
-        0,
-        0
-      );
-    }
-  };
   handleNewSchedule = () => {
     // Check if there is a selected time slot.
     if (this.state.selectedTimeSlot) {
@@ -83,19 +56,13 @@ class BigCalendarFull extends React.PureComponent {
   Event = ({ event }) => {
     let divClass = 'wrapper_des_event d-inline-block w-100 shadow label-rounded ';
     let spanClass = 'fw-semibold wrapper_des_event_title text-wrap opacity-75 ';
-    // const channelName = event.channel.length > 0 ? event?.channel[0]?.alias : 'facebook';
-
-    // Define an array of four colors
     const colors = ['orange', 'blue', 'green', 'red'];
 
     // Get the index of the event to select the color from the array
     const colorIndex = event.id % colors.length;
-    console.log(colorIndex);
 
     // Get the selected color from the colors array
     const backgroundColor = colors[colorIndex];
-
-    // divClass += 'bg-' + backgroundColor ;
     divClass += backgroundColor + '_calendar_background ';
     spanClass += backgroundColor + '_calendar_text';
 
@@ -176,7 +143,6 @@ class BigCalendarFull extends React.PureComponent {
               event: this.Event,
             }}
             eventPropGetter={this.eventPropGetter}
-            onNavigate={this.handleNavigate}
             messages={{
               noEventsInRange: t('txt_nopost_agenda'),
               showMore: function (e) {

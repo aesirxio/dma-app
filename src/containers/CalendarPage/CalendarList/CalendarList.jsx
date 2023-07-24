@@ -9,7 +9,7 @@ import PAGE_STATUS from '../../../constants/PageStatus';
 import { Link } from 'react-router-dom';
 import { Spinner } from 'aesirx-uikit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
+import { faCalendar } from '@fortawesome/free-regular-svg-icons/faCalendar';
 import BigCalendarFull from '../../../components/BigCalendarFull';
 import { withContentViewModel } from '../../ContentPage/ContentViewModels/ContentViewModelContextProvider';
 import { linkPush } from 'routes/routes';
@@ -37,7 +37,7 @@ const CalendarList = observer(
             <span className={`cursor-pointer btn btn-success`}>
               <Link to={linkPush('/content/create')} className="text-white">
                 <i>
-                  <FontAwesomeIcon icon={faPlus} />
+                  <FontAwesomeIcon icon={faCalendar} />
                 </i>
                 <span className="ps-2">{t('txt_title_new_calendar')}</span>
               </Link>

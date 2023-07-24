@@ -7,7 +7,7 @@ import React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import App from 'App';
 import reportWebVitals from 'reportWebVitals';
-import 'aesirx-dam-app/dist/index.css';
+// import 'aesirx-dam-app/dist/index.css';
 
 const container = document.getElementById('root');
 
