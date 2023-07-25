@@ -11,6 +11,8 @@ import ContentUtils from '../../containers/ContentPage/ContentUtils/ContentUtils
 import './index.scss';
 import FilterCalendar from '../FilterCalendar';
 import CustomToolbar from './CustomToolbar';
+import CustomHeader from './CustomHeader';
+
 import { CSSTransition } from 'react-transition-group';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons/faCircleExclamation';
@@ -24,8 +26,9 @@ import 'moment/locale/th';
 import 'moment/locale/hr';
 import 'moment/locale/fr';
 import { historyPush } from 'routes/routes';
-
 const localizer = momentLocalizer(moment);
+
+
 
 class BigCalendarFull extends React.PureComponent {
   constructor(props) {
@@ -71,7 +74,6 @@ class BigCalendarFull extends React.PureComponent {
     };
     moment.locale('en');
     const time = moment(event.start).format('h:mm A');
-    console.log(event);
     return (
       <div
         title={time + ' | ' + event.title}
@@ -133,7 +135,7 @@ class BigCalendarFull extends React.PureComponent {
           <Calendar
             culture={i18n.language || 'en'}
             popup
-            localizer={localizer}
+            localizer={localizer} // Use the updated localizer
             events={events}
             defaultDate={this.props.showDate}
             defaultView={'week'}
@@ -141,6 +143,7 @@ class BigCalendarFull extends React.PureComponent {
             components={{
               toolbar: CustomToolbar(this.handleFilterCalendar, t),
               event: this.Event,
+              header: CustomHeader, 
             }}
             eventPropGetter={this.eventPropGetter}
             messages={{
