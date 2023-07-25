@@ -9,7 +9,6 @@ import Toolbar from 'react-big-calendar/lib/Toolbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
-
 import ComponentSVG from 'components/ComponentSVG';
 
 const CustomToolbar = (handleFilterCalendar, t) => {
