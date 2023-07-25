@@ -18,6 +18,9 @@ export const tsup: Options = {
     ScssModulesPlugin({ localsConvention: 'dashes' }),
     sassPlugin({ type: 'style' }),
   ],
+  esbuildOptions(options) {
+    options.drop = ['console'];
+  },
   outExtension() {
     return {
       js: `.js`,
