@@ -28,8 +28,6 @@ import 'moment/locale/fr';
 import { historyPush } from 'routes/routes';
 const localizer = momentLocalizer(moment);
 
-
-
 class BigCalendarFull extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -143,7 +141,7 @@ class BigCalendarFull extends React.PureComponent {
             components={{
               toolbar: CustomToolbar(this.handleFilterCalendar, t),
               event: this.Event,
-              header: CustomHeader, 
+              header: CustomHeader,
             }}
             eventPropGetter={this.eventPropGetter}
             messages={{
