@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import ComponentSVG from 'components/ComponentSVG';
 import { linkPush } from 'routes/routes';
@@ -80,7 +79,6 @@ const CustomToolbar = (handleFilterCalendar, t) => {
                   className="text-gray-5 bg-transparent"
                 >
                   {t(currentView)}
-                 
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="shadow calendar-menu-item border-0 p-3">
                   <div className="rbc-btn-group w-100 d-block">
