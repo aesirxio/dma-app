@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import ComponentSVG from 'components/ComponentSVG';
 import { linkPush } from 'routes/routes';
