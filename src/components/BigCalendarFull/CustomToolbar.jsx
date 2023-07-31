@@ -80,7 +80,6 @@ const CustomToolbar = (handleFilterCalendar, t) => {
                   className="text-gray-5 bg-transparent"
                 >
                   {t(currentView)}
-                 
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="shadow calendar-menu-item border-0 p-3">
                   <div className="rbc-btn-group w-100 d-block">
