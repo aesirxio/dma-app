@@ -62,13 +62,11 @@ const ChannelTypeChannels = observer(({ channelType }) => {
           >
             <div className="col col-md-4">
               <div className="d-flex align-items-center">
-                {channel.avatar && (
                   <ComponentImage
                     className="img-avatar rounded"
-                    src={channel.avatar}
+                    src={channel.avatar ? channel.avatar : `/assets/images/${channel.channelTypeName}.png`}
                     alt={channel.name}
                   />
-                )}
                 <span className="ms-2">{channel.name}</span>
               </div>
             </div>
