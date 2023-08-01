@@ -109,8 +109,8 @@ class BigCalendar extends React.Component {
           events={events ?? []}
           startAccessor="start"
           selectable
-          views={['month']}
-          defaultView="month"
+          views={['week']}
+          defaultView="week"
           onSelectSlot={this.handleSelect}
           endAccessor="end"
           style={{ height: 320 }}
