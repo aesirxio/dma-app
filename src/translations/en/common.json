@@ -65,7 +65,7 @@
   "txt_menu_calendar": "Calendar",
   "txt_menu_projects": "Projects",
   "txt_menu_campaigns": "Campaigns",
-  "txt_menu_content": "Content",
+  "txt_menu_content": "Posts",
   "txt_menu_channels": "Channels",
   "txt_menu_digital_assets": "Digital Assets",
   "txt_today" : "Today",
@@ -206,5 +206,7 @@
   "txt_description_limmit": " The description exceeds the allowed characters ",
   "txt_headline_limmit": " The headline exceeds the allowed characters ",
   "txt_the_media_field_is_required": " The media field is required",
-  "txt_the_image_field_is_required":" The image field is required"
+  "txt_the_image_field_is_required":" The image field is required",
+  "txt_left_menu_dma": "Marketing",
+  "txt_create_new_post": "Create new Post"
 }

@@ -5,7 +5,6 @@
   "txt_email": "อีเมล",
   "txt_password": "รหัสผ่าน",
   "txt_remember_me": "จดจำฉัน",
-  "txt_forgot_password": "ลืมรหัสผ่าน?",
   "txt_sign_in": "เข้าสู่ระบบ",
   "txt_sign_in_with_sso": "ลงชื่อเข้าใช้ด้วย AesirX SSO",
   "txt_sign_up": "ลงชื่อเข้าใช้",
@@ -134,7 +133,7 @@
   "create_your_1st_persona":"สร้างบุคลิกภาพแรกของคุณ",
   "txt_name_personas":"ชื่อ",
   "updated_date":"วันที่อัปเดต",
-  "connected_channels":"ช่องที่เชื่อมต่อ", 
+  "connected_channels":"ช่องที่เชื่อมต่อ",
   "txt_title":"ชื่อ",
   "txt_channels":"ช่องทาง",
   "txt_date":"วันที่",
@@ -153,7 +152,7 @@
   "txt_connecting":"กำลังเชื่อมต่อ",
   "txt_connect":"เชื่อมต่อ",
   "txt_enable":"เปิดใช้",
-  "txt_remove":"เอาออก", 
+  "txt_remove":"เอาออก",
   "txt_type":"ประเภท",
   "txt_action":"การกระทำ",
   "txt_profile":"ข้อมูลส่วนตัว",
@@ -207,5 +206,6 @@
   "txt_description_limmit": " คำอธิบายเกินอักขระที่อนุญาต ",
   "txt_headline_limmit": " บรรทัดแรกเกินอักขระที่อนุญาต ",
   "txt_the_media_field_is_required": " ฟิลด์สื่อจำเป็น ",
-  "txt_the_image_field_is_required":" ต้องระบุช่องรูปภาพ "
+  "txt_the_image_field_is_required":" ต้องระบุช่องรูปภาพ ",
+  "txt_create_new_post": "สร้างโพสต์ใหม่"
 }

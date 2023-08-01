@@ -15,6 +15,7 @@ import Upgrade from '../../../components/Upgrade';
 import { withTranslation } from 'react-i18next';
 import { env } from 'aesirx-lib';
 import { notifyHTML } from 'aesirx-uikit';
+
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
 const ChannelsList = observer(

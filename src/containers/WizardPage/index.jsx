@@ -9,17 +9,16 @@ import { Route } from 'react-router-dom';
 // import ProjectStore from "../ProjectsPage/ProjectStore/ProjectStore";
 import ChannelsStore from '../ChannelsPage/ChannelsStore/ChannelsStore';
 import ContentStore from '../ContentPage/ContentStore/ContentStore';
-import { history } from 'aesirx-uikit';
 import WizardSteps from '../../components/WizardSteps';
-import { Spinner } from 'aesirx-uikit';
+import { Spinner, ButtonNormal } from 'aesirx-uikit';
 import { withTranslation } from 'react-i18next';
 import GlobalStore from '../../store/Store';
 import { ChannelsViewModelContextProvider } from '../ChannelsPage/ChannelsViewModels/ChannelsViewModelContextProvider';
 import ChannelsViewModel from '../ChannelsPage/ChannelsViewModels/ChannelsViewModel';
-import ButtonNormal from '../../components/ButtonNormal';
 import ContentViewModel from '../ContentPage/ContentViewModels/ContentViewModel';
 
 import { ContentViewModelContextProvider } from '../ContentPage/ContentViewModels/ContentViewModelContextProvider';
+import { historyPush } from 'routes/routes';
 
 const ContentFormPage = lazy(() => import('../ContentPage/ContentForm/ContentFormPage'));
 const ChannelsList = lazy(() => import('../ChannelsPage/ChannelsList/ChannelsList'));
@@ -43,7 +42,7 @@ const contentViewModel = new ContentViewModel(contentStore);
 
 class WizardPage extends Component {
   next = () => {
-    history.push(`${history.location.pathname}/content`);
+    historyPush(`/content/create`);
   };
 
   render() {
@@ -54,10 +53,6 @@ class WizardPage extends Component {
 
         <Suspense fallback={<Spinner />}>
           <Route exact path="/channel">
-            <ChannelsViewModelContextProvider viewModel={channelsViewModel}>
-              <ChannelsList />
-            </ChannelsViewModelContextProvider>
-
             <div className="d-flex justify-content-end pb-6 m-3">
               <ButtonNormal
                 className="btn btn-success px-4 mw-80"
@@ -65,6 +60,10 @@ class WizardPage extends Component {
                 onClick={() => this.next()}
               ></ButtonNormal>
             </div>
+
+            <ChannelsViewModelContextProvider viewModel={channelsViewModel}>
+              <ChannelsList />
+            </ChannelsViewModelContextProvider>
           </Route>
 
           <Route exact path="/wizard/content">

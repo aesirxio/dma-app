@@ -9,7 +9,7 @@ import 'aesirx-uikit/dist/index.css';
 import 'scss/app.scss';
 
 import { AppProvider, Menu, isLogin } from 'aesirx-uikit';
-import appLanguages from 'translations';
+import { appLanguages } from 'translations';
 import { authRoutes, mainRoutes, settingRoutes } from 'routes/routes';
 
 import { AesirXDamStorage } from 'aesirx-dam-app';

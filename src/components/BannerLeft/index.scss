@@ -3,7 +3,10 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-@import '../../scss/utils/bootstrap.scss';
+ // Import Swiper styles@
+@import 'swiper/swiper.scss';
+@import 'swiper/components/pagination/pagination.scss';
+@import 'aesirx-uikit/dist/utils/bootstrap.scss';
 
 .wrapper_banner_left {
   @include bg;

@@ -25,7 +25,8 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
       if (
         channelCategory.id === 'cms' ||
         channelType.id === 'medium' ||
-        channelType.id === 'telegram'
+        channelType.id === 'telegram' ||
+        channelType.id === 'writefreely'
       ) {
         context.getChannelsListLoginViewModel().openModal(channelType);
       } else {

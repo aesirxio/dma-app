@@ -91,6 +91,7 @@ class ChannelUtils {
       [CHANNEL_CMS_FIELD_KEY.BOT_USERNAME]: data.bot_username ?? null,
       [CHANNEL_CMS_FIELD_KEY.BOT_TOKEN]: data.bot_token ?? null,
       [CHANNEL_CMS_FIELD_KEY.CHAT_IDS]: data.chat_ids ?? null,
+      [CHANNEL_CMS_FIELD_KEY.BLOG]: data.blog ?? null,
     };
 
     return result;

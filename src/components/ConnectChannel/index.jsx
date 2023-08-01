@@ -8,7 +8,7 @@ import React from 'react';
 import { Image, Tab, Tabs } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
 
-import Button from '../Button';
+import { Button } from 'aesirx-uikit';
 import ModalComponent from '../Modal';
 
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
@@ -56,13 +56,13 @@ class ConnectChannel extends React.Component {
       <>
         <div className="wrapper_tabs bg-white ">
           <Tabs defaultActiveKey="1" id="connectContent-tab">
-            {channels.map((value) => {
+            {channels.map((value, keyChannel) => {
               return (
-                <Tab eventKey={value.id} title={value.title}>
-                  {value.items.map((item) => {
+                <Tab key={keyChannel} eventKey={value.id} title={value.title}>
+                  {value.items.map((item, key) => {
                     {
                       return (
-                        <div className="d-flex justify-content-between p-4">
+                        <div key={key} className="d-flex justify-content-between p-4">
                           <div className="align-self-center">
                             <Image src={item.image} className="pe-2" height="40" />
                             <span className="ps-2 fs-5">{item.name}</span>

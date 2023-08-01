@@ -4,7 +4,7 @@
  */
 
 import React, { lazy } from 'react';
-import { LoginPage, ProfilePage, DigitalAssetsPage } from 'aesirx-uikit';
+import { LoginPage, ProfilePage, DigitalAssetsPage, history } from 'aesirx-uikit';
 
 const CalendarPage = lazy(() => import('../containers/CalendarPage'));
 const Projects = lazy(() => import('../containers/ProjectsPage'));
@@ -88,4 +88,25 @@ const settingRoutes = [
   },
 ];
 
-export { authRoutes, mainRoutes, settingRoutes };
+const integrationRoutes = () =>
+  mainRoutes
+    .filter((item) => item.path !== '/digital-assets')
+    .map((item) => {
+      if (Array.isArray(item.path)) {
+        item.path = item.path.map((path) => '/dma' + path);
+      } else {
+        item.path = '/dma' + item.path;
+      }
+
+      return item;
+    });
+
+const historyPush = (link) => {
+  return history.push((process.env.REACT_APP_INTERGRATION ? '/dma' : '') + link);
+};
+
+const linkPush = (link) => {
+  return (process.env.REACT_APP_INTERGRATION ? '/dma' : '') + link;
+};
+
+export { authRoutes, mainRoutes, settingRoutes, integrationRoutes, historyPush, linkPush };

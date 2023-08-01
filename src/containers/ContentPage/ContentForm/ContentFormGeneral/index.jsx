@@ -15,10 +15,10 @@ import { renderingGroupFieldHandler } from '../../../../utils/form';
 import ContentFormGeneralChannel from './channel';
 import ContentFormDescription from '../ContentFormDescription';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
-import Button from '../../../../components/Button';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
-import { notify } from 'aesirx-uikit';
+import { notify, Button } from 'aesirx-uikit';
 import ContentUtils from '../../ContentUtils/ContentUtils';
 import { withTranslation } from 'react-i18next';
 const ContentFormGeneral = observer(
@@ -110,6 +110,7 @@ const ContentFormGeneral = observer(
           if (!validate?.description) {
             if (list?.requirements?.description != 0) {
               validate.description = list?.requirements?.description;
+              validate.channelDescription = list?.name;
             }
           } else {
             if (
@@ -125,7 +126,6 @@ const ContentFormGeneral = observer(
             if (list?.requirements?.headline != 0) {
               validate.headline = list?.requirements?.headline;
               validate.channelHeadline = list?.name;
-              console.log(validate.channelHeadline, '1');
             }
           } else {
             if (
@@ -134,7 +134,6 @@ const ContentFormGeneral = observer(
             ) {
               validate.headline = list?.requirements?.headline;
               validate.channelHeadline = list?.name;
-              console.log(validate.channelHeadline, '2');
             }
           }
           //media
@@ -156,7 +155,6 @@ const ContentFormGeneral = observer(
               validate.video = list?.requirements?.video;
             }
           }
-          console.log(list);
         });
       });
 
@@ -241,7 +239,11 @@ const ContentFormGeneral = observer(
               <FontAwesomeIcon icon={faChevronLeft} />
               <span className="ps-2">{t('txt_back')}</span>
             </a>
-            <Button className="btn btn-success px-4 mw-80 " onClick={this.onNext} text="txt_next" />
+            <Button
+              className="btn btn-success px-4 mw-80 "
+              onClick={this.onNext}
+              text={t('txt_next')}
+            />
           </div>
         </div>
       );

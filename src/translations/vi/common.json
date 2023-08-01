@@ -5,7 +5,6 @@
   "txt_email": "Email",
   "txt_password": "Mật Khẩu",
   "txt_remember_me": "Lưu mật khẩu",
-  "txt_forgot_password": "Quên mật khẩu?",
   "txt_sign_in": "Đăng Nhập",
   "txt_sign_in_with_sso": "Đăng nhập bằng AesirX SSO",
   "txt_sign_up": "Đăng Ký",
@@ -207,5 +206,6 @@
   "txt_description_limmit": " Mô tả vượt quá số ký tự cho phép ",
   "txt_headline_limmit": " Tiêu đề vượt quá số ký tự cho phép ",
   "txt_the_media_field_is_required": " Trường phương tiện là bắt buộc ",
-  "txt_the_image_field_is_required":" Trường hình ảnh là bắt buộc "
+  "txt_the_image_field_is_required":" Trường hình ảnh là bắt buộc ",
+  "txt_create_new_post": "Tạo bài đăng mới"
 }

@@ -10,6 +10,7 @@ import { withContentViewModel } from '../ContentViewModels/ContentViewModelConte
 import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
+import { linkPush } from 'routes/routes';
 
 const ContentActionBar = observer(
   class ContentActionBar extends Component {
@@ -31,7 +32,7 @@ const ContentActionBar = observer(
       return (
         <div className="d-flex justify-content-end">
           <Link
-            to="/content/create"
+            to={linkPush('/content/create')}
             className="btn btn-success d-flex align-items-center justify-content-center"
           >
             <i className="me-2">

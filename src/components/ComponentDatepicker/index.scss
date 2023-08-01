@@ -3,8 +3,8 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-@import 'react-datepicker/dist/react-datepicker.css';
-@import '../../scss/utils/bootstrap.scss';
+@import 'react-datepicker/src/stylesheets/datepicker.scss';
+@import 'aesirx-uikit/dist/utils/bootstrap.scss';
 
 .wrapper_datepicker {
   .react-datepicker__input-container {

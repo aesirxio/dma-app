@@ -17,11 +17,13 @@ import {
   CHANNEL_CMS_MEDIUM,
   CHANNEL_CMS_JOOMLA,
   CHANNEL_TELEGRAM,
+  CHANNEL_CMS_TWRITEFREELY,
 } from '../../../constants/ChannelModule';
 import LoginChannelCMSForm from './LoginChannelCMSForm';
 import LoginChannelCMSMedium from './LoginChannelCMSMedium';
 import LoginChannelCMSFormJoomla from './LoginChannelCMSFormJoomla';
 import LoginChannelFormTelegram from './LoginChannelFormTelegram';
+import LoginChannelFormWriteFreely from './LoginChannelFormWriteFreely';
 
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
@@ -73,6 +75,7 @@ const LoginChannelCMSFormModal = observer(
       let buttonTitle = 'Save';
 
       let eventName = channelType.id;
+      console.log(eventName, 'eventName');
 
       return (
         <ModalComponent
@@ -92,6 +95,11 @@ const LoginChannelCMSFormModal = observer(
               />
             ) : eventName === CHANNEL_TELEGRAM ? (
               <LoginChannelFormTelegram
+                viewModel={this.loginCMSChannelFormModalViewModel}
+                validator={this.validator}
+              />
+            ) : eventName === CHANNEL_CMS_TWRITEFREELY ? (
+              <LoginChannelFormWriteFreely
                 viewModel={this.loginCMSChannelFormModalViewModel}
                 validator={this.validator}
               />

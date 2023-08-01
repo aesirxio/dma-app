@@ -8,8 +8,8 @@ import React, { Component, lazy } from 'react';
 import { withTranslation } from 'react-i18next';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 import { Dropdown } from 'react-bootstrap';
-import { Image as ComponentImage } from 'aesirx-uikit';
-import Button from 'components/Button';
+import { Image as ComponentImage, Button } from 'aesirx-uikit';
+
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
 class ProjectActionBar extends Component {

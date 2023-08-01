@@ -9,8 +9,8 @@ import { observer } from 'mobx-react';
 import { withContentViewModel } from '../ContentViewModels/ContentViewModelContextProvider';
 import { Dropdown } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
-import { Image as ComponentImage } from 'aesirx-uikit';
-import Button from 'components/Button';
+import { Image as ComponentImage, Button } from 'aesirx-uikit';
+
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
 const ContentActionBar = observer(

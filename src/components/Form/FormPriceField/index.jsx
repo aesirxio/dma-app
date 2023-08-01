@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import NumberFormat from 'react-number-format';
+import { NumericFormat } from 'react-number-format';
 import SETTINGS from '../../../constants/Settings';
 
 const FormPriceField = ({ field }) => {
@@ -36,7 +36,7 @@ const FormPriceField = ({ field }) => {
   };
   return (
     <>
-      <NumberFormat
+      <NumericFormat
         {...(field.isPrice === false ? configNumber : configPrice)}
         onValueChange={field.changed}
         readOnly={field.readOnly}

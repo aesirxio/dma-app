@@ -5,7 +5,6 @@
   "txt_email": "Електронна пошта",
   "txt_password": "Пароль",
   "txt_remember_me": "Запам'ятати мене",
-  "txt_forgot_password": "Забули пароль?",
   "txt_sign_in": "Увійти",
   "txt_sign_in_with_sso": "Увійдіть за допомогою AesirX SSO",
   "txt_sign_up": "Зареєструватися",
@@ -153,7 +152,7 @@
   "txt_connecting":"Підключення",
   "txt_connect":"Підключитися",
   "txt_enable":"давати змогу",
-  "txt_remove":"видалити", 
+  "txt_remove":"видалити",
   "txt_type":"друк",
   "txt_action":"Дія",
   "txt_profile":"Профіль",
@@ -207,6 +206,7 @@
   "txt_description_limmit": "Опис перевищує допустиму кількість символів ",
   "txt_headline_limmit": " Заголовок перевищує допустиму кількість символів ",
   "txt_the_media_field_is_required": " Поле медіа є обов'язковим ",
-  "txt_the_image_field_is_required": " Поле зображення є обов'язковим "
+  "txt_the_image_field_is_required": " Поле зображення є обов'язковим ",
+  "txt_create_new_post": "Створити нову публікацію"
 
 }
