@@ -107,7 +107,16 @@ class CampaignsListViewModel {
   };
 
   getContentByIdExpanded = async (campaignId) => {
-    return await this.contentStore.getContentsByCampaignIDs(campaignId, 20);
+    if (!this.contentStore) {
+      return null;
+    }
+    try {
+      const contentDataModels = await this.contentStore.getContentsByCampaignIDs([campaignId], 20);
+      return contentDataModels;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
   };
 
   resetObservableProperties = () => {
