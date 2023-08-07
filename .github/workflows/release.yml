@@ -1,9 +1,9 @@
-name: "release"
+name: 'release'
 
 on:
   push:
     tags:
-      - "*"
+      - '*'
 
 jobs:
   release:
@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: master
 
       - uses: actions/setup-node@v3
         with:
@@ -19,10 +22,11 @@ jobs:
       - run: yarn install
       - run: yarn lint
       - run: CI=false yarn run build
-      - uses: JS-DevTools/npm-publish@v1
+      - uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          check-version: true
+          strategy: upgrade
+          ignore-scripts: false
 
       - name: Docker meta
         id: meta
@@ -67,4 +71,3 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           generateReleaseNotes: true
-

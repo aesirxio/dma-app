@@ -112,6 +112,7 @@
   .rbc-day-slot {
     .rbc-event {
       border: 0;
+      height: auto !important;
     }
   }
 }
@@ -268,11 +269,8 @@
   border-radius: 5px;
 }
 .rbc-time-view {
-  .rbc-event {
-    border: 1px solid var(--event-color) !important;
-  }
   .label-rounded {
-    padding: 1px 7px 4px;
+    padding: 15px 10px;
     border-radius: 5px;
   }
 }
@@ -284,101 +282,32 @@
   }
 }
 
-.joomla_calendar_background {
-  background: rgba(22, 185, 121, 0.2);
-  color: #16b979;
+.green_calendar_background {
+  background: #C3E3DE;
 }
-
-.youtube_calendar_background {
-  background: rgba(211, 0, 17, 0.2);
+.red_calendar_background {
+  background:#EECACB;
 }
-.facebook_calendar_background {
+.blue_calendar_background {
   background: #cfe2ff;
 }
-
-.twitter_calendar_background {
-  background: rgba(0, 172, 238, 0.2);
+.orange_calendar_background {
+  background: rgb(253 211 191);
 }
 
-.linkedin_calendar_background {
-  background: rgba(0, 95, 137, 0.2);
+.green_calendar_text {
+  color: #1AB394;
 }
-
-.tumblr_calendar_background {
-  background: rgba(52, 58, 64, 0.2);
+.red_calendar_text {
+  color: #E74C3C;
 }
-
-.medium_calendar_background {
-  background: rgba(14, 19, 24, 0.2);
-}
-
-.facebook_ads_calendar_background {
-  background: rgba(139, 186, 254, 0.2);
-}
-
-.google_adwords_calendar_background {
-  background: rgba(218, 165, 32, 0.2);
-}
-
-.wordpress_calendar_background {
-  background: rgba(214, 51, 132, 0.2);
-}
-
-.drupal_calendar_background {
-  background: rgba(70, 130, 180, 0.2);
-}
-
-.mailchimp_calendar_background {
-  background: rgba(139, 0, 139, 0.2);
-}
-
-.joomla_calendar_text {
-  color: #16b979;
-}
-
-.youtube_calendar_text {
-  color: #d30011;
-}
-
-.facebook_calendar_text {
+.blue_calendar_text {
   color: #0d6efd;
 }
-
-.twitter_calendar_text {
-  color: #00acee;
+.orange_calendar_text {
+  color: #EB662B;
 }
 
-.linkedin_calendar_text {
-  color: #005f89;
-}
-
-.tumblr_calendar_text {
-  color: #343a40;
-}
-
-.medium_calendar_text {
-  color: #0e1318;
-}
-
-.facebook_ads_calendar_text {
-  color: #8bbafe;
-}
-
-.google_adwords_calendar_text {
-  color: goldenrod;
-}
-
-.wordpress_calendar_text {
-  color: #d63384;
-}
-
-.drupal_calendar_text {
-  color: steelblue;
-}
-
-.mailchimp_calendar_text {
-  color: darkmagenta;
-}
 
 .rbc-event.rbc-selected {
   .rbc-event-content {
@@ -412,4 +341,22 @@
   .rbc-events-container {
     margin-right: 0;
   }
+}
+.rbc-current-time-indicator {
+ background-color: #C60202;
+ &::before {
+  display: block;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  content:"";
+  background-color:  #C60202;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+.rbc-rtl &::before {
+  left: 0;
+  right: -3px;
+}
 }
