@@ -55,7 +55,7 @@ class BigCalendarFull extends React.PureComponent {
   };
 
   Event = ({ event }) => {
-    let divClass = 'wrapper_des_event d-inline-block w-100 shadow label-rounded ';
+    let divClass = 'wrapper_des_event d-inline-block w-100 label-rounded ';
     let spanClass = 'fw-semibold wrapper_des_event_title text-wrap opacity-75 ';
     const colors = ['orange', 'blue', 'green', 'red'];
 

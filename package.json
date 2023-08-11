@@ -20,6 +20,7 @@
     "date-fns-tz": "^2.0.0",
     "emoji-mart": "^3.0.0",
     "html-react-parser": "^1.2.7",
+    "bootstrap": "^5.3.1",
     "i18next": "^22.4.14",
     "lodash": "^4.17.21",
     "mobx": "^6.9.0",
@@ -103,7 +104,7 @@
     "prettier": "^2.8.4",
     "react-inject-env": "^2.1.0",
     "react-scripts": "^5.0.1",
-    "sass": "^1.52",
+    "sass": "^1.62.1",
     "serve": "^14.1.2",
     "tsup": "^6.7.0"
   },

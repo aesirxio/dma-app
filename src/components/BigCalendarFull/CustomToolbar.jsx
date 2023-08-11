@@ -31,7 +31,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
             >
               <FontAwesomeIcon icon={faChevronLeft} />
             </button>
-            <label className="label-date fs-4 text-blue-5 fw-semibold">{this.props.label}</label>
+            <label className="label-date fs-4 fw-semibold">{this.props.label}</label>
             <button
               className="btn-next mx-2 fs-12 border-0 text-green bg-transparent"
               onClick={() => this.navigate('NEXT')}
@@ -46,7 +46,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
                   className="cursor-pointer w-110 d-flex align-items-center bg-white justify-content-center btn btn-outline-secondary text-gray-5"
                   onClick={handleFilterCalendar}
                 >
-                  <i className="icon-filter text-gray-5">
+                  <i className="icon-filter">
                     <ComponentSVG url="assets/images/filter.svg" />
                   </i>
                   <span className="ms-2">{t('txt_filter')}</span>
