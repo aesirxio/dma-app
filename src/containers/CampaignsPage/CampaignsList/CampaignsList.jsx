@@ -54,7 +54,10 @@ const CampaignsList = observer(
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
               <i className="text-green icon_expander">
-                <FontAwesomeIcon className="border rounded  p-1 border-success"  icon={row.isExpanded ? faMinus : faPlus} />
+                <FontAwesomeIcon
+                  className="border rounded  p-1 border-success"
+                  icon={row.isExpanded ? faMinus : faPlus}
+                />
               </i>
             </div>
           ),
@@ -110,9 +113,7 @@ const CampaignsList = observer(
             } else {
               return (
                 <span
-                  className={`badge ${t(
-                    'txt_stop'
-                  )}  bg-failed mw-100 h-35 d-inline align-middle`}
+                  className={`badge ${t('txt_stop')}  bg-failed mw-100 h-35 d-inline align-middle`}
                 >
                   {t('txt_stop')}
                 </span>

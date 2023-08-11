@@ -22,7 +22,7 @@ import { faList } from '@fortawesome/free-solid-svg-icons/faList';
 import { faTh } from '@fortawesome/free-solid-svg-icons/faTh';
 import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
-import { faArrowRightArrowLeft} from '@fortawesome/free-solid-svg-icons/faArrowRightArrowLeft';
+import { faArrowRightArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowRightArrowLeft';
 import styles from './index.module.scss';
 import './index.scss';
 import { withTranslation } from 'react-i18next';
@@ -128,7 +128,12 @@ const Table = ({
 
     return (
       <>
-        <input className="form-check-input p-0 bg-white rounded-2" type="checkbox" ref={resolvedRef} {...rest} />
+        <input
+          className="form-check-input p-0 bg-white rounded-2"
+          type="checkbox"
+          ref={resolvedRef}
+          {...rest}
+        />
       </>
     );
   });
@@ -323,10 +328,7 @@ const Table = ({
                   />
                 </div>
                 <div className="rounded-0">
-                  <button
-                    className={`d-flex btn }`}
-                    onClick={handleFilter}
-                  >
+                  <button className={`d-flex btn }`} onClick={handleFilter}>
                     <i>
                       <FontAwesomeIcon icon={faFilter} />
                     </i>
@@ -399,8 +401,8 @@ const Table = ({
       </div>
       {isList ? (
         <div className="pt-3 px-3 rounded-3">
-        <table {...getTableProps()} className={`w-100 mb-4 ${classNameTable} rounded-top`}>
-            <thead className='bg-white border-bottom  rounded-end'>
+          <table {...getTableProps()} className={`w-100 mb-4 ${classNameTable} rounded-top`}>
+            <thead className="bg-white border-bottom  rounded-end">
               {headerGroups.map((headerGroup) => {
                 let newHeaderGroup = '';
 
@@ -420,7 +422,10 @@ const Table = ({
                         >
                           {column.render('Header')}
                           <i>
-                            <FontAwesomeIcon className='px-2 arrow-right-left' icon={faArrowRightArrowLeft} />
+                            <FontAwesomeIcon
+                              className="px-2 arrow-right-left"
+                              icon={faArrowRightArrowLeft}
+                            />
                           </i>
                         </th>
                       );
@@ -430,44 +435,47 @@ const Table = ({
               })}
             </thead>
             <tbody {...getTableBodyProps()}>
-  {page.length > 0 &&
-    page.map((row, rowIndex) => {
-      prepareRow(row);
-      const rowProps = row.getRowProps();
-      let newRowCells = '';
+              {page.length > 0 &&
+                page.map((row, rowIndex) => {
+                  prepareRow(row);
+                  const rowProps = row.getRowProps();
+                  let newRowCells = '';
 
-      dataList
-        ? (newRowCells = row.cells.filter(
-            (item) => !dataList.some((other) => item.column.id === other)
-          ))
-        : (newRowCells = row.cells);
+                  dataList
+                    ? (newRowCells = row.cells.filter(
+                        (item) => !dataList.some((other) => item.column.id === other)
+                      ))
+                    : (newRowCells = row.cells);
 
-      const isGrayRow = rowIndex % 2 === 0; // Sử dụng biến đếm để kiểm soát màu xám và trắng
+                  const isGrayRow = rowIndex % 2 === 0; // Sử dụng biến đếm để kiểm soát màu xám và trắng
 
-      return (
-        <React.Fragment key={row.getRowProps().key}>
-          <tr
-            {...row.getRowProps()}
-            className={`cursor-pointer ${isGrayRow ? 'bg-body' : 'bg-white'}`}
-            // onClick={(e) => handerEdit(e, row.original)}
-          >
-            {newRowCells.map((cell) => {
-              console.log(cell);
-              return (
-                <td
-                  {...cell.getCellProps()}
-                  className={`fw-normal px-2 py-4 cell-${cell.column.id}`}
-                >
-                  {cell.render('Cell')}
-                </td>
-              );
-            })}
-          </tr>
-          {hasSubRow === false ? null : row.isExpanded && renderRowSubComponent({ row, rowProps, visibleColumns })}
-        </React.Fragment>
-      );
-    })}
-</tbody>
+                  return (
+                    <React.Fragment key={row.getRowProps().key}>
+                      <tr
+                        {...row.getRowProps()}
+                        className={`cursor-pointer ${isGrayRow ? 'bg-body' : 'bg-white'}`}
+                        // onClick={(e) => handerEdit(e, row.original)}
+                      >
+                        {newRowCells.map((cell) => {
+                          console.log(cell);
+                          return (
+                            <td
+                              {...cell.getCellProps()}
+                              className={`fw-normal px-2 py-4 cell-${cell.column.id}`}
+                            >
+                              {cell.render('Cell')}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                      {hasSubRow === false
+                        ? null
+                        : row.isExpanded &&
+                          renderRowSubComponent({ row, rowProps, visibleColumns })}
+                    </React.Fragment>
+                  );
+                })}
+            </tbody>
           </table>
           {page.length === 0 ? (
             <ComponentNoData
