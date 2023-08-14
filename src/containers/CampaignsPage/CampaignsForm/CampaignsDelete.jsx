@@ -42,10 +42,14 @@ class CampaignsDelete extends Component {
     return (
       <div className="d-flex justify-content-end ">
         <Dropdown>
-          <Dropdown.Toggle className="p-3 bg-transparent text-body border-0" variant="info" id="actions">
+          <Dropdown.Toggle
+            className="p-3 bg-transparent text-body border-0"
+            variant="info"
+            id="actions"
+          >
             {t('choose_an_action')}
             <i className="text-green ps-2">
-                      <FontAwesomeIcon icon={faChevronDown} />
+              <FontAwesomeIcon icon={faChevronDown} />
             </i>
           </Dropdown.Toggle>
           <Dropdown.Menu className="w-100 shadow">
