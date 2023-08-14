@@ -290,7 +290,7 @@ const Table = ({
                     <i>
                       <FontAwesomeIcon icon={faColumns} />
                     </i>
-                    <span className="ps-2 pe-3 opacity-75">{t('txt_columns')}</span>
+                    <span className="ps-2 pe-3  text-body">{t('txt_columns')}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={faChevronDown} />
                     </i>
