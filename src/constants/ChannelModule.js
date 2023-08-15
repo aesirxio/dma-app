@@ -89,6 +89,7 @@ const CHANNEL_FIELD_KEY = {
   NAME: 'name',
   AVATAR: 'avatar',
   TYPE: 'type',
+  GROUP_TYPE: 'groupType',
   CONNECTED: 'connected',
   CHANNEL_TYPE: 'alias',
   EXPIRED_TOKEN_TIME: 'expired_token_time',
