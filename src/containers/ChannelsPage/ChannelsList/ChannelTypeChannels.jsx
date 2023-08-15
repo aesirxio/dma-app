@@ -44,6 +44,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
       setLoading(false);
     }
   };
+  console.log(channelType);
 
   return (
     <>
@@ -52,7 +53,10 @@ const ChannelTypeChannels = observer(({ channelType }) => {
         <div className="py-2 px-3 bg-blue d-flex rounded-2">
           <div className="col col-md-4">{t('txt_name_personas')}</div>
           <div className="col-2 d-none d-md-block">{t('txt_type')}</div>
-          <div className="col col-md-6 text-end">{t('txt_action')}</div>
+          {channelType.id === 'linkedin_group' && (
+            <div className="col-2 d-none d-md-block">{t('txt_group_type')}</div>
+          )}
+          <div className="col col-md-4 text-end">{t('txt_action')}</div>
         </div>
 
         {pages.map((channel, index) => (
@@ -75,7 +79,8 @@ const ChannelTypeChannels = observer(({ channelType }) => {
               </div>
             </div>
             <div className="col-2 d-none d-md-block">{channel.type}</div>
-            <div className="col col-md-6 text-end">
+            <div className="col-2 d-none d-md-block">{channel.groupType}</div>
+            <div className="col col-md-4 text-end">
               <ChannelTypeChannelToken channel={channel} />
               <ChannelTypeChannelsAction
                 channelType={channelType}
