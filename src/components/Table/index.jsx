@@ -263,7 +263,7 @@ const Table = ({
   return (
     <>
       <div className={`mb-2 px-3 ${classNameTable}`}>
-        <div className="bg-white rounded-3 d-flex align-items-center justify-content-between">
+        <div className="bg-blue-5 rounded-3 d-flex align-items-center justify-content-between">
           <div className="wrapper_search_global d-flex align-items-center">
             {isSearch ? (
               <GlobalFilter
@@ -345,8 +345,8 @@ const Table = ({
             <div className="d-flex align-items-center">
               <button
                 type="button"
-                className={`btn text-blue-0 rounded-0 px-4 shadow-none ${
-                  isList ? 'bg-blue-3' : ''
+                className={`btn  rounded-0 px-4 shadow-none ${
+                  isList ? 'bg-blue-3 text-white' : ''
                 }`}
                 onClick={() => _handleList('list')}
               >
@@ -357,8 +357,8 @@ const Table = ({
               </button>
               <button
                 type="button"
-                className={`btn text-blue-0 rounded-0 px-4 shadow-none ${
-                  !isList ? 'bg-blue-3' : ''
+                className={`btn  rounded-0 px-4 shadow-none ${
+                  !isList ? 'bg-blue-3 text-white' : ''
                 }`}
                 onClick={() => _handleList('thumb')}
               >
@@ -402,7 +402,7 @@ const Table = ({
       {isList ? (
         <div className="pt-3 px-3 rounded-3">
           <table {...getTableProps()} className={`w-100 mb-4 ${classNameTable} rounded-top`}>
-            <thead className="bg-white border-bottom  rounded-end">
+            <thead className="bg-blue-5 border-bottom">
               {headerGroups.map((headerGroup) => {
                 let newHeaderGroup = '';
 
@@ -447,7 +447,7 @@ const Table = ({
                       ))
                     : (newRowCells = row.cells);
 
-                  const isGrayRow = rowIndex % 2 === 0; // Sử dụng biến đếm để kiểm soát màu xám và trắng
+                  const isGrayRow = rowIndex % 2 === 0;
 
                   return (
                     <React.Fragment key={row.getRowProps().key}>
@@ -500,7 +500,7 @@ const Table = ({
           )}
         </div>
       ) : (
-        <div {...getTableBodyProps()} className="row">
+        <div {...getTableBodyProps()} className="row px-3 pt-3">
           {page.map((row) => {
             prepareRow(row);
             let newRowCells = row.cells;

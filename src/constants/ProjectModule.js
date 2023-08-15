@@ -13,6 +13,7 @@ const PROJECT_COLUMN_INDICATOR = {
   PROGRESS: 'progress',
   LOGO: 'logo',
   CREATED_DATE: 'createdDate',
+  STATUS: 'status',
 };
 
 const PROJECT_TABLE_SELECTION_MODAL_COLUMN_INDICATOR = {
@@ -21,6 +22,7 @@ const PROJECT_TABLE_SELECTION_MODAL_COLUMN_INDICATOR = {
   START_DATE: 'startDate',
   END_DATE: 'endDate',
   VALUE: 'value',
+  STATUS: 'status',
 };
 
 const ESI_PROJECT_COLUMN_INDICATOR = {
@@ -34,6 +36,7 @@ const ESI_PROJECT_COLUMN_INDICATOR = {
   LOGO: 'logo',
   CREATED_DATE: 'created_date',
   MEMBERS: 'members',
+  STATUS: 'status',
 };
 
 export {

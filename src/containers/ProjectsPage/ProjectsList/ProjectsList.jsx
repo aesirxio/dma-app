@@ -63,6 +63,10 @@ const ProjectsList = observer(
           Header: t('end_date'),
           accessor: PROJECT_COLUMN_INDICATOR.END_DATE,
         },
+        {
+          Header: t('txt_status'),
+          accessor: PROJECT_COLUMN_INDICATOR.STATUS,
+        },
         // {
         //   Header: 'Lead',
         //   accessor: PROJECT_COLUMN_INDICATOR.LEAD,
@@ -71,10 +75,10 @@ const ProjectsList = observer(
         //   Header: 'Progress',
         //   accessor: PROJECT_COLUMN_INDICATOR.PROGRESS,
         // },
-        {
-          Header: t('created_date'),
-          accessor: PROJECT_COLUMN_INDICATOR.CREATED_DATE,
-        },
+        // {
+        //   Header: t('created_date'),
+        //   accessor: PROJECT_COLUMN_INDICATOR.CREATED_DATE,
+        // },
       ];
 
       return (

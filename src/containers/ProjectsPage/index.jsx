@@ -21,7 +21,7 @@ function Projects(props) {
     <ProjectViewModelContextProvider viewModel={projectViewModel}>
       <div className="py-4 px-3 h-100 bg-body">
         <div className="d-flex align-items-center justify-content-between mb-4">
-          <h2 className="text-blue-0">{t('txt_title_content')}</h2>
+          <h2 className="px-3">{t('txt_title_content')}</h2>
           <ProjectActionBar {...props} />
         </div>
         <ProjectsList />
