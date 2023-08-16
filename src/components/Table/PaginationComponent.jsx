@@ -96,16 +96,16 @@ const PaginationComponent = ({ listViewModel, pagination, pageSize, isList }) =>
           //onClick={() => previousPage()}
           onClick={() => handlePreviousPage()}
           disabled={pagination && pagination.page <= 1 ? true : false}
-          className={`btn ${styles.btn} border-1 border-gray-1 rounded-start p-0 text-gray-6 m-0 rounded-0 `}
+          className={`btn ${styles.btn} border-1  rounded-start p-0 text-gray-6 m-0 rounded-0 `}
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         {pagination && pagination.totalPages > 1 && (
           <button
             onClick={() => handlePreviousFirstPage()}
-            className={`btn ${styles.btn} border-1 border-gray-1 p-0 fs-6 m-0 rounded-0 ${
+            className={`btn ${styles.btn} border-1  p-0 fs-6 m-0 rounded-0 ${
               1 === pagination.page
-                ? 'active bg-gray-700 border-gray-1-700 text-white m-0 rounded-0 '
+                ? 'active bg-gray-700 text-white m-0 rounded-0 '
                 : 'text-gray-6 '
             }`}
           >

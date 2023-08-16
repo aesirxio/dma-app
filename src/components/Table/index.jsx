@@ -419,7 +419,7 @@ const Table = ({
                       return (
                         <th
                           {...column.getHeaderProps()}
-                          className={`fw-normal px-2 py-3 flex-1 column-header-${column.id}`}
+                          className={`fw-normal px-3 py-3 flex-1 column-header-${column.id}`}
                         >
                           {column.render('Header')}
                           {hasValue && (
@@ -463,7 +463,7 @@ const Table = ({
                           return (
                             <td
                               {...cell.getCellProps()}
-                              className={`fw-normal px-2 py-4 cell-${cell.column.id}`}
+                              className={`fw-normal px-3 py-4 cell-${cell.column.id}`}
                             >
                               {cell.render('Cell')}
                             </td>
@@ -523,7 +523,7 @@ const Table = ({
                   key={Math.random(40, 200)}
                 >
                   <div
-                    className="item_thumb bg-white shadow-sm h-100 p-3 rounded-2"
+                    className="item_thumb bg-blue-5 shadow-sm h-100 p-3 rounded-2"
                     key={Math.random(40, 200)}
                   >
                     {newRowCells.map((cell) => {
