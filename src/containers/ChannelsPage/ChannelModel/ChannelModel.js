@@ -36,6 +36,7 @@ class ChannelModel {
     this.id = data[CHANNEL_FIELD_KEY.ID] ?? 0;
     this.name = data[CHANNEL_FIELD_KEY.NAME] ?? '';
     this.type = data[CHANNEL_FIELD_KEY.TYPE] ?? '';
+    this.groupType = data[CHANNEL_FIELD_KEY.GROUP_TYPE] ?? '';
     this.avatar = data[CHANNEL_FIELD_KEY.AVATAR] ?? '';
     this.connected = data[CHANNEL_FIELD_KEY.CONNECTED] ?? false;
     this.channelTypeName = data[CHANNEL_FIELD_KEY.CHANNEL_TYPE] ?? '';
