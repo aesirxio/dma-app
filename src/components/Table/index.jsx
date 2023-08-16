@@ -415,18 +415,21 @@ const Table = ({
                 return (
                   <tr {...headerGroup.getHeaderGroupProps()}>
                     {newHeaderGroup.map((column) => {
+                      const hasValue = column.render('Header') !== '';
                       return (
                         <th
                           {...column.getHeaderProps()}
                           className={`fw-normal px-2 py-3 flex-1 column-header-${column.id}`}
                         >
                           {column.render('Header')}
-                          <i>
-                            <FontAwesomeIcon
-                              className="px-2 arrow-right-left"
-                              icon={faArrowRightArrowLeft}
-                            />
-                          </i>
+                          {hasValue && (
+              <i>
+                <FontAwesomeIcon
+                  className="px-2 arrow-right-left"
+                  icon={faArrowRightArrowLeft}
+                />
+              </i>
+            )}
                         </th>
                       );
                     })}
