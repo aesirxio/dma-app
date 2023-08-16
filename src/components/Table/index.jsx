@@ -400,7 +400,7 @@ const Table = ({
         )}
       </div>
       {isList ? (
-        <div className="pt-3 px-3 rounded-3">
+        <div className="pt-3 px-3 rounded-3 is-list">
           <table {...getTableProps()} className={`w-100 mb-4 ${classNameTable} rounded-top`}>
             <thead className="bg-blue-5 border-bottom">
               {headerGroups.map((headerGroup) => {
@@ -460,7 +460,6 @@ const Table = ({
                         // onClick={(e) => handerEdit(e, row.original)}
                       >
                         {newRowCells.map((cell) => {
-                          console.log(cell);
                           return (
                             <td
                               {...cell.getCellProps()}

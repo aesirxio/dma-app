@@ -101,7 +101,7 @@ const Option = (props) => {
           className="d-flex align-items-center justify-content-between w-100"
         >
           <p className="mb-0">{text}</p>
-          <p className="mb-0 text-black-50">{type}</p>
+          <p className="mb-0 text-body">{type}</p>
         </components.Option>
       </div>
     </OverlayTrigger>

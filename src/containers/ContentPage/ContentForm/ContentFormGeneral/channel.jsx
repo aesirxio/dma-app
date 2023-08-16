@@ -30,7 +30,7 @@ const ContentFormGeneralChannel = observer(() => {
         <p className="text-body mb-0 w-100">{t('txt_connected_channels')}</p>
         <ChannelAdd />
       </div>
-      <div className="rounded-2 px-3 py-4 h-100  bg-blue-3 w-100">
+      <div className="rounded-2 px-3 py-4 h-100  bg-body w-100">
         <ListChannelComponent channelsData={data} removeChannel={true} />
       </div>
     </div>

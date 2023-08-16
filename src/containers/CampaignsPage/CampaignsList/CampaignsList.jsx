@@ -68,7 +68,7 @@ const CampaignsList = observer(
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
               <span
-                className="ms-2 opacity-75"
+                className="ms-2"
                 onClick={(e) => this.handleEdit(e, row.original, pagination.page)}
               >
                 {row.values.expander}

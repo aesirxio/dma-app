@@ -75,7 +75,6 @@ const LoginChannelCMSFormModal = observer(
       let buttonTitle = 'Save';
 
       let eventName = channelType.id;
-      console.log(eventName, 'eventName');
 
       return (
         <ModalComponent

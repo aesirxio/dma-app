@@ -55,7 +55,7 @@ class ComponentPreview extends Component {
     let { dataPreview, getImagePreview } = this.state;
     return (
       <div>
-        <h5 className="text-blue-0 mb-3">Preview</h5>
+        <h5 className="text-body mb-3">Preview</h5>
         <div className="border-1 rounded-2">
           <div>
             <h4 className="text-blue-0 mb-0 border-bottom-1 p-3">16 Placements</h4>

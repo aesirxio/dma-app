@@ -40,10 +40,8 @@ const ProjectsList = observer(
           Header: t('txt_project_name'),
           accessor: PROJECT_COLUMN_INDICATOR.NAME, // accessor is the "key" in the data
           Cell: ({ row }) => (
-            <div {...row.getToggleRowExpandedProps()} className="d-flex">
-              <span className="opacity-75" onClick={(e) => this.handleEdit(e, row.original)}>
-                {row.original.name}
-              </span>
+            <div {...row.getToggleRowExpandedProps()}>
+              <span onClick={(e) => this.handleEdit(e, row.original)}>{row.original.name}</span>
             </div>
           ),
         },
