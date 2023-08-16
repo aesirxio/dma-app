@@ -423,13 +423,13 @@ const Table = ({
                         >
                           {column.render('Header')}
                           {hasValue && (
-              <i>
-                <FontAwesomeIcon
-                  className="px-2 arrow-right-left"
-                  icon={faArrowRightArrowLeft}
-                />
-              </i>
-            )}
+                            <i>
+                              <FontAwesomeIcon
+                                className="px-2 arrow-right-left"
+                                icon={faArrowRightArrowLeft}
+                              />
+                            </i>
+                          )}
                         </th>
                       );
                     })}
