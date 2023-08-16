@@ -11,11 +11,13 @@ const ComponentTooltip = ({ children, title }) => {
   const textInput = useRef(null);
 
   useEffect(() => {
-    new Tooltip(textInput.current);
-  }, []);
+    if (title) {
+      new Tooltip(textInput.current);
+    }
+  }, [title]);
 
   return (
-    <div data-bs-toggle="tooltip" title={title} ref={textInput}>
+    <div data-bs-toggle={title ? 'tooltip' : undefined} title={title} ref={textInput}>
       {children}
     </div>
   );
