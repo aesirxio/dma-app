@@ -84,7 +84,10 @@ const ContentsList = observer(
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
               <i className="text-green icon_expander">
-                <FontAwesomeIcon  className="border rounded  p-1 border-success" icon={row.isExpanded ? faMinus : faPlus} />
+                <FontAwesomeIcon
+                  className="border rounded  p-1 border-success"
+                  icon={row.isExpanded ? faMinus : faPlus}
+                />
               </i>
             </div>
           ),
@@ -94,9 +97,7 @@ const ContentsList = observer(
           accessor: CONTENT_FIELD_KEY.NAME,
           Cell: ({ row }) => (
             <div className="d-flex">
-              <span className="cursor-pointer">
-                {row.original[CONTENT_FIELD_KEY.NAME]}
-              </span>
+              <span className="cursor-pointer">{row.original[CONTENT_FIELD_KEY.NAME]}</span>
             </div>
           ),
         },

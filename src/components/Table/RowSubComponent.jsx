@@ -28,7 +28,10 @@ function SubRows({ row, rowProps, visibleColumns, data, loading }) {
               >
                 {row.cells.map((cell) => {
                   return (
-                    <td {...cell.getCellProps()} className={`px-2 py-3 sub-cell-${cell.column.id} `}>
+                    <td
+                      {...cell.getCellProps()}
+                      className={`px-2 py-3 sub-cell-${cell.column.id} `}
+                    >
                       {cell.render(cell.column.SubCell ? 'SubCell' : 'Cell', {
                         value: cell.column.accessor && cell.column.accessor(x, i),
                         row: { ...row, original: x },

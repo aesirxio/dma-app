@@ -15,7 +15,6 @@ import { withTranslation } from 'react-i18next';
 const ChannelTypeChannelsAction = observer(({ channel, removeChannel }) => {
   const { t } = useTranslation();
 
-
   return (
     <div className="d-flex flex-wrap flex-md-nowrap justify-content-end align-content-center">
       <div
