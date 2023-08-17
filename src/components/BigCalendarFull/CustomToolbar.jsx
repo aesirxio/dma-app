@@ -18,7 +18,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
         <div className="toolbar-container d-flex justify-content-between align-items-center mb-3">
           <div className="back-next-buttons">
             <button
-              className="cursor-pointer bg-transparent btn btn-outline-secondary btn_today text-gray-5"
+              className="cursor-pointer bg-white btn btn-outline-secondary text-body btn_today  border-0"
               onClick={() => this.navigate('TODAY')}
             >
               {t('txt_today')}
@@ -31,7 +31,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
             >
               <FontAwesomeIcon icon={faChevronLeft} />
             </button>
-            <label className="label-date fs-4 text-blue-5 fw-semibold">{this.props.label}</label>
+            <label className="label-date fs-4 fw-semibold">{this.props.label}</label>
             <button
               className="btn-next mx-2 fs-12 border-0 text-green bg-transparent"
               onClick={() => this.navigate('NEXT')}
@@ -43,13 +43,13 @@ const CustomToolbar = (handleFilterCalendar, t) => {
             <div className="position-relative d-flex align-items-center">
               <div className="ms-2">
                 <button
-                  className="cursor-pointer w-110 d-flex align-items-center bg-white justify-content-center btn btn-outline-secondary text-gray-5"
+                  className="cursor-pointer w-110 d-flex align-items-center bg-white justify-content-center btn btn-outline-secondary text-gray-5 border-0"
                   onClick={handleFilterCalendar}
                 >
-                  <i className="icon-filter text-gray-5">
+                  <i className="icon-filter">
                     <ComponentSVG url="assets/images/filter.svg" />
                   </i>
-                  <span className="ms-2">{t('txt_filter')}</span>
+                  <span className="ms-2 text-body">{t('txt_filter')}</span>
                 </button>
               </div>
             </div>

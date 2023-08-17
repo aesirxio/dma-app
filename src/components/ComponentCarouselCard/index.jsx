@@ -106,7 +106,7 @@ class ComponentCarouselCard extends Component {
                 <div className="cursor-pointer" onClick={() => this.handleClick(value.id)}>
                   <div className="p-2 d-flex justify-content-between align-items-center">
                     <div className="d-flex align-items-center">
-                      <i className="text-blue-0 me-1">
+                      <i className="me-1">
                         <FontAwesomeIcon icon={faEllipsisV} />
                         <FontAwesomeIcon icon={faEllipsisV} />
                       </i>

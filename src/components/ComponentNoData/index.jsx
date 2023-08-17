@@ -33,7 +33,7 @@ class ComponentNoData extends Component {
           />
         </p>
         <h5 className="mb-2">{title}</h5>
-        <p className={`mb-2 fs-14 text-black-50 w-100 mx-auto ${width}`}>{text}</p>
+        <p className={`mb-2 fs-14 text-body w-100 mx-auto ${width}`}>{text}</p>
         {isBtn && (
           <Link
             to={{ pathname: link, state: { openModal: true } }}

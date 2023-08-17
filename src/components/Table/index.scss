@@ -41,7 +41,6 @@
     }
   }
 }
-
 .wr_wizard_content {
   .bg-white {
     justify-content: center !important;
@@ -112,3 +111,21 @@
 .isHidden {
   display: none !important;
 }
+.arrow-right-left{
+  transform: rotate(90deg);
+ }
+ .column-header-selection,.column-header-expander{
+  text-align: center !important;
+    .arrow-right-left{
+      display: none;
+  }
+ }
+ .column-header-status,.column-header-startDate,.column-header-endDate, .cell-status,.cell-startDate,.cell-endDate{
+  text-align: end !important;
+ }
+ .cell-startDate,.cell-endDate{
+  padding-right: 20px !important;
+ }
+ .cell-selection,.cell-expander{
+  text-align: center !important;
+ }

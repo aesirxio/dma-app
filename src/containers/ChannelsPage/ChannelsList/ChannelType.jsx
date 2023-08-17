@@ -36,7 +36,7 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
                     alt={channelType.name}
                   />
                 )}
-                <span className="ms-2 fs-4 text-blue-0 text-capitalize">{channelType.name}</span>
+                <span className="ms-2 fs-4 text-body text-capitalize">{channelType.name}</span>
               </div>
               {(() => {
                 switch (channelType.status) {

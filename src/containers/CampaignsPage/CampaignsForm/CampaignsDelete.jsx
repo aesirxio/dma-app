@@ -9,7 +9,8 @@ import { withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import { withCampaignsViewModel } from '../CampaignsViewModels/CampaignsViewModelContextProvider';
 import { Image as ComponentImage, Button } from 'aesirx-uikit';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
 class CampaignsDelete extends Component {
@@ -39,10 +40,17 @@ class CampaignsDelete extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div className="d-flex justify-content-end">
+      <div className="d-flex justify-content-end ">
         <Dropdown>
-          <Dropdown.Toggle className="p-3" variant="info" id="actions">
+          <Dropdown.Toggle
+            className="p-3 bg-transparent text-body border-0"
+            variant="info"
+            id="actions"
+          >
             {t('choose_an_action')}
+            <i className="text-green ps-2">
+              <FontAwesomeIcon icon={faChevronDown} />
+            </i>
           </Dropdown.Toggle>
           <Dropdown.Menu className="w-100 shadow">
             <Dropdown.Item className="px-3 py-2" onClick={this.handleShow}>

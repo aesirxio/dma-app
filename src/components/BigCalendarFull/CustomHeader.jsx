@@ -7,7 +7,7 @@ class CustomHeader extends React.Component {
 
     return (
       <div className="rbc-header">
-        <span className="rbc-label">{formattedDate}</span>
+        <span className="rbc-label text-body text-capitalize">{formattedDate}</span>
       </div>
     );
   }

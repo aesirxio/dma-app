@@ -16,11 +16,18 @@ class ProjectNameModel {
     return (
       <>
         {this.logo ? (
-          <ComponentImage src={this.logo} alt="project-logo" className="img-avatar me-2" />
+          <div className="project-name-logo">
+            <ComponentImage
+              src={this.logo}
+              alt="project-logo"
+              className="img-avatar-full me-2 w-100"
+            />
+          </div>
         ) : (
           ''
         )}
-        {this.name}
+
+        <span>{this.name}</span>
       </>
     );
   };

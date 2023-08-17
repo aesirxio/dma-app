@@ -47,7 +47,7 @@ const PersonaTemplate = observer(
         <>
           {personaTemplatesData && (
             <div className="persona-recommendation mb-4">
-              <h2 className="text-blue-0 mb-3">Persona recommendations</h2>
+              <h2 className="text-body mb-3">Persona recommendations</h2>
               <div className="persona-template-list p-3 bg-white rounded-2">
                 <ul className="list-unstyled mb-0">
                   <Swiper spaceBetween={30} slidesPerView={5} navigation>

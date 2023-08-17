@@ -124,7 +124,7 @@ class FilterCalendar extends React.Component {
       >
         <div className="bg-white w-400 h-100" ref={this.filterRef}>
           <div className="d-flex align-items-center justify-content-between p-3 border-bottom-1">
-            <h4 className="text-blue-0 fw-medium">{t('txt_filter')}</h4>
+            <h4 className="text-body fw-medium">{t('txt_filter')}</h4>
             <span className="cursor-pointer text-danger" onClick={() => this.handleClearAll()}>
               <i>
                 <FontAwesomeIcon icon={faTimes} />
@@ -139,7 +139,7 @@ class FilterCalendar extends React.Component {
               return (
                 <div key={key} className="border-bottom-1 p-3">
                   <div className="d-flex align-items-center justify-content-between mb-3">
-                    <p className="text-blue-0 mb-0 text-uppercase">{t(value.title)}</p>
+                    <p className="text-body mb-0 text-uppercase">{t(value.title)}</p>
                     <span
                       className="cursor-pointer fs-14 text-color opacity-50"
                       onClick={() => this.handleSelectAll(value.name, key)}

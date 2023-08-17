@@ -53,8 +53,11 @@ const CampaignsList = observer(
           id: 'expander',
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
-              <i className="text-danger icon_expander">
-                <FontAwesomeIcon icon={row.isExpanded ? faMinus : faPlus} />
+              <i className="text-green icon_expander">
+                <FontAwesomeIcon
+                  className="border rounded  p-1 border-success"
+                  icon={row.isExpanded ? faMinus : faPlus}
+                />
               </i>
             </div>
           ),
@@ -65,7 +68,7 @@ const CampaignsList = observer(
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
               <span
-                className="ms-2 fw-bold opacity-75"
+                className="ms-2"
                 onClick={(e) => this.handleEdit(e, row.original, pagination.page)}
               >
                 {row.values.expander}
@@ -73,6 +76,14 @@ const CampaignsList = observer(
             </div>
           ),
           SubCell: ({ row }) => <span>{row.original.name}</span>,
+        },
+        {
+          Header: t('start_date'),
+          accessor: CAMPAIGNS_FIELD_KEY.START_DATE,
+        },
+        {
+          Header: t('end_date'),
+          accessor: CAMPAIGNS_FIELD_KEY.END_DATE,
         },
         {
           Header: t('txt_status'),
@@ -84,7 +95,7 @@ const CampaignsList = observer(
                 <span
                   className={`badge ${t(
                     'txt_running'
-                  )} bg-processing  mw-100 h-35 d-table-cell align-middle`}
+                  )} bg-processing  mw-100 h-35 d-inline align-middle`}
                 >
                   {t('txt_running')}
                 </span>
@@ -94,7 +105,7 @@ const CampaignsList = observer(
                 <span
                   className={`badge ${t(
                     'txt_schedule'
-                  )} bg-schedule mw-100 h-35 d-table-cell align-middle`}
+                  )} bg-schedule mw-100 h-35 d-inline align-middle`}
                 >
                   {t('txt_schedule')}
                 </span>
@@ -102,9 +113,7 @@ const CampaignsList = observer(
             } else {
               return (
                 <span
-                  className={`badge ${t(
-                    'txt_stop'
-                  )}  bg-failed mw-100 h-35 d-table-cell align-middle`}
+                  className={`badge ${t('txt_stop')}  bg-failed mw-100 h-35 d-inline align-middle`}
                 >
                   {t('txt_stop')}
                 </span>
@@ -115,19 +124,11 @@ const CampaignsList = observer(
             <span
               className={`badge ${
                 getStatus(row.original.status).className
-              }  mw-100 h-35 d-table-cell align-middle`}
+              }  mw-100 h-35 d-inline align-middle`}
             >
               {getStatus(row.original.status).text}
             </span>
           ),
-        },
-        {
-          Header: t('start_date'),
-          accessor: CAMPAIGNS_FIELD_KEY.START_DATE,
-        },
-        {
-          Header: t('end_date'),
-          accessor: CAMPAIGNS_FIELD_KEY.END_DATE,
         },
       ];
 
@@ -152,7 +153,7 @@ const CampaignsList = observer(
             </div>
           </div>
           <div className="d-flex align-items-center justify-content-between mb-4">
-            <h2 className="text-blue-0">{t('txt_list_campaigns')}</h2>
+            <h2 className="px-3">{t('txt_list_campaigns')}</h2>
             <CampaignsActionBar />
           </div>
           {campaigns ? (

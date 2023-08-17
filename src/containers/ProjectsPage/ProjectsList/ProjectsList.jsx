@@ -40,10 +40,8 @@ const ProjectsList = observer(
           Header: t('txt_project_name'),
           accessor: PROJECT_COLUMN_INDICATOR.NAME, // accessor is the "key" in the data
           Cell: ({ row }) => (
-            <div {...row.getToggleRowExpandedProps()} className="d-flex">
-              <span className="opacity-75" onClick={(e) => this.handleEdit(e, row.original)}>
-                {row.original.name}
-              </span>
+            <div {...row.getToggleRowExpandedProps()}>
+              <span onClick={(e) => this.handleEdit(e, row.original)}>{row.original.name}</span>
             </div>
           ),
         },
@@ -63,6 +61,10 @@ const ProjectsList = observer(
           Header: t('end_date'),
           accessor: PROJECT_COLUMN_INDICATOR.END_DATE,
         },
+        {
+          Header: t('txt_status'),
+          accessor: PROJECT_COLUMN_INDICATOR.STATUS,
+        },
         // {
         //   Header: 'Lead',
         //   accessor: PROJECT_COLUMN_INDICATOR.LEAD,
@@ -71,10 +73,10 @@ const ProjectsList = observer(
         //   Header: 'Progress',
         //   accessor: PROJECT_COLUMN_INDICATOR.PROGRESS,
         // },
-        {
-          Header: t('created_date'),
-          accessor: PROJECT_COLUMN_INDICATOR.CREATED_DATE,
-        },
+        // {
+        //   Header: t('created_date'),
+        //   accessor: PROJECT_COLUMN_INDICATOR.CREATED_DATE,
+        // },
       ];
 
       return (

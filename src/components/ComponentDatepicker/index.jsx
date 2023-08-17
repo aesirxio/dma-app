@@ -184,7 +184,7 @@ class ComponentDatepicker extends React.Component {
       >
         <DatePicker
           onChange={this.onChange}
-          className="border-0 w-100 bg-white rounded-2 h-100 ps-2 bg-transparent cursor-pointer text-blue-0"
+          className="border-0 w-100 bg-blue-5 rounded-2 h-100 ps-2 bg-transparent cursor-pointer text-body"
           monthsShown={2}
           value={
             !isDays

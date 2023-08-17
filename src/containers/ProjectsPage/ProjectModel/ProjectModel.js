@@ -35,6 +35,8 @@ class ProjectModel {
 
     this.progress = new ProgressModel(data);
 
+    this.status = data[ESI_PROJECT_COLUMN_INDICATOR.STATUS] ?? '';
+
     this.createdate = data.created_date ?? '';
     this.lastModifiedDate = data.last_modified_date ?? '';
     this.createdBy = data.create_by ?? '';
@@ -134,6 +136,14 @@ class ProjectModel {
       columnText: 'Create Date',
     };
   };
+  getStatus = () => {
+    return {
+      value: this.status ?? '',
+      type: FIELD_TYPE.TEXT,
+      columnName: PROJECT_COLUMN_INDICATOR.STATUS,
+      columnText: 'Status',
+    };
+  };
 
   toTableRowData = () => {
     const id = this.getId(),
@@ -144,7 +154,8 @@ class ProjectModel {
       logo = this.getLogoUrl(),
       lead = this.getLead(),
       progress = this.getProgress(),
-      createdate = this.getCreateDate();
+      createdate = this.getCreateDate(),
+      status = this.getStatus();
 
     return {
       [id.columnName]: id.value,
@@ -156,6 +167,7 @@ class ProjectModel {
       [progress.columnName]: progress.value,
       [logo.columnName]: logo.value,
       [createdate.columnName]: createdate.value,
+      [status.columnName]: status.value,
     };
   };
 
@@ -171,6 +183,7 @@ class ProjectModel {
           [ESI_PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION]:
             projectData[PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION],
           [ESI_PROJECT_COLUMN_INDICATOR.LEAD]: 4,
+          [ESI_PROJECT_COLUMN_INDICATOR.STATUS]: projectData[PROJECT_COLUMN_INDICATOR.STATUS],
         }
       : null;
     return result;
