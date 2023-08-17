@@ -84,7 +84,7 @@ const ContentsList = observer(
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
               <i className="text-green icon_expander">
-                <FontAwesomeIcon icon={row.isExpanded ? faMinus : faPlus} />
+                <FontAwesomeIcon  className="border rounded  p-1 border-success" icon={row.isExpanded ? faMinus : faPlus} />
               </i>
             </div>
           ),
@@ -94,7 +94,7 @@ const ContentsList = observer(
           accessor: CONTENT_FIELD_KEY.NAME,
           Cell: ({ row }) => (
             <div className="d-flex">
-              <span className="opacity-75 cursor-pointer">
+              <span className="cursor-pointer">
                 {row.original[CONTENT_FIELD_KEY.NAME]}
               </span>
             </div>
@@ -137,7 +137,7 @@ const ContentsList = observer(
                               alt={option.label}
                             />
                           </div>
-                          <span className="ms-2 text-blue-0 text-capitalize">{option.label}</span>
+                          <span className="ms-2 text-body text-capitalize">{option.label}</span>
                         </React.Fragment>
                       ));
                     }
@@ -151,16 +151,6 @@ const ContentsList = observer(
           Header: t('txt_date'),
           accessor: CONTENT_FIELD_KEY.DATE,
           Cell: ({ value }) => <div>{value}</div>,
-        },
-        {
-          Header: '',
-          accessor: CONTENT_FIELD_KEY.STATUS,
-          className: 'status',
-          Cell: ({ value }) => (
-            <span className={`badge bg-${value} mw-100 d-table-cell align-middle`}>
-              {CONTENT_STATUS[value]}
-            </span>
-          ),
         },
         {
           Header: '',
@@ -235,6 +225,16 @@ const ContentsList = observer(
               );
             }
           },
+        },
+        {
+          Header: t('txt_status'),
+          accessor: CONTENT_FIELD_KEY.STATUS,
+          className: 'status',
+          Cell: ({ value }) => (
+            <span className={`badge bg-${value} mw-100 d-table-cell align-middle`}>
+              {CONTENT_STATUS[value]}
+            </span>
+          ),
         },
       ];
 

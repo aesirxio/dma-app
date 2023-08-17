@@ -401,8 +401,8 @@ const Table = ({
       </div>
       {isList ? (
         <div className="pt-3 px-3 rounded-3 is-list">
-          <table {...getTableProps()} className={`w-100 mb-4 ${classNameTable} rounded-top`}>
-            <thead className="bg-blue-5 border-bottom">
+          <table {...getTableProps()} className={`w-100 mb-4 ${classNameTable} table-border`}>
+            <thead className="bg-blue-5 border-bottom-2">
               {headerGroups.map((headerGroup) => {
                 let newHeaderGroup = '';
 
