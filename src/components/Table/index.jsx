@@ -290,7 +290,7 @@ const Table = ({
                     <i>
                       <FontAwesomeIcon icon={faColumns} />
                     </i>
-                    <span className="ps-2 pe-3  text-body">{t('txt_columns')}</span>
+                    <span className="ps-2 pe-3">{t('txt_columns')}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={faChevronDown} />
                     </i>
@@ -332,7 +332,7 @@ const Table = ({
                     <i>
                       <FontAwesomeIcon icon={faFilter} />
                     </i>
-                    <span className="ps-2 pe-5 opacity-75">{t('txt_filter')}</span>
+                    <span className="ps-2 pe-5">{t('txt_filter')}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={getState.isFilter ? faChevronUp : faChevronDown} />
                     </i>

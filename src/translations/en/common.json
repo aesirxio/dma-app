@@ -209,5 +209,6 @@
   "txt_the_image_field_is_required":" The image field is required",
   "txt_left_menu_dma": "Marketing",
   "txt_create_new_post": "Create new Post",
-  "txt_group_type":"Group Type"
+  "txt_group_type":"Group Type",
+  "txt_submenu_group_management":"Group Management"
 }
