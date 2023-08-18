@@ -1,13 +1,13 @@
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 import { faGear } from '@fortawesome/free-solid-svg-icons/faGear';
 
-const contentSubMenu = [
-  {
-    name: 'group management',
-    text: 'txt_submenu_group_management',
-    link: '/group-management',
-  },
-];
+// const contentSubMenu = [
+//   {
+//     name: 'group management',
+//     text: 'txt_submenu_group_management',
+//     link: '/group-management',
+//   },
+// ];
 
 const mainMenu = [
   {
@@ -37,7 +37,7 @@ const mainMenu = [
     link: '/content',
     icons: '/assets/images/Content.svg',
     icons_color: '/assets/images/Content.svg',
-    submenu: contentSubMenu,
+    // submenu: contentSubMenu,
   },
   {
     name: 'channels',
