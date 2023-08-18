@@ -6,10 +6,8 @@ const contentSubMenu = [
     name: 'group management',
     text: 'txt_submenu_group_management',
     link: '/group-management',
-
   },
 ];
-
 
 const mainMenu = [
   {
@@ -81,12 +79,11 @@ const profileMenu = [
   },
 ];
 
-const integrationMenu = () =>
-  mainMenu
-  settupMenu
-    .filter((item) => item.name !== 'digital')
-    .map((item) => {
-      item.link = '/dma' + item.link;
-      return item;
-    });
-export { profileMenu, mainMenu, settingMenu,settupMenu ,integrationMenu };
+const integrationMenu = () => mainMenu;
+settupMenu
+  .filter((item) => item.name !== 'digital')
+  .map((item) => {
+    item.link = '/dma' + item.link;
+    return item;
+  });
+export { profileMenu, mainMenu, settingMenu, settupMenu, integrationMenu };
