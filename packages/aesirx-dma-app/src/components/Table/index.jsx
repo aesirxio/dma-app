@@ -422,14 +422,14 @@ const Table = ({
                           className={`fw-normal px-3 py-3 flex-1 column-header-${column.id}`}
                         >
                           {column.render('Header')}
-                          {hasValue && (
+                          {/* {hasValue && (
                             <i>
                               <FontAwesomeIcon
                                 className="px-2 arrow-right-left"
                                 icon={faArrowRightArrowLeft}
                               />
                             </i>
-                          )}
+                          )} */}
                         </th>
                       );
                     })}
