@@ -212,9 +212,9 @@ const ContentFormGeneral = observer(
             <div className="row">
               <div className="col-md-5">
                 <ContentFormGeneralChannel />
-                {renderingGroupFieldHandler(formSetting.selection, this.validator)}
               </div>
               <div className="col-md-7">
+                {renderingGroupFieldHandler(formSetting.selection, this.validator)}
                 {renderingGroupFieldHandler(formSetting.name, this.validator)}
                 <ContentFormDescription
                   formPropsData={this.formPropsData}

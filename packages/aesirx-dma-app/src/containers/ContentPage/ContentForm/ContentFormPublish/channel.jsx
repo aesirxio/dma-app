@@ -16,13 +16,11 @@ const ContentFormPublishChannel = observer(() => {
 
   const channelsData = viewModel.channelMasterData;
 
-  const data = ChannelUtils.getChannelByFilter(channelsData, 'removed', 'not');
-
-  if (data && data.length === 0) {
+  if (channelsData && channelsData.length === 0) {
     return null;
   }
 
-  return <ListChannelComponent channelsData={data} />;
+  return <ListChannelComponent channelsData={channelsData} />;
 });
 
 export default ContentFormPublishChannel;

@@ -4,66 +4,64 @@
  */
 
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { observer } from 'mobx-react';
 import { Image as ComponentImage } from 'aesirx-uikit';
-import ComponentTooltip from '../ComponentTooltip';
+import { Accordion, AccordionButton, Form } from 'react-bootstrap';
 
-const ChannelChannelComponent = observer(({ channelData, removeChannel, handleOnSelect }) => {
-  const [selected, setSelected] = useState([]);
+const ChannelChannelComponent = observer(({ channelData }) => {
+  const [checked, setChecked] = useState(true);
   const logoSocial = channelData.img ? channelData.img : `/assets/images/${channelData.id}.png`;
 
   const channels = [...channelData?.pages];
 
-  const handleOnClick = (channel) => {
-    handleOnSelect(channel);
+  const handleOnClick = (target, channel) => {
+    channel.removed = !target.checked;
+  };
 
-    if (selected.includes(channel.id)) {
-      setSelected(selected.filter((val) => val !== channel.id));
-    } else {
-      setSelected([...selected, channel.id]);
-    }
+  const handleOnCheckAll = ({ target }) => {
+    channels.forEach((channel) => {
+      channel.removed = !target.checked;
+    });
+
+    setChecked(target.checked);
   };
 
   return (
-    <>
-      {channels.map((channel, index) => (
-        <div
-          className={`position-relative m-2 d-flex align-items-center justify-content-center cursor-pointer rounded-2 border border-3 ${
-            selected.indexOf(channel.id) !== -1 ? `border-success` : 'border-transparent'
-          }`}
-          key={index}
-          onClick={() => handleOnSelect && handleOnClick(channel)}
-        >
-          {removeChannel && (
-            <span
-              className="cursor-pointer position-absolute end-0 top-0 text-red-1"
-              onClick={() => (channel.removed = true)}
-            >
-              <i>
-                <FontAwesomeIcon icon={faTimesCircle} />
-              </i>
-            </span>
-          )}
-          <ComponentTooltip title={channel.name}>
-            {logoSocial && (
+    <Accordion defaultActiveKey="0" alwaysOpen>
+      <Accordion.Item eventKey="0">
+        <div className="position-relative">
+          <AccordionButton className="pe-5">
+            <ComponentImage alt={channelData.name} src={logoSocial} />
+            {channelData.name}
+          </AccordionButton>
+
+          <Form.Check
+            className="position-absolute top-50 end-0 translate-middle-y z-index-10 pe-2"
+            type="checkbox"
+            onClick={handleOnCheckAll}
+            checked={checked}
+          />
+        </div>
+        <Accordion.Body>
+          {channels.map((channel, index) => (
+            <div className={`d-flex`} key={index}>
               <ComponentImage
                 alt={channel.name}
-                src={logoSocial}
-                className="position-absolute bottom-0 end-0 w-20"
+                src={channel.avatar ? channel.avatar : logoSocial}
+                className="img-avatar rounded"
               />
-            )}
+              {channel.name}
 
-            <ComponentImage
-              alt={channel.name}
-              src={channel.avatar ? channel.avatar : logoSocial}
-              className="img-avatar rounded"
-            />
-          </ComponentTooltip>
-        </div>
-      ))}
-    </>
+              <Form.Check
+                type="checkbox"
+                checked={!channel.removed}
+                onChange={(event) => handleOnClick(event.target, channel)}
+              />
+            </div>
+          ))}
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
   );
 });
 
