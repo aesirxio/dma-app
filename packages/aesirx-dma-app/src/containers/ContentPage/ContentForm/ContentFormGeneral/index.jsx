@@ -214,7 +214,9 @@ const ContentFormGeneral = observer(
                 <ContentFormGeneralChannel />
               </div>
               <div className="col-md-8 px-5 py-4">
-                <p className="text-body mb-0 w-100 mt-2 fw-medium fs-5 mb-4 pb-2">{t('txt_content')}</p>
+                <p className="text-body mb-0 w-100 mt-2 fw-medium fs-5 mb-4 pb-2">
+                  {t('txt_content')}
+                </p>
                 {renderingGroupFieldHandler(formSetting.selection, this.validator)}
                 {renderingGroupFieldHandler(formSetting.name, this.validator)}
                 <ContentFormDescription

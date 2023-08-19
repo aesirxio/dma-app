@@ -38,7 +38,7 @@ const ContentActionBar = observer(
             <i className="me-2">
               <FontAwesomeIcon icon={faPlus} />
             </i>
-            <span className='fw-semibold'>{t('txt_create_post')}</span>
+            <span className="fw-semibold">{t('txt_create_post')}</span>
           </Link>
         </div>
       );

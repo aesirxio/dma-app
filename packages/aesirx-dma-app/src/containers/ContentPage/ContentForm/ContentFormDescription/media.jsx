@@ -131,7 +131,9 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
                   className="wr_btn_dam border-0 bg-blue-2 rounded-3 py-2 px-3 text-nowrap btn"
                   type="button"
                 >
-                  <span className="text-white fs-sm fw-medium py-1 ms-2 ">{t('txt_digital_asset_management')}</span>
+                  <span className="text-white fs-sm fw-medium py-1 ms-2 ">
+                    {t('txt_digital_asset_management')}
+                  </span>
                 </button>
               </DamComponent>
             </div>

@@ -127,7 +127,7 @@ class FilterCalendar extends React.Component {
             <h4 className="text-body fw-medium mb-0 fs-24">{t('txt_filter')}</h4>
             <span className="cursor-pointer text-body" onClick={() => this.handleClearAll()}>
               <i>
-                <FontAwesomeIcon icon={faTimes} width={24} height={24} className='pe-2 fs-24' />
+                <FontAwesomeIcon icon={faTimes} width={24} height={24} className="pe-2 fs-24" />
               </i>
             </span>
           </div>
@@ -170,7 +170,10 @@ class FilterCalendar extends React.Component {
             })}
           </div>
           <div className="px-2 pt-4 pb-3">
-            <Button onClick={this.onFilter} className="btn btn-outline-secondary border text-body w-45 me-2 py-2">
+            <Button
+              onClick={this.onFilter}
+              className="btn btn-outline-secondary border text-body w-45 me-2 py-2"
+            >
               <span className="text-center">{t('txt_clear_all')}</span>
             </Button>
             <Button onClick={this.onFilter} className="btn btn-success w-45 ms-2 py-2">
