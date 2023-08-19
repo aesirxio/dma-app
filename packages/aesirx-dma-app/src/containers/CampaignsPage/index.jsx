@@ -28,7 +28,7 @@ const campaignsViewModel = new CampaignsViewModel(campaignsStore);
 function Campaigns() {
   return (
     <CampaignsViewModelContextProvider viewModel={campaignsViewModel}>
-      <div className="py-4 px-3 h-100 bg-body">
+      <div className="py-4 px-3 h-100">
         <>
           <div className="d-flex align-items-center justify-content-between mb-4 d-none">
             <h2 className="text-blue-0">Campaigns Statistics</h2>

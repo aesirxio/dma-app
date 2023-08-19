@@ -208,7 +208,7 @@ const ContentFormGeneral = observer(
       return (
         <div className="pe-md-80">
           <h3 className="mb-4">{t('txt_general')}</h3>
-          <div className="bg-white p-4">
+          <div className="bg-blue-5 p-4 rounded-3 ">
             <div className="row">
               <div className="col-md-5">
                 <ContentFormGeneralChannel />

@@ -456,7 +456,7 @@ const Table = ({
                     <React.Fragment key={row.getRowProps().key}>
                       <tr
                         {...row.getRowProps()}
-                        className={`cursor-pointer ${isGrayRow ? 'bg-body' : 'bg-white'}`}
+                        className={`cursor-pointer ${isGrayRow ? ' ' : 'bg-blue-5'}`}
                         // onClick={(e) => handerEdit(e, row.original)}
                       >
                         {newRowCells.map((cell) => {
