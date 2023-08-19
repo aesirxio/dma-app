@@ -145,7 +145,7 @@
   "txt_headline":"Headline",
   "txt_add_channels":"Add Channels",
   "txt_save":"Save",
-  "txt_connected_channels":"Connected Channels",
+  "txt_connected_channels":"Channels",
   "content_description":"Content Description",
   "txt_advance_mode":"Advance mode",
   "txt_back":"Back",
@@ -210,5 +210,7 @@
   "txt_left_menu_dma": "Marketing",
   "txt_create_new_post": "Create new Post",
   "txt_group_type":"Group Type",
-  "txt_submenu_group_management":"Group Management"
+  "txt_submenu_group_management":"Group Management",
+  "txt_content":"Content",
+  "txt_disconnect":"Disconnect"
 }

@@ -22,7 +22,7 @@ const ChannelTypeChannelsEnable = observer(({ channelType, channel }) => {
   };
 
   return (
-    <div className="d-flex flex-wrap flex-md-nowrap justify-content-end align-content-center">
+    <div className="d-flex flex-wrap flex-md-nowrap justify-content-center align-content-center">
       <div className="form-check form-switch">
         <input
           className="form-check-input"
@@ -31,7 +31,6 @@ const ChannelTypeChannelsEnable = observer(({ channelType, channel }) => {
           onChange={handleStatus}
         />
         <label className="form-check-label d-none d-md-block" htmlFor="flexCheckDefault">
-          {t('txt_enable')}
         </label>
       </div>
     </div>

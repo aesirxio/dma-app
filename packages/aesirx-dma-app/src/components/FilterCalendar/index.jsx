@@ -122,14 +122,13 @@ class FilterCalendar extends React.Component {
       <div
         className={`wrapper_filter_calendar ${styles.wrapper_filter_calendar} position-fixed top-0 end-0 bottom-0 z-index-100 start-0 d-flex justify-content-end vh-100`}
       >
-        <div className="bg-white w-400 h-100" ref={this.filterRef}>
-          <div className="d-flex align-items-center justify-content-between p-3 border-bottom-1">
-            <h4 className="text-body fw-medium">{t('txt_filter')}</h4>
-            <span className="cursor-pointer text-danger" onClick={() => this.handleClearAll()}>
+        <div className="bg-filter w-450 h-100 px-5" ref={this.filterRef}>
+          <div className="d-flex align-items-center justify-content-between px-3 pb-3 pt-4">
+            <h4 className="text-body fw-medium mb-0 fs-24">{t('txt_filter')}</h4>
+            <span className="cursor-pointer text-body" onClick={() => this.handleClearAll()}>
               <i>
-                <FontAwesomeIcon icon={faTimes} />
+                <FontAwesomeIcon icon={faTimes} width={24} height={24} className='pe-2 fs-24' />
               </i>
-              <span className="ms-2">{t('txt_clear_all')}</span>
             </span>
           </div>
           <div
@@ -137,11 +136,11 @@ class FilterCalendar extends React.Component {
           >
             {this.data.map((value, key) => {
               return (
-                <div key={key} className="border-bottom-1 p-3">
-                  <div className="d-flex align-items-center justify-content-between mb-3">
+                <div key={key} className="pt-3 py-4">
+                  <div className="d-flex align-items-center justify-content-between mb-3 bg-body p-3 rounded-2">
                     <p className="text-body mb-0 text-uppercase">{t(value.title)}</p>
                     <span
-                      className="cursor-pointer fs-14 text-color opacity-50"
+                      className="cursor-pointer fs-sm fw-normal text-green text-decoration-underline "
                       onClick={() => this.handleSelectAll(value.name, key)}
                     >
                       {this.data[key].listCheck.length == this.dataFilter[value.name].length
@@ -170,12 +169,12 @@ class FilterCalendar extends React.Component {
               );
             })}
           </div>
-          <div className="px-3 pt-4 pb-3">
-            <Button onClick={this.onFilter} className="btn btn-success w-100">
-              <i>
-                <FontAwesomeIcon icon={faFilter} />
-              </i>
-              <span className="ms-2">{t('txt_filter')}</span>
+          <div className="px-2 pt-4 pb-3">
+            <Button onClick={this.onFilter} className="btn btn-outline-secondary border text-body w-45 me-2 py-2">
+              <span className="text-center">{t('txt_clear_all')}</span>
+            </Button>
+            <Button onClick={this.onFilter} className="btn btn-success w-45 ms-2 py-2">
+              <span className="text-center">{t('txt_apply')}</span>
             </Button>
           </div>
         </div>

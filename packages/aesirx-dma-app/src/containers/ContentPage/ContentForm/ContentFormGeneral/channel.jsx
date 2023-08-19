@@ -24,9 +24,9 @@ const ContentFormGeneralChannel = observer(() => {
   return (
     <div className=" d-flex flex-wrap">
       <div className="d-flex align-items-center justify-content-between mb-3 w-100">
-        <p className="text-body mb-0 w-100">{t('txt_connected_channels')}</p>
+        <p className="text-body mb-0 w-100 ms-3 mt-2 fs-5 fw-medium">{t('txt_connected_channels')}</p>
       </div>
-      <div className="rounded-2 px-3 py-4 h-100 w-100">
+      <div className="px-3 py-4 h-100 w-100">
         <ListChannelComponent channelsData={channelsData} removeChannel={true} />
       </div>
     </div>

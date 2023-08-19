@@ -208,6 +208,7 @@
   "txt_the_media_field_is_required": " Поле медіа є обов'язковим ",
   "txt_the_image_field_is_required": " Поле зображення є обов'язковим ",
   "txt_create_new_post": "Створити нову публікацію",
-  "txt_group_type":"Тип групи"
-
+  "txt_group_type":"Тип групи",
+  "txt_content":"Вміст",
+  "txt_disconnect":"Відключити"
 }

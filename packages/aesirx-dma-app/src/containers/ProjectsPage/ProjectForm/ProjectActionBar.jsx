@@ -39,7 +39,7 @@ class ProjectActionBar extends Component {
     return (
       <div className="d-flex justify-content-end pe-3">
         <ButtonNormal
-          className="btn-success d-flex"
+          className="btn-success d-flex fw-semibold"
           onClick={this.createProjectHandler}
           iconStart={faPlus}
           text="txt_create_project"

@@ -206,5 +206,7 @@
   "txt_the_media_field_is_required": " Mediefeltet er påkrævet ",
   "txt_the_image_field_is_required":" Billedfeltet er påkrævet ",
   "txt_create_new_post": "Opret nyt indlæg",
-  "txt_group_type":"Gruppetype"
+  "txt_group_type":"Gruppetype",
+  "txt_content":"Indhold",
+  "txt_disconnect": "Afbryd forbindelsen"
 }

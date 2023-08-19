@@ -129,7 +129,7 @@ const Table = ({
     return (
       <>
         <input
-          className="form-check-input p-0 bg-white rounded-2"
+          className="form-check-input p-0 bg-transparent rounded-2"
           type="checkbox"
           ref={resolvedRef}
           {...rest}
@@ -466,6 +466,7 @@ const Table = ({
                               className={`fw-normal px-3 py-4 cell-${cell.column.id}`}
                             >
                               {cell.render('Cell')}
+                              {console.log(cell)}
                             </td>
                           );
                         })}

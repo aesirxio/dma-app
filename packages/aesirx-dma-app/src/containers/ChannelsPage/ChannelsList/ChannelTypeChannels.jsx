@@ -58,11 +58,11 @@ const ChannelTypeChannels = observer(({ channelType }) => {
             <div className="col-2 d-none d-md-block">{t('txt_group_type')}</div>
           )}
           <div className="col-2 d-none d-md-block">{t('txt_status')}</div>
-          <div className="col-1 d-none d-md-block">{t('txt_enable')}</div>
+          <div className="col-1 d-none text-center d-md-block">{t('txt_enable')}</div>
           <div
             className={`col ${
               channelType.id === 'linkedin_group' ? 'col-md-1' : 'col-md-3'
-            } text-end`}
+            } text-end pe-4`}
           >
             {t('txt_action')}
           </div>
