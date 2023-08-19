@@ -63,7 +63,7 @@ const settingMenu = [
     icons_fa: faUser,
   },
 ];
-const settupMenu = [
+const setupMenu = [
   {
     name: 'settings',
     text: 'txt_settings',
@@ -79,11 +79,12 @@ const profileMenu = [
   },
 ];
 
-const integrationMenu = () => mainMenu;
-settupMenu
-  .filter((item) => item.name !== 'digital')
-  .map((item) => {
-    item.link = '/dma' + item.link;
-    return item;
-  });
-export { profileMenu, mainMenu, settingMenu, settupMenu, integrationMenu };
+const integrationMenu = () =>
+  mainMenu
+    .filter((item) => item.name !== 'digital')
+    .map((item) => {
+      item.link = '/dma' + item.link;
+      return item;
+    });
+
+export { profileMenu, mainMenu, settingMenu, setupMenu, integrationMenu };
