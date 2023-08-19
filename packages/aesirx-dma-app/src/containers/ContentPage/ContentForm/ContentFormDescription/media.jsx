@@ -113,7 +113,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
   const mediaChannel = ContentUtils.hasMediaChannel(channelData);
   const { t } = useTranslation();
   return (
-    <div className="px-3 py-2 bg-body wr_description_image_asset">
+    <div className="px-3 py-2 bg-white wr_description_image_asset rounded-bottom-2">
       <div className="d-flex flex-wrap justify-content-start">
         {mediaChannel.dam && (
           <>

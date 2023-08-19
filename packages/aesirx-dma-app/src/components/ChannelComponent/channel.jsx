@@ -28,9 +28,9 @@ const ChannelChannelComponent = observer(({ channelData }) => {
 
   return (
     <Accordion defaultActiveKey="0" alwaysOpen>
-      <Accordion.Item eventKey="0" className='mb-4'>
+      <Accordion.Item eventKey="0" className='mb-4 border-0 rounded-3'>
         <div className="position-relative">
-          <AccordionButton className="pe-6">
+          <AccordionButton className="pe-6 bg-white ">
             <ComponentImage alt={channelData.name} src={logoSocial} className="img-avatar me-3" />
             <span>{channelData.name}</span>
           </AccordionButton>
@@ -42,7 +42,7 @@ const ChannelChannelComponent = observer(({ channelData }) => {
             checked={checked}
           />
         </div>
-        <Accordion.Body>
+        <Accordion.Body className='bg-transparent'>
           {channels.map((channel, index) => (
             <div className={`d-flex align-items-center py-2 `} key={index}>
               <ComponentImage
@@ -50,7 +50,7 @@ const ChannelChannelComponent = observer(({ channelData }) => {
                 src={channel.avatar ? channel.avatar : logoSocial}
                 className="img-avatar rounded me-3"
               />
-              {channel.name}
+              <span className='text-body'>{channel.name}</span>
 
               <Form.Check
                 type="checkbox"
