@@ -290,7 +290,7 @@ const Table = ({
                     <i>
                       <FontAwesomeIcon icon={faColumns} />
                     </i>
-                    <span className="ps-2 pe-3  text-body">{t('txt_columns')}</span>
+                    <span className="ps-2 pe-3">{t('txt_columns')}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={faChevronDown} />
                     </i>
@@ -332,7 +332,7 @@ const Table = ({
                     <i>
                       <FontAwesomeIcon icon={faFilter} />
                     </i>
-                    <span className="ps-2 pe-5 opacity-75">{t('txt_filter')}</span>
+                    <span className="ps-2 pe-5">{t('txt_filter')}</span>
                     <i className="text-green">
                       <FontAwesomeIcon icon={getState.isFilter ? faChevronUp : faChevronDown} />
                     </i>
@@ -401,8 +401,8 @@ const Table = ({
       </div>
       {isList ? (
         <div className="pt-3 px-3 rounded-3 is-list">
-          <table {...getTableProps()} className={`w-100 mb-4 ${classNameTable} rounded-top`}>
-            <thead className="bg-blue-5 border-bottom">
+          <table {...getTableProps()} className={`w-100 mb-4 ${classNameTable} table-border`}>
+            <thead className="bg-blue-5 border-bottom-2">
               {headerGroups.map((headerGroup) => {
                 let newHeaderGroup = '';
 

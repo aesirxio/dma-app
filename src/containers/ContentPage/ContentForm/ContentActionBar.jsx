@@ -30,7 +30,7 @@ const ContentActionBar = observer(
     render() {
       const { t } = this.props;
       return (
-        <div className="d-flex justify-content-end">
+        <div className="d-flex justify-content-end pe-3">
           <Link
             to={linkPush('/content/create')}
             className="btn btn-success d-flex align-items-center justify-content-center"

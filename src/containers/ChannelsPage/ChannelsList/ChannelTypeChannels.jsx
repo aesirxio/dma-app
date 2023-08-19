@@ -13,6 +13,7 @@ import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewMode
 import { Helper } from 'aesirx-lib';
 import { Image as ComponentImage } from 'aesirx-uikit';
 import ChannelTypeChannelToken from './ChannelTypeChannelToken';
+import ChannelTypeChannelsEnable from './ChannelTypeChannelsEnable';
 import { useTranslation } from 'react-i18next';
 import { withTranslation } from 'react-i18next';
 
@@ -56,7 +57,15 @@ const ChannelTypeChannels = observer(({ channelType }) => {
           {channelType.id === 'linkedin_group' && (
             <div className="col-2 d-none d-md-block">{t('txt_group_type')}</div>
           )}
-          <div className="col col-md-4 text-end">{t('txt_action')}</div>
+          <div className="col-2 d-none d-md-block">{t('txt_status')}</div>
+          <div className="col-1 d-none d-md-block">{t('txt_enable')}</div>
+          <div
+            className={`col ${
+              channelType.id === 'linkedin_group' ? 'col-md-1' : 'col-md-3'
+            } text-end`}
+          >
+            {t('txt_action')}
+          </div>
         </div>
 
         {pages.map((channel, index) => (
@@ -79,9 +88,17 @@ const ChannelTypeChannels = observer(({ channelType }) => {
               </div>
             </div>
             <div className="col-2 d-none d-md-block">{channel.type}</div>
-            <div className="col-2 d-none d-md-block">{channel.groupType}</div>
-            <div className="col col-md-4 text-end">
-              <ChannelTypeChannelToken channel={channel} />
+            {channel.groupType && (
+              <div className="col-2 d-none d-md-block">{channel.groupType}</div>
+            )}
+            <div className="col-2 d-none d-md-block">
+              {channel.connected ? 'Connected' : <ChannelTypeChannelToken channel={channel} />}
+            </div>
+            <div className="col-1 d-none d-md-block">
+              {' '}
+              <ChannelTypeChannelsEnable channel={channel} channelType={channelType} />
+            </div>
+            <div className={`col ${channel.groupType ? 'col-md-1' : 'col-md-3'} text-end`}>
               <ChannelTypeChannelsAction
                 channelType={channelType}
                 channel={channel}

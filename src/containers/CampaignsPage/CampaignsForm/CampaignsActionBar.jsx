@@ -38,7 +38,7 @@ class CampaignsActionBar extends Component {
 
   render() {
     return (
-      <div className="d-flex justify-content-end">
+      <div className="d-flex justify-content-end pe-3">
         <ButtonNormal
           className="d-flex btn-success"
           onClick={this.createCampaignsHandler}

@@ -120,7 +120,7 @@
       display: none;
   }
  }
- .column-header-status,.column-header-startDate,.column-header-endDate, .cell-status,.cell-startDate,.cell-endDate{
+ .column-header-status,.column-header-startDate,.column-header-endDate, .cell-status,.cell-startDate,.cell-endDate ,.column-header-content-status , .sub-cell-content-status{
   text-align: end !important;
  }
  .cell-startDate,.cell-endDate{
@@ -128,4 +128,7 @@
  }
  .cell-selection,.cell-expander{
   text-align: center !important;
+ }
+ .cell-content-name{
+  width: 30% !important;
  }

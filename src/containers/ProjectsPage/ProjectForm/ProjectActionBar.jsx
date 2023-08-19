@@ -37,7 +37,7 @@ class ProjectActionBar extends Component {
 
   render() {
     return (
-      <div className="d-flex justify-content-end">
+      <div className="d-flex justify-content-end pe-3">
         <ButtonNormal
           className="btn-success d-flex"
           onClick={this.createProjectHandler}
