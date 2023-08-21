@@ -42,13 +42,13 @@ const ContentFormPublish = observer(
       return (
         <>
           <h3 className="mb-4">{t('txt_publish')}</h3>
-          <div className="bg-white p-4">
+          <div className="bg-blue-5 p-4">
             <div className="row">
               <div className="col-md-4">
                 <ContentFormPublishChannel formPropsData={this.formPropsData} />
               </div>
               <div className="col-md-6">
-                <h6 className="text-blue mb-0 mb-3">{t('txt_when_to_publish_this?')}</h6>
+                <h6 className="text-body mb-0 mb-3">{t('txt_when_to_publish_this?')}</h6>
                 <div className="rounded border-1 p-3">
                   {mode === 'basic' ? (
                     <ContentFormPublishShedule formPropsData={this.formPropsData} />
@@ -63,7 +63,7 @@ const ContentFormPublish = observer(
           <div className="d-flex border-top-1 pt-3 justify-content-start pb-5">
             <div className="w-100">
               <Button
-                className="btn btn-info border-success "
+                className="btn btn-success border-success "
                 onClick={this.props.previousStep}
                 text={t('txt_back')}
                 icon={faChevronLeft}
@@ -71,7 +71,7 @@ const ContentFormPublish = observer(
             </div>
             <div className="d-flex">
               <Button
-                className="btn btn-secondary me-1"
+                className="btn btn-outline-secondary me-1"
                 text={t('txt_save_as_draft')}
                 onClick={() => this.handleSave(CONTENT_POST_TYPE.DRAFT)}
               />
