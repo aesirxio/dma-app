@@ -6,8 +6,6 @@
 import React from 'react';
 
 import { observer } from 'mobx-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
 
 import { useTranslation } from 'react-i18next';
 import { withTranslation } from 'react-i18next';
