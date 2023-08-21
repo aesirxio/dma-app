@@ -207,5 +207,8 @@
 "txt_the_media_field_is_required": " Le champ média est obligatoire ",
 "txt_the_image_field_is_required":" Le champ image est obligatoire ",
 "txt_create_new_post": "Créer un nouveau message",
-"txt_group_type":"Type de groupe"
+"txt_group_type":"Type de groupe",
+"txt_content":"Contenu",
+"txt_disconnect":"Déconnecter"
+
 }

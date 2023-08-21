@@ -67,10 +67,10 @@ const ChannelsList = observer(
       }
 
       return (
-        <div className="py-4 px-3">
+        <div className="py-4 px-4">
           <h2 className="text-body mb-4">{t('txt_connect_a_channel')}</h2>
           <div className="wrapper_tabs">
-            <Tabs defaultActiveKey="0" id="connectContent-tab" className="bg-white border-0 px-3">
+            <Tabs defaultActiveKey="0" id="connectContent-tab" className="border-0  border-bottom">
               {channelsData.map((channelCategory, index) => (
                 <Tab key={index} eventKey={index} title={channelCategory.name}>
                   <ChannelType channelCategory={channelCategory} channelTypeIndex={index} />

@@ -48,7 +48,7 @@ class BigCalendar extends React.Component {
     };
 
     return (
-      <div className="toolbar-container d-flex justify-content-between align-items-center mb-3">
+      <div className="toolbar-container d-flex justify-content-between align-items-center mb-4 pb-2">
         <label className="label-date fs-4 fw-bold">{label()}</label>
         <div className="back-next-buttons d-flex">
           <button

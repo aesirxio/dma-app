@@ -208,5 +208,7 @@
   "txt_the_media_field_is_required": " Trường phương tiện là bắt buộc ",
   "txt_the_image_field_is_required":" Trường hình ảnh là bắt buộc ",
   "txt_create_new_post": "Tạo bài đăng mới",
-  "txt_group_type":"Loại nhóm"
+  "txt_group_type":"Loại nhóm",
+  "txt_content":"Nội dung",
+  "txt_disconnect":"Ngắt kết nối"
 }

@@ -113,7 +113,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
   const mediaChannel = ContentUtils.hasMediaChannel(channelData);
   const { t } = useTranslation();
   return (
-    <div className="px-3 py-2 bg-white wr_description_image_asset rounded-bottom-2">
+    <div className="px-3 py-2 bg-accordion-button wr_description_image_asset rounded-bottom-2">
       <div className="d-flex flex-wrap justify-content-start">
         {mediaChannel.dam && (
           <>
@@ -125,57 +125,53 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
                 canvaEditItem={canvaEditItem}
               />
             </div> */}
-            <div className="me-2 mt-1 mb-1">
+            <div className="mx-2 mt-1 mb-1">
               <DamComponent field={{ changed: handleDam }}>
                 <button
-                  className="wr_btn_dam border-0 bg-blue-2 rounded-2 py-2 px-3 text-nowrap btn"
+                  className="wr_btn_dam border-0 bg-blue-2 rounded-3 py-2 px-3 text-nowrap btn"
                   type="button"
                 >
-                  <i className="text-white">
-                    <FontAwesomeIcon icon={faImage} />
-                  </i>
-                  <span className="text-white ms-2">{t('txt_digital_asset_management')}</span>
+                  <span className="text-white fs-sm fw-medium py-1 ms-2 ">
+                    {t('txt_digital_asset_management')}
+                  </span>
                 </button>
               </DamComponent>
             </div>
-            <div className="me-2 mt-1 mb-1">
+            <div className="mx-2 mt-1 mb-1">
               <button
-                className="wr_btn_dam border-0 rounded-2 px-2 py-0 text-nowrap btn btn-success"
+                className="wr_btn_dam border-0 rounded-3 px-3 py-2 text-nowrap btn btn-success"
                 type="button"
                 onClick={handleShow}
               >
-                <div className="p-1 d-flex align-items-center">
+                <div className="d-flex align-items-center">
                   <ComponentImage
                     src="/assets/images/chatgpt-icon.svg"
                     alt=""
                     className="img-chatgpt "
-                    width="30"
-                    height="30"
+                    width="14"
+                    height="14"
                   />
-                  <span className="text-white fw-medium py-1 ms-1 ">ChatGPT</span>
+                  <span className="text-white fs-sm fw-medium ms-2 ">Chat GPT</span>
                 </div>
               </button>
               <ModalComponent
                 dialogClassName="chatgpt"
                 show={show}
                 onHide={handleClose}
-                header={<h3 className="fw-bold title-chatgpt">ChatGPT</h3>}
+                header={<h3 className="fw-bold title-chatgpt">Chat GPT</h3>}
                 body={<ChatGPT />}
               />
             </div>
           </>
         )}
         {mediaChannel.video && (
-          <div className="me-2 mt-1 mb-1">
+          <div className="mx-2 mt-1 mb-1">
             <DamComponent field={{ changed: handleDam }} allowType={['video']}>
               <button
                 className="wr_btn_dam border-0 bg-blue-2 rounded-2 px-3 py-2 text-nowrap btn "
                 type="button"
               >
-                <i className="text-white">
-                  <FontAwesomeIcon icon={faImage} />
-                </i>
-                <span className="text-white ms-2">{t('txt_video')}</span>
+                <span className="text-white fs-sm fw-medium  ms-2">{t('txt_video')}</span>
               </button>
             </DamComponent>
           </div>

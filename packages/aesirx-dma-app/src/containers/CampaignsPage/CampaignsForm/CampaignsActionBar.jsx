@@ -40,7 +40,7 @@ class CampaignsActionBar extends Component {
     return (
       <div className="d-flex justify-content-end pe-3">
         <ButtonNormal
-          className="d-flex btn-success"
+          className="d-flex btn-success fw-semibold"
           onClick={this.createCampaignsHandler}
           iconStart={faPlus}
           text="txt_create_campaigns"

@@ -160,7 +160,7 @@ const ContentsList = observer(
             row.original[CONTENT_FIELD_KEY.ENTITY] === 'category' &&
             row.original[CONTENT_FIELD_KEY.STATUS] !== 'posted' ? (
               <button
-                className={`badge mw-100 d-table-cell align-middle btn btn-success border-0`}
+                className={`badged-table-cell align-middle btn btn-success border-0 py-2 px-4 `}
                 onClick={() => this.handerEdit(row.original)}
               >
                 {t('txt_edit')}

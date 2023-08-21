@@ -30,7 +30,7 @@ const CalendarList = observer(
       return tableStatus === PAGE_STATUS.LOADING ? (
         <Spinner />
       ) : (
-        <div className="wrapper_calendar wrapper_calendar_full py-4 px-3 overflow-y-auto">
+        <div className="wrapper_calendar wrapper_calendar_full py-4 px-4 overflow-y-auto">
           <div className="d-flex align-items-center justify-content-between mb-4">
             <h2 className="fs-2 mb-0 text-gray-5 fw-medium">{t('txt_title_calendar')}</h2>
             {/*TODO Add an action and remove d-none*/}
@@ -42,7 +42,7 @@ const CalendarList = observer(
                 <i>
                   <FontAwesomeIcon className="p-2" icon={faCalendar} />
                 </i>
-                <span className="ps-2">{t('txt_title_new_calendar')}</span>
+                <span className="ps-2 fw-semibold">{t('txt_title_new_calendar')}</span>
               </Link>
             </span>
           </div>
