@@ -9,7 +9,6 @@ import { Button } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
-import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 
 import styles from './index.module.scss';
 import { Checkbox } from 'aesirx-uikit';
