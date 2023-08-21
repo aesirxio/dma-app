@@ -7,7 +7,8 @@
     "nx": "16.3.2"
   },
   "resolutions": {
-    "@yarnpkg/parsers": "3.0.0-rc.48.1"
+    "@yarnpkg/parsers": "3.0.0-rc.48.1",
+    "bootstrap": "^5.3"
   },
   "scripts": {
     "prepare": "nx run-many -t build -p aesirx-uikit aesirx-lib && nx run-many -t build:lib --exclude aesirx-uikit aesirx-lib aesirx-dma-app",
