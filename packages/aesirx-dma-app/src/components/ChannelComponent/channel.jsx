@@ -13,6 +13,7 @@ const ChannelChannelComponent = observer(({ channelData }) => {
   const logoSocial = channelData.img ? channelData.img : `/assets/images/${channelData.id}.png`;
 
   const channels = [...channelData?.pages];
+  console.log(channelData,"channels");
 
   const handleOnClick = (target, channel) => {
     channel.removed = !target.checked;
@@ -28,7 +29,7 @@ const ChannelChannelComponent = observer(({ channelData }) => {
 
   return (
     <Accordion defaultActiveKey="0" alwaysOpen>
-      <Accordion.Item eventKey="0" className="mb-1 border-0">
+      <Accordion.Item eventKey={channelData.id} className="mb-1 border-0">
         <div className="position-relative">
           <AccordionButton className="pe-6 bg-accordion-button rounded-3">
             <ComponentImage
