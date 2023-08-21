@@ -21,7 +21,6 @@ import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
 
 import { Spinner } from 'aesirx-uikit';
 
-import getStatus from '../../../utils/status';
 import CampaignsActionBar from '../CampaignsForm/CampaignsActionBar';
 import ComponentNoData from '../../../components/ComponentNoData';
 import ComponentViewList from '../../../components/ComponentViewList';
