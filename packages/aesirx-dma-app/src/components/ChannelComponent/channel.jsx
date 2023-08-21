@@ -31,7 +31,11 @@ const ChannelChannelComponent = observer(({ channelData }) => {
       <Accordion.Item eventKey="0" className="mb-1 border-0">
         <div className="position-relative">
           <AccordionButton className="pe-6 bg-accordion-button rounded-3">
-            <ComponentImage alt={channelData.name} src={logoSocial} className="img-avatar-32 me-3" />
+            <ComponentImage
+              alt={channelData.name}
+              src={logoSocial}
+              className="img-avatar-32 me-3"
+            />
             <span>{channelData.name}</span>
           </AccordionButton>
 

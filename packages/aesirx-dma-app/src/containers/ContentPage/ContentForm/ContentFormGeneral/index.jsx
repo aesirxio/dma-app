@@ -207,8 +207,8 @@ const ContentFormGeneral = observer(
       const { t } = this.props;
       return (
         <div className="pe-md-80">
-          <div className='d-flex align-items-center justify-content-between mb-4'>
-          <h3 className="mb-4">{t('txt_general')}</h3>
+          <div className="d-flex align-items-center justify-content-between mb-4">
+            <h3 className="mb-4">{t('txt_general')}</h3>
           </div>
           <div className="bg-blue-5 rounded-3 ">
             <div className="row">
@@ -233,24 +233,23 @@ const ContentFormGeneral = observer(
                     className: 'text-danger',
                   }
                 )}
-                  <div className="d-flex pt-3 justify-content-end wr_btn_back_wz pb-5">
-                      <a
-                        href="/wizard"
-                        className="btn rounded-2 border-1 border-green text-black bg-transparent px-2 mw-80 btn_back_wz d-none"
-                      >
-                        <FontAwesomeIcon icon={faChevronLeft} />
-                        <span className="ps-2">{t('txt_back')}</span>
-                      </a>
-                      <Button
-                        className="btn btn-success px-4 py-2 mw-80 "
-                        onClick={this.onNext}
-                        text={t('txt_next')}
-                      />
-                    </div>
+                <div className="d-flex pt-3 justify-content-end wr_btn_back_wz pb-5">
+                  <a
+                    href="/wizard"
+                    className="btn rounded-2 border-1 border-green text-black bg-transparent px-2 mw-80 btn_back_wz d-none"
+                  >
+                    <FontAwesomeIcon icon={faChevronLeft} />
+                    <span className="ps-2">{t('txt_back')}</span>
+                  </a>
+                  <Button
+                    className="btn btn-success px-4 py-2 mw-80 "
+                    onClick={this.onNext}
+                    text={t('txt_next')}
+                  />
+                </div>
               </div>
             </div>
           </div>
-          
         </div>
       );
     }
