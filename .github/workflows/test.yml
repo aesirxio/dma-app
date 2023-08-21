@@ -13,8 +13,10 @@ jobs:
         with:
           node-version: 16.x
 
+      - run: git submodule update --init --recursive
+
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Run build
         run: CI=false yarn build
