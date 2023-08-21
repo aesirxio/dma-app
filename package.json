@@ -8,7 +8,7 @@
   },
   "resolutions": {
     "@yarnpkg/parsers": "3.0.0-rc.48.1",
-    "bootstrap": "^5.3"
+    "bootstrap": "^5.3.1"
   },
   "scripts": {
     "prepare": "nx run-many -t build -p aesirx-uikit aesirx-lib && nx run-many -t build:lib --exclude aesirx-uikit aesirx-lib aesirx-dma-app",
@@ -16,6 +16,7 @@
     "build": "nx run aesirx-dma-app:build",
     "build:lib": "nx run aesirx-dma-app:build:lib",
     "lint:check": "nx run aesirx-dma-app:lint:check",
-    "format:check": "nx run aesirx-dma-app:format:check"
+    "format:check": "nx run aesirx-dma-app:format:check",
+    "prepublishOnly": "nx run aesirx-dma-app:prepublishOnly"
   }
 }
