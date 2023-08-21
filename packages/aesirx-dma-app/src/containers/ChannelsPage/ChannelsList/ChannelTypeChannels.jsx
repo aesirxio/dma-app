@@ -45,7 +45,6 @@ const ChannelTypeChannels = observer(({ channelType }) => {
       setLoading(false);
     }
   };
-  console.log(channelType);
 
   return (
     <>
@@ -74,6 +73,9 @@ const ChannelTypeChannels = observer(({ channelType }) => {
             <div className="col col-md-4">
               <div className="d-flex align-items-center">
                 <ComponentImage
+                  width={40}
+                  hieght={40}
+                  placeholderSrc={'/assets/images/default_channel_image.png'}
                   className="img-avatar rounded"
                   src={
                     channel.avatar
