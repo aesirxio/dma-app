@@ -20,8 +20,8 @@ jobs:
           node-version: 16
 
       - run: yarn install
-      - run: yarn lint
-      - run: CI=false yarn run build
+      - run: yarn lint:check
+      - run: CI=false yarn build
       - uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
