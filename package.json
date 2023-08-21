@@ -16,6 +16,7 @@
     "build": "nx run aesirx-dma-app:build",
     "build:lib": "nx run aesirx-dma-app:build:lib",
     "lint:check": "nx run aesirx-dma-app:lint:check",
-    "format:check": "nx run aesirx-dma-app:format:check"
+    "format:check": "nx run aesirx-dma-app:format:check",
+    "prepublishOnly": "nx run aesirx-dma-app:prepublishOnly"
   }
 }
