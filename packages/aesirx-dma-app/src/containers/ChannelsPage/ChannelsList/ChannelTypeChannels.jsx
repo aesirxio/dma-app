@@ -56,13 +56,13 @@ const ChannelTypeChannels = observer(({ channelType }) => {
           {channelType.id === 'linkedin_group' && (
             <div className="col-1 d-none d-md-block">{t('txt_group_type')}</div>
           )}
-          <div className={channelType.id === 'linkedin_group' ? "col-3" : "col-4 d-none d-md-block"}>{t('txt_status')}</div>
-          <div  className="col-md-1 text-center">{t('txt_enable')}</div>
           <div
-            className="col-md-1 pe-4"
+            className={channelType.id === 'linkedin_group' ? 'col-3' : 'col-4 d-none d-md-block'}
           >
-            {t('txt_action')}
+            {t('txt_status')}
           </div>
+          <div className="col-md-1 text-center">{t('txt_enable')}</div>
+          <div className="col-md-1 pe-4">{t('txt_action')}</div>
         </div>
 
         {pages.map((channel, index) => (

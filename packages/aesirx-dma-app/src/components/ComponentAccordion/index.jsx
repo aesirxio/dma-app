@@ -14,14 +14,14 @@ class ComponentAccordion extends Component {
   }
   render() {
     return (
-      <div className="bg-white p-3 pb-5 accordion" id={`accordion${this.props.id}`}>
+      <div className="bg-gray p-3 pb-5 accordion" id={`accordion${this.props.id}`}>
         <div className="accordion-item border-0">
           <div
             className="d-flex justify-content-between mb-2 accordion-header"
             id={`heading${this.props.id}`}
           >
             <button
-              className="accordion-button bg-white p-0 text-dark border-0 shadow-none"
+              className="accordion-button bg-gray p-0 text-dark border-0 shadow-none"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target={`#${this.props.id}Collapse`}

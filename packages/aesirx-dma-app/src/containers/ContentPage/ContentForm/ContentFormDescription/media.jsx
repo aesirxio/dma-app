@@ -32,15 +32,12 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
     // canva = canvaObj[Object.keys(canvaObj)[0]] ?? [];
   }
 
-
   const [damAssets, setDamAssets] = useState(dam);
   const [show, setShow] = useState(false);
-
 
   const handleDam = (data) => {
     setDamAssets([...damAssets, ...data]);
   };
-
 
   useEffect(() => {
     if (mode === CONTENT_DESCRIPTION_MODE.BASIC) {

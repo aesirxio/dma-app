@@ -18,7 +18,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
         <div className="toolbar-container d-flex justify-content-between align-items-center mb-4 pb-2">
           <div className="back-next-buttons">
             <button
-              className="cursor-pointer bg-white btn btn-outline-secondary text-body fw-medium btn_today border-1"
+              className="cursor-pointer bg-gray btn btn-outline-secondary text-body fw-medium btn_today border-1"
               onClick={() => this.navigate('TODAY')}
             >
               {t('txt_today')}
@@ -43,7 +43,7 @@ const CustomToolbar = (handleFilterCalendar, t) => {
             <div className="position-relative d-flex align-items-center">
               <div className="ms-2">
                 <button
-                  className="cursor-pointer w-110 d-flex align-items-center bg-white justify-content-center btn btn-outline-secondary text-gray-5 border-1 py-2"
+                  className="cursor-pointer w-110 d-flex align-items-center bg-gray justify-content-center btn btn-outline-secondary text-gray-5 border-1 py-2"
                   onClick={handleFilterCalendar}
                 >
                   <i className="icon-filter">
