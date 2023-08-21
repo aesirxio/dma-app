@@ -137,7 +137,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
                 </button>
               </DamComponent>
             </div>
-            <div className="mx-2 mt-1 mb-1">
+            {/* <div className="mx-2 mt-1 mb-1">
               <button
                 className="wr_btn_dam border-0 rounded-3 px-3 py-2 text-nowrap btn btn-success"
                 type="button"
@@ -161,7 +161,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
                 header={<h3 className="fw-bold title-chatgpt">Chat GPT</h3>}
                 body={<ChatGPT />}
               />
-            </div>
+            </div> */}
           </>
         )}
         {mediaChannel.video && (
