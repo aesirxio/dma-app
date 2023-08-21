@@ -33,7 +33,6 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
   }
 
   const [damAssets, setDamAssets] = useState(dam);
-  const [show, setShow] = useState(false);
 
   const handleDam = (data) => {
     setDamAssets([...damAssets, ...data]);
@@ -51,14 +50,6 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
 
   const deleteDamItem = (id) => {
     setDamAssets(damAssets.filter((item) => item.id !== id));
-  };
-
-  const handleShow = () => {
-    setShow(true);
-  };
-
-  const handleClose = () => {
-    setShow(false);
   };
 
   const mediaChannel = ContentUtils.hasMediaChannel(channelData);
