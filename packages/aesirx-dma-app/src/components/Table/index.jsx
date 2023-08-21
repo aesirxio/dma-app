@@ -22,7 +22,6 @@ import { faList } from '@fortawesome/free-solid-svg-icons/faList';
 import { faTh } from '@fortawesome/free-solid-svg-icons/faTh';
 import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
-import { faArrowRightArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowRightArrowLeft';
 import styles from './index.module.scss';
 import './index.scss';
 import { withTranslation } from 'react-i18next';
@@ -415,7 +414,7 @@ const Table = ({
                 return (
                   <tr {...headerGroup.getHeaderGroupProps()}>
                     {newHeaderGroup.map((column) => {
-                      const hasValue = column.render('Header') !== '';
+                      // const hasValue = column.render('Header') !== '';
                       return (
                         <th
                           {...column.getHeaderProps()}

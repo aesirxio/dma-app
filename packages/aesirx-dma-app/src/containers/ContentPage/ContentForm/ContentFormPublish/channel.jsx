@@ -8,7 +8,6 @@ import { observer } from 'mobx-react';
 import { ContentViewModelContext } from '../../ContentViewModels/ContentViewModelContextProvider';
 
 import ListChannelComponent from '../../../../components/ChannelComponent/list';
-import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 
 const ContentFormPublishChannel = observer(() => {
   const context = useContext(ContentViewModelContext);

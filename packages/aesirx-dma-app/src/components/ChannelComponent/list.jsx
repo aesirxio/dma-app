@@ -6,7 +6,7 @@
 import React from 'react';
 import ChannelChannelComponent from './channel';
 import { observer } from 'mobx-react';
-import { withTranslation, useTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 const ListChannelComponent = observer(({ channelsData, ...props }) => {
   return (
