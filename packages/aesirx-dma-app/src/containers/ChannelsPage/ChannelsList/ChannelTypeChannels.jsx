@@ -54,14 +54,12 @@ const ChannelTypeChannels = observer(({ channelType }) => {
           <div className="col col-md-4">{t('txt_name_personas')}</div>
           <div className="col-2 d-none d-md-block">{t('txt_type')}</div>
           {channelType.id === 'linkedin_group' && (
-            <div className="col-2 d-none d-md-block">{t('txt_group_type')}</div>
+            <div className="col-1 d-none d-md-block">{t('txt_group_type')}</div>
           )}
-          <div className="col-2 d-none d-md-block">{t('txt_status')}</div>
-          <div className="col-1 d-none text-center d-md-block">{t('txt_enable')}</div>
+          <div className={channelType.id === 'linkedin_group' ? "col-3" : "col-4 d-none d-md-block"}>{t('txt_status')}</div>
+          <div  className="col-md-1 text-center">{t('txt_enable')}</div>
           <div
-            className={`col ${
-              channelType.id === 'linkedin_group' ? 'col-md-1' : 'col-md-3'
-            } text-end pe-4`}
+            className="col-md-1 pe-4"
           >
             {t('txt_action')}
           </div>
@@ -91,16 +89,16 @@ const ChannelTypeChannels = observer(({ channelType }) => {
             </div>
             <div className="col-2 d-none d-md-block">{channel.type}</div>
             {channel.groupType && (
-              <div className="col-2 d-none d-md-block">{channel.groupType}</div>
+              <div className="col-1 d-none d-md-block">{channel.groupType}</div>
             )}
-            <div className="col-2 d-none d-md-block">
+            <div className={`col ${channel.groupType ? 'col-3' : 'col-4'} `}>
               {channel.connected ? 'Connected' : <ChannelTypeChannelToken channel={channel} />}
             </div>
-            <div className="col-1 d-none d-md-block">
+            <div className="col-md-1">
               {' '}
               <ChannelTypeChannelsEnable channel={channel} channelType={channelType} />
             </div>
-            <div className={`col ${channel.groupType ? 'col-md-1' : 'col-md-3'} text-end`}>
+            <div className="col-md-1 text-end">
               <ChannelTypeChannelsAction
                 channelType={channelType}
                 channel={channel}
