@@ -7,12 +7,10 @@ import React, { useContext } from 'react';
 
 import { observer } from 'mobx-react';
 import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
-import { useTranslation } from 'react-i18next';
 import { withTranslation } from 'react-i18next';
 
 const ChannelTypeChannelsEnable = observer(({ channelType, channel }) => {
   const context = useContext(ChannelsViewModelContext);
-  const { t } = useTranslation();
   const handleStatus = async (event) => {
     if (event.target.checked) {
       await context.getChannelsListViewModel().actions('reconnectChannel', channelType, channel);
