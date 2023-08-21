@@ -466,7 +466,6 @@ const Table = ({
                               className={`fw-normal px-3 py-4 cell-${cell.column.id}`}
                             >
                               {cell.render('Cell')}
-                              {console.log(cell)}
                             </td>
                           );
                         })}
