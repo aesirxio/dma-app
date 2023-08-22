@@ -489,7 +489,7 @@ class ChannelAccordion extends React.Component {
       <Accordion>
         {data.map((value, index) => {
           return (
-            <div key={index} className="bg-white rounded-3 mb-4">
+            <div key={index} className="bg-gray rounded-3 mb-4">
               <CustomToggle eventKey={value.id}>
                 <div className="d-flex align-items-center">
                   <ComponentImage alt={value.images} src={value.images} className="img-avatar" />

@@ -20,7 +20,7 @@ const ListConnectedChannel = observer(
     render() {
       const value = this.viewModel ? this.viewModel.connectedChannels : '';
       return (
-        <div className="bg-white shadow-sm rounded-2 px-3 py-2 h-100 d-flex align-items-center">
+        <div className="bg-gray shadow-sm rounded-2 px-3 py-2 h-100 d-flex align-items-center">
           <div className="row w-100">
             {value
               ? value.map((value) => {

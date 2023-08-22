@@ -210,5 +210,6 @@
   "txt_create_new_post": "Tạo bài đăng mới",
   "txt_group_type":"Loại nhóm",
   "txt_content":"Nội dung",
-  "txt_disconnect":"Ngắt kết nối"
+  "txt_disconnect":"Ngắt kết nối",
+  "txt_failed": "Không thành công"
 }

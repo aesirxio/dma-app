@@ -21,7 +21,6 @@ import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
 
 import { Spinner } from 'aesirx-uikit';
 
-import getStatus from '../../../utils/status';
 import CampaignsActionBar from '../CampaignsForm/CampaignsActionBar';
 import ComponentNoData from '../../../components/ComponentNoData';
 import ComponentViewList from '../../../components/ComponentViewList';
@@ -68,14 +67,16 @@ const CampaignsList = observer(
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
               <span
-                className="ms-2"
+                className="ms-2 fs-14 fw-normal"
                 onClick={(e) => this.handleEdit(e, row.original, pagination.page)}
               >
                 {row.values.expander}
               </span>
             </div>
           ),
-          SubCell: ({ row }) => <span>{row.original.name}</span>,
+          SubCell: ({ row }) => (
+            <span className="fs-14 fw-normal ms-3">|— {row.values['campaigns-name']}</span>
+          ),
         },
         {
           Header: t('start_date'),
@@ -90,17 +91,17 @@ const CampaignsList = observer(
           accessor: CAMPAIGNS_FIELD_KEY.PUBLISHED,
           className: 'status',
           Cell: ({ value }) => {
-            if (value == 1) {
+            if (value === 1) {
               return (
                 <span
                   className={`badge ${t(
                     'txt_running'
-                  )} bg-processing  mw-100 h-35 d-inline align-middle`}
+                  )} bg-processing mw-100 h-35 d-inline align-middle`}
                 >
                   {t('txt_running')}
                 </span>
               );
-            } else if (value == 2) {
+            } else if (value === 2) {
               return (
                 <span
                   className={`badge ${t(
@@ -113,22 +114,46 @@ const CampaignsList = observer(
             } else {
               return (
                 <span
-                  className={`badge ${t('txt_stop')}  bg-failed mw-100 h-35 d-inline align-middle`}
+                  className={`badge ${t('txt_failed')} bg-failed mw-100 h-35 d-inline align-middle`}
                 >
-                  {t('txt_stop')}
+                  {t('txt_failed')}
                 </span>
               );
             }
           },
-          SubCell: ({ row }) => (
-            <span
-              className={`badge ${
-                getStatus(row.original.status).className
-              }  mw-100 h-35 d-inline align-middle`}
-            >
-              {getStatus(row.original.status).text}
-            </span>
-          ),
+          SubCell: ({ row }) => {
+            if (row.values['status'] === 1) {
+              return (
+                <span
+                  className={`badge ${t(
+                    'txt_running'
+                  )} bg-processing mw-100 h-35 d-inline align-middle me-2`}
+                >
+                  {t('txt_running')}
+                </span>
+              );
+            } else if (row.values['status'] === 2) {
+              return (
+                <span
+                  className={`badge ${t(
+                    'txt_schedule'
+                  )} bg-schedule mw-100 h-35 d-inline align-middle me-2`}
+                >
+                  {t('txt_schedule')}
+                </span>
+              );
+            } else {
+              return (
+                <span
+                  className={`badge ${t(
+                    'txt_failed'
+                  )} bg-failed mw-100 h-35 d-inline align-middle me-2`}
+                >
+                  {t('txt_failed')}
+                </span>
+              );
+            }
+          },
         },
       ];
 

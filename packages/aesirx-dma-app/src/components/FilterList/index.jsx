@@ -49,7 +49,7 @@ class ListThumb extends React.Component {
     let { anAction, columns } = this.state;
 
     return (
-      <div className="bg-white rounded-3 mb-4">
+      <div className="bg-gray rounded-3 mb-4">
         <div className="row">
           <div className="col-9">
             <div className="row">

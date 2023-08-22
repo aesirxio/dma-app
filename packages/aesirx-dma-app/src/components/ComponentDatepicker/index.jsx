@@ -134,7 +134,7 @@ class ComponentDatepicker extends React.Component {
           <div className="position-relative border-0">{children}</div>
         </div>
         {startDate && (
-          <div className="d-flex apply align-items-center justify-content-end bg-white p-3">
+          <div className="d-flex apply align-items-center justify-content-end bg-gray p-3">
             <p className="fs-14 color-bule-0 opacity-75 mb-0">
               {startDate ? moment(startDate).format('LL') : ''} -{' '}
               {endDate ? moment(endDate).format('LL') : ''}
