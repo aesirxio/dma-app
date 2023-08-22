@@ -1,0 +1,8 @@
+[submodule "packages/aesirx-uikit"]
+	path = packages/aesirx-uikit
+	url = https://github.com/aesirxio/aesirx-uikit.git
+	branch = develop
+[submodule "packages/aesirx-lib"]
+	path = packages/aesirx-lib
+	url = https://github.com/aesirxio/aesirx-lib.git
+	branch = develop
