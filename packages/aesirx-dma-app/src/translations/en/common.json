@@ -212,5 +212,6 @@
   "txt_group_type":"Group Type",
   "txt_submenu_group_management":"Group Management",
   "txt_content":"Content",
-  "txt_disconnect":"Disconnect"
+  "txt_disconnect":"Disconnect",
+  "txt_failed": "Failed"
 }

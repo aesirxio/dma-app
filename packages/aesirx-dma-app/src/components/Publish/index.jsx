@@ -21,7 +21,7 @@ class CreateProject extends React.Component {
 
   render() {
     return (
-      <div className="col-6 bg-white p-4">
+      <div className="col-6 bg-gray p-4">
         <Accordion defaultActiveKey="0">
           <div className="mb-2">
             <Accordion.Toggle
