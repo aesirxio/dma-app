@@ -1,7 +1,8 @@
 {
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/aesirx-dam-app/packages/aesirx-dam-app"
   ],
   "devDependencies": {
     "nx": "16.3.2"
