@@ -209,5 +209,6 @@
 "txt_create_new_post": "Stvori novi post",
 "txt_group_type": "Vrsta grupe",
 "txt_content": "Sadržaj",
-"txt_disconnect": "Prekini vezu"
+"txt_disconnect": "Prekini vezu",
+"txt_failed": "Neuspješno"
 }

@@ -114,9 +114,9 @@ const CampaignsList = observer(
             } else {
               return (
                 <span
-                  className={`badge ${t('txt_stop')} bg-failed mw-100 h-35 d-inline align-middle`}
+                  className={`badge ${t('txt_failed')} bg-failed mw-100 h-35 d-inline align-middle`}
                 >
-                  {t('txt_stop')}
+                  {t('txt_failed')}
                 </span>
               );
             }
@@ -146,10 +146,10 @@ const CampaignsList = observer(
               return (
                 <span
                   className={`badge ${t(
-                    'txt_stop'
+                    'txt_failed'
                   )} bg-failed mw-100 h-35 d-inline align-middle me-2`}
                 >
-                  {t('txt_stop')}
+                  {t('txt_failed')}
                 </span>
               );
             }

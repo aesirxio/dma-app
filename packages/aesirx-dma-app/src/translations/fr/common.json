@@ -209,6 +209,7 @@
 "txt_create_new_post": "Créer un nouveau message",
 "txt_group_type":"Type de groupe",
 "txt_content":"Contenu",
-"txt_disconnect":"Déconnecter"
+"txt_disconnect":"Déconnecter",
+"txt_failed": "Échec"
 
 }

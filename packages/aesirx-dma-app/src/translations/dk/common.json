@@ -208,5 +208,6 @@
   "txt_create_new_post": "Opret nyt indlæg",
   "txt_group_type":"Gruppetype",
   "txt_content":"Indhold",
-  "txt_disconnect": "Afbryd forbindelsen"
+  "txt_disconnect": "Afbryd forbindelsen",
+  "txt_failed": "Mislykkedes"
 }
