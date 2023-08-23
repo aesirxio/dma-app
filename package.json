@@ -1,7 +1,9 @@
 {
   "private": true,
   "workspaces": [
-    "packages/*",
+    "packages/aesirx-dma-app",
+    "packages/aesirx-lib",
+    "packages/aesirx-uikit",
     "packages/aesirx-dam-app/packages/aesirx-dam-app"
   ],
   "devDependencies": {
