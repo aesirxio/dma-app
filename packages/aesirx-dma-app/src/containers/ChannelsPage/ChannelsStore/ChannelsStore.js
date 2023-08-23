@@ -71,6 +71,14 @@ export default class ChannelsStore {
       return false;
     }
   };
+  bulkRemoveChannel = async (channelName, channelIds) => {
+    try {
+      const status = await this.channelService.bulkRemoveChannel(channelName, channelIds);
+      return status;
+    } catch (error) {
+      return false;
+    }
+  };
 
   connectCMS = async (dataPost, channelType) => {
     try {

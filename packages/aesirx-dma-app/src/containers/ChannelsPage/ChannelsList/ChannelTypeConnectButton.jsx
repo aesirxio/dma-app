@@ -52,10 +52,10 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
       className="btn btn-success d-flex justify-content-center align-items-center p-2 w-110px"
       onClick={handleOnClick}
     >
-      <i className="fs-5 me-2">
+      <i className="fs-14 me-2">
         <FontAwesomeIcon icon={faPlus} />
       </i>
-      {connecting ? t('txt_connecting') : t('txt_connect')}
+      <span className="fs-14">{connecting ? t('txt_connecting') : t('txt_connect')}</span>
     </button>
   );
 });

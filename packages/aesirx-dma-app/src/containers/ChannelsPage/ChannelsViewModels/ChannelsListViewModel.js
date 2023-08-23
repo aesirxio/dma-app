@@ -71,6 +71,14 @@ class ChannelsListViewModel {
       this.catchError(error);
     }
   };
+  bulkRemoveChannel = async (channelName, channelIds) => {
+    try {
+      const status = await this.channelsStore.bulkRemoveChannel(channelName, channelIds);
+      return status;
+    } catch (error) {
+      this.catchError(error);
+    }
+  };
 
   closeModalUpgrade = () => {
     this.showUpgrade = false;

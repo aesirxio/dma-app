@@ -13,7 +13,6 @@ const ChannelChannelComponent = observer(({ channelData }) => {
   const logoSocial = channelData.img ? channelData.img : `/assets/images/${channelData.id}.png`;
 
   const channels = [...channelData?.pages];
-  console.log(channelData, 'channels');
 
   const handleOnClick = (target, channel) => {
     channel.removed = !target.checked;

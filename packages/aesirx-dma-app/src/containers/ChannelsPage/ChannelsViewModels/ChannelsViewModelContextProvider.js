@@ -21,3 +21,18 @@ export const useChannelsViewModel = () => React.useContext(ChannelsViewModelCont
 export const withChannelsViewModel = (Component) => (props) => {
   return <Component {...props} viewModel={useChannelsViewModel()} />;
 };
+
+const SelectedChannelsContext = React.createContext();
+
+export const SelectedChannelsProvider = ({ children }) => {
+  const [selectedChannels, setSelectedChannels] = React.useState([]);
+  return (
+    <SelectedChannelsContext.Provider value={{ selectedChannels, setSelectedChannels }}>
+      {children}
+    </SelectedChannelsContext.Provider>
+  );
+};
+
+export const useSelectedChannels = () => {
+  return React.useContext(SelectedChannelsContext);
+};

@@ -3,21 +3,65 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import { observer } from 'mobx-react';
 import { withTranslation } from 'react-i18next';
 import ChannelTypeConnectButton from './ChannelTypeConnectButton';
 import ChannelTypeChannels from './ChannelTypeChannels';
+import RemoveSelectedChannelsButton from './RemoveSelectedChannelsButton';
 import { Image as ComponentImage } from 'aesirx-uikit';
 import { useTranslation } from 'react-i18next';
+import { notify } from 'aesirx-uikit';
+import {
+  useSelectedChannels,
+  useChannelsViewModel,
+} from '../ChannelsViewModels/ChannelsViewModelContextProvider';
+import PAGE_STATUS from 'constants/PageStatus';
 
 const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
   const list = channelCategory.getList();
-
+  const { channelsListViewModel } = useChannelsViewModel();
+  const [loading, setLoading] = useState(false);
+  const { tableStatus } = channelsListViewModel;
+  console.log(PAGE_STATUS, tableStatus, 'lo');
   if (list.length === 0) {
     return null;
   }
   const { t } = useTranslation();
+  const { selectedChannels, setSelectedChannels } = useSelectedChannels();
+
+  if (tableStatus === PAGE_STATUS.LOADING) {
+    return (
+      <div className="d-flex justify-content-center m-2">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
+  const handleRemoveSelectedChannels = async (channelName, channel) => {
+    if (!selectedChannels || selectedChannels.length === 0) {
+      notify('', 'error');
+      return;
+    }
+    try {
+      setLoading(true);
+      const removeSuccess = await channelsListViewModel.bulkRemoveChannel(channelName, channel);
+
+      if (removeSuccess) {
+        setLoading(false);
+        setSelectedChannels([]);
+        notify('', 'success');
+      } else {
+        setLoading(false);
+        notify('', 'error');
+      }
+    } catch (error) {
+      setLoading(false);
+      notify('', 'error');
+    }
+  };
+
   return (
     <div className="accordion mt-4" id={`accordionChannelType${channelTypeIndex}`}>
       {list.map((channelType, index) => (
@@ -41,10 +85,26 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
                 )}
                 <span className="ms-2 fs-4 text-body text-capitalize">{channelType.name}</span>
               </div>
+              {channelType.pages > '0' && (
+                <div className="me-3 text-center">
+                  {loading ? (
+                    <div className="spinner-border" role="status">
+                      <span className="visually-hidden">Loading...</span>
+                    </div>
+                  ) : (
+                    <RemoveSelectedChannelsButton
+                      selectedChannels={selectedChannels}
+                      bulkRemoveChannel={(channel) =>
+                        handleRemoveSelectedChannels(channelType.id, channel)
+                      }
+                    />
+                  )}
+                </div>
+              )}
               {(() => {
                 switch (channelType.status) {
                   case '100':
-                    return <div className="fs-6 text-nowrap">{t('txt_coming_soon')}</div>;
+                    return <div className="fs-14 text-nowrap">{t('txt_coming_soon')}</div>;
                   case '1':
                     return (
                       <ChannelTypeConnectButton
@@ -67,7 +127,7 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
             key={Math.random(40, 200)}
           >
             <div className="accordion-body p-0">
-              <ChannelTypeChannels channelType={channelType} />
+              <ChannelTypeChannels channelType={channelType} selectedChannels={selectedChannels} />
             </div>
           </div>
         </div>

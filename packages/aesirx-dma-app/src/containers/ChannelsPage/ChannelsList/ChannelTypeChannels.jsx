@@ -8,7 +8,10 @@ import React, { useContext, useState } from 'react';
 import { observer } from 'mobx-react';
 
 import ChannelTypeChannelsAction from './ChannelTypeChannelsAction';
-import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
+import {
+  ChannelsViewModelContext,
+  useSelectedChannels,
+} from '../ChannelsViewModels/ChannelsViewModelContextProvider';
 
 import { Helper } from 'aesirx-lib';
 import { Image as ComponentImage } from 'aesirx-uikit';
@@ -16,10 +19,11 @@ import ChannelTypeChannelToken from './ChannelTypeChannelToken';
 import ChannelTypeChannelsEnable from './ChannelTypeChannelsEnable';
 import { useTranslation } from 'react-i18next';
 import { withTranslation } from 'react-i18next';
-
+import { Form } from 'react-bootstrap';
 const ChannelTypeChannels = observer(({ channelType }) => {
   const context = useContext(ChannelsViewModelContext);
-
+  const { selectedChannels, setSelectedChannels } = useSelectedChannels();
+  const [selectAll, setSelectAll] = useState(false);
   const [loading, setLoading] = useState(false);
   const { t } = useTranslation();
   const pages = channelType.getPages();
@@ -46,18 +50,57 @@ const ChannelTypeChannels = observer(({ channelType }) => {
     }
   };
 
+  const handleCheckboxChange = (channelId) => {
+    console.log(channelId, 'check1');
+    const updatedSelectedChannels = [...selectedChannels];
+
+    if (updatedSelectedChannels.includes(channelId)) {
+      updatedSelectedChannels.splice(updatedSelectedChannels.indexOf(channelId), 1);
+      if (selectAll) {
+        setSelectAll(false);
+      }
+    } else {
+      updatedSelectedChannels.push(channelId);
+    }
+    setSelectedChannels(updatedSelectedChannels);
+
+    if (updatedSelectedChannels.length > 0) {
+      return updatedSelectedChannels;
+    }
+
+    return null;
+  };
+
+  const handleToggleSelectAll = () => {
+    console.log(selectedChannels, 'checkall');
+    if (!selectAll) {
+      setSelectedChannels(pages.map((channel) => channel.id));
+    } else {
+      setSelectedChannels([]);
+    }
+    setSelectAll(!selectAll);
+  };
+
   return (
     <>
       <div className="mt-1 mb-4 border-bottom"> </div>
       <div className="list_content ms-3 me-3">
         <div className="py-2 px-3 d-flex rounded-2 border-bottom ">
+          <div className="col-1 text-start">
+            <Form.Check
+              type="checkbox"
+              id="selectAll"
+              checked={selectAll}
+              onChange={handleToggleSelectAll}
+            />
+          </div>
           <div className="col col-md-4">{t('txt_name_personas')}</div>
           <div className="col-2 d-none d-md-block">{t('txt_type')}</div>
           {channelType.id === 'linkedin_group' && (
             <div className="col-1 d-none d-md-block">{t('txt_group_type')}</div>
           )}
           <div
-            className={channelType.id === 'linkedin_group' ? 'col-3' : 'col-4 d-none d-md-block'}
+            className={channelType.id === 'linkedin_group' ? 'col-2' : 'col-3 d-none d-md-block'}
           >
             {t('txt_status')}
           </div>
@@ -70,6 +113,14 @@ const ChannelTypeChannels = observer(({ channelType }) => {
             className={`p-3 d-flex align-items-center ${index ? 'border-top-1' : ''}`}
             key={Math.random(40, 200)}
           >
+            <div className="col-1 text-start">
+              <Form.Check
+                type="checkbox"
+                checked={selectedChannels.includes(channel.id)}
+                onChange={() => handleCheckboxChange(channel.id)}
+                className="ms-auto"
+              />
+            </div>
             <div className="col col-md-4">
               <div className="d-flex align-items-center">
                 <ComponentImage
@@ -91,7 +142,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
             {channel.groupType && (
               <div className="col-1 d-none d-md-block">{channel.groupType}</div>
             )}
-            <div className={`col ${channel.groupType ? 'col-3' : 'col-4'} `}>
+            <div className={`col ${channel.groupType ? 'col-2' : 'col-3'} `}>
               {channel.connected ? 'Connected' : <ChannelTypeChannelToken channel={channel} />}
             </div>
             <div className="col-md-1">
