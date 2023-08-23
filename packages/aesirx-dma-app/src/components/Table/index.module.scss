@@ -1,0 +1,46 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+ */
+
+.btn {
+  width: 35px;
+  height: 35px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.btn_toggle {
+  &:after {
+    display: none !important;
+  }
+}
+
+.ct_cell {
+  &:first-child {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+
+    img {
+      display: block;
+    }
+  }
+
+  &:nth-child(2) {
+    font-size: 14px;
+  }
+
+  &:nth-child(3) {
+    margin-top: 40px;
+  }
+
+  &:last-child {
+    opacity: 0.75;
+    margin-top: 10px;
+  }
+}

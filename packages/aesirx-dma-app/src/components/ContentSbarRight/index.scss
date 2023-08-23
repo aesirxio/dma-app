@@ -1,0 +1,47 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+ */
+
+@import 'aesirx-uikit/dist/utils/bootstrap.scss';
+
+.wr_sbar_right {
+  .nav-pills {
+    .nav-link {
+      color: $black;
+
+      &.active {
+        color: $color-blue-3 !important;
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+
+// .wr_tab_content {
+//   padding-left: 20px;
+// }
+
+.btn_collapse_preview {
+  width: 20px;
+  height: 20px;
+
+  &:before {
+    content: '';
+    border-right: 20px solid $color-blue-6;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    height: 110px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+.wr_collapse_preview {
+  left: -20px !important;
+}

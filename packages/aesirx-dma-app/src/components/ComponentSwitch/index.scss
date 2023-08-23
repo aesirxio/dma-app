@@ -1,0 +1,22 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+ */
+
+.wr_advance {
+  .form-label {
+    width: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .form-switch {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    .form-check-input {
+      margin-left: 0;
+      width: 40px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+ */
+
+.block__news {
+  .lazy-load-image-loaded {
+    display: block !important;
+  }
+  > a {
+    overflow: hidden;
+    text-decoration: none;
+    span {
+      overflow: hidden;
+    }
+    img {
+      transform: scale(1);
+      transition: transform 0.5s ease;
+    }
+    &:hover {
+      @media (min-width: 1025px) {
+        img {
+          transform: scale(1.1);
+          transition: transform 0.5s ease;
+        }
+      }
+    }
+  }
+}

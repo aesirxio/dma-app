@@ -1,0 +1,114 @@
+/*
+ * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
+ * @license     GNU General Public License version 3, see LICENSE.
+ */
+
+@import 'react-big-calendar/lib/sass/styles.scss';
+@import 'aesirx-uikit/dist/utils/bootstrap.scss';
+
+.back-next-buttons {
+  button {
+    width: 32px;
+    height: 32px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.btn_today {
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+.rbc-month-header {
+  background-color: $color-blue-4;
+}
+
+.rbc-off-range-bg {
+  background-color: transparent;
+}
+
+.sbar_calendar {
+  .rbc-month-header {
+    border-radius: 5px;
+  }
+
+  .rbc-month-view {
+    border: 0;
+  }
+
+  .rbc-header {
+    font-weight: normal;
+  }
+
+  .rbc-day-bg {
+    border-radius: 5px;
+
+    + .rbc-day-bg {
+      border-left: 0;
+    }
+  }
+
+  .rbc-month-row {
+    justify-content: center;
+
+    + .rbc-month-row {
+      border-top: 0;
+    }
+  }
+
+  .rbc-date-cell {
+    text-align: center;
+  }
+
+  .rbc-today {
+    background-color: $color-blue-3;
+  }
+
+  .rbc-current {
+    color: $green;
+  }
+
+  .rbc-date-cell.rbc-now {
+    color: $white;
+  }
+}
+.small-calendar {
+  .rbc-row-content {
+    .rbc-row:not(:first-child) {
+      // position: absolute;
+      // bottom: 0;
+      // left: 0;
+      // height: 6px;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -8px;
+      height: 15px;
+      a {
+        display: none;
+      }
+      .rbc-event {
+        height: 100%;
+        padding: 0;
+        .rbc-event-content {
+          height: 100%;
+          position: relative;
+          > div {
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-100%);
+          }
+        }
+      }
+    }
+  }
+  .post_events {
+    padding-top: 20px;
+  }
+}
