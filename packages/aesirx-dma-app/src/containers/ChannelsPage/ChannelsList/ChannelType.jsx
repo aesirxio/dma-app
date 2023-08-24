@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { observer } from 'mobx-react';
 import { withTranslation } from 'react-i18next';
 import ChannelTypeConnectButton from './ChannelTypeConnectButton';
