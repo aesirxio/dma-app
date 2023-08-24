@@ -70,6 +70,7 @@ const CampaignsList = observer(
                 className="ms-2 fs-14 fw-normal"
                 onClick={(e) => this.handleEdit(e, row.original, pagination.page)}
               >
+                {console.log(row, 'nhat')}
                 {row.values.expander}
               </span>
             </div>

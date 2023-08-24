@@ -16,21 +16,19 @@ import {
   useSelectedChannels,
   useChannelsViewModel,
 } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
-import PAGE_STATUS from 'constants/PageStatus';
+import { Helper } from 'aesirx-lib';
 
 const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
   const list = channelCategory.getList();
   const { channelsListViewModel } = useChannelsViewModel();
   const [loading, setLoading] = useState(false);
-  const { tableStatus } = channelsListViewModel;
-  console.log(PAGE_STATUS, tableStatus, 'lo');
   if (list.length === 0) {
     return null;
   }
   const { t } = useTranslation();
   const { selectedChannels, setSelectedChannels } = useSelectedChannels();
 
-  if (tableStatus === PAGE_STATUS.LOADING) {
+  if (loading) {
     return (
       <div className="d-flex justify-content-center m-2">
         <div className="spinner-border" role="status">
@@ -41,24 +39,26 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
   }
   const handleRemoveSelectedChannels = async (channelName, channel) => {
     if (!selectedChannels || selectedChannels.length === 0) {
-      notify('', 'error');
+      notify('Please choose one of the channels', 'error');
       return;
     }
     try {
-      setLoading(true);
-      const removeSuccess = await channelsListViewModel.bulkRemoveChannel(channelName, channel);
+      if (Helper.confirmDeleteItem()) {
+        setLoading(true);
+        const removeSuccess = await channelsListViewModel.bulkRemoveChannel(channelName, channel);
 
-      if (removeSuccess) {
-        setLoading(false);
-        setSelectedChannels([]);
-        notify('', 'success');
-      } else {
-        setLoading(false);
-        notify('', 'error');
+        if (removeSuccess) {
+          setSelectedChannels([]);
+          setLoading(false);
+          notify('Removed successfully', 'success');
+        }
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       }
     } catch (error) {
       setLoading(false);
-      notify('', 'error');
+      notify('Remove failed', 'error');
     }
   };
 
