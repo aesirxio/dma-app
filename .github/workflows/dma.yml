@@ -23,7 +23,7 @@ jobs:
           node-version: 16
 
       - run: git submodule update --init --recursive
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
       - run: yarn build
 
       - name: Install SSH Key
