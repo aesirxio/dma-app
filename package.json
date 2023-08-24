@@ -18,8 +18,8 @@
     "json5": "^2"
   },
   "scripts": {
-    "prepare": "nx run-many -t build -p aesirx-uikit aesirx-lib && nx run-many -t build:lib --exclude aesirx-uikit aesirx-lib aesirx-dma-app",
-    "dev": "nx run-many -t dev",
+    "prepare": "nx run-many -t build -p aesirx-uikit aesirx-lib && nx run-many -t build:lib --exclude aesirx-uikit aesirx-lib aesirx-dma-app aesirx-dam-app",
+    "dev": "nx run aesirx-dam-app:dev:lib && nx run-many -t dev --exclude aesirx-dam-app",
     "build": "nx run aesirx-dma-app:build",
     "build:lib": "nx run aesirx-dma-app:build:lib",
     "lint:check": "nx run aesirx-dma-app:lint:check",
