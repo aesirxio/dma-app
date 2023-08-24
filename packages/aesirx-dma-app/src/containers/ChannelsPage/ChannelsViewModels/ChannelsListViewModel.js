@@ -29,8 +29,6 @@ class ChannelsListViewModel {
 
   init = async () => {
     try {
-      this.tableStatus = PAGE_STATUS.LOADING;
-
       const channelsData = await this.channelsStore.getChannelsData();
       const memberProfile = await this.profileStore.getMemberProfile(
         Storage.getItem(AUTHORIZATION_KEY.MEMBER_ID) ?? 0
@@ -107,13 +105,40 @@ class ChannelsListViewModel {
           break;
 
         case 'removeChannel':
-          msg = `Removed ${channel.name} successfully`;
+          msg = `Removed successfully`;
 
           if (status) {
             notify(msg);
             channelType.pages = channelType.pages.filter((item) => item.id !== channel.id);
           } else {
             throw new Error(`Update ${channel.id} failed`);
+          }
+
+          break;
+
+        default:
+          break;
+      }
+    } catch (error) {
+      this.catchError(error);
+      return false;
+    }
+  };
+
+  bulk = async (action, channelType, channelIds) => {
+    try {
+      let msg = '';
+      let status = await this.channelsStore[action](channelType.id, channelIds);
+
+      switch (action) {
+        case 'removeChannel':
+          msg = `Removed successfully`;
+
+          if (status) {
+            notify(msg);
+            channelType.pages = channelType.pages.filter((item) => !channelIds.includes(item.id));
+          } else {
+            throw new Error(`Update failed`);
           }
 
           break;

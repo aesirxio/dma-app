@@ -62,9 +62,9 @@ export default class ChannelsStore {
     }
   };
 
-  removeChannel = async (channelType, channelId) => {
+  removeChannel = async (channelType, channelIds) => {
     try {
-      const status = await this.channelService.removeChannel(channelType, channelId);
+      const status = await this.channelService.removeChannel(channelType, channelIds);
 
       return status;
     } catch (error) {
