@@ -232,7 +232,7 @@ const ContentsList = observer(
           accessor: CONTENT_FIELD_KEY.STATUS,
           className: 'status',
           Cell: ({ value }) => (
-            <span className={`badge bg-${value} mw-100 d-table-cell align-middle`}>
+            <span className={`badge bg-${value} mw-100 h-35 d-table-cell align-middle`}>
               {CONTENT_STATUS[value]}
             </span>
           ),
