@@ -16,15 +16,19 @@ import ChannelTypeChannelToken from './ChannelTypeChannelToken';
 import ChannelTypeChannelsEnable from './ChannelTypeChannelsEnable';
 import { useTranslation } from 'react-i18next';
 import { withTranslation } from 'react-i18next';
+import { Form } from 'react-bootstrap';
 
 const ChannelTypeChannels = observer(({ channelType }) => {
   const context = useContext(ChannelsViewModelContext);
 
   const [loading, setLoading] = useState(false);
   const { t } = useTranslation();
-  const pages = channelType.getPages();
 
-  if (pages.length === 0) {
+  const channels = [...channelType?.pages];
+  
+  const [selected, setSelected] = useState([]);
+
+  if (channels.length === 0) {
     return null;
   }
 
@@ -46,11 +50,34 @@ const ChannelTypeChannels = observer(({ channelType }) => {
     }
   };
 
+  const handleOnSelectAll = ({ target }) => {
+    channels.forEach((channel) => {
+      handleOnSelect(target, channel);
+    });
+  };
+
+  const handleOnSelect = (target, channel) => {
+    channel.selected = target.checked;
+
+    if (target.checked) {
+      setSelected([...selected, channel.id]);
+    } else {
+      setSelected(selected.filter((item) => item != channel.id));
+    }
+  };
+
   return (
     <>
       <div className="mt-1 mb-4 border-bottom"> </div>
       <div className="list_content ms-3 me-3">
         <div className="py-2 px-3 d-flex rounded-2 border-bottom ">
+          <div className="text-start me-2">
+            <Form.Check
+              type="checkbox"
+              className="ms-auto checkbox-channel"
+              onChange={handleOnSelectAll}
+            />
+          </div>
           <div className="col col-md-4">{t('txt_name_personas')}</div>
           <div className="col-2 d-none d-md-block">{t('txt_type')}</div>
           {channelType.id === 'linkedin_group' && (
@@ -65,11 +92,19 @@ const ChannelTypeChannels = observer(({ channelType }) => {
           <div className="col-md-1 pe-4">{t('txt_action')}</div>
         </div>
 
-        {pages.map((channel, index) => (
+        {channels.map((channel, index) => (
           <div
             className={`p-3 d-flex align-items-center ${index ? 'border-top-1' : ''}`}
             key={Math.random(40, 200)}
           >
+            <div className="text-start me-2">
+              <Form.Check
+                type="checkbox"
+                className="ms-auto checkbox-channel"
+                onChange={(event) => handleOnSelect(event.target, channel)}
+                checked={channel.selected}
+              />
+            </div>
             <div className="col col-md-4">
               <div className="d-flex align-items-center">
                 <ComponentImage
@@ -77,11 +112,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
                   hieght={40}
                   placeholderSrc={'/assets/images/default_channel_image.png'}
                   className="img-avatar rounded"
-                  src={
-                    channel.avatar
-                      ? channel.avatar
-                      : `/assets/images/${channel.channelTypeName}.png`
-                  }
+                  src={channel.avatar ? channel.avatar : `/assets/images/${channel.channelTypeName}.png`}
                   alt={channel.name}
                 />
                 <span className="ms-2">{channel.name}</span>
@@ -95,7 +126,6 @@ const ChannelTypeChannels = observer(({ channelType }) => {
               {channel.connected ? 'Connected' : <ChannelTypeChannelToken channel={channel} />}
             </div>
             <div className="col-md-1">
-              {' '}
               <ChannelTypeChannelsEnable channel={channel} channelType={channelType} />
             </div>
             <div className="col-md-1 text-end">

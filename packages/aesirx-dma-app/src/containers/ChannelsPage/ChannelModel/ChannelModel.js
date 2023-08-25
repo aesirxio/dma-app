@@ -13,7 +13,8 @@ class ChannelCategoryModel {
   constructor(data) {
     this.id = data[CHANNEL_CATEGORY_FIELD_KEY.ID] ?? 0;
     this.name = data[CHANNEL_CATEGORY_FIELD_KEY.NAME] ?? '';
-    this.list = data[CHANNEL_CATEGORY_FIELD_KEY.LIST] ?? [];
+    this.list =
+      data[CHANNEL_CATEGORY_FIELD_KEY.LIST]?.map((item) => new ChannelTypeModel(item)) ?? [];
   }
 
   getList = () => this.list.map((item) => new ChannelTypeModel(item));
@@ -24,7 +25,7 @@ class ChannelTypeModel {
     this.id = data[CHANNEL_TYPE_FIELD_KEY.ID] ?? 0;
     this.name = data[CHANNEL_TYPE_FIELD_KEY.NAME] ?? '';
     this.image = data[CHANNEL_TYPE_FIELD_KEY.IMAGE] ?? '';
-    this.pages = data[CHANNEL_TYPE_FIELD_KEY.PAGES] ?? [];
+    this.pages = data[CHANNEL_TYPE_FIELD_KEY.PAGES]?.map((item) => new ChannelModel(item)) ?? [];
     this.status = data[CHANNEL_TYPE_FIELD_KEY.STATUS] ?? 100;
   }
 
