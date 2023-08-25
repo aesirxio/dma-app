@@ -57,8 +57,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
     });
     setSelectAllChecked(target.checked);
     if (target.checked) {
-      const selectedIds = channels.map((channel) => channel.id);
-      console.log('Selected all channel IDs:', selectedIds);
+      channels.map((channel) => channel.id);
     }
   };
 
@@ -110,7 +109,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
             className={`p-3 d-flex align-items-center content-item ${
               selectAllChecked || selected.includes(channel.id) ? 'selected-item' : ''
             } ${index ? 'border-top-1' : ''}`}
-            key={channel.id}
+            key={Math.random(40, 200)}
           >
             <div className="text-start me-2">
               <Form.Check

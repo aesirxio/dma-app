@@ -29,9 +29,7 @@ const ChannelTypeAction = observer(({ channelType, handleOnRemove }) => {
             <span className="visually-hidden">Loading...</span>
           </div>
         )}
-        <span className="text-danger fw-medium d-none d-md-block ">
-          {t('txt_bulk_disconnect')}
-        </span>
+        <span className="text-danger fw-medium d-none d-md-block ">{t('txt_bulk_disconnect')}</span>
       </button>
     </div>
   );

@@ -29,12 +29,11 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
       setLoading(true);
       const selectedChannels = channelType?.pages.filter((channel) => channel.selected);
       const channelIds = selectedChannels.map((channel) => channel.id);
-  
+
       await context.getChannelsListViewModel().bulk('removeChannel', channelType, channelIds);
       setLoading(false);
     }
   };
-  
 
   const { t } = useTranslation();
 
@@ -61,7 +60,7 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
                 )}
                 <span className="ms-2 fs-4 text-body text-capitalize">{channelType.name}</span>
               </div>
-              
+
               {channelType.pages > '0' && (
                 <div className="me-3 text-center">
                   {loading ? (
@@ -76,7 +75,7 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
               {(() => {
                 switch (channelType.status) {
                   case '100':
-                    return <div className="fs-6 text-nowrap">{t('txt_coming_soon')}</div>;
+                    return <div className="fs-14 text-nowrap">{t('txt_coming_soon')}</div>;
                   case '1':
                     return (
                       <ChannelTypeConnectButton
