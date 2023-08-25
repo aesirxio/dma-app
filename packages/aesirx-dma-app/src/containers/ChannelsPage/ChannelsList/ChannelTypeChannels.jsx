@@ -25,8 +25,9 @@ const ChannelTypeChannels = observer(({ channelType }) => {
   const { t } = useTranslation();
 
   const channels = [...channelType?.pages];
-  
+
   const [selected, setSelected] = useState([]);
+  const [selectAllChecked, setSelectAllChecked] = useState(false);
 
   if (channels.length === 0) {
     return null;
@@ -54,6 +55,11 @@ const ChannelTypeChannels = observer(({ channelType }) => {
     channels.forEach((channel) => {
       handleOnSelect(target, channel);
     });
+    setSelectAllChecked(target.checked);
+    if (target.checked) {
+      const selectedIds = channels.map((channel) => channel.id);
+      console.log('Selected all channel IDs:', selectedIds);
+    }
   };
 
   const handleOnSelect = (target, channel) => {
@@ -64,18 +70,25 @@ const ChannelTypeChannels = observer(({ channelType }) => {
     } else {
       setSelected(selected.filter((item) => item != channel.id));
     }
+    const allChannelsSelected = channels.every((channel) => channel.selected);
+    setSelectAllChecked(allChannelsSelected);
   };
 
   return (
     <>
       <div className="mt-1 mb-4 border-bottom"> </div>
-      <div className="list_content ms-3 me-3">
-        <div className="py-2 px-3 d-flex rounded-2 border-bottom ">
+      <div className="list_content">
+        <div
+          className={`py-2 px-3 d-flex rounded-2 border-bottom ${
+            selectAllChecked ? 'select-all-checked' : ''
+          }`}
+        >
           <div className="text-start me-2">
             <Form.Check
               type="checkbox"
               className="ms-auto checkbox-channel"
               onChange={handleOnSelectAll}
+              checked={selectAllChecked}
             />
           </div>
           <div className="col col-md-4">{t('txt_name_personas')}</div>
@@ -94,8 +107,10 @@ const ChannelTypeChannels = observer(({ channelType }) => {
 
         {channels.map((channel, index) => (
           <div
-            className={`p-3 d-flex align-items-center ${index ? 'border-top-1' : ''}`}
-            key={Math.random(40, 200)}
+            className={`p-3 d-flex align-items-center content-item ${
+              selectAllChecked || selected.includes(channel.id) ? 'selected-item' : ''
+            } ${index ? 'border-top-1' : ''}`}
+            key={channel.id}
           >
             <div className="text-start me-2">
               <Form.Check
@@ -112,7 +127,11 @@ const ChannelTypeChannels = observer(({ channelType }) => {
                   hieght={40}
                   placeholderSrc={'/assets/images/default_channel_image.png'}
                   className="img-avatar rounded"
-                  src={channel.avatar ? channel.avatar : `/assets/images/${channel.channelTypeName}.png`}
+                  src={
+                    channel.avatar
+                      ? channel.avatar
+                      : `/assets/images/${channel.channelTypeName}.png`
+                  }
                   alt={channel.name}
                 />
                 <span className="ms-2">{channel.name}</span>
@@ -128,7 +147,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
             <div className="col-md-1">
               <ChannelTypeChannelsEnable channel={channel} channelType={channelType} />
             </div>
-            <div className="col-md-1 text-end">
+            <div className="col-md-1 pe-4">
               <ChannelTypeChannelsAction
                 channelType={channelType}
                 channel={channel}

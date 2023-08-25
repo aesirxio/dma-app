@@ -16,8 +16,8 @@ const ChannelTypeChannelsAction = observer(({ channel, removeChannel }) => {
   return (
     <div className="d-flex flex-wrap flex-md-nowrap justify-content-end align-content-center">
       <button
-        className="cursor-pointer d-flex align-items-center bg-white justify-content-center btn btn-outline-secondary border-1 py-2 px-2"
-        onClick={() => removeChannel(channel)}
+        className="cursor-pointer d-flex align-items-center bg-white justify-content-center btn btn-outline-secondary border-1 py-2 px-2 me-3"
+        onClick={() => {removeChannel(channel)}}
       >
         <span className="px-2 text-body fw-medium d-none d-md-block ">{t('txt_disconnect')}</span>
       </button>

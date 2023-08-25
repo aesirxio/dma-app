@@ -5,3 +5,27 @@
 
 @import 'aesirx-uikit/dist/utils/bootstrap.scss';
 @import '~bootstrap/scss/accordion';
+
+.list_content {
+  .checkbox-channel {
+    opacity: 0;
+  }
+  .content-item.selected-item {
+    border-bottom: 1px solid $success;
+    border-top: 1px solid $success;
+    background-color: rgba(26, 179, 148, 0.1);
+    .checkbox-channel {
+      opacity: 1;
+    }
+  }
+  .select-all-checked {
+    .checkbox-channel {
+      opacity: 1;
+    }
+  }
+  &:hover {
+    .checkbox-channel {
+      opacity: 1;
+    }
+  }
+}

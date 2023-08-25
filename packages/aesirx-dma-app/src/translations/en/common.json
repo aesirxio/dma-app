@@ -213,5 +213,6 @@
   "txt_submenu_group_management":"Group Management",
   "txt_content":"Content",
   "txt_disconnect":"Disconnect",
-  "txt_failed": "Failed"
+  "txt_failed": "Failed",
+  "txt_bulk_disconnect":"Bulk Disconnect"
 }

@@ -16,7 +16,7 @@ import { Helper } from 'aesirx-lib';
 
 const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
   const list = channelCategory.list;
-  const [, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   if (list.length === 0) {
     return null;
@@ -27,15 +27,14 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
   const handleOnRemove = async (channelType) => {
     if (Helper.confirmDeleteItem()) {
       setLoading(true);
-      const channelIds = channelType?.pages
-        .filter((channel) => channel.selected)
-        .map((channel) => channel.id);
-
+      const selectedChannels = channelType?.pages.filter((channel) => channel.selected);
+      const channelIds = selectedChannels.map((channel) => channel.id);
+  
       await context.getChannelsListViewModel().bulk('removeChannel', channelType, channelIds);
-
       setLoading(false);
     }
   };
+  
 
   const { t } = useTranslation();
 
@@ -62,7 +61,18 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
                 )}
                 <span className="ms-2 fs-4 text-body text-capitalize">{channelType.name}</span>
               </div>
-              <ChannelTypeAction channelType={channelType} handleOnRemove={handleOnRemove} />
+              
+              {channelType.pages > '0' && (
+                <div className="me-3 text-center">
+                  {loading ? (
+                    <div className="spinner-border" role="status">
+                      <span className="visually-hidden">Loading...</span>
+                    </div>
+                  ) : (
+                    <ChannelTypeAction channelType={channelType} handleOnRemove={handleOnRemove} />
+                  )}
+                </div>
+              )}
               {(() => {
                 switch (channelType.status) {
                   case '100':
