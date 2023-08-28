@@ -10,13 +10,14 @@ import { Accordion, AccordionButton, Form } from 'react-bootstrap';
 
 const ChannelChannelComponent = observer(({ channelData }) => {
   const [checked, setChecked] = useState(true);
+  const [update, setUpdate] = useState(true);
   const logoSocial = channelData.img ? channelData.img : `/assets/images/${channelData.id}.png`;
 
   const channels = [...channelData?.pages];
-  console.log(channelData, 'channels');
 
   const handleOnClick = (target, channel) => {
     channel.removed = !target.checked;
+    setUpdate(!update);
   };
 
   const handleOnCheckAll = ({ target }) => {
