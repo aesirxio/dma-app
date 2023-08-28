@@ -25,7 +25,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
   const { t } = useTranslation();
 
   const channels = [...channelType?.pages];
-  
+
   const [selected, setSelected] = useState([]);
 
   if (channels.length === 0) {
@@ -112,7 +112,11 @@ const ChannelTypeChannels = observer(({ channelType }) => {
                   hieght={40}
                   placeholderSrc={'/assets/images/default_channel_image.png'}
                   className="img-avatar rounded"
-                  src={channel.avatar ? channel.avatar : `/assets/images/${channel.channelTypeName}.png`}
+                  src={
+                    channel.avatar
+                      ? channel.avatar
+                      : `/assets/images/${channel.channelTypeName}.png`
+                  }
                   alt={channel.name}
                 />
                 <span className="ms-2">{channel.name}</span>
