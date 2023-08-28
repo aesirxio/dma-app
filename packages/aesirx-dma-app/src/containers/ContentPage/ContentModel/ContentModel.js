@@ -214,11 +214,7 @@ class ContentModel {
     if (this.entity === 'category') {
       return formatDate(this.createDate, true);
     } else if (this.entity === 'item') {
-      if (this.getStatus() === 'schedule') {
-        return formatDate(this.getPublishTime(), true);
-      } else {
-        return formatDate(this.createDate, true);
-      }
+      return formatDate(this.getPublishTime(), true);
     } else {
       return '';
     }
