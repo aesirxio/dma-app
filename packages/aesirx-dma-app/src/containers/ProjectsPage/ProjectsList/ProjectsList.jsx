@@ -64,6 +64,37 @@ const ProjectsList = observer(
         {
           Header: t('txt_status'),
           accessor: PROJECT_COLUMN_INDICATOR.STATUS,
+          Cell: ({ value }) => {
+            if (value === 1) {
+              return (
+                <span
+                  className={`badge ${t(
+                    'txt_running'
+                  )} bg-posted mw-100 h-35 d-inline align-middle`}
+                >
+                  {t('txt_processing')}
+                </span>
+              );
+            } else if (value === 2) {
+              return (
+                <span
+                  className={`badge ${t(
+                    'txt_schedule'
+                  )} bg-schedule mw-100 h-35 d-inline align-middle`}
+                >
+                  {t('txt_pedding')}
+                </span>
+              );
+            } else {
+              return (
+                <span
+                  className={`badge ${t('txt_failed')} bg-failed mw-100 h-35 d-inline align-middle`}
+                >
+                  {t('txt_failed')}
+                </span>
+              );
+            }
+          },
         },
         // {
         //   Header: 'Lead',
