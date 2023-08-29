@@ -211,5 +211,6 @@
   "txt_group_type":"Тип групи",
   "txt_content":"Вміст",
   "txt_disconnect":"Відключити",
-  "txt_failed": "Помилка"
+  "txt_failed": "Помилка",
+  "txt_bulk_disconnect": "Масове відключення"
 }

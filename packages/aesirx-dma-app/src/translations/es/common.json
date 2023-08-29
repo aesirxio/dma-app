@@ -211,5 +211,6 @@
   "txt_group_type":"Tipo de grupo",
   "txt_content":"Contenido",
   "txt_disconnect":"Desconectar",
-  "txt_failed": "Error"
+  "txt_failed": "Error",
+  "txt_bulk_disconnect": "Desconexión masiva"
 }

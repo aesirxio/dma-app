@@ -209,5 +209,6 @@
   "txt_group_type":"Gruppetype",
   "txt_content":"Indhold",
   "txt_disconnect": "Afbryd forbindelsen",
-  "txt_failed": "Mislykkedes"
+  "txt_failed": "Mislykkedes",
+  "txt_bulk_disconnect": "Massefrakobling"
 }
