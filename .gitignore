@@ -5,3 +5,4 @@
 yalc.lock
 .nx/installation
 .nx/cache
+.env
