@@ -20,6 +20,7 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
 
   const [connecting, setConnecting] = useState(false);
   const { t } = useTranslation();
+  const connected = channelType.pages.length;
   const handleOnClick = async () => {
     if (channelsListViewModel.memberProfile?.allow_create_item) {
       if (
@@ -47,16 +48,25 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
     );
   }
 
+
   return (
-    <button
-      className="btn btn-success d-flex justify-content-center align-items-center p-2 w-110px"
-      onClick={handleOnClick}
-    >
-      <i className="fs-5 me-2">
-        <FontAwesomeIcon icon={faPlus} />
-      </i>
-      {connecting ? t('txt_connecting') : t('txt_connect')}
-    </button>
+    <>
+      {connected > 0 ? (
+        <button className="btn btn-success d-flex justify-content-center align-items-center p-2 w-110px" disabled>
+          {t('txt_connected')}
+        </button>
+      ) : (
+        <button
+          className="btn btn-success d-flex justify-content-center align-items-center p-2 w-110px"
+          onClick={handleOnClick}
+        >
+          <i className="me-2">
+            <FontAwesomeIcon icon={faPlus} />
+          </i>
+          {connecting ? t('txt_connecting') : t('txt_connect')}
+        </button>
+      )}
+    </>
   );
 });
 

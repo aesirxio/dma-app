@@ -210,5 +210,6 @@
   "txt_content":"Indhold",
   "txt_disconnect": "Afbryd forbindelsen",
   "txt_failed": "Mislykkedes",
-  "txt_bulk_disconnect": "Massefrakobling"
+  "txt_bulk_disconnect": "Massefrakobling",
+  "txt_connected": "Forbundet"
 }
