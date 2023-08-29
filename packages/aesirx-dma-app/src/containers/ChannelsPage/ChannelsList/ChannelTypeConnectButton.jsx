@@ -48,11 +48,13 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
     );
   }
 
-
   return (
     <>
       {connected > 0 ? (
-        <button className="btn btn-success d-flex justify-content-center align-items-center p-2 w-110px" disabled>
+        <button
+          className="btn btn-success d-flex justify-content-center align-items-center p-2 w-110px"
+          disabled
+        >
           {t('txt_connected')}
         </button>
       ) : (
