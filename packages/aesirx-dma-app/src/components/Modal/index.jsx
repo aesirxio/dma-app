@@ -15,7 +15,13 @@ class ModalComponent extends React.Component {
     let { header, footer, body, show, onHide, dialogClassName } = this.props;
 
     return (
-      <Modal show={show} onHide={onHide} centered dialogClassName={dialogClassName}>
+      <Modal
+        show={show}
+        className={`aesirxui-modal`}
+        onHide={onHide}
+        centered
+        dialogClassName={dialogClassName}
+      >
         <Modal.Header closeButton className="px-4 border-bottom-0 text-body">
           {header && <Modal.Title>{header}</Modal.Title>}
         </Modal.Header>
