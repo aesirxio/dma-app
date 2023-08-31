@@ -36,6 +36,9 @@ const ChannelChannelComponent = observer(({ channelData }) => {
             <ComponentImage
               alt={channelData.name}
               src={logoSocial}
+              width={32}
+              hieght={32}
+              placeholderSrc={'/assets/images/default_channel_image.png'}
               className="img-avatar-32 me-3"
             />
             <span>{channelData.name}</span>

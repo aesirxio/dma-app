@@ -82,26 +82,26 @@ const ChannelTypeChannels = observer(({ channelType }) => {
             selectAllChecked ? 'select-all-checked' : ''
           }`}
         >
-          <div className="text-start me-2">
-            <Form.Check
-              type="checkbox"
-              className="ms-auto checkbox-channel"
-              onChange={handleOnSelectAll}
-              checked={selectAllChecked}
-            />
+          <div className="col col-md-3 col-xl-4">
+            <div className="d-flex align-items-center">
+              <div className="text-start me-3">
+                <Form.Check
+                  type="checkbox"
+                  className="ms-auto checkbox-channel"
+                  onChange={handleOnSelectAll}
+                  checked={selectAllChecked}
+                />
+              </div>
+              {t('txt_name_personas')}
+            </div>
           </div>
-          <div className="col col-md-4">{t('txt_name_personas')}</div>
-          <div className="col-2 d-none d-md-block">{t('txt_type')}</div>
+          <div className="col-1 d-none d-md-block">{t('txt_type')}</div>
           {channelType.id === 'linkedin_group' && (
-            <div className="col-1 d-none d-md-block">{t('txt_group_type')}</div>
+            <div className="col-2 d-none d-md-block">{t('txt_group_type')}</div>
           )}
-          <div
-            className={channelType.id === 'linkedin_group' ? 'col-3' : 'col-4 d-none d-md-block'}
-          >
-            {t('txt_status')}
-          </div>
-          <div className="col-md-1 text-center">{t('txt_enable')}</div>
-          <div className="col-md-1 pe-4">{t('txt_action')}</div>
+          <div className={`col`}>{t('txt_status')}</div>
+          <div className="col-1 text-end">{t('txt_enable')}</div>
+          <div className="col-3 col-lg-2 text-center">{t('txt_action')}</div>
         </div>
 
         {channels.map((channel, index) => (
@@ -111,42 +111,44 @@ const ChannelTypeChannels = observer(({ channelType }) => {
             } ${index ? 'border-top-1' : ''}`}
             key={Math.random(40, 200)}
           >
-            <div className="text-start me-2">
-              <Form.Check
-                type="checkbox"
-                className="ms-auto checkbox-channel"
-                onChange={(event) => handleOnSelect(event.target, channel)}
-                checked={channel.selected}
-              />
-            </div>
-            <div className="col col-md-4">
+            <div className="col col-md-3 col-xl-4">
               <div className="d-flex align-items-center">
-                <ComponentImage
-                  width={40}
-                  hieght={40}
-                  placeholderSrc={'/assets/images/default_channel_image.png'}
-                  className="img-avatar rounded"
-                  src={
-                    channel.avatar
-                      ? channel.avatar
-                      : `/assets/images/${channel.channelTypeName}.png`
-                  }
-                  alt={channel.name}
-                />
-                <span className="ms-2">{channel.name}</span>
+                <div className="text-start me-3">
+                  <Form.Check
+                    type="checkbox"
+                    className="ms-auto checkbox-channel"
+                    onChange={(event) => handleOnSelect(event.target, channel)}
+                    checked={channel.selected}
+                  />
+                </div>
+                <div className="d-flex align-items-center">
+                  <ComponentImage
+                    width={40}
+                    hieght={40}
+                    placeholderSrc={'/assets/images/default_channel_image.png'}
+                    className="img-avatar rounded"
+                    src={
+                      channel.avatar
+                        ? channel.avatar
+                        : `/assets/images/${channel.channelTypeName}.png`
+                    }
+                    alt={channel.name}
+                  />
+                  <span className="ms-2">{channel.name}</span>
+                </div>
               </div>
             </div>
-            <div className="col-2 d-none d-md-block">{channel.type}</div>
+            <div className="col-1 d-none d-md-block">{channel.type}</div>
             {channel.groupType && (
-              <div className="col-1 d-none d-md-block">{channel.groupType}</div>
+              <div className="col-2 d-none d-md-block">{channel.groupType}</div>
             )}
-            <div className={`col ${channel.groupType ? 'col-3' : 'col-4'} `}>
+            <div className={`col`}>
               {channel.connected ? 'Connected' : <ChannelTypeChannelToken channel={channel} />}
             </div>
-            <div className="col-md-1">
+            <div className="col-1 text-end">
               <ChannelTypeChannelsEnable channel={channel} channelType={channelType} />
             </div>
-            <div className="col-md-1 pe-4">
+            <div className="col-3 col-lg-2">
               <ChannelTypeChannelsAction
                 channelType={channelType}
                 channel={channel}

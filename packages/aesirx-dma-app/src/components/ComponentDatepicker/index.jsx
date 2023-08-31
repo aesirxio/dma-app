@@ -12,8 +12,6 @@ import { withTranslation } from 'react-i18next';
 // import { faCalendarDay } from '@fortawesome/free-solid-svg-icons/faCalendarDay';
 // import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 
-import './index.scss';
-
 import vi from 'date-fns/locale/vi';
 import de from 'date-fns/locale/de';
 import uk from 'date-fns/locale/uk';

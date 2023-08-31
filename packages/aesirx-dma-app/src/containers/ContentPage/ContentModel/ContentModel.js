@@ -185,6 +185,11 @@ class ContentModel {
     return publishType;
   };
 
+  getPostType = () => {
+    const channelsType = this.getPublishType();
+    return Object.values(channelsType)?.[0] ?? 'post_now';
+  };
+
   convertDateTime = (date, time = null) => {
     if (!date) return undefined;
     const [year, month, day] = date.split('-');
@@ -214,7 +219,11 @@ class ContentModel {
     if (this.entity === 'category') {
       return formatDate(this.createDate, true);
     } else if (this.entity === 'item') {
-      return formatDate(this.getPublishTime(), true);
+      if (this.getPostType() == 'schedule_post') {
+        return formatDate(this.getPublishTime(), true);
+      } else {
+        return formatDate(this.createDate, true);
+      }
     } else {
       return '';
     }

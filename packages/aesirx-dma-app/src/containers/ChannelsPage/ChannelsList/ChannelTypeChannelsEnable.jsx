@@ -20,7 +20,7 @@ const ChannelTypeChannelsEnable = observer(({ channelType, channel }) => {
   };
 
   return (
-    <div className="d-flex flex-wrap flex-md-nowrap justify-content-center align-content-center ms-2">
+    <div className="d-flex flex-wrap flex-md-nowrap justify-content-end align-content-center ms-2">
       <div className="form-check form-switch">
         <input
           className="form-check-input"

@@ -50,7 +50,7 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
               data-bs-toggle="collapse"
               data-bs-target={`#flush-collapse${index}`}
             >
-              <div className="w-100">
+              <div className="flex-grow-1">
                 {channelType.image && (
                   <ComponentImage
                     className="img-avatar"

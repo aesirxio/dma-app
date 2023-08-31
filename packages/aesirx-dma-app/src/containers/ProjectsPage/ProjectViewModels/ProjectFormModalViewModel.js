@@ -83,7 +83,7 @@ class ProjectFormModalViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    notify(error.message);
+    notify(error.message, 'error');
   };
 
   callbackOnSuccessHandler = (projectId) => {
