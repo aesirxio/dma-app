@@ -187,7 +187,7 @@ class ContentModel {
 
   getPostType = () => {
     const channelsType = this.getPublishType();
-    return Object.values(channelsType)[0];
+    return Object.values(channelsType)?.[0] ?? 'post_now';
   };
 
   convertDateTime = (date, time = null) => {
@@ -219,7 +219,7 @@ class ContentModel {
     if (this.entity === 'category') {
       return formatDate(this.createDate, true);
     } else if (this.entity === 'item') {
-      if (this.getPostType() === 'schedule_post') {
+      if (this.getPostType() == 'schedule_post') {
         return formatDate(this.getPublishTime(), true);
       } else {
         return formatDate(this.createDate, true);
