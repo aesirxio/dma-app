@@ -20,7 +20,7 @@ const ChannelTypeAction = observer(({ channelType, handleOnRemove }) => {
   return (
     <div className="d-flex flex-wrap flex-md-nowrap justify-content-end align-content-center">
       <button
-        className="cursor-pointer d-flex align-items-center bg-white justify-content-center btn btn-outline-secondary border-danger py-2 w-145px"
+        className="cursor-pointer d-flex text-nowrap align-items-center bg-white justify-content-center btn btn-outline-secondary border-danger py-2 w-145px"
         onClick={handleOnClick}
         disabled={loading}
       >
@@ -29,7 +29,7 @@ const ChannelTypeAction = observer(({ channelType, handleOnRemove }) => {
             <span className="visually-hidden">Loading...</span>
           </div>
         )}
-        <span className="text-danger fw-medium d-none d-md-block ">{t('txt_bulk_disconnect')}</span>
+        <span className="text-danger fw-medium">{t('txt_bulk_disconnect')}</span>
       </button>
     </div>
   );

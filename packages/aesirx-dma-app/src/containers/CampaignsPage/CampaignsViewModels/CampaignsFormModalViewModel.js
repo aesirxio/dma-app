@@ -116,7 +116,7 @@ class CampaignsFormModalViewModel {
   };
 
   callbackOnErrorHander = (error) => {
-    notify(error.message);
+    notify(error.message, 'error');
   };
 
   callbackOnSuccessHandler = () => {
