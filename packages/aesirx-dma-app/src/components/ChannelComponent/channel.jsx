@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { observer } from 'mobx-react';
 import { Image as ComponentImage } from 'aesirx-uikit';
 import { Accordion, AccordionButton, Form } from 'react-bootstrap';
