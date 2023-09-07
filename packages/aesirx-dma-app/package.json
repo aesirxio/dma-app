@@ -13,7 +13,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "aesirx-dam-app": "^1.4.1",
+    "aesirx-dam-app": "*",
     "aesirx-lib": "*",
     "aesirx-uikit": "*",
     "bootstrap": "^5.3.1",
@@ -57,7 +57,7 @@
     "lint:check": "eslint \"src/**/\"",
     "lint:nowarns": "eslint --quiet \"src/**/\"",
     "build:lib": "NODE_ENV=production tsup",
-    "dev:lib": "NODE_ENV=development tsup --watch --onSuccess 'yalc push --no-scripts'",
+    "dev:lib": "NODE_ENV=development tsup --watch",
     "prepublishOnly": "yarn build:lib",
     "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx}'",
     "format:write": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
