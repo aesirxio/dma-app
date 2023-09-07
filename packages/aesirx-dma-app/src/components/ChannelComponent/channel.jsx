@@ -42,11 +42,11 @@ const ChannelChannelComponent = observer(({ channelData }) => {
               alt={channelData.name}
               src={logoSocial}
               width={32}
-              hieght={32}
+              height={32}
               placeholderSrc={'/assets/images/default_channel_image.png'}
-              className="img-avatar-32 me-3"
+              className="img-avatar-32"
             />
-            <span>{channelData.name}</span>
+            <span className="ms-3">{channelData.name}</span>
           </AccordionButton>
 
           <Form.Check
@@ -61,10 +61,12 @@ const ChannelChannelComponent = observer(({ channelData }) => {
             <div className={`d-flex align-items-center py-2 my-1 `} key={index}>
               <ComponentImage
                 alt={channel.name}
+                width={32}
+                height={32}
                 src={channel.avatar ? channel.avatar : logoSocial}
-                className="img-avatar-32 rounded me-3"
+                className="img-avatar-32 rounded"
               />
-              <span className="text-body">{channel.name}</span>
+              <span className="text-body ms-3">{channel.name}</span>
 
               <Form.Check
                 type="checkbox"
