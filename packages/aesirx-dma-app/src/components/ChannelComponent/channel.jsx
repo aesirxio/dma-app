@@ -9,14 +9,17 @@ import { Image as ComponentImage } from 'aesirx-uikit';
 import { Accordion, AccordionButton, Form } from 'react-bootstrap';
 
 const ChannelChannelComponent = observer(({ channelData }) => {
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(() => {
+    return !channelData?.pages.some((channel) => channel?.removed);
+  });
   const [update, setUpdate] = useState(true);
   const logoSocial = channelData.img ? channelData.img : `/assets/images/${channelData.id}.png`;
 
   const channels = [...channelData?.pages];
-
   const handleOnClick = (target, channel) => {
     channel.removed = !target.checked;
+    const isNotSelecAll = channels?.some((channel) => channel?.removed);
+    setChecked(!isNotSelecAll);
     setUpdate(!update);
   };
 
@@ -27,11 +30,6 @@ const ChannelChannelComponent = observer(({ channelData }) => {
 
     setChecked(target.checked);
   };
-
-  useEffect(() => {
-    const isNotSelecAll = channels?.some((channel) => channel?.removed == true);
-    setChecked(!isNotSelecAll);
-  }, [channels]);
 
   return (
     <Accordion defaultActiveKey="0" alwaysOpen>
