@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 import { Image as ComponentImage } from 'aesirx-uikit';
 import { Accordion, AccordionButton, Form } from 'react-bootstrap';
@@ -27,6 +27,11 @@ const ChannelChannelComponent = observer(({ channelData }) => {
 
     setChecked(target.checked);
   };
+
+  useEffect(() => {
+    const isNotSelecAll = channels?.some((channel) => channel?.removed == true);
+    setChecked(!isNotSelecAll);
+  }, [channels]);
 
   return (
     <Accordion defaultActiveKey="0" alwaysOpen>
