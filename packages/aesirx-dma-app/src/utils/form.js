@@ -143,7 +143,7 @@ const renderingGroupFieldHandler = (group, validator) => {
                   {field.label && <Label text={field.label} required={field.required ?? false} />}
 
                   {/* <DamButton key={Math.random(40, 200)} field={field} /> */}
-                  <DamComponent field={field} />
+                  <DamComponent damType="image" field={field} />
                   {field.validation &&
                     validator.message(field.label, field.value, field.validation, {
                       className: 'text-danger',
