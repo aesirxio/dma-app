@@ -140,7 +140,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
             </div>
             <div className="col-1 d-none d-md-block">{channel.type}</div>
             {channel.groupType && (
-              <div className="col-2 d-none d-md-block">{channel.groupType}</div>
+              <div className="col-2 d-none d-md-block text-capitalize">{channel.groupType}</div>
             )}
             <div className={`col`}>
               {channel.connected ? 'Connected' : <ChannelTypeChannelToken channel={channel} />}

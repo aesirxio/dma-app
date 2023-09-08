@@ -3,7 +3,13 @@ import { Image as ComponentImage, ModalDAMComponent } from 'aesirx-uikit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 
-function ImageDamComponent({ field, allowType = ['image'], children }) {
+function ImageDamComponent({
+  field,
+  allowType = ['image'],
+  children,
+  damType = '',
+  accept = { 'image/*': ['.png', '.gif', '.jpeg', '.jpg'] },
+}) {
   const [show, setShow] = useState(false);
   const [file, setFile] = useState(null);
   const [defaultValue] = useState(field.value);
@@ -25,10 +31,8 @@ function ImageDamComponent({ field, allowType = ['image'], children }) {
         show={show}
         onHide={() => setShow(false)}
         onSelect={onSelect}
-        type="image"
-        accept={{
-          'image/*': ['.png', '.gif', '.jpeg', '.jpg'],
-        }}
+        type={damType}
+        accept={accept}
       />
       {children ? (
         <div onClick={() => setShow(true)}>{children}</div>
