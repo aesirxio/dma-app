@@ -119,6 +119,8 @@ const ContentsList = observer(
                         <ComponentImage
                           className="img-avatar me-2"
                           src={logoSocial}
+                          width={45}
+                          height={45}
                           alt={channel.label}
                           key={channel.alias}
                         />
@@ -135,6 +137,8 @@ const ContentsList = observer(
                             <ComponentImage
                               className="img-avatar rounded"
                               src={option.avatar ? option.avatar : logoSocial}
+                              width={45}
+                              height={45}
                               alt={option.label}
                             />
                           </div>
