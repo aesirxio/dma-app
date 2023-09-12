@@ -33,7 +33,7 @@ function ImageDamComponent({
         onSelect={onSelect}
         type={damType}
         accept={accept}
-      />
+      /> 
       {children ? (
         <div onClick={() => setShow(true)}>{children}</div>
       ) : (
