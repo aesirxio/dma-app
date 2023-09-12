@@ -32,7 +32,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
   if (channels.length === 0) {
     return null;
   }
- 
+
   if (loading) {
     return (
       <div className="d-flex justify-content-center m-2">

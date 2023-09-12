@@ -58,7 +58,9 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
                     alt={channelType.name}
                   />
                 )}
-                <span className="ms-2 text-body text-capitalize accordion-item-name-custom">{channelType.name}</span>
+                <span className="ms-2 text-body text-capitalize accordion-item-name-custom">
+                  {channelType.name}
+                </span>
               </div>
 
               {channelType.pages > '0' && (
