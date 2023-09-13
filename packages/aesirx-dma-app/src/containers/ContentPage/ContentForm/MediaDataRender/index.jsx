@@ -77,11 +77,25 @@ class MediaDataRender extends React.Component {
                   </span>
                 </span>
               </div>
-              <ComponentImage
-                className={`img-thumbnail rounded imgTab`}
-                alt={damAsset?.url ?? damAsset?.download_url}
-                src={damAsset?.url ?? damAsset?.download_url}
-              />
+              {damAsset?.file_extension === 'pdf' ? (
+                <>
+                  <img
+                    className={`img-thumbnail rounded imgTab`}
+                    alt="Default Image"
+                    src="/assets/images/default_digital_asset.svg"
+                  />{' '}
+                  <p>{damAsset.name}</p>
+                </>
+              ) : (
+                <>
+                  <ComponentImage
+                    className={`img-thumbnail rounded imgTab`}
+                    alt={damAsset?.url ?? damAsset?.download_url}
+                    src={damAsset?.url ?? damAsset?.download_url}
+                  />
+                  <p>{damAsset.name}</p>
+                </>
+              )}
             </div>
           </div>
         ))}
