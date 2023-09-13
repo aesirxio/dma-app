@@ -80,7 +80,7 @@ class ContentFormViewModel {
     }
 
     if (channelMasterData.length === 0) {
-      notify('Please ', 'warn');
+      notify('Please connect a Channel', 'warn');
       historyPush('/channels');
     }
 
