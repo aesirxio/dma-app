@@ -25,6 +25,7 @@ class MediaDataRender extends React.Component {
     // const { canvaEditHandler, canvaDeleteHandler } = this;
     const imageData = damData.filter((data) => !['mp4', 'mov'].includes(data.file_extension));
     const videoData = damData.filter((data) => ['mp4', 'mov'].includes(data.file_extension));
+    console.log("imageData", imageData);
     return (
       <div className="d-flex">
         {/* {canvaData.map((canvaAsset, index) => (
@@ -85,7 +86,7 @@ class MediaDataRender extends React.Component {
             </div>
           </div>
         ))}
-
+ 
         {videoData && (
           <div>
             {videoData.map((value, index) => {

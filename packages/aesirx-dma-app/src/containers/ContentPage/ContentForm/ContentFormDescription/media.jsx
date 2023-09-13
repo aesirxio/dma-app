@@ -56,7 +56,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
   const { t } = useTranslation();
   return (
     <div className="px-3 py-2 bg-accordion-button wr_description_image_asset rounded-bottom-2">
-      <div className="d-flex flex-wrap justify-content-start"> 
+      <div className="d-flex flex-wrap justify-content-start">
         {mediaChannel.dam && (
           <>
             <div className="mx-2 mt-1 mb-1">
