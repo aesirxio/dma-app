@@ -7,6 +7,7 @@ import {
   CHANNEL_FIELD_KEY,
   CHANNEL_TYPE_FIELD_KEY,
   CHANNEL_CATEGORY_FIELD_KEY,
+  CHANNEL_REQUIREMENT_FIELD_KEY
 } from '../../../constants/ChannelModule';
 
 class ChannelCategoryModel {
@@ -27,6 +28,7 @@ class ChannelTypeModel {
     this.image = data[CHANNEL_TYPE_FIELD_KEY.IMAGE] ?? '';
     this.pages = data[CHANNEL_TYPE_FIELD_KEY.PAGES]?.map((item) => new ChannelModel(item)) ?? [];
     this.status = data[CHANNEL_TYPE_FIELD_KEY.STATUS] ?? 100;
+    this.requirements = data[CHANNEL_TYPE_FIELD_KEY.REQUIREMENTS] ? new ChannelRequirementModel(data[CHANNEL_TYPE_FIELD_KEY.REQUIREMENTS]) : null;
   }
 
   getPages = () => this.pages.map((item) => new ChannelModel(item));
@@ -50,6 +52,18 @@ class ChannelModel {
     avatar: this.avatar,
     connected: this.connected,
   });
+}
+
+class ChannelRequirementModel {
+  constructor(data) {
+    this.description = data[CHANNEL_REQUIREMENT_FIELD_KEY.DESCRIPTION] ?? 0;
+    this.disableHeadline = data[CHANNEL_REQUIREMENT_FIELD_KEY.DISABLE_HEADLINE] ?? false;
+    this.hashtag = data[CHANNEL_REQUIREMENT_FIELD_KEY.HASHTAG] ?? 0;
+    this.headline = data[CHANNEL_REQUIREMENT_FIELD_KEY.HEADLINE] ?? 0;
+    this.image = data[CHANNEL_REQUIREMENT_FIELD_KEY.IMAGE] ?? false;
+    this.media = data[CHANNEL_REQUIREMENT_FIELD_KEY.MEDIA] ?? false;
+    this.video = data[CHANNEL_REQUIREMENT_FIELD_KEY.VIDEO] ?? false;
+  }
 }
 
 export { ChannelModel, ChannelTypeModel, ChannelCategoryModel };

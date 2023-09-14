@@ -165,7 +165,7 @@ const ContentFormGeneral = observer(
             !this.viewModel.requiredVideo(this.formPropsData[CONTENT_FIELD_KEY.DAM])
           ) {
             notify(t('txt_the_video_field_is_required'), 'error');
-          } else if (this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline) {
+          } else if (!this.isDisableHeadline() && this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline) {
             notify(
               validate.channelHeadline + t('txt_headline_limmit') + validate.headline,
               'error'
@@ -202,6 +202,19 @@ const ContentFormGeneral = observer(
       this.validator.showMessageFor('Description');
     };
 
+    isDisableHeadline = () => {
+      const channelsData = this.viewModel.channelMasterData;
+      let result = true;
+      channelsData.forEach((channel) => {
+        channel.list.forEach((item) => {
+          if (item.requirements && item.requirements.disableHeadline === false) {
+            result = false;
+          }
+        })
+      })
+      return result;
+    }
+
     render() {
       const formSetting = this.generateFormSetting();
       const { t } = this.props;
@@ -220,7 +233,7 @@ const ContentFormGeneral = observer(
                   {t('txt_content')}
                 </p>
                 {renderingGroupFieldHandler(formSetting.selection, this.validator)}
-                {renderingGroupFieldHandler(formSetting.name, this.validator)}
+                {!this.isDisableHeadline() && renderingGroupFieldHandler(formSetting.name, this.validator)}
                 <ContentFormDescription
                   formPropsData={this.formPropsData}
                   onBlurDescription={this.onBlurDescription}

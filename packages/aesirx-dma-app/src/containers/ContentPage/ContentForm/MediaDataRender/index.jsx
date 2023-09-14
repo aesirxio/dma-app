@@ -63,8 +63,8 @@ class MediaDataRender extends React.Component {
         ))} */}
 
         {imageData.map((damAsset, index) => (
-          <div key={index} className="item_dam_assets justify-content-start border-top mt-4">
-            <div className="position-relative w-50 m-2 wr_img_thumbnail_canva">
+          <div key={index} className="item_dam_assets justify-content-start border-top mt-4"> 
+            <div className="position-relative w-50 m-2 wr_img_thumbnail_canva"> 
               <div>
                 <span className="fa-pull-right">
                   <span
@@ -80,20 +80,20 @@ class MediaDataRender extends React.Component {
               {damAsset?.file_extension === 'pdf' ? (
                 <>
                   <img
-                    className={`img-thumbnail rounded imgTab`}
+                    className={`img-thumbnail rounded imgTab img-default-size`}
                     alt="Default Image"
                     src="/assets/images/default_digital_asset.svg"
                   />{' '}
-                  <p>{damAsset.name}</p>
-                </>
+                  <p className='default-image-pdf'>{damAsset.name}</p>
+                </> 
               ) : (
                 <>
                   <ComponentImage
-                    className={`img-thumbnail rounded imgTab`}
+                    className={`img-thumbnail rounded imgTab img-default-size`}
                     alt={damAsset?.url ?? damAsset?.download_url}
                     src={damAsset?.url ?? damAsset?.download_url}
                   />
-                  <p>{damAsset.name}</p>
+                  <p className='default-image-pdf'>{damAsset.name}</p>
                 </>
               )}
             </div>

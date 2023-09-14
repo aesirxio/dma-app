@@ -101,6 +101,7 @@ const CHANNEL_TYPE_FIELD_KEY = {
   IMAGE: 'img',
   PAGES: 'pages',
   STATUS: 'published',
+  REQUIREMENTS: 'requirements'
 };
 
 const CHANNEL_CATEGORY_FIELD_KEY = {
@@ -121,9 +122,20 @@ const CHANNEL_CMS_FIELD_KEY = {
   BLOG: 'blog',
 };
 
+const CHANNEL_REQUIREMENT_FIELD_KEY = {
+  DESCRIPTION: 'description',
+  DISABLE_HEADLINE: 'disable_headline',
+  HASHTAG: 'hashtag',
+  HEADLINE: 'headline',
+  IMAGE: 'image',
+  MEDIA: 'media',
+  VIDEO: 'video',
+}
+
 export {
   CHANNEL_FIELD_KEY,
   CHANNEL_TYPE_FIELD_KEY,
   CHANNEL_CATEGORY_FIELD_KEY,
   CHANNEL_CMS_FIELD_KEY,
+  CHANNEL_REQUIREMENT_FIELD_KEY
 };
