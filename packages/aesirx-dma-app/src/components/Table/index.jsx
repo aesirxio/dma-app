@@ -89,7 +89,7 @@ const Table = ({
   listViewModel,
   searchFunction,
   dataFormFilter,
-  hasSubRow,
+  // hasSubRow,
   isSearch = true,
   _handleList,
   classNameTable,
@@ -235,19 +235,19 @@ const Table = ({
     }
   };
 
-  const renderRowSubComponent = React.useCallback(
-    ({ row, rowProps, visibleColumns }) => (
-      <SubRowAsync
-        row={row}
-        rowProps={rowProps}
-        visibleColumns={visibleColumns}
-        listViewModel={listViewModel ? listViewModel : null}
-        idKey={idKey}
-        headerGroups={headerGroups}
-      />
-    ),
-    [listViewModel, idKey]
-  );
+  // const renderRowSubComponent = React.useCallback(
+  //   ({ row, rowProps, visibleColumns }) => (
+  //     <SubRowAsync
+  //       row={row}
+  //       rowProps={rowProps}
+  //       visibleColumns={visibleColumns}
+  //       listViewModel={listViewModel ? listViewModel : null}
+  //       idKey={idKey}
+  //       headerGroups={headerGroups}
+  //     />
+  //   ),
+  //   [listViewModel, idKey]
+  // );
 
   const handleFilter = () => {
     setState({
