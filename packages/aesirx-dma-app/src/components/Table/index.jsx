@@ -26,7 +26,7 @@ import styles from './index.module.scss';
 import './index.scss';
 import { withTranslation } from 'react-i18next';
 import GlobalFilter from './GlobalFilter';
-import SubRowAsync from './RowSubComponent';
+// import SubRowAsync from './RowSubComponent';
 import ComponentDatepicker from '../ComponentDatepicker';
 import ComponentFilter from '../ComponentFilter';
 import PaginationComponent from './PaginationComponent';
@@ -93,7 +93,7 @@ const Table = ({
   isSearch = true,
   _handleList,
   classNameTable,
-  idKey,
+  // idKey,
   view,
 }) => {
   const [getState, setState] = useState({
@@ -144,7 +144,7 @@ const Table = ({
 
   const {
     getTableBodyProps,
-    headerGroups,
+    // headerGroups,
     prepareRow,
     page,
     preGlobalFilteredRows,
