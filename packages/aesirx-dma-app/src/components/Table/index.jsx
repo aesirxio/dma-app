@@ -33,6 +33,7 @@ import PaginationComponent from './PaginationComponent';
 import ComponentNoData from '../ComponentNoData';
 import { useTranslation } from 'react-i18next';
 import ComponentButtonDelete from 'components/ComponentButtonDelete/ComponentButtonDelete';
+import { Table as TableUI } from 'aesirx-uikit';
 
 let dataFilter = {
   searchText: '',
@@ -142,16 +143,12 @@ const Table = ({
   const data = useMemo(() => rowData, [rowData]);
 
   const {
-    getTableProps,
     getTableBodyProps,
     headerGroups,
-
     prepareRow,
     page,
-    visibleColumns,
     preGlobalFilteredRows,
     allColumns,
-
     state,
     state: { selectedRowIds },
   } = useTable(
@@ -246,6 +243,7 @@ const Table = ({
         visibleColumns={visibleColumns}
         listViewModel={listViewModel ? listViewModel : null}
         idKey={idKey}
+        headerGroups={headerGroups}
       />
     ),
     [listViewModel, idKey]
@@ -257,7 +255,6 @@ const Table = ({
       isFilter: !getState.isFilter,
     });
   };
-
   const { t } = useTranslation();
   return (
     <>
@@ -399,107 +396,13 @@ const Table = ({
         )}
       </div>
       {isList ? (
-        <div className="pt-3 px-3 rounded-3 is-list">
-          <table {...getTableProps()} className={`w-100 mb-4 ${classNameTable} table-border`}>
-            <thead className="bg-blue-5 border-bottom-2">
-              {headerGroups.map((headerGroup) => {
-                let newHeaderGroup = '';
-
-                dataList
-                  ? (newHeaderGroup = headerGroup.headers.filter(
-                      (item) => !dataList.some((other) => item.id === other)
-                    ))
-                  : (newHeaderGroup = headerGroup.headers);
-
-                return (
-                  <tr {...headerGroup.getHeaderGroupProps()}>
-                    {newHeaderGroup.map((column) => {
-                      // const hasValue = column.render('Header') !== '';
-                      return (
-                        <th
-                          {...column.getHeaderProps()}
-                          className={`fw-normal px-3 py-3 flex-1 column-header-${column.id}`}
-                        >
-                          {column.render('Header')}
-                          {/* {hasValue && (
-                            <i>
-                              <FontAwesomeIcon
-                                className="px-2 arrow-right-left"
-                                icon={faArrowRightArrowLeft}
-                              />
-                            </i>
-                          )} */}
-                        </th>
-                      );
-                    })}
-                  </tr>
-                );
-              })}
-            </thead>
-            <tbody {...getTableBodyProps()}>
-              {page.length > 0 &&
-                page.map((row, rowIndex) => {
-                  prepareRow(row);
-                  const rowProps = row.getRowProps();
-                  let newRowCells = '';
-
-                  dataList
-                    ? (newRowCells = row.cells.filter(
-                        (item) => !dataList.some((other) => item.column.id === other)
-                      ))
-                    : (newRowCells = row.cells);
-
-                  const isGrayRow = rowIndex % 2 === 0;
-
-                  return (
-                    <React.Fragment key={row.getRowProps().key}>
-                      <tr
-                        {...row.getRowProps()}
-                        className={`cursor-pointer ${isGrayRow ? ' ' : 'bg-blue-5'}`}
-                        // onClick={(e) => handerEdit(e, row.original)}
-                      >
-                        {newRowCells.map((cell) => {
-                          return (
-                            <td
-                              {...cell.getCellProps()}
-                              className={`fw-normal px-3 py-4 cell-${cell.column.id}`}
-                            >
-                              {cell.render('Cell')}
-                            </td>
-                          );
-                        })}
-                      </tr>
-                      {hasSubRow === false
-                        ? null
-                        : row.isExpanded &&
-                          renderRowSubComponent({ row, rowProps, visibleColumns })}
-                    </React.Fragment>
-                  );
-                })}
-            </tbody>
-          </table>
-          {page.length === 0 ? (
-            <ComponentNoData
-              icons="/assets/images/ic_project.svg"
-              title={t('txt_title_no_matching_results')}
-              text={t('txt_text_no_matching_results')}
-              width="w-50"
-            />
-          ) : (
-            <div className="pagination d-flex align-items-center justify-content-between">
-              {pagination && pagination.totalPages > 1 && (
-                <>
-                  <PaginationComponent
-                    pagination={pagination}
-                    pageSize={pageSize}
-                    listViewModel={listViewModel}
-                    isList={isList}
-                  />
-                </>
-              )}
-            </div>
-          )}
-        </div>
+        <TableUI
+          columns={columns}
+          data={data}
+          dataList={dataList}
+          classNameTable={'w-100 mb-4 table-border'}
+          pagination={pagination}
+        />
       ) : (
         <div {...getTableBodyProps()} className="row px-3 pt-3">
           {page.map((row) => {

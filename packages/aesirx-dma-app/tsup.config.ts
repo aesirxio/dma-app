@@ -19,7 +19,7 @@ export const tsup: Options = {
     sassPlugin({ type: 'style' }),
   ],
   esbuildOptions(options) {
-    options.drop = ['console'];
+    env === 'production' ? (options.drop = ['console']) : '';
   },
   outExtension() {
     return {
