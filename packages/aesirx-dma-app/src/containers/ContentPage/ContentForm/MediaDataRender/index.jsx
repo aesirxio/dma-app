@@ -27,46 +27,12 @@ class MediaDataRender extends React.Component {
     const videoData = damData.filter((data) => ['mp4', 'mov'].includes(data.file_extension));
     return (
       <div className="d-flex">
-        {/* {canvaData.map((canvaAsset, index) => (
-          <div
-            key={canvaAsset.designId}
-            className="item_dam_assets justify-content-start border-top mt-4"
-          >
-            <div className="position-relative w-50 m-2 wr_img_thumbnail_canva">
-              <div className="">
-                <span className="fa-pull-right">
-                  <span
-                    className="cursor-pointer m-2"
-                    onClick={() => canvaEditHandler(index, canvaAsset.designId)}
-                  >
-                    <i>
-                      <FontAwesomeIcon icon={faEdit} />
-                    </i>
-                  </span>
-                  <span
-                    className="cursor-pointer text-red-1"
-                    onClick={() => canvaDeleteHandler(canvaAsset.designId)}
-                  >
-                    <i>
-                      <FontAwesomeIcon icon={faTimes} />
-                    </i>
-                  </span>
-                </span>
-              </div>
-              <ComponentImage
-                className={`img-thumbnail rounded imgTab`}
-                alt={canvaAsset.exportUrl}
-                src={canvaAsset.exportUrl}
-              />
-            </div>
-          </div>
-        ))} */}
 
         {imageData.map((damAsset, index) => (
           <div key={index} className="item_dam_assets justify-content-start border-top mt-4">
-            <div className="position-relative m-2 group-bg-img-thumbnail">
+            <div className={`position-relative m-2 group-bg-img-thumbnail`} height={109}>
               <div>
-                <span className="fa-pull-right group-cursor-pointer">
+                <span className={`group-cursor-pointer bg-white position-absolute rounded-circle text-center`}>
                   <span
                     className="cursor-pointer text-red-1"
                     onClick={() => deleteDamItem(damAsset.id)}
@@ -77,18 +43,6 @@ class MediaDataRender extends React.Component {
                   </span>
                 </span>
               </div>
-
-              {/* <ComponentImage
-                className={`imgTab object-fit-contain bg-white rounded-3`}
-                width={100}
-                height={100}
-                alt={damAsset?.url ?? damAsset?.download_url}
-                src={
-                  damAsset?.file_extension === 'pdf'
-                    ? '/assets/images/default_digital_asset.svg'
-                    : damAsset?.url ?? damAsset?.download_url
-                }
-              ></ComponentImage> */}
               <ComponentImage
                 className={`imgTab object-fit-contain bg-white rounded-3`}
                 width={100}
@@ -100,7 +54,7 @@ class MediaDataRender extends React.Component {
                     : damAsset?.url ?? damAsset?.download_url
                 }
                 style={{
-                  padding: damAsset?.file_extension === 'pdf' ? '29px 28px' : '0', // Padding cho file PDF và các tệp khác
+                  padding: damAsset?.file_extension === 'pdf' ? '29px 28px' : '0', 
                 }}
               ></ComponentImage>
             </div>
@@ -111,7 +65,7 @@ class MediaDataRender extends React.Component {
           <div>
             {videoData.map((value, index) => {
               return (
-                <div key={index} className="item_dam_assets justify-content-start border-top mt-4">
+                <div key={index} className="justify-content-start border-top mt-4 mr-1.125">
                   <div className="position-relative m-2 w-260">
                     <div>
                       <span className="fa-pull-right">
