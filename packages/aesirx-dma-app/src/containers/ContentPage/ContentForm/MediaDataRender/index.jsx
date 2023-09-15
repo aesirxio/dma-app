@@ -64,9 +64,9 @@ class MediaDataRender extends React.Component {
 
         {imageData.map((damAsset, index) => (
           <div key={index} className="item_dam_assets justify-content-start border-top mt-4">
-            <div className="position-relative w-50 m-2 wr_img_thumbnail_canva">
+            <div className="position-relative m-2 group-bg-img-thumbnail">
               <div>
-                <span className="fa-pull-right">
+                <span className="fa-pull-right group-cursor-pointer">
                   <span
                     className="cursor-pointer text-red-1"
                     onClick={() => deleteDamItem(damAsset.id)}
@@ -77,11 +77,32 @@ class MediaDataRender extends React.Component {
                   </span>
                 </span>
               </div>
-              <ComponentImage
-                className={`img-thumbnail rounded imgTab`}
+
+              {/* <ComponentImage
+                className={`imgTab object-fit-contain bg-white rounded-3`}
+                width={100}
+                height={100}
                 alt={damAsset?.url ?? damAsset?.download_url}
-                src={damAsset?.url ?? damAsset?.download_url}
-              />
+                src={
+                  damAsset?.file_extension === 'pdf'
+                    ? '/assets/images/default_digital_asset.svg'
+                    : damAsset?.url ?? damAsset?.download_url
+                }
+              ></ComponentImage> */}
+              <ComponentImage
+                className={`imgTab object-fit-contain bg-white rounded-3`}
+                width={100}
+                height={100}
+                alt={damAsset?.url ?? damAsset?.download_url}
+                src={
+                  damAsset?.file_extension === 'pdf'
+                    ? '/assets/images/default_digital_asset.svg'
+                    : damAsset?.url ?? damAsset?.download_url
+                }
+                style={{
+                  padding: damAsset?.file_extension === 'pdf' ? '29px 28px' : '0', // Padding cho file PDF và các tệp khác
+                }}
+              ></ComponentImage>
             </div>
           </div>
         ))}

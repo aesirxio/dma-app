@@ -2,3 +2,35 @@
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
  */
+ 
+.group-bg-img-thumbnail{
+    position: relative;
+    height: 109px;
+    .group-cursor-pointer {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: white;
+        text-align: center;
+        position: absolute;
+        top: -12px;
+        right: -12px;
+      }
+      .componentImage {
+        width: 100px !important;
+        height: 100px;
+      }
+}
+
+.default-image-text{
+    column-width: 10ch; 
+    column-gap: 0; 
+    column-fill: auto; 
+    font-size: 10px; 
+    padding-top: 40px;
+}
+
+.item_dam_assets{
+    margin-right: 18px;
+}
+
