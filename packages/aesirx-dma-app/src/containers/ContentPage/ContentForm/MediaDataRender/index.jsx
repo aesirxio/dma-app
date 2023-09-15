@@ -27,12 +27,13 @@ class MediaDataRender extends React.Component {
     const videoData = damData.filter((data) => ['mp4', 'mov'].includes(data.file_extension));
     return (
       <div className="d-flex">
-
         {imageData.map((damAsset, index) => (
-          <div key={index} className="item_dam_assets justify-content-start border-top mt-4">
-            <div className={`position-relative m-2 group-bg-img-thumbnail`} height={109}>
+          <div key={index} className="item_dam_assets justify-content-start border-top mt-4 me-18px">
+            <div className="position-relative m-2 group-bg-img-thumbnail">
               <div>
-                <span className={`group-cursor-pointer bg-white position-absolute rounded-circle text-center`}>
+                <span
+                  className={`group-cursor-pointer bg-white position-absolute rounded-circle text-center`}
+                >
                   <span
                     className="cursor-pointer text-red-1"
                     onClick={() => deleteDamItem(damAsset.id)}
@@ -44,7 +45,7 @@ class MediaDataRender extends React.Component {
                 </span>
               </div>
               <ComponentImage
-                className={`imgTab object-fit-contain bg-white rounded-3`}
+                className={`imgTab object-fit-contain bg-white rounded-3 ${damAsset?.file_extension === 'pdf' ? "default-pdf" : ''}`}
                 width={100}
                 height={100}
                 alt={damAsset?.url ?? damAsset?.download_url}
@@ -53,9 +54,7 @@ class MediaDataRender extends React.Component {
                     ? '/assets/images/default_digital_asset.svg'
                     : damAsset?.url ?? damAsset?.download_url
                 }
-                style={{
-                  padding: damAsset?.file_extension === 'pdf' ? '29px 28px' : '0', 
-                }}
+               
               ></ComponentImage>
             </div>
           </div>
@@ -65,7 +64,7 @@ class MediaDataRender extends React.Component {
           <div>
             {videoData.map((value, index) => {
               return (
-                <div key={index} className="justify-content-start border-top mt-4 mr-1.125">
+                <div key={index} className="justify-content-start border-top mt-4 me-18px">
                   <div className="position-relative m-2 w-260">
                     <div>
                       <span className="fa-pull-right">
