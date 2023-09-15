@@ -28,7 +28,10 @@ class MediaDataRender extends React.Component {
     return (
       <div className="d-flex">
         {imageData.map((damAsset, index) => (
-          <div key={index} className="item_dam_assets justify-content-start border-top mt-4 me-18px">
+          <div
+            key={index}
+            className="item_dam_assets justify-content-start border-top mt-4 me-18px"
+          >
             <div className="position-relative m-2 group-bg-img-thumbnail">
               <div>
                 <span
@@ -45,7 +48,9 @@ class MediaDataRender extends React.Component {
                 </span>
               </div>
               <ComponentImage
-                className={`imgTab object-fit-contain bg-white rounded-3 ${damAsset?.file_extension === 'pdf' ? "default-pdf" : ''}`}
+                className={`imgTab object-fit-contain bg-white rounded-3 ${
+                  damAsset?.file_extension === 'pdf' ? 'default-pdf' : ''
+                }`}
                 width={100}
                 height={100}
                 alt={damAsset?.url ?? damAsset?.download_url}
@@ -54,7 +59,6 @@ class MediaDataRender extends React.Component {
                     ? '/assets/images/default_digital_asset.svg'
                     : damAsset?.url ?? damAsset?.download_url
                 }
-               
               ></ComponentImage>
             </div>
           </div>
