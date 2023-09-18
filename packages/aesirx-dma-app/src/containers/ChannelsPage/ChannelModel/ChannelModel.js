@@ -64,6 +64,6 @@ class ChannelRequirementModel {
     this.media = data[CHANNEL_REQUIREMENT_FIELD_KEY.MEDIA] ?? false;
     this.video = data[CHANNEL_REQUIREMENT_FIELD_KEY.VIDEO] ?? false;
   }
-}
+} 
 
 export { ChannelModel, ChannelTypeModel, ChannelCategoryModel };

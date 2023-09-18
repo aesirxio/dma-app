@@ -27,40 +27,6 @@ class MediaDataRender extends React.Component {
     const videoData = damData.filter((data) => ['mp4', 'mov'].includes(data.file_extension));
     return (
       <div className="d-flex">
-        {/* {canvaData.map((canvaAsset, index) => (
-          <div
-            key={canvaAsset.designId}
-            className="item_dam_assets justify-content-start border-top mt-4"
-          >
-            <div className="position-relative w-50 m-2 wr_img_thumbnail_canva">
-              <div className="">
-                <span className="fa-pull-right">
-                  <span
-                    className="cursor-pointer m-2"
-                    onClick={() => canvaEditHandler(index, canvaAsset.designId)}
-                  >
-                    <i>
-                      <FontAwesomeIcon icon={faEdit} />
-                    </i>
-                  </span>
-                  <span
-                    className="cursor-pointer text-red-1"
-                    onClick={() => canvaDeleteHandler(canvaAsset.designId)}
-                  >
-                    <i>
-                      <FontAwesomeIcon icon={faTimes} />
-                    </i>
-                  </span>
-                </span>
-              </div>
-              <ComponentImage
-                className={`img-thumbnail rounded imgTab`}
-                alt={canvaAsset.exportUrl}
-                src={canvaAsset.exportUrl}
-              />
-            </div>
-          </div>
-        ))} */}
 
         {imageData.map((damAsset, index) => (
           <div key={index} className="item_dam_assets justify-content-start border-top mt-4"> 
