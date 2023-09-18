@@ -202,6 +202,19 @@ const ContentFormGeneral = observer(
       this.validator.showMessageFor('Description');
     };
 
+    isDisableHeadline = () => {
+      const channelsData = this.viewModel.channelMasterData;
+      let result = true;
+      channelsData.forEach((channel) => {
+        channel.list.forEach((item) => {
+          if (item.requirements && item.requirements.disableHeadline === false) {
+            result = false;
+          }
+        });
+      });
+      return result;
+    };
+
     render() {
       const formSetting = this.generateFormSetting();
       const { t } = this.props;
@@ -220,7 +233,8 @@ const ContentFormGeneral = observer(
                   {t('txt_content')}
                 </p>
                 {renderingGroupFieldHandler(formSetting.selection, this.validator)}
-                {renderingGroupFieldHandler(formSetting.name, this.validator)}
+                {!this.isDisableHeadline() &&
+                  renderingGroupFieldHandler(formSetting.name, this.validator)}
                 <ContentFormDescription
                   formPropsData={this.formPropsData}
                   onBlurDescription={this.onBlurDescription}

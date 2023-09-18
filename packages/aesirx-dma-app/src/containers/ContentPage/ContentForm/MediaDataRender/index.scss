@@ -2,13 +2,16 @@
  * @copyright   Copyright (C) 2022 AesirX. All rights reserved.
  * @license     GNU General Public License version 3, see LICENSE.
  */
-.default-image-pdf{
-    column-width: 10ch; 
-    column-gap: 0; 
-    column-fill: auto; 
-    font-size: 10px;
+ .group-bg-img-thumbnail{
+  .group-cursor-pointer {
+      width: 24px;
+      height: 24px;
+      top: -12px;
+      right: -12px;
+    }
+
 }
-.img-default-size{
-    width: 60px;
-    height: 60px !important;
+
+.default-pdf{
+padding: 29px 28px;
 }

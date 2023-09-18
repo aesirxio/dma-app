@@ -101,7 +101,7 @@ const CHANNEL_TYPE_FIELD_KEY = {
   IMAGE: 'img',
   PAGES: 'pages',
   STATUS: 'published',
-  REQUIREMENTS: 'requirements'
+  REQUIREMENTS: 'requirements',
 };
 
 const CHANNEL_CATEGORY_FIELD_KEY = {
@@ -130,12 +130,12 @@ const CHANNEL_REQUIREMENT_FIELD_KEY = {
   IMAGE: 'image',
   MEDIA: 'media',
   VIDEO: 'video',
-}
+};
 
 export {
   CHANNEL_FIELD_KEY,
   CHANNEL_TYPE_FIELD_KEY,
   CHANNEL_CATEGORY_FIELD_KEY,
   CHANNEL_CMS_FIELD_KEY,
-  CHANNEL_REQUIREMENT_FIELD_KEY
+  CHANNEL_REQUIREMENT_FIELD_KEY,
 };

@@ -27,12 +27,16 @@ class MediaDataRender extends React.Component {
     const videoData = damData.filter((data) => ['mp4', 'mov'].includes(data.file_extension));
     return (
       <div className="d-flex">
-
         {imageData.map((damAsset, index) => (
-          <div key={index} className="item_dam_assets justify-content-start border-top mt-4"> 
-            <div className="position-relative w-50 m-2 wr_img_thumbnail_canva"> 
+          <div
+            key={index}
+            className="item_dam_assets justify-content-start border-top mt-4 me-18px"
+          >
+            <div className="position-relative m-2 group-bg-img-thumbnail">
               <div>
-                <span className="fa-pull-right">
+                <span
+                  className={`group-cursor-pointer bg-white position-absolute rounded-circle text-center`}
+                >
                   <span
                     className="cursor-pointer text-red-1"
                     onClick={() => deleteDamItem(damAsset.id)}
@@ -43,25 +47,19 @@ class MediaDataRender extends React.Component {
                   </span>
                 </span>
               </div>
-              {damAsset?.file_extension === 'pdf' ? (
-                <>
-                  <img
-                    className={`img-thumbnail rounded imgTab img-default-size`}
-                    alt="Default Image"
-                    src="/assets/images/default_digital_asset.svg"
-                  />{' '}
-                  <p className='default-image-pdf'>{damAsset.name}</p>
-                </> 
-              ) : (
-                <>
-                  <ComponentImage
-                    className={`img-thumbnail rounded imgTab img-default-size`}
-                    alt={damAsset?.url ?? damAsset?.download_url}
-                    src={damAsset?.url ?? damAsset?.download_url}
-                  />
-                  <p className='default-image-pdf'>{damAsset.name}</p>
-                </>
-              )}
+              <ComponentImage
+                className={`imgTab object-fit-contain bg-white rounded-3 ${
+                  damAsset?.file_extension === 'pdf' ? 'default-pdf' : ''
+                }`}
+                width={100}
+                height={100}
+                alt={damAsset?.url ?? damAsset?.download_url}
+                src={
+                  damAsset?.file_extension === 'pdf'
+                    ? '/assets/images/default_digital_asset.svg'
+                    : damAsset?.url ?? damAsset?.download_url
+                }
+              ></ComponentImage>
             </div>
           </div>
         ))}
@@ -70,7 +68,7 @@ class MediaDataRender extends React.Component {
           <div>
             {videoData.map((value, index) => {
               return (
-                <div key={index} className="item_dam_assets justify-content-start border-top mt-4">
+                <div key={index} className="justify-content-start border-top mt-4 me-18px">
                   <div className="position-relative m-2 w-260">
                     <div>
                       <span className="fa-pull-right">

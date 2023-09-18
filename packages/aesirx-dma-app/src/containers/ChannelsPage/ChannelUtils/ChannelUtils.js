@@ -13,7 +13,7 @@ class ChannelUtils {
       .map((index) => {
         return [...Array(response[index])].map((item) => {
           return new ChannelCategoryModel(item);
-        }); 
+        });
       })
       .reduce((arr, el) => {
         return arr.concat(el);
