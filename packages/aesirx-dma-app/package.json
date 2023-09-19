@@ -7,7 +7,7 @@
   "module": "dist/index.js",
   "repository": "https://github.com/aesirxio/dma-app",
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^37.1.0",
+    "@ckeditor/ckeditor5-build-classic": "^39.0.2",
     "@ckeditor/ckeditor5-react": "^6.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
