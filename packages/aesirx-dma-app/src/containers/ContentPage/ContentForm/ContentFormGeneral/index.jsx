@@ -213,7 +213,7 @@ const ContentFormGeneral = observer(
         });
       });
       return result;
-    }; 
+    };
 
     render() {
       const formSetting = this.generateFormSetting();
