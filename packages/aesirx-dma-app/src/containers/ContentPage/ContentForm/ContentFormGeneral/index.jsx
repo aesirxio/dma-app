@@ -158,6 +158,17 @@ const ContentFormGeneral = observer(
         });
       });
 
+      if (!this.isDisableHeadline()) {
+        if (
+          this.formPropsData[CONTENT_FIELD_KEY.NAME] === null ||
+          this.formPropsData[CONTENT_FIELD_KEY.NAME] === undefined
+        ) {
+          notify(t('txt_headline_is_null_or_undefined'), 'error');
+        } else if (this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline) {
+          notify(validate.channelHeadline + t('txt_headline_limit') + validate.headline, 'error');
+        }
+      }
+
       if (this.validator.allValid()) {
         if (dataChannels.length > 0) {
           if (
@@ -165,12 +176,14 @@ const ContentFormGeneral = observer(
             !this.viewModel.requiredVideo(this.formPropsData[CONTENT_FIELD_KEY.DAM])
           ) {
             notify(t('txt_the_video_field_is_required'), 'error');
-          } else if (this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline) {
-            notify(
-              validate.channelHeadline + t('txt_headline_limmit') + validate.headline,
-              'error'
-            );
-          } else if (
+          }
+          // else if (this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline) {
+          //   notify(
+          //     validate.channelHeadline + t('txt_headline_limmit') + validate.headline,
+          //     'error'
+          //   );
+          // }
+          else if (
             Object.values(this.formPropsData[CONTENT_FIELD_KEY.DESCRIPTION])[0].length >
             validate.description
           ) {
