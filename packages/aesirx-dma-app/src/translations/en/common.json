@@ -214,5 +214,6 @@
   "txt_content":"Content",
   "txt_disconnect":"Disconnect",
   "txt_failed": "Failed",
-  "txt_bulk_disconnect": "Bulk Disconnect"
+  "txt_bulk_disconnect": "Bulk Disconnect",
+  "txt_headline_is_null_or_undefined": "Headline is null or undefined"
 }

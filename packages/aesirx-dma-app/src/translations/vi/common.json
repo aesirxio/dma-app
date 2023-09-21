@@ -212,5 +212,6 @@
   "txt_content":"Nội dung",
   "txt_disconnect":"Ngắt kết nối",
   "txt_failed": "Không thành công",
-  "txt_bulk_disconnect": "Ngắt kết nối hàng loạt"
+  "txt_bulk_disconnect": "Ngắt kết nối hàng loạt",
+  "txt_headline_is_null_or_undefined": " Tiêu đề không có hoặc không được xác định"
 }

@@ -212,5 +212,6 @@
   "txt_content": "Sadržaj",
   "txt_disconnect": "Prekini vezu",
   "txt_failed": "ล้มเหลว",
-  "txt_bulk_disconnect": "ยกเลิกการเชื่อมต่อเป็นกลุ่ม"
+  "txt_bulk_disconnect": "ยกเลิกการเชื่อมต่อเป็นกลุ่ม",
+  "txt_headline_is_null_or_undefined": "พาดหัวเป็นโมฆะหรือไม่ได้กำหนด"
 }
