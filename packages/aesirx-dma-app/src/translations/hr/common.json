@@ -211,6 +211,5 @@
 "txt_content": "Sadržaj",
 "txt_disconnect": "Prekini vezu",
 "txt_failed": "Neuspješno",
-"txt_bulk_disconnect": "Skupno prekidanje veze",
-"txt_headline_is_null_or_undefined": "naslov je nula ili nedefiniran"
+"txt_bulk_disconnect": "Skupno prekidanje veze"
 }

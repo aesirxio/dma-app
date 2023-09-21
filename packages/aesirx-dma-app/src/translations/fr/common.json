@@ -211,7 +211,6 @@
 "txt_content":"Contenu",
 "txt_disconnect":"Déconnecter",
 "txt_failed": "Échec",
-"txt_bulk_disconnect": "Déconnexion groupée",
-"txt_headline_is_null_or_undefined": "Le titre est nul ou indéfini"
+"txt_bulk_disconnect": "Déconnexion groupée"
 
 }

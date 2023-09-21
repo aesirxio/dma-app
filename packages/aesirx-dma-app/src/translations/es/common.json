@@ -212,6 +212,5 @@
   "txt_content":"Contenido",
   "txt_disconnect":"Desconectar",
   "txt_failed": "Error",
-  "txt_bulk_disconnect": "Desconexión masiva",
-  "txt_headline_is_null_or_undefined": "El título es nulo o indefinido"
+  "txt_bulk_disconnect": "Desconexión masiva"
 }

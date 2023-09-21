@@ -34,6 +34,18 @@ const ContentFormGeneral = observer(
 
       this.formPropsData = this.props.formPropsData;
     }
+    isDisableHeadline = () => {
+      const channelsData = this.viewModel.channelMasterData;
+      let result = true;
+      channelsData.forEach((channel) => {
+        channel.list.forEach((item) => {
+          if (item.requirements && item.requirements.disableHeadline === false) {
+            result = false;
+          }
+        });
+      });
+      return result;
+    };
 
     generateFormSetting = () => {
       const { t } = this.props;
@@ -45,7 +57,7 @@ const ContentFormGeneral = observer(
               key: CONTENT_FIELD_KEY.NAME,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[CONTENT_FIELD_KEY.NAME],
-              required: true,
+              required: !this.isDisableHeadline() ? true : false,
               validation: 'required',
               changed: (event) => {
                 this.formPropsData[CONTENT_FIELD_KEY.NAME] = event.target.value;
@@ -158,16 +170,16 @@ const ContentFormGeneral = observer(
         });
       });
 
-      if (!this.isDisableHeadline()) {
-        if (
-          this.formPropsData[CONTENT_FIELD_KEY.NAME] === null ||
-          this.formPropsData[CONTENT_FIELD_KEY.NAME] === undefined
-        ) {
-          notify(t('txt_headline_is_null_or_undefined'), 'error');
-        } else if (this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline) {
-          notify(validate.channelHeadline + t('txt_headline_limit') + validate.headline, 'error');
-        }
-      }
+      // if (!this.isDisableHeadline()) {
+      //   if (
+      //     this.formPropsData[CONTENT_FIELD_KEY.NAME] === null ||
+      //     this.formPropsData[CONTENT_FIELD_KEY.NAME] === undefined
+      //   ) {
+      //     notify(t('txt_headline_is_null_or_undefined'), 'error');
+      //   } else if (this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline) {
+      //     notify(validate.channelHeadline + t('txt_headline_limit') + validate.headline, 'error');
+      //   }
+      // }
 
       if (this.validator.allValid()) {
         if (dataChannels.length > 0) {
@@ -176,14 +188,15 @@ const ContentFormGeneral = observer(
             !this.viewModel.requiredVideo(this.formPropsData[CONTENT_FIELD_KEY.DAM])
           ) {
             notify(t('txt_the_video_field_is_required'), 'error');
-          }
-          // else if (this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline) {
-          //   notify(
-          //     validate.channelHeadline + t('txt_headline_limmit') + validate.headline,
-          //     'error'
-          //   );
-          // }
-          else if (
+          } else if (
+            !this.isDisableHeadline &&
+            this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline
+          ) {
+            notify(
+              validate.channelHeadline + t('txt_headline_limmit') + validate.headline,
+              'error'
+            );
+          } else if (
             Object.values(this.formPropsData[CONTENT_FIELD_KEY.DESCRIPTION])[0].length >
             validate.description
           ) {
@@ -213,19 +226,6 @@ const ContentFormGeneral = observer(
 
     onBlurDescription = () => {
       this.validator.showMessageFor('Description');
-    };
-
-    isDisableHeadline = () => {
-      const channelsData = this.viewModel.channelMasterData;
-      let result = true;
-      channelsData.forEach((channel) => {
-        channel.list.forEach((item) => {
-          if (item.requirements && item.requirements.disableHeadline === false) {
-            result = false;
-          }
-        });
-      });
-      return result;
     };
 
     render() {
