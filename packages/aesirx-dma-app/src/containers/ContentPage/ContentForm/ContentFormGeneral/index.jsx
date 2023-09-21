@@ -178,7 +178,7 @@ const ContentFormGeneral = observer(
           ) {
             notify(t('txt_the_video_field_is_required'), 'error');
           } else if (
-            !this.isDisableHeadline &&
+            !this.isDisableHeadline() &&
             this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline
           ) {
             notify(
