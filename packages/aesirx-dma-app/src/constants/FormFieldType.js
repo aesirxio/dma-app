@@ -16,7 +16,7 @@ const FORM_FIELD_TYPE = {
   TAB: 10,
   PASSWORD: 11,
   CANVA: 12,
-  LABELCARD: 13,
+  LABELCARD: 13, 
   INFORMATION: 14,
   LABELBTN: 15,
   SELECTIONPERSONA: 16,
@@ -30,7 +30,8 @@ const FORM_FIELD_TYPE = {
   TIMEZONE: 24,
 };
 
-const FORMAT_DATE = 'dd/MM/yyyy';
+// const FORMAT_DATE = 'dd/MM/yyyy';
+const FORMAT_DATE = 'dd/MM/yyyy HH:mm:ss';
 const FORMAT_TIME = 'HH:mm';
 
 export { FORM_FIELD_TYPE, FORMAT_DATE, FORMAT_TIME };

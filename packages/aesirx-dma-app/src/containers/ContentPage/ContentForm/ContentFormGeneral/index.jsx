@@ -215,10 +215,19 @@ const ContentFormGeneral = observer(
 
     onBlurDescription = () => {
       this.validator.showMessageFor('Description');
-);
-      });
-      return result;
-             <div className="col-md-4 border-end pe-5 ps-4 py-4">
+    };
+
+    render() {
+      const formSetting = this.generateFormSetting();
+      const { t } = this.props;
+      return (
+        <div className="pe-md-80">
+          <div className="d-flex align-items-center justify-content-between mb-4">
+            <h3 className="mb-4">{t('txt_general')}</h3>
+          </div>
+          <div className="bg-blue-5 rounded-3 ">
+            <div className="row">
+              <div className="col-md-4 border-end pe-5 ps-4 py-4">
                 <ContentFormGeneralChannel />
               </div>
               <div className="col-md-8 px-5 py-4">

@@ -7,7 +7,7 @@ import React, { useState, lazy } from 'react';
 
 import { Form } from 'react-bootstrap';
 
-import { FORMAT_DATE } from '../../../constants/FormFieldType';
+import { FORMAT_DATE,FORMAT_TIME } from '../../../constants/FormFieldType';
 import Label from '../Label';
 
 import './index.scss';
@@ -19,17 +19,38 @@ const FormDateRangePicker = ({ field, validator }) => {
 
   const [startDate, setStartDate] = useState(startField.value && new Date(startField.value));
   const [endDate, setEndDate] = useState(endField.value && new Date(endField.value));
+    console.log('startField.value:', startField.value);
+  console.log('endField.value:', endField.value);
 
+  // const handleStartDate = (date) => {
+  //   setStartDate(date);
+  //   startField.changed(date);
+  //   startField.value = date;
+  //   console.log('Start Date:', date);
+  // };
   const handleStartDate = (date) => {
-    setStartDate(date);
-    startField.changed(date);
-    startField.value = date;
+    const startDate = new Date(date);
+    startDate.setHours(startDate.getHours() + 7);
+    setStartDate(startDate);
+    startField.changed(startDate);
+    startField.value = startDate;
+    console.log('Start Date:', startDate);
   };
 
+  // const handleEndDate = (date) => {
+  //   setEndDate(date);
+  //   endField.changed(date);
+  //   endField.value = date;
+  //   console.log('End Date:', date);
+  // };
+
   const handleEndDate = (date) => {
-    setEndDate(date);
-    endField.changed(date);
-    endField.value = date;
+    const endDate = new Date(date);
+    endDate.setHours(endDate.getHours() + 7);
+    setEndDate(endDate);
+    endField.changed(endDate);
+    endField.value = endDate;
+    console.log('End Date:', endDate);
   };
   return (
     <>
