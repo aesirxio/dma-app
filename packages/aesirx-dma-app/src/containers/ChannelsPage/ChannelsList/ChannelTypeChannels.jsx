@@ -134,7 +134,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
                     }
                     alt={channel.name}
                   />
-                  <span className="ms-2">{channel.name}</span>
+                  <span className="space-img ms-2">{channel.name}</span>
                 </div>
               </div>
             </div>
