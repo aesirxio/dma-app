@@ -19,8 +19,6 @@ const FormDateRangePicker = ({ field, validator }) => {
 
   const [startDate, setStartDate] = useState(startField.value && new Date(startField.value));
   const [endDate, setEndDate] = useState(endField.value && new Date(endField.value));
-    console.log('startField.value:', startField.value);
-  console.log('endField.value:', endField.value);
 
   // const handleStartDate = (date) => {
   //   setStartDate(date);
