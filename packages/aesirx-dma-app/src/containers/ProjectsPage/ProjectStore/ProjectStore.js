@@ -46,18 +46,20 @@ export default class ProjectStore {
     callbackOnError,
     dataFilter = {},
     paginationStep = 1,
-    paginationSize = 25
+    paginationSize = 25,
+    sort = {}
   ) {
     try {
       const projectAPIService = new AesirxProjectApiService();
       const respondedDataFromLibrary = await projectAPIService.searchProjects(
         dataFilter,
         paginationStep,
-        paginationSize
+        paginationSize,
+        true,
+        sort
       );
 
       let projectDataModels = null;
-
       if (respondedDataFromLibrary !== null) {
         projectDataModels = ProjectUtils.transformProjectResponseIntoModel(
           respondedDataFromLibrary.list

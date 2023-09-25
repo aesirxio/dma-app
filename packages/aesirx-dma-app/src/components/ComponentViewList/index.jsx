@@ -65,6 +65,25 @@ class ComponentViewList extends Component {
   _handleList = () => {
     this.listViewModel.isList = !this.listViewModel.isList;
   };
+
+  handleSort = (sort) => {
+    if (sort.ordering === 'name') {
+      sort.ordering = 'title';
+    } else if (sort.ordering === 'startDate') {
+      sort.ordering = 'start_date';
+    } else if (sort.ordering === 'endDate') {
+      sort.ordering = 'end_date';
+    }
+    this.formModalViewModal.projectListViewModel.searchProjects({}, sort);
+  };
+
+  setIsOpen = (val) => {
+    if(val) {
+      this.formModalViewModal.openModal();
+    } else {
+      this.formModalViewModal.closeModal();
+    }
+  };
 }
 
 export default ComponentViewList;
