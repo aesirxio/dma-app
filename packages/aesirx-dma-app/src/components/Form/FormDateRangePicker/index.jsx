@@ -34,7 +34,7 @@ const FormDateRangePicker = ({ field, validator }) => {
     endField.value = date;
   };
 
-  function setCurrentTime(date) {
+  const setCurrentTime = (date) => {
     let now = new Date();
     return new Date(
       date.getFullYear(),
@@ -44,7 +44,7 @@ const FormDateRangePicker = ({ field, validator }) => {
       now.getMinutes(),
       now.getSeconds()
     );
-  }
+  };
 
   return (
     <>
