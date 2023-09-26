@@ -7,7 +7,7 @@ import React, { useState, lazy } from 'react';
 
 import { Form } from 'react-bootstrap';
 
-import { FORMAT_DATE, FORMAT_TIME } from '../../../constants/FormFieldType';
+import { FORMAT_DATE } from '../../../constants/FormFieldType';
 import Label from '../Label';
 
 import './index.scss';
