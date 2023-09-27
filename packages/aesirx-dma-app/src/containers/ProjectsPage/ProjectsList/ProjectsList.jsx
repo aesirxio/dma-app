@@ -12,46 +12,46 @@ import { observer } from 'mobx-react';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
 
-import { Spinner, Table, GlobalFilter } from 'aesirx-uikit';
+import { Spinner, Table, TableBar } from 'aesirx-uikit';
 import ComponentNoData from '../../../components/ComponentNoData';
 import ComponentViewList from '../../../components/ComponentViewList';
 
-// let dataFilter = {
-//   searchText: '',
-//   columns: [],
-//   titleFilter: {},
-//   datetime: null,
-//   page: '',
-// };
+let dataFilter = {
+  searchText: '',
+  columns: [],
+  titleFilter: {},
+  datetime: null,
+  page: '',
+};
 
-// let setFilter = (data, key) => {
-//   switch (key) {
-//     // keep searchText when render
-//     case 1:
-//       return (dataFilter.searchText = data);
-//     // keep columns hide when render
-//     case 2:
-//       return (dataFilter.columns = data);
-//     // keep title filter when render
-//     case 3:
-//       return (dataFilter.titleFilter = data);
-//     // keep datetime filter when render
-//     case 4:
-//       return (dataFilter.datetime = data);
-//     // keep page when render
-//     case 5:
-//       return (dataFilter.page = data);
-//     case 6:
-//       dataFilter.searchText = '';
-//       dataFilter.columns = [];
-//       dataFilter.titleFilter = {};
-//       dataFilter.datetime = null;
-//       dataFilter.page = '';
-//       break;
-//     default:
-//       return null;
-//   }
-// };
+let setFilter = (data, key) => {
+  switch (key) {
+    // keep searchText when render
+    case 1:
+      return (dataFilter.searchText = data);
+    // keep columns hide when render
+    case 2:
+      return (dataFilter.columns = data);
+    // keep title filter when render
+    case 3:
+      return (dataFilter.titleFilter = data);
+    // keep datetime filter when render
+    case 4:
+      return (dataFilter.datetime = data);
+    // keep page when render
+    case 5:
+      return (dataFilter.page = data);
+    case 6:
+      dataFilter.searchText = '';
+      dataFilter.columns = [];
+      dataFilter.titleFilter = {};
+      dataFilter.datetime = null;
+      dataFilter.page = '';
+      break;
+    default:
+      return null;
+  }
+};
 
 const ProjectsList = observer(
   class ProjectsList extends ComponentViewList {
@@ -82,10 +82,6 @@ const ProjectsList = observer(
             </div>
           ),
         },
-        // {
-        //   Header: "Logo",
-        //   accessor: PROJECT_COLUMN_INDICATOR.LOGO,
-        // },
         {
           Header: t('txt_short_description'),
           accessor: PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION,
@@ -133,18 +129,6 @@ const ProjectsList = observer(
             }
           },
         },
-        // {
-        //   Header: 'Lead',
-        //   accessor: PROJECT_COLUMN_INDICATOR.LEAD,
-        // },
-        // {
-        //   Header: 'Progress',
-        //   accessor: PROJECT_COLUMN_INDICATOR.PROGRESS,
-        // },
-        // {
-        //   Header: t('created_date'),
-        //   accessor: PROJECT_COLUMN_INDICATOR.CREATED_DATE,
-        // },
       ];
 
       if (tableStatus === PAGE_STATUS.LOADING) {
@@ -153,6 +137,14 @@ const ProjectsList = observer(
 
       return (
         <>
+          <TableBar
+            dataFilter={dataFilter}
+            setFilter={setFilter}
+            tableRowHeader={tableRowHeader}
+            setGlobalFilters={this.setGlobalFilters}
+            onAction={this._handleList()}
+            isList={this.listViewModel.isList}
+          />
           {projects ? (
             <Table
               data={projects}

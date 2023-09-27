@@ -77,11 +77,18 @@ class ComponentViewList extends Component {
     this.formModalViewModal.projectListViewModel.searchProjects({}, sort);
   };
 
-  setIsOpen = (val) => {
-    if(val) {
-      this.formModalViewModal.openModal();
-    } else {
-      this.formModalViewModal.closeModal();
+  setGlobalFilters = (filters) => {
+    if (this.listViewModel.searchFunction !== undefined) {
+      const finalDataFilter = {
+        ...getState.dataFilter,
+        ...filters,
+      };
+      setState({
+        ...getState,
+        dataFilter: finalDataFilter,
+      });
+
+      this.listViewModel.searchFunction(finalDataFilter || undefined, {});
     }
   };
 }
