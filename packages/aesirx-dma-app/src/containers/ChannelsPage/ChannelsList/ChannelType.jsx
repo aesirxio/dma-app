@@ -58,7 +58,9 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
                     alt={channelType.name}
                   />
                 )}
-                <span className="ms-2 fs-4 text-body text-capitalize space-img">{channelType.name}</span>
+                <span className="ms-2 fs-4 text-body text-capitalize space-img">
+                  {channelType.name}
+                </span>
               </div>
 
               {channelType.pages > '0' && (

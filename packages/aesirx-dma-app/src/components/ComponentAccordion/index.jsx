@@ -21,7 +21,7 @@ class ComponentAccordion extends Component {
             id={`heading${this.props.id}`}
           >
             <button
-              className="accordion-button bg-gray p-0 text-dark border-0 shadow-none" 
+              className="accordion-button bg-gray p-0 text-dark border-0 shadow-none"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target={`#${this.props.id}Collapse`}
