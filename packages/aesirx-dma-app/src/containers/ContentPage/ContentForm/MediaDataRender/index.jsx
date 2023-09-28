@@ -30,7 +30,7 @@ class MediaDataRender extends React.Component {
         {imageData.map((damAsset, index) => (
           <div
             key={index}
-            className="item_dam_assets justify-content-start mt-18px mr-12 me-18px mb-12"
+            className="item_dam_assets justify-content-start mt-18px me-18px mb-12px"
           >
             <div className="position-relative m-2 group-bg-img-thumbnail">
               <div>
