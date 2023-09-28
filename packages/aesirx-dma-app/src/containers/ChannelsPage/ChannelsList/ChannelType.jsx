@@ -41,24 +41,24 @@ const ChannelType = observer(({ channelTypeIndex, channelCategory }) => {
     <div className="accordion mt-4" id={`accordionChannelType${channelTypeIndex}`}>
       {list.map((channelType, index) => (
         <div
-          className="accordion-item mt-3 bg-blue-5 rounded-2 border-0"
+          className="accordion-item mt-24 bg-blue-5 rounded-2 border-0"
           key={Math.random(40, 200)}
         >
           <h3 className="accordion-header" id={`flush-heading${index}`}>
             <div
-              className={`p-3 d-flex align-items-center`}
+              className={`d-flex align-items-center accordion-item-custom`}
               data-bs-toggle="collapse"
               data-bs-target={`#flush-collapse${index}`}
             >
               <div className="flex-grow-1">
                 {channelType.image && (
                   <ComponentImage
-                    className="img-avatar"
+                    className="img-avatar "
                     src={channelType.image}
                     alt={channelType.name}
                   />
                 )}
-                <span className="ms-2 fs-4 text-body text-capitalize space-img">
+                <span className="ms-2 text-body text-capitalize accordion-item-name-custom">
                   {channelType.name}
                 </span>
               </div>
