@@ -13,6 +13,7 @@ class ComponentViewList extends Component {
   contentData = null;
   key = null;
   view = null;
+  dataFilter = {};
 
   constructor(props) {
     super(props);
@@ -64,6 +65,28 @@ class ComponentViewList extends Component {
 
   _handleList = () => {
     this.listViewModel.isList = !this.listViewModel.isList;
+  };
+
+  handleSort = (sort) => {
+    if (sort.ordering === 'name') {
+      sort.ordering = 'title';
+    } else if (sort.ordering === 'startDate') {
+      sort.ordering = 'start_date';
+    } else if (sort.ordering === 'endDate') {
+      sort.ordering = 'end_date';
+    }
+    this.formModalViewModal.projectListViewModel.searchProjects({}, sort);
+  };
+
+  setGlobalFilters = (filters) => {
+    if (this.listViewModel.searchFunction !== undefined) {
+      const finalDataFilter = {
+        ...this.dataFilter,
+        ...filters,
+      };
+
+      this.listViewModel.searchFunction(finalDataFilter || undefined, {});
+    }
   };
 }
 
