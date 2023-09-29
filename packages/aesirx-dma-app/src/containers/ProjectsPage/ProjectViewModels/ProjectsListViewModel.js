@@ -108,7 +108,7 @@ class ProjectsListViewModel {
     }
   };
 
-  searchProjects = (dataFilter) => {
+  searchProjects = (dataFilter, sort) => {
     this.dataFilter = dataFilter;
     this.sort = sort;
 

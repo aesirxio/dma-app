@@ -7,7 +7,6 @@ import React from 'react';
 
 import PAGE_STATUS from '../../../constants/PageStatus';
 
-import Table from '../../../components/Table';
 import { withTranslation } from 'react-i18next';
 import { observer } from 'mobx-react';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
@@ -162,8 +161,8 @@ const ProjectsList = observer(
             isList={this.listViewModel.isList}
           />
           {projects ? (
-            {
-              this.listViewModel.isList ? (
+            <>
+              {this.listViewModel.isList ? (
                 <Table
                   data={projects}
                   columns={tableRowHeader}
@@ -171,8 +170,10 @@ const ProjectsList = observer(
                   isDesc={isDesc}
                   onSort={this._handleSort}
                 />
-              ) : ('ui thumb')
-            }
+              ) : (
+                'ui thumb'
+              )}
+            </>
           ) : (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
