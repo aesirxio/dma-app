@@ -23,7 +23,6 @@ let dataFilter = {
   datetime: null,
   page: '',
 };
-
 let setFilter = (data, key) => {
   switch (key) {
     // keep searchText when render
@@ -53,10 +52,13 @@ let setFilter = (data, key) => {
   }
 };
 
+const page = {};
+
 const ProjectsList = observer(
   class ProjectsList extends ComponentViewList {
     view = 'project';
     key = PROJECT_COLUMN_INDICATOR.ID;
+
     handleEdit = (e, row) => {
       this.formModalViewModal.getProject(row.id);
     };
@@ -72,6 +74,7 @@ const ProjectsList = observer(
     render() {
       const { tableStatus, projects, pagination, isDesc } = this.listViewModel;
       const { t } = this.props;
+
       const tableRowHeader = [
         {
           Header: t('txt_project_name'),
@@ -142,8 +145,8 @@ const ProjectsList = observer(
             setFilter={setFilter}
             tableRowHeader={tableRowHeader}
             setGlobalFilters={this.setGlobalFilters}
-            onAction={this._handleList()}
-            isList={this.listViewModel.isList}
+            onAction={this._handleList}
+            isList={this._handleList}
           />
           {projects ? (
             <Table

@@ -13,6 +13,7 @@ class ComponentViewList extends Component {
   contentData = null;
   key = null;
   view = null;
+  dataFilter = {};
 
   constructor(props) {
     super(props);
