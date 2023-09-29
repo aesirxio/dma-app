@@ -12,7 +12,7 @@ import { observer } from 'mobx-react';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
 
-import { Spinner, Table, TableBar } from 'aesirx-uikit';
+import { Spinner, Table, TableBar, Thumb } from 'aesirx-uikit';
 import ComponentNoData from '../../../components/ComponentNoData';
 import ComponentViewList from '../../../components/ComponentViewList';
 
@@ -158,16 +158,20 @@ const ProjectsList = observer(
             tableRowHeader={tableRowHeader}
             setGlobalFilters={this.setGlobalFilters}
             onAction={this._handleList}
-            isList={this._handleList}
+            isList={this.listViewModel.isList}
           />
           {projects ? (
-            <Table
-              data={projects}
-              columns={tableRowHeader}
-              onSort={this._handleSort}
-              isDesc={isDesc}
-              pagination={pagination}
-            />
+            this.listViewModel.isList ? (
+              <Table
+                data={projects}
+                columns={tableRowHeader}
+                onSort={this._handleSort}
+                isDesc={isDesc}
+                pagination={pagination}
+              />
+            ) : (
+              <Thumb data={projects} />
+            )
           ) : (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
