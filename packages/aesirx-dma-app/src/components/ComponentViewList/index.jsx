@@ -65,6 +65,32 @@ class ComponentViewList extends Component {
   _handleList = () => {
     this.listViewModel.isList = !this.listViewModel.isList;
   };
+
+  handleSort = (sort) => {
+    if (sort.ordering === 'name') {
+      sort.ordering = 'title';
+    } else if (sort.ordering === 'startDate') {
+      sort.ordering = 'start_date';
+    } else if (sort.ordering === 'endDate') {
+      sort.ordering = 'end_date';
+    }
+    this.formModalViewModal.projectListViewModel.searchProjects({}, sort);
+  };
+
+  setGlobalFilters = (filters) => {
+    if (this.listViewModel.searchFunction !== undefined) {
+      const finalDataFilter = {
+        ...getState.dataFilter,
+        ...filters,
+      };
+      setState({
+        ...getState,
+        dataFilter: finalDataFilter,
+      });
+
+      this.listViewModel.searchFunction(finalDataFilter || undefined, {});
+    }
+  };
 }
 
 export default ComponentViewList;

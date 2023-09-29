@@ -27,6 +27,10 @@ class ProjectsListViewModel {
 
   pageSize = 5;
 
+  sort = {};
+
+  isDesc = false;
+
   constructor(projectStore) {
     makeAutoObservable(this);
     this.projectStore = projectStore;
@@ -104,14 +108,22 @@ class ProjectsListViewModel {
     }
   };
 
-  searchProjects = (dataFilter) => {
+  searchProjects = (dataFilter, sort) => {
     this.dataFilter = dataFilter;
+    this.sort = sort;
+
+    if (sort.direction === 'asc') {
+      this.isDesc = !this.isDesc;
+    } else {
+      this.isDesc = false;
+    }
     this.projectStore.searchProjects(
       this.callbackOnSuccessHandler,
       this.callbackOnErrorHander,
       dataFilter,
       0,
-      this.pageSize
+      this.pageSize,
+      sort
     );
   };
 
