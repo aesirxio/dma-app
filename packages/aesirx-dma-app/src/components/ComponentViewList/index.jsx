@@ -13,6 +13,7 @@ class ComponentViewList extends Component {
   contentData = null;
   key = null;
   view = null;
+  dataFilter = {};
 
   constructor(props) {
     super(props);
@@ -80,14 +81,9 @@ class ComponentViewList extends Component {
   setGlobalFilters = (filters) => {
     if (this.listViewModel.searchFunction !== undefined) {
       const finalDataFilter = {
-        ...getState.dataFilter,
+        ...this.dataFilter,
         ...filters,
       };
-      setState({
-        ...getState,
-        dataFilter: finalDataFilter,
-      });
-
       this.listViewModel.searchFunction(finalDataFilter || undefined, {});
     }
   };
