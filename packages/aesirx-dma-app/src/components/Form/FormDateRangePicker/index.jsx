@@ -21,16 +21,31 @@ const FormDateRangePicker = ({ field, validator }) => {
   const [endDate, setEndDate] = useState(endField.value && new Date(endField.value));
 
   const handleStartDate = (date) => {
+    date = setCurrentTime(date);
     setStartDate(date);
     startField.changed(date);
     startField.value = date;
   };
 
   const handleEndDate = (date) => {
+    date = setCurrentTime(date);
     setEndDate(date);
     endField.changed(date);
     endField.value = date;
   };
+
+  const setCurrentTime = (date) => {
+    let now = new Date();
+    return new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      now.getHours(),
+      now.getMinutes(),
+      now.getSeconds()
+    );
+  };
+
   return (
     <>
       <Form.Group key={Math.random(40, 200)} className="mb-3">
