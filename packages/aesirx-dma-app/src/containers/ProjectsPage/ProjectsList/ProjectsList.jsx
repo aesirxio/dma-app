@@ -12,7 +12,7 @@ import { observer } from 'mobx-react';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
 
-import { Spinner, Table, TableBar, Thumb } from 'aesirx-uikit';
+import { Spinner, Table, TableBar } from 'aesirx-uikit';
 import ComponentNoData from '../../../components/ComponentNoData';
 import ComponentViewList from '../../../components/ComponentViewList';
 
@@ -170,7 +170,7 @@ const ProjectsList = observer(
                 pagination={pagination}
               />
             ) : (
-              <Thumb data={projects} />
+              ''
             )
           ) : (
             <ComponentNoData
