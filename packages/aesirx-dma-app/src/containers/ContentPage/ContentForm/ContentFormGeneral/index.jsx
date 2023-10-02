@@ -108,7 +108,6 @@ const ContentFormGeneral = observer(
 
       dataChannels.forEach((channel) => {
         channel.list.forEach((list) => {
-
           //description
           if (!validate?.description) {
             if (list?.requirements?.description != 0) {
@@ -173,7 +172,9 @@ const ContentFormGeneral = observer(
               validate.channelHeadline + t('txt_headline_limmit') + validate.headline,
               'error'
             );
-          } else if (twitterText.parseTweet(valueDescription).weightedLength > validate.description) {
+          } else if (
+            twitterText.parseTweet(valueDescription).weightedLength > validate.description
+          ) {
             notify(
               validate.channelDescription + t('txt_description_limmit') + validate.description,
               'error'

@@ -10,7 +10,6 @@ import { Form } from 'react-bootstrap';
 import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from '../../../../constants/ContentModule';
 import ContentFormDescriptionMedia from './media';
 import ContentUtils from '../../ContentUtils/ContentUtils';
-import twitterText from 'twitter-text';
 
 const ContentFormDescriptionBasic = observer(({ formPropsData, onBlurDescription }) => {
   const descriptionObj = formPropsData[CONTENT_FIELD_KEY.DESCRIPTION];
@@ -18,8 +17,6 @@ const ContentFormDescriptionBasic = observer(({ formPropsData, onBlurDescription
   const description = descriptionObj[Object.keys(descriptionObj)[0]];
 
   const handleOnChange = ({ target }) => {
-    console.log('twitterText.parseTweet(target.value).weightedLength:', twitterText.parseTweet(target.value).weightedLength);
-    console.log('target.value.length:', target.value.length);
     ContentUtils.setDataForChannels(
       CONTENT_FIELD_KEY.DESCRIPTION,
       target.value,
@@ -39,7 +36,6 @@ const ContentFormDescriptionBasic = observer(({ formPropsData, onBlurDescription
         className="form-control rounded-0"
         onChange={handleOnChange}
         onBlur={onBlurDescription}
-        // maxLength={280}
       />
       <ContentFormDescriptionMedia formPropsData={formPropsData} />
     </>

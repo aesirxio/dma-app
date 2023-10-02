@@ -68,7 +68,7 @@ class ProjectForm extends Component {
                 this.formPropsData[PROJECT_COLUMN_INDICATOR.START_DATE] = date;
               },
               required: true,
-              validation: 'required', 
+              validation: 'required',
               blurred: () => {
                 this.validator.showMessageFor('Start Date');
               },
