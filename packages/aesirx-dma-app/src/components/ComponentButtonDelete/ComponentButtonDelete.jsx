@@ -11,12 +11,15 @@ import ContentDelete from 'containers/ContentPage/ContentForm/ContentDelete';
 
 class ComponentButtonDelete extends Component {
   render() {
-    const view = window.location.pathname;
+    const pathname = window.location.pathname;
+    const segments = pathname.split('/');
+    const lastSegment = segments[segments.length - 1];
+
     return (
       <>
-        <div>{view === '/campaigns' && <CampaignsDelete />}</div>
-        <div>{view === '/projects' && <ProjectDelete />}</div>
-        <div>{view === '/content' && <ContentDelete />}</div>
+        <div>{lastSegment === 'campaigns' && <CampaignsDelete />}</div>
+        <div>{lastSegment === 'projects' && <ProjectDelete />}</div>
+        <div>{lastSegment === 'content' && <ContentDelete />}</div>
       </>
     );
   }
