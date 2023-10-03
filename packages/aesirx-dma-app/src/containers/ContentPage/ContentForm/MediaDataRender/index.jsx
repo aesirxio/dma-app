@@ -30,7 +30,7 @@ class MediaDataRender extends React.Component {
         {imageData.map((damAsset, index) => (
           <div
             key={index}
-            className="item_dam_assets justify-content-start border-top mt-4 me-18px"
+            className="item_dam_assets justify-content-start mt-18px me-18px mb-12px ms-12px"
           >
             <div className="position-relative m-2 group-bg-img-thumbnail">
               <div>
@@ -68,7 +68,7 @@ class MediaDataRender extends React.Component {
           <div>
             {videoData.map((value, index) => {
               return (
-                <div key={index} className="justify-content-start border-top mt-4 me-18px">
+                <div key={index} className="justify-content-start mt-4 me-18px">
                   <div className="position-relative m-2 w-260">
                     <div>
                       <span className="fa-pull-right">

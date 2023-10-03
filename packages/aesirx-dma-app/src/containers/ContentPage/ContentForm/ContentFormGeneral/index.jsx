@@ -15,7 +15,7 @@ import { renderingGroupFieldHandler } from '../../../../utils/form';
 import ContentFormGeneralChannel from './channel';
 import ContentFormDescription from '../ContentFormDescription';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
-
+import twitterText from 'twitter-text';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { notify, Button } from 'aesirx-uikit';
@@ -111,6 +111,7 @@ const ContentFormGeneral = observer(
       const channelsData = this.viewModel.channelMasterData;
       const dataChannels = ChannelUtils.getChannelByFilter(channelsData, 'removed', 'not');
       const { t } = this.props;
+      const valueDescription = Object.values(this.formPropsData[CONTENT_FIELD_KEY.DESCRIPTION])[0];
       const mediaChannel = ContentUtils.hasMediaChannel(dataChannels);
       const listMedia = Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0];
       const typeImage = listMedia.find((items) => items.type == 'images');
@@ -186,8 +187,7 @@ const ContentFormGeneral = observer(
               'error'
             );
           } else if (
-            Object.values(this.formPropsData[CONTENT_FIELD_KEY.DESCRIPTION])[0].length >
-            validate.description
+            twitterText.parseTweet(valueDescription).weightedLength > validate.description
           ) {
             notify(
               validate.channelDescription + t('txt_description_limmit') + validate.description,

@@ -94,6 +94,7 @@ class CampaignsStore {
         .utc()
         .format();
       const convertedCampaignsData = CampaignsModel.convertSubmittedDataToAPIService(campaignsData);
+
       const campaignService = new AesirxCampaignApiService();
       let resultOnSave = false;
 
