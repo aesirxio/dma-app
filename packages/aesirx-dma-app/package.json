@@ -1,6 +1,6 @@
 {
   "name": "aesirx-dma-app",
-  "version": "1.7.0",
+  "version": "2.0.0-dev",
   "license": "GPL-3.0-only",
   "author": "AesirX",
   "main": "dist/index.js",
@@ -46,6 +46,7 @@
     "react-transition-group": "^4.4.2",
     "simple-react-validator": "^1.6.0",
     "swiper": "^6.3.5",
+    "twitter-text": "^3.1.0",
     "web-vitals": "^3.3.1"
   },
   "scripts": {
@@ -59,8 +60,8 @@
     "build:lib": "NODE_ENV=production tsup",
     "dev:lib": "NODE_ENV=development tsup --watch",
     "prepublishOnly": "yarn build:lib",
-    "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx}'",
-    "format:write": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
+    "format:check": "prettier --check \"./src/**/*.{js,jsx,ts,tsx}\"",
+    "format:write": "prettier --write \"./src/**/*.{js,jsx,ts,tsx}\""
   },
   "eslintConfig": {
     "extends": [

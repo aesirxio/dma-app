@@ -128,7 +128,7 @@ const Table = ({
     return (
       <>
         <input
-          className="form-check-input p-0 bg-transparent rounded-2"
+          className="form-check-input p-0  rounded-2"
           type="checkbox"
           ref={resolvedRef}
           {...rest}
