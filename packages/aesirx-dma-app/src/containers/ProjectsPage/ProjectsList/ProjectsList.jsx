@@ -72,7 +72,7 @@ const ProjectsList = observer(
                     'txt_running'
                   )} bg-posted mw-100 h-35 d-inline align-middle`}
                 >
-                  {t('txt_processing')}
+                  {t('txt_running')}
                 </span>
               );
             } else if (value === 2) {
@@ -82,15 +82,15 @@ const ProjectsList = observer(
                     'txt_schedule'
                   )} bg-schedule mw-100 h-35 d-inline align-middle`}
                 >
-                  {t('txt_pedding')}
+                  {t('txt_schedule')}
                 </span>
               );
             } else {
               return (
                 <span
-                  className={`badge ${t('txt_failed')} bg-failed mw-100 h-35 d-inline align-middle`}
+                  className={`badge ${t('txt_stop')} bg-failed mw-100 h-35 d-inline align-middle`}
                 >
-                  {t('txt_failed')}
+                  {t('txt_stop')}
                 </span>
               );
             }
