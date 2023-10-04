@@ -134,7 +134,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
                     }
                     alt={channel.name}
                   />
-                  <span className="ms-2">{channel.name}</span>
+                  <span className="space-img ms-14">{channel.name}</span>
                 </div>
               </div>
             </div>
@@ -148,7 +148,7 @@ const ChannelTypeChannels = observer(({ channelType }) => {
             <div className="col-1 text-end">
               <ChannelTypeChannelsEnable channel={channel} channelType={channelType} />
             </div>
-            <div className="col-3 col-lg-2">
+            <div className="col-3 col-lg-2 type-channel-action-custom">
               <ChannelTypeChannelsAction
                 channelType={channelType}
                 channel={channel}

@@ -10,7 +10,8 @@ import CampaignsModel from '../CampaignsModel/CampaignsModel';
 import { AesirxCampaignApiService } from 'aesirx-lib';
 import { ProjectMasterDataModel } from '../../../store/Models/MasterDataModels/ProjectMasterDataModel';
 import { CampaignMasterDataModel } from '../../../store/Models/MasterDataModels/CampaignMasterDataModel';
-
+import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';
+import moment from 'moment';
 class CampaignsStore {
   globalStore = null;
   constructor(args = {}) {
@@ -81,6 +82,17 @@ class CampaignsStore {
 
   async saveCampaigns(campaignsData, callbackOnSuccess, callbackOnError) {
     try {
+      // Change local to UTC
+      campaignsData[CAMPAIGNS_FIELD_KEY.START_DATE] = moment(
+        campaignsData[CAMPAIGNS_FIELD_KEY.START_DATE]
+      )
+        .utc()
+        .format();
+      campaignsData[CAMPAIGNS_FIELD_KEY.END_DATE] = moment(
+        campaignsData[CAMPAIGNS_FIELD_KEY.END_DATE]
+      )
+        .utc()
+        .format();
       const convertedCampaignsData = CampaignsModel.convertSubmittedDataToAPIService(campaignsData);
 
       const campaignService = new AesirxCampaignApiService();

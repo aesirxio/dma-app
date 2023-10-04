@@ -212,5 +212,6 @@
   "txt_content":"Contenido",
   "txt_disconnect":"Desconectar",
   "txt_failed": "Error",
-  "txt_bulk_disconnect": "Desconexión masiva"
+  "txt_bulk_disconnect": "Desconexión masiva",
+  "txt_processing": "Procesando"
 }
