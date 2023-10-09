@@ -212,6 +212,5 @@
   "txt_content":"Вміст",
   "txt_disconnect":"Відключити",
   "txt_failed": "Помилка",
-  "txt_bulk_disconnect": "Масове відключення",
-  "txt_processing": "Обробка"
+  "txt_bulk_disconnect": "Масове відключення"
 }
