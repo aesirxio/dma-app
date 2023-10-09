@@ -15,6 +15,7 @@ class ComponentViewList extends Component {
   view = null;
   dataFilter = {};
   listDeleted = null;
+  dateRange = null;
 
   constructor(props) {
     super(props);
@@ -81,11 +82,13 @@ class ComponentViewList extends Component {
 
   setGlobalFilters = () => {};
 
-  setDateFilter = (date, dateRange) => {};
+  setDateFilter = (dateRange) => {
+    this.dateRange = dateRange;
+  };
 
-  onSelectionItem = (e, rowIndex, id) => {
+  onSelectionItem = (e, rowIndex, id, data) => {
     if (id === 'selection' && e.target.checked) {
-      listDeleted.push([data[rowIndex].id][0]);
+      this.listDeleted.push([data[rowIndex].id][0]);
     }
   };
 }
