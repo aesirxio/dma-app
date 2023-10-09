@@ -12,7 +12,7 @@ import { observer } from 'mobx-react';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
 
-import { Spinner, Table, TableBar } from 'aesirx-uikit';
+import { Spinner, Table, TableBar, Thumb } from 'aesirx-uikit';
 import ComponentNoData from '../../../components/ComponentNoData';
 import ComponentViewList from '../../../components/ComponentViewList';
 
@@ -68,8 +68,12 @@ const ProjectsList = observer(
       this.handleSort(data);
     };
 
+    __handleDelete = () => {
+      this.listViewModel.deleteProjects();
+    };
+
     render() {
-      const { tableStatus, projects, pagination, isDesc } = this.listViewModel;
+      const { tableStatus, projects, pagination, isDesc, projectIdsSelected } = this.listViewModel;
       const { t } = this.props;
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
@@ -159,6 +163,14 @@ const ProjectsList = observer(
             setGlobalFilters={this.setGlobalFilters}
             onAction={this._handleList}
             isList={this.listViewModel.isList}
+            isSearch={true}
+            isDateRange={true}
+            isAction={true}
+            onSearch={this.listViewModel.searchProjects}
+            onDelete={this.__handleDelete}
+            onSelection={this.listViewModel.selectItem}
+            listDeleted={projectIdsSelected}
+            setDateFilter={this.listViewModel.setDateFilter}
           />
           {projects ? (
             <>
@@ -169,9 +181,11 @@ const ProjectsList = observer(
                   pagination={pagination}
                   isDesc={isDesc}
                   onSort={this._handleSort}
+                  canSort={true}
+                  onSelectionItem={this.onSelectionItem}
                 />
               ) : (
-                'ui thumb'
+                <Thumb data={projects} />
               )}
             </>
           ) : (

@@ -14,6 +14,7 @@ class ComponentViewList extends Component {
   key = null;
   view = null;
   dataFilter = {};
+  listDeleted = null;
 
   constructor(props) {
     super(props);
@@ -78,14 +79,13 @@ class ComponentViewList extends Component {
     this.formModalViewModal.projectListViewModel.searchProjects({}, sort);
   };
 
-  setGlobalFilters = (filters) => {
-    if (this.listViewModel.searchFunction !== undefined) {
-      const finalDataFilter = {
-        ...this.dataFilter,
-        ...filters,
-      };
+  setGlobalFilters = () => {};
 
-      this.listViewModel.searchFunction(finalDataFilter || undefined, {});
+  setDateFilter = (date, dateRange) => {};
+
+  onSelectionItem = (e, rowIndex, id) => {
+    if (id === 'selection' && e.target.checked) {
+      listDeleted.push([data[rowIndex].id][0]);
     }
   };
 }

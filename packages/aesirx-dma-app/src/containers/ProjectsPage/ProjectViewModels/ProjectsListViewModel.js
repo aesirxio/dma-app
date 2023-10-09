@@ -85,6 +85,18 @@ class ProjectsListViewModel {
     }
   };
 
+  selectItem = (id, checked) => {
+    // Select item for deletion
+    if (checked) {
+      this.projectIdsSelected.push(id);
+    } else {
+      const index = this.projectIdsSelected.indexOf(5);
+      if (index > -1) {
+        this.projectIdsSelected.splice(index, 1);
+      }
+    }
+  };
+
   getPagination = (paginationStep, isList, limit = 5) => {
     this.pageSize = limit;
     this.tableStatus = PAGE_STATUS.LOADING;
