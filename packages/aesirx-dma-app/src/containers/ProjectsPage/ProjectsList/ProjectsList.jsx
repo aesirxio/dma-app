@@ -7,15 +7,51 @@ import React from 'react';
 
 import PAGE_STATUS from '../../../constants/PageStatus';
 
-import Table from '../../../components/Table';
 import { withTranslation } from 'react-i18next';
 import { observer } from 'mobx-react';
 import { withProjectViewModel } from '../ProjectViewModels/ProjectViewModelContextProvider';
 import { PROJECT_COLUMN_INDICATOR } from '../../../constants/ProjectModule';
 
-import { Spinner } from 'aesirx-uikit';
+import { Spinner, Table, TableBar, Thumb } from 'aesirx-uikit';
 import ComponentNoData from '../../../components/ComponentNoData';
 import ComponentViewList from '../../../components/ComponentViewList';
+
+let dataFilter = {
+  searchText: '',
+  columns: [],
+  titleFilter: {},
+  datetime: null,
+  page: '',
+};
+let setFilter = (data, key) => {
+  switch (key) {
+    // keep searchText when render
+    case 1:
+      return (dataFilter.searchText = data);
+    // keep columns hide when render
+    case 2:
+      return (dataFilter.columns = data);
+    // keep title filter when render
+    case 3:
+      return (dataFilter.titleFilter = data);
+    // keep datetime filter when render
+    case 4:
+      return (dataFilter.datetime = data);
+    // keep page when render
+    case 5:
+      return (dataFilter.page = data);
+    case 6:
+      dataFilter.searchText = '';
+      dataFilter.columns = [];
+      dataFilter.titleFilter = {};
+      dataFilter.datetime = null;
+      dataFilter.page = '';
+      break;
+    default:
+      return null;
+  }
+};
+
 const ProjectsList = observer(
   class ProjectsList extends ComponentViewList {
     view = 'project';
@@ -28,8 +64,16 @@ const ProjectsList = observer(
       this.listViewModel.isList = !this.listViewModel.isList;
     };
 
+    _handleSort = async (data) => {
+      this.handleSort(data);
+    };
+
+    __handleDelete = () => {
+      this.listViewModel.deleteProjects();
+    };
+
     render() {
-      const { tableStatus, projects, pagination } = this.listViewModel;
+      const { tableStatus, projects, pagination, isDesc, projectIdsSelected } = this.listViewModel;
       const { t } = this.props;
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
@@ -112,28 +156,38 @@ const ProjectsList = observer(
 
       return (
         <>
+          <TableBar
+            dataFilter={dataFilter}
+            setFilter={setFilter}
+            tableRowHeader={tableRowHeader}
+            setGlobalFilters={this.setGlobalFilters}
+            onAction={this._handleList}
+            isList={this.listViewModel.isList}
+            isSearch={true}
+            isDateRange={true}
+            isAction={true}
+            onSearch={this.listViewModel.searchProjects}
+            onDelete={this.__handleDelete}
+            onSelection={this.listViewModel.selectItem}
+            listDeleted={projectIdsSelected}
+            setDateFilter={this.listViewModel.setDateFilter}
+          />
           {projects ? (
-            <Table
-              rowData={projects}
-              tableRowHeader={tableRowHeader}
-              onEdit={this.handleEdit}
-              onSelect={this.handleSelect}
-              isThumb={true}
-              isList={this.listViewModel.isList}
-              pageSize={this.listViewModel.pageSize}
-              dataThumb={[
-                'selection',
-                PROJECT_COLUMN_INDICATOR.START_DATE,
-                PROJECT_COLUMN_INDICATOR.END_DATE,
-              ]}
-              pagination={pagination}
-              listViewModel={this.listViewModel}
-              searchFunction={this.listViewModel.searchProjects}
-              searchText={t('search_your_project')}
-              hasSubRow={false}
-              _handleList={this._handleList}
-              view={this.view}
-            />
+            <>
+              {this.listViewModel.isList ? (
+                <Table
+                  data={projects}
+                  columns={tableRowHeader}
+                  pagination={pagination}
+                  isDesc={isDesc}
+                  onSort={this._handleSort}
+                  canSort={true}
+                  onSelectionItem={this.onSelectionItem}
+                />
+              ) : (
+                <Thumb data={projects} />
+              )}
+            </>
           ) : (
             <ComponentNoData
               icons="/assets/images/ic_project.svg"
