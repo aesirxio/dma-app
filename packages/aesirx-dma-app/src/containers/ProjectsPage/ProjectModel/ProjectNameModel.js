@@ -7,15 +7,15 @@ import React from 'react';
 import { Image as ComponentImage } from 'aesirx-uikit';
 
 class ProjectNameModel {
-  constructor(name, logo) {
+  constructor(name) {
     this.name = name;
-    this.logo = logo;
+    // this.logo = logo;
   }
 
   getProjectName = () => {
     return (
       <>
-        {this.logo ? (
+        {/* {this.logo ? (
           <div className="project-name-logo">
             <ComponentImage
               src={this.logo}
@@ -25,7 +25,7 @@ class ProjectNameModel {
           </div>
         ) : (
           ''
-        )}
+        )} */}
 
         <span>{this.name}</span>
       </>
