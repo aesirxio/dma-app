@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Image as ComponentImage } from 'aesirx-uikit';
+
 
 class ProjectNameModel {
   constructor(name) {
