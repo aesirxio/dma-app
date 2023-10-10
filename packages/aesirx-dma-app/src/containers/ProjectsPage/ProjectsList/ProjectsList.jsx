@@ -72,6 +72,10 @@ const ProjectsList = observer(
       this.listViewModel.deleteProjects();
     };
 
+    _handleSelectionItem = (e, rowIndex, id) => {
+      this.listViewModel.selectItem(e, rowIndex, id);
+    };
+
     render() {
       const { tableStatus, projects, pagination, isDesc, projectIdsSelected } = this.listViewModel;
       const { t } = this.props;
@@ -182,7 +186,7 @@ const ProjectsList = observer(
                   isDesc={isDesc}
                   onSort={this._handleSort}
                   canSort={true}
-                  onSelectionItem={this.onSelectionItem}
+                  onSelectionItem={this._handleSelectionItem}
                 />
               ) : (
                 <Thumb data={projects} />

@@ -85,12 +85,6 @@ class ComponentViewList extends Component {
   setDateFilter = (dateRange) => {
     this.dateRange = dateRange;
   };
-
-  onSelectionItem = (e, rowIndex, id, data) => {
-    if (id === 'selection' && e.target.checked) {
-      this.listDeleted.push([data[rowIndex].id][0]);
-    }
-  };
 }
 
 export default ComponentViewList;
