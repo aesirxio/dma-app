@@ -82,6 +82,11 @@ const profileMenu = [
     text: 'txt_profile',
     link: '/profile',
   },
+  {
+    key: 2,
+    text: 'txt_sso',
+    link: '/sso',
+  },
 ];
 
 const integrationMenu = () =>
