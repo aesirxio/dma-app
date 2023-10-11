@@ -19,7 +19,7 @@ class ProjectLogoModel {
             src={this.logo ? this.logo : './assets/images/annotation.png'}
             alt="project-logo"
             className="w-100 object-fit-cover rounded-1" 
-            height={130}
+            height={130} 
           />
         </div>
       </>
