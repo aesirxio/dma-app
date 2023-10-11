@@ -13,6 +13,9 @@ class ComponentViewList extends Component {
   contentData = null;
   key = null;
   view = null;
+  dataFilter = {};
+  listDeleted = null;
+  dateRange = null;
 
   constructor(props) {
     super(props);
@@ -64,6 +67,29 @@ class ComponentViewList extends Component {
 
   _handleList = () => {
     this.listViewModel.isList = !this.listViewModel.isList;
+  };
+
+  handleSort = (sort) => {
+    if (sort.ordering === 'name') {
+      sort.ordering = 'title';
+    } else if (sort.ordering === 'startDate') {
+      sort.ordering = 'start_date';
+    } else if (sort.ordering === 'endDate') {
+      sort.ordering = 'end_date';
+    }
+    this.formModalViewModal.projectListViewModel.searchProjects({}, sort);
+  };
+
+  setGlobalFilters = () => {};
+
+  setDateFilter = (dateRange) => {
+    this.dateRange = dateRange;
+  };
+
+  onSelectionItem = (e, rowIndex, id, data) => {
+    if (id === 'selection' && e.target.checked) {
+      this.listDeleted.push([data[rowIndex].id][0]);
+    }
   };
 }
 

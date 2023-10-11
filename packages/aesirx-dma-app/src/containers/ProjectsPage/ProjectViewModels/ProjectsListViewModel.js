@@ -27,6 +27,10 @@ class ProjectsListViewModel {
 
   pageSize = 5;
 
+  sort = {};
+
+  isDesc = false;
+
   constructor(projectStore) {
     makeAutoObservable(this);
     this.projectStore = projectStore;
@@ -81,6 +85,18 @@ class ProjectsListViewModel {
     }
   };
 
+  selectItem = (id, checked) => {
+    // Select item for deletion
+    if (checked) {
+      this.projectIdsSelected.push(id);
+    } else {
+      const index = this.projectIdsSelected.indexOf(5);
+      if (index > -1) {
+        this.projectIdsSelected.splice(index, 1);
+      }
+    }
+  };
+
   getPagination = (paginationStep, isList, limit = 5) => {
     this.pageSize = limit;
     this.tableStatus = PAGE_STATUS.LOADING;
@@ -104,14 +120,23 @@ class ProjectsListViewModel {
     }
   };
 
-  searchProjects = (dataFilter) => {
+  searchProjects = (dataFilter, sort) => {
     this.dataFilter = dataFilter;
+    this.sort = sort;
+
+    if (sort.direction === 'asc') {
+      this.isDesc = !this.isDesc;
+    } else {
+      this.isDesc = false;
+    }
+
     this.projectStore.searchProjects(
       this.callbackOnSuccessHandler,
       this.callbackOnErrorHander,
       dataFilter,
       0,
-      this.pageSize
+      this.pageSize,
+      sort
     );
   };
 

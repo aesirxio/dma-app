@@ -15,7 +15,7 @@ import { renderingGroupFieldHandler } from '../../../../utils/form';
 import ContentFormGeneralChannel from './channel';
 import ContentFormDescription from '../ContentFormDescription';
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
-
+import twitterText from 'twitter-text';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { notify, Button } from 'aesirx-uikit';
@@ -34,6 +34,18 @@ const ContentFormGeneral = observer(
 
       this.formPropsData = this.props.formPropsData;
     }
+    isDisableHeadline = () => {
+      const channelsData = this.viewModel.channelMasterData;
+      let result = true;
+      channelsData.forEach((channel) => {
+        channel.list.forEach((item) => {
+          if (item.requirements && item.requirements.disableHeadline === false) {
+            result = false;
+          }
+        });
+      });
+      return result;
+    };
 
     generateFormSetting = () => {
       const { t } = this.props;
@@ -45,7 +57,7 @@ const ContentFormGeneral = observer(
               key: CONTENT_FIELD_KEY.NAME,
               type: FORM_FIELD_TYPE.INPUT,
               value: this.formPropsData[CONTENT_FIELD_KEY.NAME],
-              required: true,
+              required: !this.isDisableHeadline() ? true : false,
               validation: 'required',
               changed: (event) => {
                 this.formPropsData[CONTENT_FIELD_KEY.NAME] = event.target.value;
@@ -99,6 +111,7 @@ const ContentFormGeneral = observer(
       const channelsData = this.viewModel.channelMasterData;
       const dataChannels = ChannelUtils.getChannelByFilter(channelsData, 'removed', 'not');
       const { t } = this.props;
+      const valueDescription = Object.values(this.formPropsData[CONTENT_FIELD_KEY.DESCRIPTION])[0];
       const mediaChannel = ContentUtils.hasMediaChannel(dataChannels);
       const listMedia = Object.values(this.formPropsData[CONTENT_FIELD_KEY.DAM])[0];
       const typeImage = listMedia.find((items) => items.type == 'images');
@@ -165,14 +178,16 @@ const ContentFormGeneral = observer(
             !this.viewModel.requiredVideo(this.formPropsData[CONTENT_FIELD_KEY.DAM])
           ) {
             notify(t('txt_the_video_field_is_required'), 'error');
-          } else if (this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline) {
+          } else if (
+            !this.isDisableHeadline() &&
+            this.formPropsData[CONTENT_FIELD_KEY.NAME].length > validate.headline
+          ) {
             notify(
               validate.channelHeadline + t('txt_headline_limmit') + validate.headline,
               'error'
             );
           } else if (
-            Object.values(this.formPropsData[CONTENT_FIELD_KEY.DESCRIPTION])[0].length >
-            validate.description
+            twitterText.parseTweet(valueDescription).weightedLength > validate.description
           ) {
             notify(
               validate.channelDescription + t('txt_description_limmit') + validate.description,
@@ -200,19 +215,6 @@ const ContentFormGeneral = observer(
 
     onBlurDescription = () => {
       this.validator.showMessageFor('Description');
-    };
-
-    isDisableHeadline = () => {
-      const channelsData = this.viewModel.channelMasterData;
-      let result = true;
-      channelsData.forEach((channel) => {
-        channel.list.forEach((item) => {
-          if (item.requirements && item.requirements.disableHeadline === false) {
-            result = false;
-          }
-        });
-      });
-      return result;
     };
 
     render() {
