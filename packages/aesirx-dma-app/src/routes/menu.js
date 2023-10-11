@@ -62,6 +62,11 @@ const settingMenu = [
     link: '/profile',
     icons_fa: faUser,
   },
+  {
+    name: 'SSO',
+    text: 'txt_sso',
+    link: '/sso',
+  },
 ];
 const setupMenu = [
   {
