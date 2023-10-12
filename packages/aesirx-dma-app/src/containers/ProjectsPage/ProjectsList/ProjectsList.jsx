@@ -128,7 +128,7 @@ const ProjectsList = observer(
                 <span
                   className={`badge ${t(
                     'txt_schedule'
-                  )} bg-schedule mw-100 h-35 d-inline align-middle`}
+                  )} bg-processing mw-100 h-35 d-inline align-middle`}
                 >
                   {t('txt_schedule')}
                 </span>
@@ -157,7 +157,6 @@ const ProjectsList = observer(
         //   accessor: PROJECT_COLUMN_INDICATOR.CREATED_DATE,
         // },
       ];
-
       return (
         <>
           <TableBar

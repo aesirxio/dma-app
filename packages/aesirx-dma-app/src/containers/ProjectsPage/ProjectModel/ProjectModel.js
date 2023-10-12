@@ -14,6 +14,7 @@ import {
 } from '../../../constants/ProjectModule';
 
 import { format } from 'date-fns';
+import { ProjectLogoModel } from './ProjectLogoModel';
 
 class ProjectModel {
   constructor(data) {
@@ -29,7 +30,9 @@ class ProjectModel {
     this.enddate = data[ESI_PROJECT_COLUMN_INDICATOR.END_DATE] ?? '';
     this.shortDescription = data[ESI_PROJECT_COLUMN_INDICATOR.SHORT_DESCRIPTION] ?? '';
 
-    this.projectName = new ProjectNameModel(this.name, this.logoUrl);
+    // this.projectName = new ProjectNameModel(this.name, this.logoUrl);
+    this.projectName = new ProjectNameModel(this.name);
+    this.projectLogo = new ProjectLogoModel(this.logoUrl);
 
     this.projectLead = data.project_lead ? new ProjectLeadModel(data.project_lead) : null;
 
@@ -159,13 +162,13 @@ class ProjectModel {
 
     return {
       [id.columnName]: id.value,
-      [name.columnName]: this.projectName.getProjectName(),
+      [name.columnName]: this.projectName.getProjectName(), 
       [shortDescription.columnName]: shortDescription.value,
       [startdate.columnName]: startdate.value,
       [enddate.columnName]: enddate.value,
       [lead.columnName]: lead.value,
       [progress.columnName]: progress.value,
-      [logo.columnName]: logo.value,
+      [logo.columnName]: this.projectLogo.getProjectLogo(),
       [createdate.columnName]: createdate.value,
       [status.columnName]: status.value,
     };
