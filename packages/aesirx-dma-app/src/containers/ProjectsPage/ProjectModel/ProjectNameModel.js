@@ -5,7 +5,6 @@
 
 import React from 'react';
 
-
 class ProjectNameModel {
   constructor(name) {
     this.name = name;

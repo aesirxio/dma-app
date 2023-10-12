@@ -162,7 +162,7 @@ class ProjectModel {
 
     return {
       [id.columnName]: id.value,
-      [name.columnName]: this.projectName.getProjectName(), 
+      [name.columnName]: this.projectName.getProjectName(),
       [shortDescription.columnName]: shortDescription.value,
       [startdate.columnName]: startdate.value,
       [enddate.columnName]: enddate.value,
