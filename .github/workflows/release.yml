@@ -29,6 +29,7 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           strategy: upgrade
           ignore-scripts: false
+          package: ./packages/aesirx-dma-app
 
       - name: Docker meta
         id: meta
