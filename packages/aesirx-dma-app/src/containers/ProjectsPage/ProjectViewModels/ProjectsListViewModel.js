@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import { makeAutoObservable, toJS } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import ProjectUtils from '../ProjectUtils/ProjectUtils';
 import { notify } from 'aesirx-uikit';
@@ -78,22 +78,14 @@ class ProjectsListViewModel {
       );
       if (notify_success?.result) {
         notify('Delete success', 'success');
-        this.projectIdsSelected = [];
+        runInAction(() => {
+          this.projectIdsSelected = [];
+        });
       }
     } else {
       notify('Please choose an item to delete', 'warn');
-    }
-  };
-
-  selectItem = (e, row, id) => {
-    // Select item for deletion
-    const checked = e.target.checked;
-    const data = toJS(this.projects);
-    const result = this.projectIdsSelected;
-
-    if (id === 'selection' && checked) {
-      data.forEach((element, index) => {
-        index === row && result.push(element.id);
+      runInAction(() => {
+        this.projectIdsSelected = [];
       });
     }
   };
