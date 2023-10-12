@@ -21,7 +21,7 @@
     "@types/react": "^18"
   },
   "scripts": {
-    "prepare": "nx run-many -t build -p aesirx-sso aesirx-uikit aesirx-lib && nx run-many -t build:lib --exclude aesirx-uikit aesirx-lib aesirx-dma-app",
+    "prepare": "nx run aesirx-sso:build && nx run-many -t build -p  aesirx-uikit aesirx-lib && nx run-many -t build:lib --exclude aesirx-uikit aesirx-lib aesirx-dma-app",
     "dev": "nx run-many -t dev -p aesirx-uikit aesirx-lib aesirx-dma-app",
     "build": "nx run aesirx-dma-app:build",
     "build:lib": "nx run aesirx-dma-app:build:lib",
