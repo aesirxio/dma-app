@@ -3,7 +3,7 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import ProjectUtils from '../ProjectUtils/ProjectUtils';
 import { notify } from 'aesirx-uikit';
@@ -19,7 +19,7 @@ class ProjectsListViewModel {
 
   tableStatus = PAGE_STATUS.LOADING;
 
-  projectIdsSelected = null;
+  projectIdsSelected = [];
 
   dataFilter = null;
 
@@ -51,7 +51,7 @@ class ProjectsListViewModel {
     this.pagination = null;
     this.tableRowHeader = null;
     this.tableStatus = PAGE_STATUS.LOADING;
-    this.projectIdsSelected = null;
+    this.projectIdsSelected = [];
     this.dataFilter = null;
     this.isList = true;
     this.pageSize = 5;
@@ -69,7 +69,6 @@ class ProjectsListViewModel {
 
   deleteProjects = async () => {
     let getArrayId = this.projectIdsSelected;
-
     if (getArrayId.length > 0) {
       this.tableStatus = PAGE_STATUS.LOADING;
       const notify_success = await this.projectStore.deleteProjects(
@@ -79,21 +78,15 @@ class ProjectsListViewModel {
       );
       if (notify_success?.result) {
         notify('Delete success', 'success');
+        runInAction(() => {
+          this.projectIdsSelected = [];
+        });
       }
     } else {
       notify('Please choose an item to delete', 'warn');
-    }
-  };
-
-  selectItem = (id, checked) => {
-    // Select item for deletion
-    if (checked) {
-      this.projectIdsSelected.push(id);
-    } else {
-      const index = this.projectIdsSelected.indexOf(5);
-      if (index > -1) {
-        this.projectIdsSelected.splice(index, 1);
-      }
+      runInAction(() => {
+        this.projectIdsSelected = [];
+      });
     }
   };
 
