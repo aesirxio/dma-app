@@ -103,7 +103,7 @@
     "esbuild-scss-modules-plugin": "^1.1.1",
     "eslint": "^8.17",
     "git-revision-webpack-plugin": "^5.0.0",
-    "postcss": "^8.4.24",
+    "postcss": "^8.4.31",
     "prettier": "^2.8.4",
     "react-inject-env": "^2.1.0",
     "react-scripts": "^5.0.1",
