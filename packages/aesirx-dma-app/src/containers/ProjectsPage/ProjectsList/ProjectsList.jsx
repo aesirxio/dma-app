@@ -173,6 +173,7 @@ const ProjectsList = observer(
             onSearch={this.listViewModel.searchProjects}
             onDelete={this.__handleDelete}
             setDateFilter={this.listViewModel.setDateFilter}
+            onDateFilter={this.listViewModel.searchProjects}
           />
           {projects ? (
             <>

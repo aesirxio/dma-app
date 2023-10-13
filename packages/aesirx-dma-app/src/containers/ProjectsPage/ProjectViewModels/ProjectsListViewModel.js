@@ -117,7 +117,7 @@ class ProjectsListViewModel {
     this.dataFilter = dataFilter;
     this.sort = sort;
 
-    if (sort.direction === 'asc') {
+    if (sort?.direction === 'asc') {
       this.isDesc = !this.isDesc;
     } else {
       this.isDesc = false;
