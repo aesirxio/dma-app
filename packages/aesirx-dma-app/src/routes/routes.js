@@ -5,7 +5,7 @@
 
 import React, { lazy } from 'react';
 import { LoginPage, ProfilePage, DigitalAssetsPage, history } from 'aesirx-uikit';
-
+import { SSOConfig } from 'aesirx-sso';
 const CalendarPage = lazy(() => import('../containers/CalendarPage'));
 const Projects = lazy(() => import('../containers/ProjectsPage'));
 const CampaignsPage = lazy(() => import('../containers/CampaignsPage'));
@@ -85,6 +85,11 @@ const settingRoutes = [
     path: '/welcome',
     exact: true,
     main: () => <WelcomePage />,
+  },
+  {
+    path: '/sso',
+    exact: false,
+    main: () => <SSOConfig />,
   },
 ];
 
