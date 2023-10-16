@@ -9,7 +9,19 @@ COPY yarn.lock .
 
 COPY ./packages/aesirx-dma-app/package.json ./packages/aesirx-dma-app/package.json
 COPY ./packages/aesirx-lib ./packages/aesirx-lib
+COPY ./packages/aesirx-sso ./packages/aesirx-sso
 COPY ./packages/aesirx-uikit ./packages/aesirx-uikit
+
+RUN apk add --update --no-cache \
+    make \
+    g++ \
+    jpeg-dev \
+    cairo-dev \
+    giflib-dev \
+    pango-dev \
+    libtool \
+    autoconf \
+    automake
 
 RUN yarn install --frozen-lockfile --network-timeout 600000
 
@@ -22,6 +34,7 @@ RUN apk add --no-cache git
 # Cache and Install dependencies
 COPY --from=deps ./app/node_modules ./node_modules
 COPY --from=deps ./app/packages/aesirx-lib/dist ./packages/aesirx-lib/dist
+COPY --from=deps ./app/packages/aesirx-sso/build ./packages/aesirx-sso/build
 COPY --from=deps ./app/packages/aesirx-uikit/dist ./packages/aesirx-uikit/dist
 
 # Copy app files
@@ -30,6 +43,7 @@ COPY ./nx.json ./
 COPY ./package.json ./
 
 COPY ./packages/aesirx-lib/package.json ./packages/aesirx-lib/package.json
+COPY ./packages/aesirx-sso/package.json ./packages/aesirx-sso/package.json
 COPY ./packages/aesirx-uikit/package.json ./packages/aesirx-uikit/package.json
 
 COPY ./packages/aesirx-dma-app/package.json ./packages/aesirx-dma-app/
