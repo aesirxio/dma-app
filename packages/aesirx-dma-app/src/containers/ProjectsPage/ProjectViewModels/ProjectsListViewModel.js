@@ -7,6 +7,7 @@ import { makeAutoObservable, runInAction } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import ProjectUtils from '../ProjectUtils/ProjectUtils';
 import { notify } from 'aesirx-uikit';
+import moment from 'moment';
 
 class ProjectsListViewModel {
   projectStore = null;
@@ -114,14 +115,22 @@ class ProjectsListViewModel {
   };
 
   searchProjects = (dataFilter, sort) => {
-    this.dataFilter = dataFilter;
-    this.sort = sort;
-
     if (sort?.direction === 'asc') {
       this.isDesc = !this.isDesc;
     } else {
       this.isDesc = false;
     }
+
+    if (dataFilter.start_date && dataFilter.end_date) {
+      const end = moment(dataFilter.end_date).endOf('day');
+      const start_date = moment.utc(dataFilter.start_date).format();
+      const end_date = moment.utc(end).format();
+      dataFilter.start_date = start_date;
+      dataFilter.end_date = end_date;
+    }
+
+    this.dataFilter = dataFilter;
+    this.sort = sort;
 
     this.projectStore.searchProjects(
       this.callbackOnSuccessHandler,
