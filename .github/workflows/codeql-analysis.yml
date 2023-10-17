@@ -33,6 +33,8 @@ jobs:
       with:
         languages: ${{ matrix.language }}
 
+    - run: git submodule update --init --recursive
+
     - name: Install modules
       run: yarn install
 
