@@ -243,12 +243,14 @@ class ContentModel {
   };
 
   getPageChannels = () => {
-    const pageIds = Object.keys(this.channels)
-      .map((key) => this.channels[key].selectedPage)
-      .reduce((arr, el) => [...arr, ...el], [])
-      .map(({ pageId }) => pageId);
-
-    return pageIds;
+    const channels = Object.keys(this.channels).map((key) => {
+      const listPageIds = this.channels[key].selectedPage.map(({ pageId }) => pageId);
+      return {
+        channelKey: key,
+        listChannels: listPageIds,
+      };
+    });
+    return channels;
   };
 
   toTableRowData = () => {
