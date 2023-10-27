@@ -212,5 +212,7 @@
   "txt_content":"Nội dung",
   "txt_disconnect":"Ngắt kết nối",
   "txt_failed": "Không thành công",
-  "txt_bulk_disconnect": "Ngắt kết nối hàng loạt"
+  "txt_bulk_disconnect": "Ngắt kết nối hàng loạt",
+  "txt_sso" : "Đăng nhập một lần"
+  
 }

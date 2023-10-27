@@ -5,7 +5,7 @@
 
 import { CONTENT_FIELD_KEY, CONTENT_DESCRIPTION_MODE } from '../../../constants/ContentModule';
 import ContentModel from '../ContentModel/ContentModel';
-
+import channelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
 class ContentUtils {
   constructor() {
     if (!ContentUtils.instance) {
@@ -140,22 +140,13 @@ class ContentUtils {
     return '';
   };
 
-  getPageDetail = (pageId, channeData) => {
+  getPageDetail = (postChannels, channelData) => {
     let data = [];
-    channeData.forEach((category) => {
-      // Skip the category
-      data = [
-        ...data,
-        ...category.getList().map((channelType) => ({
-          alias: channelType.id,
-          label: channelType.name,
-          image: channelType.image,
-          options: channelType
-            .getPages()
-            .filter(({ id }) => pageId.includes(id))
-            .map((channel) => channel.toDropdownSelectionItem()),
-        })),
-      ].filter((option) => option.options.length > 0);
+    data = postChannels.map((item) => {
+      return {
+        alias: item.channelKey,
+        options: channelUtils.getChannelDetailById(item.listChannels, channelData),
+      };
     });
     return data;
   };

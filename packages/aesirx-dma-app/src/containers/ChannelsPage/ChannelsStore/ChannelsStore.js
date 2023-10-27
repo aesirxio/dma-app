@@ -34,7 +34,6 @@ export default class ChannelsStore {
       const channelsData = await this.channelService.getChannels();
 
       const data = ChannelUtils.transformChannelResponseIntoModel(channelsData);
-
       return data;
     } catch (error) {
       // no error throw

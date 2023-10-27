@@ -3,10 +3,11 @@
  * @license     GNU General Public License version 3, see LICENSE.
  */
 
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import ProjectUtils from '../ProjectUtils/ProjectUtils';
 import { notify } from 'aesirx-uikit';
+import moment from 'moment';
 
 class ProjectsListViewModel {
   projectStore = null;
@@ -19,13 +20,17 @@ class ProjectsListViewModel {
 
   tableStatus = PAGE_STATUS.LOADING;
 
-  projectIdsSelected = null;
+  projectIdsSelected = [];
 
   dataFilter = null;
 
   isList = true;
 
   pageSize = 5;
+
+  sort = {};
+
+  isDesc = false;
 
   constructor(projectStore) {
     makeAutoObservable(this);
@@ -47,7 +52,7 @@ class ProjectsListViewModel {
     this.pagination = null;
     this.tableRowHeader = null;
     this.tableStatus = PAGE_STATUS.LOADING;
-    this.projectIdsSelected = null;
+    this.projectIdsSelected = [];
     this.dataFilter = null;
     this.isList = true;
     this.pageSize = 5;
@@ -65,7 +70,6 @@ class ProjectsListViewModel {
 
   deleteProjects = async () => {
     let getArrayId = this.projectIdsSelected;
-
     if (getArrayId.length > 0) {
       this.tableStatus = PAGE_STATUS.LOADING;
       const notify_success = await this.projectStore.deleteProjects(
@@ -75,9 +79,15 @@ class ProjectsListViewModel {
       );
       if (notify_success?.result) {
         notify('Delete success', 'success');
+        runInAction(() => {
+          this.projectIdsSelected = [];
+        });
       }
     } else {
       notify('Please choose an item to delete', 'warn');
+      runInAction(() => {
+        this.projectIdsSelected = [];
+      });
     }
   };
 
@@ -104,14 +114,31 @@ class ProjectsListViewModel {
     }
   };
 
-  searchProjects = (dataFilter) => {
+  searchProjects = (dataFilter, sort) => {
+    if (sort?.direction === 'asc') {
+      this.isDesc = !this.isDesc;
+    } else {
+      this.isDesc = false;
+    }
+
+    if (dataFilter.start_date && dataFilter.end_date) {
+      const end = moment(dataFilter.end_date).endOf('day');
+      const start_date = moment.utc(dataFilter.start_date).format();
+      const end_date = moment.utc(end).format();
+      dataFilter.start_date = start_date;
+      dataFilter.end_date = end_date;
+    }
+
     this.dataFilter = dataFilter;
+    this.sort = sort;
+
     this.projectStore.searchProjects(
       this.callbackOnSuccessHandler,
       this.callbackOnErrorHander,
       dataFilter,
       0,
-      this.pageSize
+      this.pageSize,
+      sort
     );
   };
 
