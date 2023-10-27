@@ -7,7 +7,7 @@ import React from 'react';
 
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';
-import Table from '../../../components/Table';
+import { Table, TableBar } from 'aesirx-uikit';
 import ComponentChart from '../../../components/Chart';
 import ListSocial from '../../../components/ListSocial';
 import CampaignsTotalNumber from '../../../components/CampaignsTotalNumber';
@@ -24,6 +24,7 @@ import { Spinner } from 'aesirx-uikit';
 import CampaignsActionBar from '../CampaignsForm/CampaignsActionBar';
 import ComponentNoData from '../../../components/ComponentNoData';
 import ComponentViewList from '../../../components/ComponentViewList';
+
 import { withTranslation } from 'react-i18next';
 const CampaignsList = observer(
   class CampaignsList extends ComponentViewList {
@@ -32,7 +33,7 @@ const CampaignsList = observer(
     getDataFormFilter = () => {
       return [
         {
-          name: 'txt_title_projects',
+          name: 'projects',
           option: this.filterFormViewModel.dropdownlistProjectValues,
           isMulti: true,
         },
@@ -43,7 +44,7 @@ const CampaignsList = observer(
       this.listViewModel.getContentByIdCampaign(row[this.key]);
     };
     render() {
-      const { tableStatus, campaigns, pagination } = this.listViewModel;
+      const { tableStatus, campaigns, pagination, dataFilter } = this.listViewModel;
       const { t } = this.props;
       const tableRowHeader = [
         {
@@ -183,20 +184,35 @@ const CampaignsList = observer(
           </div>
           {campaigns ? (
             <div>
-              <Table
+              <TableBar
                 rowData={campaigns}
+                dataFilter={dataFilter}
+                setFilter={this.listViewModel.setFilter}
                 tableRowHeader={tableRowHeader}
-                onEdit={this.handerEdit}
-                onSelect={this.handleSelect}
-                isFilter={true}
-                pagination={pagination}
-                pageSize={this.listViewModel.pageSize}
-                listViewModel={this.listViewModel}
-                searchFunction={this.listViewModel.searchCampaign}
+                isColumnSelected
+                isFilter
+                actionList={false}
+                isList={false}
+                isSearch={true}
+                isDateRange={true}
+                isAction={true}
+                setGlobalFilters={this.listViewModel.searchCampaign}
+                onDelete={this.listViewModel.deleteCampaigns}
+                setDateFilter={this.listViewModel.setDateFilter}
+                onDateFilter={this.listViewModel.searchCampaign}
                 dataFormFilter={dataFormFilter}
-                searchText={t('search_your_campaign')}
-                idKey={this.key}
                 view={this.view}
+              />
+
+              <Table
+                data={campaigns}
+                columns={tableRowHeader}
+                onEdit={this.handerEdit}
+                pagination={pagination}
+                listViewModel={this.listViewModel}
+                idKey={this.key}
+                onSelectionItem={this.handleSelect}
+                dataFilter={dataFilter}
               />
             </div>
           ) : (
