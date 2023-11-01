@@ -63,7 +63,7 @@ jobs:
       - run: yarn install
       - run: yarn lint:check
       - run: CI=false yarn build
-      - uses: JS-DevTools/npm-publish@v2
+      - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_TOKEN }}
           strategy: upgrade
