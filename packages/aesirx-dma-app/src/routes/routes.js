@@ -5,7 +5,6 @@
 
 import React, { lazy } from 'react';
 import { LoginPage, ProfilePage, DigitalAssetsPage, history } from 'aesirx-uikit';
-// import { SSOConfig } from 'aesirx-sso';
 const CalendarPage = lazy(() => import('../containers/CalendarPage'));
 const Projects = lazy(() => import('../containers/ProjectsPage'));
 const CampaignsPage = lazy(() => import('../containers/CampaignsPage'));
@@ -13,7 +12,9 @@ const ContentPage = lazy(() => import('../containers/ContentPage'));
 const WizardPage = lazy(() => import('../containers/WizardPage'));
 const ChannelsPage = lazy(() => import('../containers/ChannelsPage'));
 const WelcomePage = lazy(() => import('../containers/WelcomePage'));
-
+const SSOConfig = lazy(() =>
+  import('aesirx-sso').then((module) => ({ default: module.SSOConfig }))
+);
 const authRoutes = [
   {
     path: '/login',
@@ -86,11 +87,11 @@ const settingRoutes = [
     exact: true,
     main: () => <WelcomePage />,
   },
-  // {
-  //   path: '/sso',
-  //   exact: false,
-  //   main: () => <SSOConfig />,
-  // },
+  {
+    path: '/sso',
+    exact: false,
+    main: () => <SSOConfig />,
+  },
 ];
 
 const integrationRoutes = () =>
