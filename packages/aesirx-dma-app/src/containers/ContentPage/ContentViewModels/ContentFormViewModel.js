@@ -14,7 +14,7 @@ import ChannelUtils from '../../ChannelsPage/ChannelUtils/ChannelUtils';
 import ContentUtils from '../ContentUtils/ContentUtils';
 
 import ProfileStore from '../../ProfilePage/ProfileStore/ProfileStore';
-import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
+import { AUTHORIZATION_KEY, Storage, MEMBER_GET_FIELD_KEY } from 'aesirx-lib';
 import { historyPush } from 'routes/routes';
 
 class ContentFormViewModel {
@@ -32,6 +32,7 @@ class ContentFormViewModel {
   isLoading = false;
   itemId = 0;
   categoryId = 0;
+  chatGPTAPIKey = '';
 
   constructor(contentStore) {
     makeAutoObservable(this);
@@ -53,6 +54,8 @@ class ContentFormViewModel {
       notify('Please upgrade account at https://dma.aesirx.io');
       historyPush('/content');
     }
+
+    const chatGPTkey = memberProfile[MEMBER_GET_FIELD_KEY.CHATGPT_API_KEY];
 
     const masterData = await this.contentStore.getMasterData();
     const channelsData = await this.channelStore.getChannelsData();
@@ -89,6 +92,7 @@ class ContentFormViewModel {
       this.projectMasterData = projectMasterData;
       this.personaMasterData = personaMasterData;
       this.channelMasterData = channelMasterData;
+      this.chatGPTAPIKey = chatGPTkey;
 
       // get edit content
       this.form.populatingFormDataHandler(

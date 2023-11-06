@@ -13,6 +13,7 @@ import { ContentViewModelContext } from '../../ContentViewModels/ContentViewMode
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 import DamComponent from 'components/DamComponent';
 import { useTranslation } from 'react-i18next';
+import ChatGPTButton from 'components/ChatGPT/ChatGPTButton';
 const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null }) => {
   const context = useContext(ContentViewModelContext);
   const channelMasterData = context.getFormViewModel().channelMasterData;
@@ -48,8 +49,12 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
     }
   }, [damAssets, channel, formPropsData, mode, channelData]);
 
-  const deleteDamItem = (id) => {
-    setDamAssets(damAssets.filter((item) => item.id !== id));
+  const deleteDamItem = (image) => {
+    if (image?.id) {
+      setDamAssets(damAssets.filter((item) => item.id !== image.id));
+    } else {
+      setDamAssets(damAssets.filter((item) => item.url !== image.url));
+    }
   };
 
   const mediaChannel = ContentUtils.hasMediaChannel(channelData);
@@ -89,12 +94,12 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
             </DamComponent>
           </div>
         )}
+
+        <div className="mx-2 mt-1 mb-1">
+          <ChatGPTButton handleImage={handleDam} />
+        </div>
       </div>
-      <MediaDataRender
-        damData={damAssets}
-        deleteDamItem={deleteDamItem}
-        channelData={channelData}
-      />
+      <MediaDataRender damData={damAssets} deleteDamItem={deleteDamItem} />
     </div>
   );
 });
