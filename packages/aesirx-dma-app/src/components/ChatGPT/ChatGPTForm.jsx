@@ -72,9 +72,8 @@ class ChatGPT extends React.Component {
         const response = await this.apiClient.createCompletion({
           model: 'text-davinci-003',
           prompt: `${input}`,
-          temperature: 0,
           top_p: 1,
-          max_tokens: 4000,
+          max_tokens: 300,
         });
         const AI = response.data.choices[0].text;
         this.addMessage({ message: AI, type: 'chatgpt', pending: response.status });

@@ -89,7 +89,6 @@ const ContentFormPage = observer(
       return (
         <>
           <StepWizard
-            isLazyMount={true}
             transitions={{
               enterRight: '',
               enterLeft: '',

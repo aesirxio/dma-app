@@ -1,3 +1,7 @@
 @import 'aesirx-uikit/dist/utils/bootstrap.scss';
 @import 'bootstrap/scss/root';
 @import 'bootstrap/scss/reboot';
+
+.rsw_3G {
+  z-index: unset !important;
+}
