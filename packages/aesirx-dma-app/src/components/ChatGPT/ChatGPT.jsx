@@ -6,7 +6,7 @@ import { Configuration, OpenAIApi } from 'openai';
 import { FORM_FIELD_TYPE, notify } from 'aesirx-uikit';
 import SimpleReactValidator from 'simple-react-validator';
 import { renderingGroupFieldHandler } from 'utils/form';
-import { Button, Form, Spinner } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import ComponentSwitch from 'components/ComponentSwitch';
 import { withTranslation } from 'react-i18next';
 import { withContentViewModel } from 'containers/ContentPage/ContentViewModels/ContentViewModelContextProvider';
@@ -136,6 +136,7 @@ class ChatGPT extends Component {
   ];
 
   handleGenerate = async (event) => {
+    const { t } = this.props;
     try {
       this.setState({ ...this.state, loading: true });
       event.preventDefault();

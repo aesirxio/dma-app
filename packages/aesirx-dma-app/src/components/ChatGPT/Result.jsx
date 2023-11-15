@@ -62,6 +62,7 @@ const Result = observer(
                           <a
                             className="fs-14 py-8px btn btn-secondary lh-sm fw-semibold"
                             target="_blank"
+                            rel="noreferrer"
                             href={image.url}
                           >
                             {t('txt_view')}
