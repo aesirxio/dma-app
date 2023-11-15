@@ -109,7 +109,12 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
         <MediaDataRender damData={damAssets} deleteDamItem={deleteDamItem} />
       </div>
       <CSSTransition in={showChatGPT} timeout={300} classNames="chat_gpt">
-        <ChatGPT show={showChatGPT} handleClose={handleCloseChatGPT} />
+        <ChatGPT
+          damAssets={damAssets}
+          handleImage={handleDam}
+          show={showChatGPT}
+          handleClose={handleCloseChatGPT}
+        />
       </CSSTransition>
     </>
   );

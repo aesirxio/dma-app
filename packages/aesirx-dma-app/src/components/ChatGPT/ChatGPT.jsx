@@ -6,10 +6,11 @@ import { Configuration, OpenAIApi } from 'openai';
 import { FORM_FIELD_TYPE, notify } from 'aesirx-uikit';
 import SimpleReactValidator from 'simple-react-validator';
 import { renderingGroupFieldHandler } from 'utils/form';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Spinner } from 'react-bootstrap';
 import ComponentSwitch from 'components/ComponentSwitch';
 import { withTranslation } from 'react-i18next';
 import { withContentViewModel } from 'containers/ContentPage/ContentViewModels/ContentViewModelContextProvider';
+import Result from './Result';
 class ChatGPT extends Component {
   constructor(props) {
     super(props);
@@ -20,12 +21,13 @@ class ChatGPT extends Component {
       },
       generateImage: false,
       generateImageData: {
-        dimensions: '256x256',
+        dimensions: '1024x1024',
       },
       result: {
-        content: `\n\nSummer is here, and what better way to celebrate the Fourth of July weekend than with some delicious and refreshing salads? Whether you're hosting a backyard barbecue or heading to a potluck, these 9 salad recipes from ChopChop Family are perfect for any summertime occasion. One of our favorites is the Berry and Burrata Salad, which combines fresh berries, creamy burrata cheese, and a tangy balsamic vinaigrette for a burst of flavors in every bite. It's the perfect side dish to any grilled meat or can even be enjoyed as a light and healthy lunch. Check out the full list of salad recipes on our blog and get ready to impress your friends and family with these easy and delicious options. Trust us, your taste buds will thank you! #saladrecipes #FourthofJuly #summercookout`,
+        content: '',
         images: [],
       },
+      loading: false,
     };
 
     // Set up OpenAI API key and API client
@@ -35,7 +37,6 @@ class ChatGPT extends Component {
     });
     this.apiClient = new OpenAIApi(configuration);
   }
-
   handleUpdateState = (data, form = 'formData') => {
     this.setState({
       ...this.state,
@@ -43,7 +44,7 @@ class ChatGPT extends Component {
     });
   };
 
-  handleGenerateImage = () => {
+  handleToggleImage = () => {
     this.setState({
       ...this.state,
       generateImage: !this.state.generateImage,
@@ -51,10 +52,11 @@ class ChatGPT extends Component {
   };
 
   generateFormSetting = () => {
+    const { t } = this.props;
     return {
       fields: [
         {
-          label: 'Headline',
+          label: t('txt_headline'),
           key: 'headline',
           type: FORM_FIELD_TYPE.INPUT,
           value: this.state.formData['headline'],
@@ -68,31 +70,29 @@ class ChatGPT extends Component {
           },
         },
         {
-          label: 'Inspirations',
+          label: t('txt_inspirations'),
           key: 'inspirations',
           type: FORM_FIELD_TYPE.TEXTAREA,
           rows: 6,
-          placeholder:
-            'Enter up to 5 URLs of existing blog posts you would like to be inspired, separated by commas',
+          placeholder: t('txt_inspirations_placeholder'),
           value: this.state.formData['inspirations'],
           changed: (event) => {
             this.handleUpdateState({ inspirations: event.target.value });
           },
         },
         {
-          label: 'Description',
+          label: t('txt_description'),
           key: 'description',
           type: FORM_FIELD_TYPE.TEXTAREA,
           rows: 6,
-          placeholder:
-            'Describe the topic for which you need \n\nFor example: \n"Marketing a social media management tool online"',
+          placeholder: t('txt_content_description_placeholder'),
           value: this.state.formData['description'],
           changed: (event) => {
             this.handleUpdateState({ description: event.target.value });
           },
         },
         {
-          label: 'Approx. Words',
+          label: t('txt_approx_words'),
           key: 'approx_words',
           type: FORM_FIELD_TYPE.INPUT,
           typeFormat: 'number',
@@ -102,14 +102,16 @@ class ChatGPT extends Component {
           },
         },
         {
-          label: 'Audience',
+          label: t('txt_target_audience'),
           key: 'audience',
           type: FORM_FIELD_TYPE.DROPDOWN,
           value: this.state.formData['audience'],
           option: [
             { label: 'Facebook', value: 'facebook' },
+            { label: 'Twitter', value: 'twitter' },
             { label: 'Linkedin', value: 'linkedin' },
             { label: 'Instagram', value: 'Instagram' },
+            { label: 'Youtube', value: 'Youtube' },
           ],
           changed: (event) => {
             this.handleUpdateState({ audience: event });
@@ -120,72 +122,67 @@ class ChatGPT extends Component {
   };
   listDimensions = [
     {
-      label: '256x256',
-      value: '256x256',
-    },
-    {
-      label: '512x512',
-      value: '512x512',
-    },
-    {
       label: '1024x1024',
       value: '1024x1024',
     },
     {
-      label: '1792x1792',
-      value: '1792x1792',
+      label: '1792x1024',
+      value: '1792x1024',
+    },
+    {
+      label: '1024x1792',
+      value: '1024x1792',
     },
   ];
 
-  handleGenerateImage = async () => {
-    try {
-      if (this.state.generateImageData.description) {
-      }
-      const response = await this.apiClient.createImage({
-        prompt: this.state.generateImageData.description,
-        n: 1,
-        size: this.state.generateImageData.dimensions,
-      });
-      this.setState({
-        ...this.state,
-        result: {
-          ...this.state.result,
-          images: [...this.state.result.images, response['data'][0]['url']],
-        },
-      });
-    } catch (error) {
-      notify(error?.response?.data?.error?.message || 'Something went wrong', 'error');
-    }
-  };
   handleGenerate = async (event) => {
     try {
+      this.setState({ ...this.state, loading: true });
       event.preventDefault();
-      const requestPrompt = `Write a short content of about ${
-        this.state.formData['approx_words'] ?? 100
-      } inspired by ${this.state.formData['inspirations']} with the content about ${
-        this.state.formData['description']
-      } for ${this.state.formData['audience']?.value} users`;
-
+      let result = {
+        content: '',
+        images: this.state.result.images ?? [],
+      };
+      const requestPrompt = `${
+        this.state.formData['inspirations']
+          ? ''
+          : `Blog posts for inspiration: ${this.state.formData['inspirations']}`
+      },
+        My purpose: ${this.state.formData['description']}
+        My target audience: ${this.state.formData['audience']?.value} users
+        Write a short post of about ${this.state.formData['approx_words'] ?? 100} words
+      `;
       const response = await this.apiClient.createCompletion({
         model: 'gpt-3.5-turbo-instruct',
         prompt: requestPrompt,
+        temperature: 0.6,
         top_p: 1,
         max_tokens: 300,
       });
+      result.content = response.data.choices[0].text;
+      if (this.state.generateImage) {
+        const imageResponse = await this.apiClient.createImage({
+          prompt: this.state.generateImageData.description,
+          n: 1,
+          size: this.state.generateImageData.dimensions,
+          model: 'dall-e-3',
+        });
+        result.images = [...result.images, ...imageResponse?.data?.data];
+      }
       this.setState({
         ...this.state,
-        result: {
-          ...this.state.result,
-          content: response.data.choices[0].text,
-        },
+        result,
+        loading: false,
       });
     } catch (error) {
-      notify(error?.response?.data?.error?.message || 'Something went wrong', 'error');
+      this.setState({ ...this.state, loading: false });
+      console.log('error', error);
+      notify(error?.response?.data?.error?.message || t('txt_api_error'), 'error');
     }
   };
   render() {
     const formSetting = this.generateFormSetting();
-    console.log(this.state.result);
+    const { t } = this.props;
     return (
       <div
         style={{ background: '#00000099' }}
@@ -193,9 +190,7 @@ class ChatGPT extends Component {
           this.props.show ? 'd-block' : 'd-none'
         } position-fixed top-0 end-0 bottom-0 z-index-100 start-0 d-flex justify-content-end`}
       >
-        <div
-          className={`${style['chatgpt']} bg-white  overflow-y-auto  position-relative h-100 px-40 py-32px`}
-        >
+        <div className={`${style['chatgpt']} bg-white h-100 px-40 py-32px`}>
           <h3 className="fw-medium fs-24 mb-24 d-flex justify-content-between">
             Content Generator with AI
             <FontAwesomeIcon
@@ -206,14 +201,14 @@ class ChatGPT extends Component {
               height={12}
             />
           </h3>
-          <div className={style['chatgpt_form']}>
+          <div className={`${style['chatgpt_form']} overflow-y-auto`}>
             {renderingGroupFieldHandler(formSetting, this.validator)}
             <div className={`mb-3`}>
               <label className="d-flex justify-content-between">
-                Generate image
+                {t('txt_generate_image')}
                 <ComponentSwitch
                   checked={this.state.generateImage}
-                  handleChange={this.handleGenerateImage}
+                  handleChange={this.handleToggleImage}
                 />
               </label>
               {this.state.generateImage && (
@@ -225,17 +220,15 @@ class ChatGPT extends Component {
                       'generateImageData'
                     );
                   }}
-                  placeholder={
-                    'Write description of the image you would like to generate.\n\nFor example:\n“Lush coffee bean trees growing in graphic style”'
-                  }
+                  placeholder={t('txt_generate_image_placeholder')}
                   rows={6}
                 />
               )}
             </div>
             {this.state.generateImage && (
               <div className="mb-3">
-                <label>Image dimensions</label>
-                <div className="d-flex justify-content-between">
+                <label>{t('txt_image_dimensions')}</label>
+                <div className="d-flex">
                   {this.listDimensions.map((item, index) => {
                     const currentSize = item.value == this.state.generateImageData.dimensions;
                     return (
@@ -246,7 +239,7 @@ class ChatGPT extends Component {
                         key={index}
                         className={`${currentSize && style['active_size']} ${
                           style['dimensions']
-                        } d-block py-8px px-20 border rounded-6 cursor-pointer`}
+                        } d-block py-8px px-20 me-1 border rounded-6 cursor-pointer`}
                       >
                         {item?.label}
                       </span>
@@ -255,30 +248,31 @@ class ChatGPT extends Component {
                 </div>
               </div>
             )}
-            <Button
-              onClick={this.handleGenerate}
-              disabled={!this.validator.allValid()}
-              className="w-100 rounded-6"
-              variant="success"
-            >
-              Generate
-            </Button>
           </div>
+
+          <Button
+            onClick={this.handleGenerate}
+            disabled={!this.validator.allValid() || this.state.loading}
+            className={`${style['button']} w-100 rounded-6 mt-4 d-flex align-items-center justify-content-center`}
+            variant="success"
+          >
+            {this.state.loading ? (
+              <div className={`${style['dot-falling']}`} />
+            ) : this.state.result.content ? (
+              t('txt_re_generate')
+            ) : (
+              t('txt_generate')
+            )}
+          </Button>
         </div>
         {this.state.result?.content && (
-          <div className="bg-white  overflow-y-auto  position-relative h-100 px-40 py-32px border-start">
-            <h3 className="fw-medium fs-24 mb-24 d-flex justify-content-between">
-              Result
-              <FontAwesomeIcon
-                className="cursor-pointer"
-                onClick={this.props.handleClose}
-                icon={faXmark}
-                width={12}
-                height={12}
-              />
-            </h3>
-            {this.state.result?.content}
-          </div>
+          <Result
+            handleImage={this.props.handleImage}
+            handleUpdateState={this.handleUpdateState}
+            handleClose={this.props.handleClose}
+            damAssets={this.props.damAssets}
+            {...this.state}
+          />
         )}
       </div>
     );

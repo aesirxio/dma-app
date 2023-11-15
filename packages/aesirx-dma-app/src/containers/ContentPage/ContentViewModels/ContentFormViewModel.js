@@ -16,6 +16,7 @@ import ContentUtils from '../ContentUtils/ContentUtils';
 import ProfileStore from '../../ProfilePage/ProfileStore/ProfileStore';
 import { AUTHORIZATION_KEY, Storage, MEMBER_GET_FIELD_KEY } from 'aesirx-lib';
 import { historyPush } from 'routes/routes';
+import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from 'constants/ContentModule';
 
 class ContentFormViewModel {
   formStatus = PAGE_STATUS.LOADING;
@@ -33,6 +34,8 @@ class ContentFormViewModel {
   itemId = 0;
   categoryId = 0;
   chatGPTAPIKey = '';
+
+  toggleRerender = false;
 
   constructor(contentStore) {
     makeAutoObservable(this);
@@ -257,6 +260,19 @@ class ContentFormViewModel {
     } else {
       return false;
     }
+  };
+
+  saveFormData = (headline, description) => {
+    runInAction(() => {
+      this.toggleRerender = !this.toggleRerender;
+      this.form.formPropsData[CONTENT_FIELD_KEY.NAME] = headline;
+      ContentUtils.setDataForChannels(
+        CONTENT_FIELD_KEY.DESCRIPTION,
+        description,
+        CONTENT_DESCRIPTION_MODE.BASIC,
+        this?.form?.formPropsData
+      );
+    });
   };
 }
 
