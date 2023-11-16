@@ -39,7 +39,7 @@ class MediaDataRender extends React.Component {
                 >
                   <span
                     className="cursor-pointer text-red-1"
-                    onClick={() => deleteDamItem(damAsset.id)}
+                    onClick={() => deleteDamItem(damAsset)}
                   >
                     <i>
                       <FontAwesomeIcon icon={faTimes} />
@@ -74,7 +74,7 @@ class MediaDataRender extends React.Component {
                       <span className="fa-pull-right">
                         <span
                           className="cursor-pointer text-red-1"
-                          onClick={() => deleteDamItem(value.id)}
+                          onClick={() => deleteDamItem(value)}
                         >
                           <i>
                             <FontAwesomeIcon icon={faTimes} />
