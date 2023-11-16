@@ -10,10 +10,11 @@ import { Form } from 'react-bootstrap';
 import { CONTENT_DESCRIPTION_MODE, CONTENT_FIELD_KEY } from '../../../../constants/ContentModule';
 import ContentFormDescriptionMedia from './media';
 import ContentUtils from '../../ContentUtils/ContentUtils';
+import { useContentViewModel } from 'containers/ContentPage/ContentViewModels/ContentViewModelContextProvider';
 
 const ContentFormDescriptionBasic = observer(({ formPropsData, onBlurDescription }) => {
   const descriptionObj = formPropsData[CONTENT_FIELD_KEY.DESCRIPTION];
-
+  const { contentFormViewModel } = useContentViewModel();
   const description = descriptionObj[Object.keys(descriptionObj)[0]];
 
   const handleOnChange = ({ target }) => {
@@ -28,6 +29,7 @@ const ContentFormDescriptionBasic = observer(({ formPropsData, onBlurDescription
   return (
     <>
       <Form.Control
+        key={contentFormViewModel.toggleRerender}
         name="Description"
         as="textarea"
         defaultValue={description}

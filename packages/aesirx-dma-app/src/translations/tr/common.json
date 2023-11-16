@@ -208,5 +208,20 @@
   "txt_the_media_field_is_required": " Medya alanı zorunludur.",
   "txt_the_image_field_is_required":" Foto alanı zorunludur.",
   "txt_left_menu_dma": "Pazarlama",
-  "txt_create_new_post": "Yeni Gönderi Oluştur"
+  "txt_create_new_post": "Yeni Gönderi Oluştur",
+  "txt_inspirations": "İlhamlar",
+  "txt_inspirations_placeholder": "İlham almak istediğiniz mevcut blog gönderilerinin en fazla 5 URL'sini virgülle ayırarak girin",
+  "txt_content_description_placeholder": "İhtiyacınız olan konuyu açıklayın \n\nÖrneğin: \n\"Bir sosyal medya yönetim aracının çevrimiçi pazarlanması\"",
+  "txt_approx_words": "Yaklaşık. Kelimeler",
+  "txt_target_audience": "Hedef kitlenizi seçin",
+  "txt_generate_image": "Resim oluştur",
+  "txt_generate_image_placeholder": "Oluşturmak istediğiniz görüntünün açıklamasını yazın.\n\nÖrneğin:\n“Grafik tarzında büyüyen yemyeşil kahve çekirdeği ağaçları”",
+  "txt_image_dimensions": "Resim boyutları",
+  "txt_image": "Resim",
+  "txt_generate": "Oluştur",
+  "txt_re_generate": "Yeniden Oluştur",
+  "txt_add_content_to_editor": "Düzenleyiciye içerik ekleyin",
+  "txt_view": "Görüş",
+  "txt_use": "Kullanmak",
+  "txt_result": "Sonuç"
 }

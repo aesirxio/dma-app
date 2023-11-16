@@ -9,6 +9,8 @@ import { Image as ComponentImage } from 'aesirx-uikit';
 import { Accordion, AccordionButton, Form } from 'react-bootstrap';
 
 const ChannelChannelComponent = observer(({ channelData }) => {
+  console.log('channelData', channelData);
+
   const [checked, setChecked] = useState(() => {
     return !channelData?.pages.some((channel) => channel?.removed);
   });

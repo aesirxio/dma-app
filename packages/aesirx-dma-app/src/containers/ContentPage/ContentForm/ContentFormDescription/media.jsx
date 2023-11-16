@@ -13,6 +13,9 @@ import { ContentViewModelContext } from '../../ContentViewModels/ContentViewMode
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 import DamComponent from 'components/DamComponent';
 import { useTranslation } from 'react-i18next';
+import ChatGPTButton from 'components/ChatGPT/ChatGPTButton';
+import { CSSTransition } from 'react-transition-group';
+import ChatGPT from 'components/ChatGPT/ChatGPT';
 const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null }) => {
   const context = useContext(ContentViewModelContext);
   const channelMasterData = context.getFormViewModel().channelMasterData;
@@ -33,7 +36,7 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
   }
 
   const [damAssets, setDamAssets] = useState(dam);
-
+  const [showChatGPT, setShowChatGPT] = useState(false);
   const handleDam = (data) => {
     setDamAssets([...damAssets, ...data]);
   };
@@ -48,54 +51,72 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
     }
   }, [damAssets, channel, formPropsData, mode, channelData]);
 
-  const deleteDamItem = (id) => {
-    setDamAssets(damAssets.filter((item) => item.id !== id));
+  const deleteDamItem = (image) => {
+    if (image?.id) {
+      setDamAssets(damAssets.filter((item) => item.id !== image.id));
+    } else {
+      setDamAssets(damAssets.filter((item) => item.url !== image.url));
+    }
   };
 
   const mediaChannel = ContentUtils.hasMediaChannel(channelData);
   const { t } = useTranslation();
+
+  const handleCloseChatGPT = () => {
+    setShowChatGPT(false);
+  };
   return (
-    <div className="px-3 py-2 bg-accordion-button wr_description_image_asset rounded-bottom-2">
-      <div className="d-flex flex-wrap justify-content-start">
-        {mediaChannel.dam && (
-          <>
+    <>
+      <div className="px-3 py-2 bg-accordion-button wr_description_image_asset rounded-bottom-2">
+        <div className="d-flex flex-wrap justify-content-start">
+          {mediaChannel.dam && (
+            <>
+              <div className="mx-2 mt-1 mb-1">
+                <DamComponent
+                  allowType={['image', 'document']}
+                  accept={{ 'image/*': ['.png', '.gif', '.jpeg', '.jpg', '.pdf'] }}
+                  field={{ changed: handleDam }}
+                >
+                  <button
+                    className="wr_btn_dam border-0 bg-blue-2 rounded-3 py-2 px-3 text-nowrap btn"
+                    type="button"
+                  >
+                    <span className="text-white fs-sm fw-medium py-1 ms-2 ">
+                      {t('txt_digital_asset_management')}
+                    </span>
+                  </button>
+                </DamComponent>
+              </div>
+            </>
+          )}
+          {mediaChannel.video && (
             <div className="mx-2 mt-1 mb-1">
-              <DamComponent
-                allowType={['image', 'document']}
-                accept={{ 'image/*': ['.png', '.gif', '.jpeg', '.jpg', '.pdf'] }}
-                field={{ changed: handleDam }}
-              >
+              <DamComponent damType="image" field={{ changed: handleDam }} allowType={['video']}>
                 <button
-                  className="wr_btn_dam border-0 bg-blue-2 rounded-3 py-2 px-3 text-nowrap btn"
+                  className="wr_btn_dam border-0 bg-blue-2 rounded-2 px-3 py-2 text-nowrap btn "
                   type="button"
                 >
-                  <span className="text-white fs-sm fw-medium py-1 ms-2 ">
-                    {t('txt_digital_asset_management')}
-                  </span>
+                  <span className="text-white fs-sm fw-medium  ms-2">{t('txt_video')}</span>
                 </button>
               </DamComponent>
             </div>
-          </>
-        )}
-        {mediaChannel.video && (
+          )}
+
           <div className="mx-2 mt-1 mb-1">
-            <DamComponent damType="image" field={{ changed: handleDam }} allowType={['video']}>
-              <button
-                className="wr_btn_dam border-0 bg-blue-2 rounded-2 px-3 py-2 text-nowrap btn "
-                type="button"
-              >
-                <span className="text-white fs-sm fw-medium  ms-2">{t('txt_video')}</span>
-              </button>
-            </DamComponent>
+            <ChatGPTButton handleShow={() => setShowChatGPT(true)} />
           </div>
-        )}
+        </div>
+        <MediaDataRender damData={damAssets} deleteDamItem={deleteDamItem} />
       </div>
-      <MediaDataRender
-        damData={damAssets}
-        deleteDamItem={deleteDamItem}
-        channelData={channelData}
-      />
-    </div>
+      <CSSTransition in={showChatGPT} timeout={300} classNames="chat_gpt">
+        <ChatGPT
+          damAssets={damAssets}
+          handleImage={handleDam}
+          show={showChatGPT}
+          handleClose={handleCloseChatGPT}
+        />
+      </CSSTransition>
+    </>
   );
 });
 

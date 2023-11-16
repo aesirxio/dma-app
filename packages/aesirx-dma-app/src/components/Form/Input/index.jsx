@@ -19,7 +19,7 @@ const Input = ({ field }) => {
       <Form.Control
         as="input"
         defaultValue={field.value ?? ''}
-        type={field.typeFormat ? (field.typeFormat == 11 ? 'password' : 'text') : 'text'}
+        type={field.typeFormat ? (field.typeFormat == 11 ? 'password' : field.typeFormat) : 'text'}
         required={field.required ?? false}
         id={field.key}
         onChange={(e) => handleChange(e)}

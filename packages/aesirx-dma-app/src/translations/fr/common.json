@@ -212,6 +212,21 @@
 "txt_disconnect":"Déconnecter",
 "txt_failed": "Échec",
 "txt_bulk_disconnect": "Déconnexion groupée",
-"txt_sso" : "Authentification unique"
+"txt_sso" : "Authentification unique",
+"txt_inspirations": "Inspirations",
+"txt_inspirations_placeholder": "Saisissez jusqu'à 5 URL d'articles de blog existants dont vous aimeriez vous inspirer, séparées par des virgules.",
+"txt_content_description_placeholder": "Décrivez le sujet pour lequel vous avez besoin \n\nPar exemple: \n\"Commercialiser un outil de gestion des réseaux sociaux en ligne\"",
+"txt_approx_words": "Environ. Mots",
+"txt_target_audience": "Choisissez votre public cible",
+"txt_generate_image": "Générer une image",
+"txt_generate_image_placeholder": "Écrivez une description de l’image que vous souhaitez générer.\n\nPar exemple:\n“Arbres de grains de café luxuriants poussant dans un style graphique”",
+"txt_image_dimensions": "Dimensions de l'image",
+"txt_image": "Image",
+"txt_generate": "Générer",
+"txt_re_generate": "Régénérer",
+"txt_add_content_to_editor": "Ajouter du contenu à l'éditeur",
+"txt_view": "Voir",
+"txt_use": "Utiliser",
+"txt_result": "Résultat"
 
 }
