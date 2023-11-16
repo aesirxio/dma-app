@@ -6,7 +6,7 @@
 import React, { Component, lazy } from 'react';
 
 import { observer } from 'mobx-react';
-import { withCampaignsViewModel } from '../GroupListViewModels/CampaignsViewModelContextProvider';
+import { withGroupViewModel } from '../GroupListViewModels/GroupViewModelContextProvider';
 import { Button } from 'react-bootstrap';
 import SimpleReactValidator from 'simple-react-validator';
 import { withTranslation } from 'react-i18next';
@@ -20,7 +20,7 @@ const GroupListForm = lazy(() => import('./GroupListForm'));
 
 const GroupListFormModal = observer(
   class GroupListFormModal extends Component {
-    CampaignsFormModalViewModal = null;
+    GroupFormModalViewModal = null;
 
     constructor(props) {
       super(props);
@@ -30,13 +30,13 @@ const GroupListFormModal = observer(
       this.validator = new SimpleReactValidator({ autoForceUpdate: this });
 
       const { viewModel } = props;
-      this.CampaignsFormModalViewModal = viewModel ? viewModel.getFormModalViewModel() : null;
+      this.GroupFormModalViewModal = viewModel ? viewModel.getFormModalViewModel() : null;
     }
 
-    saveCampaignsHandler = () => {
+    saveGroupHandler = () => {
       if (this.isFormValid()) {
         this.setState({ isLoading: true });
-        this.CampaignsFormModalViewModal.saveOnModal(() => {
+        this.GroupFormModalViewModal.saveOnModal(() => {
           this.setState({ isLoading: false });
         });
       }
@@ -54,7 +54,7 @@ const GroupListFormModal = observer(
     };
 
     render() {
-      const { show, editMode, formStatus } = this.CampaignsFormModalViewModal;
+      const { show, editMode, formStatus } = this.GroupFormModalViewModal;
       const { t } = this.props;
 
       if (!show) {
@@ -68,20 +68,17 @@ const GroupListFormModal = observer(
       return (
         <ModalComponent
           show={show}
-          onHide={this.CampaignsFormModalViewModal.closeModal}
+          onHide={this.GroupFormModalViewModal.closeModal}
           header={
             editMode === false || editMode == null ? t('create_campaign') : t('edit_campaign')
           }
           body={
-            <GroupListForm
-              viewModel={this.CampaignsFormModalViewModal}
-              validator={this.validator}
-            />
+            <GroupListForm viewModel={this.GroupFormModalViewModal} validator={this.validator} />
           }
           footer={
             <Button
               disabled={this.state.isLoading}
-              onClick={this.saveCampaignsHandler}
+              onClick={this.saveGroupHandler}
               className="btn btn-success w-100"
             >
               {this.state.isLoading ? (
@@ -115,4 +112,4 @@ const GroupListFormModal = observer(
   }
 );
 
-export default withTranslation()(withCampaignsViewModel(GroupListFormModal));
+export default withTranslation()(withGroupViewModel(GroupListFormModal));

@@ -8,7 +8,7 @@ import { history, ButtonNormal } from 'aesirx-uikit';
 import { withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
-import { withCampaignsViewModel } from '../GroupListViewModels/CampaignsViewModelContextProvider';
+import { withGroupViewModel } from '../GroupListViewModels/GroupViewModelContextProvider';
 const GroupListFormModal = lazy(() => import('./GroupListFormModal'));
 
 class GroupListActionBar extends Component {
@@ -51,4 +51,4 @@ class GroupListActionBar extends Component {
   }
 }
 
-export default withTranslation()(withCampaignsViewModel(withRouter(GroupListActionBar)));
+export default withTranslation()(withGroupViewModel(withRouter(GroupListActionBar)));

@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import SimpleReactValidator from 'simple-react-validator';
 
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
-import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';
+import { GROUP_FIELD_KEY } from '../../../constants/GroupModule';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { Spinner } from 'aesirx-uikit';
 import { withTranslation } from 'react-i18next';
@@ -15,11 +15,10 @@ import { renderingGroupFieldHandler } from '../../../utils/form';
 
 class CampaignsForm extends Component {
   formPropsData = {
-    [CAMPAIGNS_FIELD_KEY.PROJECT]: '',
-    [CAMPAIGNS_FIELD_KEY.NAME]: '',
-    [CAMPAIGNS_FIELD_KEY.START_DATE]: '',
-    [CAMPAIGNS_FIELD_KEY.END_DATE]: '',
-    [CAMPAIGNS_FIELD_KEY.DATA]: {},
+    [GROUP_FIELD_KEY.NAME]: '',
+    [GROUP_FIELD_KEY.START_DATE]: '',
+    [GROUP_FIELD_KEY.END_DATE]: '',
+    [GROUP_FIELD_KEY.DATA]: {},
   };
 
   constructor(props) {
@@ -38,42 +37,19 @@ class CampaignsForm extends Component {
   }
 
   generateFormSetting = () => {
-    const dropdownlistProjectValues = this.viewModel.dropdownlistProjectValues
-      ? this.viewModel.dropdownlistProjectValues
-      : null;
-
-    const projectId = this.formPropsData[CAMPAIGNS_FIELD_KEY.PROJECT] ?? 0;
-    const valueProject = dropdownlistProjectValues
-      ? dropdownlistProjectValues.find((elm) => parseInt(elm.value) === parseInt(projectId))
-      : null;
     const { t } = this.props;
     return [
       {
         fields: [
           {
-            label: t('txt_project'),
-            key: CAMPAIGNS_FIELD_KEY.PROJECT,
-            type: FORM_FIELD_TYPE.DROPDOWN,
-            value: valueProject,
-            required: true,
-            validation: 'required',
-            option: dropdownlistProjectValues,
-            changed: (event) => {
-              this.formPropsData[CAMPAIGNS_FIELD_KEY.PROJECT] = event.value;
-            },
-            blurred: () => {
-              this.validator.showMessageFor('Project');
-            },
-          },
-          {
             label: t('txt_campaign_name'),
-            key: CAMPAIGNS_FIELD_KEY.NAME,
+            key: GROUP_FIELD_KEY.NAME,
             type: FORM_FIELD_TYPE.INPUT,
-            value: this.formPropsData[CAMPAIGNS_FIELD_KEY.NAME],
+            value: this.formPropsData[GROUP_FIELD_KEY.NAME],
             required: true,
             validation: 'required',
             changed: (event) => {
-              this.formPropsData[CAMPAIGNS_FIELD_KEY.NAME] = event.target.value;
+              this.formPropsData[GROUP_FIELD_KEY.NAME] = event.target.value;
             },
             blurred: () => {
               if (!this.viewModel.editMode) {
@@ -85,10 +61,10 @@ class CampaignsForm extends Component {
             type: FORM_FIELD_TYPE.DATERANGE,
             startField: {
               label: t('start_date'),
-              key: CAMPAIGNS_FIELD_KEY.START_DATE,
-              value: this.formPropsData[CAMPAIGNS_FIELD_KEY.START_DATE],
+              key: GROUP_FIELD_KEY.START_DATE,
+              value: this.formPropsData[GROUP_FIELD_KEY.START_DATE],
               changed: (date) => {
-                this.formPropsData[CAMPAIGNS_FIELD_KEY.START_DATE] = date;
+                this.formPropsData[GROUP_FIELD_KEY.START_DATE] = date;
               },
               required: true,
               validation: 'required',
@@ -98,22 +74,22 @@ class CampaignsForm extends Component {
             },
             endField: {
               label: t('end_date'),
-              key: CAMPAIGNS_FIELD_KEY.END_DATE,
-              value: this.formPropsData[CAMPAIGNS_FIELD_KEY.END_DATE],
+              key: GROUP_FIELD_KEY.END_DATE,
+              value: this.formPropsData[GROUP_FIELD_KEY.END_DATE],
               changed: (date) => {
-                this.formPropsData[CAMPAIGNS_FIELD_KEY.END_DATE] = date;
+                this.formPropsData[GROUP_FIELD_KEY.END_DATE] = date;
               },
             },
           },
 
           {
             label: t('txt_budget'),
-            key: `${CAMPAIGNS_FIELD_KEY.DATA}`,
+            key: `${GROUP_FIELD_KEY.DATA}`,
             type: FORM_FIELD_TYPE.PRICE,
-            value: this.formPropsData[CAMPAIGNS_FIELD_KEY.DATA].budget,
+            value: this.formPropsData[GROUP_FIELD_KEY.DATA].budget,
             // validation: 'required',
             changed: (data) => {
-              this.formPropsData[CAMPAIGNS_FIELD_KEY.DATA].budget = data.value;
+              this.formPropsData[GROUP_FIELD_KEY.DATA].budget = data.value;
             },
           },
         ],
@@ -123,12 +99,10 @@ class CampaignsForm extends Component {
 
   populatingFormDataHandler = (data) => {
     if (!data) return false;
-
-    this.formPropsData[CAMPAIGNS_FIELD_KEY.PROJECT] = data.getProjectId();
-    this.formPropsData[CAMPAIGNS_FIELD_KEY.NAME] = data.getName().value;
-    this.formPropsData[CAMPAIGNS_FIELD_KEY.START_DATE] = data.getStartDate().original;
-    this.formPropsData[CAMPAIGNS_FIELD_KEY.END_DATE] = data.getEndDate().original;
-    this.formPropsData[CAMPAIGNS_FIELD_KEY.DATA] = data.getData().value;
+    this.formPropsData[GROUP_FIELD_KEY.NAME] = data.getName().value;
+    this.formPropsData[GROUP_FIELD_KEY.START_DATE] = data.getStartDate().original;
+    this.formPropsData[GROUP_FIELD_KEY.END_DATE] = data.getEndDate().original;
+    this.formPropsData[GROUP_FIELD_KEY.DATA] = data.getData().value;
   };
 
   render() {

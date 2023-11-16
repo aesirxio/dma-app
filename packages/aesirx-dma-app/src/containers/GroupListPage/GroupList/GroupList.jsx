@@ -6,19 +6,11 @@
 import React from 'react';
 
 import PAGE_STATUS from '../../../constants/PageStatus';
-import { CAMPAIGNS_FIELD_KEY } from '../../../constants/CampaignsModule';
+import { GROUP_FIELD_KEY } from '../../../constants/GroupModule';
 import Table from '../../../components/Table';
-import ComponentChart from '../../../components/Chart';
-import ListSocial from '../../../components/ListSocial';
-import CampaignsTotalNumber from '../../../components/CampaignsTotalNumber';
 
 import { observer } from 'mobx-react';
-import { withCampaignsViewModel } from '../GroupListViewModels/CampaignsViewModelContextProvider';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
-import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
-
+import { withGroupViewModel } from '../GroupListViewModels/GroupViewModelContextProvider';
 import { Spinner } from 'aesirx-uikit';
 
 import GroupListActionBar from '../GroupListForm/GroupListActionBar';
@@ -27,28 +19,19 @@ import ComponentViewList from '../../../components/ComponentViewList';
 import { withTranslation } from 'react-i18next';
 const GroupList = observer(
   class GroupList extends ComponentViewList {
-    key = CAMPAIGNS_FIELD_KEY.ID;
-    view = 'group-list';
-    getDataFormFilter = () => {
-      return [
-        {
-          name: 'txt_title_projects',
-          option: this.filterFormViewModel.dropdownlistProjectValues,
-          isMulti: true,
-        },
-      ];
-    };
+    key = GROUP_FIELD_KEY.ID;
+    view = 'categories';
 
     handleExpanded = (e, row) => {
-      this.listViewModel.getContentByIdCampaign(row[this.key]);
+      this.listViewModel.getContentByIdGroup(row[this.key]);
     };
     render() {
-      const { tableStatus, campaigns, pagination } = this.listViewModel;
+      const { tableStatus, group, pagination } = this.listViewModel;
       const { t } = this.props;
       const tableRowHeader = [
         {
           Header: t('txt_group_name'),
-          accessor: CAMPAIGNS_FIELD_KEY.NAME,
+          accessor: GROUP_FIELD_KEY.NAME,
           Cell: ({ row }) => (
             <div {...row.getToggleRowExpandedProps()} className="d-flex">
               <span
@@ -65,63 +48,45 @@ const GroupList = observer(
         },
         {
           Header: t('channel'),
-          // accessor: CAMPAIGNS_FIELD_KEY.START_DATE,
+          accessor: GROUP_FIELD_KEY.START_DATE,
         },
         {
           Header: t('creat_date'),
-          // accessor: CAMPAIGNS_FIELD_KEY.START_DATE,
         },
-
-        // {
-        //   Header: t('end_date'),
-        //   accessor: CAMPAIGNS_FIELD_KEY.END_DATE,
-        // },
       ];
 
-      const dataFormFilter = this.getDataFormFilter();
       if (tableStatus === PAGE_STATUS.LOADING) {
         return <Spinner />;
       }
 
       return (
         <>
-          <div className="mb-4 d-none">
-            <div className="row">
-              <div className="col-lg-12 col-xl-6 mb-3 mb-xl-0">
-                <ComponentChart titleChart={true} />
-              </div>
-              <div className="col-md-6 col-xl-3 ">
-                <ListSocial />
-              </div>
-              <div className="col-md-6 col-xl-3">
-                <CampaignsTotalNumber />
-              </div>
-            </div>
-          </div>
           <div className="d-flex align-items-center justify-content-between mb-4">
             <h2 className="px-3">{t('txt_group_management')}</h2>
             <GroupListActionBar />
           </div>
-          {campaigns ? (
+          {group ? (
             <div>
               <Table
-                rowData={campaigns}
+                rowData={group}
                 tableRowHeader={tableRowHeader}
                 onEdit={this.handerEdit}
                 onSelect={this.handleSelect}
+                isFilter={true}
                 pagination={pagination}
                 pageSize={this.listViewModel.pageSize}
                 listViewModel={this.listViewModel}
-                searchFunction={this.listViewModel.searchCampaign}
-                searchText={t('search_your_group')}
+                searchFunction={this.listViewModel.searchGroup}
+                dataFormFilter={dataFormFilter}
+                searchText={t('search_your_groups')}
                 idKey={this.key}
                 view={this.view}
               />
             </div>
           ) : (
             <ComponentNoData
-              icons="/assets/images/ic_campaigns.svg"
-              title={t('create_your_1st_campaigns')}
+              // icons="/assets/images/ic_campaigns.svg"
+              title={t('create_your_1st_groups')}
               width="w-50"
             />
           )}
@@ -131,4 +96,4 @@ const GroupList = observer(
   }
 );
 
-export default withTranslation()(withCampaignsViewModel(GroupList));
+export default withTranslation()(withGroupViewModel(GroupList));
