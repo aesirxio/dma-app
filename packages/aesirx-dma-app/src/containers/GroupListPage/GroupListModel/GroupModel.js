@@ -16,29 +16,29 @@ import { Helper } from 'aesirx-lib';
 
 class GroupModel {
   constructor(data) {
-    this.id = data[CAMPAIGN_API_FIELD_KEY.ID];
-    this.name = data[CAMPAIGN_API_FIELD_KEY.NAME] ?? '';
-    this.status = data[CAMPAIGN_API_FIELD_KEY.STATUS] ?? '';
+    this.id = data[GROUP_API_FIELD_KEY.ID];
+    this.name = data[GROUP_API_FIELD_KEY.NAME] ?? '';
+    this.status = data[GROUP_API_FIELD_KEY.STATUS] ?? '';
 
     this.startdate =
-      data[CAMPAIGN_API_FIELD_KEY.START_DATE] !== '0000-00-00 00:00:00' &&
-      data[CAMPAIGN_API_FIELD_KEY.START_DATE] !== ''
-        ? data[CAMPAIGN_API_FIELD_KEY.START_DATE]
+      data[GROUP_API_FIELD_KEY.START_DATE] !== '0000-00-00 00:00:00' &&
+      data[GROUP_API_FIELD_KEY.START_DATE] !== ''
+        ? data[GROUP_API_FIELD_KEY.START_DATE]
         : '';
 
     this.enddate =
-      data[CAMPAIGN_API_FIELD_KEY.END_DATE] !== '0000-00-00 00:00:00' &&
-      data[CAMPAIGN_API_FIELD_KEY.END_DATE] !== ''
-        ? data[CAMPAIGN_API_FIELD_KEY.END_DATE]
+      data[GROUP_API_FIELD_KEY.END_DATE] !== '0000-00-00 00:00:00' &&
+      data[GROUP_API_FIELD_KEY.END_DATE] !== ''
+        ? data[GROUP_API_FIELD_KEY.END_DATE]
         : '';
 
-    this.needtodo = data[CAMPAIGN_API_FIELD_KEY.NEED_TO_DO] ?? '';
-    this.schedudepost = data[CAMPAIGN_API_FIELD_KEY.SCHEDUDE_POST] ?? '';
-    this.publishedcontent = data[CAMPAIGN_API_FIELD_KEY.PUBLISHED_CONTENT] ?? '';
+    this.needtodo = data[GROUP_API_FIELD_KEY.NEED_TO_DO] ?? '';
+    this.schedudepost = data[GROUP_API_FIELD_KEY.SCHEDUDE_POST] ?? '';
+    this.publishedcontent = data[GROUP_API_FIELD_KEY.PUBLISHED_CONTENT] ?? '';
 
-    this.project = data[CAMPAIGN_API_FIELD_KEY.PROJECT] ?? '';
+    this.project = data[GROUP_API_FIELD_KEY.PROJECT] ?? '';
 
-    this.percentComplete = data[CAMPAIGN_API_FIELD_KEY.PERCENT_COMPLETE] ?? '';
+    this.percentComplete = data[GROUP_API_FIELD_KEY.PERCENT_COMPLETE] ?? '';
     this.progress = this.percentComplete
       ? new ProgressModel({
           id: this.id,
@@ -46,15 +46,15 @@ class GroupModel {
         })
       : 0;
 
-    this.data = data[CAMPAIGN_API_FIELD_KEY.DATA] ?? '';
-    this.published = data[CAMPAIGN_API_FIELD_KEY.PUBLISHED] ?? '';
+    this.data = data[GROUP_API_FIELD_KEY.DATA] ?? '';
+    this.published = data[GROUP_API_FIELD_KEY.PUBLISHED] ?? '';
   }
 
   getId = () => {
     return {
       value: this.id,
       type: FIELD_TYPE.READONLY,
-      columnName: CAMPAIGNS_FIELD_KEY.ID,
+      columnName: GROUP_FIELD_KEY.ID,
       columnText: 'ID',
     };
   };
@@ -65,7 +65,7 @@ class GroupModel {
     return {
       value: this.name,
       type: FIELD_TYPE.TEXT,
-      columnName: CAMPAIGNS_FIELD_KEY.NAME,
+      columnName: GROUP_FIELD_KEY.NAME,
       columnText: 'Name',
     };
   };
@@ -74,7 +74,7 @@ class GroupModel {
     return {
       value: this.percentComplete,
       type: FIELD_TYPE.TEXT,
-      columnName: CAMPAIGNS_FIELD_KEY.PERCENT_COMPLETE,
+      columnName: GROUP_FIELD_KEY.PERCENT_COMPLETE,
       columnText: 'Percent Complete',
     };
   };
@@ -83,7 +83,7 @@ class GroupModel {
     return {
       value: getStatus(this.status),
       type: FIELD_TYPE.TEXT,
-      columnName: CAMPAIGNS_FIELD_KEY.STATUS,
+      columnName: GROUP_FIELD_KEY.STATUS,
       columnText: 'Status',
     };
   };
@@ -91,7 +91,7 @@ class GroupModel {
     return {
       value: this.published,
       type: FIELD_TYPE.TEXT,
-      columnName: CAMPAIGNS_FIELD_KEY.PUBLISHED,
+      columnName: GROUP_FIELD_KEY.PUBLISHED,
       columnText: 'Status',
     };
   };
@@ -101,7 +101,7 @@ class GroupModel {
       value: this.startdate ? format(new Date(this.startdate), FORMAT_DATE) : '',
       original: this.startdate,
       type: FIELD_TYPE.DATE,
-      columnName: CAMPAIGNS_FIELD_KEY.START_DATE,
+      columnName: GROUP_FIELD_KEY.START_DATE,
       columnText: 'Start Date',
     };
   };
@@ -111,7 +111,7 @@ class GroupModel {
       value: this.enddate ? format(new Date(this.enddate), FORMAT_DATE) : '',
       original: this.enddate,
       type: FIELD_TYPE.DATE,
-      columnName: CAMPAIGNS_FIELD_KEY.END_DATE,
+      columnName: GROUP_FIELD_KEY.END_DATE,
       columnText: 'End Date',
     };
   };
@@ -120,7 +120,7 @@ class GroupModel {
     return {
       value: this.needtodo,
       type: FIELD_TYPE.TEXT,
-      columnName: CAMPAIGNS_FIELD_KEY.NEED_TO_DO,
+      columnName: GROUP_FIELD_KEY.NEED_TO_DO,
       columnText: 'Need To Do',
     };
   };
@@ -129,7 +129,7 @@ class GroupModel {
     return {
       value: this.schedudepost,
       type: FIELD_TYPE.TEXT,
-      columnName: CAMPAIGNS_FIELD_KEY.SCHEDUDE_POST,
+      columnName: GROUP_FIELD_KEY.SCHEDUDE_POST,
       columnText: 'Schedude post',
     };
   };
@@ -138,7 +138,7 @@ class GroupModel {
     return {
       value: this.publishedcontent,
       type: FIELD_TYPE.TEXT,
-      columnName: CAMPAIGNS_FIELD_KEY.PUBLISHED_CONTENT,
+      columnName: GROUP_FIELD_KEY.PUBLISHED_CONTENT,
       columnText: 'Published content',
     };
   };
@@ -147,7 +147,7 @@ class GroupModel {
     return {
       value: this.progress ? this.progress.getProgress() : '',
       type: FIELD_TYPE.TEXT,
-      columnName: CAMPAIGNS_FIELD_KEY.PROGRESS,
+      columnName: GROUP_FIELD_KEY.PROGRESS,
       columnText: 'Progress',
     };
   };
@@ -189,29 +189,27 @@ class GroupModel {
     }
   };
 
-  static convertSubmittedDataToAPIService(campaignsData) {
-    const result = campaignsData
+  static convertSubmittedDataToAPIService(groupData) {
+    const result = groupData
       ? {
-          [CAMPAIGN_API_FIELD_KEY.ID]: campaignsData[CAMPAIGN_API_FIELD_KEY.ID] ?? '',
-          [CAMPAIGN_API_FIELD_KEY.NAME]: campaignsData[CAMPAIGNS_FIELD_KEY.NAME] ?? '',
-          [CAMPAIGN_API_FIELD_KEY.START_DATE]: moment
-            .utc(campaignsData[CAMPAIGNS_FIELD_KEY.START_DATE], 'YYYY-MM-DD HH:mm:ss [GMT]ZZ')
+          [GROUP_API_FIELD_KEY.ID]: groupData[GROUP_API_FIELD_KEY.ID] ?? '',
+          [GROUP_API_FIELD_KEY.NAME]: groupData[GROUP_FIELD_KEY.NAME] ?? '',
+          [GROUP_API_FIELD_KEY.START_DATE]: moment
+            .utc(groupData[GROUP_FIELD_KEY.START_DATE], 'YYYY-MM-DD HH:mm:ss [GMT]ZZ')
             .format('YYYY-MM-DDTHH:mm:ss.SSS[Z]'),
-          [CAMPAIGN_API_FIELD_KEY.END_DATE]: moment
-            .utc(campaignsData[CAMPAIGNS_FIELD_KEY.END_DATE], 'YYYY-MM-DD HH:mm:ss [GMT]ZZ')
+          [GROUP_API_FIELD_KEY.END_DATE]: moment
+            .utc(groupData[GROUP_FIELD_KEY.END_DATE], 'YYYY-MM-DD HH:mm:ss [GMT]ZZ')
             .format('YYYY-MM-DDTHH:mm:ss.SSS[Z]'),
-          [CAMPAIGN_API_FIELD_KEY.PROJECT]: campaignsData[CAMPAIGNS_FIELD_KEY.PROJECT] ?? '',
-          [CAMPAIGN_API_FIELD_KEY.NEED_TO_DO]: campaignsData[CAMPAIGNS_FIELD_KEY.NEED_TO_DO] ?? '',
-          [CAMPAIGN_API_FIELD_KEY.SCHEDUDE_POST]:
-            campaignsData[CAMPAIGNS_FIELD_KEY.SCHEDUDE_POST] ?? '',
-          [CAMPAIGN_API_FIELD_KEY.PUBLISHED_CONTENT]:
-            campaignsData[CAMPAIGNS_FIELD_KEY.PUBLISHED_CONTENT] ?? '',
-          [CAMPAIGN_API_FIELD_KEY.PROGRESS]: campaignsData[CAMPAIGNS_FIELD_KEY.PROGRESS] ?? '',
+          [GROUP_API_FIELD_KEY.PROJECT]: groupData[GROUP_FIELD_KEY.PROJECT] ?? '',
+          [GROUP_API_FIELD_KEY.NEED_TO_DO]: groupData[GROUP_FIELD_KEY.NEED_TO_DO] ?? '',
+          [GROUP_API_FIELD_KEY.SCHEDUDE_POST]: groupData[GROUP_FIELD_KEY.SCHEDUDE_POST] ?? '',
+          [GROUP_API_FIELD_KEY.PUBLISHED_CONTENT]:
+            groupData[GROUP_FIELD_KEY.PUBLISHED_CONTENT] ?? '',
+          [GROUP_API_FIELD_KEY.PROGRESS]: groupData[GROUP_FIELD_KEY.PROGRESS] ?? '',
 
-          [CAMPAIGN_API_FIELD_KEY.PUBLISHED]: campaignsData[CAMPAIGNS_FIELD_KEY.PUBLISHED] ?? '',
+          [GROUP_API_FIELD_KEY.PUBLISHED]: groupData[GROUP_FIELD_KEY.PUBLISHED] ?? '',
 
-          [CAMPAIGN_API_FIELD_KEY.DATA]:
-            JSON.stringify(campaignsData[CAMPAIGN_API_FIELD_KEY.DATA]) ?? '',
+          [GROUP_API_FIELD_KEY.DATA]: JSON.stringify(groupData[GROUP_API_FIELD_KEY.DATA]) ?? '',
         }
       : null;
 

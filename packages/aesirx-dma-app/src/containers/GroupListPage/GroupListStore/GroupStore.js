@@ -7,9 +7,8 @@ import { runInAction } from 'mobx';
 
 import GroupUtils from '../GroupListUtils/GroupUtils';
 import GroupModel from '../GroupListModel/GroupModel';
-import { AesirxCampaignApiService } from 'aesirx-lib';
-import { ProjectMasterDataModel } from '../../../store/Models/MasterDataModels/ProjectMasterDataModel';
-import { CampaignMasterDataModel } from '../../../store/Models/MasterDataModels/CampaignMasterDataModel';
+import { AesirxGroupApiService } from 'aesirx-lib';
+import { GroupMasterDataModel } from '../../../store/Models/MasterDataModels/GroupMasterDataModel';
 import { GROUP_FIELD_KEY } from '../../../constants/GroupModule';
 import moment from 'moment';
 class GroupStore {
@@ -48,7 +47,7 @@ class GroupStore {
     }
   }
 
-  async saveGroup(Data, callbackOnSuccess, callbackOnError) {
+  async saveGroup(groupData, callbackOnSuccess, callbackOnError) {
     try {
       // Change local to UTC
       groupData[GROUP_FIELD_KEY.START_DATE] = moment(groupData[GROUP_FIELD_KEY.START_DATE])

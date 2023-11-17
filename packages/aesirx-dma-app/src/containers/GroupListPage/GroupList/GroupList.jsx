@@ -77,7 +77,6 @@ const GroupList = observer(
                 pageSize={this.listViewModel.pageSize}
                 listViewModel={this.listViewModel}
                 searchFunction={this.listViewModel.searchGroup}
-                dataFormFilter={dataFormFilter}
                 searchText={t('search_your_groups')}
                 idKey={this.key}
                 view={this.view}
