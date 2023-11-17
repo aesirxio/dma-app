@@ -213,5 +213,20 @@
   "txt_disconnect": "Prekini vezu",
   "txt_failed": "ล้มเหลว",
   "txt_bulk_disconnect": "ยกเลิกการเชื่อมต่อเป็นกลุ่ม",
-  "txt_sso" : "การลงชื่อเพียงครั้งเดียว"
+  "txt_sso" : "การลงชื่อเพียงครั้งเดียว",
+  "txt_inspirations": "แรงบันดาลใจ",
+  "txt_inspirations_placeholder": "ป้อน URL ของโพสต์บนบล็อกที่มีอยู่สูงสุด 5 รายการที่คุณต้องการสร้างแรงบันดาลใจ โดยคั่นด้วยเครื่องหมายจุลภาค",
+  "txt_content_description_placeholder": "อธิบายหัวข้อที่คุณต้องการ \n\nตัวอย่างเช่น: \n\"ทำการตลาดเครื่องมือจัดการโซเชียลมีเดียออนไลน์\"",
+  "txt_approx_words": "ประมาณ คำ",
+  "txt_target_audience": "เลือกกลุ่มเป้าหมายของคุณ",
+  "txt_generate_image": "สร้างภาพ",
+  "txt_generate_image_placeholder": "เขียนคำอธิบายภาพที่คุณต้องการสร้าง\n\nตัวอย่างเช่น:\n“ต้นกาแฟอันเขียวชอุ่มที่เติบโตในรูปแบบกราฟิก”",
+  "txt_image_dimensions": "ขนาดภาพ",
+  "txt_image": "ภาพ",
+  "txt_generate": "สร้าง",
+  "txt_re_generate": "สร้างใหม่",
+  "txt_add_content_to_editor": "เพิ่มเนื้อหาลงในตัวแก้ไข",
+  "txt_view": "ดู",
+  "txt_use": "ใช้",
+  "txt_result": "ผลลัพธ์"
 }

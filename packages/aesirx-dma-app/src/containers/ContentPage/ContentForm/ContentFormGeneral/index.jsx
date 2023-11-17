@@ -220,6 +220,7 @@ const ContentFormGeneral = observer(
     render() {
       const formSetting = this.generateFormSetting();
       const { t } = this.props;
+
       return (
         <div className="pe-md-80">
           <div className="d-flex align-items-center justify-content-between mb-4">
@@ -234,7 +235,9 @@ const ContentFormGeneral = observer(
                 <p className="text-body mb-0 w-100 mt-2 fw-medium fs-5 mb-4 pb-2">
                   {t('txt_content')}
                 </p>
-                {renderingGroupFieldHandler(formSetting.selection, this.validator)}
+                <div key={this.viewModel.toggleRerender}>
+                  {renderingGroupFieldHandler(formSetting.selection, this.validator)}
+                </div>
                 {!this.isDisableHeadline() &&
                   renderingGroupFieldHandler(formSetting.name, this.validator)}
                 <ContentFormDescription

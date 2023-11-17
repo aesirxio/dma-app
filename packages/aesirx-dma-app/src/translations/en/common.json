@@ -215,5 +215,20 @@
   "txt_disconnect":"Disconnect",
   "txt_failed": "Failed",
   "txt_bulk_disconnect": "Bulk Disconnect",
-  "txt_sso" : "Single Sign On"
+  "txt_sso" : "Single Sign On",
+  "txt_inspirations": "Inspirations",
+  "txt_inspirations_placeholder": "Enter up to 5 URLs of existing blog posts you would like to be inspired, separated by commas",
+  "txt_content_description_placeholder": "Describe the topic for which you need \n\nFor example: \n\"Marketing a social media management tool online\"",
+  "txt_approx_words": "Approx. Words",
+  "txt_target_audience": "Choose your target audience",
+  "txt_generate_image": "Generate image",
+  "txt_generate_image_placeholder": "Write description of the image you would like to generate.\n\nFor example:\n“Lush coffee bean trees growing in graphic style”",
+  "txt_image_dimensions": "Image dimensions",
+  "txt_image": "Image",
+  "txt_generate": "Generate",
+  "txt_re_generate": "Re-Generate",
+  "txt_add_content_to_editor": "Add content to editor",
+  "txt_view": "View",
+  "txt_use": "Use",
+  "txt_result": "Result"
 }
