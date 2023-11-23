@@ -8,6 +8,7 @@ import PAGE_STATUS from '../../../constants/PageStatus';
 import CampaignsUtils from '../CampaignsUtils/CampaignsUtils';
 import { notify } from 'aesirx-uikit';
 import ContentStore from '../../ContentPage/ContentStore/ContentStore';
+import moment from 'moment';
 
 class CampaignsListViewModel {
   campaignsStore = null;
@@ -96,6 +97,14 @@ class CampaignsListViewModel {
   };
 
   searchCampaign = (dataFilter, page = 1) => {
+    if (dataFilter.start_date && dataFilter.end_date) {
+      const end = moment(dataFilter.end_date).endOf('day');
+      const start_date = moment.utc(dataFilter.start_date).format();
+      const end_date = moment.utc(end).format();
+      dataFilter.start_date = start_date;
+      dataFilter.end_date = end_date;
+    }
+
     this.dataFilter = dataFilter;
     this.campaignsStore.searchCampaigns(
       this.callbackOnSuccessHandler,
@@ -116,6 +125,36 @@ class CampaignsListViewModel {
     } catch (error) {
       console.error(error);
       return null;
+    }
+  };
+
+  setFilter = (data, key) => {
+    this.dataFilter = { searchText: '', columns: [], titleFilter: {}, datetime: null, page: '' };
+    switch (key) {
+      // keep searchText when render
+      case 1:
+        return (this.dataFilter.searchText = data);
+      // keep columns hide when render
+      case 2:
+        return (this.dataFilter.columns = data);
+      // keep title filter when render
+      case 3:
+        return (this.dataFilter.titleFilter = data);
+      // keep datetime filter when render
+      case 4:
+        return (this.dataFilter.datetime = data);
+      // keep page when render
+      case 5:
+        return (this.dataFilter.page = data);
+      case 6:
+        this.dataFilter.searchText = '';
+        this.dataFilter.columns = [];
+        this.dataFilter.titleFilter = {};
+        this.dataFilter.datetime = null;
+        this.dataFilter.page = '';
+        break;
+      default:
+        return null;
     }
   };
 

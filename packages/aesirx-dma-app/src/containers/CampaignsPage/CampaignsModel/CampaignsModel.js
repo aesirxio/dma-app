@@ -47,7 +47,7 @@ class CampaignsModel {
       : 0;
 
     this.data = data[CAMPAIGN_API_FIELD_KEY.DATA] ?? '';
-    this.published = data[CAMPAIGN_API_FIELD_KEY.PUBLISHED] ?? '';
+    this.published = parseInt(data[CAMPAIGN_API_FIELD_KEY.PUBLISHED]) ?? '';
   }
 
   getId = () => {
