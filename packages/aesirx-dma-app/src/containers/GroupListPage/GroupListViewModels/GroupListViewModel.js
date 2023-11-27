@@ -44,6 +44,7 @@ class GroupListViewModel {
       0,
       this.pageSize
     );
+    console.log('initializeData111');
   };
 
   refreshTableGroupList = () => {
@@ -105,19 +106,6 @@ class GroupListViewModel {
       this.pageSize
     );
   };
-
-  // getContentByIdExpanded = async (groupId) => {
-  //   if (!this.contentStore) {
-  //     return null;
-  //   }
-  //   try {
-  //     const contentDataModels = await this.contentStore.getContentsByCampaignIDs([campaignId], 20);
-  //     return contentDataModels;
-  //   } catch (error) {
-  //     console.error(error);
-  //     return null;
-  //   }
-  // };
 
   resetObservableProperties = () => {
     this.group = null;

@@ -5,25 +5,22 @@
 
 import GroupFormModalViewModel from './GroupFormModalViewModel';
 import GroupListViewModel from './GroupListViewModel';
-import GroupSelectionViewModel from './GroupSelectionViewModel';
-
+//
 class GroupViewModel {
   groupListViewModel = null;
-  groupSelectionViewModel = null;
   groupFormModalViewModel = null;
 
   constructor(groupStore) {
     if (groupStore) {
       this.groupFormModalViewModel = new GroupFormModalViewModel(groupStore);
       this.groupListViewModel = new GroupListViewModel(groupStore);
-      this.groupSelectionViewModel = new GroupSelectionViewModel(groupStore);
 
+      // Inject dependencies together among ViewModels
       this.groupFormModalViewModel.setGroupListViewModel(this.groupListViewModel);
     }
   }
 
   getListViewModel = () => this.groupListViewModel;
-  getSelectionViewModel = () => this.groupSelectionViewModel;
   getFormModalViewModel = () => this.groupFormModalViewModel;
 }
 

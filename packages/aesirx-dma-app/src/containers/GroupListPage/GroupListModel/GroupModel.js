@@ -7,7 +7,6 @@ import { format } from 'date-fns';
 
 import FIELD_TYPE from '../../../constants/FieldType';
 import { FORMAT_DATE } from '../../../constants/FormFieldType';
-import { ProgressModel } from './ProgressModel';
 import getStatus from '../../../utils/status';
 import moment from 'moment';
 import { GROUP_FIELD_KEY, GROUP_API_FIELD_KEY } from '../../../constants/GroupModule';
@@ -31,21 +30,6 @@ class GroupModel {
       data[GROUP_API_FIELD_KEY.END_DATE] !== ''
         ? data[GROUP_API_FIELD_KEY.END_DATE]
         : '';
-
-    this.needtodo = data[GROUP_API_FIELD_KEY.NEED_TO_DO] ?? '';
-    this.schedudepost = data[GROUP_API_FIELD_KEY.SCHEDUDE_POST] ?? '';
-    this.publishedcontent = data[GROUP_API_FIELD_KEY.PUBLISHED_CONTENT] ?? '';
-
-    this.project = data[GROUP_API_FIELD_KEY.PROJECT] ?? '';
-
-    this.percentComplete = data[GROUP_API_FIELD_KEY.PERCENT_COMPLETE] ?? '';
-    this.progress = this.percentComplete
-      ? new ProgressModel({
-          id: this.id,
-          progress: this.percentComplete,
-        })
-      : 0;
-
     this.data = data[GROUP_API_FIELD_KEY.DATA] ?? '';
     this.published = data[GROUP_API_FIELD_KEY.PUBLISHED] ?? '';
   }
@@ -59,7 +43,7 @@ class GroupModel {
     };
   };
 
-  getProjectId = () => (this.project ? this.project : null);
+  getGroupId = () => (this.group ? this.group : null);
 
   getName = () => {
     return {
@@ -116,42 +100,6 @@ class GroupModel {
     };
   };
 
-  getNeedToDo = () => {
-    return {
-      value: this.needtodo,
-      type: FIELD_TYPE.TEXT,
-      columnName: GROUP_FIELD_KEY.NEED_TO_DO,
-      columnText: 'Need To Do',
-    };
-  };
-
-  getSchedudePost = () => {
-    return {
-      value: this.schedudepost,
-      type: FIELD_TYPE.TEXT,
-      columnName: GROUP_FIELD_KEY.SCHEDUDE_POST,
-      columnText: 'Schedude post',
-    };
-  };
-
-  getPublishedContent = () => {
-    return {
-      value: this.publishedcontent,
-      type: FIELD_TYPE.TEXT,
-      columnName: GROUP_FIELD_KEY.PUBLISHED_CONTENT,
-      columnText: 'Published content',
-    };
-  };
-
-  getProgress = () => {
-    return {
-      value: this.progress ? this.progress.getProgress() : '',
-      type: FIELD_TYPE.TEXT,
-      columnName: GROUP_FIELD_KEY.PROGRESS,
-      columnText: 'Progress',
-    };
-  };
-
   getData = () => {
     return {
       value: Helper.isNull(this.data) ? {} : JSON.parse(this.data),
@@ -165,10 +113,6 @@ class GroupModel {
       const status = this.getStatus();
       const startDate = this.getStartDate();
       const endDate = this.getEndDate();
-      const needToDo = this.getNeedToDo();
-      const schedudePost = this.getSchedudePost();
-      const publishedContent = this.getPublishedContent();
-      const progress = this.getProgress();
       const published = this.getPublished();
 
       const result = {
@@ -177,10 +121,6 @@ class GroupModel {
         [status.columnName]: status.value,
         [startDate.columnName]: startDate.value,
         [endDate.columnName]: endDate.value,
-        [needToDo.columnName]: needToDo.value,
-        [schedudePost.columnName]: schedudePost.value,
-        [publishedContent.columnName]: publishedContent.value,
-        [progress.columnName]: progress.value,
         [published.columnName]: published.value,
       };
       return result;
@@ -200,13 +140,6 @@ class GroupModel {
           [GROUP_API_FIELD_KEY.END_DATE]: moment
             .utc(groupData[GROUP_FIELD_KEY.END_DATE], 'YYYY-MM-DD HH:mm:ss [GMT]ZZ')
             .format('YYYY-MM-DDTHH:mm:ss.SSS[Z]'),
-          [GROUP_API_FIELD_KEY.PROJECT]: groupData[GROUP_FIELD_KEY.PROJECT] ?? '',
-          [GROUP_API_FIELD_KEY.NEED_TO_DO]: groupData[GROUP_FIELD_KEY.NEED_TO_DO] ?? '',
-          [GROUP_API_FIELD_KEY.SCHEDUDE_POST]: groupData[GROUP_FIELD_KEY.SCHEDUDE_POST] ?? '',
-          [GROUP_API_FIELD_KEY.PUBLISHED_CONTENT]:
-            groupData[GROUP_FIELD_KEY.PUBLISHED_CONTENT] ?? '',
-          [GROUP_API_FIELD_KEY.PROGRESS]: groupData[GROUP_FIELD_KEY.PROGRESS] ?? '',
-
           [GROUP_API_FIELD_KEY.PUBLISHED]: groupData[GROUP_FIELD_KEY.PUBLISHED] ?? '',
 
           [GROUP_API_FIELD_KEY.DATA]: JSON.stringify(groupData[GROUP_API_FIELD_KEY.DATA]) ?? '',

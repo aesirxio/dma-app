@@ -113,8 +113,9 @@ class GroupStore {
 
     if (results) {
       const groupService = new AesirxGroupApiService();
-      const respondedDataFromLibrary = await groupService.getGroup(id);
 
+      const respondedDataFromLibrary = await groupService.getGroup(id);
+      console.log(respondedDataFromLibrary, '000');
       const groupDataModels = GroupUtils.transformGroupResponseIntoModel([
         respondedDataFromLibrary,
       ]);
@@ -190,7 +191,6 @@ class GroupStore {
               const resultGroupInModel = new GroupMasterDataModel(
                 result && result.groupMasterData ? result.groupMasterData : null
               );
-
               runInAction(() => {
                 callbackOnSuccess(resultGroupInModel);
               });

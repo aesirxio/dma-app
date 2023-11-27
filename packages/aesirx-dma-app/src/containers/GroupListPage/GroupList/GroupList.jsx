@@ -27,6 +27,7 @@ const GroupList = observer(
     };
     render() {
       const { tableStatus, group, pagination } = this.listViewModel;
+      console.log('group', group);  
       const { t } = this.props;
       const tableRowHeader = [
         {
@@ -43,12 +44,11 @@ const GroupList = observer(
             </div>
           ),
           SubCell: ({ row }) => (
-            <span className="fs-14 fw-normal ms-3">|— {row.values['campaigns-name']}</span>
+            <span className="fs-14 fw-normal ms-3">|— {row.values['group-name']}</span>
           ),
         },
         {
           Header: t('channel'),
-          accessor: GROUP_FIELD_KEY.START_DATE,
         },
         {
           Header: t('creat_date'),

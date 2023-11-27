@@ -72,14 +72,6 @@ class GroupFormModalViewModel {
     if (this.editMode) {
       const groupId = this.groupEditdata.getId();
       this.groupFormComponent.formPropsData.id = groupId.value;
-
-      let startDateParse = Date.parse(
-        this.groupFormComponent.formPropsData[GROUP_FIELD_KEY.START_DATE]
-      );
-      let endDateParse = Date.parse(
-        this.groupFormComponent.formPropsData[GROUP_FIELD_KEY.END_DATE]
-      );
-
       if (
         this.groupFormComponent.formPropsData[GROUP_FIELD_KEY.NAME] === '' ||
         startDateParse >= endDateParse

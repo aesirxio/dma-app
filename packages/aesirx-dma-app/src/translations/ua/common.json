@@ -228,5 +228,8 @@
   "txt_add_content_to_editor": "Додайте вміст до редактора",
   "txt_view": "Переглянути",
   "txt_use": "використання",
-  "txt_result": "Результат"
+  "txt_result": "Результат",
+  "txt_group_management": "Керування групою",
+   "txt_create_group": "Створити групу",
+   "create_your_1st_groups": "Створіть свої перші групи"
 }
