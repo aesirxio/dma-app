@@ -24,6 +24,7 @@ const groupStore = new GroupStore({
   globalStore: globalStore,
 });
 const groupViewModel = new GroupViewModel(groupStore);
+console.log('groupViewModel', groupViewModel);
 
 function Group() {
   return (

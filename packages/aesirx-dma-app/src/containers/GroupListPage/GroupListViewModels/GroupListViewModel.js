@@ -44,7 +44,6 @@ class GroupListViewModel {
       0,
       this.pageSize
     );
-    console.log('initializeData111');
   };
 
   refreshTableGroupList = () => {
@@ -125,6 +124,7 @@ class GroupListViewModel {
   };
 
   callbackOnSuccessHandler = (groupModelData) => {
+   console.log('groupModelData', groupModelData);
     if (groupModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 

@@ -7,24 +7,24 @@ import React, { Component, lazy } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
-import { withCampaignsViewModel } from '../CampaignsViewModels/CampaignsViewModelContextProvider';
+import { withGroupViewModel } from '../GroupViewModels/GroupViewModelContextProvider';
 import { Image as ComponentImage, Button } from 'aesirx-uikit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 const ModalComponent = lazy(() => import('../../../components/Modal'));
 
-class CampaignsDelete extends Component {
-  campaignsListViewModel = null;
+class GroupDelete extends Component {
+  groupListViewModel = null;
   constructor(props) {
     super(props);
     this.state = {
       show: false,
     };
     const { viewModel } = props;
-    this.campaignsListViewModel = viewModel ? viewModel.getListViewModel() : null;
+    this.groupListViewModel = viewModel ? viewModel.getListViewModel() : null;
   }
-  handerDeleteCampaigns = () => {
-    this.campaignsListViewModel.deleteCampaigns();
+  handerDeleteGroup = () => {
+    this.groupListViewModel.deleteGroup();
   };
   handleShow = () => {
     this.setState({
@@ -79,7 +79,7 @@ class CampaignsDelete extends Component {
                 <div className="col-auto">
                   <Button
                     text={t('txt_yes_delete')}
-                    onClick={this.handerDeleteCampaigns}
+                    onClick={this.handerDeleteGroup}
                     className="btn btn-danger "
                   />
                 </div>
@@ -92,4 +92,4 @@ class CampaignsDelete extends Component {
   }
 }
 
-export default withTranslation()(withCampaignsViewModel(withRouter(CampaignsDelete)));
+export default withTranslation()(withGroupViewModel(withRouter(GroupDelete)));

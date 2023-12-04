@@ -69,11 +69,10 @@ const GroupListFormModal = observer(
         <ModalComponent
           show={show}
           onHide={this.GroupFormModalViewModal.closeModal}
-          header={
-            editMode === false || editMode == null ? t('create_campaign') : t('edit_campaign')
-          }
+          header={editMode === false || editMode == null ? t('create_group') : t('edit_group')}
           body={
-            <GroupListForm viewModel={this.GroupFormModalViewModal} validator={this.validator} />
+            <GroupListForm viewModel={this.GroupFormModalViewModal} />
+            // <></>
           }
           footer={
             <Button
@@ -94,9 +93,7 @@ const GroupListFormModal = observer(
               ) : (
                 <>
                   <span>
-                    {editMode === false || editMode == null
-                      ? t('create_campaign')
-                      : t('save_campaign')}
+                    {editMode === false || editMode == null ? t('create_group') : t('save_group')}
                   </span>
                   <i className="ms-1">
                     <FontAwesomeIcon icon={faChevronRight} />

@@ -12,28 +12,18 @@ import { withGroupViewModel } from '../GroupListViewModels/GroupViewModelContext
 const GroupListFormModal = lazy(() => import('./GroupListFormModal'));
 
 class GroupListActionBar extends Component {
-  campaignsFormModalViewModal = null;
+  groupFormModalViewModal = null;
   openModal = false;
 
   constructor(props) {
     super(props);
 
     const { viewModel } = props;
-    this.campaignsFormModalViewModal = viewModel ? viewModel.getFormModalViewModel() : null;
-    if (props.location.state) {
-      this.openModal = props.location.state.openModal;
-
-      history.replace(props.location.pathname, { openModal: false });
-    }
+    this.groupFormModalViewModal = viewModel ? viewModel.getFormModalViewModel() : null;
   }
 
-  componentDidMount() {
-    if (this.openModal) {
-      this.campaignsFormModalViewModal.loadForm();
-    }
-  }
-  createCampaignsHandler = () => {
-    this.campaignsFormModalViewModal.loadForm();
+  createGroupHandler = () => {
+    this.groupFormModalViewModal.openModal();
   };
 
   render() {
@@ -41,7 +31,7 @@ class GroupListActionBar extends Component {
       <div className="d-flex justify-content-end pe-3">
         <ButtonNormal
           className="d-flex btn-success fw-semibold"
-          onClick={this.createCampaignsHandler}
+          onClick={this.createGroupHandler}
           iconStart={faPlus}
           text="txt_create_group"
         />

@@ -21,13 +21,22 @@ const GroupList = observer(
   class GroupList extends ComponentViewList {
     key = GROUP_FIELD_KEY.ID;
     view = 'categories';
+    handleEdit = (e, row) => {
+      this.formModalViewModal.getGroup(row.id);
+    };
+    _handleList = () => {
+      this.listViewModel.isList = !this.listViewModel.isList;
+    };
 
-    handleExpanded = (e, row) => {
-      this.listViewModel.getContentByIdGroup(row[this.key]);
+    _handleSort = async (data) => {
+      this.handleSort(data);
+    };
+
+    __handleDelete = () => {
+      this.listViewModel.deleteGroup();
     };
     render() {
       const { tableStatus, group, pagination } = this.listViewModel;
-      console.log('group', group);  
       const { t } = this.props;
       const tableRowHeader = [
         {
@@ -68,18 +77,13 @@ const GroupList = observer(
           {group ? (
             <div>
               <Table
-                rowData={group}
-                tableRowHeader={tableRowHeader}
-                onEdit={this.handerEdit}
-                onSelect={this.handleSelect}
-                isFilter={true}
+                data={group}
+                columns={tableRowHeader}
                 pagination={pagination}
-                pageSize={this.listViewModel.pageSize}
-                listViewModel={this.listViewModel}
-                searchFunction={this.listViewModel.searchGroup}
-                searchText={t('search_your_groups')}
-                idKey={this.key}
-                view={this.view}
+                isDesc={isDesc}
+                onSort={this._handleSort}
+                canSort={true}
+                onSelectionItem={this.handleSelect}
               />
             </div>
           ) : (

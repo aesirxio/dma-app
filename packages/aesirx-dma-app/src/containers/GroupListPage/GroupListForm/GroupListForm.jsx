@@ -4,21 +4,19 @@
  */
 
 import React, { Component } from 'react';
+
 import SimpleReactValidator from 'simple-react-validator';
 
 import { FORM_FIELD_TYPE } from '../../../constants/FormFieldType';
 import { GROUP_FIELD_KEY } from '../../../constants/GroupModule';
 import PAGE_STATUS from '../../../constants/PageStatus';
-import { Spinner } from 'aesirx-uikit';
 import { withTranslation } from 'react-i18next';
+import { Spinner } from 'aesirx-uikit';
 import { renderingGroupFieldHandler } from '../../../utils/form';
 
-class CampaignsForm extends Component {
+class GroupListForm extends Component {
   formPropsData = {
     [GROUP_FIELD_KEY.NAME]: '',
-    [GROUP_FIELD_KEY.START_DATE]: '',
-    [GROUP_FIELD_KEY.END_DATE]: '',
-    [GROUP_FIELD_KEY.DATA]: {},
   };
 
   constructor(props) {
@@ -30,8 +28,6 @@ class CampaignsForm extends Component {
     this.validator = new SimpleReactValidator({ autoForceUpdate: this });
 
     this.viewModel = this.props.viewModel;
-    this.isEditMode = this.viewModel.editMode;
-    this.isEditMode = this.viewModel.editMode === true;
 
     this.viewModel.setForm(this);
   }
@@ -42,7 +38,7 @@ class CampaignsForm extends Component {
       {
         fields: [
           {
-            label: t('txt_campaign_name'),
+            label: t('txt_group_name'),
             key: GROUP_FIELD_KEY.NAME,
             type: FORM_FIELD_TYPE.INPUT,
             value: this.formPropsData[GROUP_FIELD_KEY.NAME],
@@ -53,43 +49,8 @@ class CampaignsForm extends Component {
             },
             blurred: () => {
               if (!this.viewModel.editMode) {
-                this.validator.showMessageFor('Campaign Name');
+                this.validator.showMessageFor('Group Name');
               }
-            },
-          },
-          {
-            type: FORM_FIELD_TYPE.DATERANGE,
-            startField: {
-              label: t('start_date'),
-              key: GROUP_FIELD_KEY.START_DATE,
-              value: this.formPropsData[GROUP_FIELD_KEY.START_DATE],
-              changed: (date) => {
-                this.formPropsData[GROUP_FIELD_KEY.START_DATE] = date;
-              },
-              required: true,
-              validation: 'required',
-              blurred: () => {
-                this.validator.showMessageFor('Start Date');
-              },
-            },
-            endField: {
-              label: t('end_date'),
-              key: GROUP_FIELD_KEY.END_DATE,
-              value: this.formPropsData[GROUP_FIELD_KEY.END_DATE],
-              changed: (date) => {
-                this.formPropsData[GROUP_FIELD_KEY.END_DATE] = date;
-              },
-            },
-          },
-
-          {
-            label: t('txt_budget'),
-            key: `${GROUP_FIELD_KEY.DATA}`,
-            type: FORM_FIELD_TYPE.PRICE,
-            value: this.formPropsData[GROUP_FIELD_KEY.DATA].budget,
-            // validation: 'required',
-            changed: (data) => {
-              this.formPropsData[GROUP_FIELD_KEY.DATA].budget = data.value;
             },
           },
         ],
@@ -97,42 +58,43 @@ class CampaignsForm extends Component {
     ];
   };
 
-  populatingFormDataHandler = (data) => {
-    if (!data) return false;
-    this.formPropsData[GROUP_FIELD_KEY.NAME] = data.getName().value;
-    this.formPropsData[GROUP_FIELD_KEY.START_DATE] = data.getStartDate().original;
-    this.formPropsData[GROUP_FIELD_KEY.END_DATE] = data.getEndDate().original;
-    this.formPropsData[GROUP_FIELD_KEY.DATA] = data.getData().value;
-  };
+  // populatingFormDataHandler = (data) => {
+  //   if (!data) return false;
+
+  //   this.formPropsData[GROUP_FIELD_KEY.NAME] = data.getName().value;
+  // };
+
+  // onDrop = (files) => {
+  //   this.setState({ files });
+  // };
 
   render() {
-    const { formStatus, editMode } = this.viewModel;
+    const { formStatus, groupEditdata, editMode } = this.viewModel;
 
-    if (editMode) {
-      let editData = this.viewModel.getCampaignEditData();
-      this.populatingFormDataHandler(editData);
-    }
+    // if (editMode) {
+    //   this.populatingFormDataHandler(groupEditdata);
+    // }
 
-    if (formStatus === PAGE_STATUS.LOADING) {
-      return <Spinner />;
-    }
+    // if (formStatus === PAGE_STATUS.LOADING) {
+    //   return <Spinner />;
+    // }
 
-    const formSetting = this.generateFormSetting();
+    // const formSetting = this.generateFormSetting();
 
-    return (
-      <>
-        {Object.keys(formSetting)
-          .map((groupIndex) => {
-            return [...Array(formSetting[groupIndex])].map((group) => {
-              return renderingGroupFieldHandler(group, this.props.validator);
-            });
-          })
-          .reduce((arr, el) => {
-            return arr.concat(el);
-          }, [])}
-      </>
-    );
+    // return (
+    //   <>
+    //     {/* {Object.keys(formSetting)
+    //       .map((groupIndex) => {
+    //         return [...Array(formSetting[groupIndex])].map((group) => {
+    //           return renderingGroupFieldHandler(group, this.props.validator);
+    //         });
+    //       })
+    //       .reduce((arr, el) => {
+    //         return arr.concat(el);
+    //       }, [])} */}
+    //   </>
+    // );
   }
 }
 
-export default withTranslation()(CampaignsForm);
+export default withTranslation()(GroupListForm);
