@@ -28,7 +28,7 @@ class GroupStore {
         respondedDataFromLibrary.list
       );
 
-      if (GroupModels) { 
+      if (GroupModels) {
         runInAction(() => {
           callbackOnSuccess({
             list: GroupModels,
@@ -115,7 +115,7 @@ class GroupStore {
       const groupService = new AesirxGroupApiService();
 
       const respondedDataFromLibrary = await groupService.getGroup(id);
-     
+
       const groupDataModels = GroupUtils.transformGroupResponseIntoModel([
         respondedDataFromLibrary,
       ]);
