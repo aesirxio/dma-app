@@ -74,7 +74,7 @@ class GroupListViewModel {
     }
   };
 
-  getPagination = (paginationStep, isList, limit = 5) => {
+  getPagination = (paginationStep, limit = 5) => {
     this.pageSize = limit;
     this.tableStatus = PAGE_STATUS.LOADING;
     if (this.dataFilter !== null) {
@@ -124,7 +124,7 @@ class GroupListViewModel {
   };
 
   callbackOnSuccessHandler = (groupModelData) => {
-    console.log('groupModelData', groupModelData);
+    
     if (groupModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 

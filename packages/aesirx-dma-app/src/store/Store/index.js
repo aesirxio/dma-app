@@ -8,6 +8,7 @@ import {
   AesirxCampaignApiService,
   AesirxPersonaApiService,
   AesirxBillingPlanApiService,
+  AesirxGroupApiService,
   AUTHORIZATION_KEY,
   Storage,
 } from 'aesirx-lib';
@@ -18,6 +19,7 @@ class GlobalStore {
   personaMasterData = null;
   connectedChannelsMasterData = null;
   memberFeaturesMasterData = null;
+  groupMasterData = null;
   memberId = Storage.getItem(AUTHORIZATION_KEY.MEMBER_ID) ?? 0;
   memberFullName = Storage.getItem(AUTHORIZATION_KEY.MEMBER_FULL_NAME) ?? '';
 
@@ -33,6 +35,13 @@ class GlobalStore {
     const respondedData = await projectApiService.getProjectMasterData();
     this.projectMasterData = respondedData;
     return this.projectMasterData;
+  }
+
+  async getGroupMasterData() {
+    const groupApiService = new AesirxGroupApiService();
+    const respondedData = await groupApiService.getGroupMasterData();
+    this.groupMasterData = respondedData;
+    return this.groupMasterData;
   }
 
   async getConnectedChannelsMasterData() {
@@ -64,6 +73,7 @@ class GlobalStore {
         personaMasterData: null,
         connectedChannelsMasterData: null,
         memberFeaturesMasterData: null,
+        groupMasterData: null,
       };
 
       // Project Master Data
@@ -88,6 +98,28 @@ class GlobalStore {
           result.projectMasterData = projectMasterData;
         }
       }
+       // Group Master Data
+       const isForGroupMasterData = args.isForGroupMaster ? args.isForGroupMaster : false;
+       const isForceGroupMasterData = args.isForceGroupMasterData
+         ? args.isForceGroupMasterData
+         : false;
+ 
+       if (isForGroupMasterData === true) {
+         let groupMasterData = null;
+ 
+         if (isForceGroupMasterData) {
+           groupMasterData = await this.getGroupMasterData();
+         } else {
+           groupMasterData = this.groupMasterData
+             ? this.groupMasterData
+             : await this.getGroupMasterData();
+         }
+ 
+         // const GroupMasterData =  await this.getGroupMasterData();
+         if (groupMasterData) {
+           result.groupMasterData = groupMasterData;
+         }
+       }
 
       // Campaign Master Data
       const isForCampaignMasterData = args.isForCampaignMasterData

@@ -20,14 +20,10 @@ import { withTranslation } from 'react-i18next';
 const GroupList = observer(
   class GroupList extends ComponentViewList {
     key = GROUP_FIELD_KEY.ID;
-    view = 'categories';
+    view = 'group';
     handleEdit = (e, row) => {
       this.formModalViewModal.getGroup(row.id);
     };
-    _handleList = () => {
-      this.listViewModel.isList = !this.listViewModel.isList;
-    };
-
     _handleSort = async (data) => {
       this.handleSort(data);
     };
