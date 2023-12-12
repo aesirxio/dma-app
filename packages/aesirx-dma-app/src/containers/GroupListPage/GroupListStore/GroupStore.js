@@ -22,7 +22,7 @@ class GroupStore {
   async fetchGroup(callbackOnSuccess, callbackOnError, paginationStep = 0, paginationSize = 25) {
     try {
       const groupService = new AesirxGroupApiService();
-      const respondedDataFromLibrary = await groupService.getGroup(paginationStep, paginationSize);
+      const respondedDataFromLibrary = await groupService.getGroups(paginationStep, paginationSize);
 
       const GroupModels = await GroupUtils.transformGroupResponseIntoModel(
         respondedDataFromLibrary.list
@@ -107,14 +107,13 @@ class GroupStore {
   }
 
   async getGroup(id, callbackOnSuccess, callbackOnError) {
-    console.log('id', id);
     if (!id) return false;
     const results = true;
 
     if (results) {
       const groupService = new AesirxGroupApiService();
 
-      const respondedDataFromLibrary = await groupService.getGroup(id);
+      const respondedDataFromLibrary = await groupService.getGroupItem(id);
 
       const groupDataModels = GroupUtils.transformGroupResponseIntoModel([
         respondedDataFromLibrary,

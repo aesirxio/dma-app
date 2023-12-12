@@ -71,29 +71,29 @@ class GroupListForm extends Component {
   render() {
     const { formStatus, groupEditdata, editMode } = this.viewModel;
 
-    // if (editMode) {
-    //   this.populatingFormDataHandler(groupEditdata);
-    // }
+    if (editMode) {
+      this.populatingFormDataHandler(groupEditdata);
+    }
 
-    // if (formStatus === PAGE_STATUS.LOADING) {
-    //   return <Spinner />;
-    // }
+    if (formStatus === PAGE_STATUS.LOADING) {
+      return <Spinner />;
+    }
 
-    // const formSetting = this.generateFormSetting();
+    const formSetting = this.generateFormSetting();
 
-    // return (
-    //   <>
-    //     {/* {Object.keys(formSetting)
-    //       .map((groupIndex) => {
-    //         return [...Array(formSetting[groupIndex])].map((group) => {
-    //           return renderingGroupFieldHandler(group, this.props.validator);
-    //         });
-    //       })
-    //       .reduce((arr, el) => {
-    //         return arr.concat(el);
-    //       }, [])} */}
-    //   </>
-    // );
+    return (
+      <>
+        {Object.keys(formSetting)
+          .map((groupIndex) => {
+            return [...Array(formSetting[groupIndex])].map((group) => {
+              return renderingGroupFieldHandler(group, this.props.validator);
+            });
+          })
+          .reduce((arr, el) => {
+            return arr.concat(el);
+          }, [])}
+      </>
+    );
   }
 }
 
