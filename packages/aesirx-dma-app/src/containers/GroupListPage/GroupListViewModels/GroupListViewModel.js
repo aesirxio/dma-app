@@ -124,7 +124,6 @@ class GroupListViewModel {
   };
 
   callbackOnSuccessHandler = (groupModelData) => {
-    
     if (groupModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 

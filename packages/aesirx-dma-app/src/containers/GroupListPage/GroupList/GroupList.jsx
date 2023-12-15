@@ -34,7 +34,6 @@ const GroupList = observer(
     render() {
       const { tableStatus, group, itmes, pagination } = this.listViewModel;
       const { t } = this.props;
-     console.log('group', group ,itmes);
       const tableRowHeader = [
         {
           Header: t('txt_group_name'),
@@ -84,10 +83,7 @@ const GroupList = observer(
               />
             </div>
           ) : (
-            <ComponentNoData
-              title={t('create_your_1st_groups')}
-              width="w-50"
-            />
+            <ComponentNoData title={t('create_your_1st_groups')} width="w-50" />
           )}
         </>
       );

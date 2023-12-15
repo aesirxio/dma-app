@@ -98,28 +98,28 @@ class GlobalStore {
           result.projectMasterData = projectMasterData;
         }
       }
-       // Group Master Data
-       const isForGroupMasterData = args.isForGroupMaster ? args.isForGroupMaster : false;
-       const isForceGroupMasterData = args.isForceGroupMasterData
-         ? args.isForceGroupMasterData
-         : false;
- 
-       if (isForGroupMasterData === true) {
-         let groupMasterData = null;
- 
-         if (isForceGroupMasterData) {
-           groupMasterData = await this.getGroupMasterData();
-         } else {
-           groupMasterData = this.groupMasterData
-             ? this.groupMasterData
-             : await this.getGroupMasterData();
-         }
- 
-         // const GroupMasterData =  await this.getGroupMasterData();
-         if (groupMasterData) {
-           result.groupMasterData = groupMasterData;
-         }
-       }
+      // Group Master Data
+      const isForGroupMasterData = args.isForGroupMaster ? args.isForGroupMaster : false;
+      const isForceGroupMasterData = args.isForceGroupMasterData
+        ? args.isForceGroupMasterData
+        : false;
+
+      if (isForGroupMasterData === true) {
+        let groupMasterData = null;
+
+        if (isForceGroupMasterData) {
+          groupMasterData = await this.getGroupMasterData();
+        } else {
+          groupMasterData = this.groupMasterData
+            ? this.groupMasterData
+            : await this.getGroupMasterData();
+        }
+
+        // const GroupMasterData =  await this.getGroupMasterData();
+        if (groupMasterData) {
+          result.groupMasterData = groupMasterData;
+        }
+      }
 
       // Campaign Master Data
       const isForCampaignMasterData = args.isForCampaignMasterData

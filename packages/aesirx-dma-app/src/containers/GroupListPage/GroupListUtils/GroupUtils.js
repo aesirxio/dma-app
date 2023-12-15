@@ -7,11 +7,9 @@ import GroupModel from '../GroupListModel/GroupModel';
 
 class GroupUtils {
   transformGroupResponseIntoModel = (response) => {
-   
     return Object.keys(response)
-   
+
       .map((index) => {
-        
         return [...Array(response[index])].map((item) => {
           return new GroupModel(item);
         });
