@@ -7,13 +7,24 @@ import GroupModel from '../GroupListModel/GroupModel';
 
 class GroupUtils {
   transformGroupResponseIntoModel = (response) => {
+   
     return Object.keys(response)
+   
       .map((index) => {
+        
         return [...Array(response[index])].map((item) => {
-          const model = new GroupModel(item);
-
-          return model;
+          return new GroupModel(item);
         });
+      })
+      .reduce((arr, el) => {
+        return arr.concat(el);
+      }, []);
+  };
+
+  transformGroupModelIntoTableDataRow = (groupModels) => {
+    return groupModels
+      .map((item) => {
+        return item.toTableRowData();
       })
       .reduce((arr, el) => {
         return arr.concat(el);
@@ -30,15 +41,8 @@ class GroupUtils {
     return this.transformGroupResponseIntoModel(data).map((item) => ({
       label: item.name,
       value: item.id,
+      image: item.logoUrl,
     }));
-  };
-
-  transformGroupModelIntoTableDataRow = (GroupModels) => {
-    return GroupModels.map((item) => {
-      return item.toTableRowData();
-    }).reduce((arr, el) => {
-      return arr.concat(el);
-    }, []);
   };
 }
 

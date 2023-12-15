@@ -9,27 +9,15 @@ const GROUP_FIELD_KEY = {
   STATUS: 'status',
   START_DATE: 'startDate',
   END_DATE: 'endDate',
-  NEED_TO_DO: 'todo',
-  SCHEDUDE_POST: 'schedude-post',
   PUBLISHED_CONTENT: 'published-content',
-  PROGRESS: 'progress',
-  PERCENT_COMPLETE: 'percent-complete',
-  VALUE: 'value',
-  DATA: 'data',
-  PUBLISHED: 'status',
 };
 
 const GROUP_API_FIELD_KEY = {
   ID: 'id',
   NAME: 'title',
   STATUS: 'status',
-  PROJECT: 'project',
   START_DATE: 'start_date',
   END_DATE: 'end_date',
-  PERCENT_COMPLETE: 'percent_complete',
-  NEED_TO_DO: 'no_to_do_posts',
-  SCHEDUDE_POST: 'no_scheduled_posts',
-  PUBLISHED_CONTENT: 'no_published_posts',
   DATA: 'data',
   PUBLISHED: 'status',
 };
