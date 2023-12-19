@@ -46,47 +46,12 @@ const GroupList = observer(
           ),
         },
         {
-          Header: t('start_date'),
-          accessor: GROUP_FIELD_KEY.START_DATE,
+          Header: t('channel'),
+          accessor: GROUP_FIELD_KEY.CHANNELS,
         },
         {
-          Header: t('end_date'),
-          accessor: GROUP_FIELD_KEY.END_DATE,
-        },
-        {
-          Header: t('txt_status'),
-          accessor: GROUP_FIELD_KEY.STATUS,
-          Cell: ({ value }) => {
-            if (value === 1) {
-              return (
-                <span
-                  className={`badge ${t(
-                    'txt_running'
-                  )} bg-posted mw-100 h-35 d-inline align-middle`}
-                >
-                  {t('txt_running')}
-                </span>
-              );
-            } else if (value === 2) {
-              return (
-                <span
-                  className={`badge ${t(
-                    'txt_schedule'
-                  )} bg-processing mw-100 h-35 d-inline align-middle`}
-                >
-                  {t('txt_schedule')}
-                </span>
-              );
-            } else {
-              return (
-                <span
-                  className={`badge ${t('txt_stop')} bg-failed mw-100 h-35 d-inline align-middle`}
-                >
-                  {t('txt_stop')}
-                </span>
-              );
-            }
-          },
+          Header: t('creat_date'),
+          accessor: GROUP_FIELD_KEY.CREATED_TIME,
         },
       ];
 

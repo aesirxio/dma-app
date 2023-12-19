@@ -10,6 +10,8 @@ const GROUP_FIELD_KEY = {
   START_DATE: 'startDate',
   END_DATE: 'endDate',
   PUBLISHED_CONTENT: 'published-content',
+  CREATED_TIME: 'create_time',
+  CHANNELS: 'channels',
 };
 
 const GROUP_API_FIELD_KEY = {
@@ -20,6 +22,8 @@ const GROUP_API_FIELD_KEY = {
   END_DATE: 'end_date',
   DATA: 'data',
   PUBLISHED: 'status',
+  CREATED_TIME: 'create_time',
+  CHANNELS: 'channels',
 };
 
 export { GROUP_FIELD_KEY, GROUP_API_FIELD_KEY };
