@@ -47,26 +47,26 @@ class GroupListForm extends Component {
             changed: (event) => {
               this.formPropsData[GROUP_FIELD_KEY.NAME] = event.target.value;
             },
-            blurred: () => {
-              if (!this.viewModel.editMode) {
-                this.validator.showMessageFor('Group Name');
-              }
-            },
+            // blurred: () => {
+            //   if (!this.viewModel.editMode) {
+            //     this.validator.showMessageFor('Group Name');
+            //   }
+            // },
           },
         ],
       },
     ];
   };
 
-  // populatingFormDataHandler = (data) => {
-  //   if (!data) return false;
+  populatingFormDataHandler = (data) => {
+    if (!data) return false;
 
-  //   this.formPropsData[GROUP_FIELD_KEY.NAME] = data.getName().value;
-  // };
+    this.formPropsData[GROUP_FIELD_KEY.NAME] = data.getName().value;
+  };
 
-  // onDrop = (files) => {
-  //   this.setState({ files });
-  // };
+  onDrop = (files) => {
+    this.setState({ files });
+  };
 
   render() {
     const { formStatus, groupEditdata, editMode } = this.viewModel;

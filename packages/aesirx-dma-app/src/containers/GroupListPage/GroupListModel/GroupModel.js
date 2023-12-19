@@ -15,7 +15,9 @@ import { Helper } from 'aesirx-lib';
 
 class GroupModel {
   constructor(data) {
+    console.log(data, 'sss');
     this.id = data[GROUP_API_FIELD_KEY.ID];
+    console.log(this.id, 'id');
     this.name = data[GROUP_API_FIELD_KEY.NAME] ?? '';
     this.status = data[GROUP_API_FIELD_KEY.STATUS] ?? '';
 
@@ -30,8 +32,6 @@ class GroupModel {
       data[GROUP_API_FIELD_KEY.END_DATE] !== ''
         ? data[GROUP_API_FIELD_KEY.END_DATE]
         : '';
-    this.data = data[GROUP_API_FIELD_KEY.DATA] ?? '';
-    this.published = data[GROUP_API_FIELD_KEY.PUBLISHED] ?? '';
   }
 
   getId = () => {
@@ -100,11 +100,11 @@ class GroupModel {
     };
   };
 
-  getData = () => {
-    return {
-      value: Helper.isNull(this.data) ? {} : JSON.parse(this.data),
-    };
-  };
+  // getData = () => {
+  //   return {
+  //     value: Helper.isNull(this.data) ? {} : JSON.parse(this.data),
+  //   };
+  // };
 
   toTableRowData = () => {
     try {
@@ -113,7 +113,7 @@ class GroupModel {
       const status = this.getStatus();
       const startDate = this.getStartDate();
       const endDate = this.getEndDate();
-      const published = this.getPublished();
+      // const published = this.getPublished();
 
       const result = {
         [id.columnName]: id.value,
@@ -121,7 +121,7 @@ class GroupModel {
         [status.columnName]: status.value,
         [startDate.columnName]: startDate.value,
         [endDate.columnName]: endDate.value,
-        [published.columnName]: published.value,
+        // [published.columnName]: published.value,
       };
       return result;
     } catch (error) {
@@ -140,9 +140,9 @@ class GroupModel {
           [GROUP_API_FIELD_KEY.END_DATE]: moment
             .utc(groupData[GROUP_FIELD_KEY.END_DATE], 'YYYY-MM-DD HH:mm:ss [GMT]ZZ')
             .format('YYYY-MM-DDTHH:mm:ss.SSS[Z]'),
-          [GROUP_API_FIELD_KEY.PUBLISHED]: groupData[GROUP_FIELD_KEY.PUBLISHED] ?? '',
+          // [GROUP_API_FIELD_KEY.PUBLISHED]: groupData[GROUP_FIELD_KEY.PUBLISHED] ?? '',
 
-          [GROUP_API_FIELD_KEY.DATA]: JSON.stringify(groupData[GROUP_API_FIELD_KEY.DATA]) ?? '',
+          // [GROUP_API_FIELD_KEY.DATA]: JSON.stringify(groupData[GROUP_API_FIELD_KEY.DATA]) ?? '',
         }
       : null;
 

@@ -8,10 +8,11 @@ import GroupModel from '../GroupListModel/GroupModel';
 class GroupUtils {
   transformGroupResponseIntoModel = (response) => {
     return Object.keys(response)
-
       .map((index) => {
         return [...Array(response[index])].map((item) => {
-          return new GroupModel(item);
+          const test = new GroupModel(item);
+          console.log(test, 'response');
+          return test;
         });
       })
       .reduce((arr, el) => {

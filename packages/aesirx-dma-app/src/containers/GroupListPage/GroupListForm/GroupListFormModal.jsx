@@ -70,10 +70,7 @@ const GroupListFormModal = observer(
           show={show}
           onHide={this.GroupFormModalViewModal.closeModal}
           header={editMode === false || editMode == null ? t('create_group') : t('edit_group')}
-          body={
-            <GroupListForm viewModel={this.GroupFormModalViewModal} />
-            // <></>
-          }
+          body={<GroupListForm viewModel={this.GroupFormModalViewModal} />}
           footer={
             <Button
               disabled={this.state.isLoading}

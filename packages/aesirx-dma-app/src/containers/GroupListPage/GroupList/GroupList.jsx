@@ -32,31 +32,61 @@ const GroupList = observer(
       this.listViewModel.deleteGroup();
     };
     render() {
-      const { tableStatus, group, itmes, pagination } = this.listViewModel;
+      const { tableStatus, group, pagination } = this.listViewModel;
+
       const { t } = this.props;
       const tableRowHeader = [
         {
           Header: t('txt_group_name'),
-          accessor: GROUP_FIELD_KEY.NAME,
+          accessor: GROUP_FIELD_KEY.NAME, // accessor is the "key" in the data
           Cell: ({ row }) => (
-            <div {...row.getToggleRowExpandedProps()} className="d-flex">
-              <span
-                className="ms-2 fs-14 fw-normal"
-                onClick={(e) => this.handleEdit(e, row.original, pagination.page)}
-              >
-                {row.values.expander}
-              </span>
+            <div {...row.getToggleRowExpandedProps()}>
+              <span onClick={(e) => this.handleEdit(e, row.original)}>{row.original.name}</span>
             </div>
           ),
-          SubCell: ({ row }) => (
-            <span className="fs-14 fw-normal ms-3">|— {row.values['group-name']}</span>
-          ),
         },
         {
-          Header: t('channel'),
+          Header: t('start_date'),
+          accessor: GROUP_FIELD_KEY.START_DATE,
         },
         {
-          Header: t('creat_date'),
+          Header: t('end_date'),
+          accessor: GROUP_FIELD_KEY.END_DATE,
+        },
+        {
+          Header: t('txt_status'),
+          accessor: GROUP_FIELD_KEY.STATUS,
+          Cell: ({ value }) => {
+            if (value === 1) {
+              return (
+                <span
+                  className={`badge ${t(
+                    'txt_running'
+                  )} bg-posted mw-100 h-35 d-inline align-middle`}
+                >
+                  {t('txt_running')}
+                </span>
+              );
+            } else if (value === 2) {
+              return (
+                <span
+                  className={`badge ${t(
+                    'txt_schedule'
+                  )} bg-processing mw-100 h-35 d-inline align-middle`}
+                >
+                  {t('txt_schedule')}
+                </span>
+              );
+            } else {
+              return (
+                <span
+                  className={`badge ${t('txt_stop')} bg-failed mw-100 h-35 d-inline align-middle`}
+                >
+                  {t('txt_stop')}
+                </span>
+              );
+            }
+          },
         },
       ];
 
@@ -73,13 +103,19 @@ const GroupList = observer(
           {group ? (
             <div>
               <Table
-                data={group}
-                columns={tableRowHeader}
+                rowData={group}
+                tableRowHeader={tableRowHeader}
+                onEdit={this.handerEdit}
+                onSelect={this.handleSelect}
+                isFilter={true}
                 pagination={pagination}
-                // isDesc={isDesc}
-                onSort={this._handleSort}
-                canSort={true}
-                onSelectionItem={this.handleSelect}
+                pageSize={this.listViewModel.pageSize}
+                listViewModel={this.listViewModel}
+                searchFunction={this.listViewModel.searchGroup}
+                // dataFormFilter={dataFormFilter}
+                searchText={t('search_your_group')}
+                idKey={this.key}
+                view={this.view}
               />
             </div>
           ) : (

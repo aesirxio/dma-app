@@ -57,7 +57,6 @@ class GroupStore {
         .utc()
         .format();
       const convertedGroupData = GroupModel.convertSubmittedDataToAPIService(groupData);
-      console.log(convertedGroupData, 'sss');
 
       const groupService = new AesirxGroupApiService();
       let resultOnSave = false;
