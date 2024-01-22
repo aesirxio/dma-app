@@ -10,9 +10,7 @@ class GroupUtils {
     return Object.keys(response)
       .map((index) => {
         return [...Array(response[index])].map((item) => {
-          const test = new GroupModel(item);
-          console.log(test, 'response');
-          return test;
+          return new GroupModel(item);;
         });
       })
       .reduce((arr, el) => {

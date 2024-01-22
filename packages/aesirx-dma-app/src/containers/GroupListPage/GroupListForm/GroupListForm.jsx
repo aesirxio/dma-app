@@ -47,11 +47,11 @@ class GroupListForm extends Component {
             changed: (event) => {
               this.formPropsData[GROUP_FIELD_KEY.NAME] = event.target.value;
             },
-            // blurred: () => {
-            //   if (!this.viewModel.editMode) {
-            //     this.validator.showMessageFor('Group Name');
-            //   }
-            // },
+            blurred: () => {
+              if (!this.viewModel.editMode) {
+                this.validator.showMessageFor('Group Name');
+              }
+            },
           },
         ],
       },
