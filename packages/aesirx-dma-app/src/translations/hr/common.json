@@ -213,6 +213,8 @@
 "txt_failed": "Neuspješno",
 "txt_bulk_disconnect": "Skupno prekidanje veze",
 "txt_sso" : "Jednostruka prijava",
+"txt_transaction" : "Transakcija",
+"txt_link_post" : "Objava veze",
 "txt_inspirations": "Inspiracije",
 "txt_inspirations_placeholder": "Unesite do 5 URL-ova postojećih postova na blogu za koje biste željeli biti inspirirani, odvojenih zarezima",
 "txt_content_description_placeholder": "Opišite temu za koju trebate \n\nNa primjer: \n\"Online marketing alata za upravljanje društvenim medijima\"",

@@ -36,6 +36,7 @@ const CONTENT_FIELD_KEY = {
   ADS: 'content-ads',
   ENTITY: 'entity',
   LINK_POST: 'link_post',
+  TRANSACTION: 'transaction',
 };
 
 const CONTENT_PUBLISH_MODE = {
@@ -93,6 +94,7 @@ const ESI_CONTENT_API_RESPONSE_FIELD_KEY = {
   ITEMS: 'items',
   ENTITY: 'entity',
   LINK_POST: 'link_post',
+  TRANSACTION: 'transaction',
 };
 
 export {
