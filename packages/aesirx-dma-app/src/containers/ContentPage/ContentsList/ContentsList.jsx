@@ -157,7 +157,7 @@ const ContentsList = observer(
           accessor: CONTENT_FIELD_KEY.DATE,
           Cell: ({ value }) => <div>{value}</div>,
         },
-       
+
         {
           Header: '',
           accessor: CONTENT_FIELD_KEY.EDIT,
