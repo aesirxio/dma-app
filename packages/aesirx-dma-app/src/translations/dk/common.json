@@ -211,5 +211,7 @@
   "txt_disconnect": "Afbryd forbindelsen",
   "txt_failed": "Mislykkedes",
   "txt_bulk_disconnect": "Massefrakobling",
-  "txt_sso" : "Single Sign On"
+  "txt_sso" : "Single Sign On",
+  "txt_transaction" : "Transaktion",
+  "txt_link_post" : "Link indlæg"
 }

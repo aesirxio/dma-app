@@ -215,5 +215,7 @@
   "txt_disconnect":"Disconnect",
   "txt_failed": "Failed",
   "txt_bulk_disconnect": "Bulk Disconnect",
-  "txt_sso" : "Single Sign On"
+  "txt_sso" : "Single Sign On",
+  "txt_transaction" : "Transaction",
+  "txt_link_post" : "Link Post"
 }

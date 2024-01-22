@@ -212,5 +212,7 @@
 "txt_disconnect": "Prekini vezu",
 "txt_failed": "Neuspješno",
 "txt_bulk_disconnect": "Skupno prekidanje veze",
-"txt_sso" : "Jednostruka prijava"
+"txt_sso" : "Jednostruka prijava",
+"txt_transaction" : "Transakcija",
+"txt_link_post" : "Objava veze"
 }

@@ -213,5 +213,7 @@
   "txt_disconnect":"Відключити",
   "txt_failed": "Помилка",
   "txt_bulk_disconnect": "Масове відключення",
-  "txt_sso" : "Єдиний вхід"
+  "txt_sso" : "Єдиний вхід",
+  "txt_transaction": "Транзакція",
+  "txt_link_post" : "Публікація посилання"
 }

@@ -157,6 +157,7 @@ const ContentsList = observer(
           accessor: CONTENT_FIELD_KEY.DATE,
           Cell: ({ value }) => <div>{value}</div>,
         },
+       
         {
           Header: '',
           accessor: CONTENT_FIELD_KEY.EDIT,
@@ -172,7 +173,12 @@ const ContentsList = observer(
             ) : null,
         },
         {
-          Header: '',
+          Header: t('txt_transaction'),
+          accessor: CONTENT_FIELD_KEY.TRANSACTION,
+          Cell: ({ value }) => <div>{value}</div>,
+        },
+        {
+          Header: 'txt_link_post',
           accessor: CONTENT_FIELD_KEY.LINK_POST,
           Cell: ({ row }) => {
             const data = ContentUtils.getPageDetail(

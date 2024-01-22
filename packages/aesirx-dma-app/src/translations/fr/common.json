@@ -212,6 +212,7 @@
 "txt_disconnect":"Déconnecter",
 "txt_failed": "Échec",
 "txt_bulk_disconnect": "Déconnexion groupée",
-"txt_sso" : "Authentification unique"
-
+"txt_sso" : "Authentification unique",
+"txt_transaction" : "Transaction",
+"txt_link_post": "Lien vers la publication"
 }

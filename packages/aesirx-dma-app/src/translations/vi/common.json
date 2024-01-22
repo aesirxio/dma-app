@@ -213,6 +213,7 @@
   "txt_disconnect":"Ngắt kết nối",
   "txt_failed": "Không thành công",
   "txt_bulk_disconnect": "Ngắt kết nối hàng loạt",
-  "txt_sso" : "Đăng nhập một lần"
-  
+  "txt_sso" : "Đăng nhập một lần",
+  "txt_transaction" : "Giao dịch",
+  "txt_link_post" : "Bài đăng liên kết"
 }

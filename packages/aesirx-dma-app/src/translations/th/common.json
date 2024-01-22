@@ -213,5 +213,7 @@
   "txt_disconnect": "Prekini vezu",
   "txt_failed": "ล้มเหลว",
   "txt_bulk_disconnect": "ยกเลิกการเชื่อมต่อเป็นกลุ่ม",
-  "txt_sso" : "การลงชื่อเพียงครั้งเดียว"
+  "txt_sso" : "การลงชื่อเพียงครั้งเดียว",
+  "txt_transaction" : "ธุรกรรม",
+  "txt_link_post" : "โพสต์ลิงก์"
 }
