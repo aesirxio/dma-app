@@ -213,5 +213,20 @@
   "txt_bulk_disconnect": "Massefrakobling",
   "txt_sso" : "Single Sign On",
   "txt_transaction" : "Transaktion",
-  "txt_link_post" : "Link indlæg"
+  "txt_link_post" : "Link indlæg",
+  "txt_inspirations": "Inspirationer",
+  "txt_inspirations_placeholder": "Indtast op til 5 webadresser på eksisterende blogindlæg, du gerne vil have inspiration, adskilt af kommaer",
+  "txt_content_description_placeholder": "Beskriv det emne, du har brug for \n\nFor eksempel: \n\"Markedsføring af et socialt mediestyringsværktøj online\"",
+  "txt_approx_words": "Ca. Ord",
+  "txt_target_audience": "Vælg din målgruppe",
+  "txt_generate_image": "Generer billede",
+  "txt_generate_image_placeholder": "Skriv en beskrivelse af det billede, du gerne vil generere.\n\nFor eksempel:\n“Frodige kaffebønnetræer, der vokser i grafisk stil”",
+  "txt_image_dimensions": "Billeddimensioner",
+  "txt_image": "Billede",
+  "txt_generate": "Frembringe",
+  "txt_re_generate": "Gengenerer",
+  "txt_add_content_to_editor": "Tilføj indhold til editor",
+  "txt_view": "Udsigt",
+  "txt_use": "Brug",
+  "txt_result": "Resultat"
 }

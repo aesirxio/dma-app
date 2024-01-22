@@ -215,5 +215,20 @@
   "txt_bulk_disconnect": "Ngắt kết nối hàng loạt",
   "txt_sso" : "Đăng nhập một lần",
   "txt_transaction" : "Giao dịch",
-  "txt_link_post" : "Bài đăng liên kết"
+  "txt_link_post" : "Bài đăng liên kết",
+  "txt_inspirations": "Nguồn cảm hứng",
+  "txt_inspirations_placeholder": "Nhập tối đa 5 URL của các bài đăng blog hiện có mà bạn muốn lấy cảm hứng, phân tách bằng dấu phẩy",
+  "txt_content_description_placeholder": "Mô tả chủ đề mà bạn cần \n\nVí dụ: \n\"Tiếp thị trực tuyến một công cụ quản lý phương tiện truyền thông xã hội\"",
+  "txt_approx_words": "Xấp xỉ. Từ",
+  "txt_target_audience": "Chọn đối tượng mục tiêu của bạn",
+  "txt_generate_image": "Tạo hình ảnh",
+  "txt_generate_image_placeholder": "Viết mô tả về hình ảnh bạn muốn tạo.\n\nVí dụ:\n“Những cây cà phê tươi tốt mọc theo phong cách đồ họa”",
+  "txt_image_dimensions": "Kích thước hình ảnh",
+  "txt_image": "Hình ảnh",
+  "txt_generate": "Tạo nội dung",
+  "txt_re_generate": "Tạo lại nội dung",
+  "txt_add_content_to_editor": "Thêm nội dung vào trình chỉnh sửa",
+  "txt_view": "Xem",
+  "txt_use": "Dùng",
+  "txt_result": "Kết quả"
 }

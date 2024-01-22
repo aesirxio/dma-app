@@ -36,6 +36,7 @@ class FormSelectDropdown extends Component {
         async={this.field.async ?? false}
         loadOptions={this.field.loadOptions ?? null}
         cacheOptions
+        size="50px"
       />
     );
   }

@@ -214,5 +214,20 @@
 "txt_bulk_disconnect": "Skupno prekidanje veze",
 "txt_sso" : "Jednostruka prijava",
 "txt_transaction" : "Transakcija",
-"txt_link_post" : "Objava veze"
+"txt_link_post" : "Objava veze",
+"txt_inspirations": "Inspiracije",
+"txt_inspirations_placeholder": "Unesite do 5 URL-ova postojećih postova na blogu za koje biste željeli biti inspirirani, odvojenih zarezima",
+"txt_content_description_placeholder": "Opišite temu za koju trebate \n\nNa primjer: \n\"Online marketing alata za upravljanje društvenim medijima\"",
+"txt_approx_words": "Cca. riječi",
+"txt_target_audience": "Odaberite svoju ciljanu publiku",
+"txt_generate_image": "Generirajte sliku",
+"txt_generate_image_placeholder": "Napišite opis slike koju želite generirati.\n\nNa primjer:\n“Bujna stabla zrna kave rastu u grafičkom stilu”",
+"txt_image_dimensions": "Dimenzije slike",
+"txt_image": "Slika",
+"txt_generate": "Generirati",
+"txt_re_generate": "Regenerirati",
+"txt_add_content_to_editor": "Dodajte sadržaj uređivaču",
+"txt_view": "Pogled",
+"txt_use": "Koristiti",
+"txt_result": "Proizlaziti"
 }

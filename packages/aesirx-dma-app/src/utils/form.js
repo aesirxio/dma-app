@@ -57,8 +57,10 @@ const renderingGroupFieldHandler = (group, validator) => {
                     defaultValue={field.value}
                     required={field.required ?? false}
                     id={field.key}
+                    placeholder={field?.placeholder}
                     onChange={field.changed ?? undefined}
                     onBlur={field.blurred ?? undefined}
+                    rows={field?.rows ?? 3}
                   />
 
                   {field.validation &&
