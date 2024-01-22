@@ -13,12 +13,14 @@ import {
   AesirxProjectApiService,
   AesirxFacebookDataApiService,
   AesirxPlanningApiService,
+  AesirxGroupApiService,
   Storage,
 } from 'aesirx-lib';
 
 import { ContentConnectedChannelsModel } from '../ContentModel/ContentConnectedChannelsModel';
 
 import ProjectUtils from '../../ProjectsPage/ProjectUtils/ProjectUtils';
+import GroupUtils from '../../GroupListPage/GroupListUtils/GroupUtils';
 
 export default class ContentStore {
   globalStore = null;
@@ -192,6 +194,36 @@ export default class ContentStore {
       });
     }
   }
+  async getGroupItemByGroupId(groupId, callbackOnSuccess, callbackOnError) {
+    if (!groupId) return false;
+
+    try {
+      const results = true;
+
+      if (results) {
+        const groupAPIService = new AesirxGroupApiService();
+        const respondedDataFromLibrary = await groupAPIService.getgroupItem(groupId, false);
+
+        const groupDataModels = GroupUtils.transformgroupResponseIntoModel([
+          respondedDataFromLibrary,
+        ]);
+
+        if (groupDataModels) {
+          runInAction(() => {
+            callbackOnSuccess(groupDataModels);
+          });
+        } else {
+          callbackOnError({
+            message: 'Something went wrong from Server response',
+          });
+        }
+      }
+    } catch (error) {
+      runInAction(() => {
+        callbackOnError(error);
+      });
+    }
+  }
 
   async getUserAccountDataFromFacebookData(callbackOnSuccess, callbackOnError) {
     try {
@@ -309,6 +341,8 @@ export default class ContentStore {
         isForcePersonaMasterData: true,
         isForProjectMaster: true,
         isForceProjectMasterData: true,
+        isForGroupMaster: true,
+        isForceGroupMasterData: true,
       });
       return result;
     } catch (error) {

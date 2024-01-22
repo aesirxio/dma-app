@@ -151,6 +151,7 @@ class ProjectsListViewModel {
   };
 
   callbackOnSuccessHandler = (projectModelData) => {
+    console.log('projectModelData', projectModelData);
     if (projectModelData) {
       this.tableStatus = PAGE_STATUS.READY;
 

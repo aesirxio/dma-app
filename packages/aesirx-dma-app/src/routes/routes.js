@@ -12,6 +12,7 @@ const ContentPage = lazy(() => import('../containers/ContentPage'));
 const WizardPage = lazy(() => import('../containers/WizardPage'));
 const ChannelsPage = lazy(() => import('../containers/ChannelsPage'));
 const WelcomePage = lazy(() => import('../containers/WelcomePage'));
+const GroupListPage = lazy(() => import('../containers/GroupListPage'));
 const SSOConfig = lazy(() =>
   import('aesirx-sso').then((module) => ({ default: module.SSOConfig }))
 );
@@ -73,6 +74,11 @@ const mainRoutes = [
     path: '/digital-assets',
     exact: false,
     main: () => <DigitalAssetsPage />,
+  },
+  {
+    path: '/group-management',
+    exact: true,
+    main: ({ match, location }) => <GroupListPage match={match} location={location} />,
   },
 ];
 

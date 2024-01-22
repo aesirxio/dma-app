@@ -228,5 +228,8 @@
   "txt_add_content_to_editor": "เพิ่มเนื้อหาลงในตัวแก้ไข",
   "txt_view": "ดู",
   "txt_use": "ใช้",
-  "txt_result": "ผลลัพธ์"
+  "txt_result": "ผลลัพธ์",
+  "txt_group_management": "การจัดการกลุ่ม",
+   "txt_create_group": "สร้างกลุ่ม",
+   "create_your_1st_groups": "สร้างกลุ่มแรกของคุณ"
 }
