@@ -178,7 +178,7 @@ const ContentsList = observer(
           Cell: ({ value }) => <div>{value}</div>,
         },
         {
-          Header: 'txt_link_post',
+          Header: t('txt_link_post'),
           accessor: CONTENT_FIELD_KEY.LINK_POST,
           Cell: ({ row }) => {
             const data = ContentUtils.getPageDetail(
