@@ -71,11 +71,14 @@ const ChannelsList = observer(
           <h2 className="text-body mb-4">{t('txt_connect_a_channel')}</h2>
           <div className="wrapper_tabs">
             <Tabs defaultActiveKey="0" id="connectContent-tab" className="border-0  border-bottom">
-              {channelsData.map((channelCategory, index) => (
-                <Tab key={index} eventKey={index} title={channelCategory.name}>
-                  <ChannelType channelCategory={channelCategory} channelTypeIndex={index} />
-                </Tab>
-              ))}
+              {channelsData.map((channelCategory, index) => {
+                if (!channelCategory?.list?.length) return <></>;
+                return (
+                  <Tab key={index} eventKey={index} title={channelCategory.name}>
+                    <ChannelType channelCategory={channelCategory} channelTypeIndex={index} />
+                  </Tab>
+                );
+              })}
             </Tabs>
           </div>
           <ModalComponent

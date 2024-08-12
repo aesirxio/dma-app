@@ -102,9 +102,9 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
             </div>
           )}
 
-          <div className="mx-2 mt-1 mb-1">
+          {/* <div className="mx-2 mt-1 mb-1">
             <ChatGPTButton handleShow={() => setShowChatGPT(true)} />
-          </div>
+          </div> */}
         </div>
         <MediaDataRender damData={damAssets} deleteDamItem={deleteDamItem} />
       </div>
