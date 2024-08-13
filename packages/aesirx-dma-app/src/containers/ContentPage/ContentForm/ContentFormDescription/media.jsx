@@ -13,7 +13,7 @@ import { ContentViewModelContext } from '../../ContentViewModels/ContentViewMode
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 import DamComponent from 'components/DamComponent';
 import { useTranslation } from 'react-i18next';
-import ChatGPTButton from 'components/ChatGPT/ChatGPTButton';
+// import ChatGPTButton from 'components/ChatGPT/ChatGPTButton';
 import { CSSTransition } from 'react-transition-group';
 import ChatGPT from 'components/ChatGPT/ChatGPT';
 const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null }) => {
