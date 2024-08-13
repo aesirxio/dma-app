@@ -7,14 +7,14 @@ import { runInAction, makeAutoObservable } from 'mobx';
 import PAGE_STATUS from '../../../constants/PageStatus';
 import { notify } from 'aesirx-uikit';
 import ChannelUtils from '../ChannelUtils/ChannelUtils';
-import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
+// import { AUTHORIZATION_KEY, Storage } from 'aesirx-lib';
 import ProfileStore from '../../ProfilePage/ProfileStore/ProfileStore';
 
 class ChannelsListViewModel {
   channelsStore = null;
   profileStore = null;
   channelsData = null;
-  memberProfile = null;
+  // memberProfile = null;
 
   tableStatus = PAGE_STATUS.LOADING;
 
@@ -30,14 +30,14 @@ class ChannelsListViewModel {
   init = async () => {
     try {
       const channelsData = await this.channelsStore.getChannelsData();
-      const memberProfile = await this.profileStore.getMemberProfile(
-        Storage.getItem(AUTHORIZATION_KEY.MEMBER_ID) ?? 0
-      );
+      // const memberProfile = await this.profileStore.getMemberProfile(
+      //   Storage.getItem(AUTHORIZATION_KEY.MEMBER_ID) ?? 0
+      // );
 
       runInAction(() => {
         this.channelsData = channelsData;
         this.tableStatus = PAGE_STATUS.READY;
-        this.memberProfile = memberProfile;
+        // this.memberProfile = memberProfile;
       });
     } catch (error) {
       this.catchError(error);
