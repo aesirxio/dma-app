@@ -13,7 +13,7 @@ import { ContentViewModelContext } from '../../ContentViewModels/ContentViewMode
 import ChannelUtils from '../../../ChannelsPage/ChannelUtils/ChannelUtils';
 import DamComponent from 'components/DamComponent';
 import { useTranslation } from 'react-i18next';
-import ChatGPTButton from 'components/ChatGPT/ChatGPTButton';
+// import ChatGPTButton from 'components/ChatGPT/ChatGPTButton';
 import { CSSTransition } from 'react-transition-group';
 import ChatGPT from 'components/ChatGPT/ChatGPT';
 const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null }) => {
@@ -102,9 +102,9 @@ const ContentFormDescriptionMedia = observer(({ formPropsData, channel = null })
             </div>
           )}
 
-          <div className="mx-2 mt-1 mb-1">
+          {/* <div className="mx-2 mt-1 mb-1">
             <ChatGPTButton handleShow={() => setShowChatGPT(true)} />
-          </div>
+          </div> */}
         </div>
         <MediaDataRender damData={damAssets} deleteDamItem={deleteDamItem} />
       </div>
