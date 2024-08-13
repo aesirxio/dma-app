@@ -40,4 +40,3 @@ RUN yarn add serve react-inject-env
 EXPOSE 3000
 
 ENTRYPOINT npx react-inject-env set && npx serve -s build
-

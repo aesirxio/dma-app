@@ -1,16 +1,16 @@
 [submodule "packages/aesirx-uikit"]
 	path = packages/aesirx-uikit
 	url = https://github.com/aesirxio/aesirx-uikit.git
-	branch = develop
+	branch = master
 [submodule "packages/aesirx-lib"]
 	path = packages/aesirx-lib
 	url = https://github.com/aesirxio/aesirx-lib.git
-	branch = develop
+	branch = master
 [submodule "packages/aesirx-dam-app"]
 	path = packages/aesirx-dam-app
 	url = https://github.com/aesirxio/dam-app.git
-	branch = develop
+	branch = master
 [submodule "packages/aesirx-sso"]
 	path = packages/aesirx-sso
 	url = https://github.com/aesirxio/sso.git
-	branch = develop
+	branch = master
