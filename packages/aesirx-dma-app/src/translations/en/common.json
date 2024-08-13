@@ -216,6 +216,8 @@
   "txt_failed": "Failed",
   "txt_bulk_disconnect": "Bulk Disconnect",
   "txt_sso" : "Single Sign On",
+  "txt_transaction" : "Transaction",
+  "txt_link_post" : "Link Post",
   "txt_inspirations": "Inspirations",
   "txt_inspirations_placeholder": "Enter up to 5 URLs of existing blog posts you would like to be inspired, separated by commas",
   "txt_content_description_placeholder": "Describe the topic for which you need \n\nFor example: \n\"Marketing a social media management tool online\"",

@@ -212,6 +212,8 @@
   "txt_failed": "Mislykkedes",
   "txt_bulk_disconnect": "Massefrakobling",
   "txt_sso" : "Single Sign On",
+  "txt_transaction" : "Transaktion",
+  "txt_link_post" : "Link indlæg",
   "txt_inspirations": "Inspirationer",
   "txt_inspirations_placeholder": "Indtast op til 5 webadresser på eksisterende blogindlæg, du gerne vil have inspiration, adskilt af kommaer",
   "txt_content_description_placeholder": "Beskriv det emne, du har brug for \n\nFor eksempel: \n\"Markedsføring af et socialt mediestyringsværktøj online\"",
