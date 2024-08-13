@@ -11,7 +11,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { ChannelsViewModelContext } from '../ChannelsViewModels/ChannelsViewModelContextProvider';
 import { withTranslation } from 'react-i18next';
-import { notify } from 'aesirx-uikit';
 import { useTranslation } from 'react-i18next';
 
 const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => {
@@ -21,20 +20,16 @@ const ChannelTypeConnectButton = observer(({ channelCategory, channelType }) => 
   const [connecting, setConnecting] = useState(false);
   const { t } = useTranslation();
   const handleOnClick = async () => {
-    if (channelsListViewModel.memberProfile?.allow_create_item) {
-      if (
-        channelCategory.id === 'cms' ||
-        channelType.id === 'medium' ||
-        channelType.id === 'telegram' ||
-        channelType.id === 'writefreely'
-      ) {
-        context.getChannelsListLoginViewModel().openModal(channelType);
-      } else {
-        setConnecting(true);
-        await channelsListViewModel.connectChannel(channelType.id);
-      }
+    if (
+      channelCategory.id === 'cms' ||
+      channelType.id === 'medium' ||
+      channelType.id === 'telegram' ||
+      channelType.id === 'writefreely'
+    ) {
+      context.getChannelsListLoginViewModel().openModal(channelType);
     } else {
-      notify(t('txt_please_upgrade_account') + 'at https://dma.aesirx.io', 'warn');
+      setConnecting(true);
+      await channelsListViewModel.connectChannel(channelType.id);
     }
     setConnecting(false);
   };

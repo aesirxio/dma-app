@@ -111,6 +111,24 @@ class ChannelUtils {
 
     return true;
   };
+
+  getChannelDetailById = (channelIds, channelData) => {
+    let listChannelDetail = [];
+
+    channelData.forEach((category) => {
+      listChannelDetail = [
+        ...listChannelDetail,
+        ...category.getList().map((channelType) =>
+          channelType
+            .getPages()
+            .filter(({ id }) => channelIds.includes(id))
+            .map((channel) => channel.toDropdownSelectionItem())
+        ),
+      ].filter((option) => option.length > 0);
+    });
+
+    return listChannelDetail.flat(1);
+  };
 }
 
 const utils = new ChannelUtils();

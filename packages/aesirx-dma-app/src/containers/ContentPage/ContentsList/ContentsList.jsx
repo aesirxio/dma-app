@@ -110,18 +110,18 @@ const ContentsList = observer(
               return (
                 <div className="d-flex align-items-center">
                   {data.map((channel) => {
-                    const logoSocial = channel.image
-                      ? channel.image
-                      : `/assets/images/${channel.alias}.png`;
-
-                    if (row.original[CONTENT_FIELD_KEY.ENTITY] === 'category') {
+                    const defaultLogo = `/assets/images/${channel.alias}.png`;
+                    if (
+                      row.original[CONTENT_FIELD_KEY.ENTITY] === 'category' ||
+                      !channel?.options?.length
+                    ) {
                       return (
                         <ComponentImage
                           className="img-avatar me-2"
-                          src={logoSocial}
+                          src={defaultLogo}
                           width={45}
                           height={45}
-                          alt={channel.label}
+                          alt={channel.alias}
                           key={channel.alias}
                         />
                       );
@@ -131,12 +131,12 @@ const ContentsList = observer(
                           <div className="position-relative">
                             <ComponentImage
                               alt={option.name}
-                              src={logoSocial}
+                              src={defaultLogo}
                               className="position-absolute bottom-0 end-0 w-20"
                             />
                             <ComponentImage
                               className="img-avatar rounded"
-                              src={option.avatar ? option.avatar : logoSocial}
+                              src={option.avatar ? option.avatar : defaultLogo}
                               width={45}
                               height={45}
                               alt={option.label}

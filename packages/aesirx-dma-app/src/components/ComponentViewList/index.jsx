@@ -80,7 +80,9 @@ class ComponentViewList extends Component {
     this.formModalViewModal.projectListViewModel.searchProjects({}, sort);
   };
 
-  setGlobalFilters = () => {};
+  setGlobalFilters = (text) => {
+    this.listViewModel.searchProjects(text);
+  };
 
   setDateFilter = (dateRange) => {
     this.dateRange = dateRange;
