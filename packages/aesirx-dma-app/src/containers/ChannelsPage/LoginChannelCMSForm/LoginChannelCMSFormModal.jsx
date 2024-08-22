@@ -18,10 +18,12 @@ import {
   CHANNEL_CMS_JOOMLA,
   CHANNEL_TELEGRAM,
   CHANNEL_CMS_TWRITEFREELY,
+  CHANNEL_CMS_JOOMLA_STANDARD_API,
 } from '../../../constants/ChannelModule';
 import LoginChannelCMSForm from './LoginChannelCMSForm';
 import LoginChannelCMSMedium from './LoginChannelCMSMedium';
 import LoginChannelCMSFormJoomla from './LoginChannelCMSFormJoomla';
+import LoginChannelCMSFormJoomlaStandard from './LoginChannelCMSFormJoomlaStandard';
 import LoginChannelFormTelegram from './LoginChannelFormTelegram';
 import LoginChannelFormWriteFreely from './LoginChannelFormWriteFreely';
 
@@ -89,6 +91,11 @@ const LoginChannelCMSFormModal = observer(
               />
             ) : eventName === CHANNEL_CMS_JOOMLA ? (
               <LoginChannelCMSFormJoomla
+                viewModel={this.loginCMSChannelFormModalViewModel}
+                validator={this.validator}
+              />
+            ) : eventName === CHANNEL_CMS_JOOMLA_STANDARD_API ? (
+              <LoginChannelCMSFormJoomlaStandard
                 viewModel={this.loginCMSChannelFormModalViewModel}
                 validator={this.validator}
               />

@@ -19,10 +19,11 @@
     "postcss": "^8",
     "json5": "^2",
     "@types/react": "^18",
-    "clipboardy": "3.0.0"
+    "clipboardy": "3.0.0",
+    "tsup": "6"
   },
   "scripts": {
-    "prepare": "nx run aesirx-lib:build && nx run aesirx-sso:build && nx run aesirx-uikit:build && nx run aesirx-dam-app:build && nx run-many -t build:lib --exclude aesirx-uikit aesirx-lib aesirx-dma-app",
+    "prepare": "nx run aesirx-lib:build && nx run aesirx-sso:build && nx run aesirx-uikit:build && nx run-many -t build:lib --exclude aesirx-uikit aesirx-lib aesirx-dma-app",
     "dev": "nx run-many -t dev -p aesirx-uikit aesirx-lib aesirx-dma-app",
     "build": "nx run aesirx-dma-app:build",
     "build:lib": "nx run aesirx-dma-app:build:lib",

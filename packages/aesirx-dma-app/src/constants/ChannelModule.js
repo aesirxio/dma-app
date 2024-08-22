@@ -9,6 +9,7 @@ export const CHANNEL_CMS_MEDIUM = 'medium';
 export const CHANNEL_TELEGRAM = 'telegram';
 export const CHANNEL_CMS_TWRITEFREELY = 'writefreely';
 export const CHANNEL_CMS_JOOMLA = 'joomla';
+export const CHANNEL_CMS_JOOMLA_STANDARD_API = 'joomla_standard_api';
 export const CHANNEL_ADS_GOOGLE = 'google_ads';
 export const CHANNEL_ADS_FACEBOOK = 'fbad';
 export const CHANNEL_TYPE = {
@@ -120,6 +121,7 @@ const CHANNEL_CMS_FIELD_KEY = {
   BOT_TOKEN: 'bot_token',
   CHAT_IDS: 'chat_ids',
   BLOG: 'blog',
+  SUPER_USER_TOKEN: 'superuser_token',
 };
 
 const CHANNEL_REQUIREMENT_FIELD_KEY = {
