@@ -13,8 +13,8 @@ Find out more in [https://dma.aesirx.io/](https://dma.aesirx.io)
 3. Run `yarn prepare` to build the dependencies.
 2. Rename the `.env.dist` file to `.env`.
 3. Replace license keys in the `.env` file with the one provided in your profile account.
-   1. `REACT_APP_SSO_CLIENT_ID` replace this with the provided `REACT_APP_SSO_CLIENT_ID` from https://dapp.shield.aesirx.io/licenses
-   2. `REACT_APP_SSO_CLIENT_SECRET` replace this with the provided `REACT_APP_SSO_CLIENT_SECRET` from https://dapp.shield.aesirx.io/licenses
+   1. `REACT_APP_SSO_CLIENT_ID` replace this with the provided `SSO CLIENT ID` from https://dapp.shield.aesirx.io/licenses
+   2. `REACT_APP_SSO_CLIENT_SECRET` replace this with the provided `SSO CLIENT SECRET` from https://dapp.shield.aesirx.io/licenses
    3. `PORT` change the port. Default is 3000
 
 5. Run  `yarn dev`

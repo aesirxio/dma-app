@@ -92,6 +92,7 @@ class ChannelUtils {
       [CHANNEL_CMS_FIELD_KEY.BOT_TOKEN]: data.bot_token ?? null,
       [CHANNEL_CMS_FIELD_KEY.CHAT_IDS]: data.chat_ids ?? null,
       [CHANNEL_CMS_FIELD_KEY.BLOG]: data.blog ?? null,
+      [CHANNEL_CMS_FIELD_KEY.SUPER_USER_TOKEN]: data?.superuser_token ?? null,
     };
 
     return result;
